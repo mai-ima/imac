@@ -16,8 +16,8 @@
  "slab_t": 18,
  "corner": 10,
  "pod": {
-  "total_t": 84,
-  "h": 190,
+  "total_t": 108,
+  "h": 256,
   "side_margin": 27,
   "wall": 3
  },

@@ -14,14 +14,14 @@
 <text x="84.48" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 84.48 37)">隙間</text>
 <rect x="85.28" y="40" width="3.2" height="90" fill="#ccd" stroke="#000" stroke-width=".3"/>
 <text x="86.88" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 86.88 37)">背面プレート A5052</text>
-<rect x="88.48" y="86.80000000000001" width="105.60000000000001" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
+<rect x="88.48" y="86.80000000000001" width="144.0" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
 <line x1="60" y1="138" x2="88.8" y2="138" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="60" y1="130" x2="60" y2="140" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="88.8" y1="130" x2="88.8" y2="140" stroke="#c0392b" stroke-width="0.2"/>
 <text x="74.4" y="136.5" font-size="3.6" text-anchor="middle" fill="#c0392b">スラブ 18</text>
-<line x1="60" y1="150" x2="194.4" y2="150" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="60" y1="150" x2="232.8" y2="150" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="60" y1="130" x2="60" y2="152" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="194.4" y1="130" x2="194.4" y2="152" stroke="#c0392b" stroke-width="0.2"/>
-<text x="127.2" y="148.5" font-size="3.6" text-anchor="middle" fill="#c0392b">総厚 84</text>
-<text x="60" y="175" font-size="4">厚み構成(縮尺 1.6倍)。ポッド壁 t3。内部有効奥行 63mm</text>
+<line x1="232.8" y1="130" x2="232.8" y2="152" stroke="#c0392b" stroke-width="0.2"/>
+<text x="146.4" y="148.5" font-size="3.6" text-anchor="middle" fill="#c0392b">総厚 108</text>
+<text x="60" y="175" font-size="4">厚み構成(縮尺 1.6倍)。ポッド壁 t3。内部有効奥行 87mm</text>
 </svg>

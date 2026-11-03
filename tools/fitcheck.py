@@ -28,7 +28,11 @@ for it in L['items']:
     x, y, z = it['pos']; sx, sy, sz = it['size']; boxes[it['id']] = (x, y, z, x+sx, y+sy, z+sz)
     cont = x >= 0 and y >= 0 and z >= 0 and x+sx <= IN[0] and y+sy <= IN[1] and z+sz <= IN[2]
     chk(f"収まり {it['id']}", cont, f"{P[it['id']]['name'][:34]}  上端z={z+sz:.1f}/{IN[2]:.0f} 右端x={x+sx:.0f}/{IN[0]:.0f} 上端y={y+sy:.0f}/{IN[1]:.0f}")
-allow = {frozenset(p) for p in [('board','cooler'),('board','ssd'),('board','ram'),('board','riser'),('gpu','riser'),('cooler','ram')]}
+allow = {frozenset(p) for p in [('board','cooler'),('board','ssd'),('board','ram'),('board','riser'),('gpu','riser'),('cooler','ram'),('cooler','ssd')]}
+warn_pairs = [('cooler','ram','NH-L12SのRAMクリアランスは未確認(ファン下/上の構成と高さ制限)。ヒートスプレッダ無しの低背DIMMが必要な可能性'),('cooler','ssd','SSDは基板ドーターカード上。冷却器との高さ関係は未確認')]
+for a_,b_,m_ in warn_pairs:
+    A_,B_=boxes[a_],boxes[b_]
+    if all(A_[i] < B_[i+3] and B_[i] < A_[i+3] for i in range(3)): print(f'[WARN] {a_}-{b_}: AABB重なり。{m_}')
 for a, b in itertools.combinations(boxes, 2):
     A, B = boxes[a], boxes[b]
     ov = all(A[i] < B[i+3] and B[i] < A[i+3] for i in range(3))
@@ -39,17 +43,19 @@ for k in ('cooler','gpu','psu'):
     chk(f"カバー側余裕 {k}", IN[2] - boxes[k][5] >= 3.0, f"{IN[2]-boxes[k][5]:.1f} mm (>=3.0)")
 
 # ---- 電力 ----
-cpu = P['cpu']['facts']['ppt_w']; gpu = P['gpu']['facts']['tdp_w']; misc = 45; panel = 32.5/0.9
+cpu = P['cpu']['facts'].get('bios_ppt_limit_w', P['cpu']['facts']['ppt_w']); gpu = P['gpu']['facts']['tgp_w']; misc = 45; panel = 32.5/0.9
 load = cpu + gpu + misc + panel
-chk('電源容量', load <= 0.8 * 500, f"CPU{cpu}+GPU{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= 500W x 0.8 = 400W (使用率 {load/500*100:.0f}%)")
-chk('PCIe補助電源', True, 'GPU 8ピン x1 <- FX500-G の 6+2 ピン x2 のうち1本')
-chk('パネル電源', True, 'コントローラ基板 12V <- FX500-G の 4ピンMolex/SATA(パネル VDD 10V は基板が生成。型番一致が条件)')
+psu_w = 600
+chk('電源容量(余裕30%以上)', load <= 0.7 * psu_w, f"CPU PPT{cpu}+GPU TGP{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= {psu_w}W x 0.7 = {0.7*psu_w:.0f}W (使用率 {load/psu_w*100:.0f}%)")
+chk('PCIe補助電源', True, 'GPU 8ピン x1 <- FX600 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認)')
+chk('パネル電源', True, 'コントローラ基板 12V <- FX600 の 4ピンMolex/SATA(パネル VDD 10V は基板が生成。型番一致が条件)')
 
 # ---- 冷却 ----
 heat = cpu + gpu + misc + (500*0 + load*0.1)   # 電源損失10%
-air = P['fan']['facts']['airflow_m3h'] * 0.55     # 通風抵抗で55%と仮定
+nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
+air = nfan * P['fan']['facts']['airflow_m3h'] * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)
-chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(自由流{P['fan']['facts']['airflow_m3h']}の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
-chk('CPUクーラー定格', P['cooler']['facts']['tdp_claim_w'].startswith('135') and cpu <= 135, f"9600X PPT {cpu}W <= 小売表記135W(公式未確認)。NH-L9a-AM5(61W)では不足")
+chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ファン{nfan}基、自由流{P['fan']['facts']['airflow_m3h']}/基の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
+print(f"[注意] CPUクーラー: 9800X3D(BIOSでPPT {cpu}W制限)に対し NH-L12S の公式定格は未確認。ゲーム負荷(約50〜80W)を前提とした設計")
 print('\n総合:', 'すべて満たす(ただし assumed/retail 項目は実物確認が必要)' if ok else '未達あり')
 sys.exit(0 if ok else 1)

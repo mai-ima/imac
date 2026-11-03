@@ -1,0 +1,240 @@
+{
+ "_doc": "市販部品データベース。status: verified=メーカー/公式資料で寸法確認, retail=小売・報道の一致のみ, assumed=未確認(要実物確認)。寸法は mm。",
+ "panel": {
+  "id": "panel",
+  "name": "BOE MV270QUM-N50 27型4K IPS(eDP 4lane/30pin)",
+  "maker": "BOE",
+  "dims": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "status": "verified",
+  "facts": {
+   "active": "596.736x335.664",
+   "weight_g": "2450typ/2600max",
+   "vdd": "10V 0.9A(typ)",
+   "backlight": "23.5W typ(8ch x 42V x 70mA)",
+   "connector": "CN1 STM MSAK24025P30 / IPEX 20455-030E-66",
+   "aa_to_outline_LRUD": "6.032/6.032/5.968/13.668",
+   "mount": "M3 x 多数(背面図 Fig.6)、中央にVESA相当の100mm間隔穴"
+  },
+  "sources": [
+   "https://www.panelook.com/upload/202310/MV270QUM-N50_Ver.0_20210111_202310319200.pdf"
+  ],
+  "alt": "LG LM270WR3-SSC1 608.8x355.3x12.8(Data-Modul掲載値, retail)。包絡線(N50)で設計すれば両方収まる"
+ },
+ "ctrl_board": {
+  "id": "ctrl_board",
+  "name": "4K eDP コントローラ基板(LM270WR3-SSx1/SSC1対応をうたう市販キット)",
+  "maker": "各社(Amazon等)",
+  "dims": [
+   55,
+   150,
+   15
+  ],
+  "status": "assumed",
+  "facts": {
+   "input": "HDMI/DP(商品説明)",
+   "note": "基板寸法・電源・バックライト駆動仕様は出品者情報のみ。パネルと完全一致する型番を購入前に確認。基板寸法は未確認のため縦長55x150x15mmの予約空間として確保"
+  },
+  "sources": [
+   "https://www.amazon.com/HDMI-Compatible-LM270WR3-SSA3-LM270WR3-SSB1-LM270WR3-SSC1-LM270WR3-SSC2/dp/B0F5VVQQCD"
+  ]
+ },
+ "board": {
+  "id": "board",
+  "name": "GIGABYTE B650I AX (Mini-ITX)",
+  "maker": "GIGABYTE",
+  "dims": [
+   170,
+   170,
+   1.6
+  ],
+  "status": "verified",
+  "facts": {
+   "form": "170x170 mm",
+   "ram": "DDR5 DIMM x2 最大128GB",
+   "m2": "M.2 x1(2280)",
+   "pcie": "PCIe x16 x1",
+   "io": "DP/HDMI/USB-C/USB-A/RJ45/SMA x2/音声3"
+  },
+  "sources": [
+   "https://www.gigabyte.com/Motherboard/B650I-AX-rev-12/sp"
+  ],
+  "note": "外形とI/O構成は公式。ソケット・DIMM等の部品位置は未取得(モデルは典型配置)。"
+ },
+ "cpu": {
+  "id": "cpu",
+  "name": "AMD Ryzen 5 9600X",
+  "maker": "AMD",
+  "dims": [
+   40,
+   40,
+   5
+  ],
+  "status": "retail",
+  "facts": {
+   "tdp_w": 65,
+   "ppt_w": 88,
+   "tjmax_c": 95,
+   "socket": "AM5 LGA1718"
+  },
+  "sources": [
+   "https://techpowerup.com/cpu-specs/ryzen-5-9600x.c3652"
+  ]
+ },
+ "cooler": {
+  "id": "cooler",
+  "name": "Thermalright AXP90-X47",
+  "maker": "Thermalright",
+  "dims": [
+   95,
+   94.5,
+   47
+  ],
+  "status": "retail",
+  "facts": {
+   "fin_height": 32,
+   "fan": "92mm",
+   "weight_g": 310,
+   "tdp_claim_w": "135(小売表記・公式未確認)",
+   "socket": "AM4/AM5",
+   "height_note": "全高47mmはCPU上面基準(ソケット+IHSで約5.5mm)と仮定し、基板上面からの高さを 5.5+47=52.5mm(+PCB上面z4.6)で干渉判定"
+  },
+  "sources": [
+   "https://www.guru3d.com/news-story/thermalright-releases-4-versions-of-ultra-low-profile-cpu-cooler-axp90.html"
+  ],
+  "alt": "Noctua NH-L9a-AM5 37mm(定格61W: 9600Xの88W PPTには不足)"
+ },
+ "gpu": {
+  "id": "gpu",
+  "name": "MSI GeForce RTX 5060 8G INSPIRE ITX OC",
+  "maker": "MSI",
+  "dims": [
+   145,
+   120,
+   45
+  ],
+  "status": "retail",
+  "facts": {
+   "tdp_w": 145,
+   "power": "1x 8-pin",
+   "psu_rec_w": 550,
+   "outputs": "HDMI 2.1b + DP 2.1b x3",
+   "fan": "単ファン"
+  },
+  "sources": [
+   "https://www.tomshardware.com/pc-components/gpus/msi-unveils-one-of-the-tiniest-rtx-5060-gpus-yet-single-fan-inspire-rtx-model-measures-just-145-x-120-x-45mm",
+   "https://techpowerup.com/337599/msi-readies-compact-geforce-rtx-5060-8-gb-inspire-itx-gpu"
+  ],
+  "note": "一部小売で販売終了表示。代替: ZOTAC RTX 5060 SOLO 約164.5x111.2x36.4(retail)"
+ },
+ "riser": {
+  "id": "riser",
+  "name": "LINKUP AVA5 PCIe 5.0 x16 ライザー 20cm",
+  "maker": "LINKUP",
+  "dims": [
+   200,
+   60,
+   5
+  ],
+  "status": "assumed",
+  "facts": {
+   "length_cm": 20,
+   "pcie": "5.0 x16(4.0/3.0互換)"
+  },
+  "sources": [
+   "https://preisvergleich.heise.de/linkup-ava5-v2-riser-kabel-ag-p5-33ss-020bk-v2-a3400918.html"
+  ],
+  "note": "幅・厚さは未確認(フラットケーブル)。曲げ半径と配線は実物で要確認。GPUはPCIe x8(5060)"
+ },
+ "psu": {
+  "id": "psu",
+  "name": "SilverStone FX500-G (Flex ATX 500W)",
+  "maker": "SilverStone",
+  "dims": [
+   150,
+   81.5,
+   40.5
+  ],
+  "status": "retail",
+  "facts": {
+   "conn": "24pin / EPS 8(4+4) / PCIe 6+2 x2 / SATA x4",
+   "fan": "40mm",
+   "ac": "IEC C14(側面/背面)"
+  },
+  "sources": [
+   "https://www.performance-pcs.com/products/silverstone-80-plus-gold-500w-flex-atx-power-supply"
+  ],
+  "alt": "FSP FlexGURU PRO 500W(150x81.5x40.5, 6+2 x2)。FX350-GはPCIe 6ピン1本のみで不可"
+ },
+ "fan": {
+  "id": "fan",
+  "name": "Noctua NF-A12x15 PWM",
+  "maker": "Noctua",
+  "dims": [
+   120,
+   120,
+   15
+  ],
+  "status": "verified",
+  "facts": {
+   "airflow_m3h": 94.2,
+   "static_mmH2O": 1.53,
+   "rpm_max": 1850,
+   "noise_dba": 23.9,
+   "mount": "105x105mm"
+  },
+  "sources": [
+   "https://noctua.at/en/products/fan/nf-a12x15-pwm/specification"
+  ]
+ },
+ "ssd": {
+  "id": "ssd",
+  "name": "Samsung 990 EVO Plus 1TB (M.2 2280)",
+  "maker": "Samsung",
+  "dims": [
+   80.15,
+   22.15,
+   2.38
+  ],
+  "status": "retail",
+  "facts": {
+   "if": "PCIe 4.0x4 / 5.0x2"
+  },
+  "sources": [
+   "https://www.dq-solutions.ch/en/samsung-1-tb-ssd-990-evo-plus-nvme-m-2-ssd-m-2-hs1010?m=6293"
+  ]
+ },
+ "ram": {
+  "id": "ram",
+  "name": "DDR5-5600 UDIMM 16GB(JEDEC 準拠品)",
+  "maker": "各社",
+  "dims": [
+   133.35,
+   31.25,
+   8
+  ],
+  "status": "assumed",
+  "facts": {
+   "note": "JEDEC UDIMM標準 133.35x31.25。ヒートスプレッダ付きは高さ+数mm"
+  },
+  "sources": []
+ },
+ "camera_audio": {
+  "id": "camera_audio",
+  "name": "Webカメラ/マイク/スピーカー",
+  "maker": "未選定",
+  "dims": [
+   0,
+   0,
+   0
+  ],
+  "status": "assumed",
+  "facts": {
+   "note": "市販USBカメラモジュール・小型スピーカーを選定予定(未選定)。内蔵スペースは上ベゼル/チンに確保"
+  },
+  "sources": []
+ }
+}

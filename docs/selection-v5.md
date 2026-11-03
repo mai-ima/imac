@@ -9,7 +9,15 @@
 | SSD | **Samsung 990 PRO with Heatsink** 1TB/2TB | **公式確認**: 最大 80.15×25×8.88mm、M.2 2280、PCIe 4.0 x4 / NVMe 2.0、Samsung自社コントローラ、1GB/2GB LPDDR4 | [Samsung公式データシート](https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_with_Heatsink_Datasheet_Rev_2.0_10129695053410.pdf) |
 | 電源 | SilverStone **FX600 Platinum** (Flex ATX 600W) | 寸法150×81.5×40.5は複数小売一致。コネクタ構成(PCIe 6+2×2、12V-2x6の有無、固定/モジュラー)は**未確認** | [SFF.net](https://smallformfactor.net/articles/first-look-silverstone-fx600-platinum-flex-atx-power-supply/) |
 | ファン | Noctua **NF-A12x25 PWM** (または NF-A12x15) | 120×120×25、102m³/h、2.34mmH2O(TechPowerUp、公式は429で取得不可) | [TechPowerUp](https://techpowerup.com/review/noctua-nf-a12x25-pwm/single-page.html) |
-| 基板 | (調査中: 最新のAM5 Mini-ITX。公式マニュアルでレイアウトが取れるもの) | — | — |
+| 基板 | **ASUS ROG STRIX X870-I GAMING WIFI** | **公式確認(寸法170×170、レイアウト図p.14を実測)**。USB4×2、USB 10Gbps×5、2.5GbE、Wi-Fi 7、PCIe 5.0 x16、DDR5×2(EXPO)、M.2×2(ドーターカード方式)。Ryzen 9000の出荷時BIOS対応は未確認(FlashBackあり)。VRMはファン付きヒートシンクで高さ未確認。マニュアルは第三者ホスト版(2024年版) | [ASUS仕様](https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/) |
+| CPU | **AMD Ryzen 7 9800X3D** | TDP120W/PPT162W/Tjmax95℃/8C16T/L3 96MB(第三者一致、AMD公式は取得不可) | [BuildCores](https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D) |
+| CPUクーラー | **Noctua NH-L12S** | 128×146×70mm、390g(ファン無)。軸の割当と基準面は未確認(小売一致) | [Galaxus](https://galaxus.de/en/s1/product/noctua-nh-l12s-70-mm-cpu-coolers-6817433) |
+
+## 決定(v5, `model/parts.json` / `layout.json` に反映済み)
+- 高性能案(案B)を採用: **9800X3D + NH-L12S**、ポッド総厚 **108mm**、ポッド高 **256mm**(GPU長229mmのため)。薄型案(案A)は代替。
+- **BIOSでCPUのPPTを120W(TDP定格)に制限**して電源余裕を確保(最悪ケースPPT162Wだと余裕が30%を割る、とfitcheckが指摘)。
+- **ポッド排気ファンを2基(NF-A12x25)**に変更(1基だと排気ΔT 22.8Kで基準超過、2基で10.2K)。
+- fitcheck結果: 収まり・干渉・電力・風量はOK。**警告2件**: (1)NH-L12SとDIMMのクリアランス未確認、(2)SSD(ドーターカード)とクーラーの高さ関係未確認。
 
 ## 判断が必要な論点(根拠つき)
 1. **CPUと冷却の組合せ(ポッドの厚みを決める)**

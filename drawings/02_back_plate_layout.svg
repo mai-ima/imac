@@ -5,7 +5,7 @@
 <text x="274" y="286" font-size="3.4">普通公差 ±0.3(板金) / ±0.2(ガラス外形) / 表面 アルマイト</text>
 <text x="274" y="290" font-size="3">設計値(未承認)。製造前に最終BOMで再生成すること。</text>
 <rect x="40" y="30" width="310.0" height="207.65" rx="5.0" fill="#d6d9de" stroke="#000" stroke-width="0.5"/>
-<rect x="46.75" y="142.65" width="296.5" height="95.0" rx="4" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>
+<rect x="46.75" y="109.65" width="296.5" height="128.0" rx="4" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>
 <line x1="40" y1="247.65" x2="350.0" y2="247.65" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="40" y1="237.65" x2="40" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="350.0" y1="237.65" x2="350.0" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
