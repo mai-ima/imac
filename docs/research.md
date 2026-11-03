@@ -36,11 +36,13 @@
 | ロジックボードは下部チン内 | iFixit, Macworld, MacRumors, 9to5Mac, apfelpatient | 5 | **確定(M1)** |
 | ファン2基(上位構成)/ベースは1基 | iFixit, Macworld, MacRumors, 9to5Mac, apfelpatient, macandegg(+Apple公式ファンページ) | 6 | **確定** |
 | 前面は一枚ガラス+接着(クラシックiMac接着剤) | iFixit, MacRumors, apfelpatient, macandegg, 9to5Mac | 5 | **確定** |
-| 背面側に大きな薄い金属プレートが2枚 | iFixit, Macworld, MacRumors, 9to5Mac, apfelpatient, macandegg | 6 | **確定** |
-| そのプレートはスピーカー室 | iFixit, Macworld, macandegg | 3 | 未確定(9to5Macは用途不明と記載) |
-| 銅ヒートパイプ+短いヒートシンク2枚 | iFixit, Macworld, MacRumors, apfelpatient | 4 | **未確定(5未満)** |
-| Wi-Fi/BTアンテナはAppleロゴ裏 | MacRumors, apfelpatient, 9to5Mac | 3 | 未確定 |
-| ボタン電池2個 | iFixit, 9to5Mac, macandegg | 3 | 未確定 |
+| ディスプレイ背後に大きな薄い金属プレートが2枚 | iFixit, Macworld, MacRumors, 9to5Mac, apfelpatient, macandegg | 6 | **確定** |
+| そのプレートはスピーカー室 | iFixit, Macworld, macandegg(MacDailyNewsは放熱と推測) | 3 | 未確定 |
+| ディスプレイ基板は上部の細いストリップ | iFixit, Macworld, MacDailyNews, GadgetGuy | 4 | 未確定(5未満) |
+| 銅ヒートパイプ+短いヒートシンク2枚(上位構成) | iFixit, Macworld, MacRumors, apfelpatient, Wccftech | 5 | **確定(M1)** |
+| Wi-Fi/BTアンテナはAppleロゴ裏が電波の通り道 | MacRumors, apfelpatient, 9to5Mac, MacDailyNews, Engadget | 5 | **確定(M1)** |
+| メモリ/SSDは基板直付けで増設スロットなし | iFixit, Engadget, GadgetGuy, 9to5Mac, Apple公式仕様 | 5 | **確定** |
+| ボタン電池2個 | iFixit, 9to5Mac, MacDailyNews, macandegg(+Apple部品表に『バッテリーボード』) | 4 | 未確定(電池基板の存在は公式) |
 | ディスプレイはLG製の可能性 | iFixit のみ | 1 | 未確定 |
 | M6 iMac の分解で内部構造が同じ | 見つからず | 0 | 不明 |
 | M6の外観はM4から変更なし | MacRumors, Gizmodo(M4と見分け困難), Xataka(寸法/重量同一表), Apple仕様(寸法同一) | 4 | 未確定(厚さ非公表のため) |

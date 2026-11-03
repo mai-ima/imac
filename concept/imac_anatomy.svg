@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1170" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#f6f7f9"/>
+<text x="637.5" y="27.2" font-size="20" text-anchor="middle" fill="#222" font-weight="bold">iMac 24インチ(M1〜M6系) 部位・配置図</text>
+<text x="637.5" y="45.9" font-size="11" text-anchor="middle" fill="#222">●緑=確定(公式資料 or 独立5件以上一致) / ●橙・破線=未確定(推定)。内部配置はM1の分解記事が根拠(M4/M6の分解は未発見)</text>
+<text x="283.5" y="73.1" font-size="14" text-anchor="middle" fill="#222" font-weight="bold">前面から見た内部配置(透視)</text>
+<rect x="51.0" y="85.0" width="464.9" height="318.8" rx="8.5" fill="#e7e8eb" stroke="#555" stroke-width="1.4"/>
+<rect x="62.5" y="93.5" width="442.0" height="248.6" rx="0.0" fill="#101114" stroke="#000" stroke-width="1"/>
+<text x="283.5" y="212.5" font-size="13" text-anchor="middle" fill="#aaa">ディスプレイ(4.5K 4480x2520 / 実測23.5型)</text>
+<rect x="68.0" y="86.3" width="430.9" height="6.0" rx="0.0" fill="#c8e6c9" stroke="#d9730d" stroke-width="1" stroke-dasharray="5 3"/>
+<circle cx="283.5" cy="89.2" r="2.5" fill="#222"/>
+<rect x="85.0" y="136.0" width="170.0" height="170.0" rx="0.0" fill="none" stroke="#1a7f37" stroke-width="1.5"/>
+<rect x="311.9" y="136.0" width="170.0" height="170.0" rx="0.0" fill="none" stroke="#1a7f37" stroke-width="1.5"/>
+<text x="170.0" y="229.5" font-size="12" text-anchor="middle" fill="#7ec88b">金属プレート</text>
+<text x="396.9" y="229.5" font-size="12" text-anchor="middle" fill="#7ec88b">金属プレート</text>
+<rect x="57.8" y="354.4" width="451.3" height="40.8" rx="0.0" fill="#d9ecff" stroke="#1a7f37" stroke-width="1.5"/>
+<rect x="76.5" y="357.8" width="42.5" height="34.0" rx="0.0" fill="#ffe3b3" stroke="#1a7f37" stroke-width="1.5"/>
+<rect x="447.9" y="357.8" width="42.5" height="34.0" rx="0.0" fill="#ffe3b3" stroke="#1a7f37" stroke-width="1.5"/>
+<rect x="144.5" y="359.6" width="51.0" height="30.6" rx="0.0" fill="#f3d1f4" stroke="#d9730d" stroke-width="1" stroke-dasharray="5 3"/>
+<rect x="371.4" y="359.6" width="51.0" height="30.6" rx="0.0" fill="#f3d1f4" stroke="#d9730d" stroke-width="1" stroke-dasharray="5 3"/>
+<rect x="232.5" y="361.2" width="102.0" height="27.2" rx="0.0" fill="#bcd7f5" stroke="#1a7f37" stroke-width="1.2"/>
+<rect x="181.5" y="364.6" width="42.5" height="8.5" rx="0.0" fill="#f2d7b6" stroke="#1a7f37" stroke-width="1.2"/>
+<circle cx="283.5" cy="87.5" r="9" fill="#d9730d"/><text x="283.5" y="91.5" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
+<circle cx="283.5" cy="103.7" r="9" fill="#1a7f37"/><text x="283.5" y="107.7" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
+<circle cx="170.0" cy="153.0" r="9" fill="#1a7f37"/><text x="170.0" y="157.0" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
+<circle cx="283.5" cy="374.8" r="9" fill="#1a7f37"/><text x="283.5" y="378.8" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">4</text>
+<circle cx="97.8" cy="374.8" r="9" fill="#1a7f37"/><text x="97.8" y="378.8" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">5</text>
+<circle cx="170.0" cy="374.8" r="9" fill="#d9730d"/><text x="170.0" y="378.8" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">6</text>
+<circle cx="396.9" cy="396.9" r="9" fill="#d9730d"/><text x="396.9" y="400.9" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">7</text>
+<circle cx="202.7" cy="352.8" r="9" fill="#1a7f37"/><text x="202.7" y="356.8" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">8</text>
+<rect x="228.2" y="403.8" width="110.5" height="59.5" rx="0.0" fill="#cfd2d6" stroke="#555" stroke-width="1.2"/>
+<text x="283.5" y="437.8" font-size="11" text-anchor="middle" fill="#222">スタンド(アルミ一枚板)</text>
+<text x="776.5" y="73.1" font-size="14" text-anchor="middle" fill="#222" font-weight="bold">背面</text>
+<rect x="544.0" y="85.0" width="464.9" height="318.8" rx="8.5" fill="#d2d3d5" stroke="#555" stroke-width="1.4"/>
+<path d="M762.0 195.5 q17 -25 34 0 q-5 30 -17 33 q-12 -3 -17 -33z" fill="#e8e9eb" stroke="#999"/>
+<rect x="590.8" y="365.5" width="3.4" height="10.2" rx="1.7" fill="#222" stroke="#222" stroke-width="1"/>
+<rect x="604.4" y="365.5" width="3.4" height="10.2" rx="1.7" fill="#222" stroke="#222" stroke-width="1"/>
+<rect x="617.9" y="365.5" width="3.4" height="10.2" rx="1.7" fill="#222" stroke="#222" stroke-width="1"/>
+<rect x="631.5" y="365.5" width="3.4" height="10.2" rx="1.7" fill="#222" stroke="#222" stroke-width="1"/>
+<rect x="721.2" y="259.2" width="110.5" height="204.0" rx="0.0" fill="#bbbcbe" stroke="#555" stroke-width="1.2"/>
+<ellipse cx="776.5" cy="331.5" rx="10.2" ry="17.0" fill="#7a7a7e"/>
+<rect x="721.2" y="258.4" width="110.5" height="4.2" rx="0.0" fill="#e0e1e3" stroke="#555" stroke-width="1"/>
+<circle cx="776.5" cy="178.5" r="9" fill="#1a7f37"/><text x="776.5" y="182.5" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">9</text>
+<circle cx="634.9" cy="349.3" r="9" fill="#1a7f37"/><text x="634.9" y="353.3" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">10</text>
+<circle cx="776.5" cy="331.5" r="9" fill="#1a7f37"/><text x="776.5" y="335.5" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">11</text>
+<circle cx="776.5" cy="258.4" r="9" fill="#1a7f37"/><text x="776.5" y="262.4" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">12</text>
+<text x="1088.0" y="73.1" font-size="14" text-anchor="middle" fill="#222" font-weight="bold">側面(チルト可能)</text>
+<polygon points="1054.0,85.0 1063.8,85.0 1108.1,400.6 1098.4,400.6" fill="#d2d3d5" stroke="#555" stroke-width="1.4"/>
+<line x1="1050.9" y1="270.7" x2="1028.5" y2="502.6" stroke="#bbbcbe" stroke-width="8.5" stroke-linecap="round"/>
+<rect x="986.0" y="502.6" width="136.0" height="5.1" rx="0.0" fill="#bbbcbe" stroke="#555" stroke-width="1"/>
+<circle cx="1050.9" cy="270.7" r="8.5" fill="#e6e6e8" stroke="#555"/>
+<circle cx="1093.3" cy="390.4" r="2.5" fill="#222"/>
+<circle cx="1050.9" cy="270.7" r="9" fill="#1a7f37"/><text x="1050.9" y="274.7" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">13</text>
+<circle cx="1093.3" cy="371.7" r="9" fill="#1a7f37"/><text x="1093.3" y="375.7" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">14</text>
+<circle cx="1059.1" cy="93.5" r="9" fill="#1a7f37"/><text x="1059.1" y="97.5" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">15</text>
+<text x="1088.0" y="449.9" font-size="11" text-anchor="middle" fill="#c0392b">厚さ約11.5mm</text>
+<text x="60" y="576" font-size="14" font-weight="bold" fill="#222">部位一覧と根拠(緑=確定 / 橙=未確定)</text>
+<circle cx="70" cy="596" r="9" fill="#d9730d"/><text x="70" y="600" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
+<text x="92" y="600" font-size="12" fill="#222" font-weight="bold">ディスプレイ基板(上部の細いストリップ、カメラ/マイク周辺)</text>
+<text x="92" y="615" font-size="10.5" fill="#555">iFixit, Macworld, MacDailyNews, GadgetGuy の4件。公式修理項目に『カメラ&amp;eDPフレックス』あり</text>
+<circle cx="70" cy="632" r="9" fill="#1a7f37"/><text x="70" y="636" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
+<text x="92" y="636" font-size="12" fill="#222" font-weight="bold">12MPカメラ+上端に2マイク孔</text>
+<text x="92" y="651" font-size="10.5" fill="#555">Apple公式(カメラ/3マイク)。上端のマイク孔は公式画像で確認</text>
+<circle cx="70" cy="668" r="9" fill="#1a7f37"/><text x="70" y="672" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
+<text x="92" y="672" font-size="12" fill="#222" font-weight="bold">大型の薄い金属プレート2枚(ディスプレイ背後)</text>
+<text x="92" y="687" font-size="10.5" fill="#555">6件一致で存在確定。用途(スピーカー室/放熱)は未確定</text>
+<circle cx="70" cy="704" r="9" fill="#1a7f37"/><text x="70" y="708" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">4</text>
+<text x="92" y="708" font-size="12" fill="#222" font-weight="bold">ロジックボード(小型, チン内)+EMIシールド</text>
+<text x="92" y="723" font-size="10.5" fill="#555">5件超一致+Apple修理項目(ロジックボードカバー)。メモリ/SSDは基板直付け</text>
+<circle cx="70" cy="740" r="9" fill="#1a7f37"/><text x="70" y="744" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">5</text>
+<text x="92" y="744" font-size="12" fill="#222" font-weight="bold">冷却ファン2基(基板の左右、ベースは1基)</text>
+<text x="92" y="759" font-size="10.5" fill="#555">6件+Apple公式ファンページ(左右2基・基板の下側)</text>
+<circle cx="70" cy="776" r="9" fill="#d9730d"/><text x="70" y="780" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">6</text>
+<text x="92" y="780" font-size="12" fill="#222" font-weight="bold">スピーカー(基板の横, 6スピーカー)</text>
+<text x="92" y="795" font-size="10.5" fill="#555">Apple修理表『左USB-Cボード カウリング+スピーカークリップ』、9to5Mac。位置は推定</text>
+<circle cx="70" cy="812" r="9" fill="#d9730d"/><text x="70" y="816" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">7</text>
+<text x="92" y="816" font-size="12" fill="#222" font-weight="bold">USB-Cボード(左右)+アダプタボード</text>
+<text x="92" y="831" font-size="10.5" fill="#555">Apple公式修理項目(左右USB-Cボード)。実際の配置は推定</text>
+<circle cx="70" cy="848" r="9" fill="#1a7f37"/><text x="70" y="852" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">8</text>
+<text x="92" y="852" font-size="12" fill="#222" font-weight="bold">銅ヒートパイプ+短いヒートシンク2枚</text>
+<text x="92" y="867" font-size="10.5" fill="#555">iFixit, Macworld, MacRumors, apfelpatient, Wccftech の5件(上位構成のみ)</text>
+<circle cx="70" cy="884" r="9" fill="#1a7f37"/><text x="70" y="888" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">9</text>
+<text x="92" y="888" font-size="12" fill="#222" font-weight="bold">Wi-Fi/Bluetoothアンテナ(Appleロゴ裏が電波の通り道)</text>
+<text x="92" y="903" font-size="10.5" fill="#555">MacRumors, apfelpatient, 9to5Mac, MacDailyNews, Engadget の5件</text>
+<circle cx="70" cy="920" r="9" fill="#1a7f37"/><text x="70" y="924" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">10</text>
+<text x="92" y="924" font-size="12" fill="#222" font-weight="bold">USB-Cポート(背面左下の縦スロット4つ)</text>
+<text x="92" y="939" font-size="10.5" fill="#555">Apple公式画像(2ポート版は2つ)</text>
+<circle cx="70" cy="956" r="9" fill="#1a7f37"/><text x="70" y="960" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">11</text>
+<text x="92" y="960" font-size="12" fill="#222" font-weight="bold">スタンド背面: マグネット式電源コネクタ凹み</text>
+<text x="92" y="975" font-size="10.5" fill="#555">Apple公式画像・仕様(マグネット式電源コネクタ)</text>
+<circle cx="70" cy="992" r="9" fill="#1a7f37"/><text x="70" y="996" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">12</text>
+<text x="92" y="996" font-size="12" fill="#222" font-weight="bold">スタンド上端のフランジ(本体背面と接合)</text>
+<text x="92" y="1011" font-size="10.5" fill="#555">Apple公式画像/部品表(Flange, Stand)</text>
+<circle cx="70" cy="1028" r="9" fill="#1a7f37"/><text x="70" y="1032" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">13</text>
+<text x="92" y="1032" font-size="12" fill="#222" font-weight="bold">ヒンジ(スタンド軸, 外から分解不可)</text>
+<text x="92" y="1047" font-size="10.5" fill="#555">Apple公式画像。VESAは購入時選択(iFixit, Macworld, GadgetGuy)</text>
+<circle cx="70" cy="1064" r="9" fill="#1a7f37"/><text x="70" y="1068" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">14</text>
+<text x="92" y="1068" font-size="12" fill="#222" font-weight="bold">3.5mmヘッドホンジャック(側面下部)</text>
+<text x="92" y="1083" font-size="10.5" fill="#555">Apple公式画像・iFixit『薄すぎて背面に付けられず横向き』</text>
+<circle cx="70" cy="1100" r="9" fill="#1a7f37"/><text x="70" y="1104" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">15</text>
+<text x="92" y="1104" font-size="12" fill="#222" font-weight="bold">一枚ガラス前面+接着構造(筐体はアルミ)</text>
+<text x="92" y="1119" font-size="10.5" fill="#555">iFixit, MacRumors, apfelpatient, macandegg, 9to5Mac の5件</text>
+</svg>
