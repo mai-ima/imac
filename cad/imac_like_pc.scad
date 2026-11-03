@@ -3,7 +3,8 @@
 // 座標: x=幅, y=高さ(本体下端=0), z=奥行(前面ガラス=0, 背面方向+)
 // cutaway=true で背面カバーを外し内部配置を表示
 cutaway = false;
-color_scheme = "silver";   // silver / blue / pink / green
+flip = false;   // true: モデルを180°回して前面を明るく描画(プレビューの光源が固定のため)
+color_scheme = "silver";   // silver / blue / purple / pink / orange / yellow / green (公式7色)
 
 // --- 外形 (iMac 24") ---
 W = 547;                    // 本体幅 (公式 54.7cm)
@@ -20,20 +21,24 @@ stand_w = 130; stand_drop = 85;           // 公式: 本体下端から約85mm�
 foot_d = 147;
 cx = pod_x0;
 
+// 色はApple公式画像(iMac 24" M6 ページ)から実測した値: [名前, 背面, スタンド, チン]
 palette = [
- ["silver", "#d9dbde", "#e6e7ea", "#b9bcc1"],
- ["blue",   "#7ea3d8", "#a9c2e6", "#5f86bd"],
- ["pink",   "#e48aa6", "#f0b2c4", "#c96a89"],
- ["green",  "#8cc59a", "#b2dbbb", "#6da97c"] ];
+ ["silver", "#D2D3D5", "#BBBCBE", "#D7D8DA"],
+ ["blue",   "#5882B2", "#9EB2CD", "#BACEE9"],
+ ["purple", "#8581B4", "#ACA3C0", "#C9C5E6"],
+ ["pink",   "#E16280", "#E7A9B6", "#FFCFDB"],
+ ["orange", "#E5734E", "#F0B498", "#FFCCAF"],
+ ["yellow", "#EFD344", "#DCCB97", "#FDEEB7"],
+ ["green",  "#41965F", "#A2BFAD", "#B9D8C6"] ];
 pal = palette[search([color_scheme],palette)[0]];
-body_c = pal[1]; chin_c = pal[2]; stand_c = pal[3];
+body_c = pal[1]; stand_c = pal[2]; chin_c = pal[3];
 
 module rrect(w,h,t,r){ linear_extrude(t) offset(r) offset(-r) square([w,h]); }
 module box(p,s,c){ color(c) translate(p) cube(s); }
 
 module slab(){
   color(body_c) rrect(W,H,slab_t,corner);
-  color("#f4f4f6") translate([2,H-bezel-panel_h-4,-0.5]) rrect(W-4,panel_h+bezel+4-2,0.6,corner-2); // 前面ガラス(白縁)
+  color("#EDEEF0") translate([2,H-bezel-panel_h-4,-0.5]) rrect(W-4,panel_h+bezel+4-2,0.6,corner-2); // 前面ガラス(白縁)
   color("#0a0a0c") translate([(W-panel_w)/2,chin,-1]) cube([panel_w,panel_h,0.6]);                     // 表示領域
   color(chin_c)  translate([2,2,-1]) rrect(W-4,chin-2,0.6,corner-2);                                   // チン(淡色)
   color("#333") translate([W/2,H-5,-1.1]) cylinder(d=3,h=0.4,$fn=16);                                  // カメラ
@@ -70,4 +75,4 @@ module stand(){
   color(stand_c) translate([W/2-stand_w/2,-stand_drop-6,(slab_t+pod_t)/2-foot_d/2]) cube([stand_w,6,foot_d]);     // 足
 }
 
-rotate([90,0,0]) { slab(); pod_cover(); stand(); if(cutaway) internals(); }
+translate([flip?W:0,0,0]) rotate([0,0,flip?180:0]) rotate([90,0,0]) { slab(); pod_cover(); stand(); if(cutaway) internals(); }

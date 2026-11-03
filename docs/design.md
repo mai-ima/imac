@@ -3,6 +3,7 @@
 目標: 現行最新iMacと同等以下の価格で、同等以上の性能+ゲーム可+拡張性。外観はiMac風、内部は市販品。
 
 ## 1. 調査結果: 現行最新 iMac (2026-11-03時点)
+詳細・出典・非公式情報の検証(5件一致ルール)は **`docs/research.md`** を参照。
 出典は公式(apple.com/jp)を主とし、報道・小売サイトで補完。
 | 項目 | 内容 | 出典 |
 |---|---|---|
@@ -67,7 +68,7 @@
 
 ## 6. 成果物
 - `cad/imac_like_pc.scad` : OpenSCAD 2021.01で構文確認済みの3Dモデル。`cutaway=true` で内部、`color_scheme` で色変更。
-- `render/*.png` : OpenSCADレンダリング(front, back, side, internal, front_blue)。
+- `render/*.png` : OpenSCADレンダリング(front, back, side, internal, lineup_front, lineup_back=公式全7色)。前面は光源の都合で `flip=true` で描画。
 - `concept/blueprint.svg` : 寸法入り設計図。`python3 tools/gen_drawing.py` で再生成。
 
 ## 7. 次のステップ
