@@ -35,3 +35,13 @@
 | 水冷AIO・電源(選定中) | 選定後に各社公式画像 |
 | Noctua NF-A12x25 | Noctua公式画像(429の場合は再試行) |
 | パネル背面ラベル・制御基板 | Panelook画像、Data-Modul |
+
+### Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW)
+- 出典画像(Samsung公式 NZ製品ギャラリー): `https://images.samsung.com/is/image/samsung/p6pim/nz/mz-v9p1t0cw/gallery/nz-990-pro-with-heatsink-nvme-m2-ssd-mz-v9p1t0cw-534155635` 〜 `...-534155640`(番号違いで6枚)
+- **ヒートシンク(上面)**: 黒。**赤いスリット(斜めの平行な溝)が左上寄りに約6本**、右下寄りに別に約4本の小さな赤いスリット群。**「SAMSUNG」**の灰色ワードマークが左下寄り。
+- **裏面ラベル(黒地)**: **「SAMSUNG」**(左上)、**「990 PRO」**(「PRO」が赤)、赤い下線、**「with Heatsink」**、**「PCIe 4.0 NVMe M.2 SSD」**、大きな **「1TB」**、右側に**適合マーク類(UKCA / CE / KC / UL / 認証マーク)**、最下部に小さな注意書き(SAMSUNG PO BOX..., WARNING 等)。
+- **端部**: 左端にM.2固定ネジ用の半円の切り欠き、右端に金メッキ端子。
+
+### ARCTIC Liquid Freezer III Pro 240 (公式仕様・図面)
+- 出典: [仕様書](https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf) / [2D図面](https://support.arctic.de/products/liquid-freezer-iii-pro-240-argb/techdocs/LF3%20Pro%20240%20ARGB%202D%20Drawing.pdf)
+- ラジエーター 277×120×38mm(アルミ)、ファン厚25mm(合計 約63mm)、ポンプ 108.47×Ø91×68.5mm(VRMファン含む)、ホース450mm(外径12.4/内径6.0)、重量1665g、保証6年、AM5対応。ロゴ/刻印の意匠は未確認(画像取得予定)。

@@ -2,27 +2,24 @@
 [OK ] 本体高(上): パネル上端〜本体上端 5.6 >= 壁2.0+隙間1.0
 [OK ] パネル下端が本体内: パネル下端 y=54.3 >= 2.0
 [OK ] 前面スラブ厚: ガラス1.1+OCA0.4+パネル13.3+隙間1.0+背板2.0 = 17.8 <= 18
-ポッド内寸 587.0 x 250.0 x 87.0 mm (幅 x 高 x 奥行)
-[OK ] 収まり board: ASUS ROG STRIX X870-I GAMING WIFI   上端z=4.6/87 右端x=174/587 上端y=172/250
-[OK ] 収まり cooler: Noctua NH-L12S  上端z=83.6/87 右端x=148/587 上端y=155/250
-[OK ] 収まり gpu: ASUS Dual GeForce RTX 5060 Ti 16GB  上端z=53.0/87 右端x=316/587 上端y=243/250
-[OK ] 収まり riser: LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確  上端z=15.0/87 右端x=196/587 上端y=119/250
-[OK ] 収まり psu: SilverStone FX600 Platinum (Flex A  上端z=43.5/87 右端x=404/587 上端y=160/250
-[OK ] 収まり fan: Noctua NF-A12x25 PWM x2 (ポッド排気用)  上端z=28.0/87 右端x=528/587 上端y=124/250
-[OK ] 収まり ctrl_board: 4K eDPコントローラ基板(型番未確定)  上端z=18.0/87 右端x=585/587 上端y=170/250
-[OK ] 収まり ssd: Samsung 990 PRO with Heatsink 1TB   上端z=20.9/87 右端x=164/587 上端y=125/250
-[OK ] 収まり ram: DDR5-6000 CL30 EXPO 32GB (2x16GB)   上端z=48.6/87 右端x=145/587 上端y=150/250
-[OK ] 収まり fan2: Noctua NF-A12x25 PWM x2 (ポッド排気用)  上端z=28.0/87 右端x=528/587 上端y=246/250
-[WARN] cooler-ram: AABB重なり。NH-L12SのRAMクリアランスは未確認(ファン下/上の構成と高さ制限)。ヒートスプレッダ無しの低背DIMMが必要な可能性
-[WARN] cooler-ssd: AABB重なり。SSDは基板ドーターカード上。冷却器との高さ関係は未確認
+ポッド内寸 590.0 x 371.3 x 87.0 mm (幅 x 高 x 奥行)
+[OK ] 収まり board: ASUS ROG STRIX X870-I GAMING WIFI   上端z=4.6/87 縁距離33→許容奥行53(要8)
+[OK ] 収まり cooler: ARCTIC Liquid Freezer III Pro 240   上端z=82.1/87 縁距離68→許容奥行87(要85)
+[OK ] 収まり radiator: ARCTIC Liquid Freezer III Pro 240   上端z=66.0/87 縁距離47→許容奥行71(要69)
+[OK ] 収まり gpu: ASUS Dual GeForce RTX 5060 Ti 16GB  上端z=53.0/87 縁距離53→許容奥行78(要56)
+[OK ] 収まり riser: LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確  上端z=15.0/87 縁距離70→許容奥行87(要18)
+[OK ] 収まり psu: Corsair SF750 (2024, SFX 750W, ATX  上端z=66.5/87 縁距離68→許容奥行87(要70)
+[OK ] 収まり fan: Noctua NF-A12x25 PWM x2 (ポッド排気用)  上端z=28.0/87 縁距離25→許容奥行44(要31)
+[OK ] 収まり ctrl_board: 4K eDPコントローラ基板(型番未確定)  上端z=18.0/87 縁距離10→許容奥行24(要21)
+[OK ] 収まり ssd: Samsung 990 PRO with Heatsink 1TB   上端z=20.9/87 縁距離133→許容奥行87(要24)
+[OK ] 収まり ram: DDR5-6000 CL30 EXPO 32GB (2x16GB)   上端z=48.6/87 縁距離97→許容奥行87(要52)
+[WARN] cooler-ram: AABB重なり。AIOポンプ(ARCTIC LF III Pro, Ø91)とDIMMの間隔。ポンプ外形とホース口の向き・DIMMの高さを実物で要確認
+[WARN] cooler-ssd: AABB重なり。SSD(基板のドーターカード上)とポンプの位置関係。ドーターカードの高さ・位置は未確認
 [OK ] 干渉なし(許容組合せを除く): 全組合せ確認済
-[OK ] カバー側余裕 cooler: 3.4 mm (>=3.0)
-[OK ] カバー側余裕 gpu: 34.0 mm (>=3.0)
-[OK ] カバー側余裕 psu: 43.5 mm (>=3.0)
-[OK ] 電源容量(余裕30%以上): CPU PPT120+GPU TGP180+他45+パネル36 = 381 W <= 600W x 0.7 = 420W (使用率 64%)
-[OK ] PCIe補助電源: GPU 8ピン x1 <- FX600 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認)
-[OK ] パネル電源: コントローラ基板 12V <- FX600 の 4ピンMolex/SATA(パネル VDD 10V は基板が生成。型番一致が条件)
-[OK ] 排気温度上昇: 発熱383W / 風量112 m3/h(ファン2基、自由流102/基の55%仮定) → ΔT=10.2K (<=20K目標)
-[注意] CPUクーラー: 9800X3D(BIOSでPPT 120W制限)に対し NH-L12S の公式定格は未確認。ゲーム負荷(約50〜80W)を前提とした設計
+[OK ] 電源容量(余裕30%以上): CPU PPT162+GPU TGP180+他45+パネル36 = 423 W <= 750W x 0.7 = 525W (使用率 56%)
+[OK ] PCIe補助電源: GPU 8ピン x1 <- SF750 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認。ケーブル400mm)
+[OK ] パネル電源: コントローラ基板 12V <- SF750 のSATA/Molex(ケーブル要確認)(パネル VDD 10V は基板が生成。型番一致が条件)
+[OK ] 排気温度上昇: 発熱429W / 風量200 m3/h(ケースファン1基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT=6.4K (<=20K目標)
+[注意] CPUクーラー: 9800X3D(BIOSでPPT 162W制限)に対し NH-L12S の公式定格は未確認。ゲーム負荷(約50〜80W)を前提とした設計
 
 総合: すべて満たす(ただし assumed/retail 項目は実物確認が必要)

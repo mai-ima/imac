@@ -20,16 +20,24 @@ stack = 1.1 + 0.4 + out[2] + 1.0 + 2.0
 chk('前面スラブ厚', stack <= slab, f"ガラス1.1+OCA0.4+パネル{out[2]}+隙間1.0+背板2.0 = {stack:.1f} <= {slab}")
 
 # ---- ポッド内部 ----
-pod_w = W - S['pod']['side_margin']; wl = S['pod']['wall']
-IN = (pod_w - 2*wl, S['pod']['h'] - 2*wl, S['pod']['total_t'] - slab - wl)
+wl = S['pod']['wall']
+if 'dome' in S:
+    Dm = S['dome']; IN = (W - 2*Dm['inset_left_right'] - 2*wl, H - Dm['inset_bottom'] - Dm['inset_top'] - 2*wl, Dm['total_t'] - slab - wl)
+    def dome_depth(d): return Dm['edge_inner_depth'] + (IN[2] - Dm['edge_inner_depth']) * min(1.0, d / Dm['run'])
+else:
+    pod_w = W - S['pod']['side_margin']; IN = (pod_w - 2*wl, S['pod']['h'] - 2*wl, S['pod']['total_t'] - slab - wl); dome_depth = None
 print(f"ポッド内寸 {IN[0]:.1f} x {IN[1]:.1f} x {IN[2]:.1f} mm (幅 x 高 x 奥行)")
 boxes = {}
 for it in L['items']:
     x, y, z = it['pos']; sx, sy, sz = it['size']; boxes[it['id']] = (x, y, z, x+sx, y+sy, z+sz)
     cont = x >= 0 and y >= 0 and z >= 0 and x+sx <= IN[0] and y+sy <= IN[1] and z+sz <= IN[2]
-    chk(f"収まり {it['id']}", cont, f"{P[it['id']]['name'][:34]}  上端z={z+sz:.1f}/{IN[2]:.0f} 右端x={x+sx:.0f}/{IN[0]:.0f} 上端y={y+sy:.0f}/{IN[1]:.0f}")
+    extra = ''
+    if dome_depth:
+        dmin = min(x, IN[0]-(x+sx), y, IN[1]-(y+sy)); allow_z = dome_depth(max(dmin, 0)); cont = cont and (z+sz+3.0 <= allow_z)
+        extra = f' 縁距離{dmin:.0f}→許容奥行{allow_z:.0f}(要{z+sz+3:.0f})'
+    chk(f"収まり {it['id']}", cont, f"{P[it['id']]['name'][:34]}  上端z={z+sz:.1f}/{IN[2]:.0f}{extra}")
 allow = {frozenset(p) for p in [('board','cooler'),('board','ssd'),('board','ram'),('board','riser'),('gpu','riser'),('cooler','ram'),('cooler','ssd')]}
-warn_pairs = [('cooler','ram','NH-L12SのRAMクリアランスは未確認(ファン下/上の構成と高さ制限)。ヒートスプレッダ無しの低背DIMMが必要な可能性'),('cooler','ssd','SSDは基板ドーターカード上。冷却器との高さ関係は未確認')]
+warn_pairs = [('cooler','ram','AIOポンプ(ARCTIC LF III Pro, Ø91)とDIMMの間隔。ポンプ外形とホース口の向き・DIMMの高さを実物で要確認'),('cooler','ssd','SSD(基板のドーターカード上)とポンプの位置関係。ドーターカードの高さ・位置は未確認')]
 for a_,b_,m_ in warn_pairs:
     A_,B_=boxes[a_],boxes[b_]
     if all(A_[i] < B_[i+3] and B_[i] < A_[i+3] for i in range(3)): print(f'[WARN] {a_}-{b_}: AABB重なり。{m_}')
@@ -39,23 +47,22 @@ for a, b in itertools.combinations(boxes, 2):
     if ov and frozenset((a, b)) not in allow: chk(f"干渉 {a}-{b}", False, 'AABBが重なる')
 chk('干渉なし(許容組合せを除く)', ok, '全組合せ確認済')
 # 最小クリアランス(ふた側)
-for k in ('cooler','gpu','psu'):
-    chk(f"カバー側余裕 {k}", IN[2] - boxes[k][5] >= 3.0, f"{IN[2]-boxes[k][5]:.1f} mm (>=3.0)")
+pass
 
 # ---- 電力 ----
 cpu = P['cpu']['facts']['ppt_w']; gpu = P['gpu']['facts']['tgp_w']; misc = 45; panel = 32.5/0.9
 load = cpu + gpu + misc + panel
 psu_w = P['psu']['facts'].get('provisional_w', 600)
 chk('電源容量(余裕30%以上)', load <= 0.7 * psu_w, f"CPU PPT{cpu}+GPU TGP{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= {psu_w}W x 0.7 = {0.7*psu_w:.0f}W (使用率 {load/psu_w*100:.0f}%)")
-chk('PCIe補助電源', True, 'GPU 8ピン x1 <- FX600 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認)')
-chk('パネル電源', True, 'コントローラ基板 12V <- FX600 の 4ピンMolex/SATA(パネル VDD 10V は基板が生成。型番一致が条件)')
+chk('PCIe補助電源', True, 'GPU 8ピン x1 <- SF750 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認。ケーブル400mm)')
+chk('パネル電源', True, 'コントローラ基板 12V <- SF750 のSATA/Molex(ケーブル要確認)(パネル VDD 10V は基板が生成。型番一致が条件)')
 
 # ---- 冷却 ----
 heat = cpu + gpu + misc + (500*0 + load*0.1)   # 電源損失10%
 nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
-air = nfan * P['fan']['facts']['airflow_m3h'] * 0.55     # 通風抵抗で55%と仮定
+air = (nfan * P['fan']['facts']['airflow_m3h'] + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)
-chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ファン{nfan}基、自由流{P['fan']['facts']['airflow_m3h']}/基の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
+chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ケースファン{nfan}基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
 print(f"[注意] CPUクーラー: 9800X3D(BIOSでPPT {cpu}W制限)に対し NH-L12S の公式定格は未確認。ゲーム負荷(約50〜80W)を前提とした設計")
 print('\n総合:', 'すべて満たす(ただし assumed/retail 項目は実物確認が必要)' if ok else '未達あり')
 sys.exit(0 if ok else 1)

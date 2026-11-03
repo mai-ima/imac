@@ -95,24 +95,29 @@
  },
  "cooler": {
   "id": "cooler",
-  "name": "Noctua NH-L12S",
-  "maker": "Noctua",
+  "name": "ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A, 非RGB) — ポンプ一体型ブロック",
+  "maker": "ARCTIC",
   "dims": [
-   146,
-   128,
-   70
+   108.47,
+   91.0,
+   68.5
   ],
-  "status": "retail",
+  "status": "official",
   "facts": {
-   "weight_g": "390(ファン無)/520(ファン付)",
-   "fan": "120x15 NF-A12x15",
-   "am5": "オフセットバー7mm(小売記載)",
-   "note": "寸法の軸の割当は小売でも不統一"
+   "pump": "108.47 x Ø91.0 x 68.5mm (VRMファン込み)",
+   "tube": "450mm, OD12.4/ID6.0",
+   "weight_g": 1665,
+   "warranty": "6年",
+   "am5": "AM5/AM4/LGA1851/1700対応",
+   "pump_rpm": "800-2800",
+   "pump_current": "0.35A 12V",
+   "vrm_fan": "60mm 400-2500rpm"
   },
   "sources": [
-   "https://galaxus.de/en/s1/product/noctua-nh-l12s-70-mm-cpu-coolers-6817433"
+   "https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf",
+   "https://support.arctic.de/products/liquid-freezer-iii-pro-240-argb/techdocs/LF3%20Pro%20240%20ARGB%202D%20Drawing.pdf"
   ],
-  "note": "全高70mmの基準面(CPU上面か基板か)・RAMクリアランスは未確認。9800X3D 162W PPTに対する公式の冷却保証は無く、ゲーム負荷(50〜80W)前提"
+  "note": "ポンプ高さの基準面(基板面かCPU上面か)は図面に無く未確認 → 安全側に基板面+CPU上面9mm+68.5で判定"
  },
  "gpu": {
   "id": "gpu",
@@ -159,25 +164,29 @@
  },
  "psu": {
   "id": "psu",
-  "name": "SilverStone FX600 Platinum (Flex ATX 600W)",
-  "maker": "SilverStone",
+  "name": "Corsair SF750 (2024, SFX 750W, ATX 3.1/12V-2x6)",
+  "maker": "Corsair",
   "dims": [
-   150,
-   81.5,
-   40.5
+   125,
+   100,
+   63.5
   ],
   "status": "retail",
   "facts": {
-   "eff": "80PLUS(Cybenetics) Platinum",
-   "rail": "12V 単一レール 50A",
-   "fan": "40mm",
-   "conn": "PCIe 6+2 x2, EPS(PTは固定/PMはモジュラー 要確認), 12V-2x6の有無は未確認",
+   "watts": 750,
+   "eff": "80PLUS Platinum",
+   "form": "SFX 125(W)x63.5(H)x100(L)",
+   "conn": "24pin / EPS 4+4 x2 / PCIe 6+2 x2 / 12V-2x6 x1(小売記載)",
+   "cable_mm": "24pin 300, EPS 400, PCIe 400, 12V-2x6 400(小売記載、公式未確認)",
+   "warranty": "7年",
+   "fan": "92mm FDB(ゼロRPM)",
    "provisional_w": 750
   },
   "sources": [
-   "https://smallformfactor.net/articles/first-look-silverstone-fx600-platinum-flex-atx-power-supply/"
+   "https://www.corsair.com/us/en/p/psu/cp-9020284-na/sf-series-sf750-fully-modular-80-plus-platinum-sfx-power-supply-cp-9020284-na",
+   "https://assets.corsair.com/image/upload/corsairmedia/sys_master/productcontent/SF_PLATINUM_User_Manual.pdf"
   ],
-  "note": "PPT/TGPを制限しない方針のため、FX600(600W)は余裕30%に不足。750W級SFX/SFX-L/ATXを選定中(調査中)。値は暫定"
+  "note": "Corsair公式は403(UA付きでも不可)で公式値は未取得。第二候補: Seasonic FOCUS GX-750 ATX3.1(150x85x140, 保証10年。ドーム最大深さ87mmに入らないため不採用)。ケーブルが短い(300〜400mm)のでPSUは基板の近くに置く必要がある"
  },
  "fan": {
   "id": "fan",
@@ -201,7 +210,7 @@
  },
  "ssd": {
   "id": "ssd",
-  "name": "Samsung 990 PRO with Heatsink 1TB (M.2 2280)",
+  "name": "Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW)",
   "maker": "Samsung",
   "dims": [
    80.15,
@@ -265,6 +274,25 @@
   },
   "sources": [
    "https://techpowerup.com/review/noctua-nf-a12x25-pwm/single-page.html"
+  ]
+ },
+ "radiator": {
+  "id": "radiator",
+  "name": "ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12 Pro x2",
+  "maker": "ARCTIC",
+  "dims": [
+   277,
+   120,
+   63
+  ],
+  "status": "official",
+  "facts": {
+   "radiator": "277 x 120 x 38",
+   "fan": "P12 Pro x2, 25mm厚, 600-3000rpm, 131m3/h, 6.9mmH2O",
+   "total_thickness": 63
+  },
+  "sources": [
+   "https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf"
   ]
  }
 }

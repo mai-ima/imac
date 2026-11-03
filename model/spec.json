@@ -85,11 +85,11 @@
  },
  "dome": {
   "_doc": "iMac Pro/2012風の背面ドーム: 縁は薄く(slab+数mm)、中央に向かって傾斜して最大厚に達する。base=ドームの外形(スラブ背面上の矩形)。run=縁から最大厚に達するまでの水平距離。d0=縁での内部有効奥行。",
-  "inset_left_right": 30,
-  "inset_bottom": 36,
-  "inset_top": 28,
+  "inset_left_right": 12,
+  "inset_bottom": 24,
+  "inset_top": 14,
   "corner_r": 50,
-  "run": 70,
+  "run": 60,
   "edge_inner_depth": 12,
   "total_t": 108
  }

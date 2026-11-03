@@ -13,7 +13,13 @@
 | CPU | **AMD Ryzen 7 9800X3D** | TDP120W/PPT162W/Tjmax95℃/8C16T/L3 96MB(第三者一致、AMD公式は取得不可) | [BuildCores](https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D) |
 | CPUクーラー | **Noctua NH-L12S** | 128×146×70mm、390g(ファン無)。軸の割当と基準面は未確認(小売一致) | [Galaxus](https://galaxus.de/en/s1/product/noctua-nh-l12s-70-mm-cpu-coolers-6817433) |
 
-## 決定(v5, `model/parts.json` / `layout.json` に反映済み)
+## 決定 v6 (最新。ケース拡張の許可・性能無制限の方針)
+- **CPU冷却**: AMD公式が液冷推奨のため **ARCTIC Liquid Freezer III Pro 240**(ラジエーター277×120×38+ファン25=63mm、ポンプ108.47×Ø91×68.5mm、保証6年、AM5対応、すべて公式仕様書/2D図面で確認)。NH-L12Sは不採用。
+- **電源**: **Corsair SF750 (SFX 750W)**(ATX 3.1/12V-2x6、125×63.5×100mm、保証7年。公式は403で、値は小売情報)。GX-750(ATX, 保証10年, 150×85×140mm)は高さ85mmがドーム最大深さ87mmに入らず不採用。
+- **ポッド → 背面ドーム**: ほぼ背面全面(ドーム外形 596×約377mm、最大総厚108mm、縁の傾斜60mm)。配置は `tools/layout_search.py` の探索解(`model/layout.json`)。
+- **fitcheck(傾斜考慮)**: 全部品が成立(総合OK)。ΔT 6.4K(ラジエーターファン含む)、電力使用率56%(性能無制限)。警告は2件(ポンプとDIMM/SSDの位置関係)。
+
+## (旧) 決定 v5
 - 高性能案(案B)を採用: **9800X3D + NH-L12S**、ポッド総厚 **108mm**、ポッド高 **256mm**(GPU長229mmのため)。薄型案(案A)は代替。
 - **性能は制限しない**(ユーザー方針)。電源は最悪ケース(CPU PPT162W+GPU TGP180W+他≒423W)に対し余裕30%以上 → 750W級へ変更(調査中)。CPU冷却はAMD公式の『液冷推奨』に従い240mm AIOを調査中(NH-L12Sは不採用方向)。
 - **ポッド排気ファンを2基(NF-A12x25)**に変更(1基だと排気ΔT 22.8Kで基準超過、2基で10.2K)。
