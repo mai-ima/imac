@@ -83,7 +83,6 @@
    "tjmax_c": 95,
    "cores": "8C/16T",
    "l3": "96MB",
-   "bios_ppt_limit_w": 120,
    "chipsets": "A620/X670E/X670/B650E/B650/X870E/X870/B840/B850",
    "pcie": "PCIe 5.0 native",
    "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)"
@@ -92,7 +91,7 @@
    "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
    "https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D"
   ],
-  "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、液冷推奨。PPT162Wは第三者値。設計ではBIOSでPPT 120Wに制限し、空冷(NH-L12S)の成否は実機温度確認が必須"
+  "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、**液冷推奨**。PPT162Wは第三者値。性能は制限せず、フル負荷でTjmax以内に収まる冷却(240mm AIO等)を選定する"
  },
  "cooler": {
   "id": "cooler",
@@ -172,12 +171,13 @@
    "eff": "80PLUS(Cybenetics) Platinum",
    "rail": "12V 単一レール 50A",
    "fan": "40mm",
-   "conn": "PCIe 6+2 x2, EPS(PTは固定/PMはモジュラー 要確認), 12V-2x6の有無は未確認"
+   "conn": "PCIe 6+2 x2, EPS(PTは固定/PMはモジュラー 要確認), 12V-2x6の有無は未確認",
+   "provisional_w": 750
   },
   "sources": [
    "https://smallformfactor.net/articles/first-look-silverstone-fx600-platinum-flex-atx-power-supply/"
   ],
-  "note": "型番PT/PMの違い・ケーブル長・保証は未確認"
+  "note": "PPT/TGPを制限しない方針のため、FX600(600W)は余裕30%に不足。750W級SFX/SFX-L/ATXを選定中(調査中)。値は暫定"
  },
  "fan": {
   "id": "fan",

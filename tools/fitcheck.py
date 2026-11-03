@@ -43,9 +43,9 @@ for k in ('cooler','gpu','psu'):
     chk(f"カバー側余裕 {k}", IN[2] - boxes[k][5] >= 3.0, f"{IN[2]-boxes[k][5]:.1f} mm (>=3.0)")
 
 # ---- 電力 ----
-cpu = P['cpu']['facts'].get('bios_ppt_limit_w', P['cpu']['facts']['ppt_w']); gpu = P['gpu']['facts']['tgp_w']; misc = 45; panel = 32.5/0.9
+cpu = P['cpu']['facts']['ppt_w']; gpu = P['gpu']['facts']['tgp_w']; misc = 45; panel = 32.5/0.9
 load = cpu + gpu + misc + panel
-psu_w = 600
+psu_w = P['psu']['facts'].get('provisional_w', 600)
 chk('電源容量(余裕30%以上)', load <= 0.7 * psu_w, f"CPU PPT{cpu}+GPU TGP{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= {psu_w}W x 0.7 = {0.7*psu_w:.0f}W (使用率 {load/psu_w*100:.0f}%)")
 chk('PCIe補助電源', True, 'GPU 8ピン x1 <- FX600 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認)')
 chk('パネル電源', True, 'コントローラ基板 12V <- FX600 の 4ピンMolex/SATA(パネル VDD 10V は基板が生成。型番一致が条件)')

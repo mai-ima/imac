@@ -1,5 +1,5 @@
 {
- "_doc": "iMac風一体型ゲーミングPC 共通仕様(単位mm)。部品は model/parts.json、配置は model/layout.json。",
+ "_doc": "外形・ドーム・色の共通仕様(単位mm)。部品は parts.json、配置は layout.json。",
  "panel_size": 27,
  "panels": {
   "24": {
@@ -82,5 +82,15 @@
    5.968,
    13.668
   ]
+ },
+ "dome": {
+  "_doc": "iMac Pro/2012風の背面ドーム: 縁は薄く(slab+数mm)、中央に向かって傾斜して最大厚に達する。base=ドームの外形(スラブ背面上の矩形)。run=縁から最大厚に達するまでの水平距離。d0=縁での内部有効奥行。",
+  "inset_left_right": 30,
+  "inset_bottom": 36,
+  "inset_top": 28,
+  "corner_r": 50,
+  "run": 70,
+  "edge_inner_depth": 12,
+  "total_t": 108
  }
 }
