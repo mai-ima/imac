@@ -2,11 +2,15 @@
 
 ## 構成(単一の出所 → 各ツール)
 ```
-model/spec.json ──┬─> blender/build_imac_pc.py  ─> Cycles画像 / imac_pc.blend / imac_pc.glb   (写実レンダリングの本流)
-                  ├─> cad/imac_like_pc.scad      (OpenSCAD: 寸法確認・STL出力用の簡易版)
-                  └─> viewer/index.html          (Three.js: ブラウザで回転・分解・動作表示)
+model/spec.json   (外形・色)
+model/parts.json  (実在部品DB: 寸法・根拠・確認状況)
+model/layout.json (ポッド内の配置)
+   ├─> tools/fitcheck.py            (収まり・干渉・電力・風量の機械チェック)
+   └─> blender/build_imac_pc.py ─> Cycles画像 / imac_pc.blend / viewer/imac_pc.glb
+                                      └─> viewer/index.html (GLBを読み込むThree.jsビューア)
+cad/imac_like_pc.scad は旧設計の簡易版(未更新)
 ```
-- 寸法・色・部品名は `model/spec.json` に集約。Blender版はこのファイルを直接読む。OpenSCAD/Three.js版は同じ値を定数で持つ(27型: 本体616.7x413.7mm)。
+- 寸法・色は `model/spec.json`、部品は `parts.json`、配置は `layout.json`。Blender版はこれらを直接読み、ビューアはBlenderが書き出したGLBを読み込むため、**モデルの出所はBlenderに一本化**。
 - 座標系は設計図の (x右, y上, z手前)。Blenderでは (x, -z, y) に変換。単位はmm(1 Blender単位=1mm)。
 
 ## 実行方法 (Blender 5.0 の bpy モジュール)
