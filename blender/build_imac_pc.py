@@ -227,6 +227,8 @@ def slotted_wall(name, y):
     bm = w.modifiers.new('slots', 'BOOLEAN'); bm.object = cut; bm.operation = 'DIFFERENCE'; bm.solver = 'MANIFOLD'
     cut.hide_render = True; BODY_OBJS.append(cut)
 slotted_wall('pod_top', POD_H - WALL); slotted_wall('pod_bottom', 0)
+_io = box('pod_io_cutter', 134 + 2, WALL + 2, 44.45, X0 + 4 + 23.5, -1, -SLAB - 3 - 1.6 - 44.45, None, body=False); _io.hide_render = True; BODY_OBJS.append(_io)
+_bm = bpy.data.objects['pod_bottom'].modifiers.new('io', 'BOOLEAN'); _bm.object = _io; _bm.operation = 'DIFFERENCE'; _bm.solver = 'MANIFOLD'
 # 背面カバー(吸気メッシュ: 透過マスク)
 vents = [(WALL + 196 + 60, WALL + 18 + 72, 48), (WALL + 405 + 60, WALL + 20 + 60, 56)]
 # 背面カバー: 吸気メッシュは実形状の穴(ブール演算)
@@ -246,7 +248,6 @@ for cx_, cy_, R_ in vents:
 mec = bpy.data.meshes.new('cover_holes'); bmc.to_mesh(mec); bmc.free()
 cut = bpy.data.objects.new('cover_holes', mec); cut.hide_render = True; link(cut)
 bmo = cover.modifiers.new('mesh', 'BOOLEAN'); bmo.object = cut; bmo.operation = 'DIFFERENCE'; bmo.solver = 'MANIFOLD'
-for i in range(4): box(f'usbc_slot_{i}', 4, 12, 0.6, -POD_W / 2 + 45 + i * 14, 28, -POD_T - 0.3, M['dark'], bevel=1.5)
 # 内部の床(前面スラブ背面)
 box('inner_floor', IN_W, POD_H - 2 * WALL, 0.3, X0, Y0, -SLAB - 0.3, M['inner'])
 
@@ -291,9 +292,10 @@ LAY = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'model', 'layout.js
 PARTS = json.load(open(os.path.join(ROOT, 'model', 'parts.json')))
 def lp(k): return LAY[k]['pos']
 
-# --- Mini-ITX 基板: GIGABYTE B650I AX (170x170) ---
+# --- Mini-ITX 基板: GIGABYTE B650I AX (170x170)。公式マニュアルp.4のレイアウト図を反時計回り90°で配置(I/Oが下向き) ---
+BL = json.load(open(os.path.join(ROOT, 'model', 'b650iax_layout.json')))
 bx, by, bz = lp('board')
-pcbp = os.path.join(TEXDIR, 'pcb_board.png'); pcb_tex(pcbp, 170, 170, 7, '#15171b', '#2c3038', 'B650I AX  mini-ITX 170x170')
+pcbp = os.path.join(TEXDIR, 'pcb_board.png'); pcb_tex(pcbp, 170, 170, 7, '#15171b', '#2c3038', 'B650I AX')
 mpcb = img_material('pcb_board', pcbp, rough=.5)
 ibox('board_pcb', 170, 170, 1.6, bx, by, bz, mpcb, uv=True)
 def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid):
@@ -301,81 +303,107 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid):
     for _ in range(n * 3):
         if k >= n: break
         x, y = x0 + rr.random() * w, y0 + rr.random() * h
-        if any(a[0] < x < a[0] + a[2] and a[1] < y < a[1] + a[3] for a in avoid): continue
+        if any(a_[0] < x < a_[0] + a_[2] and a_[1] < y < a_[1] + a_[3] for a_ in avoid): continue
         r = bmesh.ops.create_cube(bmm, size=1.0); vs = r['verts']
         sx, sy = (1.6, .8) if rr.random() < .5 else (.8, 1.6)
         bmesh.ops.scale(bmm, vec=(sx, sy, .5), verts=vs); bmesh.ops.translate(bmm, vec=(x, y, zl + .25), verts=vs); k += 1
     bmm.to_mesh(me); bmm.free(); ob = bpy.data.objects.new(name, me); me.materials.append(M['smd'])
     for v in me.vertices: v.co = V(X0 + v.co.x, Y0 + v.co.y, Z0 - v.co.z)
     return link(ob)
-smd_cloud('board_smd', 700, bx + 2, by + 2, 166, 166, bz + 1.6, 11, [(bx, by, 24, 170), (bx + 30, by + 36, 110, 104), (bx + 10, by + 140, 150, 28)])
-# 後部I/O(左壁面に向く)
-ibox('io_shield', 16, 158, 44, bx - 1.5, by + 6, bz + 1.6, M['steel'])
-port_defs = [('dp', 12, 34, 17, 8), ('hdmi', 32, 34, 15, 6.5), ('usbc', 52, 34, 9, 3.6), ('usba', 68, 38, 14.5, 7), ('usba', 88, 38, 14.5, 7),
-             ('usba', 68, 26, 14.5, 7), ('usba', 88, 26, 14.5, 7), ('rj45', 112, 28, 16, 13.5), ('sma', 142, 38, 7, 7), ('sma', 142, 24, 7, 7),
-             ('audio', 20, 15, 7, 7), ('audio', 34, 15, 7, 7), ('audio', 48, 15, 7, 7)]
+smd_cloud('board_smd', 800, bx + 2, by + 2, 166, 166, bz + 1.6, 11, [(bx + 20, by, 140, 30), (bx + 10, by + 30, 100, 110), (bx + 6, by + 136, 140, 20), (bx + 12, by + 158, 55, 12), (bx + 156, by + 40, 12, 95), (bx + 68, by + 112, 82, 26)])
+# --- 後部I/O: 下向き(下壁に露出)。ブロックのx範囲は公式図、ブロック内の上下順は未確認 ---
+IOX = BL['io_blocks_x']
+io_x0, io_x1 = IOX['DP_HDMI_1'][0] - 2, IOX['AUDIO'][1] + 3
+ibox('io_shield', io_x1 - io_x0, 30.5, 44.45, bx + io_x0, by - 1.5, bz + 1.6, M['steel'])
 mblue = principled('usb_blue', '#2a6df0', 0, .5); mred = principled('usb_red', '#d11a2a', 0, .5)
-for i, (k, y, z, w, h) in enumerate(port_defs):
-    px = -WALL - 0.3      # 左壁の外面
-    zc_ = bz + 1.6 + z
-    if k == 'sma': icyl(f'io_sma{i}', 3.2, 5, 'x', px - 2, by + 6 + y, zc_, M['gold'], 20); continue
-    if k == 'audio': icyl(f'io_audio{i}', 3.4, 2, 'x', px - 1, by + 6 + y, zc_, M['rubber'], 24); icyl(f'io_audio_in{i}', 1.7, 2.2, 'x', px - 1.1, by + 6 + y, zc_, M['dark'], 16); continue
-    ibox(f'io_{k}{i}_shell', 1.4, w, h, px - 1.4, by + 6 + y - w / 2, zc_ - h / 2, M['steel'], .2)
-    inner = {'usba': mred if (k == 'usba' and y > 80 and z > 30) else mblue, 'rj45': M['alu'], 'hdmi': M['dark'], 'dp': M['dark'], 'usbc': M['dark']}[k]
-    ibox(f'io_{k}{i}_hole', 1.5, w - 3, h - 3, px - 1.5, by + 6 + y - (w - 3) / 2, zc_ - (h - 3) / 2, inner)
-# VRM(ソケットとI/Oの間。低背: 9mm)
-ibox('vrm_base', 12, 94, 2.5, 20, by + 38, bz + 1.6, M['alublack'], .3)
-for i in range(14): ibox(f'vrm_fin{i}', 12, 3.6, 6, 20, by + 38 + i * 6.8, bz + 4.1, M['alublack'], .3)
-for i in range(5): ibox(f'choke{i}', 7, 7, 5, 34, by + 42 + i * 18, bz + 1.6, M['cap'], .4)
-for i in range(4): icyl(f'cap{i}', 3.15, 8, 'z', 148, by + 50 + i * 17, bz + 1.6 + 4, M['steel'], 20)
-# AM5 ソケット+CPU(Ryzen 5 9600X)。クーラー中心の直下
+def port(name, kind, xc, zc, w, h, inner=None):
+    py_ = -WALL - 0.3
+    if kind == 'sma': icyl(name, 3.2, 5, 'y', bx + xc, py_ - 2, bz + 1.6 + zc, M['gold'], 20); return
+    if kind == 'audio': icyl(name, 3.4, 2, 'y', bx + xc, py_ - 1, bz + 1.6 + zc, M['rubber'], 24); icyl(name + '_in', 1.7, 2.2, 'y', bx + xc, py_ - 1.1, bz + 1.6 + zc, M['dark'], 16); return
+    if kind == 'button': icyl(name, 2.5, 2, 'y', bx + xc, py_ - 1, bz + 1.6 + zc, M['gold'], 16); return
+    ibox(name + '_shell', w, 1.4, h, bx + xc - w / 2, py_ - 1.4, bz + 1.6 + zc - h / 2, M['steel'], .2)
+    ibox(name + '_hole', w - 3, 1.5, h - 3, bx + xc - (w - 3) / 2, py_ - 1.5, bz + 1.6 + zc - (h - 3) / 2, inner or M['dark'])
+cx_ = lambda k: (IOX[k][0] + IOX[k][1]) / 2
+port('io_dp', 'dp', cx_('DP_HDMI_1'), 10, 17, 8); port('io_hdmi', 'hdmi', cx_('DP_HDMI_1'), 24, 15, 6.5)
+port('io_usb2_a', 'usba', cx_('USB20'), 9, 14.5, 7); port('io_usb2_b', 'usba', cx_('USB20'), 22, 14.5, 7)
+port('io_usb3_a', 'usba', cx_('U32_20'), 9, 14.5, 7, mblue); port('io_usb3_b', 'usba', cx_('U32_20'), 22, 14.5, 7)
+port('io_qflash', 'button', IOX['QFLASH'][0], 6, 5, 5)
+port('io_rj45', 'rj45', cx_('U32G2_LAN_U32G2C'), 12, 16, 13.5, M['alu']); port('io_usb_gen2', 'usba', cx_('U32G2_LAN_U32G2C'), 29, 14.5, 7, mred); port('io_usbc', 'usbc', cx_('U32G2_LAN_U32G2C'), 40, 9, 3.6)
+port('io_sma0', 'sma', 131, 38, 7, 7); port('io_sma1', 'sma', 138, 38, 7, 7)
+for k_, z_ in enumerate((8, 22, 36)): port(f'io_audio{k_}', 'audio', cx_('AUDIO'), z_, 7, 7)
+# --- 公式図で位置が確定している部品 ---
+ibox('eps8', 8, 18, 11, bx + 2, by + 2.5, bz + 1.6, M['dark'], .3)
+ibox('cpu_fan_hdr', 9, 5.75, 6, bx + 2, by + 21.75, bz + 1.6, M['white'], .3)
+ibox('atx24', 48.75, 8, 15, bx + 13.75, by + 160.5, bz + 1.6, M['white'], .4)
+for i, (y0_, y1_) in enumerate(BL['dimm_slots']['y']):
+    ibox(f'dimm_slot{i}', 138, y1_ - y0_, 8, bx + 6, by + y0_, bz + 1.6, M['plastic'], .3)
+    ibox(f'dimm_latch{i}', 3, y1_ - y0_ + .2, 3, bx + 3, by + y0_ - .1, bz + 1.6, M['dark'])
+ibox('pcie_x16', 8.5, 89, 11, bx + 159, by + 42.5, bz + 1.6, M['dark'], .3); ibox('pcie_gold', 2, 60, .4, bx + 162, by + 57, bz + 12.7, M['gold'])
+ibox('m2_slot', 8, 11, 3, bx + 141, by + 119.75, bz + 1.6, M['dark'])
+ibox('chipset_base', 20, 20, 6, bx + 129.5, by + 89, bz + 1.6, M['alublack'], .4)
+for i in range(5): ibox(f'chipset_fin{i}', 20, 2.2, 3, bx + 129.5, by + 90.5 + i * 3.6, bz + 7.6, M['alublack'], .2)
+ibox('super_io', 13, 13, 1.4, bx + 136, by + 56, bz + 1.6, M['chip'])
+for i, (y0_, y1_) in enumerate(BL['sata']['y']): ibox(f'sata{i}', 10, y1_ - y0_, 7, bx + 100, by + y0_, bz + 1.6, M['dark'], .3)
+icyl('cmos', 10, 3.2, 'z', bx + 122, by + 34, bz + 3.2, M['steel'], 32)
+ibox('wifi_m2', 22, 18, 2.5, bx + 127, by + 6, bz + 1.6, principled('wifi_pcb', '#16342a', 0, .5))
+ibox('led_power', 2, 2, 1, bx + 165, by + 150, bz + 1.6, M['led'])
+# VRM(公式図に無く未確認: I/OとCPUの間に低背ヒートシンクを仮置き)
+ibox('vrm_base', 84, 20, 2.5, bx + 10, by + 31, bz + 1.6, M['alublack'], .3)
+for i in range(17): ibox(f'vrm_fin{i}', 3.6, 20, 6, bx + 10 + i * 5, by + 31, bz + 4.1, M['alublack'], .3)
+for i in range(6): ibox(f'choke{i}', 7, 7, 5, bx + 12 + i * 13, by + 54, bz + 1.6, M['cap'], .4)
+# AM5ソケット+CPU(Ryzen 5 9600X): 公式図の位置 (54, 83.5)
+sx_, sy_ = BL['socket_center']
+ibox('socket', 89.5, 59, 4, bx + sx_ - 44.75 + 2, by + sy_ - 29.5, bz + 1.6, principled('socket', '#2a2c31', 0, .5))
+ibox('cpu_ihs', 40, 40, 2.6, bx + sx_ - 20, by + sy_ - 20, bz + 1.6 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)
+# CPUクーラー: Thermalright AXP90-X47 (95 x 94.5 x 47。基準=CPU上面)。ヒートパイプ φ6 x4 (複数一致)
 cl = lp('cooler'); ccx, ccy = cl[0] + 95 / 2, cl[1] + 94.5 / 2
-ibox('socket', 60, 66, 4, ccx - 30, ccy - 33, bz + 1.6, principled('socket', '#2a2c31', 0, .5))
-ibox('cpu_ihs', 41, 41, 2.6, ccx - 20.5, ccy - 20.5, bz + 1.6 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)
-# CPUクーラー: Thermalright AXP90-X47 (95 x 94.5 x 47。基準=CPU上面)
 cz0 = cl[2]
 ibox('cooler_base', 42, 42, 4, ccx - 21, ccy - 21, cz0, M['copper'], .5)
 fin = ibox('cooler_fin', 95, .35, 26, cl[0], cl[1] + 1, cz0 + 6, principled('fin', '#c7c9ce', 1.0, .32))
-ar = fin.modifiers.new('fins', 'ARRAY'); ar.count = 62; ar.use_relative_offset = False; ar.use_constant_offset = True; ar.constant_offset_displace = (0, 0, 92.5 / 62)
-for k, yy in enumerate([-18, -9, 0, 9, 18]): icyl(f'heatpipe{k}', 3, 95, 'x', cl[0] + 47.5, ccy + yy, cz0 + 5, M['copper'], 24)
+ar = fin.modifiers.new('fins', 'ARRAY'); ar.count = 54; ar.use_relative_offset = False; ar.use_constant_offset = True; ar.constant_offset_displace = (0, 0, 92.5 / 54)
+for k, yy in enumerate([-13.5, -4.5, 4.5, 13.5]): icyl(f'heatpipe{k}', 3, 95, 'x', cl[0] + 47.5, ccy + yy, cz0 + 5, M['copper'], 24)
 make_fan('fan_cpu', 92, 15, 9, principled('tl_frame', '#1a1b1e', 0, .5), principled('tl_blade', '#202226', 0, .45), principled('tl_hub', '#202226', .2, .4), ccx, ccy, cz0 + 32)
-# DDR5 DIMM x2 (1枚実装 / 1枚は増設用に空き)
-rm = lp('ram')
-for i, fill in ((0, True), (1, False)):
-    yy = by + 138 + i * 9.5
-    ibox(f'dimm_slot{i}', 133, 5.5, 8, bx + 22, yy, bz + 1.6, M['plastic'], .3)
-    ibox(f'dimm_latch{i}a', 4, 5.8, 3, bx + 19, yy - .15, bz + 1.6, M['dark']); ibox(f'dimm_latch{i}b', 4, 5.8, 3, bx + 155, yy - .15, bz + 1.6, M['dark'])
-    if fill:
-        ibox('dimm_pcb', 133.35, 1.27, 31.25, bx + 22, yy + 2.1, bz + 9.6, principled('dimm_pcb', '#17251a', 0, .5))
-        for k in range(8): ibox(f'dimm_chip{k}', 11, .9, 8, bx + 28 + k * 14.2, yy + 3.4, bz + 14, M['chip'])
-        ibox('dimm_label', 90, .2, 12, bx + 40, yy + 4.3, bz + 24, principled('dimm_label', '#d6d8dc', 0, .6))
-# M.2 NVMe SSD: Samsung 990 EVO Plus 1TB (80.15 x 22.15 x 2.38)
+# DDR5 DIMM(1枚実装): Crucial CT16G56C46U5 相当(緑PCB・ヒートスプレッダ無し・片面8チップ)。スロットA(CPU側)に装着
+rm = lp('ram'); yy = by + BL['dimm_slots']['y'][0][0] + 1.5
+ibox('dimm_pcb', 133.35, 1.27, 31.25, bx + 8, yy, bz + 9.6, principled('dimm_pcb', '#17321f', 0, .5))
+for k in range(8): ibox(f'dimm_chip{k}', 12, .9, 8, bx + 22 + k * 14.2, yy + 1.27, bz + 14, M['chip'])
+ibox('dimm_label', 70, .2, 10, bx + 40, yy + 2.2, bz + 24, principled('dimm_label', '#d6d8dc', 0, .6))
+# M.2 NVMe SSD: Samsung 990 EVO Plus 1TB (片面・NAND1個+コントローラ)。スロットからx方向へ80mm
 sd = lp('ssd')
-ibox('m2_slot', 10, 6, 3, sd[0] - 6, sd[1] + 8, bz + 1.6, M['dark'])
 ibox('m2_pcb', 80.15, 22.15, 1.0, sd[0], sd[1], sd[2], principled('m2_pcb', '#1f2a22', 0, .5))
-ibox('m2_label', 60, 18, .2, sd[0] + 14, sd[1] + 2, sd[2] + 1.0, principled('m2_label', '#d6d8dc', 0, .6))
-ibox('m2_nand', 14, 13, 1.2, sd[0] + 68, sd[1] + 4.5, sd[2] + 1.0, M['chip']); ibox('m2_ctrl', 12, 12, 1.2, sd[0] + 4, sd[1] + 5, sd[2] + 1.0, M['chip'])
-# チップセット・電池・コネクタ
-ibox('chipset_base', 28, 28, 8, bx + 128, by + 22, bz + 1.6, M['alublack'], .4)
-for i in range(6): ibox(f'chipset_fin{i}', 28, 2.2, 4, bx + 128, by + 24 + i * 4, bz + 9.6, M['alublack'], .2)
-icyl('cmos', 10, 3.2, 'z', bx + 140, by + 96, bz + 3.2, M['steel'], 32)
-ibox('atx24', 50, 10, 15, bx + 100, by + 160, bz + 1.6, M['white'], .4); ibox('eps8', 20, 8.5, 11, bx + 30, by + 160, bz + 1.6, M['dark'], .3)
-ibox('pcie_x16', 8, 89, 11, bx + 160, by + 40, bz + 1.6, M['dark'], .3); ibox('pcie_gold', 2, 56, .4, bx + 162.5, by + 56, bz + 12.7, M['gold'])
-ibox('led_power', 2, 2, 1, bx + 10, by + 160, bz + 1.6, M['led'])
+ibox('m2_label', 52, 18, .2, sd[0] + 10, sd[1] + 2, sd[2] + 1.0, principled('m2_label', '#d6d8dc', 0, .6))
+ibox('m2_nand', 14, 13, 1.2, sd[0] + 62, sd[1] + 4.5, sd[2] + 1.0, M['chip']); ibox('m2_ctrl', 12, 12, 1.2, sd[0] + 3, sd[1] + 5, sd[2] + 1.0, M['chip'])
 
 # --- GPU: MSI GeForce RTX 5060 8G INSPIRE ITX OC (145 x 120 x 45, 単ファン, 8ピン) ---
 gx, gy, gz = lp('gpu')
-ibox('gpu_backplate', 120, 145, 1.5, gx, gy, gz, M['steel'], .4)
+gold_g = principled('gpu_gold', '#b49a6a', .85, .34); add_bump(gold_g, 700, .02)
+gold_d = principled('gpu_gold_dark', '#7d6a45', .8, .4)
+# バックプレート(ゴールド系・排気スリット付き。複数媒体で『通気口あり』/色はGDM記載)
+bp = ibox('gpu_backplate', 120, 145, 1.5, gx, gy, gz, gold_g, .4)
+bpc = ibox('gpu_bp_slot_cutter', 90, 6, 4, gx + 15, gy + 100, gz - 1, None); bpc.hide_render = True
+ar_ = bpc.modifiers.new('arr', 'ARRAY'); ar_.count = 6; ar_.use_relative_offset = False; ar_.use_constant_offset = True; ar_.constant_offset_displace = (0, 0, 8)
+mb_ = bp.modifiers.new('slots', 'BOOLEAN'); mb_.object = bpc; mb_.operation = 'DIFFERENCE'; mb_.solver = 'MANIFOLD'
 gp = os.path.join(TEXDIR, 'pcb_gpu.png'); pcb_tex(gp, 111, 139, 23, '#0f1114', '#2d3239')
 ibox('gpu_pcb', 111, 139, 1.6, gx + 5, gy + 3, gz + 1.5, img_material('pcb_gpu', gp, rough=.5), uv=True)
 ibox('gpu_edge', 5.5, 89, 1.8, gx - 1, gy + 16, gz + 1.6, M['gold'])
-ibox('gpu_heatsink', 114, 136, 28, gx + 3, gy + 4.5, gz + 3.1, M['alublack'])
-hsf = ibox('gpu_fin', 114, .5, 28, gx + 3, gy + 6, gz + 3.1, M['alu']); a = hsf.modifiers.new('fins', 'ARRAY'); a.count = 34; a.use_relative_offset = False; a.use_constant_offset = True; a.constant_offset_displace = (0, 0, 3.9)
-shroud = ibox('gpu_shroud', 120, 145, 14, gx, gy, gz + 31, principled('gpu_shroud', '#1b1d21', .35, .4), 1.5)
-shc = cyl('gpu_shroud_hole', 45, 18, 'z', X0 + gx + 60, Y0 + gy + 72, Z0 - (gz + 38), None, 64, body=False); shc.hide_render = True; BODY_OBJS.append(shc)
+# 放熱: 銅コア + サンフラワー型(放射状)アルミ押出フィン。ファン直下
+gcx, gcy = gx + 60, gy + 72
+icyl('gpu_copper_core', 15, 26, 'z', gcx, gcy, gz + 3.1 + 13, M['copper'], 48)
+fin_h = 26; n_f = 44
+mef = bpy.data.meshes.new('gpu_sunfins'); bmf = bmesh.new()
+for k in range(n_f):
+    ang = 2 * math.pi * k / n_f
+    # Blender座標: カード法線=Y(奥行)。フィンは XZ 平面で放射(長さ方向=ローカルX)、高さ=Y
+    bmesh.ops.create_cube(bmf, size=1.0, matrix=Matrix.Rotation(ang, 4, 'Y') @ Matrix.Translation((29.5, 0, 0)) @ Matrix.Diagonal((28, fin_h, .9, 1)))
+bmf.to_mesh(mef); bmf.free()
+sf = bpy.data.objects.new('gpu_sunfins', mef); mef.materials.append(M['alu']); sf.location = V(X0 + gcx, Y0 + gcy, Z0 - (gz + 3.1 + fin_h / 2)); link(sf)
+# 外周のアルミ押出リング+シュラウド(ゴールド)。ファン穴は径88
+icyl('gpu_ring', 46, 26, 'z', gcx, gcy, gz + 3.1 + 13, M['alublack'], 64)
+shroud = ibox('gpu_shroud', 120, 145, 14, gx, gy, gz + 31, gold_g, 1.5)
+shc = cyl('gpu_shroud_hole', 44, 18, 'z', X0 + gx + 60, Y0 + gy + 72, Z0 - (gz + 38), None, 64, body=False); shc.hide_render = True; BODY_OBJS.append(shc)
 bmx = shroud.modifiers.new('hole', 'BOOLEAN'); bmx.object = shc; bmx.operation = 'DIFFERENCE'; bmx.solver = 'EXACT'
-ibox('gpu_led_strip', 2, 145, .8, gx + 118, gy, gz + 44.2, M['led_blue'])
-make_fan('fan_gpu', 100, 10, 9, M['dark'], principled('gpu_blade', '#2a2c31', .2, .45), principled('gpu_hub', '#2a2c31', .3, .4), gx + 60, gy + 72, gz + 33)
+# STORMFORCE FAN: 7枚(円弧形)
+make_fan('fan_gpu', 90, 10, 7, M['dark'], principled('gpu_blade', '#25272b', .2, .45), principled('gpu_hub', '#2a2c31', .3, .4), gx + 60, gy + 72, gz + 33)
 bpy.data.objects['fan_gpu_frame'].hide_render = True
 ibox('gpu_8pin', 20.6, 11.5, 10, gx + 96, gy + 120, gz + 33, M['dark'], .4)
 for k, (kk, x_) in enumerate([('hdmi', 20), ('dp', 44), ('dp', 68), ('dp', 92)]): ibox(f'gpu_port{k}', 14 if kk == 'hdmi' else 16, .6, 6, gx + x_, gy - 1.5, gz + 7, M['dark'])
@@ -393,8 +421,8 @@ def ribbon(name, pts_local, width, thick, mat):
     so = ob.modifiers.new('solid', 'SOLIDIFY'); so.thickness = thick; so.offset = 0
     return link(ob)
 for k in range(6):
-    y0 = by + 44 + k * 13
-    ribbon(f'riser{k}', [(bx + 164, y0, bz + 16), (bx + 180, y0, bz + 26), (gx - 4, y0, bz + 12), (gx - 1, y0, gz + 2.4)], 12, .9, M['rubber'])
+    y0 = by + 46 + k * 15
+    ribbon(f'riser{k}', [(bx + 166, y0, bz + 16), (bx + 178, y0, bz + 26), (gx - 4, y0, bz + 12), (gx - 1, y0, gz + 2.4)], 12, .9, M['rubber'])
 
 # --- 電源: SilverStone FX500-G (Flex ATX 500W, 150 x 81.5 x 40.5)。縦置き ---
 px_, py_, pz_ = lp('psu')
@@ -403,7 +431,7 @@ ibox('psu_label', 60, 90, .3, px_ + 10, py_ + 30, pz_ + 40.5, principled('psu_la
 ibox('psu_vent', 70, 36, .4, px_ + 6, py_ + 108, pz_ + 40.4, M['dark'])
 icyl('psu_fan_hole', 18, .5, 'z', px_ + 40.7, py_ + 126, pz_ + 40.55, M['dark'], 32)
 ibox('psu_ac_inlet', 27.5, 5, 19.5, px_ + 27, py_ - 5, pz_ + 10, M['rubber'], .5)           # IEC C14: 下端(下壁へ貫通)
-for i in range(6): ibox(f'psu_cable{i}', 3.2, 12, 3.2, px_ + 12 + i * 11, py_ + 150, pz_ + 12, [M['yellow'], M['red'], M['rubber'], M['rubber'], M['rubber'], M['rubber']][i])
+for i in range(6): ibox(f'psu_cable{i}', 3.2, 12, 3.2, px_ + 12 + i * 11, py_ + 150, pz_ + 12, M['rubber'])
 
 # --- ケース用ファン: Noctua NF-A12x15 PWM (120x120x15)。ベージュ枠+茶ブレード ---
 fx, fy, fz = lp('fan')
@@ -424,9 +452,9 @@ def cable(name, pts, r, mat):
     sp = cu.splines.new('BEZIER'); sp.bezier_points.add(len(pts) - 1)
     for p, bp in zip(pts, sp.bezier_points): bp.co = V(X0 + p[0], Y0 + p[1], Z0 - p[2]); bp.handle_left_type = bp.handle_right_type = 'AUTO'
     ob = bpy.data.objects.new(name, cu); cu.materials.append(mat); return link(ob)
-cable('cable_atx24', [(px_ + 20, py_ + 150, pz_ + 12), (px_ + 10, 168, pz_ + 24), (bx + 125, 170, bz + 20), (bx + 125, by + 164, bz + 10)], 4.5, M['rubber'])
-cable('cable_eps', [(px_ + 30, py_ + 150, pz_ + 12), (px_ + 30, 172, pz_ + 30), (bx + 40, 172, bz + 30), (bx + 40, by + 164, bz + 10)], 2.6, M['yellow'])
-cable('cable_pcie8', [(px_ + 40, py_ + 150, pz_ + 12), (px_ + 40, 168, pz_ + 28), (gx + 106, gy + 148, gz + 28), (gx + 106, gy + 126, gz + 34)], 3.2, M['red'])
+cable('cable_atx24', [(px_ + 20, py_ + 150, pz_ + 12), (px_ + 10, 168, pz_ + 24), (bx + 40, 172, bz + 20), (bx + 40, by + 166, bz + 12)], 4.5, M['rubber'])
+cable('cable_eps', [(px_ + 30, py_ + 150, pz_ + 12), (px_ + 30, 172, pz_ + 30), (bx + 6, 172, bz + 30), (bx + 6, by + 22, bz + 10)], 2.6, M['rubber'])
+cable('cable_pcie8', [(px_ + 40, py_ + 150, pz_ + 12), (px_ + 40, 168, pz_ + 28), (gx + 106, gy + 148, gz + 28), (gx + 106, gy + 126, gz + 34)], 3.2, M['rubber'])
 cable('cable_ctrl_12v', [(px_ + 50, py_ + 150, pz_ + 12), (px_ + 52, 166, pz_ + 20), (cx_ + 30, cy_ + 156, cz_ + 8), (cx_ + 30, cy_ + 145, cz_ + 4)], 2.2, M['rubber'])
 
 # ---------------- 分解(Explode)・チルト ----------------
