@@ -44,7 +44,7 @@
    170,
    1.6
   ],
-  "status": "official(寸法/レイアウト図)",
+  "status": "official(寸法/I/O/レイアウト図)",
   "facts": {
    "form": "17x17cm(公式spec)",
    "usb4": "USB4 40Gbps x2",
@@ -54,7 +54,12 @@
    "pcie": "PCIe 5.0 x16",
    "m2": "M.2_1 PCIe5.0x4 / M.2_2 PCIe4.0x4 (ドーターカード方式)",
    "ram": "DDR5 x2 EXPO",
-   "bios": "Ryzen 9000は要BIOS確認(FlashBack有)"
+   "bios": "Ryzen 9000は要BIOS確認(FlashBack有)",
+   "io_official": "USB4 40Gbps x2(Type-C) / USB 10Gbps x5(Type-A x4 + Type-C x1) / USB2.0 x3(うちType-A x2) / HDMI x1 / Intel 2.5GbE / Wi-Fi 7モジュール / ROG STRIX HIVE II(オーディオ: ESS SABRE9260Q DAC)",
+   "bios_buttons": "BIOS FlashBack / Clear CMOS",
+   "m2_official": "M.2_1: 2280 PCIe5.0x4 / M.2_2: 2242/2260/2280 PCIe4.0x4",
+   "mem_official": "DDR5 x2 最大128GB 8400+MT/s(OC, Ryzen 9000)",
+   "cpu_support": "Ryzen 9000/8000/7000"
   },
   "sources": [
    "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
@@ -71,19 +76,23 @@
    40,
    5
   ],
-  "status": "retail",
+  "status": "official(TDP/Tjmax/対応チップセット)+第三者(PPT)",
   "facts": {
    "tdp_w": 120,
    "ppt_w": 162,
    "tjmax_c": 95,
    "cores": "8C/16T",
    "l3": "96MB",
-   "bios_ppt_limit_w": 120
+   "bios_ppt_limit_w": 120,
+   "chipsets": "A620/X670E/X670/B650E/B650/X870E/X870/B840/B850",
+   "pcie": "PCIe 5.0 native",
+   "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)"
   },
   "sources": [
+   "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
    "https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D"
   ],
-  "note": "AMD公式は取得不可(第三者一致)。設計上 BIOSでPPTを120W(=TDP定格)に制限する前提(ゲーム用途で性能影響は小さいとされるが、定量根拠は未確認)"
+  "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、液冷推奨。PPT162Wは第三者値。設計ではBIOSでPPT 120Wに制限し、空冷(NH-L12S)の成否は実機温度確認が必須"
  },
  "cooler": {
   "id": "cooler",
