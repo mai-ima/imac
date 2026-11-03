@@ -18,7 +18,7 @@ ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0)
 ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
 ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
-ap.add_argument('--export', default=''); ap.add_argument('--frames', type=int, default=0)
+ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
 
@@ -486,6 +486,12 @@ VIEWS = {'front': ((520, 300, 1650), (0, 190, -30)), 'back': ((-640, 310, -1750)
          'detail_front': ((250, 250, 700), (0, 140, 0)), 'explode': ((-900, 420, -1850), (0, 110, -120))}
 if A.view in ('closeup', 'io'): k = 1.0
 vp, vt = VIEWS[A.view]; cam.location = V(vp[0] * k, vp[1] * k, vp[2] * k); TGT.location = V(*vt)
+if A.focus:   # 内部座標(x,y,z)を注視し、背面側から az/el で周回(az=0: 真後ろ)
+    fx_, fy_, fz_ = [float(v) for v in A.focus.split(',')]; t3 = Vector((X0 + fx_, Y0 + fy_, Z0 - fz_))
+    az_, el_ = math.radians(A.az), math.radians(A.el)
+    c3 = t3 + Vector((A.dist * math.sin(az_) * math.cos(el_), A.dist * math.sin(el_), -A.dist * math.cos(az_) * math.cos(el_)))
+    cam.location = V(c3.x, c3.y, c3.z); TGT.location = V(t3.x, t3.y, t3.z)
+cam_d.lens = A.lens
 r = scene.render; r.engine = 'CYCLES'; w_, h_ = [int(x) for x in A.res.split('x')]; r.resolution_x, r.resolution_y, r.resolution_percentage = w_, h_, 100
 cy = scene.cycles; cy.device = 'CPU'; cy.samples = A.samples; cy.use_denoising = True; cy.denoiser = 'OPENIMAGEDENOISE'; cy.max_bounces = 8; cy.transparent_max_bounces = 16
 cy.preview_samples = 16
