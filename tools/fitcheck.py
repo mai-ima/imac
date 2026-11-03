@@ -63,6 +63,6 @@ nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
 air = (nfan * P['fan']['facts']['airflow_m3h'] + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)
 chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ケースファン{nfan}基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
-print(f"[注意] CPUクーラー: 9800X3D(BIOSでPPT {cpu}W制限)に対し NH-L12S の公式定格は未確認。ゲーム負荷(約50〜80W)を前提とした設計")
+print(f"[注意] CPU冷却: 9800X3D PPT {cpu}W(制限なし)に対しAMD推奨の液冷(ARCTIC LF III Pro 240)。公式TDP定格が無いため実機での温度確認が必須")
 print('\n総合:', 'すべて満たす(ただし assumed/retail 項目は実物確認が必要)' if ok else '未達あり')
 sys.exit(0 if ok else 1)
