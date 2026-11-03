@@ -7,14 +7,17 @@ flip = false;   // true: モデルを180°回して前面を明るく描画(プ�
 color_scheme = "silver";   // silver / blue / purple / pink / orange / yellow / green (公式7色)
 
 // --- 外形 (iMac 24") ---
-W = 547;                    // 本体幅 (公式 54.7cm)
-panel_w = 527; panel_h = 296.5;   // 23.8" 16:9 パネル有効領域 (iMacの表示領域は約520x292)
+panel_size = 24;            // 24: 23.8"型(iMac相当) / 27: 27"型(4Kパネル入手が容易な代替)
+panel_w = panel_size==27 ? 596.7 : 527;     // 16:9 有効領域
+panel_h = panel_size==27 ? 335.7 : 296.5;
+tilt = 0;                   // 画面チルト角(度, 実機は約-5〜+25°で調整可)
 bezel = 10;  chin = 68;
+W = panel_size==27 ? panel_w + 2*bezel : 547;   // 24型は公式 54.7cm
 H = panel_h + bezel + chin;       // ≈374.5
 slab_t = 14;                // 前面スラブ厚 (iMacは11.5mm, 市販パネル+背面板で14mm)
 corner = 10;
 // --- 背面ポッド(市販部品を収める) ---
-pod_w = 520; pod_h = 190; pod_t = 70;     // 総厚70mm
+pod_w = W - 27; pod_h = 190; pod_t = 70;     // 総厚70mm
 pod_x0 = (W-pod_w)/2;
 // --- スタンド(iMac風一枚板アルミ) ---
 stand_w = 130; stand_drop = 85;           // 公式: 本体下端から約85mm下がる(高さ46.1cm)
@@ -63,16 +66,21 @@ module internals(){
   color("#222") translate([x+93,93,z0+36.6]) cylinder(d=92,h=2,$fn=48);
   box([x+16,18,z0+1.6],[22,10,4],"#333");                             // M.2 SSD
   box([x+178,30,z0],[8,100,12],"#554");                               // PCIe ライザー
-  box([x+188,20,z0],[200,125,40],"#202226");                          // GPU (ITX 2スロット)
-  color("#888") translate([x+288,82,z0+40.1]) cylinder(d=70,h=0.5,$fn=40);
-  box([x+188,148,z0],[150,34,22],"#334");                             // DC-ATX 電源基板
-  box([x+396,35,z0],[120,120,25],"#111");                             // 排気ファン 120mm
-  color("#555") translate([x+456,95,z0+25.1]) cylinder(d=100,h=0.5,$fn=48);
+  box([x+188,20,z0],[165,115,40],"#202226");                          // GPU 例: ZOTAC RTX 5060 SOLO(全長165mm, 2スロット) / MSI INSPIRE ITX は145mm
+  color("#888") translate([x+270,77,z0+40.1]) cylinder(d=70,h=0.5,$fn=40);
+  box([x+188,148,z0],[150,34,22],"#334");
+  box([x+360,40,z0],[28,100,10],"#665");                              // 配線/予備スペース(M.2増設ライザー等)                             // DC-ATX 電源基板
+  box([x+pod_w-124,35,z0],[120,120,25],"#111");                             // 排気ファン 120mm
+  color("#555") translate([x+pod_w-64,95,z0+25.1]) cylinder(d=100,h=0.5,$fn=48);
 }
 
 module stand(){
+  // ヒンジ軸(実機: 側面の円形キャップ)
+  color("#e6e6e8") translate([W/2-stand_w/2-1,0,(slab_t+pod_t)/2]) rotate([0,90,0]) cylinder(d=22,h=stand_w+2,$fn=40);
+  // スタンド背面のマグネット式電源コネクタ凹み(実機: 背面の楕円)
+  color("#555") translate([W/2-6,-stand_drop*0.55-12,(slab_t+pod_t)/2+3.9]) cube([12,24,0.5]);
   color(stand_c) translate([W/2-stand_w/2,-stand_drop,(slab_t+pod_t)/2-4]) cube([stand_w,stand_drop+1,8]);        // アーム
   color(stand_c) translate([W/2-stand_w/2,-stand_drop-6,(slab_t+pod_t)/2-foot_d/2]) cube([stand_w,6,foot_d]);     // 足
 }
 
-translate([flip?W:0,0,0]) rotate([0,0,flip?180:0]) rotate([90,0,0]) { slab(); pod_cover(); stand(); if(cutaway) internals(); }
+translate([flip?W:0,0,0]) rotate([0,0,flip?180:0]) rotate([90,0,0]) { translate([0,0,(slab_t+pod_t)/2]) rotate([tilt,0,0]) translate([0,0,-(slab_t+pod_t)/2]) { slab(); pod_cover(); if(cutaway) internals(); } stand(); }

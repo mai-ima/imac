@@ -2,7 +2,7 @@
 """cad/imac_like_pc.scad と同じ寸法から 設計図SVG を生成する (単位 mm)。"""
 W,panel_w,panel_h,bezel,chin=547,527,296.5,10,68
 H=panel_h+bezel+chin
-slab_t,pod_w,pod_h,pod_t=14,520,190,70
+slab_t,pod_w,pod_h,pod_t=14,W-27,190,70
 stand_w,drop,foot_d=130,85,147
 pod_x0=(W-pod_w)/2
 S=0.9  # px/mm
@@ -59,10 +59,11 @@ R(bx,by,pod_w,pod_h,"#c5c8cc","#555",1.2,10)
 def part(x,y,w,h,fill,label):
     R(bx+x,by+pod_h-y-h,w,h,fill,"#333",1); T(bx+x+w/2,by+pod_h-y-h/2+4,label,10)
 part(8,8,170,170,"#9ac8a6","Mini-ITX 170x170")
-part(188,20,200,125,"#9aa0ad","GPU (ITX 2slot 200x125x40)")
+part(188,20,165,115,"#9aa0ad","GPU 165x115x40(例:RTX5060 SOLO)")
 part(188,148,150,34,"#a9a9d6","DC-ATX 電源基板")
-part(396,35,120,120,"#d9c8a0","120mm 排気ファン")
+part(pod_w-124,35,120,120,"#d9c8a0","120mm 排気ファン")
 part(178,30,8,100,"#bba","ライザー")
+part(360,40,28,100,"#ddd","予備")
 T(bx+pod_w/2,by+pod_h+24,"I/O: 背面左下スリット(USB-C x4 + HDMI/DP, 2.5GbE)  ※基板I/Oを延長ブラケットで引き出し",10)
 dim_h(bx,bx+pod_w,by+pod_h+46,f"ポッド幅 {pod_w}")
 # ---------- 注記 ----------
