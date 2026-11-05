@@ -485,11 +485,17 @@ ibox('gpu_12v8pin', 20.6, 11.5, 10, gx + 95, gy + 210, gz + 36, M['dark'], .4)
 # ===== 電源: Corsair SF750 (SFX 125x63.5x100)。ファン面を上(ドーム側)、モジュラー端子面を基板側 =====
 px_, py_, pz_ = lp('psu')
 ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
-ibox('psu_grille', 92, 92, .5, px_ + 16, py_ + 4, pz_ + 63.5, M['dark'])
-icyl('psu_fan_hub', 14, .8, 'z', px_ + 62, py_ + 50, pz_ + 63.9, M['alublack'], 24)
-for k in range(1, 6): icyl(f'psu_grille_ring{k}', 7 * k, .35, 'z', px_ + 62, py_ + 50, pz_ + 64.0, M['silver_trim'], 48)
-label('SF750', 7, px_ + 62, py_ + 85, pz_ + 63.55, M['print_w'], name='txt_sf750', ext=.03)
-label('PLATINUM', 3.5, px_ + 62, py_ + 15, pz_ + 63.55, M['print_w'], name='txt_platinum', ext=.03)
+wire = principled('psu_wire', '#2a2c31', .9, .4)
+ibox('psu_grille_plate', 100, 92, .4, px_ + 12, py_ + 4, pz_ + 63.5, M['dark'])
+make_fan('fan_psu', 92, 8, 9, M['dark'], principled('psu_blade', '#202226', .2, .45), principled('psu_hub', '#2a2c31', .3, .4), px_ + 62, py_ + 50, pz_ + 54)
+bpy.data.objects['fan_psu_frame'].hide_render = True
+for k in range(1, 5): icyl(f'psu_grille_ring{k}', 9.5 * k, .5, 'z', px_ + 62, py_ + 50, pz_ + 64.2, wire, 48)
+_bm = bmesh.new()
+for k in range(6):
+    bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 64.2))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((92, .5, .5, 1)))
+_me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
+label('SF750', 7, px_ + 62, py_ + 85, pz_ + 63.95, M['print_w'], name='txt_sf750', ext=.03)
+label('PLATINUM', 3.5, px_ + 62, py_ + 15, pz_ + 63.95, M['print_w'], name='txt_platinum', ext=.03)
 ibox('psu_label', 70, 38, .3, px_ + 28, py_ + 30, pz_ + 63.5, M['sf_label'])     # 仕様ラベル(内容は未確認のため無地)
 for i in range(6): ibox(f'psu_socket{i}', 13, 5, 9, px_ + 8 + i * 19, py_ - 4, pz_ + 25, M['rubber'], .4)
 

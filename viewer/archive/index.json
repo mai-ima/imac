@@ -8,6 +8,15 @@
    "commit": "165c355",
    "sha256": "a0fdd062474b78283ecd4708dc47d3e45ef6bf4433023a02d2544c3836379206",
    "file": "imac_pc/imac_pc.v001__2026-11-05_165c355.glb"
+  },
+  {
+   "src": "viewer/imac_pc.glb.txt",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "165c355",
+   "sha256": "40f5e29da65862b69acdfd51567c941245e15dff8d9184a531ab3f39c74a9c18",
+   "file": "imac_pc.glb/imac_pc.glb.v001__2026-11-03_165c355.txt"
   }
  ]
 }

@@ -36,3 +36,7 @@
 - 新規: ドーム背面シェル(縁12mm→最大87mm、ease曲線、角R50、六角吸排気穴、I/O・GPU出力開口、EMIガスケット)、角丸サービストレイ+キーホール吊りピン4+拘束ネジ2、layout.json駆動の内部部品(ASUS X870-I+9800X3D IHS刻印、ARCTIC ポンプ+240ラジエーター+P12 Pro×2+ホース、ASUS Dual 5060 Ti(ファン2、DUAL/GEFORCE RTX刻印、バックプレートスリット)、Samsung 990 PRO HS(赤スリット、SAMSUNG/990 PRO)、Corsair SF750(ファン面上)、Noctua NF-A12x25、コントローラ基板、ライザー、ケーブル)。
 - 既知の課題(次ループ): ①ポンプ底面(z13.6)と990 PRO上面(z20.9)が干渉の可能性(layout要確認) ②DIMM2枚の幅がlayout箱(8mm)を超える ③VRMシュラウド/ドーターカードの高さは未確認の仮置き ④ロゴ未確認品は文字のみ(ARCTIC/Noctuaロゴ等) ⑤PSU外観は簡略 ⑥ホース曲げ半径・ケーブル固定点の検証 ⑦GLB/viewer未更新。
 - 画像: render/blender/v6/inside_wip1.png, back_wip1.png
+
+## 2026-11-05 WIP2
+- SF750: ファン(92mm)+ワイヤーグリル(同心円+放射)、SF750/PLATINUM印字を追加。GLB(5.7MB)/base64を再生成し、3Dビューア(artifact)を v6 に更新。
+- 自己確認(画像): ドーム外観/内部配置は layout.json どおり。ポンプ/ホースが基板を大きく覆う点は設計課題(ホース経路・基板視認性)。
