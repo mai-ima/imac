@@ -14,5 +14,5 @@
 <line x1="115.0" y1="30" x2="123.0" y2="30" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="115.0" y1="72.5" x2="123.0" y2="72.5" stroke="#c0392b" stroke-width="0.2"/>
 <text x="119.5" y="51.25" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 119.5 51.25)">85</text>
-<text x="40" y="24" font-size="4">スタンド(一枚板) A6063/A5052 t8 アルマイト。足 奥行147。ヒンジ: 市販トルクヒンジ(型番はBOM確定後)</text>
+<text x="40" y="24" font-size="4">スタンド(一枚板) A6063/A5052 t8 アルマイト。足 奥行245。ヒンジ: 市販トルクヒンジ(型番はBOM確定後)</text>
 </svg>

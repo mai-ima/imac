@@ -10,13 +10,14 @@
 <rect x="92.9" y="62.7" width="30.5" height="58.2" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="108.2" y="91.8" font-size="2.6" text-anchor="middle" fill="#666">gpu</text>
 <rect x="86.9" y="94.0" width="6.1" height="22.6" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="89.9" y="105.3" font-size="2.6" text-anchor="middle" fill="#666">riser</text>
 <rect x="58.3" y="57.2" width="31.8" height="25.4" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="74.2" y="69.9" font-size="2.6" text-anchor="middle" fill="#666">psu</text>
-<rect x="26.8" y="46.4" width="30.5" height="30.5" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="42.0" y="61.7" font-size="2.6" text-anchor="middle" fill="#666">fan</text>
+<rect x="26.8" y="51.5" width="30.5" height="30.5" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="42.0" y="66.8" font-size="2.6" text-anchor="middle" fill="#666">fan</text>
 <rect x="25.6" y="86.1" width="14.0" height="38.1" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="32.6" y="105.2" font-size="2.6" text-anchor="middle" fill="#666">ctrl_board</text>
 <rect x="76.9" y="90.2" width="6.4" height="20.4" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="80.1" y="100.4" font-size="2.6" text-anchor="middle" fill="#666">ssd</text>
 <rect x="44.7" y="88.1" width="33.9" height="2.0" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="61.6" y="89.1" font-size="2.6" text-anchor="middle" fill="#666">ram</text>
-<circle cx="35.3" cy="119.1" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<rect x="131.9" y="123.2" width="7.1" height="5.1" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="135.4" y="125.8" font-size="2.6" text-anchor="middle" fill="#666">ac_inlet</text>
+<circle cx="35.3" cy="128.0" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="161.1" cy="119.1" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<circle cx="35.3" cy="81.0" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<circle cx="35.3" cy="48.0" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="161.1" cy="55.6" r="1.2" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
 <text x="185" y="40" font-size="2.8">加工: レーザー+曲げ(角R18, 縁折り5mm補強)+PEM TSOA圧入(部品ごと)</text>
@@ -28,8 +29,9 @@
 <text x="185" y="74.20000000000002" font-size="2.8">要素: ファン/ctrl基板/ケーブルコーム/クリップ取付</text>
 <text x="185" y="79.90000000000002" font-size="2.8">要素: GPUクレードル座</text>
 <text x="185" y="85.60000000000002" font-size="2.8">要素: 吊りキーホール×4+拘束ネジ穴×2</text>
-<text x="185" y="91.30000000000003" font-size="2.8">要素: 吸気開口(ファン/ラジエーター下)なし(吸気はドーム側)</text>
-<text x="185" y="97.00000000000003" font-size="2.8">要素: ハンドル(折りたたみ線材, 上端)</text>
-<text x="185" y="102.70000000000003" font-size="2.8">接合: CP-03(吊りピン)</text>
-<text x="185" y="108.40000000000003" font-size="2.8">接合: 全内部部品</text>
+<text x="185" y="91.30000000000003" font-size="2.8">要素: ハンドル(折りたたみ線材, 上端)</text>
+<text x="185" y="97.00000000000003" font-size="2.8">要素: AC電源インレット(C14)取付(下辺)・接地スタッドM4</text>
+<text x="185" y="102.70000000000003" font-size="2.8">要素: ボンディング編組取付座×2</text>
+<text x="185" y="108.40000000000003" font-size="2.8">接合: CP-03(吊りピン)</text>
+<text x="185" y="114.10000000000004" font-size="2.8">接合: 全内部部品</text>
 <text x="8" y="202" font-size="3">状態: 設計(試作要) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>

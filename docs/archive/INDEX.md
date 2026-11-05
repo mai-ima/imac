@@ -9,6 +9,7 @@
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
+| design-v6.md | v001 | current | 2026-11-03 | 1bfcbfb | design-v6/design-v6.v001__2026-11-03_1bfcbfb.md |
 | design.md | v001 | gen-001 | 2026-11-03 | 7dedb54 | gen-001/design/design.v001__2026-11-03_7dedb54.md |
 | design.md | v002 | gen-001 | 2026-11-03 | a2b24f4 | gen-001/design/design.v002__2026-11-03_a2b24f4.md |
 | design.md | v003 | gen-001 | 2026-11-03 | 98bf25c | gen-001/design/design.v003__2026-11-03_98bf25c.md |
@@ -16,6 +17,9 @@
 | design.md | v005 | current | 2026-11-03 | 44f2d2a | design/design.v005__2026-11-03_44f2d2a.md |
 | design.md | v006 | current | 2026-11-03 | 165c355 | design/design.v006__2026-11-03_165c355.md |
 | fitcheck-report.txt | v001 | current | 2026-11-03 | ee3a42e | fitcheck-report/fitcheck-report.v001__2026-11-03_ee3a42e.txt |
+| fitcheck-report.txt | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck-report/fitcheck-report.v002__2026-11-05_2f8c0ac.txt |
+| hinge-design.md | v001 | current | 2026-11-05 | 017b7d9 | hinge-design/hinge-design.v001__2026-11-05_017b7d9.md |
+| joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research.md | v001 | current | 2026-11-03 | 98bf25c | research/research.v001__2026-11-03_98bf25c.md |
@@ -24,10 +28,13 @@
 | selection-v5.md | v002 | current | 2026-11-03 | fd22dea | selection-v5/selection-v5.v002__2026-11-03_fd22dea.md |
 | selection-v5.md | v003 | current | 2026-11-03 | 1bfcbfb | selection-v5/selection-v5.v003__2026-11-03_1bfcbfb.md |
 | selection-v5.md | v004 | current | 2026-11-03 | 2cd7df3 | selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md |
+| service-manual.md | v001 | current | 2026-11-03 | 307c9ea | service-manual/service-manual.v001__2026-11-03_307c9ea.md |
 | service-mechanisms.md | v001 | current | 2026-11-03 | 307c9ea | service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md |
+| service-mechanisms.md | v002 | current | 2026-11-05 | 434b29d | service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md |
 | source-status.md | v001 | current | 2026-11-03 | fdfd200 | source-status/source-status.v001__2026-11-03_fdfd200.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
 | unverified-tracker.md | v004 | current | 2026-11-05 | 017b7d9 | unverified-tracker/unverified-tracker.v004__2026-11-05_017b7d9.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |
+| wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |

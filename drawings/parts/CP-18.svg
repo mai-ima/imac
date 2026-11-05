@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="291" height="204" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="8" y="12" font-size="6" font-weight="bold">CP-18 保護接地(PE)系統</text>
+<text x="8" y="19" font-size="3.2">材質 AWG16 緑/黄ケーブル+M4リング端子+歯付座金+編組ストラップ6mm² / 板厚 - / 数量 1 / 質量 0.05kg / ISO 2768-m(重要寸法は個別指定)</text>
+<defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<text x="185" y="40" font-size="2.8">加工: 規格品+アルマイトマスク/導電処理</text>
+<text x="185" y="45.7" font-size="2.8">表面処理: -</text>
+<text x="185" y="51.400000000000006" font-size="2.8">公差: -</text>
+<text x="185" y="57.10000000000001" font-size="2.8">要素: C14インレットPE → M4リング端子(≤200mm) → トレイ接地スタッド(導電化成処理面)</text>
+<text x="185" y="62.80000000000001" font-size="2.8">要素: トレイ↔背板: 専用ボンディング編組×2(吊りピンに依存しない)</text>
+<text x="185" y="68.50000000000001" font-size="2.8">要素: ドーム↔背板: 接地ストラップ×2(ドーム縁の導電ガスケット+ボンディング)</text>
+<text x="185" y="74.20000000000002" font-size="2.8">要素: スタンド/ヒンジ: 背板接地スタッドからヒンジブロックへ編組</text>
+<text x="185" y="79.90000000000002" font-size="2.8">要素: PSUはC13ケーブルのPE+筐体へスタンドオフ経由の二重化</text>
+<text x="185" y="85.60000000000002" font-size="2.8">接合: CP-06</text>
+<text x="185" y="91.30000000000003" font-size="2.8">接合: CP-03</text>
+<text x="185" y="97.00000000000003" font-size="2.8">接合: CP-07</text>
+<text x="185" y="102.70000000000003" font-size="2.8">接合: CP-10</text>
+<text x="8" y="202" font-size="3">状態: 設計(U41: 試験は有資格者) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>

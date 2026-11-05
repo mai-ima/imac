@@ -8,6 +8,33 @@
    "commit": "b97eaae",
    "sha256": "12423077aa4817a2762ef405c54ddc3596c0bd8a33b295488ebd3a7e1d6e0066",
    "file": "custom-parts/custom-parts.v001__2026-11-05_b97eaae.md"
+  },
+  {
+   "src": "docs/spec/custom-parts.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "83987b40b1a85f7c318713b9b8f8ad7868a9a6fb6b7cc810aa34db693c22e19d",
+   "file": "custom-parts/custom-parts.v002__2026-11-05_3c794e1.md"
+  },
+  {
+   "src": "docs/spec/joint-matrix.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "c7b4965ca832ad25ba46693db12ebaa0e26cd254db8bfe685f5ed687a07aefaf",
+   "file": "joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md"
+  },
+  {
+   "src": "docs/spec/wiring-spec.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "edecdc331bb42c6ca93c559b2831211f631fa33773bf332d0ba9758a57bb69ba",
+   "file": "wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md"
   }
  ]
 }

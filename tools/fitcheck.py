@@ -16,8 +16,8 @@ chk('本体幅', W - 2*wall - 2*gap >= out[0], f"本体{W} - 壁2x{wall} - 隙�
 top_margin = H - (CHIN + act[1] + lrud[2]); bot = CHIN - lrud[3]
 chk('本体高(上)', top_margin >= wall + 1.0, f"パネル上端〜本体上端 {top_margin:.1f} >= 壁{wall}+隙間1.0")
 chk('パネル下端が本体内', bot >= wall, f"パネル下端 y={bot:.1f} >= {wall}")
-stack = 1.1 + 0.4 + out[2] + 1.0 + 2.0
-chk('前面スラブ厚', stack <= slab, f"ガラス1.1+OCA0.4+パネル{out[2]}+隙間1.0+背板2.0 = {stack:.1f} <= {slab}")
+stack = 1.1 + 0.9 + out[2] + 1.0 + 2.0
+chk('前面スラブ厚', stack <= slab, f"ガラス1.1+エアギャップ0.9(OCA無し)+パネル{out[2]}+隙間1.0+背板2.0 = {stack:.1f} <= {slab} (余裕{slab-stack:.1f})")
 
 # ---- ポッド内部 ----
 wl = S['pod']['wall']
@@ -27,13 +27,22 @@ if 'dome' in S:
 else:
     pod_w = W - S['pod']['side_margin']; IN = (pod_w - 2*wl, S['pod']['h'] - 2*wl, S['pod']['total_t'] - slab - wl); dome_depth = None
 print(f"ポッド内寸 {IN[0]:.1f} x {IN[1]:.1f} x {IN[2]:.1f} mm (幅 x 高 x 奥行)")
+import math
+def rr_dist(x0, y0, x1, y1, step=5.0):
+    """矩形(部品外形)から角丸矩形(ドーム内寸, 角R=corner_r-壁)の境界までの最短距離(角Rを考慮)。"""
+    Rr = Dm['corner_r'] - wl; hx, hy = IN[0]/2, IN[1]/2; best = 1e9
+    xs = [x0 + (x1-x0)*i/max(1,int((x1-x0)/step)) for i in range(max(1,int((x1-x0)/step))+1)]; ys = [y0 + (y1-y0)*i/max(1,int((y1-y0)/step)) for i in range(max(1,int((y1-y0)/step))+1)]
+    for (px, py) in [(a, b) for a in xs for b in (y0, y1)] + [(a, b) for a in (x0, x1) for b in ys]:
+        qx, qy = abs(px-hx) - (hx-Rr), abs(py-hy) - (hy-Rr)
+        sdf = math.hypot(max(qx,0), max(qy,0)) + min(max(qx,qy),0) - Rr; best = min(best, -sdf)
+    return best
 boxes = {}
 for it in L['items']:
     x, y, z = it['pos']; sx, sy, sz = it['size']; boxes[it['id']] = (x, y, z, x+sx, y+sy, z+sz)
     cont = x >= 0 and y >= 0 and z >= 0 and x+sx <= IN[0] and y+sy <= IN[1] and z+sz <= IN[2]
     extra = ''
     if dome_depth:
-        dmin = min(x, IN[0]-(x+sx), y, IN[1]-(y+sy)); allow_z = dome_depth(max(dmin, 0)); cont = cont and (z+sz+3.0 <= allow_z)
+        dmin = rr_dist(x, y, x+sx, y+sy); allow_z = dome_depth(max(dmin, 0)); cont = cont and (z+sz+3.0 <= allow_z)
         extra = f' 縁距離{dmin:.0f}→許容奥行{allow_z:.0f}(要{z+sz+3:.0f})'
     chk(f"収まり {it['id']}", cont, f"{P[it['id']]['name'][:34]}  上端z={z+sz:.1f}/{IN[2]:.0f}{extra}")
 allow = {frozenset(p) for p in [('board','cooler'),('board','ssd'),('board','ram'),('board','riser'),('gpu','riser'),('cooler','ram'),('cooler','ssd')]}

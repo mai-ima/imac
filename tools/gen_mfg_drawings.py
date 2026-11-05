@@ -43,7 +43,7 @@ Dm = S['dome']; DW = W - 2 * Dm['inset_left_right']; DH = H - Dm['inset_bottom']
 b = [rrect(gx, gy, W * sc, H * sc, CORNER * sc, fill='#d6d9de', stroke='#000', stroke_width=.5)]
 px0 = gx + Dm['inset_left_right'] * sc; py0 = gy + Dm['inset_top'] * sc
 b += [f'<rect x="{px0}" y="{py0}" width="{DW*sc}" height="{DH*sc}" rx="{Dm["corner_r"]*sc}" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>']
-for (kx, ky) in [(60, 60), (555, 60), (60, 210), (555, 310)]:   # キーホール吊りピン(トレイ座標→背板座標: トレイ原点=ドーム内寸の左下)
+for (kx, ky) in [tuple(k) for k in json.load(open(os.path.join(R, 'model', 'layout.json')))['keyholes']]:   # キーホール吊りピン(トレイ座標→背板座標: トレイ原点=ドーム内寸の左下)
     b.append(f'<circle cx="{px0 + (3 + kx) * sc}" cy="{gy + (H - Dm["inset_bottom"] - 3 - ky) * sc}" r="{2.5*sc}" fill="#c0392b"/>')
 b += dim_h(gx, gx + W * sc, gy + H * sc, f'{W}') + dim_v(gx + W * sc, gy, gy + H * sc, f'{H:.1f}', 12) + dim_h(px0, px0 + DW * sc, py0 + DH * sc, f'ドーム外形幅 {DW:.0f}', 22)
 b += [f'<text x="{gx}" y="{gy-6}" font-size="4">背板 A5052 t2.0(CP-03) とドーム(CP-07)の位置。余白 左右{Dm["inset_left_right"]}/下{Dm["inset_bottom"]}/上{Dm["inset_top"]}、角R{Dm["corner_r"]}。赤=吊りピン(肩ねじ Ø5)</text>']

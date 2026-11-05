@@ -10,6 +10,15 @@
    "file": "02_back_plate_layout/02_back_plate_layout.v001__2026-11-03_fd22dea.svg"
   },
   {
+   "src": "drawings/02_back_plate_layout.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "36f75d9fc145427d1c6a4f2fa5b18b22746b2c18693374052b8d9906bc8ffb7a",
+   "file": "02_back_plate_layout/02_back_plate_layout.v002__2026-11-05_b97eaae.svg"
+  },
+  {
    "src": "drawings/03_pod_cover.svg",
    "version": 1,
    "gen": "current",
@@ -17,6 +26,15 @@
    "commit": "fd22dea",
    "sha256": "eb0ccd91f4fba30521c7eaba04079e8c7e8718293b4e87065dd5cf959bf00b9e",
    "file": "03_pod_cover/03_pod_cover.v001__2026-11-03_fd22dea.svg"
+  },
+  {
+   "src": "drawings/03_pod_cover.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "91ac8ee13978ee5e0150c0eeac6d7c17a90faa1ccfded4e3d1f71a6275c9c94c",
+   "file": "03_pod_cover/03_pod_cover.v002__2026-11-05_b97eaae.svg"
   },
   {
    "src": "drawings/04_section_stack.svg",
@@ -28,6 +46,24 @@
    "file": "04_section_stack/04_section_stack.v001__2026-11-03_fd22dea.svg"
   },
   {
+   "src": "drawings/04_section_stack.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "8717fb59c8dabce721300be6bfb03b081ed99ebd2ee5668b77328b3585d95c29",
+   "file": "04_section_stack/04_section_stack.v002__2026-11-05_b97eaae.svg"
+  },
+  {
+   "src": "drawings/05_stand.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "b096d9e",
+   "sha256": "b0c4fadb5848bb6337bea2cfcd2adf284b6542f97672913e6fab45350c36fb64",
+   "file": "05_stand/05_stand.v001__2026-11-03_b096d9e.svg"
+  },
+  {
    "src": "drawings/06_service_tray_plan.svg",
    "version": 1,
    "gen": "current",
@@ -35,6 +71,33 @@
    "commit": "307c9ea",
    "sha256": "15ab0403b87a361e8592eb00efb69d602fe6e8f0d191dd263869481b4d506f9e",
    "file": "06_service_tray_plan/06_service_tray_plan.v001__2026-11-03_307c9ea.svg"
+  },
+  {
+   "src": "drawings/06_service_tray_plan.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "0d59afd2d4d656b9c58353cc84f6ef1976c3b0db5298c80d7538def32989e047",
+   "file": "06_service_tray_plan/06_service_tray_plan.v002__2026-11-05_b97eaae.svg"
+  },
+  {
+   "src": "drawings/07_dome_latch_section.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "422560536002e1bc0f5c3b53f206da1481192d89d4920d58aa502b295f3409b2",
+   "file": "07_dome_latch_section/07_dome_latch_section.v001__2026-11-03_307c9ea.svg"
+  },
+  {
+   "src": "drawings/08_service_sequence.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "04610b192380c28092bb1c896c2c916737247e59a4e32f7670dc3f9238f11898",
+   "file": "08_service_sequence/08_service_sequence.v001__2026-11-03_307c9ea.svg"
   },
   {
    "src": "drawings/10_placement_dimensioned.svg",
@@ -46,6 +109,15 @@
    "file": "10_placement_dimensioned/10_placement_dimensioned.v001__2026-11-05_27ca8ce.svg"
   },
   {
+   "src": "drawings/10_placement_dimensioned.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "89ad4155cef5400af2fce4b9e4b97daef39f619a1d349986f9f7da8d0d1ed311",
+   "file": "10_placement_dimensioned/10_placement_dimensioned.v002__2026-11-05_2f8c0ac.svg"
+  },
+  {
    "src": "drawings/11a_section_AA.svg",
    "version": 1,
    "gen": "current",
@@ -53,6 +125,24 @@
    "commit": "27ca8ce",
    "sha256": "8e0e56bdc87040b750775509f9961bd1fca92faf5a9eab2b88de8f531d9ad63d",
    "file": "11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/11a_section_AA.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "d3ced1ae0b111f14327a3d1fd79900f832903d277476fb036278806eb9a2fa5e",
+   "file": "11a_section_AA/11a_section_AA.v002__2026-11-05_2f8c0ac.svg"
+  },
+  {
+   "src": "drawings/11b_section_BB.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "cef0f5411fdce9d4dc829fbc489bc3a1daf3387230d6073d2819a2a2718e67fc",
+   "file": "11b_section_BB/11b_section_BB.v001__2026-11-05_27ca8ce.svg"
   },
   {
    "src": "drawings/12_wiring_diagram.svg",
@@ -64,6 +154,15 @@
    "file": "12_wiring_diagram/12_wiring_diagram.v001__2026-11-05_27ca8ce.svg"
   },
   {
+   "src": "drawings/12_wiring_diagram.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "b35f55749e35997e1b797c5dd19b793244f908a75e27d8f0f1c54d2fb4543744",
+   "file": "12_wiring_diagram/12_wiring_diagram.v002__2026-11-05_2f8c0ac.svg"
+  },
+  {
    "src": "drawings/13_airflow_thermal.svg",
    "version": 1,
    "gen": "current",
@@ -71,6 +170,15 @@
    "commit": "27ca8ce",
    "sha256": "1b1efd9932fb8601deb41213559dbcdbfa943432c2bd6ea377064e75f2b57c02",
    "file": "13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/13_airflow_thermal.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "4e488c569f3157e3909c3c369dc20ddb3cbff72808c86df14c4713329563f1af",
+   "file": "13_airflow_thermal/13_airflow_thermal.v002__2026-11-05_2f8c0ac.svg"
   },
   {
    "src": "drawings/15_bom_sheet.svg",
@@ -82,6 +190,15 @@
    "file": "15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg"
   },
   {
+   "src": "drawings/16_cable_clips.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "e6ed160068d3faf03d528f211b83145c82d4807eec3405f7acc95172caaa3b1f",
+   "file": "16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg"
+  },
+  {
    "src": "drawings/outlines.dxf",
    "version": 1,
    "gen": "current",
@@ -89,6 +206,15 @@
    "commit": "fd22dea",
    "sha256": "920fb9899c0bc661a16b7140e14a3988ea52715cbce1a70d44aeb51691f8073e",
    "file": "outlines/outlines.v001__2026-11-03_fd22dea.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "db3343ea2ecefd7dfb62d9e9819ac29d30552a815f9578fc45795f7f78a92505",
+   "file": "outlines/outlines.v002__2026-11-05_b97eaae.dxf"
   }
  ]
 }

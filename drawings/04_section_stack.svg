@@ -14,14 +14,14 @@
 <text x="85.44" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 85.44 37)">隙間</text>
 <rect x="86.24" y="40" width="3.2" height="90" fill="#ccd" stroke="#000" stroke-width=".3"/>
 <text x="87.83999999999999" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 87.83999999999999 37)">背板 A5052</text>
-<rect x="89.44" y="86.80000000000001" width="144.0" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
-<line x1="60" y1="138" x2="88.8" y2="138" stroke="#c0392b" stroke-width="0.3"/>
+<rect x="89.44" y="86.80000000000001" width="150.4" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
+<line x1="60" y1="138" x2="90.4" y2="138" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="60" y1="130" x2="60" y2="140" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="88.8" y1="130" x2="88.8" y2="140" stroke="#c0392b" stroke-width="0.2"/>
-<text x="74.4" y="136.5" font-size="3.6" text-anchor="middle" fill="#c0392b">スラブ 18</text>
-<line x1="60" y1="150" x2="232.8" y2="150" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="90.4" y1="130" x2="90.4" y2="140" stroke="#c0392b" stroke-width="0.2"/>
+<text x="75.2" y="136.5" font-size="3.6" text-anchor="middle" fill="#c0392b">スラブ 19.0</text>
+<line x1="60" y1="150" x2="240.8" y2="150" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="60" y1="130" x2="60" y2="152" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="232.8" y1="130" x2="232.8" y2="152" stroke="#c0392b" stroke-width="0.2"/>
-<text x="146.4" y="148.5" font-size="3.6" text-anchor="middle" fill="#c0392b">総厚 108</text>
-<text x="60" y="175" font-size="4">厚み構成(縮尺1.6倍)。ドーム壁 t3(外面最大厚 108)。内部有効奥行 最大 87mm</text>
+<line x1="240.8" y1="130" x2="240.8" y2="152" stroke="#c0392b" stroke-width="0.2"/>
+<text x="150.4" y="148.5" font-size="3.6" text-anchor="middle" fill="#c0392b">総厚 113</text>
+<text x="60" y="175" font-size="4">厚み構成(縮尺1.6倍)。ドーム壁 t3(外面最大厚 113)。内部有効奥行 最大 91.0mm</text>
 </svg>

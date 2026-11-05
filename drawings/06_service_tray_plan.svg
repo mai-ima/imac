@@ -16,20 +16,22 @@
 <text x="195.06" y="194.08" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
 <rect x="120.48" y="80.56" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="157.98000000000002" y="110.56000000000002" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF750 (2024, S)</text>
-<rect x="45.96" y="55.18000000000001" width="72.0" height="72.0" fill="#d9c8a0" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="81.96" y="91.18" font-size="2.6" text-anchor="middle" fill="#222">fan (Noctua NF-A12x25 PWM x)</text>
+<rect x="45.96" y="67.18" width="72.0" height="72.0" fill="#d9c8a0" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="81.96" y="103.18" font-size="2.6" text-anchor="middle" fill="#222">fan (Noctua NF-A12x25 PWM x)</text>
 <rect x="43.2" y="148.78" width="33.0" height="90.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="59.7" y="193.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
 <rect x="164.4" y="158.59" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="171.9" y="182.63500000000002" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
 <rect x="88.19999999999999" y="153.57999999999998" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="128.20499999999998" y="155.98000000000002" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
+<rect x="294.0" y="236.38" width="16.8" height="12.0" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="302.4" y="242.38" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
 <circle cx="66.0" cy="247.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <text x="70.0" y="244.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
 <circle cx="363.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <text x="367.0" y="223.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
-<circle cx="66.0" cy="136.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="70.0" y="133.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="66.0" cy="58.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="70.0" y="55.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
 <circle cx="363.0" cy="76.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <text x="367.0" y="73.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
 <circle cx="171.0" cy="254.38" r="2.2" fill="#c0392b"/>

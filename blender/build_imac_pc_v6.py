@@ -31,7 +31,7 @@ POD_T, POD_H, WALL = S['pod']['total_t'], S['pod']['h'], S['pod']['wall']
 POD_W = W - S['pod']['side_margin']
 IN_W, IN_D = POD_W - 2 * WALL, POD_T - SLAB - WALL
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
-ZC = -(SLAB + POD_T) / 2
+ZC = -S['hinge']['axis_z_from_glass']      # ヒンジ軸のz(前面ガラスから)。docs/hinge-design.md
 X0, Y0, Z0 = -W / 2 + S['dome']['inset_left_right'] + WALL, S['dome']['inset_bottom'] + WALL, -SLAB      # 内部座標の原点(ドーム内側の左下)
 
 # ---------------- ユーティリティ ----------------
@@ -265,7 +265,7 @@ def dome_shell():
     insets = [0, 0] + [DM['run'] * (k / 12) for k in range(1, 13)]
     for i, ins in enumerate(insets):
         dep = 0 if i == 0 else d_inner(ins) + WALL
-        rr = max(r0 - ins * 0.85, 6)
+        rr = max(r0 - ins, 6)      # 内側へオフセットした角丸矩形(角R=R0-inset)
         ring = [bm.verts.new(V(cx + px, cy + py, -SLAB - dep)) for (px, py) in rrect(a0 - ins, b0 - ins, rr)]
         rings.append(ring)
     n = len(rings[0])
@@ -276,7 +276,7 @@ def dome_shell():
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
     bm.to_mesh(me); bm.free()
     ob = bpy.data.objects.new('cover_back', me); me.materials.append(M['body'])
-    so = ob.modifiers.new('wall', 'SOLIDIFY'); so.thickness = WALL * 0.8; so.offset = 1
+    so = ob.modifiers.new('wall', 'SOLIDIFY'); so.thickness = DM['sheet_t']; so.offset = 1      # 板厚2.0(spec.dome.sheet_t)
     for p in me.polygons: p.use_smooth = len(p.vertices) == 4      # 平坦部(ngon)はフラット
     link(ob)
     # 法線が背面(-設計z = Blender +Y)を向くことを保証
@@ -294,7 +294,7 @@ def vent_cutter(name, zones, step=7.0, hr=2.1, margin=22):
         while y_ <= zy1:
             x_ = zx0 + (step / 2 if row % 2 else 0)
             while x_ <= zx1:
-                bmesh.ops.create_cone(bmc, cap_ends=True, segments=10, radius1=hr, radius2=hr, depth=DOME_DEPTH + 10,
+                bmesh.ops.create_cone(bmc, cap_ends=True, segments=8, radius1=hr, radius2=hr, depth=DOME_DEPTH + 10,
                                       matrix=Matrix.Translation(V(X0 + x_, Y0 + y_, Z0 - DOME_DEPTH / 2)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))
                 x_ += step
             y_ += step * .87; row += 1
@@ -304,14 +304,16 @@ LAY = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'model', 'layout.js
 def lp(k): return LAY[k]['pos']
 def ls(k): return LAY[k]['size']
 rx, ry, _ = lp('radiator'); fx, fy, _ = lp('fan'); gx, gy, gz = lp('gpu')
-vc = vent_cutter('cover_vents', [(rx + 4, ry + 4, rx + 116, ry + 273), (fx + 4, fy + 4, fx + 116, fy + 116), (gx + 20, gy + 15, gx + 100, gy + 215)])
+vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=4.0, hr=1.2, margin=36)   # v7(Apple式): 背面全面に均一パーフォレーション Ø2.4×ピッチ4.0(局所3領域を廃止)
 # 外周のI/O・GPU出力の開口(ドーム傾斜壁を貫通)
 bx, by, bz = lp('board')
 def cutbox(name, x0, y0, z0, w, h, d):
     c = ibox(name, w, h, d, x0, y0, z0, None); c.hide_render = True; BODY_OBJS.append(c); return c
 c_io = cutbox('cover_io_cutter', bx + 12, -20, 2, 120, bz + 60 + 40, 52)
+ax_, ay_, az_ = lp('ac_inlet')
+c_ac = cutbox('cover_ac_cutter', ax_ - 2, -20, 2, 32, ay_ + 20 + 24, 92)
 c_gpu = cutbox('cover_gpu_cutter', gx + 4, -20, 2, 112, gy + 6 + 20, 52)
-for nm, c in (('vents', vc), ('io', c_io), ('gpu', c_gpu)):
+for nm, c in (('vents', vc), ('io', c_io), ('gpu', c_gpu), ('ac', c_ac)):
     m_ = dome.modifiers.new(nm, 'BOOLEAN'); m_.object = c; m_.operation = 'DIFFERENCE'; m_.solver = 'MANIFOLD'
 # EMIガスケット(ドーム縁の黒い導電ファブリック)
 def gasket():
@@ -324,9 +326,9 @@ def gasket():
     so = ob.modifiers.new('t', 'SOLIDIFY'); so.thickness = 3.0; so.offset = -1; return link(ob)
 gasket()
 # スタンド
-box('stand_arm', ST_W, DROP - 6, 8, -ST_W / 2, -DROP, ZC - 4, M['stand'], bevel=2)
-box('stand_foot', ST_W, 6, FOOT, -ST_W / 2, -DROP - 6, ZC - FOOT / 2, M['stand'], bevel=2.2, body=False)
-cyl('hinge', 11, ST_W + 2, 'x', 0, -14, ZC, M['steel'], 64, body=False)
+box('stand_arm', ST_W, DROP + S['hinge']['axis_y'], 8, -ST_W / 2, -DROP, ZC - 4, M['stand'], bevel=2)
+box('stand_foot', S['stand']['foot_w'], 6, FOOT, -S['stand']['foot_w'] / 2, -DROP - 6, ZC - S['stand']['foot_back'], M['stand'], bevel=2.2, body=False)
+cyl('hinge', 11, ST_W + 2, 'x', 0, S['hinge']['axis_y'], ZC, M['steel'], 64, body=False)
 box('stand_power_recess', 12, 26, 0.5, -6, -DROP * .55 - 13, ZC + 3.9, M['dark'], bevel=3)
 ARM_OBJ = bpy.data.objects['stand_arm']; BODY_OBJS.remove(ARM_OBJ)
 
@@ -357,7 +359,7 @@ def tray():
     so = ob.modifiers.new('t', 'SOLIDIFY'); so.thickness = 2.0; so.offset = 1
     return link(ob)
 tray()
-for k, (px_, py_) in enumerate([(60, 60), (555, 60), (60, 210), (555, 310)]):
+for k, (px_, py_) in enumerate([tuple(k) for k in json.load(open(os.path.join(ROOT, 'model', 'layout.json')))['keyholes']]):
     icyl(f'keyhole_pin{k}', 1.75, 8, 'z', px_, py_, 0.5, M['steel'], 20); icyl(f'keyhole_head{k}', 3.5, 1.2, 'z', px_, py_, 0.6, M['steel'], 24)
     icyl(f'keyhole_slot{k}', 5.0, .3, 'z', px_, py_, 3.15, M['rubber'], 24)
 for k, sx_ in enumerate((-60, 60)):
@@ -510,6 +512,8 @@ cable('cable_atx24', [(px_ + 20, py_ - 6, pz_ + 25), (px_ + 8, py_ - 20, pz_ + 3
 cable('cable_eps', [(px_ + 38, py_ - 6, pz_ + 25), (px_ + 30, py_ - 16, 30), (bx - 6, 190, 26), (bx - 6, by + 40, 18), (bx + 6, by + 12, Z1 + 8)], 2.8, M['rubber'])
 cable('cable_pcie8', [(px_ + 76, py_ - 6, pz_ + 25), (px_ + 100, py_ - 20, 40), (300, 198, 58), (gx + 102, gy + 205, 58), (gx + 102, gy + 212, gz + 42)], 3.2, M['rubber'])
 cable('cable_ctrl_12v', [(px_ + 2, py_ + 50, 22), (120, 215, 24), (88, 200, 18), (80, 150, 10), (cx_ + 50, cy_ + 112, cz_ + 4)], 2.2, M['rubber'])
+ibox('ac_inlet_body', 28, 20, 22, ax_, ay_, az_, principled('c14', '#1b1c20', 0, .5), .6); ibox('ac_inlet_flange', 36, 3, 28, ax_ - 4, ay_ - 3, az_ - 3, M['steel'], .3); ibox('ac_inlet_socket', 22, 1, 15, ax_ + 3, ay_ - 3.5, az_ + 3, M['dark'])
+cable('cable_ac', [(ax_ + 14, ay_ + 20, 14), (436, ay_ + 34, 14), (412, ay_ + 46, 12), (412, 300, 12), (350, 325, 12), (px_ + 62, 322, 12), (px_ + 62, py_ + 101, 15)], 3.6, M['rubber'])
 cable('cable_umbilical', [(cx_ + 28, cy_ + 146, cz_ + 5), (cx_ + 20, cy_ + 165, 9), (8, 180, 6), (-2, 180, 1)], 3.0, principled('umb', '#c9ced6', 0, .5))
 # ---------------- 分解(Explode)・チルト ----------------
 def shift_group(prefix_list, dz_):
@@ -522,7 +526,7 @@ if A.explode > 0:
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
         if ob.name.startswith(('cover_back', 'gasket')): ob.hide_render = True
-PIV = bpy.data.objects.new('tilt_pivot', None); COLL.objects.link(PIV); PIV.location = V(0, 0, ZC); bpy.context.view_layer.update()
+PIV = bpy.data.objects.new('tilt_pivot', None); COLL.objects.link(PIV); PIV.location = V(0, S['hinge']['axis_y'], ZC); bpy.context.view_layer.update()
 for ob in COLL.objects:
     if ob in BODY_OBJS and ob.parent is None:
         ob.parent = PIV; ob.matrix_parent_inverse = PIV.matrix_world.inverted()

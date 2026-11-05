@@ -48,7 +48,7 @@
 <text x="32.0" y="229.0" font-size="2.9" text-anchor="start" fill="#222" >ATX 24ピン</text>
 <text x="90.0" y="229.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(24p) → 基板 ATX24</text>
 <text x="170.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >18</text>
-<text x="190.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >85</text>
+<text x="190.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >84</text>
 <text x="212.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >300</text>
 <text x="240.0" y="229.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
 <text x="20.0" y="235.0" font-size="3" text-anchor="start" fill="#222" >W2</text>
@@ -62,22 +62,29 @@
 <text x="32.0" y="241.0" font-size="2.9" text-anchor="start" fill="#222" >GPU PCIe 6+2ピン</text>
 <text x="90.0" y="241.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(PCIe) → GPU 8ピン</text>
 <text x="170.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >16</text>
-<text x="190.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >238</text>
+<text x="190.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >235</text>
 <text x="212.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >400</text>
 <text x="240.0" y="241.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
-<text x="20.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >W4</text>
-<text x="32.0" y="247.0" font-size="2.9" text-anchor="start" fill="#222" >コントローラ基板 12V</text>
-<text x="90.0" y="247.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(SATA/周辺) → ctrl_board DC入力</text>
-<text x="170.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >20</text>
-<text x="190.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >169</text>
-<text x="212.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >-</text>
+<text x="20.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >W6</text>
+<text x="32.0" y="247.0" font-size="2.9" text-anchor="start" fill="#222" >AC電源(C14インレット→PSU C13)</text>
+<text x="90.0" y="247.0" font-size="2.7" text-anchor="start" fill="#222" >C14インレット → SF750 AC入力</text>
+<text x="170.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >16</text>
+<text x="190.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >576</text>
+<text x="212.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >600</text>
 <text x="240.0" y="247.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
-<text x="20.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >W5</text>
-<text x="32.0" y="253.0" font-size="2.9" text-anchor="start" fill="#222" >アンビリカル(eDP 30p/12V/USB)</text>
-<text x="90.0" y="253.0" font-size="2.7" text-anchor="start" fill="#222" >ctrl_board eDP → パネル背面コネクタ</text>
-<text x="170.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >-</text>
-<text x="190.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >85</text>
+<text x="20.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >W4</text>
+<text x="32.0" y="253.0" font-size="2.9" text-anchor="start" fill="#222" >コントローラ基板 12V</text>
+<text x="90.0" y="253.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(SATA/周辺) → ctrl_board DC入力</text>
+<text x="170.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >20</text>
+<text x="190.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >168</text>
 <text x="212.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >-</text>
 <text x="240.0" y="253.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >W5</text>
+<text x="32.0" y="259.0" font-size="2.9" text-anchor="start" fill="#222" >アンビリカル(eDP 30p/12V/USB)</text>
+<text x="90.0" y="259.0" font-size="2.7" text-anchor="start" fill="#222" >ctrl_board eDP → パネル背面コネクタ</text>
+<text x="170.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >-</text>
+<text x="190.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >85</text>
+<text x="212.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >250</text>
+<text x="240.0" y="259.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
 <text x="20.0" y="266.0" font-size="3" text-anchor="start" fill="#222" >電力: 12V系 CPU162W+GPU180W+その他≒60W ⇒ ピーク約400W / 750W = 53%(余裕47%)。補助電源はEPS×1, PCIe 8pin×1のみ使用(予備: EPS×1, PCIe×1, 12V-2x6×1)。</text>
 <text x="20.0" y="272.0" font-size="3" text-anchor="start" fill="#222" >接地: AC保護アース→PSU筐体→トレイ(M3スタンドオフ接触)→ドーム(ガスケット)→背板の順で導通。ファンはPWM 4pin。</text></svg>

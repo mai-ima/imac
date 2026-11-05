@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="291" height="204" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="8" y="12" font-size="6" font-weight="bold">CP-11 チルト機構(ヒンジ+カウンターバランス)</text>
+<text x="8" y="19" font-size="3.2">材質 対称摩擦ヒンジ(Reell PHL/PHC級)×2〜4 + 定荷重ばね/ガススプリング(型番未選定) / 板厚 - / 数量 1 / 質量 0.5kg / ISO 2768-m(重要寸法は個別指定)</text>
+<defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<text x="185" y="40" font-size="2.8">加工: 規格品+ブラケット(A5052 t3)</text>
+<text x="185" y="45.7" font-size="2.8">表面処理: -</text>
+<text x="185" y="51.400000000000006" font-size="2.8">公差: 同軸度±0.05</text>
+<text x="185" y="57.10000000000001" font-size="2.8">要素: 金属製ばね保持</text>
+<text x="185" y="62.80000000000001" font-size="2.8">要素: 機械ストッパ(-5°/+25°)</text>
+<text x="185" y="68.50000000000001" font-size="2.8">要素: ばね破断時でも急降下しない摩擦</text>
+<text x="185" y="74.20000000000002" font-size="2.8">接合: CP-10</text>
+<text x="185" y="79.90000000000002" font-size="2.8">接合: CP-03</text>
+<text x="8" y="202" font-size="3">状態: 方式決定・部品未選定(U26/U27) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>

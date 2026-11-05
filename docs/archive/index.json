@@ -64,6 +64,15 @@
    "file": "build-guide/build-guide.v001__2026-11-05_27ca8ce.md"
   },
   {
+   "src": "docs/design-v6.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "1bfcbfb",
+   "sha256": "cc497835d92e7582389266fe33c403f84a4337c81a4624b5c09f68d31284949c",
+   "file": "design-v6/design-v6.v001__2026-11-03_1bfcbfb.md"
+  },
+  {
    "src": "docs/design.md",
    "version": 1,
    "gen": "gen-001",
@@ -125,6 +134,33 @@
    "commit": "ee3a42e",
    "sha256": "f812345bf0e8e7be3441fc8388b889f5d8343fe0bd95af9a6e082b4e08f45774",
    "file": "fitcheck-report/fitcheck-report.v001__2026-11-03_ee3a42e.txt"
+  },
+  {
+   "src": "docs/fitcheck-report.txt",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "028b0d8bff7c9850278d2f88bde2ba4f171602c1f9d3699a30b55b7589e1d2f3",
+   "file": "fitcheck-report/fitcheck-report.v002__2026-11-05_2f8c0ac.txt"
+  },
+  {
+   "src": "docs/hinge-design.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "11d348c722e201784b02f4f7f77ad5bb07232a18511cabf9e60d4c123f563002",
+   "file": "hinge-design/hinge-design.v001__2026-11-05_017b7d9.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "9f527793ad26e47262899facbcf862dbe378de978961da3505620a1f7fd716ce",
+   "file": "joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -199,6 +235,15 @@
    "file": "selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md"
   },
   {
+   "src": "docs/service-manual.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "a007787b3f77582afab147c8c14d27a1c818f1fa3f20a2bbca9f86812c0a8056",
+   "file": "service-manual/service-manual.v001__2026-11-03_307c9ea.md"
+  },
+  {
    "src": "docs/service-mechanisms.md",
    "version": 1,
    "gen": "current",
@@ -206,6 +251,15 @@
    "commit": "307c9ea",
    "sha256": "48179ebe3813b5f4c9dbc4a00348d6a77da440eb062904630c0a6d6b5f522bc6",
    "file": "service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md"
+  },
+  {
+   "src": "docs/service-mechanisms.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "434b29d",
+   "sha256": "3783831f50239900e59315e6a6f4d796843f1a5c4c5e70502efe9a87b9c95f85",
+   "file": "service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md"
   },
   {
    "src": "docs/source-status.md",
@@ -260,6 +314,15 @@
    "commit": "27ca8ce",
    "sha256": "66299a52e5e1e8fa8d66a728db221600262001599fa3bc1007af9331f188af33",
    "file": "wiring/wiring.v001__2026-11-05_27ca8ce.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "5cc43538d08dd7ab95dd9200520a356182f1546e48c07770b0cecabf4cb385eb",
+   "file": "wiring/wiring.v002__2026-11-05_2f8c0ac.md"
   }
  ]
 }

@@ -7,26 +7,11 @@ S = json.load(open(f'{R}/model/spec.json')); g = 9.81
 D = S['dome']; W = S['body_w']; PH = S['panels'][str(S['panel_size'])]['h']; H = PH + S['bezel'] + S['chin']
 rho_al = 2.68e-6   # kg/mm3 (A5052)
 # ---- 質量(kg): (名前, 質量, 根拠, 重心z[前面ガラス=0, 背面+], 重心y[本体下端=0]) ----
-dome_area = (W - 2 * D['inset_left_right']) * (H - D['inset_bottom'] - D['inset_top']) * 1.25      # 傾斜分+25%
-M = [
- ('前面ガラス(1.1mm)', 620 * 415 * 1.1 * 2.5e-6, '計算(ガラス密度2.5)', 0.5, 208),
- ('パネル LM270WR3相当', 2.5, '推定(27型4Kの公称2〜3kg, 未確認)', 8, 208),
- ('背板 A5052 t2.0', 620 * 415 * 2.0 * rho_al, '計算(穴/曲げ除外せず)', 16, 208),
- ('スラブ枠+リム(推定)', 1.0, '推定', 9, 208),
- ('サービストレイ t2.0', 590 * 371 * 2.0 * rho_al * 0.9, '計算(10%穴)', 24, 205),
- ('ドーム t2.0', dome_area * 2.0 * rho_al, '計算', 60, 206),
- ('ASUS X870-I+9800X3D+DIMM2', 0.55, '推定(基板0.4+CPU0.04+DIMM0.1)', 30, 120),
- ('ARCTIC LF III Pro 240 一式', 1.665, 'ARCTIC公式(重量)', 40, 190),
- ('ASUS Dual RTX 5060 Ti', 0.95, '推定(公式未確認)', 35, 200),
- ('Corsair SF750', 0.96, '小売記載', 40, 250),
- ('Noctua NF-A12x25', 0.16, '小売記載', 15, 285),
- ('制御基板+SSD+ケーブル+金具', 0.9, '推定', 20, 170),
- ('スタンド A6063(別: ヒンジ軸より下)', 1.8, '推定', 60, -40),
-]
+import sys; sys.path.insert(0, f'{R}/tools'); import massmodel as MM
+M = [(n, m, s, z, y) for (n, m, z, y, s) in MM.head()] + [('スタンド A6063(ヒンジ軸より下)', MM.stand_mass(), '推定', 60, -40)]
 tot = sum(m for _, m, *_ in M); head_ = [m for m in M if not m[0].startswith('スタンド')]
 mh = sum(m[1] for m in head_); cz = sum(m[1] * m[3] for m in head_) / mh; cy = sum(m[1] * m[4] for m in head_) / mh
-hinge_y = -14.0        # ヒンジ軸の高さ(本体下端=0 基準, spec: -14)
-hinge_z = (S['slab_t'] + D['total_t']) / 2   # 軸のz位置(前面ガラスから)
+hinge_y = S['hinge']['axis_y']; hinge_z = S['hinge']['axis_z_from_glass']   # spec.json hinge(v7: 軸を重心の背面側へ)
 out = ['# 接合部・ヒンジ・強度の概算 (自動生成: tools/joint_calc.py)', '', '質量・重心は推定(未実測)。実測後に tools/joint_calc.py の表を更新して再生成する。', '',
        '## 1. 質量見積り(v6)', '| 部品 | 質量kg | 根拠 |', '|---|---|---|']
 for n, m, s, z, y in M: out.append(f'| {n} | {m:.2f} | {s} |')
@@ -40,16 +25,17 @@ for a in (-5, 0, 10, 20, 25):
     out.append(f'| {a:+d}° | {t:.1f} | {"前方へ倒れる向き" if t<0 else "後方(上向き)へ倒れる向き"} |')
 tmax = max(abs(v) for v in tau.values())
 out += ['', f'**問題**: 最大 {tmax:.1f} N·m を摩擦だけで保持する定トルクヒンジは、ユーザーが指で傾ける力(上端で約{tmax/0.415:.0f} N)になり**実用的でない**(市販の定トルク/フリクションヒンジは数N·m級が主流: 要調査, docs/research-hinge.md)。', '',
-        '### 対策案(要設計判断)',
+        '### 対策(v7 採用: B+A)', '- **採用**: ヒンジ軸を重心の背面側(z=43mm)・y=10mmに置き(B)、-5°〜+25°でトルクをほぼ一方向(後方へ倒れる向き)にする。残りをばねで相殺(A: 定荷重ばね/カム式)。',
         f'- **A. カウンターバランス**: 定荷重ばね/ガススプリングで重力モーメントを相殺し、残りを小トルクの摩擦で保持(Apple Studio Display / iMac式)。相殺トルクの目標: ±{0.15*tmax:.1f}N·m 程度の残差。',
         f'- **B. 回転軸を重心の高さに近づける**: dyを減らす(軸を本体中央付近へ)。ただし軸のアームがトレイ/ドームを貫通せず背板に取り付く構造が必要(スタンド腕を背板直付け→ドーム下端の切り欠き)。dy を {dy:.0f}→100mm にすると最大トルクは約 {mh*g*(dz*math.cos(math.radians(25))+100*math.sin(math.radians(25)))/1000:.1f} N·m。',
         '- **C. チルトを固定段階(ラチェット)にする**: 段数を減らす代わりに摩擦を不要にする。',
         '', '## 3. トレイ吊りピン(キーホール)の強度',]
-mt = sum(m[1] for m in M if m[0] in ('サービストレイ t2.0', 'ASUS X870-I+9800X3D+DIMM2', 'ARCTIC LF III Pro 240 一式', 'ASUS Dual RTX 5060 Ti', 'Corsair SF750', 'Noctua NF-A12x25', '制御基板+SSD+ケーブル+金具'))
-sh_d = 4.0; A = math.pi / 4 * sh_d ** 2; t_plate = 2.0; sy = 193.0; su = 228.0     # A5052-H32 降伏/引張(代表値, 要データシート)
+mt = sum(m[1] for m in M if m[0] in ('サービストレイ t2.0', 'board', 'cooler', 'radiator', 'gpu', 'psu', 'fan', 'ctrl_board', 'ssd', 'ac_inlet', 'ケーブル/金具/ガスケット/ラッチ等'))
+sh_d = 5.0; A = math.pi / 4 * sh_d ** 2; t_plate = 3.0;      # v7: 肩径Ø5(CP-04)、SUSブッシュで実効板厚3.0(CP-05)
+sy = 193.0; su = 228.0     # A5052-H32 降伏/引張(代表値, 要データシート)
 for label_, G in (('静荷重(1G)', 1), ('輸送衝撃 30G', 30), ('衝撃 50G', 50)):
     F = mt * g * G / 2     # 上側2点で支持する最悪ケース
-    out.append(f'- {label_}: トレイ総質量 {mt:.1f}kg → 1点あたり {F:.0f} N。ピン肩径{sh_d}mmのせん断応力 {F/A:.1f} MPa(SUS304 降伏≈200MPa, せん断≈115MPa)、A5052板(t{t_plate})の支圧応力 {F/(sh_d*t_plate):.0f} MPa(降伏{sy:.0f}MPa) → {"OK" if F/(sh_d*t_plate) < sy*0.6 else "要補強(ブッシュ/板厚増/ピン径増)"}')
+    out.append(f'- {label_}: トレイ総質量 {mt:.1f}kg → 1点あたり {F:.0f} N。ピン肩径{sh_d}mmのせん断応力 {F/A:.1f} MPa(SUS304 降伏≈200MPa, せん断≈115MPa)、A5052+SUSブッシュ(実効t{t_plate})の支圧応力 {F/(sh_d*t_plate):.0f} MPa(降伏{sy:.0f}MPa) → {"OK" if F/(sh_d*t_plate) < sy*0.6 else "要補強(ブッシュ/板厚増/ピン径増)"}')
 out += ['', '→ 輸送衝撃はキーホール縁の局所変形が支配的。キーホール周囲に硬質ブッシュ(SUS)またはt3.0へ増厚を推奨。トレイ法線方向の衝撃(GPU/AIOのスタンドオフ荷重)は §5。', '']
 # ---- ドーム固定 ----
 perim = 2 * ((W - 2 * D['inset_left_right']) + (H - D['inset_bottom'] - D['inset_top']))

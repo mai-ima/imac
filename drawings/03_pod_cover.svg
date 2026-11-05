@@ -7,8 +7,8 @@
 <rect x="40" y="30" width="298.0" height="188.65" rx="25.0" fill="#c4c8ce" stroke="#000" stroke-width="0.5"/>
 <rect x="69.85" y="56.95000000000002" width="56.0" height="134.5" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
 <text x="97.85" y="124.20000000000002" font-size="3" text-anchor="middle">六角穴領域 radiator</text>
-<rect x="265.2" y="46.150000000000006" width="56.0" height="56.0" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
-<text x="293.2" y="74.15" font-size="3" text-anchor="middle">六角穴領域 fan</text>
+<rect x="265.2" y="56.150000000000006" width="56.0" height="56.0" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
+<text x="293.2" y="84.15" font-size="3" text-anchor="middle">六角穴領域 fan</text>
 <rect x="143.1" y="83.05000000000001" width="40.0" height="100.0" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
 <text x="163.1" y="133.05" font-size="3" text-anchor="middle">六角穴領域 gpu</text>
 <line x1="40" y1="228.65" x2="338.0" y2="228.65" stroke="#c0392b" stroke-width="0.3"/>
@@ -19,7 +19,7 @@
 <line x1="338.0" y1="30" x2="350.0" y2="30" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="338.0" y1="218.65" x2="350.0" y2="218.65" stroke="#c0392b" stroke-width="0.2"/>
 <text x="346.5" y="124.325" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 346.5 124.325)">377.3</text>
-<polyline fill="none" stroke="#000" stroke-width=".6" points="363.0,47.2 364.8,47.5 366.6,48.5 368.4,49.9 370.2,51.9 372.0,54.2 373.8,56.9 375.6,59.9 377.4,63.0 379.2,66.3 381.0,69.7 382.8,73.1 384.6,76.4 386.4,79.5 388.2,82.5 390.0,85.2 391.8,87.5 393.6,89.5 395.4,90.9 397.2,91.9 399.0,92.2"/>
-<text x="348.0" y="34" font-size="2.8">縁→内側プロファイル(内奥行 12→87mm)</text>
+<polyline fill="none" stroke="#000" stroke-width=".6" points="363.0,47.2 364.8,47.5 366.6,48.5 368.4,50.1 370.2,52.1 372.0,54.6 373.8,57.4 375.6,60.6 377.4,63.9 379.2,67.4 381.0,70.9 382.8,74.4 384.6,77.9 386.4,81.2 388.2,84.4 390.0,87.2 391.8,89.7 393.6,91.7 395.4,93.3 397.2,94.3 399.0,94.6"/>
+<text x="348.0" y="34" font-size="2.8">縁→内側プロファイル(内奥行 12→91.0mm)</text>
 <text x="40" y="24" font-size="4">ドーム CP-07(背面から見た図: x反転): A5052 t3 絞り / 六角穴 φ4.2 ピッチ7.0 千鳥 / ラッチ穴×6, 位置決めピン穴Ø4×2 / EMIガスケット溝 3.0×1.5 / アルマイトII</text>
 </svg>

@@ -117,8 +117,9 @@ CAB = [
  dict(id='W1', name='ATX 24ピン', frm='PSU modular(24p)', to='基板 ATX24', awg=18, conn='24p (20+4)', ref_mm=300, pts=[(px+20, py-6, pz+25), (px+8, py-20, pz+30), (bx+36, by+176, Z1+20), (bx+38, by+164, Z1+12)]),
  dict(id='W2', name='CPU EPS 8ピン', frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', awg=16, conn='EPS 4+4', ref_mm=400, pts=[(px+38, py-6, pz+25), (px+30, py-16, 30), (bx-6, 190, 26), (bx-6, by+40, 18), (bx+6, by+12, Z1+8)]),
  dict(id='W3', name='GPU PCIe 6+2ピン', frm='PSU modular(PCIe)', to='GPU 8ピン', awg=16, conn='PCIe 6+2', ref_mm=400, pts=[(px+76, py-6, pz+25), (px+100, py-20, 40), (300, 198, 58), (gx+102, gy+205, 58), (gx+102, gy+212, gz+42)]),
+ dict(id='W6', name='AC電源(C14インレット→PSU C13)', frm='C14インレット', to='SF750 AC入力', awg=16, conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, pts=[(454, 44, 14), (436, 58, 14), (412, 70, 12), (412, 300, 12), (350, 325, 12), (213, 322, 12), (213, 305, 15)]),
  dict(id='W4', name='コントローラ基板 12V', frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', awg=20, conn='SATA電源 or 2pin', ref_mm=0, pts=[(px+2, py+50, 22), (120, 215, 24), (88, 200, 18), (80, 150, 10), (cx+50, cy+112, cz+4)]),
- dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', frm='ctrl_board eDP', to='パネル背面コネクタ', awg=0, conn='eDP 30p + 12V + USB2', ref_mm=0, pts=[(cx+28, cy+146, cz+5), (cx+20, cy+165, 9), (8, 180, 6), (-2, 180, 1)]),
+ dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', frm='ctrl_board eDP', to='パネル背面コネクタ', awg=0, conn='eDP 30p + 12V + USB2 (ハーネス全長250mm=整備余長含む)', ref_mm=250, pts=[(cx+28, cy+146, cz+5), (cx+20, cy+165, 9), (8, 180, 6), (-2, 180, 1)]),
 ]
 def plen(p): return sum(math.dist(p[i], p[i+1]) for i in range(len(p)-1))
 for c in CAB: c['len_mm'] = round(plen(c['pts']) * 1.15); c['verdict'] = ('OK' if (c['ref_mm'] == 0 or c['len_mm'] <= c['ref_mm']) else '不足(延長/別ケーブル要)')
@@ -153,18 +154,18 @@ for it in L['items']:
 def arrow(x1, y1, x2, y2, c): return line(ox + x1 * sc, oy + (IH - y1) * sc, ox + x2 * sc, oy + (IH - y2) * sc, c, .9, '', 'marker-end="url(#ar)"')
 rx, ry, _ = I['radiator']['pos']; fx, fy, _ = I['fan']['pos']
 for k in range(3): b.append(arrow(gx + 30 + k * 30, gy + 20, gx + 30 + k * 30, gy + 70, '#1a7f37'))   # GPU吸気(ドーム穴→GPUファン)
-b.append(T(ox + (gx + 60) * sc, oy + (IH - gy - 85) * sc, 'GPU: ドーム穴から吸気→ヒートシンク→トレイ面沿いに排気', 2.2, 'middle', '#1a7f37'))
+b.append(T(ox + (gx + 60) * sc, oy + (IH - gy - 85) * sc, 'GPU: プレナム空気を吸気→ヒートシンク→プレナム', 2.2, 'middle', '#1a7f37'))
 for k in range(3): b.append(arrow(rx + 25 + k * 35, ry + 200, rx + 25 + k * 35, ry + 250, '#06c'))
-b.append(T(ox + (rx + 60) * sc, oy + (IH - ry - 270) * sc, 'ラジエーター: P12 Pro×2で吸気→ドーム穴へ排気', 2.2, 'middle', '#06c'))
+b.append(T(ox + (rx + 60) * sc, oy + (IH - ry - 270) * sc, 'ラジエーター: P12 Pro×2をドーム側に配置し外気を直接吸気→プレナムへ(正圧)', 2.2, 'middle', '#06c'))
 for k in range(2): b.append(arrow(fx + 40 + k * 40, fy + 40, fx + 40 + k * 40, fy + 100, '#c0392b'))
-b.append(T(ox + (fx + 60) * sc, oy + (IH - fy - 130) * sc, 'NF-A12x25: ケース内の熱気をドームの穴から排気', 2.6, 'middle', '#c0392b'))
+b.append(T(ox + (fx + 60) * sc, oy + (IH - fy - 130) * sc, 'NF-A12x25 + 正圧の逃げ: プレナムの熱気を全面格子から排気', 2.6, 'middle', '#c0392b'))
 tx = ox + IW * sc + 20
 b.append(T(tx, 44, '熱収支(ピーク)', 4, 'start', '#000', 'font-weight="bold"'))
 heat = [('CPU Ryzen 7 9800X3D PPT', 162), ('GPU RTX 5060 Ti TGP', 180), ('基板/SSD/RAM/ファン', 40), ('PSU損失(効率92%)', 35), ('コントローラ/パネル', 30)]
 tot = sum(v for _, v in heat)
 for n, (k, v) in enumerate(heat): b.append(T(tx, 52 + n * 6, f'{k}: {v} W', 3))
 b.append(T(tx, 52 + len(heat) * 6 + 3, f'合計 約{tot} W', 3.4, 'start', '#000', 'font-weight="bold"'))
-b.append(T(tx, 52 + len(heat) * 6 + 12, '冷却能力(公称): ARCTIC LF III Pro 240 → CPU PPT162Wに対し一般に余裕あり(AMD推奨は液冷)。', 2.8))
+b.append(T(tx, 52 + len(heat) * 6 + 12, '正圧設計: ラジエーターは外気直吸気(CPU熱はプレナムへ入る)。詳細 docs/thermal-analysis.md', 2.8))
 b.append(T(tx, 52 + len(heat) * 6 + 18, 'ΔT計算は tools/fitcheck.py。実機は①CPU/GPU温度②ファン回転数③表面温度の実測が必須(未測定)。', 2.8))
 b.append(T(tx, 52 + len(heat) * 6 + 24, '懸念: ドームの穴開口率・吸気経路の圧損、ポンプ下のSSD/VRM冷却(VRMファン60mm付き)。', 2.8, 'start', '#c0392b'))
 save('13_airflow_thermal.svg', b)

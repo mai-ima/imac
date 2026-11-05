@@ -10,6 +10,15 @@
    "file": "fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "fa6f7ba77f34f19690aa132eda72ec9ae4d1197aaee9aa19fce16e74aff0360c",
+   "file": "fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",
@@ -46,6 +55,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "0128043d23c2dcadc5055393648d100f023a9d8f86e695417b33840401e6e57a",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v002__2026-11-05_b97eaae.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",
@@ -53,6 +71,33 @@
    "commit": "27ca8ce",
    "sha256": "fadab93acd4f7fef2a7fd0446580c7c93448a88fb33c44c82847fd1f89a2295a",
    "file": "gen_package/gen_package.v001__2026-11-05_27ca8ce.py"
+  },
+  {
+   "src": "tools/gen_package.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "0bb4c35e47bfe174a07d11441e7088cfc09fd0fc515899ac8b2316efb27f9178",
+   "file": "gen_package/gen_package.v002__2026-11-05_2f8c0ac.py"
+  },
+  {
+   "src": "tools/gen_service_drawings.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "85779e3f95eaf88a018b903555c48fa7622ca26f6a66567af53e14e8276b3051",
+   "file": "gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py"
+  },
+  {
+   "src": "tools/gen_specs.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "6da8266b77b60e0d3b34a436af2cb62f4982c6ee8f7d288f36d0f1ce915fe5c9",
+   "file": "gen_specs/gen_specs.v001__2026-11-05_b97eaae.py"
   },
   {
    "src": "tools/guard_no_delete.sh",
@@ -64,6 +109,15 @@
    "file": "guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh"
   },
   {
+   "src": "tools/joint_calc.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "5e27335e3b5c366dbf740d075fdd67453695ec5b288b1a57a07aa51b8a5641a6",
+   "file": "joint_calc/joint_calc.v001__2026-11-05_017b7d9.py"
+  },
+  {
    "src": "tools/layout_search.py",
    "version": 1,
    "gen": "current",
@@ -71,6 +125,15 @@
    "commit": "2cd7df3",
    "sha256": "61be84c552b4e13956169349f4b0ec43614ac3962c1bc4ad05afb1f8f89f4bec",
    "file": "layout_search/layout_search.v001__2026-11-03_2cd7df3.py"
+  },
+  {
+   "src": "tools/stability.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "1bfcbfb",
+   "sha256": "c1628b4b3d4f5a1098d6ad6a52cf1288f8d7416d06fa4709a7c3fcde5bc3ee37",
+   "file": "stability/stability.v001__2026-11-03_1bfcbfb.py"
   }
  ]
 }

@@ -287,5 +287,19 @@
    "https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf"
   ],
   "status_note": "official"
+ },
+ "ac_inlet": {
+  "id": "ac_inlet",
+  "name": "IEC C14 AC インレット(内部延長C13ケーブルでPSUへ) 型番未選定",
+  "maker": "Schurter/Qualtek等",
+  "dims": [
+   28,
+   20,
+   22
+  ],
+  "status": "assumed",
+  "status_note": "下辺中央右に固定、保護接地(PE)をM4リング端子でトレイ接地スタッドへ。型番U40",
+  "facts": {},
+  "sources": []
  }
 }
