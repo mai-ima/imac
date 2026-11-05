@@ -43,3 +43,9 @@
 
 ## 2026-11-05 厳格監査#1(出典/事実確認): カテゴリ1=B / 3=C / 5=C
 指摘26件への対応: #13 ファン数→1基に統一(parts/selection/fitcheck)、#12 熱→tools/thermal_calc.py+docs/thermal-analysis.md(再循環モデル・試験計画)、#16/#17 旧BOM/selectionに廃止注記、#18 台帳U33〜U38追加+source-status追記、#20 parts.json status を official/retail/assumed の3値+status_note、#21 I/O個数をUSB4×2(Type-C)に修正、#22〜#26 未確認の刻印を撤去(IHSは「AMD」「RYZEN」の2行のみ、ARCTIC/SF750/PLATINUM/GEFORCE RTX/990 PRO(上面)/STRIX/X870-I文字を削除、ROG+FOR THOSE WHO DAREはI/Oカバー)。未解決: #1 コントローラ基板(U37)、#2 ライザー寸法(status_note化のみ)、#7/#8 BIOS等(U35)、#19 検査計画の独立文書。
+
+## 2026-11-05 v7.1 (ユーザー指摘: ビューアのバグ/3Dモデルのミス/背面から表示)
+- ビューア: v4時代のまま古かった(旧ノード名で回転しない、旧寸法、旧部品表示、旧視点) → v7に全面更新。既定視点を背面に。金属が暗く沈む(env不足)→envMapIntensity/露出/半球光、ガラスとのz-fighting→polygonOffset、`cover_*`/gasketの表示切替、ファン回転名(fan_*_rotorの6基)、分解グループ、部品名ラベル、気流粒子の範囲を新寸法に。
+- 3Dモデル: 表示/チン/カメラがガラス面より浮いていた→面一、チンは塗装でなくガラス裏面印刷、スラブ/ガラス面取りを統一(1.0)、ヒンジの鋼円柱→同色、ダミーの電源凹み削除、`--cut`でフィルタが残るバグ修正、基板にSMD小部品、ドーム縁を薄く(内奥行6/run70/総厚116)、穿孔=透過テクスチャ+黒メッシュフィルタ。
+- 設計: CPU=Ryzen 9 9950X3D(M6マルチ超え)、足220×215+ballast。fitcheck全OK(角R考慮)、stability OK。
+- 監査R3: Apple適合=C+(対応済/残課題を design-philosophy.md §2b)、機械/整合=結果待ち。

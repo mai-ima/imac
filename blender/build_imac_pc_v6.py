@@ -425,6 +425,21 @@ icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 3
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
 for i in range(8): ibox(f'choke{i}', 7, 7, 4.5, bx + 14 + i * 9.6, by + 62, Z1, M['cap'], .5)
 for i in range(6): icyl(f'cap{i}', 3.2, 9, 'z', bx + 22 + i * 9.6, by + 74, Z1 + 4.5, M['cap'], 20)
+def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
+    """基板上の小型チップ部品(抵抗/MLCC)の雲: 実物同様の密度で散布(個数は典型値, 実物と一致する保証はない)。"""
+    rr_ = random.Random(seed); me = bpy.data.meshes.new(name); bmm = bmesh.new(); k = 0
+    for _ in range(n * 3):
+        if k >= n: break
+        x, y = x0 + rr_.random() * w, y0 + rr_.random() * h
+        if any(a_[0] < x < a_[0] + a_[2] and a_[1] < y < a_[1] + a_[3] for a_ in avoid): continue
+        r_ = bmesh.ops.create_cube(bmm, size=1.0); vs = r_['verts']
+        sx, sy = (1.6, .8) if rr_.random() < .5 else (.8, 1.6)
+        bmesh.ops.scale(bmm, vec=(sx, sy, .5), verts=vs); bmesh.ops.translate(bmm, vec=(x, y, zl + .25), verts=vs); k += 1
+    bmm.to_mesh(me); bmm.free(); ob = bpy.data.objects.new(name, me); me.materials.append(mat or M['smd'])
+    for v in me.vertices: v.co = V(X0 + v.co.x, Y0 + v.co.y, Z0 - v.co.z)
+    return link(ob)
+sx_, sy_ = BL['socket_center']
+smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)])
 # AM5ソケット + 9800X3D (IHS 'AMD RYZEN 7 9800X3D')
 sx_, sy_ = BL['socket_center']
 ibox('socket', 60, 60, 4, bx + sx_ - 30, by + sy_ - 30, Z1, principled('socket', '#2a2c31', 0, .5))
@@ -554,11 +569,11 @@ def shift_group(prefix_list, dz_):
         if any(ob.name.startswith(p) for p in prefix_list): ob.location += Vector((0, dz_, 0))
 if A.explode > 0:
     e = A.explode
-    shift_group(['cover_back', 'gasket'], 230 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic'], 110 * e)
+    shift_group(['cover_back', 'cover_filter', 'gasket'], 230 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic'], 110 * e)
     shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu'], 70 * e); shift_group(['psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 45 * e); shift_group(['fan_exhaust'], 85 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 30 * e)
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
-        if ob.name.startswith(('cover_back', 'gasket')): ob.hide_render = True
+        if ob.name.startswith(('cover_back', 'cover_filter', 'gasket')): ob.hide_render = True
 PIV = bpy.data.objects.new('tilt_pivot', None); COLL.objects.link(PIV); PIV.location = V(0, S['hinge']['axis_y'], ZC); bpy.context.view_layer.update()
 for ob in COLL.objects:
     if ob in BODY_OBJS and ob.parent is None:
