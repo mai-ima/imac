@@ -1,0 +1,40 @@
+{
+ "entries": [
+  {
+   "src": "drawings/10_placement_dimensioned.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "fb777bd88075b2615df48ea059311164896acaf50a32b6bf154dd5a982e27e1b",
+   "file": "10_placement_dimensioned/10_placement_dimensioned.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/11a_section_AA.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "8e0e56bdc87040b750775509f9961bd1fca92faf5a9eab2b88de8f531d9ad63d",
+   "file": "11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/12_wiring_diagram.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "d4106e309ae54b95be108c8419eb837b8c40823c1ff22ab3a5870c1fef55bdf8",
+   "file": "12_wiring_diagram/12_wiring_diagram.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/13_airflow_thermal.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "1b1efd9932fb8601deb41213559dbcdbfa943432c2bd6ea377064e75f2b57c02",
+   "file": "13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg"
+  }
+ ]
+}

@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S = json.load(open(f'{R}/model/spec.json')); D = S['dome']
 W = S['body_w'] - 2*D['inset_left_right'] - 6; H = (S['panels'][str(S['panel_size'])]['h'] + S['bezel'] + S['chin']) - D['inset_bottom'] - D['inset_top'] - 6
 run, d0 = D['run'], D['edge_inner_depth']; DEPTH = D['total_t'] - S['slab_t'] - 3
-def depth(d): return d0 + (DEPTH - d0) * min(1.0, d / run)
+def depth(d): s = max(0.0, min(1.0, d / run)); return d0 + (DEPTH - d0) * s * s * (3 - 2 * s)   # smoothstep(Blender/図面と同一)
 def ok_z(x0, y0, x1, y1, ztop, margin=3.0):
     dmin = min(x0, W - x1, y0, H - y1); return dmin >= 0 and ztop + margin <= depth(dmin)
 # 部品: id: (xsize, ysize, ztop, rot可)

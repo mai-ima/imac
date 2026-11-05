@@ -37,6 +37,15 @@
    "file": "bom-verified/bom-verified.v001__2026-11-03_165c355.md"
   },
   {
+   "src": "docs/build-guide.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "d3c19b05d188aac85a2b898055992f9f3b96d152cbdad0aba142f889d3c69528",
+   "file": "build-guide/build-guide.v001__2026-11-05_27ca8ce.md"
+  },
+  {
    "src": "docs/design.md",
    "version": 1,
    "gen": "gen-001",
@@ -89,6 +98,15 @@
    "commit": "165c355",
    "sha256": "8bc6e84d12fc383b7caae97a02048db8e2539acc362e95dc4289e33467323288",
    "file": "design/design.v006__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/fitcheck-report.txt",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "ee3a42e",
+   "sha256": "f812345bf0e8e7be3441fc8388b889f5d8343fe0bd95af9a6e082b4e08f45774",
+   "file": "fitcheck-report/fitcheck-report.v001__2026-11-03_ee3a42e.txt"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -170,6 +188,24 @@
    "commit": "307c9ea",
    "sha256": "c1b8a2b008545d184553a82fc624087c96c29ba34415bbf8fbaa91f9edd8864b",
    "file": "unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "083c1470c2cca0402b675cc1819c40c211b4219aac2ff05e90f2093c43ac5b39",
+   "file": "unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "66299a52e5e1e8fa8d66a728db221600262001599fa3bc1007af9331f188af33",
+   "file": "wiring/wiring.v001__2026-11-05_27ca8ce.md"
   }
  ]
 }

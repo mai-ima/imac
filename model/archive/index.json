@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "model/cables.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "3a912b6fa02fe660a53fb8282af054595c8e4a1c4d39e5adaf41a1ceaab3989c",
+   "file": "cables/cables.v001__2026-11-05_27ca8ce.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",

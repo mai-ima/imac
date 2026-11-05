@@ -409,9 +409,9 @@ for i in range(2):
     ibox(f'dimm{i}_sticker', 60, .2, 10, bx + 40, by + y1_ - .6 if i == 0 else by + y0_ + .1, Z1 + 24, M['sf_label'])
 # ===== M.2 SSD: Samsung 990 PRO with Heatsink (80.15x25x8.88, 黒ヒートシンク+赤スリット) =====
 sd = lp('ssd')
-ibox('ssd_body', 80.15, 25, 8.88, sd[0], sd[1], sd[2], principled('ssd_sink', '#101113', .7, .4), .5)
-for k in range(6): ibox(f'ssd_slit{k}', 1.2, 22, .3, sd[0] + 14 + k * 8, sd[1] + 1.5, sd[2] + 8.88, M['print_red'])
-label('SAMSUNG', 4.2, sd[0] + 62, sd[1] + 12.5, sd[2] + 9.0, M['print_w'], name='txt_samsung'); label('990 PRO', 3, sd[0] + 62, sd[1] + 6, sd[2] + 9.0, M['print_w'], name='txt_990')
+ibox('ssd_body', 25, 80.15, 8.88, sd[0], sd[1], sd[2], principled('ssd_sink', '#101113', .7, .4), .5)
+for k in range(6): ibox(f'ssd_slit{k}', 22, 1.2, .3, sd[0] + 1.5, sd[1] + 14 + k * 8, sd[2] + 8.88, M['print_red'])
+label('SAMSUNG', 4.2, sd[0] + 12.5, sd[1] + 62, sd[2] + 9.0, M['print_w'], rot=90, name='txt_samsung'); label('990 PRO', 3, sd[0] + 6, sd[1] + 62, sd[2] + 9.0, M['print_w'], rot=90, name='txt_990')
 
 # ===== CPU水冷 ARCTIC Liquid Freezer III Pro 240: ポンプブロック =====
 cl = lp('cooler'); cs = ls('cooler'); pcx, pcy = cl[0] + cs[0] / 2, cl[1] + cs[1] / 2
@@ -421,7 +421,7 @@ icyl('pump_cap', 40, 6, 'z', pcx, pcy, cl[2] + 34 + 3, M['alublack'], 64)
 icyl('pump_vrmfan_ring', 30, 28.5, 'z', pcx, pcy - 22, cl[2] + 40 + 14.25 - 6, M['dark'], 40)
 label('ARCTIC', 7, pcx, pcy + 12, cl[2] + 40.1, M['print_w'], name='txt_arctic_pump')
 for sgn, nm in ((1, 'a'), (-1, 'b')):
-    ibox(f'pump_port_{nm}', 14, 20, 14, pcx + sgn * 40 - 7, pcy + cs[1] / 2 - 25, cl[2] + 10, pump_mat, 2)   # ホース出口(側面)
+    ibox(f'pump_port_{nm}', 14, 20, 14, pcx + sgn * 40 - 7, pcy - cs[1] / 2 + 3, cl[2] + 10, pump_mat, 2)   # ホース出口(側面)
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
@@ -437,8 +437,8 @@ def cable(name, pts, r, mat):
     sp = cu.splines.new('BEZIER'); sp.bezier_points.add(len(pts) - 1)
     for p, bp in zip(pts, sp.bezier_points): bp.co = V(X0 + p[0], Y0 + p[1], Z0 - p[2]); bp.handle_left_type = bp.handle_right_type = 'AUTO'
     ob = bpy.data.objects.new(name, cu); cu.materials.append(mat); return link(ob)
-hose('hose_a', [(pcx + 40, pcy + 28, cl[2] + 17), (pcx + 70, pcy - 40, cl[2] + 20), (330, 40, 40), (440, 36, 34), (rx_ + 40, ry_ + 6, rz_ + 19)])
-hose('hose_b', [(pcx - 40, pcy + 28, cl[2] + 17), (pcx - 30, pcy - 70, cl[2] + 15), (330, 24, 28), (460, 22, 30), (rx_ + 80, ry_ + 6, rz_ + 19)])
+hose('hose_a', [(pcx + 40, pcy - 40, cl[2] + 17), (pcx + 70, pcy - 55, cl[2] + 20), (330, 40, 40), (440, 36, 34), (rx_ + 40, ry_ + 6, rz_ + 19)])
+hose('hose_b', [(pcx - 40, pcy - 40, cl[2] + 17), (pcx - 30, pcy - 62, cl[2] + 15), (330, 24, 28), (460, 22, 30), (rx_ + 80, ry_ + 6, rz_ + 19)])
 # ===== ライザー: LINKUP AVA5 PCIe5.0 (フラットリボン6本): 基板x16スロット -> GPUエッジ =====
 def ribbon(name, pts_local, width, thick, mat):
     me = bpy.data.meshes.new(name); bmm = bmesh.new(); ctrl = [Vector(p) for p in pts_local]; n = 24; verts = []
@@ -486,7 +486,6 @@ ibox('gpu_12v8pin', 20.6, 11.5, 10, gx + 95, gy + 210, gz + 36, M['dark'], .4)
 px_, py_, pz_ = lp('psu')
 ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
 wire = principled('psu_wire', '#2a2c31', .9, .4)
-ibox('psu_grille_plate', 100, 92, .4, px_ + 12, py_ + 4, pz_ + 63.5, M['dark'])
 make_fan('fan_psu', 92, 8, 9, M['dark'], principled('psu_blade', '#202226', .2, .45), principled('psu_hub', '#2a2c31', .3, .4), px_ + 62, py_ + 50, pz_ + 54)
 bpy.data.objects['fan_psu_frame'].hide_render = True
 for k in range(1, 5): icyl(f'psu_grille_ring{k}', 9.5 * k, .5, 'z', px_ + 62, py_ + 50, pz_ + 64.2, wire, 48)
@@ -505,19 +504,19 @@ make_fan('fan_exhaust', 120, 25, 9, M['noctua_beige'], M['noctua_brown'], M['noc
 
 # ===== パネル用コントローラ基板(4K eDP, 150x55 横置き。型番未確定) =====
 cx_, cy_, cz_ = lp('ctrl_board')
-cp = os.path.join(TEXDIR, 'pcb_ctrl6.png'); pcb_tex(cp, 150, 55, 41, '#16222b', '#2a3d4c', '4K eDP ctrl')
-ibox('ctrl_pcb', 150, 55, 1.6, cx_, cy_, cz_, img_material('pcb_ctrl6', cp, rough=.5), uv=True)
+cp = os.path.join(TEXDIR, 'pcb_ctrl.png'); pcb_tex(cp, 55, 150, 41, '#16222b', '#2a3d4c', '4K eDP ctrl')
+ibox('ctrl_pcb', 55, 150, 1.6, cx_, cy_, cz_, img_material('pcb_ctrl', cp, rough=.5), uv=True)
 ibox('ctrl_hdmi', 15, 6.5, 6, cx_ + 8, cy_ + 1, cz_ + 1.6, M['steel']); ibox('ctrl_dp', 17, 6.5, 6, cx_ + 28, cy_ + 1, cz_ + 1.6, M['steel'])
-ibox('ctrl_soc', 14, 14, 1.4, cx_ + 70, cy_ + 20, cz_ + 1.6, M['chip']); ibox('ctrl_edp_conn', 4, 20, 4, cx_ + 144, cy_ + 18, cz_ + 1.6, M['dark'])
-for k in range(3): icyl(f'ctrl_cap{k}', 4, 9, 'z', cx_ + 100 + k * 14, cy_ + 12, cz_ + 1.6 + 4.5, M['cap'], 20)
-for k in range(2): ibox(f'ctrl_coil{k}', 9, 9, 7, cx_ + 100 + k * 18, cy_ + 34, cz_ + 1.6, M['alublack'], .5)
+ibox('ctrl_soc', 14, 14, 1.4, cx_ + 20, cy_ + 70, cz_ + 1.6, M['chip']); ibox('ctrl_edp_conn', 20, 4, 4, cx_ + 18, cy_ + 142, cz_ + 1.6, M['dark'])
+for k in range(3): icyl(f'ctrl_cap{k}', 4, 9, 'z', cx_ + 12 + k * 14, cy_ + 110, cz_ + 1.6 + 4.5, M['cap'], 20)
+for k in range(2): ibox(f'ctrl_coil{k}', 9, 9, 7, cx_ + 10 + k * 18, cy_ + 40, cz_ + 1.6, M['alublack'], .5)
 
 # ===== ケーブル(PSUのモジュラー端子 -> 各機器)。トレイ上のクリップ点を通る =====
 cable('cable_atx24', [(px_ + 20, py_ - 6, pz_ + 25), (px_ + 8, py_ - 20, pz_ + 30), (bx + 36, by + 176, Z1 + 20), (bx + 38, by + 164, Z1 + 12)], 4.8, M['rubber'])
 cable('cable_eps', [(px_ + 38, py_ - 6, pz_ + 25), (px_ + 30, py_ - 16, 30), (bx - 6, 190, 26), (bx - 6, by + 40, 18), (bx + 6, by + 12, Z1 + 8)], 2.8, M['rubber'])
 cable('cable_pcie8', [(px_ + 76, py_ - 6, pz_ + 25), (px_ + 100, py_ - 20, 40), (300, 198, 58), (gx + 102, gy + 205, 58), (gx + 102, gy + 212, gz + 42)], 3.2, M['rubber'])
-cable('cable_ctrl_12v', [(px_ + 100, py_ + 100, pz_ + 20), (cx_ + 20, cy_ - 4, 14), (cx_ + 20, cy_ + 6, cz_ + 4)], 2.2, M['rubber'])
-cable('cable_umbilical', [(cx_ + 146, cy_ + 28, cz_ + 5), (cx_ + 146, cy_ + 50, 10), (cx_ + 120, IH_ - 8, 6), (cx_ + 120, IH_ + 2, 1)], 3.0, principled('umb', '#c9ced6', 0, .5))
+cable('cable_ctrl_12v', [(px_ + 2, py_ + 50, 22), (120, 215, 24), (88, 200, 18), (80, 150, 10), (cx_ + 50, cy_ + 112, cz_ + 4)], 2.2, M['rubber'])
+cable('cable_umbilical', [(cx_ + 28, cy_ + 146, cz_ + 5), (cx_ + 20, cy_ + 165, 9), (8, 180, 6), (-2, 180, 1)], 3.0, principled('umb', '#c9ced6', 0, .5))
 # ---------------- 分解(Explode)・チルト ----------------
 def shift_group(prefix_list, dz_):
     for ob in list(COLL.objects):

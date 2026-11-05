@@ -117,8 +117,8 @@ CAB = [
  dict(id='W1', name='ATX 24ピン', frm='PSU modular(24p)', to='基板 ATX24', awg=18, conn='24p (20+4)', ref_mm=300, pts=[(px+20, py-6, pz+25), (px+8, py-20, pz+30), (bx+36, by+176, Z1+20), (bx+38, by+164, Z1+12)]),
  dict(id='W2', name='CPU EPS 8ピン', frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', awg=16, conn='EPS 4+4', ref_mm=400, pts=[(px+38, py-6, pz+25), (px+30, py-16, 30), (bx-6, 190, 26), (bx-6, by+40, 18), (bx+6, by+12, Z1+8)]),
  dict(id='W3', name='GPU PCIe 6+2ピン', frm='PSU modular(PCIe)', to='GPU 8ピン', awg=16, conn='PCIe 6+2', ref_mm=400, pts=[(px+76, py-6, pz+25), (px+100, py-20, 40), (300, 198, 58), (gx+102, gy+205, 58), (gx+102, gy+212, gz+42)]),
- dict(id='W4', name='コントローラ基板 12V', frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', awg=20, conn='SATA電源 or 2pin', ref_mm=0, pts=[(px+100, py+100, pz+20), (cx+20, cy-4, 14), (cx+20, cy+6, cz+4)]),
- dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', frm='ctrl_board eDP', to='パネル背面コネクタ', awg=0, conn='eDP 30p + 12V + USB2', ref_mm=0, pts=[(cx+146, cy+28, cz+5), (cx+146, cy+50, 10), (cx+120, IH-8, 6), (cx+120, IH+2, 1)]),
+ dict(id='W4', name='コントローラ基板 12V', frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', awg=20, conn='SATA電源 or 2pin', ref_mm=0, pts=[(px+2, py+50, 22), (120, 215, 24), (88, 200, 18), (80, 150, 10), (cx+50, cy+112, cz+4)]),
+ dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', frm='ctrl_board eDP', to='パネル背面コネクタ', awg=0, conn='eDP 30p + 12V + USB2', ref_mm=0, pts=[(cx+28, cy+146, cz+5), (cx+20, cy+165, 9), (8, 180, 6), (-2, 180, 1)]),
 ]
 def plen(p): return sum(math.dist(p[i], p[i+1]) for i in range(len(p)-1))
 for c in CAB: c['len_mm'] = round(plen(c['pts']) * 1.15); c['verdict'] = ('OK' if (c['ref_mm'] == 0 or c['len_mm'] <= c['ref_mm']) else '不足(延長/別ケーブル要)')

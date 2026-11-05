@@ -23,7 +23,7 @@ chk('前面スラブ厚', stack <= slab, f"ガラス1.1+OCA0.4+パネル{out[2]}
 wl = S['pod']['wall']
 if 'dome' in S:
     Dm = S['dome']; IN = (W - 2*Dm['inset_left_right'] - 2*wl, H - Dm['inset_bottom'] - Dm['inset_top'] - 2*wl, Dm['total_t'] - slab - wl)
-    def dome_depth(d): return Dm['edge_inner_depth'] + (IN[2] - Dm['edge_inner_depth']) * min(1.0, d / Dm['run'])
+    def dome_depth(d): return Dm['edge_inner_depth'] + (IN[2] - Dm['edge_inner_depth']) * (lambda s: s*s*(3-2*s))(max(0.0, min(1.0, d / Dm['run'])))   # smoothstep: Blenderモデル/図面と同一
 else:
     pod_w = W - S['pod']['side_margin']; IN = (pod_w - 2*wl, S['pod']['h'] - 2*wl, S['pod']['total_t'] - slab - wl); dome_depth = None
 print(f"ポッド内寸 {IN[0]:.1f} x {IN[1]:.1f} x {IN[2]:.1f} mm (幅 x 高 x 奥行)")

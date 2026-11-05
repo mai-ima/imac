@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "tools/fitcheck.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "ee3a42e",
+   "sha256": "86370edd86d1e9e164bfb8434b215127fa2344e510281907470dd8481e89ab3b",
+   "file": "fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",
@@ -28,6 +37,15 @@
    "file": "gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py"
   },
   {
+   "src": "tools/gen_package.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "fadab93acd4f7fef2a7fd0446580c7c93448a88fb33c44c82847fd1f89a2295a",
+   "file": "gen_package/gen_package.v001__2026-11-05_27ca8ce.py"
+  },
+  {
    "src": "tools/guard_no_delete.sh",
    "version": 1,
    "gen": "current",
@@ -35,6 +53,15 @@
    "commit": "e1ff88f",
    "sha256": "d0e7f19dc3a7ef056543f96587917dc94f7b90fdf0ef749297a9c68d8cb6c5bd",
    "file": "guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh"
+  },
+  {
+   "src": "tools/layout_search.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "2cd7df3",
+   "sha256": "61be84c552b4e13956169349f4b0ec43614ac3962c1bc4ad05afb1f8f89f4bec",
+   "file": "layout_search/layout_search.v001__2026-11-03_2cd7df3.py"
   }
  ]
 }
