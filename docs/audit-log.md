@@ -40,3 +40,6 @@
 ## 2026-11-05 WIP2
 - SF750: ファン(92mm)+ワイヤーグリル(同心円+放射)、SF750/PLATINUM印字を追加。GLB(5.7MB)/base64を再生成し、3Dビューア(artifact)を v6 に更新。
 - 自己確認(画像): ドーム外観/内部配置は layout.json どおり。ポンプ/ホースが基板を大きく覆う点は設計課題(ホース経路・基板視認性)。
+
+## 2026-11-05 厳格監査#1(出典/事実確認): カテゴリ1=B / 3=C / 5=C
+指摘26件への対応: #13 ファン数→1基に統一(parts/selection/fitcheck)、#12 熱→tools/thermal_calc.py+docs/thermal-analysis.md(再循環モデル・試験計画)、#16/#17 旧BOM/selectionに廃止注記、#18 台帳U33〜U38追加+source-status追記、#20 parts.json status を official/retail/assumed の3値+status_note、#21 I/O個数をUSB4×2(Type-C)に修正、#22〜#26 未確認の刻印を撤去(IHSは「AMD」「RYZEN」の2行のみ、ARCTIC/SF750/PLATINUM/GEFORCE RTX/990 PRO(上面)/STRIX/X870-I文字を削除、ROG+FOR THOSE WHO DAREはI/Oカバー)。未解決: #1 コントローラ基板(U37)、#2 ライザー寸法(status_note化のみ)、#7/#8 BIOS等(U35)、#19 検査計画の独立文書。

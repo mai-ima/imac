@@ -5,6 +5,8 @@
 | anatomy.md | v001 | current | 2026-11-03 | 78fc708 | anatomy/anatomy.v001__2026-11-03_78fc708.md |
 | audit-log.md | v001 | current | 2026-11-03 | fd22dea | audit-log/audit-log.v001__2026-11-03_fd22dea.md |
 | audit-log.md | v002 | current | 2026-11-05 | 7f1eac8 | audit-log/audit-log.v002__2026-11-05_7f1eac8.md |
+| audit-log.md | v003 | current | 2026-11-05 | 5564531 | audit-log/audit-log.v003__2026-11-05_5564531.md |
+| bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
 | design.md | v001 | gen-001 | 2026-11-03 | 7dedb54 | gen-001/design/design.v001__2026-11-03_7dedb54.md |
@@ -23,7 +25,9 @@
 | selection-v5.md | v003 | current | 2026-11-03 | 1bfcbfb | selection-v5/selection-v5.v003__2026-11-03_1bfcbfb.md |
 | selection-v5.md | v004 | current | 2026-11-03 | 2cd7df3 | selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md |
 | service-mechanisms.md | v001 | current | 2026-11-03 | 307c9ea | service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md |
+| source-status.md | v001 | current | 2026-11-03 | fdfd200 | source-status/source-status.v001__2026-11-03_fdfd200.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
+| unverified-tracker.md | v004 | current | 2026-11-05 | 017b7d9 | unverified-tracker/unverified-tracker.v004__2026-11-05_017b7d9.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |

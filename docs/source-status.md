@@ -16,3 +16,7 @@
 | U13 Data-Modul SSC1 spec pdf | 403 308 | https://www.data-modul.com/sites/default/files/products/LM270WR3-SSC1-specification-12053487.pdf |
 | U16 ASUS X870-I spec | 200 228306 | https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/ |
 | BOE N50 datasheet | 200 1173319 | https://www.panelook.com/upload/202310/MV270QUM-N50_Ver.0_20210111_202310319200.pdf |
+
+## 追記 2026-11-05 (現行部品の取得状況, サブエージェント監査)
+- 取得できた: ASUS X870-I spec/GPU techspec、NVIDIA RTX5060比較表、ARCTIC 2D図面/Spec(A-RGB)、Samsung 990 PRO HSデータシート、Panelook BOE N50 PDF、Noctua NF-A12x25 仕様ページ(検索経由)。
+- 取得できない: Corsair(403), Data-Modul(503/403), AMD(WebFetch 503→検索スニペット), ASUS CPUサポートリスト, LINKUP公式。旧部品(NH-L12S, FX600)の行は不採用。

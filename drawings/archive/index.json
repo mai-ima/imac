@@ -73,6 +73,15 @@
    "file": "13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg"
   },
   {
+   "src": "drawings/15_bom_sheet.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "c7abca80bdb03c8aa7a9fcfce5617ecb5618d0f4d11a82b46e9f67afea8065bd",
+   "file": "15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
    "src": "drawings/outlines.dxf",
    "version": 1,
    "gen": "current",

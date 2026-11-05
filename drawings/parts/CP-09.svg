@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="291" height="204" fill="none" stroke="#000" stroke-width=".4"/>
-<text x="8" y="12" font-size="6" font-weight="bold">CP-09 ドームラッチ(4分の1回転・拘束)</text>
+<text x="8" y="12" font-size="6" font-weight="bold">CP-09 ドームラッチ(下面・隠し)+上辺フック</text>
 <text x="8" y="19" font-size="3.2">材質 SUS303 カム+樹脂ノブ または 規格品(Southco/Misumi 1/4回転) / 板厚 - / 数量 6 / 質量 0.01kg / ISO 2768-m(重要寸法は個別指定)</text>
 <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
 <text x="185" y="40" font-size="2.8">加工: 規格品</text>
 <text x="185" y="45.7" font-size="2.8">表面処理: -</text>
 <text x="185" y="51.400000000000006" font-size="2.8">公差: -</text>
-<text x="185" y="57.10000000000001" font-size="2.8">要素: ドーム側から工具(T10)で操作、背板側ストライクに掛かる</text>
-<text x="185" y="62.80000000000001" font-size="2.8">接合: CP-07</text>
-<text x="185" y="68.50000000000001" font-size="2.8">接合: CP-03ストライク</text>
+<text x="185" y="57.10000000000001" font-size="2.8">要素: 下辺: 4分の1回転ラッチ×6(下面の凹み内, T10)</text>
+<text x="185" y="62.80000000000001" font-size="2.8">要素: 上辺: 掛け爪フック×6(ドームを上へ3mmスライドして掛ける、ネジ無し)</text>
+<text x="185" y="68.50000000000001" font-size="2.8">接合: CP-07</text>
+<text x="185" y="74.20000000000002" font-size="2.8">接合: CP-03ストライク</text>
 <text x="8" y="202" font-size="3">状態: 規格品選定中(U29) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>

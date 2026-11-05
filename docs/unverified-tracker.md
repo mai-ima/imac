@@ -34,3 +34,11 @@
 | U28 | ヒンジ軸のz位置最適化 | チルト | 未実施 | tools/joint_calc.py | 11/05 |
 | U29 | PEMクリンチ部押抜/トルク値(t2.0)、N52 8×3吸着力、拘束ねじ(T10+保持)品番、ショルダーねじ(肩径4/5mm)品番とせん断強度 | 接合部 | UNVERIFIED | docs/research-joints.md | 11/05 |
 | U30 | EMIガスケット選定(SOFT-SHIELD 3500/Laird FoF等)と閉合力/圧縮量/SE実測 | 防塵/EMC/ドーム固定 | 候補のみ | docs/research-joints.md | 11/05 |
+| U31 | Ø2.4mm穴格子(開口率33%)のWi-Fi 6GHz透過損失、RF窓を格子裏に置く可否 | 無線 | 未検証 | 試作でOTA測定 | 11/05 |
+| U32 | 全面均一格子の圧損/騒音/吸気分布(Apple式の通気)がGPU/AIOの冷却に十分か | 熱 | CFD/実測が必要 | 試作+温度ロギング | 11/05 |
+| U33 | ARCTIC LF III Pro 240 非RGB版(ACFRE00178A)の公式シート(ファン型番/LED/ケーブル構成)。現出典はA-RGB版 | BOM | 部分確認 | arctic.de 非RGB版製品ページ | 11/05 |
+| U34 | Corsair SF750 公式: コネクタ数(EPS/PCIe/12V-2x6/SATA)とケーブル長 | 配線 | 小売間で不一致 | Corsair公式PDF(403) | 11/05 |
+| U35 | ASUS X870-I USB2.0 Type-A数(公式ページ内で2/3不整合)、出荷時BIOSのRyzen 9000対応(U01継続)、FlashBack手順 | I/O/起動 | 未確認 | ASUSマニュアル最新版 | 11/05 |
+| U36 | ASUS Dual 5060 Ti: ファン数・PCIeレーン(x8/x16)・重量・端子形状 | 熱/ライザー | 公式記載なし | ASUS製品写真/実物 | 11/05 |
+| U37 | 27型4K制御基板キット(Amazon B0F5VVQQCD等)の実在・適合(LM270WR3 SSC1/BOE N50, VDD10V, 8ch BL) | 実現性(最大リスク) | **未確認(購入前必須)** | Data-Modul/販売者仕様 | 11/05 |
+| U38 | パネル消費電力の最大37.3W(BOE N50, Panelook) | 電力計算 | 確認済(Panelook PDF) | - | 11/05 |

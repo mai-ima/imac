@@ -10,6 +10,15 @@
    "file": "cables/cables.v001__2026-11-05_27ca8ce.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "0632f6bfb5e9f2da88797af6d11c613c31adc1a4d137f33184bd9dedfaf30154",
+   "file": "custom_parts/custom_parts.v001__2026-11-05_b97eaae.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",

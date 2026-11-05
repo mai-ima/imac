@@ -1,0 +1,40 @@
+{
+ "entries": [
+  {
+   "src": "drawings/parts/CP-07.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "5592d3835bca9ac6bf1420aabb568aa940140f7b6af42192e75f439ce526098a",
+   "file": "CP-07/CP-07.v001__2026-11-05_b97eaae.svg"
+  },
+  {
+   "src": "drawings/parts/CP-09.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "37334651a9b8e411335e8f8d83b695c486ee09eb0632c10469d6a356e640f2d6",
+   "file": "CP-09/CP-09.v001__2026-11-05_b97eaae.svg"
+  },
+  {
+   "src": "drawings/parts/CP-12.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "510287120bc3ef45371aa07bbfb486d2af1643e9033284eef87379fca13428e3",
+   "file": "CP-12/CP-12.v001__2026-11-05_b97eaae.svg"
+  },
+  {
+   "src": "drawings/parts/CP-13.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "d50e862bb662bd366cd6c5ea4efc6a732c77d6bacac17ef4cd032658beb89d12",
+   "file": "CP-13/CP-13.v001__2026-11-05_b97eaae.svg"
+  }
+ ]
+}

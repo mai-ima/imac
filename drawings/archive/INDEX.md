@@ -10,4 +10,5 @@
 | 11a_section_AA.svg | v001 | current | 2026-11-05 | 27ca8ce | 11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg |
 | 12_wiring_diagram.svg | v001 | current | 2026-11-05 | 27ca8ce | 12_wiring_diagram/12_wiring_diagram.v001__2026-11-05_27ca8ce.svg |
 | 13_airflow_thermal.svg | v001 | current | 2026-11-05 | 27ca8ce | 13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg |
+| 15_bom_sheet.svg | v001 | current | 2026-11-05 | 27ca8ce | 15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |

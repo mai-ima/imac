@@ -28,6 +28,24 @@
    "file": "audit-log/audit-log.v002__2026-11-05_7f1eac8.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "5564531",
+   "sha256": "ba3c09efcea0fac8c77341fc5caa487b9939411cef96cbb6e0ec219fdfdf40fc",
+   "file": "audit-log/audit-log.v003__2026-11-05_5564531.md"
+  },
+  {
+   "src": "docs/bom-final.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "2563deb8c6ffae86ccfd4c9faaa942905f94dbc9d9e706f3f4837717a816ac2b",
+   "file": "bom-final/bom-final.v001__2026-11-05_27ca8ce.md"
+  },
+  {
    "src": "docs/bom-verified.md",
    "version": 1,
    "gen": "current",
@@ -190,6 +208,15 @@
    "file": "service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md"
   },
   {
+   "src": "docs/source-status.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fdfd200",
+   "sha256": "8ccbe0c6c6aaa5a26dbef4722a8df56212c142dc0dfd5a7f62ede6c1eb3f3773",
+   "file": "source-status/source-status.v001__2026-11-03_fdfd200.md"
+  },
+  {
    "src": "docs/unverified-tracker.md",
    "version": 1,
    "gen": "current",
@@ -215,6 +242,15 @@
    "commit": "2f8c0ac",
    "sha256": "deb6707962031b41bde5de82b0c435e15c0ee25f18ebc975e969687c60251451",
    "file": "unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "24855828845aeb331e53789736bffb5f5d9b759f3de97d3c51c1cda0824f13a3",
+   "file": "unverified-tracker/unverified-tracker.v004__2026-11-05_017b7d9.md"
   },
   {
    "src": "docs/wiring.md",

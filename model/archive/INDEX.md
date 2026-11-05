@@ -3,6 +3,7 @@
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
+| custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |

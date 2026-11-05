@@ -1,0 +1,13 @@
+{
+ "entries": [
+  {
+   "src": "docs/spec/custom-parts.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "12423077aa4817a2762ef405c54ddc3596c0bd8a33b295488ebd3a7e1d6e0066",
+   "file": "custom-parts/custom-parts.v001__2026-11-05_b97eaae.md"
+  }
+ ]
+}

@@ -379,14 +379,13 @@ def port(name, xc, zc, w, h, inner=None):
     ibox(name + '_hole', w - 3, 1.5, h - 3, bx + xc - (w - 3) / 2, by - 3.5, Z1 + zc - (h - 3) / 2, inner or M['dark'])
 mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
 port('io_hdmi', mid('HDMI_U10G34'), 10, 15, 6.5); port('io_usb_a1', mid('HDMI_U10G34'), 24, 14.5, 7, principled('usb_blue', '#2a6df0', 0, .5)); port('io_usb_a2', mid('HDMI_U10G34'), 36, 14.5, 7)
-port('io_usb4_a', mid('U40G_EC1_U10G11'), 10, 9, 3.6); port('io_usb4_b', mid('U40G_EC1_U10G11'), 24, 9, 3.6); port('io_usb_a3', mid('U40G_EC1_U10G11'), 36, 14.5, 7)
+port('io_usb4_a', mid('U40G_EC1_U10G11'), 10, 9, 3.6); port('io_usb_a3', mid('U40G_EC1_U10G11'), 36, 14.5, 7)
 port('io_usb4_c', mid('U40G_EC2'), 12, 9, 3.6); port('io_rj45', mid('LAN_U10G_C7'), 12, 16, 13.5, M['alu']); port('io_usbc2', mid('LAN_U10G_C7'), 30, 9, 3.6)
 for k, xs in enumerate((bx + 115.5, bx + 119.5)): icyl(f'io_sma{k}', 3.2, 5, 'y', xs, by - 5, Z1 + 38, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
 ibox('vrm_shroud', 98, 36, 22, bx + 8, by + 24, Z1, M['shroud'], 1.5)
 ibox('vrm_trim', 98, 1.2, 22.1, bx + 8, by + 24, Z1, M['silver_trim'])
-label('ROG', 9, bx + 28, by + 42, Z1 + 22.15, M['print_w'], name='txt_rog'); label('STRIX', 5.5, bx + 62, by + 42, Z1 + 22.15, M['print_w'], name='txt_strix')
-label('X870-I GAMING WIFI', 3.6, bx + 74, by + 31, Z1 + 22.15, M['silver_trim'], name='txt_model')
+label('ROG', 9, bx + 28, by + 44, Z1 + 22.15, M['print_w'], name='txt_rog'); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22.15, M['silver_trim'], name='txt_ftwd')
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
 for i in range(8): ibox(f'choke{i}', 7, 7, 4.5, bx + 14 + i * 9.6, by + 62, Z1, M['cap'], .5)
@@ -395,7 +394,7 @@ for i in range(6): icyl(f'cap{i}', 3.2, 9, 'z', bx + 22 + i * 9.6, by + 74, Z1 +
 sx_, sy_ = BL['socket_center']
 ibox('socket', 60, 60, 4, bx + sx_ - 30, by + sy_ - 30, Z1, principled('socket', '#2a2c31', 0, .5))
 ibox('cpu_ihs', 40, 40, 2.6, bx + sx_ - 20, by + sy_ - 20, Z1 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)
-label('AMD', 4, bx + sx_ - 8, by + sy_ + 12, Z1 + 6.65, M['print_w'], name='txt_ihs_amd', ext=.02); label('RYZEN 7', 3, bx + sx_ - 8, by + sy_ + 6, Z1 + 6.65, M['print_w'], name='txt_ihs_ryzen', ext=.02); label('9800X3D', 3, bx + sx_ - 8, by + sy_ + 1, Z1 + 6.65, M['print_w'], name='txt_ihs_model', ext=.02)
+label('AMD', 4, bx + sx_ - 8, by + sy_ + 5, Z1 + 6.65, M['print_w'], name='txt_ihs_amd', ext=.02); label('RYZEN', 3.2, bx + sx_ - 8, by + sy_ - 1, Z1 + 6.65, M['print_w'], name='txt_ihs_ryzen', ext=.02)   # 公式画像で確認済の2行のみ
 # チップセット(ヒートシンク) / PCIe x16 / ATX24 / EPS / M.2 ドーターカード
 ibox('chipset_sink', 21, 19, 9, bx + 129, by + 47, Z1, M['alublack'], .6)
 ibox('pcie_x16', 8.6, 89, 11, bx + 157.4, by + 43, Z1, M['dark'], .3); ibox('pcie_gold', 2, 60, .4, bx + 160.7, by + 57, Z1 + 11.0, M['gold'])
@@ -411,7 +410,7 @@ for i in range(2):
 sd = lp('ssd')
 ibox('ssd_body', 25, 80.15, 8.88, sd[0], sd[1], sd[2], principled('ssd_sink', '#101113', .7, .4), .5)
 for k in range(6): ibox(f'ssd_slit{k}', 22, 1.2, .3, sd[0] + 1.5, sd[1] + 14 + k * 8, sd[2] + 8.88, M['print_red'])
-label('SAMSUNG', 4.2, sd[0] + 12.5, sd[1] + 62, sd[2] + 9.0, M['print_w'], rot=90, name='txt_samsung'); label('990 PRO', 3, sd[0] + 6, sd[1] + 62, sd[2] + 9.0, M['print_w'], rot=90, name='txt_990')
+label('SAMSUNG', 4.2, sd[0] + 12.5, sd[1] + 62, sd[2] + 9.0, M['print_w'], rot=90, name='txt_samsung'); 
 
 # ===== CPU水冷 ARCTIC Liquid Freezer III Pro 240: ポンプブロック =====
 cl = lp('cooler'); cs = ls('cooler'); pcx, pcy = cl[0] + cs[0] / 2, cl[1] + cs[1] / 2
@@ -419,14 +418,12 @@ pump_mat = principled('arctic_pump', '#18191c', 0.4, 0.4)
 icyl('pump_body', 45.5, 34, 'z', pcx, pcy, cl[2] + 17, pump_mat, 64)
 icyl('pump_cap', 40, 6, 'z', pcx, pcy, cl[2] + 34 + 3, M['alublack'], 64)
 icyl('pump_vrmfan_ring', 30, 28.5, 'z', pcx, pcy - 22, cl[2] + 40 + 14.25 - 6, M['dark'], 40)
-label('ARCTIC', 7, pcx, pcy + 12, cl[2] + 40.1, M['print_w'], name='txt_arctic_pump')
 for sgn, nm in ((1, 'a'), (-1, 'b')):
     ibox(f'pump_port_{nm}', 14, 20, 14, pcx + sgn * 40 - 7, pcy - cs[1] / 2 + 3, cl[2] + 10, pump_mat, 2)   # ホース出口(側面)
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
-label('ARCTIC', 6, rx_ + 60, ry_ + 138, rz_ + 38.05, M['print_w'], rot=90, name='txt_arctic_rad')
 for k in range(2):
     make_fan(f'fan_rad{k}', 120, 25, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38)
 # ホース(OD約12): ポンプ側面 -> ラジエーターtank。GPU端(y<53)の下を通す
@@ -477,7 +474,6 @@ for k, fy_ in enumerate((gy + 70, gy + 160)):
     bpy.data.objects[f'fan_gpu{k}_frame'].hide_render = True
 ibox('gpu_trim', 120, 1.6, 18.1, gx, gy + 112, gz + 32, M['silver_trim'])      # 2基のファンの間の細いアクセントライン(銀)
 label('DUAL', 6, gx + 108, gy + 30, gz + 50.05, M['print_w'], rot=90, name='txt_gpu_dual', ext=.03)
-label('GEFORCE RTX', 3.6, gx + 108, gy + 200, gz + 50.05, M['print_w'], rot=90, name='txt_gpu_geforce', ext=.03)
 ibox('gpu_bracket', 120, 1.5, 50, gx, gy - 1.5, gz, M['steel'], .3)              # 出力ブラケット(下端 y側)
 for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))): ibox(f'gpu_port{k}', w_, 3, 6.5, gx + 14 + k * 26, gy - 3, gz + 7, M['dark'], .3)
 ibox('gpu_12v8pin', 20.6, 11.5, 10, gx + 95, gy + 210, gz + 36, M['dark'], .4)
@@ -493,8 +489,6 @@ _bm = bmesh.new()
 for k in range(6):
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 64.2))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((92, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
-label('SF750', 7, px_ + 62, py_ + 85, pz_ + 63.95, M['print_w'], name='txt_sf750', ext=.03)
-label('PLATINUM', 3.5, px_ + 62, py_ + 15, pz_ + 63.95, M['print_w'], name='txt_platinum', ext=.03)
 ibox('psu_label', 70, 38, .3, px_ + 28, py_ + 30, pz_ + 63.5, M['sf_label'])     # 仕様ラベル(内容は未確認のため無地)
 for i in range(6): ibox(f'psu_socket{i}', 13, 5, 9, px_ + 8 + i * 19, py_ - 4, pz_ + 25, M['rubber'], .4)
 
