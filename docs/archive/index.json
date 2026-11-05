@@ -10,6 +10,15 @@
    "file": "anatomy/anatomy.v001__2026-11-03_78fc708.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "6264eeb826655eb12eeec509e587989be9a5d2974c99c7cf44b6718cc651ba27",
+   "file": "audit-log/audit-log.v001__2026-11-03_fd22dea.md"
+  },
+  {
    "src": "docs/bom-verified.md",
    "version": 1,
    "gen": "current",
