@@ -1,0 +1,31 @@
+{
+ "entries": [
+  {
+   "src": "concept/blueprint.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "a2b24f4",
+   "sha256": "e627932db53f4acfb385ece62ce48a388ea03a57741d06a226bec40138aee9e4",
+   "file": "blueprint/blueprint.v001__2026-11-03_a2b24f4.svg"
+  },
+  {
+   "src": "concept/blueprint.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "0f4d0d7",
+   "sha256": "384a93bfb0a87ec385448f93e360b59f00f0d9c96d720a497d644bf10a47cce7",
+   "file": "blueprint/blueprint.v002__2026-11-03_0f4d0d7.svg"
+  },
+  {
+   "src": "concept/imac_anatomy.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "78fc708",
+   "sha256": "44c48ee040a27fb9d53973679cf31cafc3393ee87b017f1e7311fd34dc9c4104",
+   "file": "imac_anatomy/imac_anatomy.v001__2026-11-03_78fc708.svg"
+  }
+ ]
+}

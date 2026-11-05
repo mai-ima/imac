@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cd "$(git rev-parse --show-toplevel)"
+python3 tools/archive.py auto || true
+bash tools/guard_no_delete.sh

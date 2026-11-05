@@ -1,0 +1,13 @@
+{
+ "entries": [
+  {
+   "src": "viewer/imac_pc.glb",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "165c355",
+   "sha256": "a0fdd062474b78283ecd4708dc47d3e45ef6bf4433023a02d2544c3836379206",
+   "file": "imac_pc/imac_pc.v001__2026-11-05_165c355.glb"
+  }
+ ]
+}

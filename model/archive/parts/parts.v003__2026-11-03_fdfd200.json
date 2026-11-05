@@ -1,0 +1,270 @@
+{
+ "_doc": "市販部品DB v5(大手・最新規格・高性能)。status: official=メーカー公式資料で確認, retail=小売/報道の一致のみ, assumed=未確認。寸法mm。",
+ "panel": {
+  "id": "panel",
+  "name": "LG Display LM270WR3-SSC1(第一候補) / BOE MV270QUM-N50(公式データシート確認済の代替)",
+  "maker": "LG Display / BOE",
+  "dims": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "status": "official(N50)/retail(LG)",
+  "facts": {
+   "active": "596.74x335.66",
+   "LG_SSC1": "608.8x355.3x12.8 (Data-Modul掲載)",
+   "BOE_N50": "609.4x355.6x13.3, 2.45kg, eDP4lane 30pin, VDD10V",
+   "refresh": "60Hz級(未確認)"
+  },
+  "sources": [
+   "https://www.panelook.com/upload/202310/MV270QUM-N50_Ver.0_20210111_202310319200.pdf",
+   "https://data-modul.com/en/products/product-finder/find-your-tft-display/lm270wr3-ssc1"
+  ],
+  "note": "包絡線はN50で設計。保証付き制御基板の公式キットは未確認→Data-Modulに要問合せ"
+ },
+ "ctrl_board": {
+  "id": "ctrl_board",
+  "name": "4K eDPコントローラ基板(型番未確定)",
+  "maker": "未定",
+  "dims": [
+   55,
+   150,
+   15
+  ],
+  "status": "assumed",
+  "facts": {},
+  "sources": []
+ },
+ "board": {
+  "id": "board",
+  "name": "ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-ITX)",
+  "maker": "ASUS",
+  "dims": [
+   170,
+   170,
+   1.6
+  ],
+  "status": "official(寸法/I/O/レイアウト図)",
+  "facts": {
+   "form": "17x17cm(公式spec)",
+   "usb4": "USB4 40Gbps x2",
+   "usb10g": "USB 10Gbps x5",
+   "lan": "2.5GbE",
+   "wifi": "Wi-Fi 7 / BT5.4",
+   "pcie": "PCIe 5.0 x16",
+   "m2": "M.2_1 PCIe5.0x4 / M.2_2 PCIe4.0x4 (ドーターカード方式)",
+   "ram": "DDR5 x2 EXPO",
+   "bios": "Ryzen 9000は要BIOS確認(FlashBack有)",
+   "io_official": "USB4 40Gbps x2(Type-C) / USB 10Gbps x5(Type-A x4 + Type-C x1) / USB2.0 x3(うちType-A x2) / HDMI x1 / Intel 2.5GbE / Wi-Fi 7モジュール / ROG STRIX HIVE II(オーディオ: ESS SABRE9260Q DAC)",
+   "bios_buttons": "BIOS FlashBack / Clear CMOS",
+   "m2_official": "M.2_1: 2280 PCIe5.0x4 / M.2_2: 2242/2260/2280 PCIe4.0x4",
+   "mem_official": "DDR5 x2 最大128GB 8400+MT/s(OC, Ryzen 9000)",
+   "cpu_support": "Ryzen 9000/8000/7000"
+  },
+  "sources": [
+   "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
+   "https://www.trovaprezzi.it/manuali/asus_rog_strix_x870_i_gaming_wifi.pdf"
+  ],
+  "note": "マニュアルp.14のレイアウト図を実測(model/x870i_layout.json)。ドーターカード/VRMファンの高さは未確認"
+ },
+ "cpu": {
+  "id": "cpu",
+  "name": "AMD Ryzen 7 9800X3D",
+  "maker": "AMD",
+  "dims": [
+   40,
+   40,
+   5
+  ],
+  "status": "official(TDP/Tjmax/対応チップセット)+第三者(PPT)",
+  "facts": {
+   "tdp_w": 120,
+   "ppt_w": 162,
+   "tjmax_c": 95,
+   "cores": "8C/16T",
+   "l3": "96MB",
+   "bios_ppt_limit_w": 120,
+   "chipsets": "A620/X670E/X670/B650E/B650/X870E/X870/B840/B850",
+   "pcie": "PCIe 5.0 native",
+   "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)"
+  },
+  "sources": [
+   "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+   "https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D"
+  ],
+  "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、液冷推奨。PPT162Wは第三者値。設計ではBIOSでPPT 120Wに制限し、空冷(NH-L12S)の成否は実機温度確認が必須"
+ },
+ "cooler": {
+  "id": "cooler",
+  "name": "Noctua NH-L12S",
+  "maker": "Noctua",
+  "dims": [
+   146,
+   128,
+   70
+  ],
+  "status": "retail",
+  "facts": {
+   "weight_g": "390(ファン無)/520(ファン付)",
+   "fan": "120x15 NF-A12x15",
+   "am5": "オフセットバー7mm(小売記載)",
+   "note": "寸法の軸の割当は小売でも不統一"
+  },
+  "sources": [
+   "https://galaxus.de/en/s1/product/noctua-nh-l12s-70-mm-cpu-coolers-6817433"
+  ],
+  "note": "全高70mmの基準面(CPU上面か基板か)・RAMクリアランスは未確認。9800X3D 162W PPTに対する公式の冷却保証は無く、ゲーム負荷(50〜80W)前提"
+ },
+ "gpu": {
+  "id": "gpu",
+  "name": "ASUS Dual GeForce RTX 5060 Ti 16GB OC (DUAL-RTX5060TI-O16G)",
+  "maker": "ASUS",
+  "dims": [
+   229,
+   120,
+   50
+  ],
+  "status": "official",
+  "facts": {
+   "slot": "2.5",
+   "power": "1x 8-pin",
+   "psu_rec_w": 550,
+   "outputs": "HDMI 2.1b x1 + DP 2.1b x3",
+   "cuda": 4608,
+   "mem": "16GB GDDR7 28Gbps 128bit",
+   "tgp_w": 180,
+   "pcie": "5.0(レーン数は未確認、物理x8の可能性)"
+  },
+  "sources": [
+   "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060ti-o16g/techspec/"
+  ],
+  "note": "終息報道あり(非公式)。代替: NVIDIA RTX 5070 FE 242x112"
+ },
+ "riser": {
+  "id": "riser",
+  "name": "LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確認)",
+  "maker": "LINKUP",
+  "dims": [
+   200,
+   89,
+   6
+  ],
+  "status": "assumed",
+  "facts": {
+   "length_cm": 20
+  },
+  "sources": [
+   "https://preisvergleich.heise.de/linkup-ava5-v2-riser-kabel-ag-p5-33ss-020bk-v2-a3400918.html"
+  ],
+  "note": "幅・厚み・曲げ半径は未確認。GPUが物理x8の場合の互換も要確認"
+ },
+ "psu": {
+  "id": "psu",
+  "name": "SilverStone FX600 Platinum (Flex ATX 600W)",
+  "maker": "SilverStone",
+  "dims": [
+   150,
+   81.5,
+   40.5
+  ],
+  "status": "retail",
+  "facts": {
+   "eff": "80PLUS(Cybenetics) Platinum",
+   "rail": "12V 単一レール 50A",
+   "fan": "40mm",
+   "conn": "PCIe 6+2 x2, EPS(PTは固定/PMはモジュラー 要確認), 12V-2x6の有無は未確認"
+  },
+  "sources": [
+   "https://smallformfactor.net/articles/first-look-silverstone-fx600-platinum-flex-atx-power-supply/"
+  ],
+  "note": "型番PT/PMの違い・ケーブル長・保証は未確認"
+ },
+ "fan": {
+  "id": "fan",
+  "name": "Noctua NF-A12x25 PWM x2 (ポッド排気用)",
+  "maker": "Noctua",
+  "dims": [
+   120,
+   120,
+   25
+  ],
+  "status": "retail",
+  "facts": {
+   "airflow_m3h": 102,
+   "static_mmH2O": 2.34,
+   "rpm_max": 2000,
+   "noise_dba": 22.6
+  },
+  "sources": [
+   "https://techpowerup.com/review/noctua-nf-a12x25-pwm/single-page.html"
+  ]
+ },
+ "ssd": {
+  "id": "ssd",
+  "name": "Samsung 990 PRO with Heatsink 1TB (M.2 2280)",
+  "maker": "Samsung",
+  "dims": [
+   80.15,
+   25,
+   8.88
+  ],
+  "status": "official",
+  "facts": {
+   "if": "PCIe 4.0 x4 / NVMe 2.0",
+   "ctrl": "Samsung in-house",
+   "dram": "1GB LPDDR4(1TB)"
+  },
+  "sources": [
+   "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_with_Heatsink_Datasheet_Rev_2.0_10129695053410.pdf"
+  ],
+  "note": "X870-Iのドーターカードに装着する場合の最大厚み適合は未確認"
+ },
+ "ram": {
+  "id": "ram",
+  "name": "DDR5-6000 CL30 EXPO 32GB (2x16GB) 大手品(型番未定)",
+  "maker": "Corsair/G.Skill/Kingston 等",
+  "dims": [
+   133.35,
+   8,
+   44
+  ],
+  "status": "assumed",
+  "facts": {
+   "note": "ヒートスプレッダ込み高さ約34〜44mm(記憶ベース・未確認)"
+  },
+  "sources": []
+ },
+ "camera_audio": {
+  "id": "camera_audio",
+  "name": "Webカメラ/マイク/スピーカー",
+  "maker": "未選定",
+  "dims": [
+   0,
+   0,
+   0
+  ],
+  "status": "assumed",
+  "facts": {},
+  "sources": []
+ },
+ "fan2": {
+  "id": "fan2",
+  "name": "Noctua NF-A12x25 PWM x2 (ポッド排気用)",
+  "maker": "Noctua",
+  "dims": [
+   120,
+   120,
+   25
+  ],
+  "status": "retail",
+  "facts": {
+   "airflow_m3h": 102,
+   "static_mmH2O": 2.34,
+   "rpm_max": 2000,
+   "noise_dba": 22.6
+  },
+  "sources": [
+   "https://techpowerup.com/review/noctua-nf-a12x25-pwm/single-page.html"
+  ]
+ }
+}

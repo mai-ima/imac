@@ -1,0 +1,40 @@
+{
+ "entries": [
+  {
+   "src": "cad/imac_like_pc.scad",
+   "version": 1,
+   "gen": "gen-001",
+   "date": "2026-11-03",
+   "commit": "7dedb54",
+   "sha256": "4fb4035a07bcb4fc69b2733d9d81d6cd6eeb8f81377679a3fbb30e0948bee662",
+   "file": "gen-001/imac_like_pc/imac_like_pc.v001__2026-11-03_7dedb54.scad"
+  },
+  {
+   "src": "cad/imac_like_pc.scad",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "a2b24f4",
+   "sha256": "d2c9fc777338b93bded800dbfad6c5aadc5aceb6db2861b1edf656bdbd7cff0d",
+   "file": "imac_like_pc/imac_like_pc.v002__2026-11-03_a2b24f4.scad"
+  },
+  {
+   "src": "cad/imac_like_pc.scad",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "98bf25c",
+   "sha256": "be10c5788c7b44b46f5dde207673dafe33080d57ddb3b827b6ead86b79b84df5",
+   "file": "imac_like_pc/imac_like_pc.v003__2026-11-03_98bf25c.scad"
+  },
+  {
+   "src": "cad/imac_like_pc.scad",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "0f4d0d7",
+   "sha256": "f84cb3a9bf7645357df7e267022331a19dd3fa0a3410c171c58d1ef3d302890b",
+   "file": "imac_like_pc/imac_like_pc.v004__2026-11-03_0f4d0d7.scad"
+  }
+ ]
+}

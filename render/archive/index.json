@@ -1,0 +1,148 @@
+{
+ "entries": [
+  {
+   "src": "render/back.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "eff31a041894024a274ef35244ac1bf4ed4a10a099618ed629e44d8b81e16bf3",
+   "file": "back/back.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/blueprint.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "0f4d0d7",
+   "sha256": "7dc01bf74c91643b6ec14ca4b3a1d3841ad3afedd013f42d283ece65df9a712d",
+   "file": "blueprint/blueprint.v001__2026-11-05_0f4d0d7.png"
+  },
+  {
+   "src": "render/front.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "5bc3f3ec2f911ea57f3bb9bf030b771f5e2a3464d81c4e09cbf18b4a7634fa67",
+   "file": "front/front.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/front_27.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "4b6f70c88fa7566b8b81f3133fbb928c1caee34364664dbed4c49a1a57060e80",
+   "file": "front_27/front_27.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/front_blue.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "fd4bc13a07ad682dde0fe453db03131edec03fda2f9f6ea4d462b2faa3df5af7",
+   "file": "front_blue/front_blue.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/hq_back_orange.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "21cfd4e",
+   "sha256": "d582cade7a032e5b3a4dc081b7e09b5a3bf3a853025f3a798bc11572044017ff",
+   "file": "hq_back_orange/hq_back_orange.v001__2026-11-05_21cfd4e.png"
+  },
+  {
+   "src": "render/hq_front_blue_tilt.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "21cfd4e",
+   "sha256": "89d2e00bf2bd834e7f040c5082d158a88c6707aed05affcff8f567397105052c",
+   "file": "hq_front_blue_tilt/hq_front_blue_tilt.v001__2026-11-05_21cfd4e.png"
+  },
+  {
+   "src": "render/hq_front_silver.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "21cfd4e",
+   "sha256": "a2a8bb544774ee0fb133f54c9132a0d6093ea8b08cacc607276cbeaeb173fc45",
+   "file": "hq_front_silver/hq_front_silver.v001__2026-11-05_21cfd4e.png"
+  },
+  {
+   "src": "render/hq_inside.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "44f2d2a",
+   "sha256": "6b4df307ed06b0ddcab3e88827115fe96b20443bca3764d5e83b6580cf19afeb",
+   "file": "hq_inside/hq_inside.v001__2026-11-05_44f2d2a.png"
+  },
+  {
+   "src": "render/hq_inside_labels.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "44f2d2a",
+   "sha256": "4764f32238d1a8673d5b10a8aed0efda28e55e1f3ab4e791ea43abe3f6afaf7d",
+   "file": "hq_inside_labels/hq_inside_labels.v001__2026-11-05_44f2d2a.png"
+  },
+  {
+   "src": "render/hq_side_green.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "44f2d2a",
+   "sha256": "6d2c5c08fe06cfc4fe7d048e576a231e35c196b52a69970f04b9f7247ae9ef8f",
+   "file": "hq_side_green/hq_side_green.v001__2026-11-05_44f2d2a.png"
+  },
+  {
+   "src": "render/imac_anatomy.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "78fc708",
+   "sha256": "0722275b903eea2a83b06f981c91df96bd92a13faf64d0b2a9ff642a3e9fec21",
+   "file": "imac_anatomy/imac_anatomy.v001__2026-11-05_78fc708.png"
+  },
+  {
+   "src": "render/internal.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "bbca0a53b85e1734996d9e206e21df55e7a1285a685781f6c1961fec2526db0b",
+   "file": "internal/internal.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/lineup_back.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "a6cb36a7155bc57a2633f13307ca751eb2e3b75e1d1edf8fa0d337fcc7b508ad",
+   "file": "lineup_back/lineup_back.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/lineup_front.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "9840084987a072ec6ec0f6b698008984489d4d5f346d7d51497bd9efb8fc5e8c",
+   "file": "lineup_front/lineup_front.v001__2026-11-05_e1ff88f.png"
+  },
+  {
+   "src": "render/side.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1ff88f",
+   "sha256": "d07bde1480c5360b2b21a6feb4598930d418151cae35846a43990e10d8467c30",
+   "file": "side/side.v001__2026-11-05_e1ff88f.png"
+  }
+ ]
+}

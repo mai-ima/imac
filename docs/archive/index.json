@@ -1,0 +1,148 @@
+{
+ "entries": [
+  {
+   "src": "docs/anatomy.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "78fc708",
+   "sha256": "ce9dd3facb6a90e8c0228ccc70d6f5b4ee938ed4bf33786d2a4fb2bf67d2894f",
+   "file": "anatomy/anatomy.v001__2026-11-03_78fc708.md"
+  },
+  {
+   "src": "docs/bom-verified.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "165c355",
+   "sha256": "7db90784a3cbd5b7fe90b4e5af68341dcd8414e9f2c0dd396c6567b1212010f6",
+   "file": "bom-verified/bom-verified.v001__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 1,
+   "gen": "gen-001",
+   "date": "2026-11-03",
+   "commit": "7dedb54",
+   "sha256": "c5973c055c1dec2b4b20fecf9737ecd35f16d1b174b24bf64da7da3ff54473a4",
+   "file": "gen-001/design/design.v001__2026-11-03_7dedb54.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 2,
+   "gen": "gen-001",
+   "date": "2026-11-03",
+   "commit": "a2b24f4",
+   "sha256": "c2572473d936375e9505d1b2246f182e6d7b86c4d811180524fd515937987e16",
+   "file": "gen-001/design/design.v002__2026-11-03_a2b24f4.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 3,
+   "gen": "gen-001",
+   "date": "2026-11-03",
+   "commit": "98bf25c",
+   "sha256": "2902ef574e8f23e5ceb98914dce7591b49527c7981a458373361b7c52912d97e",
+   "file": "gen-001/design/design.v003__2026-11-03_98bf25c.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "0f4d0d7",
+   "sha256": "22f47ba6631831db021b51a7f15eb986e6241b03e5c1bbd44a3abd032cdb65ff",
+   "file": "design/design.v004__2026-11-03_0f4d0d7.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "44f2d2a",
+   "sha256": "c9520ab8e5075edcdfed21ff6b6abfd5d52d63ef1e8e326de97e857724c6e447",
+   "file": "design/design.v005__2026-11-03_44f2d2a.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "165c355",
+   "sha256": "8bc6e84d12fc383b7caae97a02048db8e2539acc362e95dc4289e33467323288",
+   "file": "design/design.v006__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/model-pipeline.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "44f2d2a",
+   "sha256": "a7f91f70a59a473c03155054d54be7c990cdb4f3ff1d2c478f25ffb40078d6c4",
+   "file": "model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md"
+  },
+  {
+   "src": "docs/model-pipeline.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "165c355",
+   "sha256": "e4ea62e6324595e27dd519e33b0efff27e46f5ac9cc36371b3452ca3399715d1",
+   "file": "model-pipeline/model-pipeline.v002__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/research.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "98bf25c",
+   "sha256": "3896e3770f5d2df00033a9c7bfa1ce6b5643cddb0f2b1ca9bfb447f296079377",
+   "file": "research/research.v001__2026-11-03_98bf25c.md"
+  },
+  {
+   "src": "docs/research.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "78fc708",
+   "sha256": "b7be4cfbd84a7a837bf4684a1c788ac87e85de35a6211289bbdd85f7dd1c76cb",
+   "file": "research/research.v002__2026-11-03_78fc708.md"
+  },
+  {
+   "src": "docs/selection-v5.md",
+   "version": 1,
+   "gen": "gen-001",
+   "date": "2026-11-03",
+   "commit": "6de3bee",
+   "sha256": "c95e2efa4dcf8c60c69000eca752584e2b8db48071c76af15ab34b96df312fc2",
+   "file": "gen-001/selection-v5/selection-v5.v001__2026-11-03_6de3bee.md"
+  },
+  {
+   "src": "docs/selection-v5.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "c80c0c070c2596f5c245f1d3ece28c433e8a6f8db7aafae6e6b1c1996bbf11fb",
+   "file": "selection-v5/selection-v5.v002__2026-11-03_fd22dea.md"
+  },
+  {
+   "src": "docs/selection-v5.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "1bfcbfb",
+   "sha256": "5b4e7e824577cff303bc540ad719b9b9a72be53e8251be729c3315ce1d7389fb",
+   "file": "selection-v5/selection-v5.v003__2026-11-03_1bfcbfb.md"
+  },
+  {
+   "src": "docs/selection-v5.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "2cd7df3",
+   "sha256": "b7a178151d3cbd5c4f67968ffcc4312f35fff2baf800bc346bd01f2852b0fc99",
+   "file": "selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md"
+  }
+ ]
+}

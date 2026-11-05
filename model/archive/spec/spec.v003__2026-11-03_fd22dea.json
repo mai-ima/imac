@@ -1,0 +1,86 @@
+{
+ "_doc": "iMac風一体型ゲーミングPC 共通仕様(単位mm)。部品は model/parts.json、配置は model/layout.json。",
+ "panel_size": 27,
+ "panels": {
+  "24": {
+   "w": 527.0,
+   "h": 296.5
+  },
+  "27": {
+   "w": 596.7,
+   "h": 335.7
+  }
+ },
+ "bezel": 11.6,
+ "chin": 68,
+ "slab_t": 18,
+ "corner": 10,
+ "pod": {
+  "total_t": 108,
+  "h": 256,
+  "side_margin": 27,
+  "wall": 3
+ },
+ "stand": {
+  "w": 150,
+  "drop": 85,
+  "foot_depth": 147
+ },
+ "palette": {
+  "silver": [
+   "#D2D3D5",
+   "#BBBCBE",
+   "#D7D8DA"
+  ],
+  "blue": [
+   "#5882B2",
+   "#9EB2CD",
+   "#BACEE9"
+  ],
+  "purple": [
+   "#8581B4",
+   "#ACA3C0",
+   "#C9C5E6"
+  ],
+  "pink": [
+   "#E16280",
+   "#E7A9B6",
+   "#FFCFDB"
+  ],
+  "orange": [
+   "#E5734E",
+   "#F0B498",
+   "#FFCCAF"
+  ],
+  "yellow": [
+   "#EFD344",
+   "#DCCB97",
+   "#FDEEB7"
+  ],
+  "green": [
+   "#41965F",
+   "#A2BFAD",
+   "#B9D8C6"
+  ]
+ },
+ "palette_doc": "[背面, スタンド, チン] Apple公式画像から実測",
+ "body_w": 620.0,
+ "panel_module": {
+  "name": "BOE MV270QUM-N50 (包絡線。LG LM270WR3-SSC1 608.8x355.3x12.8 も内包)",
+  "outline": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "active": [
+   596.736,
+   335.664
+  ],
+  "aa_to_outline_LRUD": [
+   6.032,
+   6.032,
+   5.968,
+   13.668
+  ]
+ }
+}
