@@ -6,6 +6,7 @@
 | 02_back_plate_layout.svg | v002 | current | 2026-11-05 | b97eaae | 02_back_plate_layout/02_back_plate_layout.v002__2026-11-05_b97eaae.svg |
 | 03_pod_cover.svg | v001 | current | 2026-11-03 | fd22dea | 03_pod_cover/03_pod_cover.v001__2026-11-03_fd22dea.svg |
 | 03_pod_cover.svg | v002 | current | 2026-11-05 | b97eaae | 03_pod_cover/03_pod_cover.v002__2026-11-05_b97eaae.svg |
+| 03_pod_cover.svg | v003 | current | 2026-11-05 | fcba5fe | 03_pod_cover/03_pod_cover.v003__2026-11-05_fcba5fe.svg |
 | 04_section_stack.svg | v001 | current | 2026-11-03 | fd22dea | 04_section_stack/04_section_stack.v001__2026-11-03_fd22dea.svg |
 | 04_section_stack.svg | v002 | current | 2026-11-05 | b97eaae | 04_section_stack/04_section_stack.v002__2026-11-05_b97eaae.svg |
 | 05_stand.svg | v001 | current | 2026-11-03 | b096d9e | 05_stand/05_stand.v001__2026-11-03_b096d9e.svg |
@@ -26,3 +27,4 @@
 | 16_cable_clips.svg | v001 | current | 2026-11-05 | b97eaae | 16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |
+| outlines.dxf | v003 | current | 2026-11-05 | fcba5fe | outlines/outlines.v003__2026-11-05_fcba5fe.dxf |

@@ -7,3 +7,4 @@
 | imac_pc.glb | v003 | current | 2026-11-05 | 2f8c0ac | imac_pc/imac_pc.v003__2026-11-05_2f8c0ac.glb |
 | imac_pc.glb.txt | v001 | current | 2026-11-03 | 165c355 | imac_pc.glb/imac_pc.glb.v001__2026-11-03_165c355.txt |
 | imac_pc.glb.txt | v002 | current | 2026-11-05 | 5564531 | imac_pc.glb/imac_pc.glb.v002__2026-11-05_5564531.txt |
+| imac_pc.glb.txt | v003 | current | 2026-11-05 | 2f8c0ac | imac_pc.glb/imac_pc.glb.v003__2026-11-05_2f8c0ac.txt |

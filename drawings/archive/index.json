@@ -37,6 +37,15 @@
    "file": "03_pod_cover/03_pod_cover.v002__2026-11-05_b97eaae.svg"
   },
   {
+   "src": "drawings/03_pod_cover.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "2213d272e97044cd36c74151d5a368b2cd13c9d68d04cebca6c0bbc6c0587555",
+   "file": "03_pod_cover/03_pod_cover.v003__2026-11-05_fcba5fe.svg"
+  },
+  {
    "src": "drawings/04_section_stack.svg",
    "version": 1,
    "gen": "current",
@@ -215,6 +224,15 @@
    "commit": "b97eaae",
    "sha256": "db3343ea2ecefd7dfb62d9e9819ac29d30552a815f9578fc45795f7f78a92505",
    "file": "outlines/outlines.v002__2026-11-05_b97eaae.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "1e69a08d9075e963f0d02120def5fde690136480c0335d2d46ea7ca4a678f985",
+   "file": "outlines/outlines.v003__2026-11-05_fcba5fe.dxf"
   }
  ]
 }

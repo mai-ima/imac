@@ -11,6 +11,10 @@
 <text x="293.2" y="84.15" font-size="3" text-anchor="middle">六角穴領域 fan</text>
 <rect x="143.1" y="83.05000000000001" width="40.0" height="100.0" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
 <text x="163.1" y="133.05" font-size="3" text-anchor="middle">六角穴領域 gpu</text>
+<rect x="224.0" y="203.65" width="60.0" height="15.0" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="254.0" y="211.15" font-size="2.6" text-anchor="middle" fill="#c0392b">I/O チャンネル 12×120</text>
+<rect x="135.0" y="203.65" width="56.0" height="15.0" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="163.0" y="211.15" font-size="2.6" text-anchor="middle" fill="#c0392b">GPU出力</text>
+<rect x="101.5" y="203.65" width="16.0" height="15.0" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="109.5" y="211.15" font-size="2.6" text-anchor="middle" fill="#c0392b">ACインレット</text>
+<rect x="169.0" y="39.0" width="40.0" height="15.0" fill="none" stroke="#06c" stroke-width=".4" stroke-dasharray="1.5,1"/><text x="189.0" y="46.5" font-size="2.6" text-anchor="middle" fill="#06c">RF窓ゾーン(格子裏PC板 60×30)</text>
 <line x1="40" y1="228.65" x2="338.0" y2="228.65" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="40" y1="218.65" x2="40" y2="230.65" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="338.0" y1="218.65" x2="338.0" y2="230.65" stroke="#c0392b" stroke-width="0.2"/>

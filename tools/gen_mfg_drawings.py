@@ -60,6 +60,10 @@ for key in ('radiator', 'fan', 'gpu'):
     else: x, y, a_, b_ = x + 4, y + 4, 112, 112
     b.append(f'<rect x="{gx + (DW - ix0 - x - a_) * sc}" y="{gy + (DH - iy0 - y - b_) * sc}" width="{a_*sc}" height="{b_*sc}" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>')
     b.append(f'<text x="{gx + (DW - ix0 - x - a_/2) * sc}" y="{gy + (DH - iy0 - y - b_/2) * sc}" font-size="3" text-anchor="middle">六角穴領域 {key}</text>')
+# v7: 下辺傾斜面の開口(I/O引き込みチャンネル, GPU出力, AC電源)と RF窓ゾーン(格子裏の樹脂板)
+for (nm, x, w_, h_) in (('I/O チャンネル 12×120', 105, 120, 30), ('GPU出力', 291, 112, 30), ('ACインレット', 438, 32, 30)):
+    b.append(f'<rect x="{gx + (DW - ix0 - x - w_) * sc}" y="{gy + (DH - h_) * sc}" width="{w_*sc}" height="{h_*sc}" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="{gx + (DW - ix0 - x - w_/2) * sc}" y="{gy + (DH - h_/2) * sc}" font-size="2.6" text-anchor="middle" fill="#c0392b">{nm}</text>')
+b.append(f'<rect x="{gx + (DW/2 - 40) * sc}" y="{gy + 18 * sc}" width="{80*sc}" height="{30*sc}" fill="none" stroke="#06c" stroke-width=".4" stroke-dasharray="1.5,1"/><text x="{gx + DW/2*sc}" y="{gy + 33 * sc}" font-size="2.6" text-anchor="middle" fill="#06c">RF窓ゾーン(格子裏PC板 60×30)</text>')
 b += dim_h(gx, gx + DW * sc, gy + DH * sc, f'{DW:.0f}') + dim_v(gx + DW * sc, gy, gy + DH * sc, f'{DH:.1f}')
 # プロファイル(縁→中央): 内面深さ=12+75*smoothstep(d/run)
 pts = []
