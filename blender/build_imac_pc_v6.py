@@ -18,7 +18,7 @@ ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0)
 ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
 ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
-ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
+ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
 
@@ -304,7 +304,7 @@ LAY = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'model', 'layout.js
 def lp(k): return LAY[k]['pos']
 def ls(k): return LAY[k]['size']
 rx, ry, _ = lp('radiator'); fx, fy, _ = lp('fan'); gx, gy, gz = lp('gpu')
-vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=4.0, hr=1.2, margin=36)   # v7(Apple式): 背面全面に均一パーフォレーション Ø2.4×ピッチ4.0(局所3領域を廃止)
+vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=A.vent_step, hr=A.vent_r, margin=36)   # v7(Apple式): 背面全面に均一パーフォレーション Ø2.4×ピッチ4.0(局所3領域を廃止)
 # 外周のI/O・GPU出力の開口(ドーム傾斜壁を貫通)
 bx, by, bz = lp('board')
 def cutbox(name, x0, y0, z0, w, h, d):

@@ -39,5 +39,6 @@
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
 | unverified-tracker.md | v004 | current | 2026-11-05 | 017b7d9 | unverified-tracker/unverified-tracker.v004__2026-11-05_017b7d9.md |
+| unverified-tracker.md | v005 | current | 2026-11-05 | 3c794e1 | unverified-tracker/unverified-tracker.v005__2026-11-05_3c794e1.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |
 | wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |
