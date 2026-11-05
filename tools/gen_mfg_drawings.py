@@ -38,39 +38,48 @@ b += dim_h(gx, gx + gw, gy + gh, f'{W-0.6:.1f}') + dim_v(gx + gw, gy, gy + gh, f
 b += [f'<text x="{gx}" y="{gy-6}" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R{CORNER} / 裏面: 黒ベゼル印刷+白縁(#EDEEF0)+チン帯</text>']
 sheet('01_front_glass', '前面ガラス(強化ガラス)', 'MFG-01', b)
 
-# ---------------- 02 背面プレートとポッドの配置(背面図) ----------------
+# ---------------- 02 背板(バックプレート)とドーム位置(背面図)  v7 ----------------
+Dm = S['dome']; DW = W - 2 * Dm['inset_left_right']; DH = H - Dm['inset_bottom'] - Dm['inset_top']; DEP = Dm['total_t'] - SLAB
 b = [rrect(gx, gy, W * sc, H * sc, CORNER * sc, fill='#d6d9de', stroke='#000', stroke_width=.5)]
-px0 = gx + (W - POD_W) / 2 * sc; py0 = gy + (H - POD_H) * sc
-b += [f'<rect x="{px0}" y="{py0}" width="{POD_W*sc}" height="{POD_H*sc}" rx="{4}" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>']
-b += dim_h(gx, gx + W * sc, gy + H * sc, f'{W}') + dim_v(gx + W * sc, gy, gy + H * sc, f'{H:.1f}', 12) + dim_h(px0, px0 + POD_W * sc, py0 + POD_H * sc, f'ポッド幅 {POD_W}', 22)
-b += [f'<text x="{gx}" y="{gy-6}" font-size="4">背面図: A5052 t2.0 背面プレート + ポッド(別図 03)。スタンド取付位置は中央、ヒンジ中心 y={DROP-14}</text>']
-sheet('02_back_plate_layout', '背面プレートとポッド配置', 'MFG-02', b)
+px0 = gx + Dm['inset_left_right'] * sc; py0 = gy + Dm['inset_top'] * sc
+b += [f'<rect x="{px0}" y="{py0}" width="{DW*sc}" height="{DH*sc}" rx="{Dm["corner_r"]*sc}" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>']
+for (kx, ky) in [(60, 60), (555, 60), (60, 210), (555, 310)]:   # キーホール吊りピン(トレイ座標→背板座標: トレイ原点=ドーム内寸の左下)
+    b.append(f'<circle cx="{px0 + (3 + kx) * sc}" cy="{gy + (H - Dm["inset_bottom"] - 3 - ky) * sc}" r="{2.5*sc}" fill="#c0392b"/>')
+b += dim_h(gx, gx + W * sc, gy + H * sc, f'{W}') + dim_v(gx + W * sc, gy, gy + H * sc, f'{H:.1f}', 12) + dim_h(px0, px0 + DW * sc, py0 + DH * sc, f'ドーム外形幅 {DW:.0f}', 22)
+b += [f'<text x="{gx}" y="{gy-6}" font-size="4">背板 A5052 t2.0(CP-03) とドーム(CP-07)の位置。余白 左右{Dm["inset_left_right"]}/下{Dm["inset_bottom"]}/上{Dm["inset_top"]}、角R{Dm["corner_r"]}。赤=吊りピン(肩ねじ Ø5)</text>']
+sheet('02_back_plate_layout', '背板とドーム配置', 'MFG-02', b)
 
-# ---------------- 03 ポッドカバー(吸排気穴パターン) ----------------
-b = [rrect(gx, gy, POD_W * sc, POD_H * sc, 4, fill='#c4c8ce', stroke='#000', stroke_width=.5)]
-for (cx, cy, rr) in [(WALL + 196 + 60, WALL + 18 + 72, 48), (WALL + 405 + 60, WALL + 20 + 60, 56)]:
-    step = 7.0; row = 0; yy = -rr
-    while yy <= rr:
-        xx = -rr
-        while xx <= rr:
-            x = xx + (step / 2 if row % 2 else 0)
-            if math.hypot(x, yy) < rr - 3: b.append(f'<circle cx="{gx+(cx+x)*sc}" cy="{gy+(POD_H-(cy+yy))*sc}" r="{2.1*sc}" fill="#fff" stroke="#000" stroke-width=".15"/>')
-            xx += step
-        yy += step * .87; row += 1
-b += dim_h(gx, gx + POD_W * sc, gy + POD_H * sc, f'{POD_W}') + dim_v(gx + POD_W * sc, gy, gy + POD_H * sc, f'{POD_H}')
-b += [f'<text x="{gx}" y="{gy-6}" font-size="4">ポッド背面カバー A5052 t{WALL} / 吸気穴 φ4.2 ピッチ7.0 千鳥(2領域) / 外周R10相当 / アルマイト</text>']
-sheet('03_pod_cover', 'ポッド背面カバー', 'MFG-03', b)
+# ---------------- 03 ドーム(平面+プロファイル)  v7 ----------------
+LAY = json.load(open(f'{R}/model/layout.json'))['items']; LI = {i['id']: i for i in LAY}
+b = [rrect(gx, gy, DW * sc, DH * sc, Dm['corner_r'] * sc, fill='#c4c8ce', stroke='#000', stroke_width=.5)]
+ix0, iy0 = 3, 3   # ドーム内寸の左下(トレイ座標原点)
+for key in ('radiator', 'fan', 'gpu'):
+    x, y, z = LI[key]['pos']; a_, b_, c_ = LI[key]['size']
+    if key == 'gpu': x, y, a_, b_ = x + 20, y + 15, 80, 200
+    elif key == 'radiator': x, y, a_, b_ = x + 4, y + 4, 112, 269
+    else: x, y, a_, b_ = x + 4, y + 4, 112, 112
+    b.append(f'<rect x="{gx + (DW - ix0 - x - a_) * sc}" y="{gy + (DH - iy0 - y - b_) * sc}" width="{a_*sc}" height="{b_*sc}" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>')
+    b.append(f'<text x="{gx + (DW - ix0 - x - a_/2) * sc}" y="{gy + (DH - iy0 - y - b_/2) * sc}" font-size="3" text-anchor="middle">六角穴領域 {key}</text>')
+b += dim_h(gx, gx + DW * sc, gy + DH * sc, f'{DW:.0f}') + dim_v(gx + DW * sc, gy, gy + DH * sc, f'{DH:.1f}')
+# プロファイル(縁→中央): 内面深さ=12+75*smoothstep(d/run)
+pts = []
+for k_ in range(0, 61, 3):
+    s_ = k_ / Dm['run']; dep = Dm['edge_inner_depth'] + (DEP - 3 - Dm['edge_inner_depth']) * s_ * s_ * (3 - 2 * s_); pts.append((gx + DW * sc + 25 + k_ * 0.6, gy + 10 + dep * 0.6))
+b.append('<polyline fill="none" stroke="#000" stroke-width=".6" points="' + ' '.join(f'{x:.1f},{y:.1f}' for x, y in pts) + '"/>')
+b.append(f'<text x="{gx+DW*sc+10}" y="{gy+4}" font-size="2.8">縁→内側プロファイル(内奥行 {Dm["edge_inner_depth"]}→{DEP-3}mm)</text>')
+b += [f'<text x="{gx}" y="{gy-6}" font-size="4">ドーム CP-07(背面から見た図: x反転): A5052 t{WALL} 絞り / 六角穴 φ4.2 ピッチ7.0 千鳥 / ラッチ穴×6, 位置決めピン穴Ø4×2 / EMIガスケット溝 3.0×1.5 / アルマイトII</text>']
+sheet('03_pod_cover', 'ドーム(背面カバー)', 'MFG-03', b)
 
-# ---------------- 04 断面(厚み構成) ----------------
+# ---------------- 04 断面(厚み構成) v7 ----------------
 x0, y0 = 60, 40; k = 1.6
 b = []
-stack = [(1.1, '前面ガラス', '#bcd'), (0.4, 'OCA/接着', '#fe9'), (PO[2], f'液晶モジュール {PO[2]}', '#9c9'), (1.0, '隙間', '#fff'), (2.0, '背面プレート A5052', '#ccd')]
+stack = [(1.1, '前面ガラス', '#bcd'), (1.0, 'シリコーン接着', '#fe9'), (PO[2], f'液晶モジュール {PO[2]}', '#9c9'), (1.0, '隙間', '#fff'), (2.0, '背板 A5052', '#ccd')]
 x = x0
-for t, n, c in stack:
-    b.append(f'<rect x="{x}" y="{y0}" width="{t*k}" height="90" fill="{c}" stroke="#000" stroke-width=".3"/>'); b.append(f'<text x="{x+t*k/2}" y="{y0-3}" font-size="2.8" text-anchor="middle" transform="rotate(-30 {x+t*k/2} {y0-3})">{n}</text>'); x += t * k
-b.append(f'<rect x="{x}" y="{y0+90*0.52}" width="{(POD_T-SLAB)*k}" height="{90*0.48}" fill="#dde" stroke="#000" stroke-width=".3"/>')
-b += dim_h(x0, x0 + SLAB * k, y0 + 90, f'スラブ {SLAB}', 8) + dim_h(x0, x0 + POD_T * k, y0 + 90, f'総厚 {POD_T}', 20)
-b += [f'<text x="{x0}" y="{y0+135}" font-size="4">厚み構成(縮尺 1.6倍)。ポッド壁 t{WALL}。内部有効奥行 {POD_T-SLAB-WALL}mm</text>']
+for t_, n, c in stack:
+    b.append(f'<rect x="{x}" y="{y0}" width="{t_*k}" height="90" fill="{c}" stroke="#000" stroke-width=".3"/>'); b.append(f'<text x="{x+t_*k/2}" y="{y0-3}" font-size="2.8" text-anchor="middle" transform="rotate(-30 {x+t_*k/2} {y0-3})">{n}</text>'); x += t_ * k
+b.append(f'<rect x="{x}" y="{y0+90*0.52}" width="{(Dm["total_t"]-SLAB)*k}" height="{90*0.48}" fill="#dde" stroke="#000" stroke-width=".3"/>')
+b += dim_h(x0, x0 + SLAB * k, y0 + 90, f'スラブ {SLAB}', 8) + dim_h(x0, x0 + Dm['total_t'] * k, y0 + 90, f'総厚 {Dm["total_t"]}', 20)
+b += [f'<text x="{x0}" y="{y0+135}" font-size="4">厚み構成(縮尺1.6倍)。ドーム壁 t{WALL}(外面最大厚 {Dm["total_t"]})。内部有効奥行 最大 {Dm["total_t"]-SLAB-WALL}mm</text>']
 sheet('04_section_stack', '厚み構成(断面)', 'MFG-04', b)
 
 # ---------------- 05 スタンド ----------------

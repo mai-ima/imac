@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
+<rect x="270" y="263" width="146" height="30" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="274" y="273" font-size="5">厚み構成(断面)</text><text x="274" y="280" font-size="3.4">図番 MFG-04 / 縮尺 1:2 / 単位 mm / 第三角法</text>
+<text x="274" y="286" font-size="3.4">普通公差 ±0.3(板金) / ±0.2(ガラス外形) / 表面 アルマイト</text>
+<text x="274" y="290" font-size="3">設計値(未承認)。製造前に最終BOMで再生成すること。</text>
+<rect x="60" y="40" width="1.7600000000000002" height="90" fill="#bcd" stroke="#000" stroke-width=".3"/>
+<text x="60.88" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 60.88 37)">前面ガラス</text>
+<rect x="61.76" y="40" width="0.6400000000000001" height="90" fill="#fe9" stroke="#000" stroke-width=".3"/>
+<text x="62.08" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 62.08 37)">OCA/接着</text>
+<rect x="62.4" y="40" width="21.28" height="90" fill="#9c9" stroke="#000" stroke-width=".3"/>
+<text x="73.03999999999999" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 73.03999999999999 37)">液晶モジュール 13.3</text>
+<rect x="83.68" y="40" width="1.6" height="90" fill="#fff" stroke="#000" stroke-width=".3"/>
+<text x="84.48" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 84.48 37)">隙間</text>
+<rect x="85.28" y="40" width="3.2" height="90" fill="#ccd" stroke="#000" stroke-width=".3"/>
+<text x="86.88" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 86.88 37)">背面プレート A5052</text>
+<rect x="88.48" y="86.80000000000001" width="144.0" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
+<line x1="60" y1="138" x2="88.8" y2="138" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="60" y1="130" x2="60" y2="140" stroke="#c0392b" stroke-width="0.2"/>
+<line x1="88.8" y1="130" x2="88.8" y2="140" stroke="#c0392b" stroke-width="0.2"/>
+<text x="74.4" y="136.5" font-size="3.6" text-anchor="middle" fill="#c0392b">スラブ 18</text>
+<line x1="60" y1="150" x2="232.8" y2="150" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="60" y1="130" x2="60" y2="152" stroke="#c0392b" stroke-width="0.2"/>
+<line x1="232.8" y1="130" x2="232.8" y2="152" stroke="#c0392b" stroke-width="0.2"/>
+<text x="146.4" y="148.5" font-size="3.6" text-anchor="middle" fill="#c0392b">総厚 108</text>
+<text x="60" y="175" font-size="4">厚み構成(縮尺 1.6倍)。ポッド壁 t3。内部有効奥行 87mm</text>
+</svg>

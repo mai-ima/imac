@@ -37,6 +37,15 @@
    "file": "gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "b096d9e",
+   "sha256": "e6427ef60f3c732a17624d0643842b25c17a8536424b4f55cfd623294db2d36f",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",

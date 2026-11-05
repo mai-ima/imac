@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
 <rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
 <rect x="270" y="263" width="146" height="30" fill="none" stroke="#000" stroke-width="0.4"/>
-<text x="274" y="273" font-size="5">背面プレートとポッド配置</text><text x="274" y="280" font-size="3.4">図番 MFG-02 / 縮尺 1:2 / 単位 mm / 第三角法</text>
+<text x="274" y="273" font-size="5">背板とドーム配置</text><text x="274" y="280" font-size="3.4">図番 MFG-02 / 縮尺 1:2 / 単位 mm / 第三角法</text>
 <text x="274" y="286" font-size="3.4">普通公差 ±0.3(板金) / ±0.2(ガラス外形) / 表面 アルマイト</text>
 <text x="274" y="290" font-size="3">設計値(未承認)。製造前に最終BOMで再生成すること。</text>
 <rect x="40" y="30" width="310.0" height="207.65" rx="5.0" fill="#d6d9de" stroke="#000" stroke-width="0.5"/>
-<rect x="46.75" y="109.65" width="296.5" height="128.0" rx="4" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>
+<rect x="46.0" y="37.0" width="298.0" height="188.65" rx="25.0" fill="#c4c8ce" stroke="#000" stroke-width=".4"/>
+<circle cx="77.5" cy="194.15" r="1.25" fill="#c0392b"/>
+<circle cx="325.0" cy="194.15" r="1.25" fill="#c0392b"/>
+<circle cx="77.5" cy="119.15" r="1.25" fill="#c0392b"/>
+<circle cx="325.0" cy="69.15" r="1.25" fill="#c0392b"/>
 <line x1="40" y1="247.65" x2="350.0" y2="247.65" stroke="#c0392b" stroke-width="0.3"/>
 <line x1="40" y1="237.65" x2="40" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="350.0" y1="237.65" x2="350.0" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
@@ -14,9 +18,9 @@
 <line x1="350.0" y1="30" x2="364.0" y2="30" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="350.0" y1="237.65" x2="364.0" y2="237.65" stroke="#c0392b" stroke-width="0.2"/>
 <text x="360.5" y="133.825" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 360.5 133.825)">415.3</text>
-<line x1="46.75" y1="259.65" x2="343.25" y2="259.65" stroke="#c0392b" stroke-width="0.3"/>
-<line x1="46.75" y1="237.65" x2="46.75" y2="261.65" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="343.25" y1="237.65" x2="343.25" y2="261.65" stroke="#c0392b" stroke-width="0.2"/>
-<text x="195.0" y="258.15" font-size="3.6" text-anchor="middle" fill="#c0392b">ポッド幅 593.0</text>
-<text x="40" y="24" font-size="4">背面図: A5052 t2.0 背面プレート + ポッド(別図 03)。スタンド取付位置は中央、ヒンジ中心 y=71</text>
+<line x1="46.0" y1="247.65" x2="344.0" y2="247.65" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="46.0" y1="225.65" x2="46.0" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
+<line x1="344.0" y1="225.65" x2="344.0" y2="249.65" stroke="#c0392b" stroke-width="0.2"/>
+<text x="195.0" y="246.15" font-size="3.6" text-anchor="middle" fill="#c0392b">ドーム外形幅 596</text>
+<text x="40" y="24" font-size="4">背板 A5052 t2.0(CP-03) とドーム(CP-07)の位置。余白 左右12/下24/上14、角R50。赤=吊りピン(肩ねじ Ø5)</text>
 </svg>

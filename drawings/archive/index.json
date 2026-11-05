@@ -1,6 +1,42 @@
 {
  "entries": [
   {
+   "src": "drawings/02_back_plate_layout.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "ddf9bd311eb88aa006720ea63de18ebef7cab81b628bf196e33bd516663e0f36",
+   "file": "02_back_plate_layout/02_back_plate_layout.v001__2026-11-03_fd22dea.svg"
+  },
+  {
+   "src": "drawings/03_pod_cover.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "eb0ccd91f4fba30521c7eaba04079e8c7e8718293b4e87065dd5cf959bf00b9e",
+   "file": "03_pod_cover/03_pod_cover.v001__2026-11-03_fd22dea.svg"
+  },
+  {
+   "src": "drawings/04_section_stack.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "bb89fb2c597bc4008c17311971b97c70f6f82586a71f9bb562cc5c110346347b",
+   "file": "04_section_stack/04_section_stack.v001__2026-11-03_fd22dea.svg"
+  },
+  {
+   "src": "drawings/06_service_tray_plan.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "15ab0403b87a361e8592eb00efb69d602fe6e8f0d191dd263869481b4d506f9e",
+   "file": "06_service_tray_plan/06_service_tray_plan.v001__2026-11-03_307c9ea.svg"
+  },
+  {
    "src": "drawings/10_placement_dimensioned.svg",
    "version": 1,
    "gen": "current",
@@ -35,6 +71,15 @@
    "commit": "27ca8ce",
    "sha256": "1b1efd9932fb8601deb41213559dbcdbfa943432c2bd6ea377064e75f2b57c02",
    "file": "13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "920fb9899c0bc661a16b7140e14a3988ea52715cbce1a70d44aeb51691f8073e",
+   "file": "outlines/outlines.v001__2026-11-03_fd22dea.dxf"
   }
  ]
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="291" height="204" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="8" y="12" font-size="6" font-weight="bold">CP-08 EMIガスケット</text>
+<text x="8" y="19" font-size="3.2">材質 導電ファブリックオーバーフォーム(候補: Parker SOFT-SHIELD 3500 / Laird FoF) / 板厚 3.0 / 数量 1 / 質量 0.03kg / ISO 2768-m(重要寸法は個別指定)</text>
+<rect x="20" y="40" width="150.0" height="0.2" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="20" y1="46.23112480739599" x2="170.0" y2="46.23112480739599" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="95.0" y="51.23112480739599" font-size="3.4" text-anchor="middle" fill="#06c">1947</text>
+<line x1="14" y1="40" x2="14" y2="40.23112480739599" stroke="#06c" stroke-width=".3"/><text x="12" y="40.115562403698" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 12 40.115562403698)">3</text>
+<defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<text x="185" y="40" font-size="2.8">加工: 押出/ダイカット、粘着テープ貼り</text>
+<text x="185" y="45.7" font-size="2.8">表面処理: -</text>
+<text x="185" y="51.400000000000006" font-size="2.8">公差: -</text>
+<text x="185" y="57.10000000000001" font-size="2.8">要素: 圧縮率30%で使用(閉合力&lt;0.175N/mm級)</text>
+<text x="185" y="62.80000000000001" font-size="2.8">接合: CP-07縁溝</text>
+<text x="8" y="202" font-size="3">状態: 候補選定(U30) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>
