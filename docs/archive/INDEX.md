@@ -24,4 +24,5 @@
 | selection-v5.md | v004 | current | 2026-11-03 | 2cd7df3 | selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
+| unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |

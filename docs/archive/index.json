@@ -199,6 +199,15 @@
    "file": "unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md"
   },
   {
+   "src": "docs/unverified-tracker.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "deb6707962031b41bde5de82b0c435e15c0ee25f18ebc975e969687c60251451",
+   "file": "unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md"
+  },
+  {
    "src": "docs/wiring.md",
    "version": 1,
    "gen": "current",

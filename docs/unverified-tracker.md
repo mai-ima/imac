@@ -28,3 +28,9 @@
 | U22 | 前面モジュールの接着方式と交換手順 | 整備性 | 未確定 | ガラス・接着剤メーカー | 11/03 |
 | U23 | ctrl_board頂部(z18)がドーム許容(縁10mmで17)を超過 | 配置/干渉 | **解消(11/05)**: ctrl_boardを左下(縦置き)へ移動、fitcheckもsmoothstep化 | tools/layout_search.py の再実行/制約追加 | 11/05 |
 | U24 | DIMM2枚の厚み(約12mm)がlayout箱(8mm)超過、ポンプ底面とSSD上面の干渉 | 配置/干渉 | ssdはM.2ドーターカード位置へ移動し解消。DIMM2枚厚/ポンプとの間隔は実物確認 | 実機寸法/layout更新 | 11/05 |
+| U25 | ディスプレイ部の実質量/重心(13.3kg推定 vs 19kg) | ヒンジトルク・安定性 | 未実測 | 試作で実測 | 11/05 |
+| U26 | カウンターバランスばね(定荷重ばね/ガススプリング)の型番 | チルト | 未選定 | Vulcan Spring/Misumi/Stabilus等 | 11/05 |
+| U27 | Reell PHL/PHC/PH35, Sugatsune HG-T70S30の寸法・寿命・材質の原典 | ヒンジ | 検索ベースのみ | メーカーPDF | 11/05 |
+| U28 | ヒンジ軸のz位置最適化 | チルト | 未実施 | tools/joint_calc.py | 11/05 |
+| U29 | PEMクリンチ部押抜/トルク値(t2.0)、N52 8×3吸着力、拘束ねじ(T10+保持)品番、ショルダーねじ(肩径4/5mm)品番とせん断強度 | 接合部 | UNVERIFIED | docs/research-joints.md | 11/05 |
+| U30 | EMIガスケット選定(SOFT-SHIELD 3500/Laird FoF等)と閉合力/圧縮量/SE実測 | 防塵/EMC/ドーム固定 | 候補のみ | docs/research-joints.md | 11/05 |
