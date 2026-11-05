@@ -7,6 +7,7 @@
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
 | gen_drawing.py | v001 | current | 2026-11-03 | a2b24f4 | gen_drawing/gen_drawing.v001__2026-11-03_a2b24f4.py |
 | gen_drawing.py | v002 | current | 2026-11-03 | 0f4d0d7 | gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py |
+| gen_fmea.py | v001 | current | 2026-11-05 | 017b7d9 | gen_fmea/gen_fmea.v001__2026-11-05_017b7d9.py |
 | gen_mfg_drawings.py | v001 | current | 2026-11-03 | b096d9e | gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py |
 | gen_mfg_drawings.py | v002 | current | 2026-11-05 | b97eaae | gen_mfg_drawings/gen_mfg_drawings.v002__2026-11-05_b97eaae.py |
 | gen_package.py | v001 | current | 2026-11-05 | 27ca8ce | gen_package/gen_package.v001__2026-11-05_27ca8ce.py |
@@ -17,3 +18,4 @@
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |
 | layout_search.py | v001 | current | 2026-11-03 | 2cd7df3 | layout_search/layout_search.v001__2026-11-03_2cd7df3.py |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
+| thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |

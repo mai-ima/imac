@@ -28,6 +28,15 @@
    "file": "joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md"
   },
   {
+   "src": "docs/spec/system-spec.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "f90df88f0d787aad0334b45bc3094ce03fcfc58602b82faa48f683d99e30a15d",
+   "file": "system-spec/system-spec.v001__2026-11-05_b97eaae.md"
+  },
+  {
    "src": "docs/spec/wiring-spec.md",
    "version": 1,
    "gen": "current",

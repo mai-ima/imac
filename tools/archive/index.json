@@ -46,6 +46,15 @@
    "file": "gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py"
   },
   {
+   "src": "tools/gen_fmea.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "01764bcf992ea90bdd4393cd4e897a3459049d7ba6130f83c26a866e29066264",
+   "file": "gen_fmea/gen_fmea.v001__2026-11-05_017b7d9.py"
+  },
+  {
    "src": "tools/gen_mfg_drawings.py",
    "version": 1,
    "gen": "current",
@@ -134,6 +143,15 @@
    "commit": "1bfcbfb",
    "sha256": "c1628b4b3d4f5a1098d6ad6a52cf1288f8d7416d06fa4709a7c3fcde5bc3ee37",
    "file": "stability/stability.v001__2026-11-03_1bfcbfb.py"
+  },
+  {
+   "src": "tools/thermal_calc.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "26acc352fb2dd87f9c461381d68348ea8c466f7f56517135904c1306f12b3c3b",
+   "file": "thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py"
   }
  ]
 }

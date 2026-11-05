@@ -64,6 +64,15 @@
    "file": "build-guide/build-guide.v001__2026-11-05_27ca8ce.md"
   },
   {
+   "src": "docs/build-guide.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "2f8c0ac",
+   "sha256": "2d46f8f4c242f8fb7aa82922a92ac4b0dfa1872261aad44b5195c563e93aba42",
+   "file": "build-guide/build-guide.v002__2026-11-05_2f8c0ac.md"
+  },
+  {
    "src": "docs/design-v6.md",
    "version": 1,
    "gen": "current",
@@ -125,6 +134,15 @@
    "commit": "165c355",
    "sha256": "8bc6e84d12fc383b7caae97a02048db8e2539acc362e95dc4289e33467323288",
    "file": "design/design.v006__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/failure-analysis.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "017b7d9",
+   "sha256": "6b81f0427febb888c41e2cfc9d4feb609d4f9ee88a3bbe909f59b79adba16ad8",
+   "file": "failure-analysis/failure-analysis.v001__2026-11-05_017b7d9.md"
   },
   {
    "src": "docs/fitcheck-report.txt",
@@ -269,6 +287,15 @@
    "commit": "fdfd200",
    "sha256": "8ccbe0c6c6aaa5a26dbef4722a8df56212c142dc0dfd5a7f62ede6c1eb3f3773",
    "file": "source-status/source-status.v001__2026-11-03_fdfd200.md"
+  },
+  {
+   "src": "docs/thermal-analysis.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "4dd0f7007b15ae53e1b1aa84ddae604634ebb2d81995209aa4720ae6be744804",
+   "file": "thermal-analysis/thermal-analysis.v001__2026-11-05_3c794e1.md"
   },
   {
    "src": "docs/unverified-tracker.md",
