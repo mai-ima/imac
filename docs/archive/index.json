@@ -181,6 +181,15 @@
    "file": "selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md"
   },
   {
+   "src": "docs/service-mechanisms.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "48179ebe3813b5f4c9dbc4a00348d6a77da440eb062904630c0a6d6b5f522bc6",
+   "file": "service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md"
+  },
+  {
    "src": "docs/unverified-tracker.md",
    "version": 1,
    "gen": "current",

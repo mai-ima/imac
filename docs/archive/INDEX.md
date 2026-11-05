@@ -22,6 +22,7 @@
 | selection-v5.md | v002 | current | 2026-11-03 | fd22dea | selection-v5/selection-v5.v002__2026-11-03_fd22dea.md |
 | selection-v5.md | v003 | current | 2026-11-03 | 1bfcbfb | selection-v5/selection-v5.v003__2026-11-03_1bfcbfb.md |
 | selection-v5.md | v004 | current | 2026-11-03 | 2cd7df3 | selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md |
+| service-mechanisms.md | v001 | current | 2026-11-03 | 307c9ea | service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
