@@ -5,9 +5,9 @@
 <line x1="20" y1="140.95805369127518" x2="170.00000000000003" y2="140.95805369127518" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="95.00000000000001" y="145.95805369127518" font-size="3.4" text-anchor="middle" fill="#06c">596</text>
 <line x1="14" y1="40" x2="14" y2="134.95805369127518" stroke="#06c" stroke-width=".3"/><text x="12" y="87.47902684563759" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 12 87.47902684563759)">377.3</text>
 <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
-<text x="185" y="40" font-size="2.8">加工: [試作] 5軸CNC削り出し(t3, 外形±0.3)または2ピース構成(平坦部+肩部)をTIG溶接+研磨+アルマ</text>
-<text x="185" y="44.5" font-size="2.8">イト / [量産] 絞り(ハイドロフォーム)。板厚はt2.0(spec.dome.sheet_t)で統一。金型費/外注見</text>
-<text x="185" y="49.0" font-size="2.8">積は U39</text>
+<text x="185" y="40" font-size="2.8">加工: [試作] 5軸CNC削り出し(t2.0相当の中空形状, 外形±0.3)または2ピース構成(平坦部+肩部)をTIG</text>
+<text x="185" y="44.5" font-size="2.8">溶接+研磨+アルマイト / [量産] 絞り(ハイドロフォーム)。板厚はt2.0(spec.dome.sheet_t)で統</text>
+<text x="185" y="49.0" font-size="2.8">一。金型費/外注見積は U39</text>
 <text x="185" y="54.7" font-size="2.8">表面処理: アルマイトII(外面)/接地面マスク</text>
 <text x="185" y="60.400000000000006" font-size="2.8">公差: 外形±0.3, 縁面の平面度0.3(ガスケット面)</text>
 <text x="185" y="66.10000000000001" font-size="2.8">要素: 縁高さ12mm(内)→プラトー内奥行87mm(smoothstep, run60)</text>

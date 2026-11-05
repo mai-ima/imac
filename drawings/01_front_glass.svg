@@ -18,5 +18,5 @@
 <line x1="349.7" y1="30" x2="361.7" y2="30" stroke="#c0392b" stroke-width="0.2"/>
 <line x1="349.7" y1="237.35" x2="361.7" y2="237.35" stroke="#c0392b" stroke-width="0.2"/>
 <text x="358.2" y="133.675" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 358.2 133.675)">414.7</text>
-<text x="40" y="24" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R10 / 裏面: 黒ベゼル印刷+白縁(#EDEEF0)+チン帯</text>
+<text x="40" y="24" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R10 / 裏面印刷: ベゼル=白(#EDEEF0)、チン帯=パレット淡色(塗装でなくガラス裏面印刷)。AA外周の黒枠はパネルの遮光</text>
 </svg>

@@ -37,6 +37,15 @@
    "file": "custom_parts/custom_parts.v002__2026-11-05_3c794e1.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "b8deba13bc60849b62fa5c2db53e37bd9888228d2e06dc053f4b91ae78451ff7",
+   "file": "custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",

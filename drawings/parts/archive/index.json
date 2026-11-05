@@ -10,6 +10,15 @@
    "file": "CP-01/CP-01.v001__2026-11-05_b97eaae.svg"
   },
   {
+   "src": "drawings/parts/CP-01.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "1d8152750844bc16e3b9acfdb853ac3857700afa11e9d276914a7d45cfd47a89",
+   "file": "CP-01/CP-01.v002__2026-11-05_fcba5fe.svg"
+  },
+  {
    "src": "drawings/parts/CP-02.svg",
    "version": 1,
    "gen": "current",
@@ -62,6 +71,15 @@
    "commit": "3c794e1",
    "sha256": "4867ce4edc4b9661249d56300f39f30825514658cfe6447aa6cb1899a43e2605",
    "file": "CP-07/CP-07.v002__2026-11-05_3c794e1.svg"
+  },
+  {
+   "src": "drawings/parts/CP-07.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "a46843255f22fc024d30dafbbd18a16a72a2e0e1980407b4004d1eb5f275e41a",
+   "file": "CP-07/CP-07.v003__2026-11-05_fcba5fe.svg"
   },
   {
    "src": "drawings/parts/CP-09.svg",

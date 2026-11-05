@@ -91,6 +91,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "a404097",
+   "sha256": "c42673dc8e57397b648fc74121d51e07dea292e3707dac2fe669db7e1e2143db",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v004__2026-11-05_a404097.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",

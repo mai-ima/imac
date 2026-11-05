@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "drawings/01_front_glass.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "b096d9e",
+   "sha256": "d13883a4d17f0f715cdba12906c98f7387ea61c251709d8c315fde0b7b8b016e",
+   "file": "01_front_glass/01_front_glass.v001__2026-11-03_b096d9e.svg"
+  },
+  {
    "src": "drawings/02_back_plate_layout.svg",
    "version": 1,
    "gen": "current",
@@ -368,6 +377,15 @@
    "commit": "a404097",
    "sha256": "9079df670e6ad3cef5cb44f842029ae351fc7ae06b829c03a4667cf5621cd63d",
    "file": "outlines/outlines.v004__2026-11-05_a404097.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "860dbca06eae7deb027525ff98d7a06a46881206e41c11d688915d5136ec9e74",
+   "file": "outlines/outlines.v005__2026-11-05_71b7afb.dxf"
   }
  ]
 }

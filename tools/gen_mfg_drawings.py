@@ -35,7 +35,7 @@ b += [f'<text x="{gx+gw/2}" y="{gy+BEZ*sc+panel_h*sc/2}" font-size="5" text-anch
 b += [f'<text x="{gx+gw/2}" y="{gy+gh-CHIN*sc/2}" font-size="4.4" text-anchor="middle" fill="#555">チン帯: 裏面印刷(Pantone指定、色は選択色)</text>']
 b += [f'<circle cx="{gx+gw/2}" cy="{gy+4*sc+2}" r="{1.8*sc}" fill="none" stroke="#000" stroke-width=".3"/>', f'<text x="{gx+gw/2+6}" y="{gy+7}" font-size="3">カメラ窓 φ3.6(要カメラモジュール確定)</text>']
 b += dim_h(gx, gx + gw, gy + gh, f'{W-0.6:.1f}') + dim_v(gx + gw, gy, gy + gh, f'{H-0.6:.1f}')
-b += [f'<text x="{gx}" y="{gy-6}" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R{CORNER} / 裏面: 黒ベゼル印刷+白縁(#EDEEF0)+チン帯</text>']
+b += [f'<text x="{gx}" y="{gy-6}" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R{CORNER} / 裏面印刷: ベゼル=白(#EDEEF0)、チン帯=パレット淡色(塗装でなくガラス裏面印刷)。AA外周の黒枠はパネルの遮光</text>']
 sheet('01_front_glass', '前面ガラス(強化ガラス)', 'MFG-01', b)
 
 # ---------------- 02 背板(バックプレート)とドーム位置(背面図)  v7 ----------------

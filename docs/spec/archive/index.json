@@ -19,6 +19,24 @@
    "file": "custom-parts/custom-parts.v002__2026-11-05_3c794e1.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "ca05d999a54aa4078d66c2bd726b3cc118bd557a8132a9d4394c8cbcb53d14ff",
+   "file": "custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md"
+  },
+  {
+   "src": "docs/spec/design-philosophy.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "2ec8c77a881d6efd1e2e5f4f353c3f72caa90c7f78fa6b75e19a48809f5d42f4",
+   "file": "design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md"
+  },
+  {
    "src": "docs/spec/joint-matrix.md",
    "version": 1,
    "gen": "current",
