@@ -161,6 +161,15 @@
    "commit": "2cd7df3",
    "sha256": "b7a178151d3cbd5c4f67968ffcc4312f35fff2baf800bc346bd01f2852b0fc99",
    "file": "selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "307c9ea",
+   "sha256": "c1b8a2b008545d184553a82fc624087c96c29ba34415bbf8fbaa91f9edd8864b",
+   "file": "unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md"
   }
  ]
 }
