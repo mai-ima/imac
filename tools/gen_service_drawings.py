@@ -49,7 +49,7 @@ k = 2.2; x0, y0 = 60, 50; b = head(420, 297, 'ドーム固定とトレイ吊り�
 slab = S['slab_t']; tot = Dm['total_t']
 b += [f'<rect x="{x0}" y="{y0}" width="{slab*k}" height="150" fill="#cfd3d8" stroke="#000" stroke-width=".4"/>', T(x0+2, y0-4, '前面スラブ(ガラス+パネル+背板)')]
 b += [f'<rect x="{x0+slab*k}" y="{y0+90}" width="{(tot-slab)*k*0.18}" height="60" fill="#e8c8c8" stroke="#000" stroke-width=".3"/>']
-b.append(T(x0+slab*k+4, y0+86, 'キーホール吊りピン(肩ネジ M3.5 x 12、背板に圧入)', 2.8))
+b.append(T(x0+slab*k+4, y0+86, 'キーホール吊りピン(M3・肩径Ø5 肩ねじ、背板M3にねじ込み)', 2.8))
 tray_z = slab+3
 b += [f'<rect x="{x0+(slab+8)*k}" y="{y0+20}" width="{2*k}" height="110" fill="#b9c4d0" stroke="#000" stroke-width=".4"/>', T(x0+(slab+8)*k+6, y0+30, 'サービストレイ A5052 t2.0(スタンドオフ 8mm)', 2.8)]
 b += [f'<path d="M{x0+slab*k} {y0+170} L{x0+(tot-3)*k} {y0+170-Dm["run"]*k*0.6} L{x0+(tot-3)*k} {y0+20}" fill="none" stroke="#2a4a7a" stroke-width="1.6"/>']

@@ -13,7 +13,9 @@
 | gen_mfg_drawings.py | v003 | current | 2026-11-05 | fcba5fe | gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py |
 | gen_package.py | v001 | current | 2026-11-05 | 27ca8ce | gen_package/gen_package.v001__2026-11-05_27ca8ce.py |
 | gen_package.py | v002 | current | 2026-11-05 | 2f8c0ac | gen_package/gen_package.v002__2026-11-05_2f8c0ac.py |
+| gen_package.py | v003 | current | 2026-11-05 | fcba5fe | gen_package/gen_package.v003__2026-11-05_fcba5fe.py |
 | gen_service_drawings.py | v001 | current | 2026-11-03 | 307c9ea | gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py |
+| gen_service_drawings.py | v002 | current | 2026-11-05 | fcba5fe | gen_service_drawings/gen_service_drawings.v002__2026-11-05_fcba5fe.py |
 | gen_specs.py | v001 | current | 2026-11-05 | b97eaae | gen_specs/gen_specs.v001__2026-11-05_b97eaae.py |
 | guard_no_delete.sh | v001 | current | 2026-11-03 | e1ff88f | guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh |
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |

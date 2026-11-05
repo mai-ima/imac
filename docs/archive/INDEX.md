@@ -10,6 +10,7 @@
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
 | build-guide.md | v002 | current | 2026-11-05 | 2f8c0ac | build-guide/build-guide.v002__2026-11-05_2f8c0ac.md |
+| build-guide.md | v003 | current | 2026-11-05 | 15a1bce | build-guide/build-guide.v003__2026-11-05_15a1bce.md |
 | design-v6.md | v001 | current | 2026-11-03 | 1bfcbfb | design-v6/design-v6.v001__2026-11-03_1bfcbfb.md |
 | design.md | v001 | gen-001 | 2026-11-03 | 7dedb54 | gen-001/design/design.v001__2026-11-03_7dedb54.md |
 | design.md | v002 | gen-001 | 2026-11-03 | a2b24f4 | gen-001/design/design.v002__2026-11-03_a2b24f4.md |

@@ -73,6 +73,15 @@
    "file": "build-guide/build-guide.v002__2026-11-05_2f8c0ac.md"
   },
   {
+   "src": "docs/build-guide.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "15a1bce",
+   "sha256": "7e8e1b0091dc57af0469dc03120ab9bc2c42304cf0bd1948749b9eea31851921",
+   "file": "build-guide/build-guide.v003__2026-11-05_15a1bce.md"
+  },
+  {
    "src": "docs/design-v6.md",
    "version": 1,
    "gen": "current",

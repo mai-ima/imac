@@ -4,13 +4,13 @@
 <text x="254" y="276" font-size="5">分解組立図(側面)と組立順</text><text x="254" y="283" font-size="3.2">図番 PKG-14 / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>
 <text x="254" y="288" font-size="3">番号=組立順。外装(自作)=①④⑤、他は市販品</text>
 <rect x="40.00" y="40.00" width="160.00" height="9.60" rx="0" fill="#dfe9f5" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
-<text x="205.0" y="45.8" font-size="3.4" text-anchor="start" fill="#222" >①前面ガラス+アルミ枠(自作/外注)</text>
+<text x="205.0" y="45.8" font-size="3.4" text-anchor="start" fill="#222" >①前面ガラス(スラブ枠に接着, 自作/外注)</text>
 <line x1="120.00" y1="49.60" x2="120.00" y2="59.60" stroke="#1a7f37" stroke-width="0.6"  marker-end="url(#ag)"/>
 <rect x="40.00" y="61.60" width="160.00" height="22.40" rx="0" fill="#222" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
 <text x="205.0" y="73.8" font-size="3.4" text-anchor="start" fill="#222" >②パネル 27型4K (LG LM270WR3 / BOE N50)</text>
 <line x1="120.00" y1="84.00" x2="120.00" y2="94.00" stroke="#1a7f37" stroke-width="0.6"  marker-end="url(#ag)"/>
 <rect x="40.00" y="96.00" width="160.00" height="8.00" rx="0" fill="#bbb" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
-<text x="205.0" y="101.0" font-size="3.4" text-anchor="start" fill="#222" >③背板(A5052 t2.0)+吊りピン×4+スタンド取付</text>
+<text x="205.0" y="101.0" font-size="3.4" text-anchor="start" fill="#222" >③背板(A5052 t2.0, スラブ枠一体)+吊りピン×4+ヒンジブロック</text>
 <line x1="120.00" y1="104.00" x2="120.00" y2="114.00" stroke="#1a7f37" stroke-width="0.6"  marker-end="url(#ag)"/>
 <rect x="40.00" y="116.00" width="160.00" height="8.00" rx="0" fill="#8d9198" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
 <text x="205.0" y="121.0" font-size="3.4" text-anchor="start" fill="#222" >④サービストレイ(A5052 t2.0)</text>
@@ -21,9 +21,9 @@
 <rect x="40.00" y="244.00" width="160.00" height="8.00" rx="0" fill="#d9dde2" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
 <text x="205.0" y="249.0" font-size="3.4" text-anchor="start" fill="#222" >⑥ドーム(A5052 t2.0, 外装)</text>
 <text x="20.0" y="190.0" font-size="4" text-anchor="start" fill="#000" font-weight="bold">組立順</text>
-<text x="20.0" y="198.0" font-size="3.2" text-anchor="start" fill="#222" >A. パネル/前面ガラス: ガラス+枠を接着(U22)し、背板へM3×16(リム)。トリムリング磁石で隠す。</text>
-<text x="20.0" y="205.0" font-size="3.2" text-anchor="start" fill="#222" >B. 背板: 吊りピン×4(M3.5肩ネジ)、スタンドM6×4、ヒンジ。</text>
+<text x="20.0" y="198.0" font-size="3.2" text-anchor="start" fill="#222" >A. 前面: 背板(スラブ枠一体)へパネルをM3で固定→ガラスをスラブ枠へ全周接着(U22, エアギャップ0.9)。</text>
+<text x="20.0" y="205.0" font-size="3.2" text-anchor="start" fill="#222" >B. 背板: 吊りピン×4(M3・肩径Ø5)、ヒンジブロック(貫通M6×4+裏当て鋼板)、接地スタッド。</text>
 <text x="20.0" y="212.0" font-size="3.2" text-anchor="start" fill="#222" >C. トレイ(机上): スタンドオフ→基板(ITX4点)→CPU→ポンプ(AM5バックプレート)→DIMM→SSD。</text>
 <text x="20.0" y="219.0" font-size="3.2" text-anchor="start" fill="#222" >D. トレイ: ラジエーター(M3×4)→PSU(SFX M3×4)→GPU(クレードル)→ライザー→ファン→ctrl基板。</text>
 <text x="20.0" y="226.0" font-size="3.2" text-anchor="start" fill="#222" >E. 配線(W1〜W5)をコーム/タグで固定。通電前にBIOS確認(FlashBack)。</text>
-<text x="20.0" y="233.0" font-size="3.2" text-anchor="start" fill="#222" >F. トレイを吊りピンに掛け、拘束ネジ×2。アンビリカル接続後、ドームを磁石+拘束ネジで固定。</text></svg>
+<text x="20.0" y="233.0" font-size="3.2" text-anchor="start" fill="#222" >F. トレイを吊りピンに掛け拘束ネジ×2、アンビリカル/接地編組を接続。ドームは上辺フックに掛け下辺ラッチ6点で固定。</text></svg>

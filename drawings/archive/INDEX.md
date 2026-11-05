@@ -13,6 +13,7 @@
 | 06_service_tray_plan.svg | v001 | current | 2026-11-03 | 307c9ea | 06_service_tray_plan/06_service_tray_plan.v001__2026-11-03_307c9ea.svg |
 | 06_service_tray_plan.svg | v002 | current | 2026-11-05 | b97eaae | 06_service_tray_plan/06_service_tray_plan.v002__2026-11-05_b97eaae.svg |
 | 07_dome_latch_section.svg | v001 | current | 2026-11-03 | 307c9ea | 07_dome_latch_section/07_dome_latch_section.v001__2026-11-03_307c9ea.svg |
+| 07_dome_latch_section.svg | v002 | current | 2026-11-05 | fcba5fe | 07_dome_latch_section/07_dome_latch_section.v002__2026-11-05_fcba5fe.svg |
 | 08_service_sequence.svg | v001 | current | 2026-11-03 | 307c9ea | 08_service_sequence/08_service_sequence.v001__2026-11-03_307c9ea.svg |
 | 10_placement_dimensioned.svg | v001 | current | 2026-11-05 | 27ca8ce | 10_placement_dimensioned/10_placement_dimensioned.v001__2026-11-05_27ca8ce.svg |
 | 10_placement_dimensioned.svg | v002 | current | 2026-11-05 | 2f8c0ac | 10_placement_dimensioned/10_placement_dimensioned.v002__2026-11-05_2f8c0ac.svg |
@@ -23,7 +24,9 @@
 | 12_wiring_diagram.svg | v002 | current | 2026-11-05 | 2f8c0ac | 12_wiring_diagram/12_wiring_diagram.v002__2026-11-05_2f8c0ac.svg |
 | 13_airflow_thermal.svg | v001 | current | 2026-11-05 | 27ca8ce | 13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg |
 | 13_airflow_thermal.svg | v002 | current | 2026-11-05 | 2f8c0ac | 13_airflow_thermal/13_airflow_thermal.v002__2026-11-05_2f8c0ac.svg |
+| 14_exploded_assembly.svg | v001 | current | 2026-11-05 | 27ca8ce | 14_exploded_assembly/14_exploded_assembly.v001__2026-11-05_27ca8ce.svg |
 | 15_bom_sheet.svg | v001 | current | 2026-11-05 | 27ca8ce | 15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg |
+| 15_bom_sheet.svg | v002 | current | 2026-11-05 | 3c794e1 | 15_bom_sheet/15_bom_sheet.v002__2026-11-05_3c794e1.svg |
 | 16_cable_clips.svg | v001 | current | 2026-11-05 | b97eaae | 16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |

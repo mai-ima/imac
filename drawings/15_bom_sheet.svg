@@ -73,4 +73,4 @@
 <text x="190.0" y="124.0" font-size="2.8" text-anchor="start" fill="#222" >未選定</text>
 <text x="235.0" y="124.0" font-size="2.8" text-anchor="start" fill="#222" >0x0x0</text>
 <text x="280.0" y="124.0" font-size="2.6" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="140.0" font-size="3" text-anchor="start" fill="#222" >自作部品(外装): 前面ガラス+アルミ枠 / 背板 / サービストレイ / ドーム / スタンド+ヒンジ(定トルク) / トリムリング → 製造図面 MFG-01〜05, SVC-06〜08。</text></svg>
+<text x="10.0" y="140.0" font-size="3" text-anchor="start" fill="#222" >自作部品(外装): 前面ガラス / 背板(スラブ枠一体) / サービストレイ / ドーム / スタンド+ヒンジ(バランスばね+摩擦トルク) / トリムリング → 製造図面 MFG-01〜05, SVC-06〜08。</text></svg>

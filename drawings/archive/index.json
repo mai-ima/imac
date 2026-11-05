@@ -100,6 +100,15 @@
    "file": "07_dome_latch_section/07_dome_latch_section.v001__2026-11-03_307c9ea.svg"
   },
   {
+   "src": "drawings/07_dome_latch_section.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "a6666c2e6f2a0a8eaa45cb983c0a9f4a1c959e3ed68cf5de43bed252648451f2",
+   "file": "07_dome_latch_section/07_dome_latch_section.v002__2026-11-05_fcba5fe.svg"
+  },
+  {
    "src": "drawings/08_service_sequence.svg",
    "version": 1,
    "gen": "current",
@@ -190,6 +199,15 @@
    "file": "13_airflow_thermal/13_airflow_thermal.v002__2026-11-05_2f8c0ac.svg"
   },
   {
+   "src": "drawings/14_exploded_assembly.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "27ca8ce",
+   "sha256": "f48d55bf8cbfb55632cb6e662cb734df9408b02e7ec903e49194f0f544187a2e",
+   "file": "14_exploded_assembly/14_exploded_assembly.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
    "src": "drawings/15_bom_sheet.svg",
    "version": 1,
    "gen": "current",
@@ -197,6 +215,15 @@
    "commit": "27ca8ce",
    "sha256": "c7abca80bdb03c8aa7a9fcfce5617ecb5618d0f4d11a82b46e9f67afea8065bd",
    "file": "15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/15_bom_sheet.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "3bdfbd3e71915f995a488cbe5d30c9ac40e9c841fc3dc9562f70c64d14c25426",
+   "file": "15_bom_sheet/15_bom_sheet.v002__2026-11-05_3c794e1.svg"
   },
   {
    "src": "drawings/16_cable_clips.svg",

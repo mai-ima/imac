@@ -100,6 +100,15 @@
    "file": "gen_package/gen_package.v002__2026-11-05_2f8c0ac.py"
   },
   {
+   "src": "tools/gen_package.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "a3cb827a340fd77e0d56ce292fcabbdde4df9687e40f7d1173c093cc3b17733f",
+   "file": "gen_package/gen_package.v003__2026-11-05_fcba5fe.py"
+  },
+  {
    "src": "tools/gen_service_drawings.py",
    "version": 1,
    "gen": "current",
@@ -107,6 +116,15 @@
    "commit": "307c9ea",
    "sha256": "85779e3f95eaf88a018b903555c48fa7622ca26f6a66567af53e14e8276b3051",
    "file": "gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py"
+  },
+  {
+   "src": "tools/gen_service_drawings.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "66c6593473d1df144f816f967aef89f9276f7350f70afe5892ae737a22938c27",
+   "file": "gen_service_drawings/gen_service_drawings.v002__2026-11-05_fcba5fe.py"
   },
   {
    "src": "tools/gen_specs.py",
