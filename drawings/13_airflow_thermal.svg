@@ -24,8 +24,8 @@
 <text x="138.8" y="153.4" font-size="3" text-anchor="middle" fill="#222" >ssd</text>
 <rect x="74.62" y="131.08" width="61.34" height="3.68" rx="0" fill="#99ddee" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
 <text x="105.3" y="132.9" font-size="3" text-anchor="middle" fill="#222" >ram</text>
-<rect x="232.40" y="194.56" width="12.88" height="9.20" rx="0" fill="#ddd" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
-<text x="238.8" y="199.2" font-size="3" text-anchor="middle" fill="#222" >ac_inlet</text>
+<rect x="232.40" y="193.18" width="12.88" height="9.20" rx="0" fill="#ddd" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="238.8" y="197.8" font-size="3" text-anchor="middle" fill="#222" >ac_inlet</text>
 <line x1="175.73" y1="181.13" x2="175.73" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>
 <line x1="189.53" y1="181.13" x2="189.53" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>
 <line x1="203.33" y1="181.13" x2="203.33" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>

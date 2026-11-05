@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="254" y="276" font-size="5">部品表(BOM) 市販品一覧</text><text x="254" y="283" font-size="3.2">図番 PKG-15 / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>
+<text x="254" y="288" font-size="3">status: official=公式確認 / retail=小売一致 / assumed=未確認</text>
+<text x="10.0" y="20.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">ID</text>
+<text x="40.0" y="20.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">名称</text>
+<text x="190.0" y="20.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">メーカー</text>
+<text x="235.0" y="20.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">外形mm</text>
+<text x="280.0" y="20.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">状態</text>
+<text x="10.0" y="28.0" font-size="3" text-anchor="start" fill="#222" >panel</text>
+<text x="40.0" y="28.0" font-size="2.8" text-anchor="start" fill="#222" >LG Display LM270WR3-SSC1(第一候補) / BOE MV270QUM-N50(公式データシート確認済の</text>
+<text x="190.0" y="28.0" font-size="2.8" text-anchor="start" fill="#222" >LG Display / BOE</text>
+<text x="235.0" y="28.0" font-size="2.8" text-anchor="start" fill="#222" >609.4x355.6x13.3</text>
+<text x="280.0" y="28.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="36.0" font-size="3" text-anchor="start" fill="#222" >ctrl_board</text>
+<text x="40.0" y="36.0" font-size="2.8" text-anchor="start" fill="#222" >4K eDPコントローラ基板(型番未確定)</text>
+<text x="190.0" y="36.0" font-size="2.8" text-anchor="start" fill="#222" >未定</text>
+<text x="235.0" y="36.0" font-size="2.8" text-anchor="start" fill="#222" >55x150x15</text>
+<text x="280.0" y="36.0" font-size="2.6" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="44.0" font-size="3" text-anchor="start" fill="#222" >board</text>
+<text x="40.0" y="44.0" font-size="2.8" text-anchor="start" fill="#222" >ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-ITX)</text>
+<text x="190.0" y="44.0" font-size="2.8" text-anchor="start" fill="#222" >ASUS</text>
+<text x="235.0" y="44.0" font-size="2.8" text-anchor="start" fill="#222" >170x170x1.6</text>
+<text x="280.0" y="44.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="52.0" font-size="3" text-anchor="start" fill="#222" >cpu</text>
+<text x="40.0" y="52.0" font-size="2.8" text-anchor="start" fill="#222" >AMD Ryzen 7 9800X3D</text>
+<text x="190.0" y="52.0" font-size="2.8" text-anchor="start" fill="#222" >AMD</text>
+<text x="235.0" y="52.0" font-size="2.8" text-anchor="start" fill="#222" >40x40x5</text>
+<text x="280.0" y="52.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="60.0" font-size="3" text-anchor="start" fill="#222" >cooler</text>
+<text x="40.0" y="60.0" font-size="2.8" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A, 非RGB) — ポンプ一体型</text>
+<text x="190.0" y="60.0" font-size="2.8" text-anchor="start" fill="#222" >ARCTIC</text>
+<text x="235.0" y="60.0" font-size="2.8" text-anchor="start" fill="#222" >108.47x91x68.5</text>
+<text x="280.0" y="60.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="68.0" font-size="3" text-anchor="start" fill="#222" >radiator</text>
+<text x="40.0" y="68.0" font-size="2.8" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12 Pro x2</text>
+<text x="190.0" y="68.0" font-size="2.8" text-anchor="start" fill="#222" >ARCTIC</text>
+<text x="235.0" y="68.0" font-size="2.8" text-anchor="start" fill="#222" >277x120x63</text>
+<text x="280.0" y="68.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="76.0" font-size="3" text-anchor="start" fill="#222" >gpu</text>
+<text x="40.0" y="76.0" font-size="2.8" text-anchor="start" fill="#222" >ASUS Dual GeForce RTX 5060 Ti 16GB OC (DUAL-RTX5060TI-O16G)</text>
+<text x="190.0" y="76.0" font-size="2.8" text-anchor="start" fill="#222" >ASUS</text>
+<text x="235.0" y="76.0" font-size="2.8" text-anchor="start" fill="#222" >229x120x50</text>
+<text x="280.0" y="76.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="84.0" font-size="3" text-anchor="start" fill="#222" >riser</text>
+<text x="40.0" y="84.0" font-size="2.8" text-anchor="start" fill="#222" >LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確認)</text>
+<text x="190.0" y="84.0" font-size="2.8" text-anchor="start" fill="#222" >LINKUP</text>
+<text x="235.0" y="84.0" font-size="2.8" text-anchor="start" fill="#222" >200x89x6</text>
+<text x="280.0" y="84.0" font-size="2.6" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="92.0" font-size="3" text-anchor="start" fill="#222" >psu</text>
+<text x="40.0" y="92.0" font-size="2.8" text-anchor="start" fill="#222" >Corsair SF750 (2024, SFX 750W, ATX 3.1/12V-2x6)</text>
+<text x="190.0" y="92.0" font-size="2.8" text-anchor="start" fill="#222" >Corsair</text>
+<text x="235.0" y="92.0" font-size="2.8" text-anchor="start" fill="#222" >125x100x63.5</text>
+<text x="280.0" y="92.0" font-size="2.6" text-anchor="start" fill="#000" >retail</text>
+<text x="10.0" y="100.0" font-size="3" text-anchor="start" fill="#222" >fan</text>
+<text x="40.0" y="100.0" font-size="2.8" text-anchor="start" fill="#222" >Noctua NF-A12x25 PWM x1 (ケース排気, 1基)</text>
+<text x="190.0" y="100.0" font-size="2.8" text-anchor="start" fill="#222" >Noctua</text>
+<text x="235.0" y="100.0" font-size="2.8" text-anchor="start" fill="#222" >120x120x25</text>
+<text x="280.0" y="100.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="108.0" font-size="3" text-anchor="start" fill="#222" >ssd</text>
+<text x="40.0" y="108.0" font-size="2.8" text-anchor="start" fill="#222" >Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW)</text>
+<text x="190.0" y="108.0" font-size="2.8" text-anchor="start" fill="#222" >Samsung</text>
+<text x="235.0" y="108.0" font-size="2.8" text-anchor="start" fill="#222" >80.15x25x8.88</text>
+<text x="280.0" y="108.0" font-size="2.6" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="116.0" font-size="3" text-anchor="start" fill="#222" >ram</text>
+<text x="40.0" y="116.0" font-size="2.8" text-anchor="start" fill="#222" >DDR5-6000 CL30 EXPO 32GB (2x16GB) 大手品(型番未定)</text>
+<text x="190.0" y="116.0" font-size="2.8" text-anchor="start" fill="#222" >Corsair/G.Skill/Kingst</text>
+<text x="235.0" y="116.0" font-size="2.8" text-anchor="start" fill="#222" >133.35x8x44</text>
+<text x="280.0" y="116.0" font-size="2.6" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="124.0" font-size="3" text-anchor="start" fill="#222" >camera_audio</text>
+<text x="40.0" y="124.0" font-size="2.8" text-anchor="start" fill="#222" >Webカメラ/マイク/スピーカー</text>
+<text x="190.0" y="124.0" font-size="2.8" text-anchor="start" fill="#222" >未選定</text>
+<text x="235.0" y="124.0" font-size="2.8" text-anchor="start" fill="#222" >0x0x0</text>
+<text x="280.0" y="124.0" font-size="2.6" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="140.0" font-size="3" text-anchor="start" fill="#222" >自作部品(外装): 前面ガラス / 背板(スラブ枠一体) / サービストレイ / ドーム / スタンド+ヒンジ(バランスばね+摩擦トルク) / トリムリング → 製造図面 MFG-01〜05, SVC-06〜08。</text></svg>

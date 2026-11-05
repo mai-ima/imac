@@ -7,7 +7,7 @@ iMac(27型相当)の外観・体験を再現しつつ、内部をすべて市販
 ## 2. 性能仕様(設計目標)
 | 項目 | 仕様 | 根拠/状態 |
 |---|---|---|
-| CPU | AMD Ryzen 7 9800X3D(8C/16T, L3 96MB, TDP120W, Tjmax95℃, PPT162W) | AMD公式(TDP/Tjmax)/PPTは第三者 |
+| CPU | AMD Ryzen 9 9950X3D(16C/32T, 128MB L3(V-Cache片CCD)+L2 16MB, TDP170W(PBP170/MTP230), PPT 230W想定, 5.7GHz) | レビュー引用値(公式PPT/Tjmaxは未取得 U44)。M6マルチを上回るため9800X3Dから変更 |
 | GPU | ASUS Dual RTX 5060 Ti 16GB(4608 CUDA, GDDR7 28Gbps 128bit, TGP180W, 8ピン1本) | ASUS公式 |
 | メモリ | DDR5-6000 CL30 EXPO 32GB(2×16GB) | 型番未定(U12) |
 | ストレージ | Samsung 990 PRO Heatsink 1TB(PCIe4.0 x4)+M.2_1(Gen5)空き | Samsung公式 |
@@ -15,11 +15,11 @@ iMac(27型相当)の外観・体験を再現しつつ、内部をすべて市販
 | 冷却 | ARCTIC Liquid Freezer III Pro 240 + Noctua NF-A12x25 ×1(ケース排気) | 公式/小売 |
 | 電源 | Corsair SF750(SFX 750W, 80+Platinum, 12V-2x6) | 小売(公式未確認) |
 | ディスプレイ | 27型4K(LG LM270WR3-SSC1 / BOE MV270QUM-N50)+保証付き制御基板 | 制御基板未確定(U13) |
-| 消費電力 | ピーク約423W(CPU162+GPU180+他45+パネル36), PSU使用率56% | fitcheck |
-| 比較基準 | Apple M6 iMac: GPUは5060 Ti 16GBが上回る見込み、**CPUは9800X3Dでは単発・マルチとも下回る(docs/spec/performance-benchmark.md)** → CPU再選定(U44)を判断中 | 報道/集計値ベース |
+| 消費電力 | ピーク約491W(CPU230+GPU180+他45+パネル36), PSU使用率65% | fitcheck |
+| 比較基準 | Apple M6 iMac: GPUは5060 Ti 16GBが上回る見込み、**CPUは9950X3Dでマルチ(GB6≈1.05倍, CB24≈1.7倍)は上回るが、単発は約0.6〜0.77倍でM6に及ばない**(docs/spec/performance-benchmark.md) | 報道/集計値ベース |
 
 ## 3. 外形・構造仕様
-- 本体 620.0×415.3mm(パネル27型 596.7×335.7、ベゼル11.6、チン68)、スラブ厚19mm、背面ドーム最大総厚113mm(縁は薄く中央へ傾斜)、スタンド: 腕幅150、足 幅260×奥行245、ヒンジ軸 z=43/y=10。
+- 本体 620.0×415.3mm(パネル27型 596.7×335.7、ベゼル11.6、チン68)、スラブ厚19mm、背面ドーム最大総厚116mm(縁の内奥行6mm, 傾斜70mm)(縁は薄く中央へ傾斜)、スタンド: 腕幅150、足 幅220×奥行215(+鋼板ballast2kg)、ヒンジ軸 z=43/y=10。
 - 構造: 前面: CP-01ガラスをスラブ枠(CP-02/03一体)へ直接接着、パネルは背板へM3 →CP-06サービストレイ(全内部部品)→CP-07ドーム。詳細: docs/spec/custom-parts.md, joint-matrix.md, drawings/01〜16, drawings/parts/。
 - 色: 7色(spec.json palette)。外装はアルマイトII。
 ## 4. 機能仕様

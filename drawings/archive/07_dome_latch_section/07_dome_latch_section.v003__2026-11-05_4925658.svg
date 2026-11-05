@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="254" y="276" font-size="5">ドーム固定とトレイ吊り下げ(断面)</text><text x="254" y="283" font-size="3.2">図番 SVC-07 / 単位 mm / 設計値(未承認)</text>
+<text x="254" y="288" font-size="3">締結: M3 T10 拘束ネジ(特記なき限り)</text>
+<rect x="60" y="50" width="41.800000000000004" height="150" fill="#cfd3d8" stroke="#000" stroke-width=".4"/>
+<text x="62" y="46" font-size="3.4" text-anchor="start" fill="#222">前面スラブ(ガラス+パネル+背板)</text>
+<rect x="101.80000000000001" y="140" width="37.224000000000004" height="60" fill="#e8c8c8" stroke="#000" stroke-width=".3"/>
+<text x="105.80000000000001" y="136" font-size="2.8" text-anchor="start" fill="#222">キーホール吊りピン(M3・肩径Ø5 肩ねじ、背板M3にねじ込み)</text>
+<rect x="119.4" y="70" width="4.4" height="110" fill="#b9c4d0" stroke="#000" stroke-width=".4"/>
+<text x="125.4" y="80" font-size="2.8" text-anchor="start" fill="#222">サービストレイ A5052 t2.0(スタンドオフ 8mm)</text>
+<path d="M101.80000000000001 220 L302.0 140.8 L302.0 70" fill="none" stroke="#2a4a7a" stroke-width="1.6"/>
+<text x="278.6" y="53" font-size="2.8" text-anchor="start" fill="#222">ドーム(A5052 t2.0) 傾斜 60mm</text>
+<circle cx="110.6" cy="190" r="3" fill="#c0392b"/>
+<text x="116.6" y="192" font-size="2.8" text-anchor="start" fill="#222">下辺ラッチ(1/4回転, 下面の凹み内)。上辺は掛け爪フック</text>
+<rect x="104.0" y="170" width="4.840000000000001" height="4.840000000000001" fill="#555"/>
+<text x="110.6" y="168" font-size="2.8" text-anchor="start" fill="#222">ネオジム磁石 8x3 ×12個(位置決め)</text>
+<text x="60" y="245" font-size="3.2" text-anchor="start" fill="#222">導電ガスケット(ファブリック・オーバー・フォーム 3mm)を縁に周回。ドーム縁と背板の隙間 0.5〜1.0mm。</text>
+</svg>

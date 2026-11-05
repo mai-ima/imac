@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="254" y="276" font-size="5">サービストレイ平面(背面側から見た配置)</text><text x="254" y="283" font-size="3.2">図番 SVC-06 / 単位 mm / 設計値(未承認)</text>
+<text x="254" y="288" font-size="3">締結: M3 T10 拘束ネジ(特記なき限り)</text>
+<rect x="30" y="40" width="354.0" height="222.78" rx="20" fill="#f4f6f8" stroke="#000" stroke-width=".5"/>
+<rect x="85.85999999999999" y="140.98000000000002" width="102.0" height="102.0" fill="#9ac8a6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="136.86" y="191.98" font-size="2.6" text-anchor="middle" fill="#222">board (ASUS ROG STRIX X870-I )</text>
+<rect x="101.39999999999999" y="156.95799999999997" width="54.6" height="65.082" fill="#e0b080" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="128.7" y="189.49899999999997" font-size="2.6" text-anchor="middle" fill="#222">cooler (ARCTIC Liquid Freezer )</text>
+<rect x="280.38" y="68.14000000000001" width="72.0" height="166.2" fill="#b0c4de" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="316.38" y="151.24" font-size="2.6" text-anchor="middle" fill="#222">radiator (ARCTIC Liquid Freezer )</text>
+<rect x="202.08" y="93.46000000000001" width="72.0" height="137.4" fill="#9aa0ad" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="238.08" y="162.16000000000003" font-size="2.6" text-anchor="middle" fill="#222">gpu (ASUS Dual GeForce RTX )</text>
+<rect x="187.86" y="167.38" width="14.399999999999999" height="53.4" fill="#444" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="195.06" y="194.08" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
+<rect x="120.48" y="80.56" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="157.98000000000002" y="110.56000000000002" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF750 (2024, S)</text>
+<rect x="45.96" y="67.18" width="72.0" height="72.0" fill="#d9c8a0" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="81.96" y="103.18" font-size="2.6" text-anchor="middle" fill="#222">fan (Noctua NF-A12x25 PWM x)</text>
+<rect x="43.2" y="148.78" width="33.0" height="90.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="59.7" y="193.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
+<rect x="164.4" y="158.59" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="171.9" y="182.63500000000002" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
+<rect x="88.19999999999999" y="153.57999999999998" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="128.20499999999998" y="155.98000000000002" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
+<rect x="294.0" y="236.38" width="16.8" height="12.0" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="302.4" y="242.38" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
+<circle cx="66.0" cy="247.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="70.0" y="244.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="363.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="367.0" y="223.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="66.0" cy="58.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="70.0" y="55.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="363.0" cy="76.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="367.0" y="73.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="171.0" cy="254.38" r="2.2" fill="#c0392b"/>
+<text x="171.0" y="249.38" font-size="2.4" text-anchor="middle" fill="#c0392b">拘束ネジ(トレイ固定)</text>
+<circle cx="243.0" cy="254.38" r="2.2" fill="#c0392b"/>
+<text x="243.0" y="249.38" font-size="2.4" text-anchor="middle" fill="#c0392b">拘束ネジ(トレイ固定)</text>
+<line x1="207.0" y1="34" x2="207.0" y2="22" stroke="#1a7f37" stroke-width=".6" marker-end="url(#a)"/>
+<text x="210.0" y="31" font-size="3" text-anchor="start" fill="#1a7f37">取り外し方向: 12mm持ち上げてキーホールを外し、背面(+z)へ引く</text>
+<text x="30" y="272.78" font-size="3.4" text-anchor="start" fill="#222">ドーム内寸 590 x 371 / トレイ=A5052 t2.0。部品はスタンドオフで固定(M3)。GPUはクレードル(工具なしクランプ)で保持。</text>
+<text x="30" y="278.78" font-size="3.4" text-anchor="start" fill="#222">ケーブルはトレイ上のコームで束ね、ディスプレイ側は「アンビリカル」(eDP/12V/USB)でトレイ端のコネクタに分離。</text>
+</svg>

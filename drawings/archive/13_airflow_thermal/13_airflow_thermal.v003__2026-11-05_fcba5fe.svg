@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="254" y="276" font-size="5">エアフロー・熱設計(平面)</text><text x="254" y="283" font-size="3.2">図番 PKG-13 / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>
+<text x="254" y="288" font-size="3">熱量は仕様値。風量は公称値の和(実機測定が必要)</text>
+<rect x="30.00" y="44.00" width="271.40" height="170.80" rx="14" fill="#f7f8fa" fill-opacity="1" stroke="#000" stroke-width="0.5"/>
+<rect x="72.83" y="121.42" width="78.20" height="78.20" rx="0" fill="#9ac8a6" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="111.9" y="160.5" font-size="3" text-anchor="middle" fill="#222" >board</text>
+<rect x="84.74" y="133.67" width="41.86" height="49.90" rx="0" fill="#e0b080" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="105.7" y="158.6" font-size="3" text-anchor="middle" fill="#222" >cooler</text>
+<rect x="221.96" y="65.57" width="55.20" height="127.42" rx="0" fill="#b0c4de" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="249.6" y="129.3" font-size="3" text-anchor="middle" fill="#222" >radiator</text>
+<rect x="161.93" y="84.99" width="55.20" height="105.34" rx="0" fill="#9aa0ad" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="189.5" y="137.7" font-size="3" text-anchor="middle" fill="#222" >gpu</text>
+<rect x="151.03" y="141.66" width="11.04" height="40.94" rx="0" fill="#555" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="156.5" y="162.1" font-size="3" text-anchor="middle" fill="#222" >riser</text>
+<rect x="99.37" y="75.10" width="57.50" height="46.00" rx="0" fill="#c8c8c8" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="128.1" y="98.1" font-size="3" text-anchor="middle" fill="#222" >psu</text>
+<rect x="42.24" y="64.84" width="55.20" height="55.20" rx="0" fill="#d9c8a0" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="69.8" y="92.4" font-size="3" text-anchor="middle" fill="#222" >fan</text>
+<rect x="40.12" y="127.40" width="25.30" height="69.00" rx="0" fill="#a9c0d6" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="52.8" y="161.9" font-size="3" text-anchor="middle" fill="#222" >ctrl_board</text>
+<rect x="133.04" y="134.92" width="11.50" height="36.87" rx="0" fill="#ccf0aa" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="138.8" y="153.4" font-size="3" text-anchor="middle" fill="#222" >ssd</text>
+<rect x="74.62" y="131.08" width="61.34" height="3.68" rx="0" fill="#99ddee" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="105.3" y="132.9" font-size="3" text-anchor="middle" fill="#222" >ram</text>
+<rect x="232.40" y="194.56" width="12.88" height="9.20" rx="0" fill="#ddd" fill-opacity="0.55" stroke="#333" stroke-width="0.2"/>
+<text x="238.8" y="199.2" font-size="3" text-anchor="middle" fill="#222" >ac_inlet</text>
+<line x1="175.73" y1="181.13" x2="175.73" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>
+<line x1="189.53" y1="181.13" x2="189.53" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>
+<line x1="203.33" y1="181.13" x2="203.33" y2="158.13" stroke="#1a7f37" stroke-width="0.9"  marker-end="url(#ar)"/>
+<text x="189.5" y="151.2" font-size="2.2" text-anchor="middle" fill="#1a7f37" >GPU: プレナム空気を吸気→ヒートシンク→プレナム</text>
+<line x1="233.46" y1="100.99" x2="233.46" y2="77.99" stroke="#06c" stroke-width="0.9"  marker-end="url(#ar)"/>
+<line x1="249.56" y1="100.99" x2="249.56" y2="77.99" stroke="#06c" stroke-width="0.9"  marker-end="url(#ar)"/>
+<line x1="265.66" y1="100.99" x2="265.66" y2="77.99" stroke="#06c" stroke-width="0.9"  marker-end="url(#ar)"/>
+<text x="249.6" y="68.8" font-size="2.2" text-anchor="middle" fill="#06c" >ラジエーター: P12 Pro×2をドーム側に配置し外気を直接吸気→プレナムへ(正圧)</text>
+<line x1="60.64" y1="101.64" x2="60.64" y2="74.04" stroke="#c0392b" stroke-width="0.9"  marker-end="url(#ar)"/>
+<line x1="79.04" y1="101.64" x2="79.04" y2="74.04" stroke="#c0392b" stroke-width="0.9"  marker-end="url(#ar)"/>
+<text x="69.8" y="60.2" font-size="2.6" text-anchor="middle" fill="#c0392b" >NF-A12x25 + 正圧の逃げ: プレナムの熱気を全面格子から排気</text>
+<text x="321.4" y="44.0" font-size="4" text-anchor="start" fill="#000" font-weight="bold">熱収支(ピーク)</text>
+<text x="321.4" y="52.0" font-size="3" text-anchor="start" fill="#222" >CPU Ryzen 7 9800X3D PPT: 162 W</text>
+<text x="321.4" y="58.0" font-size="3" text-anchor="start" fill="#222" >GPU RTX 5060 Ti TGP: 180 W</text>
+<text x="321.4" y="64.0" font-size="3" text-anchor="start" fill="#222" >基板/SSD/RAM/ファン: 40 W</text>
+<text x="321.4" y="70.0" font-size="3" text-anchor="start" fill="#222" >PSU損失(効率92%): 35 W</text>
+<text x="321.4" y="76.0" font-size="3" text-anchor="start" fill="#222" >コントローラ/パネル: 30 W</text>
+<text x="321.4" y="85.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">合計 約447 W</text>
+<text x="321.4" y="94.0" font-size="2.8" text-anchor="start" fill="#222" >正圧設計: ラジエーターは外気直吸気(CPU熱はプレナムへ入る)。詳細 docs/thermal-analysis.md</text>
+<text x="321.4" y="100.0" font-size="2.8" text-anchor="start" fill="#222" >ΔT計算は tools/fitcheck.py。実機は①CPU/GPU温度②ファン回転数③表面温度の実測が必須(未測定)。</text>
+<text x="321.4" y="106.0" font-size="2.8" text-anchor="start" fill="#c0392b" >懸念: ドームの穴開口率・吸気経路の圧損、ポンプ下のSSD/VRM冷却(VRMファン60mm付き)。</text></svg>

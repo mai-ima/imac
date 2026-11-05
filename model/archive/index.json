@@ -82,6 +82,15 @@
    "file": "layout/layout.v005__2026-11-05_2f8c0ac.json"
   },
   {
+   "src": "model/layout.json",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "c66d8ba6a37b6d7292dbc442c58fb5da3277220c34a508b7563f555b4779674b",
+   "file": "layout/layout.v006__2026-11-05_fcba5fe.json"
+  },
+  {
    "src": "model/parts.json",
    "version": 1,
    "gen": "gen-001",
@@ -136,6 +145,15 @@
    "file": "parts/parts.v006__2026-11-05_3c794e1.json"
   },
   {
+   "src": "model/parts.json",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "d3009a4eda78494e64fe16f0c2985d0f1199f713cd4a0c365b748005a6547e3b",
+   "file": "parts/parts.v007__2026-11-05_fcba5fe.json"
+  },
+  {
    "src": "model/spec.json",
    "version": 1,
    "gen": "gen-001",
@@ -179,6 +197,15 @@
    "commit": "2cd7df3",
    "sha256": "f06bdabd7b7532fa5701c834bf3639bef90dc249298cfe98699c7e4cfa5c9d85",
    "file": "spec/spec.v005__2026-11-03_2cd7df3.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "a4a56bd0a74a535cdbaecaed5d97c394853709b96499fc1c2eb0d440863bd79f",
+   "file": "spec/spec.v006__2026-11-05_fcba5fe.json"
   }
  ]
 }

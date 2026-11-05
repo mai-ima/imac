@@ -24,8 +24,8 @@
 <text x="171.9" y="182.63500000000002" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
 <rect x="88.19999999999999" y="153.57999999999998" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="128.20499999999998" y="155.98000000000002" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
-<rect x="294.0" y="236.38" width="16.8" height="12.0" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="302.4" y="242.38" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
+<rect x="294.0" y="234.58" width="16.8" height="12.0" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="302.4" y="240.58" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
 <circle cx="66.0" cy="247.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <text x="70.0" y="244.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
 <circle cx="363.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>

@@ -5,7 +5,7 @@
 | panel | LG Display LM270WR3-SSC1(第一候補) / BOE MV270QUM-N50(公式データシート確認済の代替) | LG Display / BOE | 609.4x355.6x13.3 | official | https://www.panelook.com/upload/202310/MV270QUM-N50_Ver.0_20210111_202310319200.pdf |
 | ctrl_board | 4K eDPコントローラ基板(型番未確定) | 未定 | 55x150x15 | assumed |  |
 | board | ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-ITX) | ASUS | 170x170x1.6 | official | https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/ |
-| cpu | AMD Ryzen 7 9800X3D | AMD | 40x40x5 | official | https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html |
+| cpu | AMD Ryzen 9 9950X3D | AMD | 40x40x5 | retail | https://www.notebookcheck.net/AMD-Ryzen-9-9950X3D-Review-Ryzen-7-9800X3D-levels-of-gaming-performance-and-power-efficiency-for-50-markup-over-the-Ryzen-9-9950X.976049.0.html |
 | cooler | ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A, 非RGB) — ポンプ一体型ブロック | ARCTIC | 108.47x91x68.5 | official | https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf |
 | radiator | ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12 Pro x2 | ARCTIC | 277x120x63 | official | https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf |
 | gpu | ASUS Dual GeForce RTX 5060 Ti 16GB OC (DUAL-RTX5060TI-O16G) | ASUS | 229x120x50 | official | https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060ti-o16g/techspec/ |

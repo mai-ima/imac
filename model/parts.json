@@ -72,30 +72,32 @@
  },
  "cpu": {
   "id": "cpu",
-  "name": "AMD Ryzen 7 9800X3D",
+  "name": "AMD Ryzen 9 9950X3D",
   "maker": "AMD",
   "dims": [
    40,
    40,
    5
   ],
-  "status": "official",
+  "status": "retail",
   "facts": {
-   "tdp_w": 120,
-   "ppt_w": 162,
+   "tdp_w": 170,
+   "ppt_w": 230,
    "tjmax_c": 95,
-   "cores": "8C/16T",
-   "l3": "96MB",
+   "cores": "16C/32T",
+   "l3": "128MB(V-Cache片CCD)+L2 16MB",
    "chipsets": "A620/X670E/X670/B650E/B650/X870E/X870/B840/B850",
    "pcie": "PCIe 5.0 native",
-   "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)"
+   "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)",
+   "boost": "5.7GHz",
+   "vs_m6": "GB6 multi 約1.05倍/CB24 multi 約1.7倍、単発は0.6〜0.77倍(M6に及ばない)"
   },
   "sources": [
-   "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
-   "https://www.buildcores.com/products/CPU/7xjqsomhr/AMD-Ryzen-7-9800X3D"
+   "https://www.notebookcheck.net/AMD-Ryzen-9-9950X3D-Review-Ryzen-7-9800X3D-levels-of-gaming-performance-and-power-efficiency-for-50-markup-over-the-Ryzen-9-9950X.976049.0.html",
+   "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html"
   ],
   "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、**液冷推奨**。PPT162Wは第三者値。性能は制限せず、フル負荷でTjmax以内に収まる冷却(240mm AIO等)を選定する",
-  "status_note": "official(TDP/Tjmax/対応チップセット)+第三者(PPT)"
+  "status_note": "v7.1: M6 iMacのCPU(マルチ)を上回るため9800X3Dから変更(docs/spec/performance-benchmark.md)。TDP170W(PBP170/MTP230)はレビュー引用値、公式PPT/Tjmaxは取得不可でUNVERIFIED(U44)。AMDの冷却推奨240/280mm(Club386経由)。"
  },
  "cooler": {
   "id": "cooler",

@@ -28,6 +28,15 @@
    "file": "joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md"
   },
   {
+   "src": "docs/spec/performance-benchmark.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "853c2f5",
+   "sha256": "f883d7b8c84751a90df1d83a9fa2ffb39e14f299bddd0e31f1f05fd9936c4fb2",
+   "file": "performance-benchmark/performance-benchmark.v001__2026-11-05_853c2f5.md"
+  },
+  {
    "src": "docs/spec/system-spec.md",
    "version": 1,
    "gen": "current",
@@ -44,6 +53,15 @@
    "commit": "15a1bce",
    "sha256": "521a8abc3aee74a5ad3e0af3fe44a31f0fd8923be366874d79ab8060b7c44659",
    "file": "system-spec/system-spec.v002__2026-11-05_15a1bce.md"
+  },
+  {
+   "src": "docs/spec/system-spec.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "853c2f5",
+   "sha256": "e6e1c2a8628d4f220a40bd274e4588a60099ba06a5fa9ba056f6db9abcb50f34",
+   "file": "system-spec/system-spec.v003__2026-11-05_853c2f5.md"
   },
   {
    "src": "docs/spec/wiring-spec.md",

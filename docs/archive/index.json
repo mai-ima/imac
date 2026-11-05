@@ -46,6 +46,15 @@
    "file": "bom-final/bom-final.v001__2026-11-05_27ca8ce.md"
   },
   {
+   "src": "docs/bom-final.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "3c794e1",
+   "sha256": "d848a3513673ad5fe4e996b3f2a8de2afc177cfc3daca336f445e1a3f36fe0c6",
+   "file": "bom-final/bom-final.v002__2026-11-05_3c794e1.md"
+  },
+  {
    "src": "docs/bom-verified.md",
    "version": 1,
    "gen": "current",
@@ -172,6 +181,15 @@
    "file": "fitcheck-report/fitcheck-report.v002__2026-11-05_2f8c0ac.txt"
   },
   {
+   "src": "docs/fitcheck-report.txt",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "fccedf1dc1152afa1614c3246080324fd1078638797aba6a340e183d8535b5ce",
+   "file": "fitcheck-report/fitcheck-report.v003__2026-11-05_fcba5fe.txt"
+  },
+  {
    "src": "docs/hinge-design.md",
    "version": 1,
    "gen": "current",
@@ -188,6 +206,15 @@
    "commit": "017b7d9",
    "sha256": "9f527793ad26e47262899facbcf862dbe378de978961da3505620a1f7fd716ce",
    "file": "joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "8ccd04b3bb70a88cd49266fa3de2b72b0b9dde13dbf4a6d0b2101d8b67aa8c44",
+   "file": "joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -305,6 +332,15 @@
    "commit": "3c794e1",
    "sha256": "4dd0f7007b15ae53e1b1aa84ddae604634ebb2d81995209aa4720ae6be744804",
    "file": "thermal-analysis/thermal-analysis.v001__2026-11-05_3c794e1.md"
+  },
+  {
+   "src": "docs/thermal-analysis.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "15a1bce",
+   "sha256": "9b9f29afb65992e3b6b50f24a6c8ef1c140ea1a10bd04862c7d32284418edf6c",
+   "file": "thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md"
   },
   {
    "src": "docs/unverified-tracker.md",

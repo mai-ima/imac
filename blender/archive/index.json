@@ -46,6 +46,15 @@
    "file": "build_imac_pc_v6/build_imac_pc_v6.v005__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "blender/build_imac_pc_v6.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1880f0",
+   "sha256": "071d8ce7283007c3146f13278bf84bb15b7a1a212245a246aaaa04eb8c3a0f2a",
+   "file": "build_imac_pc_v6/build_imac_pc_v6.v006__2026-11-05_e1880f0.py"
+  },
+  {
    "src": "blender/imac_pc.blend",
    "version": 1,
    "gen": "current",

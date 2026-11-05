@@ -16,7 +16,7 @@
  "slab_t": 19.0,
  "corner": 10,
  "pod": {
-  "total_t": 113,
+  "total_t": 116,
   "h": 256,
   "side_margin": 27,
   "wall": 3
@@ -24,10 +24,11 @@
  "stand": {
   "w": 150,
   "drop": 85,
-  "foot_depth": 245,
-  "foot_w": 260,
-  "foot_front": 110,
-  "foot_back": 135
+  "foot_depth": 215,
+  "foot_w": 220,
+  "foot_front": 90,
+  "foot_back": 125,
+  "ballast_kg": 2.0
  },
  "palette": {
   "silver": [
@@ -92,9 +93,9 @@
   "inset_bottom": 24,
   "inset_top": 14,
   "corner_r": 50,
-  "run": 60,
-  "edge_inner_depth": 12,
-  "total_t": 113,
+  "run": 70,
+  "edge_inner_depth": 6,
+  "total_t": 116,
   "sheet_t": 2.0
  },
  "hinge": {
@@ -102,5 +103,5 @@
   "axis_z_from_glass": 43.0,
   "doc": "v7: 軸を重心(約z26)の背面側43mmに置き、-5°〜+25°でトルクがほぼ正(後方へ倒れる向き)になるようにする(tools/joint_calc.py)。ヒンジブロックは背板に貫通ボルト+裏当て板で固定。"
  },
- "v7_notes": "slab_t 19(OCA無し構造: ガラス1.1+エアギャップ0.9+パネル13.3+隙間1.0+背板2.0=18.3, 余裕0.7)。dome total_t 113 = slab19 + 内奥行91 + 壁3(2.0板+1.0クリアランス)。tray上面z=2(板厚2.0, 背板に接して吊る)+スタンドオフ(基板6.35/その他3.0)。"
+ "v7_notes": "slab_t 19(OCA無し構造: ガラス1.1+エアギャップ0.9+パネル13.3+隙間1.0+背板2.0=18.3, 余裕0.7)。dome total_t 113 = slab19 + 内奥行91 + 壁3(2.0板+1.0クリアランス)。tray上面z=2(板厚2.0, 背板に接して吊る)+スタンドオフ(基板6.35/その他3.0)。 | v7.1: ドーム縁の内奥行12→6mm、傾斜run60→70(側面の薄い縁, Apple監査P6)。スタンド足220×215+ballast2kg(鋼板, 足内)で転倒余裕を維持。 | total_t 115(内奥行93)"
 }

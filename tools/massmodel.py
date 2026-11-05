@@ -15,6 +15,6 @@ def head():
     for k, m, src in (('board', 0.55, '推定(基板0.4+CPU+DIMM)'), ('cooler', 0.65, '推定(ポンプ側)'), ('radiator', 1.0, 'ARCTIC 1665g合計から推定'), ('gpu', 0.95, '推定(公式未確認)'), ('psu', 0.96, '小売'), ('fan', 0.16, '小売'), ('ctrl_board', 0.25, '推定'), ('ssd', 0.05, '推定'), ('ac_inlet', 0.12, '推定')):
         z, y = cg_item(k); items.append((k, m, z, y, src))
     items.append(('ケーブル/金具/ガスケット/ラッチ等', 0.9, slab + 20, H / 2, '推定')); return items
-def stand_mass(): return 1.8
+def stand_mass(): return 1.8 + S['stand'].get('ballast_kg', 0)
 def head_cg():
     it = head(); m = sum(i[1] for i in it); return m, sum(i[1] * i[2] for i in it) / m, sum(i[1] * i[3] for i in it) / m, it

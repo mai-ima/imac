@@ -37,6 +37,15 @@
    "file": "CP-06/CP-06.v001__2026-11-05_b97eaae.svg"
   },
   {
+   "src": "drawings/parts/CP-06.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "2f5ba82c09210e4dca3f088ee77c9a37faf72b8fc6be81412b36433bbc06d017",
+   "file": "CP-06/CP-06.v002__2026-11-05_fcba5fe.svg"
+  },
+  {
    "src": "drawings/parts/CP-07.svg",
    "version": 1,
    "gen": "current",

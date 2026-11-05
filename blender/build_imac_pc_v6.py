@@ -18,7 +18,7 @@ ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0)
 ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
 ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
-ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
+ap.add_argument('--vent-mode', default='texture'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
 
@@ -209,12 +209,12 @@ M['red'] = principled('cable_red', '#b82a1e', 0.0, 0.6)
 M['led_blue'] = principled('led_blue', '#101010', 0.0, 0.3, emit='#9fd0ff', estr=4.0)
 
 # ---------------- 本体 ----------------
-box('slab', W, H, SLAB, -W / 2, 0, -SLAB, M['body'], bevel=2.5)
-box('front_glass', W - 0.6, H - 0.6, 1.2, -W / 2 + .3, .3, -0.6, M['glass'], bevel=0.5)
-box('display', PW, PH, 0.2, -PW / 2, CHIN, 0.62, M['screen'], uv=True)
-box('chin_paint', W - 5, CHIN - 4, 0.2, -W / 2 + 2.5, 2, 0.62, M['chin'])
-cyl('camera', 1.8, 0.4, 'z', 0, H - 5, 0.75, M['black'], 24)
-for sx in (-1, 1): cyl('mic', 0.55, 0.3, 'z', sx * 70, H - 5, 0.72, M['black'], 12)
+box('slab', W, H, SLAB, -W / 2, 0, -SLAB, M['body'], bevel=1.0)
+box('front_glass', W - 0.6, H - 0.6, 1.2, -W / 2 + .3, .3, -0.6, M['glass'], bevel=1.0)
+box('display', PW, PH, 0.05, -PW / 2, CHIN, 0.6, M['screen'], uv=True)      # ガラス裏の表示をガラス面上で簡略表現(面一)
+box('chin_print', W - 5, CHIN - 4, 0.05, -W / 2 + 2.5, 2, 0.6, M['chin'])      # ガラス裏面印刷(塗装ではない)
+cyl('camera', 1.8, 0.1, 'z', 0, H - 5, 0.6, M['black'], 24)
+for sx in (-1, 1): cyl('mic', 0.55, 0.1, 'z', sx * 70, H - 5, 0.6, M['black'], 12)
 
 # ---------------- 内部部品 ----------------
 rotors = []
@@ -258,15 +258,17 @@ def rrect(a, b, r, seg=10):
         for k in range(seg + 1):
             t = math.radians(a0 + 90 * k / seg); pts.append((sx * (a - r) + r * math.cos(t) * 1.0 if False else (a - r) * sx + r * math.cos(t), (b - r) * sy + r * math.sin(t)))
     return pts
-def dome_shell():
+def dome_shell(name='cover_back', mat=None, dshift=0.0, ushift=0.0, solid=True):
     cx, cy = DOME_X0 + DOME_W / 2, DOME_Y0 + DOME_H / 2
-    a0, b0, r0 = DOME_W / 2, DOME_H / 2, DM['corner_r']
-    me = bpy.data.meshes.new('cover_back'); bm = bmesh.new(); rings = []
+    a0, b0, r0 = DOME_W / 2 - ushift, DOME_H / 2 - ushift, DM['corner_r'] - ushift
+    me = bpy.data.meshes.new(name); bm = bmesh.new(); rings = []; uvd = {}
     insets = [0, 0] + [DM['run'] * (k / 12) for k in range(1, 13)]
     for i, ins in enumerate(insets):
-        dep = 0 if i == 0 else d_inner(ins) + WALL
+        dep = 0 if i == 0 else max(d_inner(ins) + WALL + dshift, 0.5)
         rr = max(r0 - ins, 6)      # 内側へオフセットした角丸矩形(角R=R0-inset)
-        ring = [bm.verts.new(V(cx + px, cy + py, -SLAB - dep)) for (px, py) in rrect(a0 - ins, b0 - ins, rr)]
+        ring = []
+        for (px, py) in rrect(a0 - ins, b0 - ins, rr):
+            v_ = bm.verts.new(V(cx + px, cy + py, -SLAB - dep)); uvd[v_] = ((px + DOME_W / 2) / DOME_W, (py + DOME_H / 2) / DOME_H); ring.append(v_)
         rings.append(ring)
     n = len(rings[0])
     for i in range(len(rings) - 1):
@@ -274,9 +276,14 @@ def dome_shell():
             k = (j + 1) % n; bm.faces.new((rings[i][j], rings[i][k], rings[i + 1][k], rings[i + 1][j]))
     bm.faces.new(rings[-1])
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
+    lay = bm.loops.layers.uv.new('UVMap')
+    for f_ in bm.faces:
+        for l_ in f_.loops: l_[lay].uv = uvd[l_.vert]      # 設計x-yへの平面投影UV(穿孔テクスチャ用)
     bm.to_mesh(me); bm.free()
-    ob = bpy.data.objects.new('cover_back', me); me.materials.append(M['body'])
-    so = ob.modifiers.new('wall', 'SOLIDIFY'); so.thickness = DM['sheet_t']; so.offset = 1      # 板厚2.0(spec.dome.sheet_t)
+    ob = bpy.data.objects.new(name, me); me.materials.append(mat or M['body'])
+    so = ob.modifiers.new('wall', 'SOLIDIFY'); so.thickness = DM['sheet_t'] if solid else 0.8; so.offset = 1      # 板厚2.0(spec.dome.sheet_t)
+    if solid and A.vent_mode == 'texture':
+        bv = ob.modifiers.new('edge', 'BEVEL'); bv.width = 0.7; bv.segments = 2; bv.limit_method = 'ANGLE'; bv.angle_limit = math.radians(35)
     for p in me.polygons: p.use_smooth = len(p.vertices) == 4      # 平坦部(ngon)はフラット
     link(ob)
     # 法線が背面(-設計z = Blender +Y)を向くことを保証
@@ -284,7 +291,31 @@ def dome_shell():
         for p in me.polygons: p.flip()
         me.update()
     return ob
-dome = dome_shell()
+# ---- 穿孔: v7.1 は透過テクスチャ(Ø2.4×ピッチ4.0, 千鳥)。--vent-mode boolean なら実穴(GLB出力用の軽量版) ----
+def perf_texture(path, ppm=5.0):
+    wpx, hpx = int(DOME_W * ppm), int(DOME_H * ppm); img = Image.new('L', (wpx, hpx), 255); d_ = ImageDraw.Draw(img)
+    x0_, x1_, y0_, y1_ = WALL + 36, WALL + IW_ - 36, WALL + 36, WALL + IH_ - 36; pitch = 4.0; r_ = 1.2; row = 0; y_ = y0_
+    while y_ <= y1_:
+        x_ = x0_ + (pitch / 2 if row % 2 else 0)
+        while x_ <= x1_:
+            cxp, cyp = x_ * ppm, hpx - y_ * ppm; d_.ellipse((cxp - r_ * ppm, cyp - r_ * ppm, cxp + r_ * ppm, cyp + r_ * ppm), fill=0); x_ += pitch
+        y_ += pitch * .866; row += 1
+    img.save(path)
+if A.vent_mode == 'texture':
+    pp = os.path.join(TEXDIR, 'dome_perf.png'); perf_texture(pp)
+    M['body_perf'] = img_material('anodized_body_perf', pp, rough=0.38, metal=1.0, alpha_from_red=True)
+    nt_ = M['body_perf'].node_tree; tx_ = [n for n in nt_.nodes if n.bl_idname == 'ShaderNodeTexImage'][0]
+    nt_.nodes['Principled BSDF'].inputs['Base Color'].default_value = hexc(base_c)
+    for l_ in list(nt_.links):
+        if l_.to_socket.name == 'Base Color': nt_.links.remove(l_)
+    nt_.links.new(tx_.outputs['Color'], nt_.nodes['Principled BSDF'].inputs['Alpha'])   # 画像の輝度=不透明度(黒=穴)
+    tx_.image.alpha_mode = 'CHANNEL_PACKED'; tx_.image.colorspace_settings.name = 'Non-Color'
+    dome = dome_shell('cover_back', M['body_perf'])
+else:
+    dome = dome_shell()
+# 内側の黒メッシュフィルタ(穴越しに内部を見せない: Apple的P7)
+M['filter'] = principled('mesh_filter', '#08090b', 0.2, 0.7)
+dome_filter = dome_shell('cover_filter', M['filter'], dshift=-6.0, ushift=4.0, solid=False)
 # 吸排気の六角配列穴(ドーム平坦部〜傾斜部)。ゾーンは内部座標(x0,y0,x1,y1): 水冷ラジエーター上、ケースファン上、GPUファン上
 def vent_cutter(name, zones, step=7.0, hr=2.1, margin=22):
     bmc = bmesh.new()
@@ -304,17 +335,20 @@ LAY = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'model', 'layout.js
 def lp(k): return LAY[k]['pos']
 def ls(k): return LAY[k]['size']
 rx, ry, _ = lp('radiator'); fx, fy, _ = lp('fan'); gx, gy, gz = lp('gpu')
-vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=A.vent_step, hr=A.vent_r, margin=36)   # v7(Apple式): 背面全面に均一パーフォレーション Ø2.4×ピッチ4.0(局所3領域を廃止)
-# 外周のI/O・GPU出力の開口(ドーム傾斜壁を貫通)
+if A.vent_mode == 'boolean':
+    vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=A.vent_step, hr=A.vent_r, margin=36)
+# 下辺の傾斜面に開口(ポート引き込み): I/O / GPU出力 / ACインレット。各ポート高さに合わせた細いスロット(v7.1)
 bx, by, bz = lp('board')
 def cutbox(name, x0, y0, z0, w, h, d):
     c = ibox(name, w, h, d, x0, y0, z0, None); c.hide_render = True; BODY_OBJS.append(c); return c
-c_io = cutbox('cover_io_cutter', bx + 12, -20, 2, 120, bz + 60 + 40, 52)
 ax_, ay_, az_ = lp('ac_inlet')
-c_ac = cutbox('cover_ac_cutter', ax_ - 2, -20, 2, 32, ay_ + 20 + 24, 92)
-c_gpu = cutbox('cover_gpu_cutter', gx + 4, -20, 2, 112, gy + 6 + 20, 52)
-for nm, c in (('vents', vc), ('io', c_io), ('gpu', c_gpu), ('ac', c_ac)):
-    m_ = dome.modifiers.new(nm, 'BOOLEAN'); m_.object = c; m_.operation = 'DIFFERENCE'; m_.solver = 'MANIFOLD'
+c_io = cutbox('cover_io_cutter', bx + 12, by - 18, 2, 120, 22, 94)
+c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 26, 94)
+c_gpu = cutbox('cover_gpu_cutter', gx + 4, gy - 14, 2, 112, 20, 94)
+mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
+for nm, c in mods_:
+    for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
+        m_ = tgt.modifiers.new(nm, 'BOOLEAN'); m_.object = c; m_.operation = 'DIFFERENCE'; m_.solver = 'MANIFOLD'
 # EMIガスケット(ドーム縁の黒い導電ファブリック)
 def gasket():
     cx, cy = DOME_X0 + DOME_W / 2, DOME_Y0 + DOME_H / 2; me = bpy.data.meshes.new('gasket'); bm = bmesh.new()
@@ -328,8 +362,7 @@ gasket()
 # スタンド
 box('stand_arm', ST_W, DROP + S['hinge']['axis_y'], 8, -ST_W / 2, -DROP, ZC - 4, M['stand'], bevel=2)
 box('stand_foot', S['stand']['foot_w'], 6, FOOT, -S['stand']['foot_w'] / 2, -DROP - 6, ZC - S['stand']['foot_back'], M['stand'], bevel=2.2, body=False)
-cyl('hinge', 11, ST_W + 2, 'x', 0, S['hinge']['axis_y'], ZC, M['steel'], 64, body=False)
-box('stand_power_recess', 12, 26, 0.5, -6, -DROP * .55 - 13, ZC + 3.9, M['dark'], bevel=3)
+cyl('hinge', 11, ST_W + 2, 'x', 0, S['hinge']['axis_y'], ZC, M['stand'], 64, body=False)      # 同色アルマイトのキャップで隠す(P4)
 ARM_OBJ = bpy.data.objects['stand_arm']; BODY_OBJS.remove(ARM_OBJ)
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----

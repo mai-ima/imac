@@ -7,6 +7,7 @@
 | audit-log.md | v002 | current | 2026-11-05 | 7f1eac8 | audit-log/audit-log.v002__2026-11-05_7f1eac8.md |
 | audit-log.md | v003 | current | 2026-11-05 | 5564531 | audit-log/audit-log.v003__2026-11-05_5564531.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
+| bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
 | build-guide.md | v002 | current | 2026-11-05 | 2f8c0ac | build-guide/build-guide.v002__2026-11-05_2f8c0ac.md |
@@ -21,8 +22,10 @@
 | failure-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | failure-analysis/failure-analysis.v001__2026-11-05_017b7d9.md |
 | fitcheck-report.txt | v001 | current | 2026-11-03 | ee3a42e | fitcheck-report/fitcheck-report.v001__2026-11-03_ee3a42e.txt |
 | fitcheck-report.txt | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck-report/fitcheck-report.v002__2026-11-05_2f8c0ac.txt |
+| fitcheck-report.txt | v003 | current | 2026-11-05 | fcba5fe | fitcheck-report/fitcheck-report.v003__2026-11-05_fcba5fe.txt |
 | hinge-design.md | v001 | current | 2026-11-05 | 017b7d9 | hinge-design/hinge-design.v001__2026-11-05_017b7d9.md |
 | joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
+| joint-analysis.md | v002 | current | 2026-11-05 | fcba5fe | joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research.md | v001 | current | 2026-11-03 | 98bf25c | research/research.v001__2026-11-03_98bf25c.md |
@@ -36,6 +39,7 @@
 | service-mechanisms.md | v002 | current | 2026-11-05 | 434b29d | service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md |
 | source-status.md | v001 | current | 2026-11-03 | fdfd200 | source-status/source-status.v001__2026-11-03_fdfd200.md |
 | thermal-analysis.md | v001 | current | 2026-11-05 | 3c794e1 | thermal-analysis/thermal-analysis.v001__2026-11-05_3c794e1.md |
+| thermal-analysis.md | v002 | current | 2026-11-05 | 15a1bce | thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |
