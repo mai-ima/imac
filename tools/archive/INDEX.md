@@ -8,9 +8,11 @@
 | balance_calc.py | v003 | current | 2026-11-06 | 432b08c | balance_calc/balance_calc.v003__2026-11-06_432b08c.py |
 | cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
 | cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
+| cable_check.py | v003 | current | 2026-11-06 | 514e2e0 | cable_check/cable_check.v003__2026-11-06_514e2e0.py |
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
 | cablemodel.py | v002 | current | 2026-11-06 | cca8bc2 | cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py |
 | cablemodel.py | v003 | current | 2026-11-06 | 514e2e0 | cablemodel/cablemodel.v003__2026-11-06_514e2e0.py |
+| cablemodel.py | v004 | current | 2026-11-06 | d97f07e | cablemodel/cablemodel.v004__2026-11-06_d97f07e.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
@@ -19,6 +21,7 @@
 | fitcheck.py | v004 | current | 2026-11-05 | 71b7afb | fitcheck/fitcheck.v004__2026-11-05_71b7afb.py |
 | fitcheck.py | v005 | current | 2026-11-06 | fc36218 | fitcheck/fitcheck.v005__2026-11-06_fc36218.py |
 | fitcheck.py | v006 | current | 2026-11-06 | c271477 | fitcheck/fitcheck.v006__2026-11-06_c271477.py |
+| fitcheck.py | v007 | current | 2026-11-06 | 2bb8cf1 | fitcheck/fitcheck.v007__2026-11-06_2bb8cf1.py |
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
 | gen_drawing.py | v001 | current | 2026-11-03 | a2b24f4 | gen_drawing/gen_drawing.v001__2026-11-03_a2b24f4.py |
 | gen_drawing.py | v002 | current | 2026-11-03 | 0f4d0d7 | gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py |

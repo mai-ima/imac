@@ -16,7 +16,7 @@
  "slab_t": 25.0,
  "corner": 10,
  "pod": {
-  "total_t": 129,
+  "total_t": 182,
   "h": 256,
   "side_margin": 27,
   "wall": 3
@@ -96,8 +96,9 @@
   "corner_r": 50,
   "run": 64,
   "edge_inner_depth": 6,
-  "total_t": 129,
-  "sheet_t": 2.0
+  "total_t": 182,
+  "sheet_t": 2.0,
+  "_note_v10": "v10: ARCTIC LF III Pro のホース出口は上面から垂直(公式2D図)。スタブ先端z≈81+ホース曲げ(R40仮置き, U45)のため、内奥行を101→154mm(総厚129→182mm)に拡大。ホース最小曲げ半径(U45)次第で再調整"
  },
  "hinge": {
   "axis_y": 10.0,

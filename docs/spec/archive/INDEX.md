@@ -20,6 +20,8 @@
 | hardware-list.md | v001 | current | 2026-11-06 | 9ff6031 | hardware-list/hardware-list.v001__2026-11-06_9ff6031.md |
 | hardware-list.md | v002 | current | 2026-11-06 | 432b08c | hardware-list/hardware-list.v002__2026-11-06_432b08c.md |
 | hardware-list.md | v003 | current | 2026-11-06 | d97f07e | hardware-list/hardware-list.v003__2026-11-06_d97f07e.md |
+| hardware-list.md | v004 | current | 2026-11-06 | 02c4c72 | hardware-list/hardware-list.v004__2026-11-06_02c4c72.md |
+| hole-table.md | v001 | current | 2026-11-06 | 514e2e0 | hole-table/hole-table.v001__2026-11-06_514e2e0.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
 | joint-matrix.md | v002 | current | 2026-11-05 | fcba5fe | joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |
@@ -36,3 +38,4 @@
 | wiring-spec.md | v002 | current | 2026-11-05 | fcba5fe | wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md |
 | wiring-spec.md | v003 | current | 2026-11-06 | 80d7407 | wiring-spec/wiring-spec.v003__2026-11-06_80d7407.md |
 | wiring-spec.md | v004 | current | 2026-11-06 | 9ff6031 | wiring-spec/wiring-spec.v004__2026-11-06_9ff6031.md |
+| wiring-spec.md | v005 | current | 2026-11-06 | 514e2e0 | wiring-spec/wiring-spec.v005__2026-11-06_514e2e0.md |

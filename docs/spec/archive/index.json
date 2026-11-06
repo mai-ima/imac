@@ -163,6 +163,24 @@
    "file": "hardware-list/hardware-list.v003__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/spec/hardware-list.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "e013bae235334e25d0ec270c5bfcd59d33fbe8d2d04bb2e77d84e93bcd0bbef8",
+   "file": "hardware-list/hardware-list.v004__2026-11-06_02c4c72.md"
+  },
+  {
+   "src": "docs/spec/hole-table.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "a29b0a34f0d093d2e6b4dbd341436be5871785431cd73565817f1f5dd9faae32",
+   "file": "hole-table/hole-table.v001__2026-11-06_514e2e0.md"
+  },
+  {
    "src": "docs/spec/joint-matrix.md",
    "version": 1,
    "gen": "current",
@@ -305,6 +323,15 @@
    "commit": "9ff6031",
    "sha256": "386181e0d2bd62c4e57491a70a279f29924e184216aba97b394f15f45239f1c9",
    "file": "wiring-spec/wiring-spec.v004__2026-11-06_9ff6031.md"
+  },
+  {
+   "src": "docs/spec/wiring-spec.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "4e27e1278786d99dbac084b6c6301d6e0b2005dbd17fc15ece1ac285607ee397",
+   "file": "wiring-spec/wiring-spec.v005__2026-11-06_514e2e0.md"
   }
  ]
 }

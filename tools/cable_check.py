@@ -22,23 +22,31 @@ OBST = []
 for (kx, ky) in json.load(open(f'{R}/model/layout.json'))['keyholes']: OBST.append(('吊りピン', kx - 5, ky + 7, 5.5, kx + 5, ky + 17, 9.5))
 OBST.append(('PEスタッド', 22, 116, 5, 30, 124, 14)); gx_, gy_ = [i for i in L if i['id'] == 'gpu'][0]['pos'][:2]; gw_ = [i for i in L if i['id'] == 'gpu'][0]['size'][0]
 OBST.append(('GPUステー', gx_ - 2, gy_ - 14, 5, gx_ + gw_ + 2, gy_ - 4, 14))
+def edge_dist(x, y, W_=590.0, H_=371.3, Rc=47.0):
+    """ドーム内面外周(角丸矩形 角R=corner_r-壁)までの内側距離。角では円弧距離(矩形距離より小さくなる)。"""
+    dx, dy = min(x, W_ - x), min(y, H_ - y)
+    if dx < Rc and dy < Rc: return max(0.0, Rc - math.hypot(Rc - dx, Rc - dy))
+    return min(dx, dy)
+# GPU出力プラグ(HDMI/DP オーバーモールド≈30mm)の占有空間
+OBST.append(('GPU出力プラグ空間', gx_ + 2, gy_ - 30, 10, gx_ + 122, gy_, 28))
 bad = 0
 for c in CM.CAB:
     r = c['od'] / 2; pts = dense(c['path']); n = len(pts)
     issues = []
     for i, p in enumerate(pts):
-        if i < 2 or i > n - 3: continue            # 端点付近(≈6mm)のみ除外
+        sk = 9 if c['kind'] == 'hose' else 2      # ホースは両端のスタブ/ポートに被さるため約27mm除外、ケーブルは約6mm
+        if i < sk or i > n - 1 - sk: continue
         for it in L:
             x, y, z = it['pos']; sx, sy, sz = it['size']
-            if it['id'] == 'cooler':      # ポンプは円筒(Ø91)として判定
-                ccx, ccy = x + sx / 2, y + sy / 2; hit = math.hypot(p[0] - ccx, p[1] - ccy) < 45.5 + r and z - r < p[2] < z + sz + r
+            if it['id'] == 'cooler':      # ポンプ: 円盤キャップ(Ø91×z0〜55)+VRMケージ+側方筐体(+x側17.5mm張出, z8〜46)。ホース口スタブ(z55〜81)は被さる部分なので除外
+                ccx, ccy = x + 45.5, y + sy / 2; hit = (math.hypot(p[0] - ccx, p[1] - ccy) < 45.5 + r and z - r < p[2] < z + 55 + r) or (ccx + 35 - r < p[0] < ccx + 63 + r and abs(p[1] - ccy) < 23 + r and z + 8 - r < p[2] < z + 46 + r)
             else: hit = x - r < p[0] < x + sx + r and y - r < p[1] < y + sy + r and z - r < p[2] < z + sz + r
             if hit:
                 issues.append(f"{it['id']}と干渉 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f})"); break
         for (nm, x0, y0, z0, x1, y1, z1) in OBST:
             if x0 - r < p[0] < x1 + r and y0 - r < p[1] < y1 + r and z0 - r < p[2] < z1 + r: issues.append(f'{nm}と干渉 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f})'); break
         # ドーム内面
-        dmin = min(p[0], 590 - p[0], p[1], 371.3 - p[1]); s_ = max(0, min(1, dmin / Dm['run'])); lim = Dm['edge_inner_depth'] + (S['dome']['total_t'] - S['slab_t'] - 3 - Dm['edge_inner_depth']) * s_ * s_ * (3 - 2 * s_)
+        dmin = edge_dist(p[0], p[1]); s_ = max(0, min(1, dmin / Dm['run'])); lim = Dm['edge_inner_depth'] + (S['dome']['total_t'] - S['slab_t'] - 3 - Dm['edge_inner_depth']) * s_ * s_ * (3 - 2 * s_)
         if p[2] + r + 2 > lim: issues.append(f'ドーム内面に接触 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f}) 許容{lim:.0f}')
     # 曲げ半径: 各隅を半径mbrの円弧で丸める(区間が短く取れない隅は実半径が低下) → 実半径が規定未満なら不合格
     if c['min_r_actual'] is not None and c['min_r_actual'] < c['mbr'] - 0.5: issues.append(f"区間が短く規定半径を確保できない隅あり: 実半径≈{c['min_r_actual']:.0f}mm < 規定{c['mbr']}mm")

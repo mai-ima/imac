@@ -55,6 +55,15 @@
    "file": "cable_check/cable_check.v002__2026-11-06_cca8bc2.py"
   },
   {
+   "src": "tools/cable_check.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "2bc7e5c92eac1c53f9d33a03f7f2a7ac9534ab61a650142d4cc9e3ca2eb8cec2",
+   "file": "cable_check/cable_check.v003__2026-11-06_514e2e0.py"
+  },
+  {
    "src": "tools/cablemodel.py",
    "version": 1,
    "gen": "current",
@@ -80,6 +89,15 @@
    "commit": "514e2e0",
    "sha256": "c13d7c4124a69b63f3a10b9c45b933b7fb06bd1fc3b07001f6ae66f6714911ae",
    "file": "cablemodel/cablemodel.v003__2026-11-06_514e2e0.py"
+  },
+  {
+   "src": "tools/cablemodel.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "4ab8b16cfccaa0618ba700b1e013aec69559c0df5d393fb98e495dc2c0676feb",
+   "file": "cablemodel/cablemodel.v004__2026-11-06_d97f07e.py"
   },
   {
    "src": "tools/drawlib.py",
@@ -152,6 +170,15 @@
    "commit": "c271477",
    "sha256": "0785b384f9a90ca9b2fa6b339874e28be70a2de74598638693498a0698093b75",
    "file": "fitcheck/fitcheck.v006__2026-11-06_c271477.py"
+  },
+  {
+   "src": "tools/fitcheck.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2bb8cf1",
+   "sha256": "728ec9c0dda68d924aa2538e467238132e7188256de1b32333a81e6a02552bfd",
+   "file": "fitcheck/fitcheck.v007__2026-11-06_2bb8cf1.py"
   },
   {
    "src": "tools/gen_anatomy.py",

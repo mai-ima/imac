@@ -149,7 +149,7 @@
 <text x="262.0" y="61.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
 <text x="10.0" y="67.0" font-size="2.6" text-anchor="start" fill="#222" >gpu</text>
 <text x="28.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >RTX 5070 Ti 16GB 小型2スロット(寸法基準: PNY RTX 5070 Ti</text>
-<text x="150.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >ASUS</text>
+<text x="150.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >PNY(寸法基準)</text>
 <text x="210.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >290x150x40</text>
 <text x="250.0" y="67.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="67.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
@@ -168,7 +168,7 @@
 <text x="10.0" y="85.0" font-size="2.6" text-anchor="start" fill="#222" >ac_inlet</text>
 <text x="28.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >IEC C14 AC インレット(内部延長C13ケーブルでPSUへ) 型番未選定</text>
 <text x="150.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >Schurter/Qualtek等</text>
-<text x="210.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >28x20x22</text>
+<text x="210.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >28x26x20</text>
 <text x="250.0" y="85.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="85.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
 <text x="10.0" y="91.0" font-size="2.6" text-anchor="start" fill="#222" >ssd</text>

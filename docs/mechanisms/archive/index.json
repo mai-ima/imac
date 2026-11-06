@@ -10,6 +10,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v001__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "b349b23a7ead23d6e4e5e76b4edc876644a3b462a4508761b962c363bfafd04c",
+   "file": "01_tilt_balancer/01_tilt_balancer.v002__2026-11-06_02c4c72.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -17,6 +26,15 @@
    "commit": "d97f07e",
    "sha256": "cef505dd113e6e574597898c84b514e01c5ecfb0f0ca106faaf570a13487e9cb",
    "file": "02_swivel/02_swivel.v001__2026-11-06_d97f07e.md"
+  },
+  {
+   "src": "docs/mechanisms/02_swivel.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "23b6250d290fc824f891d1565e7e441c5c3b0dd3e0157bbf72210e3a0e76617f",
+   "file": "02_swivel/02_swivel.v002__2026-11-06_02c4c72.md"
   },
   {
    "src": "docs/mechanisms/03_neck_and_load_path.md",
@@ -28,6 +46,15 @@
    "file": "03_neck_and_load_path/03_neck_and_load_path.v001__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "dd6d5338c7ebd0176e919db68abb12e340ea0cbf86d3d7b9e582d97787077dec",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v002__2026-11-06_02c4c72.md"
+  },
+  {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
    "version": 1,
    "gen": "current",
@@ -35,6 +62,15 @@
    "commit": "d97f07e",
    "sha256": "6752820d0a53bc3961cb8495fd93e4d7b69059aff6003daf81b96f410da23a1e",
    "file": "04_dome_latch_gasket/04_dome_latch_gasket.v001__2026-11-06_d97f07e.md"
+  },
+  {
+   "src": "docs/mechanisms/06_pinch_guard.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "644bbfdb8766110fff53a528f6538241a05adce87779bf692eae59efca1e86cd",
+   "file": "06_pinch_guard/06_pinch_guard.v001__2026-11-06_d97f07e.md"
   },
   {
    "src": "docs/mechanisms/README.md",

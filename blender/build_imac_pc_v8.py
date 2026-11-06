@@ -366,7 +366,7 @@ def cutbox(name, x0, y0, z0, w, h, d):
 ax_, ay_, az_ = lp('ac_inlet')
 c_io = cutbox('cover_io_cutter', bx + 12, by - 18, 2, 120, 22, 94)
 c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 26, 94)
-c_gpu = cutbox('cover_gpu_cutter', gx + 4, gy - 14, 2, 112, 20, 94)
+c_gpu = cutbox('cover_gpu_cutter', gx + 2, gy - 30, 2, 124, 26, 94)      # GPU出力(HDMI+DP×3)のプラグ空間(オーバーモールド約30mm)まで開ける
 mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
     for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
@@ -504,16 +504,23 @@ label('SAMSUNG', 4.2, sd[0] + 12.5, sd[1] + 62, sd_z + 8.88, M['print_w'], rot=9
 icyl('m2_screw', 1.6, 3, 'z', sd[0] + 12.5, sd[1] + 78.5, sd_z + 1.5, M['steel'], 12)      # M.2固定ネジ(M2)
 
 # ===== CPU水冷 ARCTIC Liquid Freezer III Pro 240: ポンプ(Ø91 × 68.5)。コールドプレートはIHS上面に接する =====
-cl = lp('cooler'); cs = ls('cooler'); pcx, pcy = cl[0] + cs[0] / 2, cl[1] + cs[1] / 2
+cl = lp('cooler'); cs = ls('cooler'); pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # CPU中心(=円盤中心)。ポンプ筐体は+x側に17.5mm張り出す(hose長450mmでラジエーターへ届くため。-x側はVRM/EPS、+y側はDIMM、-y側はVRMと干渉。layout: x=cl[0]..cl[0]+108.47)
 pump_mat = principled('arctic_pump', '#18191c', 0.4, 0.4)
-icyl('pump_coldplate', 28, 4, 'z', pcx, pcy, cl[2] + 2, M['copper'], 48)                  # 銅コールドプレート(IHS上面に接する)
-icyl('pump_body', 45.5, 30, 'z', pcx, pcy, cl[2] + 4 + 15, pump_mat, 64)
-icyl('pump_cap', 40, 5, 'z', pcx, pcy, cl[2] + 34 + 2.5, M['alublack'], 64)
-ibox('pump_vrmfan_housing', 60, 60, 29, pcx - 30, pcy - 52, cl[2] + 39.5, M['dark'], 2.0)       # VRMファン(60mm)ハウジング
-make_fan('fan_pump_vrm', 55, 12, 7, M['dark'], principled('vrm_blade', '#1b1c20', 0, .45), principled('vrm_hub', '#101114', .2, .4), pcx, pcy - 22, cl[2] + 56.5)
-for sgn, nm in ((1, 'a'), (-1, 'b')):
-    ibox(f'pump_port_{nm}', 20, 14, 14, pcx + 38, pcy + sgn * 14 - 7, cl[2] + 9, pump_mat, 2)    # ホース出口(右側面, ポンプ右縁から外向き)
-    icyl(f'pump_fitting_{nm}', 6.2, 8, 'x', pcx + 52, pcy + sgn * 14, cl[2] + 16, M['alublack'], 24)
+# ---- ARCTIC Liquid Freezer III Pro ポンプ(公式2D図面 ACFRE00178A〜189A共通 p.1 を直接確認): 下から コールドプレート → VRMファンの開放ケージ → Ø91の円盤キャップ(logo) → 上面から垂直なホース口 ----
+ibox('pump_coldplate_sq', 44, 44, 4, pcx - 22, pcy - 22, cl[2], M['copper'], .5)
+ibox('pump_base_block', 48, 48, 4, pcx - 24, pcy - 24, cl[2] + 4, pump_mat, 1.0)                  # ベース(ねじ座を含む)
+for k_ in range(12):      # VRMファンを囲むアーチ状リブの開放ケージ(z 8〜42, 半径≈42)
+    an_ = math.radians(k_ * 30); ibox(f'pump_cage_rib{k_}', 4, 4, 34, pcx + 42 * math.cos(an_) - 2, pcy + 42 * math.sin(an_) - 2, cl[2] + 8, pump_mat, .8)
+icyl('pump_cage_ring_low', 43, 2.5, 'z', pcx, pcy, cl[2] + 9, pump_mat, 64) if False else None
+icyl('pump_cap', 45.5, 13, 'z', pcx, pcy, cl[2] + 42 + 6.5, pump_mat, 96)                         # Ø91 円盤キャップ(厚≈13, z42〜55)
+icyl('pump_cap_top', 44, 0.6, 'z', pcx, pcy, cl[2] + 55.3, M['alublack'], 96)                      # 上面プレート(ARCTICロゴ面)
+for k_ in range(30):      # 上面の放射フィン(装飾)
+    an_ = math.radians(k_ * 12); ibox(f'pump_fin{k_}', 18, 1.0, 0.4, pcx + 24 * math.cos(an_) - 9 if False else pcx - 9 + 24 * math.cos(an_), pcy - .5 + 24 * math.sin(an_), cl[2] + 55.6, M['dark'], 0) if False else None
+ibox('pump_motor_housing', 28, 46, 38, pcx + 35.0, pcy - 23, cl[2] + 8, pump_mat, 6.0)             # ポンプ筐体(円盤の+x側に張り出し、全長108.47mm)
+make_fan('fan_pump_vrm', 55, 12, 7, M['dark'], principled('vrm_blade', '#1b1c20', 0, .45), principled('vrm_hub', '#101114', .2, .4), pcx, pcy, cl[2] + 16)      # VRMファン(径は未確認 U58: 55mmは仮置き)。ケージ内
+for sgn, nm in ((1, 'a'), (-1, 'b')):      # ホース口: 上面から垂直。スイベルナット(ローレット)z55〜68.5 + スタブ z68.5〜81。+x側のスタブ位置 x=pcx+54.5, 間隔≈26mm
+    icyl(f'pump_swivel_{nm}', 7.0, 13.5, 'z', pcx + 54.5, pcy + sgn * 13, cl[2] + 55 + 6.75, M['alublack'], 24)
+    icyl(f'pump_fitting_{nm}', 4.2, 12.5, 'z', pcx + 54.5, pcy + sgn * 13, cl[2] + 68.5 + 6.25, M['alublack'], 24)
 for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):            # AM5取付穴 54×90mm(AM4互換パターン, Noctua等の公開資料)。長辺(90)はポンプのホース出口方向と直交(ARCTIC 2D図面 Bottom View)。バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
     z_top_, z_bot_ = cl[2] + 14, bz - 1
     icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)

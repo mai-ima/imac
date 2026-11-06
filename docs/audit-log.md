@@ -87,3 +87,12 @@
 - ビューア: 画面OFF時の黒面とスクリーンの干渉(z-fighting)を、offMatへのpolygonOffset適用と display/chin_print/camera のz分離で解消(Playwrightで再現→修正→確認)。正面の色: チン=本体色寄り/ベゼル=淡色に再配色し、7色で正面の色差が出るようにした(Blenderも同配色)。
 - 文書整理: 重複・旧版の md を統合/退避(design-v6, selection-v5, bom-verified, research, model-pipeline, research-hinge/joints/cables, hinge-design, design-package-index)。統合先 research-notes.md / tilt-swivel-design.md 付録A / docs/README.md。退避は tools/archive.py の版付きarchive(削除なし)、参照は一括置換。
 - 特殊機構: docs/mechanisms/ に専用設計書6本(チルトバランサ/首振り/ネック荷重経路/ドーム着脱/トレイ吊り/指挟み保護)を tools/gen_mechanisms.py で生成。指挟み保護は蛇腹ブーツ(伸縮10〜56mm)を設計し motion_check でゲート化。
+
+## 実物照合の全面監査(A基板/冷却, B GPU/PSU/SSD, C 実物iMac/パネル, D 全体配置 + R7機構/ビューア)への対応(第1弾)
+- 公式2D図面(ARCTIC LF III Pro)を直接確認: **ホース口はポンプ上面から垂直**(従来の水平出口は誤り)。スタブ先端z≈81でドーム内奥行101mmでは曲げ代が取れないため、**ドーム総厚129→182mm(内奥行154mm)**へ拡大(U57)。ポンプはキャップ/VRMケージ/コールドプレート/側方筐体で再構築、取付穴は54×90mm、ホース曲げ半径は40mm(仮置き U45)で全経路を再設計。
+- 再配置(厳格監査D): 基板+11mm(I/Oスタックが傾斜面を貫通していた)、GPU+(8,8)(出力プラグ空間)、ラジエーター z=23(下側15mmの空気逃げ路。従来は3mm)、PSU -10mm(ACプラグ空間)、ctrl基板を110mmへ(仮置き U37)。ホースは z=143 の上空を通し、GPU出力プラグ/ライザーリボンとの交差を解消。
+- 検査強化: fitcheck に「I/Oスタック上端と傾斜面」「GPU出力プラグ空間」「ラジエーター右端」を追加。cable_check は角丸ドーム距離、ポンプ形状(円盤+筐体)、GPUプラグ空間、ホース端部の被さりを考慮。
+- 実測値の反映: DIMMスロット(長144/ピッチ9.2)、BTOBコネクタ y104〜108、ラジエーター厚66、ファンハブ径、前面の角R、マイク3個、PNY基準のGPU表記、PSUコネクタ/ケーブル長(レビュー値)。
+- 機構: ストッパ幾何を tools/neckgeom.py で導出、軸Ø12、ばね折損時の衝突エネルギー検査、許容窓ゲート fit_tolerance、ドーム閉合を低閉合力ガスケット+ラッチ540Nへ変更。
+- ビューア: z-fighting 対策の適用順バグ(分解で消えていた)、分解グループの取り残し、不正view。
+- 残(次弾): リアI/Oの実配置(USB 10G赤×4/USB2×3/ボタン/LAN縦積み)、PSUソケット10個、GPUブラケット高、ライザー(200mm)余長の置き場、PSU/GPUの気流仕切り、ファン/電源ボタン/カメラ配線、M.2カードの向き、パネルM3穴23個の座標、板厚公差の寸法鎖。

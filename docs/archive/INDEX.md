@@ -16,9 +16,11 @@
 | audit-log.md | v010 | current | 2026-11-06 | 2bb8cf1 | audit-log/audit-log.v010__2026-11-06_2bb8cf1.md |
 | audit-log.md | v011 | current | 2026-11-06 | 432b08c | audit-log/audit-log.v011__2026-11-06_432b08c.md |
 | audit-log.md | v012 | current | 2026-11-06 | ef5ecbc | audit-log/audit-log.v012__2026-11-06_ef5ecbc.md |
+| audit-log.md | v013 | current | 2026-11-06 | d97f07e | audit-log/audit-log.v013__2026-11-06_d97f07e.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |
+| bom-final.md | v004 | current | 2026-11-06 | 80d7407 | bom-final/bom-final.v004__2026-11-06_80d7407.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | bom-verified.md | v002 | current | 2026-11-06 | 3c794e1 | bom-verified/bom-verified.v002__2026-11-06_3c794e1.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
@@ -51,6 +53,7 @@
 | joint-analysis.md | v005 | current | 2026-11-06 | 7ed5c4c | joint-analysis/joint-analysis.v005__2026-11-06_7ed5c4c.md |
 | joint-analysis.md | v006 | current | 2026-11-06 | 4482281 | joint-analysis/joint-analysis.v006__2026-11-06_4482281.md |
 | joint-analysis.md | v007 | current | 2026-11-06 | 432b08c | joint-analysis/joint-analysis.v007__2026-11-06_432b08c.md |
+| joint-analysis.md | v008 | current | 2026-11-06 | d97f07e | joint-analysis/joint-analysis.v008__2026-11-06_d97f07e.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research-cables.md | v001 | current | 2026-11-06 | fc36218 | research-cables/research-cables.v001__2026-11-06_fc36218.md |
@@ -95,3 +98,4 @@
 | wiring.md | v003 | current | 2026-11-05 | fcba5fe | wiring/wiring.v003__2026-11-05_fcba5fe.md |
 | wiring.md | v004 | current | 2026-11-06 | 80d7407 | wiring/wiring.v004__2026-11-06_80d7407.md |
 | wiring.md | v005 | current | 2026-11-06 | 9ff6031 | wiring/wiring.v005__2026-11-06_9ff6031.md |
+| wiring.md | v006 | current | 2026-11-06 | 514e2e0 | wiring/wiring.v006__2026-11-06_514e2e0.md |

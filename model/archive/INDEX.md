@@ -10,6 +10,7 @@
 | cables.json | v004 | current | 2026-11-06 | fc36218 | cables/cables.v004__2026-11-06_fc36218.json |
 | cables.json | v005 | current | 2026-11-06 | cca8bc2 | cables/cables.v005__2026-11-06_cca8bc2.json |
 | cables.json | v006 | current | 2026-11-06 | 80d7407 | cables/cables.v006__2026-11-06_80d7407.json |
+| cables.json | v007 | current | 2026-11-06 | 514e2e0 | cables/cables.v007__2026-11-06_514e2e0.json |
 | custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | custom_parts.json | v002 | current | 2026-11-05 | 3c794e1 | custom_parts/custom_parts.v002__2026-11-05_3c794e1.json |
 | custom_parts.json | v003 | current | 2026-11-05 | fcba5fe | custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json |
@@ -42,6 +43,7 @@
 | layout.json | v009 | current | 2026-11-06 | fc36218 | layout/layout.v009__2026-11-06_fc36218.json |
 | layout.json | v010 | current | 2026-11-06 | cca8bc2 | layout/layout.v010__2026-11-06_cca8bc2.json |
 | layout.json | v011 | current | 2026-11-06 | 514e2e0 | layout/layout.v011__2026-11-06_514e2e0.json |
+| layout.json | v012 | current | 2026-11-06 | 85af1a8 | layout/layout.v012__2026-11-06_85af1a8.json |
 | parts.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/parts/parts.v001__2026-11-03_165c355.json |
 | parts.json | v002 | gen-001 | 2026-11-03 | fd22dea | gen-001/parts/parts.v002__2026-11-03_fd22dea.json |
 | parts.json | v003 | current | 2026-11-03 | fdfd200 | parts/parts.v003__2026-11-03_fdfd200.json |
@@ -68,4 +70,5 @@
 | spec.json | v014 | current | 2026-11-06 | 432b08c | spec/spec.v014__2026-11-06_432b08c.json |
 | spec.json | v015 | current | 2026-11-06 | d97f07e | spec/spec.v015__2026-11-06_d97f07e.json |
 | spec.json | v016 | current | 2026-11-06 | 02c4c72 | spec/spec.v016__2026-11-06_02c4c72.json |
+| spec.json | v017 | current | 2026-11-06 | 85af1a8 | spec/spec.v017__2026-11-06_85af1a8.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |

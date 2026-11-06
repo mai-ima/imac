@@ -145,6 +145,15 @@
    "file": "03_pod_cover/03_pod_cover.v007__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/03_pod_cover.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "7f8640a46ed2a4e9b6b09dec2d97b755549ac2364b61280bebb0006a04e9538a",
+   "file": "03_pod_cover/03_pod_cover.v008__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/04_section_stack.svg",
    "version": 1,
    "gen": "current",
@@ -197,6 +206,15 @@
    "commit": "514e2e0",
    "sha256": "76c5094f84aa6cb5b26fade8fe10913040f595d8ec5246a7b9fc2b874a7a9b2f",
    "file": "04_section_stack/04_section_stack.v006__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/04_section_stack.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "0917e155cd4aa7f1525347e9ab060fc10c497f9912cec889537d84fa7d54c291",
+   "file": "04_section_stack/04_section_stack.v007__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/05_stand.svg",
@@ -260,6 +278,15 @@
    "commit": "302823c",
    "sha256": "99ee6a0bc58d2197c71a48421764568c49fa169fccc2dbf719caef490249b28c",
    "file": "05_stand/05_stand.v007__2026-11-06_302823c.svg"
+  },
+  {
+   "src": "drawings/05_stand.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "8c34268591316eeacfb267a834118e4510db130995c59999a89aecdc8f7dd30c",
+   "file": "05_stand/05_stand.v008__2026-11-06_432b08c.svg"
   },
   {
    "src": "drawings/06_service_tray_plan.svg",
@@ -442,6 +469,15 @@
    "file": "09_board_layout/09_board_layout.v004__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/09_board_layout.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "6985c7a07ab2785f9796e6e06cf8adc9e8ac29f2a69e48a71d4512c15f7e27cf",
+   "file": "09_board_layout/09_board_layout.v005__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/10_placement_dimensioned.svg",
    "version": 1,
    "gen": "current",
@@ -494,6 +530,15 @@
    "commit": "514e2e0",
    "sha256": "80fb90c6c9222655a8a2524d297390cd56bf90c47f650e0dd0a4a22d8d2ba1e7",
    "file": "10_placement_dimensioned/10_placement_dimensioned.v006__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/10_placement_dimensioned.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "2e4da20beeb9031f5cef46293ecc8ae6b51990845bdb610b9245e7715b0487f8",
+   "file": "10_placement_dimensioned/10_placement_dimensioned.v007__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/11a_section_AA.svg",
@@ -550,6 +595,15 @@
    "file": "11a_section_AA/11a_section_AA.v006__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/11a_section_AA.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "5a3d7f5d5dc447802adc0e5962a673b8e3eaa681d9ef238c9880fe34b24deabf",
+   "file": "11a_section_AA/11a_section_AA.v007__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/11b_section_BB.svg",
    "version": 1,
    "gen": "current",
@@ -593,6 +647,15 @@
    "commit": "514e2e0",
    "sha256": "5230bc662fa259be75e9970715f0cd7bcd367ba2328b1d0e8dd6659980b1acc8",
    "file": "11b_section_BB/11b_section_BB.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/11b_section_BB.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "15591fb3045778eae5afe5056944548e991d22a56f0db356b68337deacd2da44",
+   "file": "11b_section_BB/11b_section_BB.v006__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/12_wiring_diagram.svg",
@@ -647,6 +710,15 @@
    "commit": "514e2e0",
    "sha256": "3fe99fe7c8b967aec1cb7a98c2d7a40870ea35fc9065684a01681c6d2f3b2a18",
    "file": "12_wiring_diagram/12_wiring_diagram.v006__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/12_wiring_diagram.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "c31e2b6a4d574006e7435bacd69154242fd8407e2531849c43b8a9f65ecdcb49",
+   "file": "12_wiring_diagram/12_wiring_diagram.v007__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/13_airflow_thermal.svg",
@@ -710,6 +782,15 @@
    "commit": "514e2e0",
    "sha256": "6fdcf8c784fbc7822db43e879a911d86ee1d57b76630a19ad9a535c17fca7b79",
    "file": "13_airflow_thermal/13_airflow_thermal.v007__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/13_airflow_thermal.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "293a521b76fb29ba1ef922ccdf7e79e70bf073663b2a3c952c81038002d37f4d",
+   "file": "13_airflow_thermal/13_airflow_thermal.v008__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/14_exploded_assembly.svg",
@@ -820,6 +901,15 @@
    "file": "15_bom_sheet/15_bom_sheet.v008__2026-11-06_432b08c.svg"
   },
   {
+   "src": "drawings/15_bom_sheet.svg",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "4d31223c9f65358d890c088a235aa04241a19bf6cbea35c5b5effa3c1b40582a",
+   "file": "15_bom_sheet/15_bom_sheet.v009__2026-11-06_d97f07e.svg"
+  },
+  {
    "src": "drawings/16_cable_clips.svg",
    "version": 1,
    "gen": "current",
@@ -863,6 +953,15 @@
    "commit": "9ff6031",
    "sha256": "9f24861928f7e2c6e7d72d32e155969ce6aca92f64ff0d78a6bdad82eacf1db6",
    "file": "16_cable_clips/16_cable_clips.v005__2026-11-06_9ff6031.svg"
+  },
+  {
+   "src": "drawings/16_cable_clips.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "f64587d85c40d6b7915f3e4ad0678f12a4be853bf7798c4fd7aef4333923166a",
+   "file": "16_cable_clips/16_cable_clips.v006__2026-11-06_514e2e0.svg"
   },
   {
    "src": "drawings/outlines.dxf",
@@ -962,6 +1061,15 @@
    "commit": "432b08c",
    "sha256": "c490ce150aebbd9f2fd6d13da45bd7a84693c2d5b10814ef6e7c7cae6212901d",
    "file": "outlines/outlines.v011__2026-11-06_432b08c.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "4ec8597636bbfb2769faceddc7200312e92a9eae22bc787f110a3acea7d1137d",
+   "file": "outlines/outlines.v012__2026-11-06_d97f07e.dxf"
   }
  ]
 }

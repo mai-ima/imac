@@ -63,6 +63,22 @@ chk('干渉なし(許容組合せを除く)', ok, '全組合せ確認済')
 # 最小クリアランス(ふた側)
 pass
 
+# ---- 基板上の最大高さ・プラグ空間(v10追加: 従来は基板を1.6mmの板として扱い、I/Oスタックやポート前のプラグ空間を見ていなかった) ----
+def edge_dist(x, y, Wd, Hd, Rc):
+    dx, dy = min(x, Wd - x), min(y, Hd - y)
+    return max(0.0, Rc - math.hypot(Rc - dx, Rc - dy)) if (dx < Rc and dy < Rc) else min(dx, dy)
+_bx, _by, _bz = [i for i in L['items'] if i['id'] == 'board'][0]['pos'][:3]; _g = [i for i in L['items'] if i['id'] == 'gpu'][0]
+_Wd, _Hd, _Rc = IN[0], IN[1], Dm['corner_r'] - wl if 'dome' in S else 47
+IO_TOP = (_bz + 1.6) + 44.45 + 0.0       # I/Oシールド(ATX標準44.45mm)の上端z。窓の外側は傾斜面より低い必要がある
+IO_WIN_END = _by - 18 + 22               # cover_io_cutter の y 終端(build と同じ)
+dd = dome_depth(edge_dist(_bx + 70, IO_WIN_END, _Wd, _Hd, _Rc))
+chk('I/Oスタック上端と傾斜面(窓の終端)', dd >= IO_TOP + 3, f"I/O上端z={IO_TOP:.1f} + 隙間3 <= 窓終端 y={IO_WIN_END:.0f} での内面深さ {dd:.1f}mm")
+GPLUG = _g['pos'][1] - 30
+dd2 = dome_depth(edge_dist(_g['pos'][0] + 60, GPLUG, _Wd, _Hd, _Rc))
+chk('GPU出力プラグ空間(30mm)と傾斜面', dd2 >= 28 + 3, f"プラグ先端 y={GPLUG:.0f} での内面深さ {dd2:.1f}mm >= プラグ上端z28+3(窓: cover_gpu_cutter)")
+_r = [i for i in L['items'] if i['id'] == 'radiator'][0]
+dd3 = dome_depth(edge_dist(_r['pos'][0] + _r['size'][0], _r['pos'][1] + _r['size'][1] / 2, _Wd, _Hd, _Rc))
+chk('ラジエーター右端と傾斜面', dd3 >= _r['pos'][2] + _r['size'][2] + 3, f"右端での内面深さ {dd3:.1f}mm >= ラジエーター上端 {_r['pos'][2]+_r['size'][2]:.0f}+3")
 # ---- 電力 ----
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import power_budget as PB
 _b = PB.budget('最大(CPU PPT+GPU TGP同時)'); cpu = _b['cpu']; gpu = _b['gpu']; misc = _b['board'] + _b['fans']; panel = _b['panel']

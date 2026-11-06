@@ -6,24 +6,25 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 L = {i['id']: i for i in json.load(open(f'{R}/model/layout.json'))['items']}
 bx, by, bz = L['board']['pos']; gx, gy, gz = L['gpu']['pos']; px, py, pz = L['psu']['pos']; cx, cy, cz = L['ctrl_board']['pos']
 rx, ry, rz = L['radiator']['pos']; cl = L['cooler']['pos']; cs = L['cooler']['size']; ax, ay, az = L['ac_inlet']['pos']
-Z1 = bz + 1.6; pcx, pcy = cl[0] + cs[0] / 2, cl[1] + cs[1] / 2
+HZ = 143.0      # ホース水平部の中心高さ(曲げ半径40mm仮置き+出口スタブ先端z81)
+Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤中心(筐体は+x側)
 CAB = [
  dict(id='W1', name='ATX 24ピン(短尺カスタム長)', kind='cable', od=9.6, awg=18, mbr=12, frm='PSU modular(24p)', to='基板 ATX24', conn='24p (20+4)', ref_mm=0, mat='rubber',
-      pts=[(px + 33, py - 2, 38), (px + 33, py - 20, 36), (px + 34, py - 32, 32), (px + 34, py - 44, 29)]),
+      pts=[(px + 33, py - 2, 38), (px + 33, py - 12, 36), (px + 34, py - 24, 29)]),
  dict(id='W2', name='CPU EPS 8ピン(短尺)', kind='cable', od=5.6, awg=16, mbr=12, frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', conn='EPS 4+4', ref_mm=0, mat='rubber',
-      pts=[(px + 14, py - 2, 38), (px + 14, py - 20, 44), (56, 198, 44), (56, 48, 28), (66, 36, 25)]),
+      pts=[(px + 14, py - 2, 38), (px + 14, py - 18, 40), (50, py - 18, 42), (50, 60, 30), (66, 42, 25)]),
  dict(id='W3', name='GPU 12V-2x6(16AWG)', kind='cable', od=9.0, awg=16, mbr=20, frm='PSU modular(12V-2x6)', to='GPU 12V-2x6', conn='12V-2x6: コネクタ後方35mm直線', ref_mm=400, mat='rubber',
-      pts=[(px + 90, py - 2, 38), (px + 90, py - 23, 44), (215, 215, 64), (300, 262, 88), (300, 312, 90), (375, 312, 90), (375, 312, gz + 42)]),
+      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 110, gy + 270, 66), (gx + 110, gy + 288, gz + 42)]),
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
-      pts=[(px + 109, py - 2, 38), (px + 118, py - 8, 32), (cx + 6, cy + 20, cz + 14)]),
+      pts=[(px + 112, py - 2, 30), (px + 118, py - 8, 28), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
  dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', kind='cable', od=6.0, awg=0, mbr=16, frm='ctrl_board eDP', to='パネル背面コネクタ', conn='eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み)', ref_mm=380, mat='umb',
-      pts=[(cx + 12, cy + 110, cz + 18), (cx + 12, cy + 138, 30), (cx - 2, cy + 152, 28), (cx - 40, cy + 156, 20), (cx - 90, cy + 154, 15), (40, 350, 12), (14, 350, 10)]),
+      pts=[(cx + 28, cy + 95, cz + 22), (cx + 28, cy + 105, cz + 26), (cx + 5, 340, 21), (150, 347, 16), (40, 349, 13), (14, 349, 10)]),
  dict(id='W6', name='AC電源(C14インレット→PSU C13)', kind='cable', od=7.2, awg=16, mbr=14, frm='C14インレット', to='SF1000 AC入力', conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, mat='rubber',
       pts=[(ax + 14, ay + 28, az + 8), (36, 62, 22), (36, 300, 24), (56, 336, 22), (100, 348, 22), (125, 340, 22), (px + 62, py + 102, pz + 14)]),
- dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター遠側口)', kind='hose', od=12.4, awg=0, mbr=13, frm='ポンプ出口A', to='ラジエーター口(遠側)', conn='ARCTIC 450mm/ID6.0', ref_mm=450, mat='hose',
-      pts=[(pcx + 46, pcy - 14, cl[2] + 17), (190, 66, 40), (236, 60, 34), (236, 24, 22), (495, 24, 22), (495, ry, rz + 19)]),
- dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター近側口)', kind='hose', od=12.4, awg=0, mbr=13, frm='ポンプ出口B', to='ラジエーター口(近側)', conn='ARCTIC 450mm/ID6.0', ref_mm=450, mat='hose',
-      pts=[(pcx + 46, pcy + 14, cl[2] + 17), (212, 122, 56), (212, 96, 62), (212, 70, 62), (226, 31, 40), (455, 31, 40), (455, ry, rz + 19)]),
+ dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口A(上面スタブ)', to='ラジエーター口A', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
+      pts=[(pcx + 54.5, pcy - 13, cl[2] + 81), (pcx + 54.5, pcy - 13, HZ), (330, pcy - 13, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
+ dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
+      pts=[(pcx + 54.5, pcy + 13, cl[2] + 81), (pcx + 54.5, pcy + 13, HZ), (rx + 60 + 12, pcy + 13, HZ), (rx + 60 + 12, ry + 9, 100), (rx + 60 + 12, ry + 9, rz + 50)]),
 ]
 def _unit(v): n = math.sqrt(sum(x * x for x in v)); return tuple(x / n for x in v)
 def fillet(pts, r):

@@ -127,6 +127,15 @@
    "file": "audit-log/audit-log.v012__2026-11-06_ef5ecbc.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "41f19b0cab933cdd22284cc05c730b5374910dc54840a47e1eee41c5fad10d0e",
+   "file": "audit-log/audit-log.v013__2026-11-06_d97f07e.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
@@ -152,6 +161,15 @@
    "commit": "71b7afb",
    "sha256": "f0791f52a2b8b15a1afe1cede242f1e73b49f397ad09bcb1f50ddc25cf95233f",
    "file": "bom-final/bom-final.v003__2026-11-05_71b7afb.md"
+  },
+  {
+   "src": "docs/bom-final.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "a277c083e31280ba1ea7aabf57e7247840ea9fb0bb8ca1b473de49493882cfd7",
+   "file": "bom-final/bom-final.v004__2026-11-06_80d7407.md"
   },
   {
    "src": "docs/bom-verified.md",
@@ -440,6 +458,15 @@
    "commit": "432b08c",
    "sha256": "d3329b55bc718af749783e5416c352d398c587b839850b39459f76ca25098773",
    "file": "joint-analysis/joint-analysis.v007__2026-11-06_432b08c.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "0c6a4df4065080a5ddfd8afc1221a1fa01fb6edc10598509756cf9e1bee42059",
+   "file": "joint-analysis/joint-analysis.v008__2026-11-06_d97f07e.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -836,6 +863,15 @@
    "commit": "9ff6031",
    "sha256": "f7257f3563429120ee1a8eb830ab2049e1e326815d93fc07401efbd3e4911dec",
    "file": "wiring/wiring.v005__2026-11-06_9ff6031.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "7db10d273a22569b39b3e75078db6f869b4e6505d97e0337a0324be2fd853f44",
+   "file": "wiring/wiring.v006__2026-11-06_514e2e0.md"
   }
  ]
 }
