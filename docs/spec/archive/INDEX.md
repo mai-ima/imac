@@ -2,6 +2,7 @@
 
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
+| README.md | v001 | current | 2026-11-05 | b97eaae | README/README.v001__2026-11-05_b97eaae.md |
 | custom-parts.md | v001 | current | 2026-11-05 | b97eaae | custom-parts/custom-parts.v001__2026-11-05_b97eaae.md |
 | custom-parts.md | v002 | current | 2026-11-05 | 3c794e1 | custom-parts/custom-parts.v002__2026-11-05_3c794e1.md |
 | custom-parts.md | v003 | current | 2026-11-05 | fcba5fe | custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md |

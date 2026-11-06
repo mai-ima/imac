@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "docs/spec/README.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "b97eaae",
+   "sha256": "68497f801ea7d712fab2433b0f78d2df0e9b6672dd1c1850c8cc23e714894cb7",
+   "file": "README/README.v001__2026-11-05_b97eaae.md"
+  },
+  {
    "src": "docs/spec/custom-parts.md",
    "version": 1,
    "gen": "current",

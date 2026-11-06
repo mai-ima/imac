@@ -7,6 +7,7 @@
 | audit-log.md | v002 | current | 2026-11-05 | 7f1eac8 | audit-log/audit-log.v002__2026-11-05_7f1eac8.md |
 | audit-log.md | v003 | current | 2026-11-05 | 5564531 | audit-log/audit-log.v003__2026-11-05_5564531.md |
 | audit-log.md | v004 | current | 2026-11-05 | 3c794e1 | audit-log/audit-log.v004__2026-11-05_3c794e1.md |
+| audit-log.md | v005 | current | 2026-11-05 | 7869f04 | audit-log/audit-log.v005__2026-11-05_7869f04.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |

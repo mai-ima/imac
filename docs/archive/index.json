@@ -46,6 +46,15 @@
    "file": "audit-log/audit-log.v004__2026-11-05_3c794e1.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "7869f04",
+   "sha256": "b6a1e6b6e11252da35c5ee6ce1c9700af3d2f8b54f7062fa34a8a619cc853d04",
+   "file": "audit-log/audit-log.v005__2026-11-05_7869f04.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
