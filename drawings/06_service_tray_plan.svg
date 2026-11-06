@@ -1,39 +1,132 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
-<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
-<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width="0.4"/>
-<text x="254" y="276" font-size="5">サービストレイ平面(背面側から見た配置)</text><text x="254" y="283" font-size="3.2">図番 SVC-06 / 単位 mm / 設計値(未承認)</text>
-<text x="254" y="288" font-size="3">締結: M3 T10 拘束ネジ(特記なき限り)</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
+<rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
+<line x1="68.75" y1="10" x2="68.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="68.75" y1="287" x2="68.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="44.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<text x="44.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<line x1="117.5" y1="10" x2="117.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="117.5" y1="287" x2="117.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="93.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<text x="93.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<line x1="166.25" y1="10" x2="166.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="166.25" y1="287" x2="166.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="141.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<text x="141.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<line x1="215.0" y1="10" x2="215.0" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="215.0" y1="287" x2="215.0" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="190.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<text x="190.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<line x1="263.75" y1="10" x2="263.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="263.75" y1="287" x2="263.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="239.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<text x="239.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<line x1="312.5" y1="10" x2="312.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="312.5" y1="287" x2="312.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="288.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<text x="288.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<line x1="361.25" y1="10" x2="361.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="148.5" x2="405" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="217.75" x2="25" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="217.75" x2="405" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<text x="15.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="415.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="15.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="415.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="15.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
+<line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
+<line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="257" x2="330" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
+<text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">サービストレイ平面(背面側から見た配置)</text>
+<text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
+<text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
+<text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
+<text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-SVC-06</text>
+<text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
+<text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
+<text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
+<text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
+<text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
+<text x="332.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">NTS</text>
+<text x="372.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">単位 / Unit</text>
+<text x="372.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">mm</text>
+<text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
+<text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
+<text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
+<text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
+<rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
+<line x1="130" y1="254" x2="200" y2="254" stroke="#000" stroke-width="0.25"/>
+<line x1="138" y1="249" x2="138" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="170" y1="249" x2="170" y2="287" stroke="#000" stroke-width="0.25"/>
+<text x="132.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">Rev</text>
+<text x="140.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">内容 / Description</text>
+<text x="172.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">日付</text>
+<text x="132.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">A</text>
+<text x="140.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">初版(v6)</text>
+<text x="172.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-03</text>
+<text x="132.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">B</text>
+<text x="140.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">ドーム/トレイ/v7</text>
+<text x="172.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-05</text>
+<text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
+<text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
+<text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+<g transform="translate(19,12) scale(0.93)">
 <rect x="30" y="40" width="354.0" height="222.78" rx="20" fill="#f4f6f8" stroke="#000" stroke-width=".5"/>
-<rect x="85.85999999999999" y="140.98000000000002" width="102.0" height="102.0" fill="#9ac8a6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="136.86" y="191.98" font-size="2.6" text-anchor="middle" fill="#222">board (ASUS ROG STRIX X870-I )</text>
-<rect x="101.39999999999999" y="156.95799999999997" width="54.6" height="65.082" fill="#e0b080" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="128.7" y="189.49899999999997" font-size="2.6" text-anchor="middle" fill="#222">cooler (ARCTIC Liquid Freezer )</text>
-<rect x="280.38" y="68.14000000000001" width="72.0" height="166.2" fill="#b0c4de" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="316.38" y="151.24" font-size="2.6" text-anchor="middle" fill="#222">radiator (ARCTIC Liquid Freezer )</text>
-<rect x="202.08" y="93.46000000000001" width="72.0" height="137.4" fill="#9aa0ad" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="238.08" y="162.16000000000003" font-size="2.6" text-anchor="middle" fill="#222">gpu (ASUS Dual GeForce RTX )</text>
-<rect x="187.86" y="167.38" width="14.399999999999999" height="53.4" fill="#444" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="195.06" y="194.08" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
-<rect x="120.48" y="80.56" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="157.98000000000002" y="110.56000000000002" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF750 (2024, S)</text>
-<rect x="45.96" y="67.18" width="72.0" height="72.0" fill="#d9c8a0" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="81.96" y="103.18" font-size="2.6" text-anchor="middle" fill="#222">fan (Noctua NF-A12x25 PWM x)</text>
-<rect x="43.2" y="148.78" width="33.0" height="90.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="59.7" y="193.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
-<rect x="164.4" y="158.59" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="171.9" y="182.63500000000002" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
-<rect x="88.19999999999999" y="153.57999999999998" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="128.20499999999998" y="155.98000000000002" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
-<rect x="294.0" y="234.58" width="16.8" height="12.0" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="302.4" y="240.58" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
-<circle cx="66.0" cy="247.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="70.0" y="244.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
-<circle cx="363.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="367.0" y="223.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
-<circle cx="66.0" cy="58.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="70.0" y="55.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
-<circle cx="363.0" cy="76.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="367.0" y="73.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<rect x="66.0" y="149.38" width="102.0" height="102.0" fill="#9ac8a6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="117.0" y="200.38" font-size="2.6" text-anchor="middle" fill="#222">board (ASUS ROG STRIX X870-I )</text>
+<rect x="81.53999999999999" y="165.382" width="54.6" height="65.082" fill="#e0b080" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="108.84" y="197.92299999999997" font-size="2.6" text-anchor="middle" fill="#222">cooler (ARCTIC Liquid Freezer )</text>
+<rect x="279.0" y="68.14000000000001" width="72.0" height="166.2" fill="#b0c4de" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="315.0" y="151.24" font-size="2.6" text-anchor="middle" fill="#222">radiator (ARCTIC Liquid Freezer )</text>
+<rect x="182.4" y="65.26000000000002" width="90.0" height="174.0" fill="#9aa0ad" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="227.4" y="152.26" font-size="2.6" text-anchor="middle" fill="#222">gpu (RTX 5070 Ti 16GB 小型2スロ)</text>
+<rect x="168.0" y="175.78" width="14.399999999999999" height="53.4" fill="#444" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="175.2" y="202.48" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
+<rect x="72.0" y="65.98" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="109.5" y="95.98" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF1000 (SFX 10)</text>
+<rect x="148.8" y="55.78000000000001" width="33.0" height="90.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="165.29999999999998" y="100.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
+<rect x="144.6" y="166.99" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="152.1" y="191.035" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
+<rect x="68.4" y="161.98000000000002" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="108.405" y="164.38" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
+<rect x="43.2" y="242.38" width="16.8" height="15.6" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="51.599999999999994" y="250.18" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
+<circle cx="57.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="61.0" y="223.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="360.0" cy="226.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="364.0" y="223.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="63.0" cy="76.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="67.0" y="73.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
+<circle cx="360.0" cy="76.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>
+<text x="364.0" y="73.78" font-size="2.4" text-anchor="start" fill="#c0392b">キーホール吊りピン</text>
 <circle cx="171.0" cy="254.38" r="2.2" fill="#c0392b"/>
 <text x="171.0" y="249.38" font-size="2.4" text-anchor="middle" fill="#c0392b">拘束ネジ(トレイ固定)</text>
 <circle cx="243.0" cy="254.38" r="2.2" fill="#c0392b"/>
@@ -42,4 +135,4 @@
 <text x="210.0" y="31" font-size="3" text-anchor="start" fill="#1a7f37">取り外し方向: 12mm持ち上げてキーホールを外し、背面(+z)へ引く</text>
 <text x="30" y="272.78" font-size="3.4" text-anchor="start" fill="#222">ドーム内寸 590 x 371 / トレイ=A5052 t2.0。部品はスタンドオフで固定(M3)。GPUはクレードル(工具なしクランプ)で保持。</text>
 <text x="30" y="278.78" font-size="3.4" text-anchor="start" fill="#222">ケーブルはトレイ上のコームで束ね、ディスプレイ側は「アンビリカル」(eDP/12V/USB)でトレイ端のコネクタに分離。</text>
-</svg>
+</g></svg>

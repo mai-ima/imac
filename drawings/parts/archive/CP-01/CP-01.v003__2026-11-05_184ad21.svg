@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="291" height="204" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="8" y="12" font-size="6" font-weight="bold">CP-01 前面ガラス</text>
+<text x="8" y="19" font-size="3.2">材質 化学強化ガラス(アルミノシリケート) / 板厚 1.1 / 数量 1 / 質量 0.71kg / ISO 2768-m(重要寸法は個別指定)</text>
+<rect x="20" y="40" width="149.4" height="100.0" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="20" y1="146.0" x2="169.36098384374245" y2="146.0" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="94.68049192187122" y="151.0" font-size="3.4" text-anchor="middle" fill="#06c">619.4</text>
+<line x1="14" y1="40" x2="14" y2="140.0" stroke="#06c" stroke-width=".3"/><text x="12" y="90.0" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 12 90.0)">414.7</text>
+<defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<text x="185" y="40" font-size="2.8">加工: CNC外形+エッジ面取り(C0.3)、片面AR+防汚、背面印刷: ベゼル=白(#EDEEF0)、チン帯=パレット</text>
+<text x="185" y="44.5" font-size="2.8">淡色(ガラス裏面印刷, 塗装ではない)。AA外周の黒枠はパネル自身の遮光</text>
+<text x="185" y="50.2" font-size="2.8">表面処理: AR反射率&lt;1%, 防汚接触角>105°</text>
+<text x="185" y="55.900000000000006" font-size="2.8">公差: 外形±0.15, 厚±0.05</text>
+<text x="185" y="61.60000000000001" font-size="2.8">要素: カメラ/マイク穴(上端中央: Ø4.0×1+Ø1.0×2)</text>
+<text x="185" y="67.30000000000001" font-size="2.8">要素: 背面印刷: パネルAA(596.7×335.7)の外周マスク</text>
+<text x="185" y="73.00000000000001" font-size="2.8">接合: CP-03 スラブ枠(背板の曲げ縁)へ構造用シリコーン接着(厚1.0mm, 全周)</text>
+<text x="185" y="78.70000000000002" font-size="2.8">接合: パネルとは接触せずエアギャップ0.9mm(OCA無し)</text>
+<text x="8" y="202" font-size="3">状態: 設計(試作要) / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>

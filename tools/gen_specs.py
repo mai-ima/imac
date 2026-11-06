@@ -18,27 +18,29 @@ for p in CP['parts']:
 open(f'{R}/docs/spec/custom-parts.md', 'w').write('\n'.join(md) + '\n')
 
 # ---------- 部品図(2D外形+寸法+注記) ----------
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import drawlib as DL
 def sheet(p):
     w, h = 297, 210; sx, sy = (p['size'] + [0, 0])[:2]
-    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="3" y="3" width="{w-6}" height="{h-6}" fill="none" stroke="#000" stroke-width=".4"/>']
-    o.append(f'<text x="8" y="12" font-size="6" font-weight="bold">{esc(p["id"])} {esc(p["name"])}</text>')
-    o.append(f'<text x="8" y="19" font-size="3.2">材質 {esc(p["material"][:70])} / 板厚 {p["t"] or "-"} / 数量 {p["qty"]} / 質量 {p["mass_kg"]}kg / {esc(CP["general"]["tolerance"])}</text>')
+    o = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>']
+    o += DL.frame(p['name'], f"{p['id']}", scale='NTS', material=p['material'][:58], finish=p['finish'][:58], note=f"状態: {p['status']}")
+    o.append('<g transform="translate(22,18) scale(1.2)">')
+    o.append(f'<text x="2" y="8" font-size="5" font-weight="bold">{esc(p["id"])} {esc(p["name"])}</text>')
+    o.append(f'<text x="2" y="14" font-size="3">数量 {p["qty"]} / 板厚 {p["t"] or "-"} / 質量 {p["mass_kg"]}kg / 公差 {esc(p["tolerance"][:50])}</text>')
     if sx and sy:
-        s = min(150 / sx, 100 / sy); ox, oy = 20, 40; rw, rh = sx * s, sy * s
+        s = min(130 / sx, 90 / sy); ox, oy = 14, 30; rw, rh = sx * s, sy * s
         o.append(f'<rect x="{ox}" y="{oy}" width="{rw:.1f}" height="{rh:.1f}" rx="{min(8, rw/10):.1f}" fill="#eef2f6" stroke="#000" stroke-width=".5"/>')
         o.append(f'<line x1="{ox}" y1="{oy+rh+6}" x2="{ox+rw}" y2="{oy+rh+6}" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="{ox+rw/2}" y="{oy+rh+11}" font-size="3.4" text-anchor="middle" fill="#06c">{sx:g}</text>')
         o.append(f'<line x1="{ox-6}" y1="{oy}" x2="{ox-6}" y2="{oy+rh}" stroke="#06c" stroke-width=".3"/><text x="{ox-8}" y="{oy+rh/2}" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 {ox-8} {oy+rh/2})">{sy:g}</text>')
-        if p['id'] == 'CP-06':   # トレイ: 部品外形とキーホール
+        if p['id'] == 'CP-06':
             k = rw / sx
             for it in L['items']: x, y, z = it['pos']; a, b, c = it['size']; o.append(f'<rect x="{ox+x*k:.1f}" y="{oy+rh-(y+b)*k:.1f}" width="{a*k:.1f}" height="{b*k:.1f}" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="{ox+(x+a/2)*k:.1f}" y="{oy+rh-(y+b/2)*k:.1f}" font-size="2.6" text-anchor="middle" fill="#666">{it["id"]}</text>')
-            for (x, y) in [tuple(k) for k in json.load(open(os.path.join(R, 'model', 'layout.json')))['keyholes']]: o.append(f'<circle cx="{ox+x*k:.1f}" cy="{oy+rh-y*k:.1f}" r="{4.6*k:.1f}" fill="none" stroke="#c0392b" stroke-width=".4"/>')
-    o.append('<defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>')
-    y = 40
-    for t in ['加工: ' + p['process'], '表面処理: ' + p['finish'], '公差: ' + p['tolerance']] + ['要素: ' + f for f in p['features']] + ['接合: ' + m for m in p['mates']]:
-        for i in range(0, len(t), 60): o.append(f'<text x="185" y="{y}" font-size="2.8">{esc(t[i:i+60])}</text>'); y += 4.5
-        y += 1.2
-        if y > 190: break
-    o.append(f'<text x="8" y="{h-8}" font-size="3">状態: {esc(p["status"])} / 設計値(未承認) / 生成 tools/gen_specs.py</text></svg>')
+            for (x, y) in [tuple(k_) for k_ in json.load(open(f'{R}/model/layout.json'))['keyholes']]: o.append(f'<circle cx="{ox+x*k:.1f}" cy="{oy+rh-y*k:.1f}" r="{4.6*k:.1f}" fill="none" stroke="#c0392b" stroke-width=".4"/>')
+    y = 30
+    for t_ in ['加工: ' + p['process'], '表面処理: ' + p['finish'], '公差: ' + p['tolerance']] + ['要素: ' + f for f in p['features']] + ['接合: ' + m for m in p['mates']]:
+        for i in range(0, len(t_), 56): o.append(f'<text x="156" y="{y}" font-size="2.6">{esc(t_[i:i+56])}</text>'); y += 4.2
+        y += 1.0
+        if y > 150: break
+    o.append('</g></svg>')
     return '\n'.join(o)
 for p in CP['parts']: open(f'{R}/drawings/parts/{p["id"]}.svg', 'w').write(sheet(p))
 

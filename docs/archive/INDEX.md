@@ -9,6 +9,7 @@
 | audit-log.md | v004 | current | 2026-11-05 | 3c794e1 | audit-log/audit-log.v004__2026-11-05_3c794e1.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
+| bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
 | build-guide.md | v002 | current | 2026-11-05 | 2f8c0ac | build-guide/build-guide.v002__2026-11-05_2f8c0ac.md |
@@ -52,3 +53,4 @@
 | unverified-tracker.md | v009 | current | 2026-11-06 | fc36218 | unverified-tracker/unverified-tracker.v009__2026-11-06_fc36218.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |
 | wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |
+| wiring.md | v003 | current | 2026-11-05 | fcba5fe | wiring/wiring.v003__2026-11-05_fcba5fe.md |

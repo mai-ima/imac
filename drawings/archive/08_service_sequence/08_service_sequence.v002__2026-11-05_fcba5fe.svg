@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="254" y="276" font-size="5">取り外し順序(レベル別)</text><text x="254" y="283" font-size="3.2">図番 SVC-08 / 単位 mm / 設計値(未承認)</text>
+<text x="254" y="288" font-size="3">締結: M3 T10 拘束ネジ(特記なき限り)</text>
+<rect x="20" y="30" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>
+<text x="26" y="39" font-size="4.4" text-anchor="start" fill="#222">L1 ユーザー</text>
+<text x="26" y="49" font-size="3.1" text-anchor="start" fill="#222">①電源OFF・AC抜去(5分待つ) ②下面の凹みから下辺ラッチ6点(T10, 1/4回転) ③ドームを上へ3mmスライドして上辺フックを外し、後方へ外す</text>
+<text x="26" y="56" font-size="3.1" text-anchor="start" fill="#222"></text>
+<text x="26" y="63" font-size="3.1" text-anchor="start" fill="#555">用途: メモリ/SSD/ファン/ダストフィルタ/ケーブル確認</text>
+<rect x="20" y="78" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>
+<text x="26" y="87" font-size="4.4" text-anchor="start" fill="#222">L2 保守</text>
+<text x="26" y="97" font-size="3.1" text-anchor="start" fill="#222">④トレイ拘束ネジ2本 ⑤トレイを12mm持ち上げ背面へ約100mm引く(アンビリカル余長250mm) ⑥アンビリカルを外す(eDP, 12V, USB)・接</text>
+<text x="26" y="104" font-size="3.1" text-anchor="start" fill="#222">地編組を外す ⑦トレイを取り出す</text>
+<text x="26" y="111" font-size="3.1" text-anchor="start" fill="#555">用途: GPU/電源/AIO/基板の交換</text>
+<rect x="20" y="126" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>
+<text x="26" y="135" font-size="4.4" text-anchor="start" fill="#222">L2 保守</text>
+<text x="26" y="145" font-size="3.1" text-anchor="start" fill="#222">⑧GPUクレードルのクランプを開く→ライザーを抜く→GPUを外す ⑨SFX電源のM3×4を外す ⑩AIO: ラジエーターのスタンドオフ4本、ポンプのAM5ば</text>
+<text x="26" y="152" font-size="3.1" text-anchor="start" fill="#222">ね付きネジ4本</text>
+<text x="26" y="159" font-size="3.1" text-anchor="start" fill="#555">用途: 部品単位の交換</text>
+<rect x="20" y="174" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>
+<text x="26" y="183" font-size="4.4" text-anchor="start" fill="#222">L3 技術者</text>
+<text x="26" y="193" font-size="3.1" text-anchor="start" fill="#222">⑪背板のパネル固定M3×約18を外す(COF部を押さない) ⑫パネルを背面側へ取り出す(ガラスはスラブ枠に接着: 交換はスラブごと/加熱剥離)</text>
+<text x="26" y="200" font-size="3.1" text-anchor="start" fill="#222"></text>
+<text x="26" y="207" font-size="3.1" text-anchor="start" fill="#555">用途: パネル/前面ガラス交換</text>
+<rect x="20" y="222" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>
+<text x="26" y="231" font-size="4.4" text-anchor="start" fill="#222">スタンド</text>
+<text x="26" y="241" font-size="3.1" text-anchor="start" fill="#222">⑭ヒンジブロックの貫通M6×4を外す(裏当て鋼板に注意)</text>
+<text x="26" y="248" font-size="3.1" text-anchor="start" fill="#222"></text>
+<text x="26" y="255" font-size="3.1" text-anchor="start" fill="#555">用途: 輸送/交換</text>
+<text x="20" y="276" font-size="3.4" text-anchor="start" fill="#222">工具: T10 トルクス(主), T6, 2.5mm六角, プラス#1。静電気対策(リストストラップ)。パネルのCOF部は押さない。</text>
+</svg>

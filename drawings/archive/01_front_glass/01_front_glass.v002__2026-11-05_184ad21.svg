@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width="0.5"/>
+<rect x="270" y="263" width="146" height="30" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="274" y="273" font-size="5">前面ガラス(強化ガラス)</text><text x="274" y="280" font-size="3.4">図番 MFG-01 / 縮尺 1:2 / 単位 mm / 第三角法</text>
+<text x="274" y="286" font-size="3.4">普通公差 ±0.3(板金) / ±0.2(ガラス外形) / 表面 アルマイト</text>
+<text x="274" y="290" font-size="3">設計値(未承認)。製造前に最終BOMで再生成すること。</text>
+<rect x="40" y="30" width="309.7" height="207.35" rx="5.0" fill="#eef0f3" stroke="#000" stroke-width="0.5"/>
+<rect x="45.82499999999999" y="35.8" width="298.35" height="167.85" rx="0" fill="none" stroke="#555" stroke-width="0.3" stroke-dasharray="2 1"/>
+<text x="194.85" y="119.725" font-size="5" text-anchor="middle" fill="#555">有効表示領域 596.7 x 335.7(印刷なし)</text>
+<text x="194.85" y="220.35" font-size="4.4" text-anchor="middle" fill="#555">チン帯: 裏面印刷(Pantone指定、色は選択色)</text>
+<circle cx="194.85" cy="34.0" r="0.9" fill="none" stroke="#000" stroke-width=".3"/>
+<text x="200.85" y="37" font-size="3">カメラ窓 φ3.6(要カメラモジュール確定)</text>
+<line x1="40" y1="247.35" x2="349.7" y2="247.35" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="40" y1="237.35" x2="40" y2="249.35" stroke="#c0392b" stroke-width="0.2"/>
+<line x1="349.7" y1="237.35" x2="349.7" y2="249.35" stroke="#c0392b" stroke-width="0.2"/>
+<text x="194.85" y="245.85" font-size="3.6" text-anchor="middle" fill="#c0392b">619.4</text>
+<line x1="359.7" y1="30" x2="359.7" y2="237.35" stroke="#c0392b" stroke-width="0.3"/>
+<line x1="349.7" y1="30" x2="361.7" y2="30" stroke="#c0392b" stroke-width="0.2"/>
+<line x1="349.7" y1="237.35" x2="361.7" y2="237.35" stroke="#c0392b" stroke-width="0.2"/>
+<text x="358.2" y="133.675" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 358.2 133.675)">414.7</text>
+<text x="40" y="24" font-size="4">板厚 1.1 / 強化ガラス(化学強化) / 角R10 / 裏面印刷: ベゼル=白(#EDEEF0)、チン帯=パレット淡色(塗装でなくガラス裏面印刷)。AA外周の黒枠はパネルの遮光</text>
+</svg>

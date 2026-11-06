@@ -6,6 +6,7 @@
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
 | cables.json | v004 | current | 2026-11-06 | fc36218 | cables/cables.v004__2026-11-06_fc36218.json |
+| cables.json | v005 | current | 2026-11-06 | cca8bc2 | cables/cables.v005__2026-11-06_cca8bc2.json |
 | custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | custom_parts.json | v002 | current | 2026-11-05 | 3c794e1 | custom_parts/custom_parts.v002__2026-11-05_3c794e1.json |
 | custom_parts.json | v003 | current | 2026-11-05 | fcba5fe | custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json |

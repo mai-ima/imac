@@ -13,3 +13,4 @@
 | system-spec.md | v003 | current | 2026-11-05 | 853c2f5 | system-spec/system-spec.v003__2026-11-05_853c2f5.md |
 | system-spec.md | v004 | current | 2026-11-05 | 71b7afb | system-spec/system-spec.v004__2026-11-05_71b7afb.md |
 | wiring-spec.md | v001 | current | 2026-11-05 | b97eaae | wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md |
+| wiring-spec.md | v002 | current | 2026-11-05 | fcba5fe | wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md |

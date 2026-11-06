@@ -1,29 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
-<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>
-<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/>
-<text x="254" y="276" font-size="5">断面 A-A (y=122: CPU/ポンプ/ライザー/GPU/ラジエーター)</text><text x="254" y="283" font-size="3.2">図番 PKG-11A / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>
-<text x="254" y="288" font-size="3">ドーム内面は設計値。斜線=トレイ(t2) / 部品は外形箱</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
+<rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
+<line x1="68.75" y1="10" x2="68.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="68.75" y1="287" x2="68.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="44.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<text x="44.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<line x1="117.5" y1="10" x2="117.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="117.5" y1="287" x2="117.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="93.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<text x="93.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<line x1="166.25" y1="10" x2="166.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="166.25" y1="287" x2="166.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="141.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<text x="141.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<line x1="215.0" y1="10" x2="215.0" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="215.0" y1="287" x2="215.0" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="190.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<text x="190.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<line x1="263.75" y1="10" x2="263.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="263.75" y1="287" x2="263.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="239.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<text x="239.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<line x1="312.5" y1="10" x2="312.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="312.5" y1="287" x2="312.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="288.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<text x="288.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<line x1="361.25" y1="10" x2="361.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="148.5" x2="405" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="217.75" x2="25" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="217.75" x2="405" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<text x="15.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="415.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="15.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="415.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="15.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
+<line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
+<line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="257" x2="330" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
+<text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">断面 A-A (y=122: CPU/ポンプ/ライザー/GPU/ラジエーター)</text>
+<text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
+<text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
+<text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
+<text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-PKG-11A</text>
+<text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
+<text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
+<text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
+<text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
+<text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
+<text x="332.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">NTS</text>
+<text x="372.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">単位 / Unit</text>
+<text x="372.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">mm</text>
+<text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
+<text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
+<text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
+<text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
+<rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
+<line x1="130" y1="254" x2="200" y2="254" stroke="#000" stroke-width="0.25"/>
+<line x1="138" y1="249" x2="138" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="170" y1="249" x2="170" y2="287" stroke="#000" stroke-width="0.25"/>
+<text x="132.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">Rev</text>
+<text x="140.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">内容 / Description</text>
+<text x="172.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">日付</text>
+<text x="132.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">A</text>
+<text x="140.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">初版(v6)</text>
+<text x="172.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-03</text>
+<text x="132.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">B</text>
+<text x="140.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">ドーム/トレイ/v7</text>
+<text x="172.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-05</text>
+<text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
+<text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
+<text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">ドーム内面は設計値。斜線=トレイ(t2) / 部品は外形箱</text>
+<text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+<g transform="translate(19,12) scale(0.93)">
 <rect x="24.00" y="28.00" width="389.40" height="12.00" rx="0" fill="#d9dde2" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
 <text x="27.0" y="37.0" font-size="3" text-anchor="start" fill="#222" >前面スラブ(t18)・パネル</text>
-<polyline points="24.0,44.0 26.6,44.5 29.3,46.1 31.9,48.5 34.6,51.7 37.2,55.5 39.8,59.8 42.5,64.4 45.1,69.3 47.8,74.2 50.4,79.2 53.0,84.0 55.7,88.4 58.3,92.5 61.0,96.0 63.6,98.8 66.2,100.8 68.9,101.9 71.5,102.0 74.2,102.0 76.8,102.0 79.4,102.0 82.1,102.0 84.7,102.0 87.4,102.0 90.0,102.0 92.6,102.0 95.3,102.0 97.9,102.0 100.6,102.0 103.2,102.0 105.8,102.0 108.5,102.0 111.1,102.0 113.8,102.0 116.4,102.0 119.0,102.0 121.7,102.0 124.3,102.0 127.0,102.0 129.6,102.0 132.2,102.0 134.9,102.0 137.5,102.0 140.2,102.0 142.8,102.0 145.4,102.0 148.1,102.0 150.7,102.0 153.4,102.0 156.0,102.0 158.6,102.0 161.3,102.0 163.9,102.0 166.6,102.0 169.2,102.0 171.8,102.0 174.5,102.0 177.1,102.0 179.8,102.0 182.4,102.0 185.0,102.0 187.7,102.0 190.3,102.0 193.0,102.0 195.6,102.0 198.2,102.0 200.9,102.0 203.5,102.0 206.2,102.0 208.8,102.0 211.4,102.0 214.1,102.0 216.7,102.0 219.4,102.0 222.0,102.0 224.6,102.0 227.3,102.0 229.9,102.0 232.6,102.0 235.2,102.0 237.8,102.0 240.5,102.0 243.1,102.0 245.8,102.0 248.4,102.0 251.0,102.0 253.7,102.0 256.3,102.0 259.0,102.0 261.6,102.0 264.2,102.0 266.9,102.0 269.5,102.0 272.2,102.0 274.8,102.0 277.4,102.0 280.1,102.0 282.7,102.0 285.4,102.0 288.0,102.0 290.6,102.0 293.3,102.0 295.9,102.0 298.6,102.0 301.2,102.0 303.8,102.0 306.5,102.0 309.1,102.0 311.8,102.0 314.4,102.0 317.0,102.0 319.7,102.0 322.3,102.0 325.0,102.0 327.6,102.0 330.2,102.0 332.9,102.0 335.5,102.0 338.2,102.0 340.8,102.0 343.4,102.0 346.1,102.0 348.7,102.0 351.4,102.0 354.0,102.0 356.6,102.0 359.3,102.0 361.9,102.0 364.6,102.0 367.2,102.0 369.8,101.5 372.5,99.9 375.1,97.5 377.8,94.3 380.4,90.5 383.0,86.2 385.7,81.6 388.3,76.7 391.0,71.8 393.6,66.8 396.2,62.0 398.9,57.6 401.5,53.5 404.2,50.0 406.8,47.2 409.4,45.2 412.1,44.1" fill="none" stroke="#000" stroke-width=".7"/>
-<text x="218.7" y="111.0" font-size="3" text-anchor="middle" fill="#555" >ドーム内面(外面は+3mm)</text>
+<polyline points="24.0,44.0 26.6,44.7 29.3,46.7 31.9,49.7 34.6,53.8 37.2,58.5 39.8,63.8 42.5,69.5 45.1,75.3 47.8,81.2 50.4,86.8 53.0,92.1 55.7,96.9 58.3,100.9 61.0,104.0 63.6,106.0 66.2,106.7 68.9,106.7 71.5,106.7 74.2,106.7 76.8,106.7 79.4,106.7 82.1,106.7 84.7,106.7 87.4,106.7 90.0,106.7 92.6,106.7 95.3,106.7 97.9,106.7 100.6,106.7 103.2,106.7 105.8,106.7 108.5,106.7 111.1,106.7 113.8,106.7 116.4,106.7 119.0,106.7 121.7,106.7 124.3,106.7 127.0,106.7 129.6,106.7 132.2,106.7 134.9,106.7 137.5,106.7 140.2,106.7 142.8,106.7 145.4,106.7 148.1,106.7 150.7,106.7 153.4,106.7 156.0,106.7 158.6,106.7 161.3,106.7 163.9,106.7 166.6,106.7 169.2,106.7 171.8,106.7 174.5,106.7 177.1,106.7 179.8,106.7 182.4,106.7 185.0,106.7 187.7,106.7 190.3,106.7 193.0,106.7 195.6,106.7 198.2,106.7 200.9,106.7 203.5,106.7 206.2,106.7 208.8,106.7 211.4,106.7 214.1,106.7 216.7,106.7 219.4,106.7 222.0,106.7 224.6,106.7 227.3,106.7 229.9,106.7 232.6,106.7 235.2,106.7 237.8,106.7 240.5,106.7 243.1,106.7 245.8,106.7 248.4,106.7 251.0,106.7 253.7,106.7 256.3,106.7 259.0,106.7 261.6,106.7 264.2,106.7 266.9,106.7 269.5,106.7 272.2,106.7 274.8,106.7 277.4,106.7 280.1,106.7 282.7,106.7 285.4,106.7 288.0,106.7 290.6,106.7 293.3,106.7 295.9,106.7 298.6,106.7 301.2,106.7 303.8,106.7 306.5,106.7 309.1,106.7 311.8,106.7 314.4,106.7 317.0,106.7 319.7,106.7 322.3,106.7 325.0,106.7 327.6,106.7 330.2,106.7 332.9,106.7 335.5,106.7 338.2,106.7 340.8,106.7 343.4,106.7 346.1,106.7 348.7,106.7 351.4,106.7 354.0,106.7 356.6,106.7 359.3,106.7 361.9,106.7 364.6,106.7 367.2,106.7 369.8,106.7 372.5,106.5 375.1,105.1 377.8,102.5 380.4,99.0 383.0,94.6 385.7,89.5 388.3,84.0 391.0,78.2 393.6,72.4 396.2,66.6 398.9,61.1 401.5,56.0 404.2,51.6 406.8,48.1 409.4,45.5 412.1,44.1" fill="none" stroke="#000" stroke-width=".7"/>
+<text x="218.7" y="115.7" font-size="3" text-anchor="middle" fill="#555" >ドーム内面(外面は+3mm)</text>
 <rect x="24.00" y="40.00" width="389.40" height="2.00" rx="0" fill="#8d9198" fill-opacity="1" stroke="#000" stroke-width="0.3"/>
-<rect x="85.45" y="45.51" width="112.20" height="1.06" rx="0" fill="#9ac8a6" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="141.5" y="47.0" font-size="3" text-anchor="middle" fill="#222" >board</text>
-<rect x="102.54" y="52.51" width="60.06" height="45.21" rx="0" fill="#e0b080" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="132.6" y="76.1" font-size="3" text-anchor="middle" fill="#222" >cooler</text>
-<rect x="299.42" y="43.30" width="79.20" height="41.58" rx="0" fill="#b0c4de" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="339.0" y="65.1" font-size="3" text-anchor="middle" fill="#222" >radiator</text>
-<rect x="213.29" y="43.30" width="79.20" height="33.00" rx="0" fill="#9aa0ad" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="252.9" y="60.8" font-size="3" text-anchor="middle" fill="#222" >gpu</text>
-<rect x="197.65" y="43.30" width="15.84" height="7.92" rx="0" fill="#555" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="205.6" y="48.3" font-size="3" text-anchor="middle" fill="#222" >riser</text>
-<rect x="38.52" y="43.30" width="36.30" height="9.90" rx="0" fill="#a9c0d6" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="56.7" y="49.2" font-size="3" text-anchor="middle" fill="#222" >ctrl_board</text>
-<rect x="171.84" y="52.77" width="16.50" height="5.86" rx="0" fill="#ccf0aa" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
-<text x="180.1" y="56.7" font-size="3" text-anchor="middle" fill="#222" >ssd</text>
+<rect x="63.60" y="47.49" width="112.20" height="1.06" rx="0" fill="#9ac8a6" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="119.7" y="49.0" font-size="3" text-anchor="middle" fill="#222" >board</text>
+<rect x="80.69" y="54.49" width="60.06" height="45.21" rx="0" fill="#e0b080" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="110.7" y="78.1" font-size="3" text-anchor="middle" fill="#222" >cooler</text>
+<rect x="297.90" y="45.28" width="79.20" height="41.58" rx="0" fill="#b0c4de" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="337.5" y="67.1" font-size="3" text-anchor="middle" fill="#222" >radiator</text>
+<rect x="191.64" y="45.28" width="99.00" height="26.40" rx="0" fill="#9aa0ad" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="241.1" y="59.5" font-size="3" text-anchor="middle" fill="#222" >gpu</text>
+<rect x="175.80" y="45.28" width="15.84" height="7.92" rx="0" fill="#555" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="183.7" y="50.2" font-size="3" text-anchor="middle" fill="#222" >riser</text>
+<rect x="150.06" y="54.75" width="16.50" height="5.86" rx="0" fill="#ccf0aa" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="158.3" y="58.7" font-size="3" text-anchor="middle" fill="#222" >ssd</text>
 <line x1="413.40" y1="40.00" x2="423.40" y2="40.00" stroke="#888" stroke-width="0.2"  />
-<line x1="413.40" y1="102.04" x2="423.40" y2="102.04" stroke="#888" stroke-width="0.2"  />
-<line x1="424.90" y1="40.00" x2="424.90" y2="102.04" stroke="#06c" stroke-width="0.25"  marker-start="url(#ar)" marker-end="url(#ar)"/>
-<text x="422.6" y="71.0" font-size="2.6" text-anchor="middle" fill="#06c" transform="rotate(-90 422.6 71.0)">ドーム最大内奥行 94.0</text>
-<text x="24.0" y="132.5" font-size="3.2" text-anchor="start" fill="#222" >断面A-A: y=122 のx-z面。上=スラブ側(z=0)、下=背面方向。</text></svg>
+<line x1="413.40" y1="106.66" x2="423.40" y2="106.66" stroke="#888" stroke-width="0.2"  />
+<line x1="424.90" y1="40.00" x2="424.90" y2="106.66" stroke="#06c" stroke-width="0.25"  marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="422.6" y="73.3" font-size="2.6" text-anchor="middle" fill="#06c" transform="rotate(-90 422.6 73.3)">ドーム最大内奥行 101.0</text>
+<text x="24.0" y="137.2" font-size="3.2" text-anchor="start" fill="#222" >断面A-A: y=122 のx-z面。上=スラブ側(z=0)、下=背面方向。</text></g></svg>

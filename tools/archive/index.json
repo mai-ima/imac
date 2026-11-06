@@ -127,6 +127,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v004__2026-11-05_a404097.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "184ad21",
+   "sha256": "4ae1a006a0abd564ff3926075c01517bb0f29740d9caddd94830520bf455e919",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v005__2026-11-05_184ad21.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",
@@ -154,6 +163,15 @@
    "file": "gen_package/gen_package.v003__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/gen_package.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "4925658",
+   "sha256": "3b6733fe4296c1e4b5d3746d8498e521ec8427237cd3555f01a175bb046d90d8",
+   "file": "gen_package/gen_package.v004__2026-11-05_4925658.py"
+  },
+  {
    "src": "tools/gen_service_drawings.py",
    "version": 1,
    "gen": "current",
@@ -172,6 +190,15 @@
    "file": "gen_service_drawings/gen_service_drawings.v002__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/gen_service_drawings.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "4925658",
+   "sha256": "2b34e56e5471bb90bf28bf1d23901f66d2e46785141e46d1cd7a8e666ab9df55",
+   "file": "gen_service_drawings/gen_service_drawings.v003__2026-11-05_4925658.py"
+  },
+  {
    "src": "tools/gen_specs.py",
    "version": 1,
    "gen": "current",
@@ -179,6 +206,15 @@
    "commit": "b97eaae",
    "sha256": "6da8266b77b60e0d3b34a436af2cb62f4982c6ee8f7d288f36d0f1ce915fe5c9",
    "file": "gen_specs/gen_specs.v001__2026-11-05_b97eaae.py"
+  },
+  {
+   "src": "tools/gen_specs.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "aaf0d0e2b42e17af7c12385d9f2f2174a6713a2f2809b2f1d17a89b46f44003c",
+   "file": "gen_specs/gen_specs.v002__2026-11-05_fcba5fe.py"
   },
   {
    "src": "tools/guard_no_delete.sh",

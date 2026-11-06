@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>
+<rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/>
+<text x="254" y="276" font-size="5">断面 B-B (x=350: GPU)</text><text x="254" y="283" font-size="3.2">図番 PKG-11B / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>
+<text x="254" y="288" font-size="3">ドーム内面は設計値。斜線=トレイ(t2) / 部品は外形箱</text>
+<rect x="24.00" y="28.00" width="245.06" height="12.00" rx="0" fill="#d9dde2" fill-opacity="1" stroke="#000" stroke-width="0.4"/>
+<text x="27.0" y="37.0" font-size="3" text-anchor="start" fill="#222" >前面スラブ(t18)・パネル</text>
+<polyline points="24.0,44.0 26.6,44.5 29.3,46.1 31.9,48.5 34.6,51.7 37.2,55.5 39.8,59.8 42.5,64.4 45.1,69.3 47.8,74.2 50.4,79.2 53.0,84.0 55.7,88.4 58.3,92.5 61.0,96.0 63.6,98.8 66.2,100.8 68.9,101.9 71.5,102.0 74.2,102.0 76.8,102.0 79.4,102.0 82.1,102.0 84.7,102.0 87.4,102.0 90.0,102.0 92.6,102.0 95.3,102.0 97.9,102.0 100.6,102.0 103.2,102.0 105.8,102.0 108.5,102.0 111.1,102.0 113.8,102.0 116.4,102.0 119.0,102.0 121.7,102.0 124.3,102.0 127.0,102.0 129.6,102.0 132.2,102.0 134.9,102.0 137.5,102.0 140.2,102.0 142.8,102.0 145.4,102.0 148.1,102.0 150.7,102.0 153.4,102.0 156.0,102.0 158.6,102.0 161.3,102.0 163.9,102.0 166.6,102.0 169.2,102.0 171.8,102.0 174.5,102.0 177.1,102.0 179.8,102.0 182.4,102.0 185.0,102.0 187.7,102.0 190.3,102.0 193.0,102.0 195.6,102.0 198.2,102.0 200.9,102.0 203.5,102.0 206.2,102.0 208.8,102.0 211.4,102.0 214.1,102.0 216.7,102.0 219.4,102.0 222.0,102.0 224.6,101.8 227.3,100.5 229.9,98.4 232.6,95.4 235.2,91.8 237.8,87.7 240.5,83.1 243.1,78.3 245.8,73.4 248.4,68.4 251.0,63.6 253.7,59.0 256.3,54.8 259.0,51.1 261.6,48.0 264.2,45.7 266.9,44.3" fill="none" stroke="#000" stroke-width=".7"/>
+<text x="146.5" y="111.0" font-size="3" text-anchor="middle" fill="#555" >ドーム内面(外面は+3mm)</text>
+<rect x="24.00" y="40.00" width="245.06" height="2.00" rx="0" fill="#8d9198" fill-opacity="1" stroke="#000" stroke-width="0.3"/>
+<rect x="59.11" y="43.30" width="151.14" height="33.00" rx="0" fill="#9aa0ad" fill-opacity="0.85" stroke="#333" stroke-width="0.3"/>
+<text x="134.7" y="60.8" font-size="3" text-anchor="middle" fill="#222" >gpu</text>
+<line x1="269.06" y1="40.00" x2="279.06" y2="40.00" stroke="#888" stroke-width="0.2"  />
+<line x1="269.06" y1="102.04" x2="279.06" y2="102.04" stroke="#888" stroke-width="0.2"  />
+<line x1="280.56" y1="40.00" x2="280.56" y2="102.04" stroke="#06c" stroke-width="0.25"  marker-start="url(#ar)" marker-end="url(#ar)"/>
+<text x="278.3" y="71.0" font-size="2.6" text-anchor="middle" fill="#06c" transform="rotate(-90 278.3 71.0)">ドーム最大内奥行 94.0</text>
+<text x="24.0" y="132.5" font-size="3.2" text-anchor="start" fill="#222" >断面B-B: x=350 のy-z面。上=スラブ側(z=0)、下=背面方向。</text></svg>

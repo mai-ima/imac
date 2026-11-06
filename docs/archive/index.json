@@ -64,6 +64,15 @@
    "file": "bom-final/bom-final.v002__2026-11-05_3c794e1.md"
   },
   {
+   "src": "docs/bom-final.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "f0791f52a2b8b15a1afe1cede242f1e73b49f397ad09bcb1f50ddc25cf95233f",
+   "file": "bom-final/bom-final.v003__2026-11-05_71b7afb.md"
+  },
+  {
    "src": "docs/bom-verified.md",
    "version": 1,
    "gen": "current",
@@ -449,6 +458,15 @@
    "commit": "2f8c0ac",
    "sha256": "5cc43538d08dd7ab95dd9200520a356182f1546e48c07770b0cecabf4cb385eb",
    "file": "wiring/wiring.v002__2026-11-05_2f8c0ac.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "a79bf33fe47eddf5c445677bb5e12b559f2390096cb544c0e3cb707851619612",
+   "file": "wiring/wiring.v003__2026-11-05_fcba5fe.md"
   }
  ]
 }

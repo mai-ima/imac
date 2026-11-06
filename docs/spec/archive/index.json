@@ -98,6 +98,15 @@
    "commit": "b97eaae",
    "sha256": "edecdc331bb42c6ca93c559b2831211f631fa33773bf332d0ba9758a57bb69ba",
    "file": "wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md"
+  },
+  {
+   "src": "docs/spec/wiring-spec.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "7540a9a5a0255cff881300a5cb17cb3ddb73642aad091ddb6e7ba672d2384233",
+   "file": "wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md"
   }
  ]
 }

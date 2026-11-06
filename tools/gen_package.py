@@ -12,12 +12,10 @@ DEPTH = D['total_t'] - S['slab_t'] - 3
 def dome_in(d): s = max(0, min(1, d / D['run'])); return D['edge_inner_depth'] + (DEPTH - D['edge_inner_depth']) * (s * s * (3 - 2 * s))
 I = {i['id']: i for i in L['items']}
 def esc(s): return str(s).replace('&', '&amp;').replace('<', '&lt;')
-def head(title, num, w=420, h=297, note=''):
-    return [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>',
-            f'<rect x="4" y="4" width="{w-8}" height="{h-8}" fill="none" stroke="#000" stroke-width=".5"/>',
-            f'<rect x="{w-170}" y="{h-30}" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/>',
-            f'<text x="{w-166}" y="{h-21}" font-size="5">{esc(title)}</text><text x="{w-166}" y="{h-14}" font-size="3.2">図番 {num} / 単位 mm / 設計値(未承認) / 生成: tools/gen_package.py</text>',
-            f'<text x="{w-166}" y="{h-9}" font-size="3">{esc(note)}</text>']
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import drawlib as DL
+def head(title, num, w=420, h=297, note='', scale='NTS'):
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs>'
+    return [svg] + DL.frame(title, num, scale=scale, note=note) + ['<g transform="translate(19,12) scale(0.93)">']
 def T(x, y, s, sz=3.2, a='start', fill='#222', extra=''): return f'<text x="{x:.1f}" y="{y:.1f}" font-size="{sz}" text-anchor="{a}" fill="{fill}" {extra}>{esc(s)}</text>'
 def rect(x, y, w, h, fill='none', st='#333', sw=.3, op=1, rx=0): return f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" rx="{rx}" fill="{fill}" fill-opacity="{op}" stroke="{st}" stroke-width="{sw}"/>'
 def line(x1, y1, x2, y2, st='#222', sw=.3, dash='', mk=''): return f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="{st}" stroke-width="{sw}" {("stroke-dasharray=%s" % chr(34)+dash+chr(34)) if dash else ""} {mk}/>'
@@ -26,7 +24,7 @@ def dimh(x1, x2, y, label, off=6):   # 水平寸法線
 def dimv(y1, y2, x, label, off=-6):
     return [line(x, y1, x + off, y1, '#888', .2), line(x, y2, x + off, y2, '#888', .2), line(x + off + 1.5, y1, x + off + 1.5, y2, '#06c', .25, '', 'marker-start="url(#ar)" marker-end="url(#ar)"'), T(x + off - .8, (y1 + y2) / 2, label, 2.6, 'middle', '#06c', f'transform="rotate(-90 {x+off-.8:.1f} {(y1+y2)/2:.1f})"')]
 COL = {'board': '#9ac8a6', 'cooler': '#e0b080', 'radiator': '#b0c4de', 'gpu': '#9aa0ad', 'riser': '#555', 'psu': '#c8c8c8', 'fan': '#d9c8a0', 'ctrl_board': '#a9c0d6', 'ssd': '#ccf0aa', 'ram': '#99ddee'}
-def save(name, parts): open(f'{OUT}/{name}', 'w').write('\n'.join(parts) + '</svg>\n'); print('wrote', name)
+def save(name, parts): open(f'{OUT}/{name}', 'w').write('\n'.join(parts) + '</g></svg>\n'); print('wrote', name)
 
 # ================= 09 基板レイアウト(ASUS X870-I, 公式マニュアル図から実測) =================
 sc = 1.2; ox, oy = 24, 38; B = 170
@@ -67,13 +65,13 @@ for it in L['items']:
     dm = min(x, IW - (x + w), y, IH - (y + h)); lim = dome_in(dm); top = z + d
     b.append(T(ox + (x + w / 2) * sc, oy + (IH - y - h / 2) * sc + 4, f'{w:.0f}x{h:.0f}x{d:.0f} z{z:.0f}-{top:.0f}', 2.4, 'middle'))
 # 寸法線(原点基準)
-for i in ('board', 'gpu', 'radiator', 'psu', 'fan', 'ctrl_board'):
+for i in ('board', 'gpu', 'radiator', 'psu', 'ctrl_board'):
     it = I[i]; x, y, z = it['pos']; w, h, _ = it['size']; 
 b += dimh(ox, ox + IW * sc, oy + IH * sc, f'{IW:.0f}', 9) + dimv(oy, oy + IH * sc, ox, f'{IH:.0f}', -9)
 for i, dy in (('board', 0), ('gpu', 5), ('radiator', 10)):
     it = I[i]; x, y, z = it['pos']; w, h, _ = it['size']
     b += dimh(ox + x * sc, ox + (x + w) * sc, oy + IH * sc + 4 + dy, f'{i} x={x:.1f}..{x+w:.1f}', 4)
-for i, dy in (('fan', 0), ('psu', 5), ('ctrl_board', 10)):
+for i, dy in (('psu', 0), ('ctrl_board', 5), ('cooler', 10)):
     it = I[i]; x, y, z = it['pos']; w, h, _ = it['size']
     b += dimh(ox + x * sc, ox + (x + w) * sc, oy - 22 + dy, f'{i} x={x:.1f}..{x+w:.1f}', 4)
 tx = ox + IW * sc + 22
@@ -83,7 +81,7 @@ for n, it in enumerate(L['items']):
     ok = (z + d + 3) <= lim
     b.append(T(tx, 54 + n * 11, it['id'], 2.7, 'start', '#000', 'font-weight="bold"'))
     b.append(T(tx, 54 + n * 11 + 4.5, f'[{x:.1f},{y:.1f},{z:.1f}] [{w:.1f},{h:.1f},{d:.1f}] 頂{z+d:.1f} 許容{lim:.0f}(縁{max(dm,0):.0f}) {"OK" if ok else "要確認"}', 2.3, 'start', '#000' if ok else '#c0392b'))
-b.append(T(ox, oy + IH * sc + 32, f'ドーム内面: 許容z=12+{DEPTH-12:.0f}×smoothstep(d/{D["run"]}) (d=縁までの最短距離)、最大{DEPTH}。ssdはポンプ(z13.6〜)の下に潜る位置で干渉の可能性(U02/要試作)。', 2.8))
+b.append(T(ox, oy + IH * sc + 32, f'ドーム内面: 許容z={D["edge_inner_depth"]}+{DEPTH-D["edge_inner_depth"]:.0f}×smoothstep(d/{D["run"]}) (d=角丸矩形の縁までの最短距離)、最大{DEPTH}。', 2.8))
 save('10_placement_dimensioned.svg', b)
 
 # ================= 11 断面図(A-A: y=122 ソケット中心を通るx-z断面 / B-B: x=350 GPUを通る y-z断面) =================
@@ -152,13 +150,13 @@ b.append(rect(ox, oy, IW * sc, IH * sc, '#f7f8fa', '#000', .5, 1, 14))
 for it in L['items']:
     x, y, z = it['pos']; w, h, d = it['size']; b.append(rect(ox + x * sc, oy + (IH - y - h) * sc, w * sc, h * sc, COL.get(it['id'], '#ddd'), '#333', .2, .55)); b.append(T(ox + (x + w / 2) * sc, oy + (IH - y - h / 2) * sc, it['id'], 3, 'middle'))
 def arrow(x1, y1, x2, y2, c): return line(ox + x1 * sc, oy + (IH - y1) * sc, ox + x2 * sc, oy + (IH - y2) * sc, c, .9, '', 'marker-end="url(#ar)"')
-rx, ry, _ = I['radiator']['pos']; fx, fy, _ = I['fan']['pos']
+rx, ry, _ = I['radiator']['pos']; fx, fy, _ = I['psu']['pos']
 for k in range(3): b.append(arrow(gx + 30 + k * 30, gy + 20, gx + 30 + k * 30, gy + 70, '#1a7f37'))   # GPU吸気(ドーム穴→GPUファン)
 b.append(T(ox + (gx + 60) * sc, oy + (IH - gy - 85) * sc, 'GPU: プレナム空気を吸気→ヒートシンク→プレナム', 2.2, 'middle', '#1a7f37'))
 for k in range(3): b.append(arrow(rx + 25 + k * 35, ry + 200, rx + 25 + k * 35, ry + 250, '#06c'))
 b.append(T(ox + (rx + 60) * sc, oy + (IH - ry - 270) * sc, 'ラジエーター: P12 Pro×2をドーム側に配置し外気を直接吸気→プレナムへ(正圧)', 2.2, 'middle', '#06c'))
-for k in range(2): b.append(arrow(fx + 40 + k * 40, fy + 40, fx + 40 + k * 40, fy + 100, '#c0392b'))
-b.append(T(ox + (fx + 60) * sc, oy + (IH - fy - 130) * sc, 'NF-A12x25 + 正圧の逃げ: プレナムの熱気を全面格子から排気', 2.6, 'middle', '#c0392b'))
+for k in range(2): b.append(arrow(fx + 25 + k * 50, fy + 130, fx + 25 + k * 50, fy + 160, '#c0392b'))
+b.append(T(ox + (fx + 60) * sc, oy + (IH - fy - 130) * sc, '正圧の逃げ: プレナムの熱気を全面格子から排気(ケースファン無し)', 2.6, 'middle', '#c0392b'))
 tx = ox + IW * sc + 20
 b.append(T(tx, 44, '熱収支(ピーク)', 4, 'start', '#000', 'font-weight="bold"'))
 heat = [('CPU Ryzen 7 9800X3D PPT', 162), ('GPU RTX 5060 Ti TGP', 180), ('基板/SSD/RAM/ファン', 40), ('PSU損失(効率92%)', 35), ('コントローラ/パネル', 30)]
@@ -185,7 +183,7 @@ save('14_exploded_assembly.svg', b)
 
 # ================= 15 BOM =================
 rows = []
-for k in ('panel', 'ctrl_board', 'board', 'cpu', 'cooler', 'radiator', 'gpu', 'riser', 'psu', 'fan', 'ssd', 'ram', 'camera_audio'):
+for k in ('panel', 'ctrl_board', 'board', 'cpu', 'cooler', 'radiator', 'gpu', 'riser', 'psu', 'ac_inlet', 'ssd', 'ram', 'camera_audio'):
     p = P[k]; rows.append((k, p['name'], p['maker'], 'x'.join(f'{v:g}' for v in p['dims']), p['status'], (p.get('sources') or [''])[0]))
 b = head('部品表(BOM) 市販品一覧', 'PKG-15', note='status: official=公式確認 / retail=小売一致 / assumed=未確認')
 b.append(T(10, 20, 'ID', 3.4, 'start', '#000', 'font-weight="bold"')); 

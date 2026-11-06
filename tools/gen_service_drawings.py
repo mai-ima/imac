@@ -10,12 +10,10 @@ Dm = S['dome']; panel_h = S['panels'][str(S['panel_size'])]['h']; W = S['body_w'
 IW = W - 2*Dm['inset_left_right'] - 6; IH = H - Dm['inset_bottom'] - Dm['inset_top'] - 6
 sc = 0.6
 COL = {'board':'#9ac8a6','cooler':'#e0b080','radiator':'#b0c4de','gpu':'#9aa0ad','riser':'#444','psu':'#c8c8c8','fan':'#d9c8a0','ctrl_board':'#a9c0d6','ssd':'#cfa','ram':'#9cd'}
-def head(w,h,title,num):
-    return [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>',
-            f'<rect x="4" y="4" width="{w-8}" height="{h-8}" fill="none" stroke="#000" stroke-width="0.5"/>',
-            f'<rect x="{w-170}" y="{h-30}" width="166" height="26" fill="none" stroke="#000" stroke-width="0.4"/>',
-            f'<text x="{w-166}" y="{h-21}" font-size="5">{title}</text><text x="{w-166}" y="{h-14}" font-size="3.2">図番 {num} / 単位 mm / 設計値(未承認)</text>',
-            f'<text x="{w-166}" y="{h-9}" font-size="3">締結: M3 T10 拘束ネジ(特記なき限り)</text>']
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import drawlib as DL
+def head(w,h,title,num,scale='NTS'):
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs>'
+    return [svg] + DL.frame(title, num, scale=scale) + ['<g transform="translate(19,12) scale(0.93)">']
 def T(x,y,s,sz=3.4,a='start',fill='#222'): return f'<text x="{x}" y="{y}" font-size="{sz}" text-anchor="{a}" fill="{fill}">{s}</text>'
 # ---------- 06 トレイ平面 ----------
 ox, oy = 30, 40; b = head(420, 297, 'サービストレイ平面(背面側から見た配置)', 'SVC-06')
@@ -43,7 +41,7 @@ b.append(f'<line x1="{ox+IW*sc/2}" y1="{oy-6}" x2="{ox+IW*sc/2}" y2="{oy-18}" st
 b.append(T(ox+IW*sc/2+3, oy-9, '取り外し方向: 12mm持ち上げてキーホールを外し、背面(+z)へ引く',3,fill='#1a7f37'))
 b.append(T(ox, oy+IH*sc+10, f'ドーム内寸 {IW:.0f} x {IH:.0f} / トレイ=A5052 t2.0。部品はスタンドオフで固定(M3)。GPUはクレードル(工具なしクランプ)で保持。', 3.4))
 b.append(T(ox, oy+IH*sc+16, 'ケーブルはトレイ上のコームで束ね、ディスプレイ側は「アンビリカル」(eDP/12V/USB)でトレイ端のコネクタに分離。', 3.4))
-b.append('</svg>'); open(f'{OUT}/06_service_tray_plan.svg','w',encoding='utf-8').write('\n'.join(b))
+b.append('</g></svg>'); open(f'{OUT}/06_service_tray_plan.svg','w',encoding='utf-8').write('\n'.join(b))
 # ---------- 07 断面 ----------
 k = 2.2; x0, y0 = 60, 50; b = head(420, 297, 'ドーム固定とトレイ吊り下げ(断面)', 'SVC-07')
 slab = S['slab_t']; tot = Dm['total_t']
@@ -57,7 +55,7 @@ b.append(T(x0+(tot)*k-30, y0+3, 'ドーム(A5052 t2.0) 傾斜 60mm', 2.8))
 b += [f'<circle cx="{x0+(slab+4)*k}" cy="{y0+140}" r="3" fill="#c0392b"/>', T(x0+(slab+4)*k+6, y0+142, '下辺ラッチ(1/4回転, 下面の凹み内)。上辺は掛け爪フック', 2.8)]
 b += [f'<rect x="{x0+(slab+1)*k}" y="{y0+120}" width="{2.2*k}" height="{2.2*k}" fill="#555"/>', T(x0+(slab+4)*k, y0+118, 'ネオジム磁石 8x3 ×12個(位置決め)', 2.8)]
 b.append(T(x0, y0+195, '導電ガスケット(ファブリック・オーバー・フォーム 3mm)を縁に周回。ドーム縁と背板の隙間 0.5〜1.0mm。', 3.2))
-b.append('</svg>'); open(f'{OUT}/07_dome_latch_section.svg','w',encoding='utf-8').write('\n'.join(b))
+b.append('</g></svg>'); open(f'{OUT}/07_dome_latch_section.svg','w',encoding='utf-8').write('\n'.join(b))
 # ---------- 08 取り外し順序 ----------
 b = head(420, 297, '取り外し順序(レベル別)', 'SVC-08')
 steps = [('L1 ユーザー','①電源OFF・AC抜去(5分待つ) ②下面の凹みから下辺ラッチ6点(T10, 1/4回転) ③ドームを上へ3mmスライドして上辺フックを外し、後方へ外す','メモリ/SSD/ファン/ダストフィルタ/ケーブル確認'),
@@ -70,5 +68,5 @@ for lv, st, use in steps:
     b += [f'<rect x="20" y="{y}" width="380" height="40" rx="3" fill="#f3f6fb" stroke="#678" stroke-width=".4"/>', T(26, y+9, lv, 4.4), T(26, y+19, st[:78], 3.1), T(26, y+26, st[78:156], 3.1), T(26, y+33, '用途: '+use, 3.1, fill='#555')]
     y += 48
 b.append(T(20, y+6, '工具: T10 トルクス(主), T6, 2.5mm六角, プラス#1。静電気対策(リストストラップ)。パネルのCOF部は押さない。', 3.4))
-b.append('</svg>'); open(f'{OUT}/08_service_sequence.svg','w',encoding='utf-8').write('\n'.join(b))
+b.append('</g></svg>'); open(f'{OUT}/08_service_sequence.svg','w',encoding='utf-8').write('\n'.join(b))
 print('ok: drawings/06..08')

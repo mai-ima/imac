@@ -12,20 +12,16 @@ POD_T, POD_H, WALL = S['pod']['total_t'], S['pod']['h'], S['pod']['wall']; POD_W
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
 CORNER = S['corner']; PO = S['panel_module']['outline']
 
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import drawlib as DL
 def svg_head(w, h, title, sheet, scale):
-    return [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/>',
-            f'<rect x="4" y="4" width="{w-8}" height="{h-8}" fill="none" stroke="#000" stroke-width="0.5"/>',
-            f'<rect x="{w-150}" y="{h-34}" width="146" height="30" fill="none" stroke="#000" stroke-width="0.4"/>',
-            f'<text x="{w-146}" y="{h-24}" font-size="5">{title}</text><text x="{w-146}" y="{h-17}" font-size="3.4">図番 {sheet} / 縮尺 {scale} / 単位 mm / 第三角法</text>',
-            f'<text x="{w-146}" y="{h-11}" font-size="3.4">普通公差 ±0.3(板金) / ±0.2(ガラス外形) / 表面 アルマイト</text>',
-            f'<text x="{w-146}" y="{h-7}" font-size="3">設計値(未承認)。製造前に最終BOMで再生成すること。</text>']
+    return [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Helvetica,Arial,sans-serif">'] + DL.frame(title, sheet, scale=scale, material='A5052-H32 t2.0 / 強化ガラス t1.1 / A6063', finish='アルマイトII(硫酸) 10〜15um', note='注記: 図示の外形は設計値。展開図/曲げ線/穴径の詳細はCP部品図(drawings/parts)') + ['<g transform="translate(19,12) scale(0.93)">']
 def dim_h(x1, x2, y, label, off=10): return [f'<line x1="{x1}" y1="{y+off}" x2="{x2}" y2="{y+off}" stroke="#c0392b" stroke-width="0.3"/>', f'<line x1="{x1}" y1="{y}" x2="{x1}" y2="{y+off+2}" stroke="#c0392b" stroke-width="0.2"/>', f'<line x1="{x2}" y1="{y}" x2="{x2}" y2="{y+off+2}" stroke="#c0392b" stroke-width="0.2"/>', f'<text x="{(x1+x2)/2}" y="{y+off-1.5}" font-size="3.6" text-anchor="middle" fill="#c0392b">{label}</text>']
 def dim_v(x, y1, y2, label, off=10): return [f'<line x1="{x+off}" y1="{y1}" x2="{x+off}" y2="{y2}" stroke="#c0392b" stroke-width="0.3"/>', f'<line x1="{x}" y1="{y1}" x2="{x+off+2}" y2="{y1}" stroke="#c0392b" stroke-width="0.2"/>', f'<line x1="{x}" y1="{y2}" x2="{x+off+2}" y2="{y2}" stroke="#c0392b" stroke-width="0.2"/>', f'<text x="{x+off-1.5}" y="{(y1+y2)/2}" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 {x+off-1.5} {(y1+y2)/2})">{label}</text>']
 def rrect(x, y, w, h, r, **kw): return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" ' + ' '.join(f'{k.replace("_","-")}="{v}"' for k, v in kw.items()) + '/>'
 
 sc = 0.5   # 1/2 縮尺
 def sheet(name, title, num, body, w=420, h=297):
-    s = svg_head(w, h, title, num, '1:2') + body + ['</svg>']; open(f'{OUT}/{name}.svg', 'w', encoding='utf-8').write('\n'.join(s))
+    s = svg_head(w, h, title, num, '1:2') + body + ['</g></svg>']; open(f'{OUT}/{name}.svg', 'w', encoding='utf-8').write('\n'.join(s))
 
 # ---------------- 01 前面ガラス ----------------
 gx, gy = 40, 30; gw, gh = (W - .6) * sc, (H - .6) * sc
@@ -53,17 +49,12 @@ sheet('02_back_plate_layout', '背板とドーム配置', 'MFG-02', b)
 LAY = json.load(open(f'{R}/model/layout.json'))['items']; LI = {i['id']: i for i in LAY}
 b = [rrect(gx, gy, DW * sc, DH * sc, Dm['corner_r'] * sc, fill='#c4c8ce', stroke='#000', stroke_width=.5)]
 ix0, iy0 = 3, 3   # ドーム内寸の左下(トレイ座標原点)
-for key in ('radiator', 'fan', 'gpu'):
-    x, y, z = LI[key]['pos']; a_, b_, c_ = LI[key]['size']
-    if key == 'gpu': x, y, a_, b_ = x + 20, y + 15, 80, 200
-    elif key == 'radiator': x, y, a_, b_ = x + 4, y + 4, 112, 269
-    else: x, y, a_, b_ = x + 4, y + 4, 112, 112
-    b.append(f'<rect x="{gx + (DW - ix0 - x - a_) * sc}" y="{gy + (DH - iy0 - y - b_) * sc}" width="{a_*sc}" height="{b_*sc}" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>')
-    b.append(f'<text x="{gx + (DW - ix0 - x - a_/2) * sc}" y="{gy + (DH - iy0 - y - b_/2) * sc}" font-size="3" text-anchor="middle">六角穴領域 {key}</text>')
-# v7: 下辺傾斜面の開口(I/O引き込みチャンネル, GPU出力, AC電源)と RF窓ゾーン(格子裏の樹脂板)
-for (nm, x, w_, h_) in (('I/O チャンネル 12×120', 105, 120, 30), ('GPU出力', 291, 112, 30), ('ACインレット', 438, 32, 30)):
-    b.append(f'<rect x="{gx + (DW - ix0 - x - w_) * sc}" y="{gy + (DH - h_) * sc}" width="{w_*sc}" height="{h_*sc}" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="{gx + (DW - ix0 - x - w_/2) * sc}" y="{gy + (DH - h_/2) * sc}" font-size="2.6" text-anchor="middle" fill="#c0392b">{nm}</text>')
-b.append(f'<rect x="{gx + (DW/2 - 40) * sc}" y="{gy + 18 * sc}" width="{80*sc}" height="{30*sc}" fill="none" stroke="#06c" stroke-width=".4" stroke-dasharray="1.5,1"/><text x="{gx + DW/2*sc}" y="{gy + 33 * sc}" font-size="2.6" text-anchor="middle" fill="#06c">RF窓ゾーン(格子裏PC板 60×30)</text>')
+x_, y_, a_, b_ = 36, 36, 590 - 72, 371.3 - 72      # v8: 背面全面の均一パーフォレーション(Ø2.4×ピッチ4.0, 縁から36mm内側)
+b.append(f'<rect x="{gx + (DW - ix0 - x_ - a_) * sc}" y="{gy + (DH - iy0 - y_ - b_) * sc}" width="{a_*sc}" height="{b_*sc}" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>')
+b.append(f'<text x="{gx + DW/2*sc}" y="{gy + DH/2*sc}" font-size="3.4" text-anchor="middle">均一パーフォレーション領域 {a_:.0f}×{b_:.0f} (Ø2.4 千鳥 ピッチ4.0, 板厚2.0)</text>')
+for (nm, x, w_, h_) in (('I/O スロット', LI['board']['pos'][0] + 12, 120, 22), ('GPU出力スロット', LI['gpu']['pos'][0] + 4, LI['gpu']['size'][0] - 8, 20), ('ACインレット', LI['ac_inlet']['pos'][0] - 2, 32, 26)):
+    b.append(f'<rect x="{gx + (DW - ix0 - x - w_) * sc}" y="{gy + (DH - 6 - h_) * sc}" width="{w_*sc}" height="{h_*sc}" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="{gx + (DW - ix0 - x - w_/2) * sc}" y="{gy + (DH - 6 - h_/2) * sc}" font-size="2.4" text-anchor="middle" fill="#c0392b">{nm}</text>')
+b.append(f'<rect x="{gx + (DW/2 - 40) * sc}" y="{gy + 60 * sc}" width="{80*sc}" height="{30*sc}" fill="none" stroke="#06c" stroke-width=".4" stroke-dasharray="1.5,1"/><text x="{gx + DW/2*sc}" y="{gy + 76 * sc}" font-size="2.4" text-anchor="middle" fill="#06c">RF窓ゾーン(平板 60×30, 格子裏)</text>')
 b += dim_h(gx, gx + DW * sc, gy + DH * sc, f'{DW:.0f}') + dim_v(gx + DW * sc, gy, gy + DH * sc, f'{DH:.1f}')
 # プロファイル(縁→中央): 内面深さ=12+75*smoothstep(d/run)
 pts = []
