@@ -32,6 +32,7 @@
 | custom_parts.json | v014 | current | 2026-11-06 | d97f07e | custom_parts/custom_parts.v014__2026-11-06_d97f07e.json |
 | custom_parts.json | v015 | current | 2026-11-06 | 02c4c72 | custom_parts/custom_parts.v015__2026-11-06_02c4c72.json |
 | custom_parts.json | v016 | current | 2026-11-06 | 88f99b7 | custom_parts/custom_parts.v016__2026-11-06_88f99b7.json |
+| custom_parts.json | v017 | current | 2026-11-06 | cf90ba1 | custom_parts/custom_parts.v017__2026-11-06_cf90ba1.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
 | hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
@@ -41,6 +42,7 @@
 | hardware_list.json | v007 | current | 2026-11-06 | 02c4c72 | hardware_list/hardware_list.v007__2026-11-06_02c4c72.json |
 | hardware_list.json | v008 | current | 2026-11-06 | 85af1a8 | hardware_list/hardware_list.v008__2026-11-06_85af1a8.json |
 | hardware_list.json | v009 | current | 2026-11-06 | cf90ba1 | hardware_list/hardware_list.v009__2026-11-06_cf90ba1.json |
+| hardware_list.json | v010 | current | 2026-11-06 | 4050ed9 | hardware_list/hardware_list.v010__2026-11-06_4050ed9.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -86,5 +88,6 @@
 | spec.json | v021 | current | 2026-11-06 | 88f99b7 | spec/spec.v021__2026-11-06_88f99b7.json |
 | spec.json | v022 | current | 2026-11-06 | 877835f | spec/spec.v022__2026-11-06_877835f.json |
 | spec.json | v023 | current | 2026-11-06 | cf90ba1 | spec/spec.v023__2026-11-06_cf90ba1.json |
+| spec.json | v024 | current | 2026-11-06 | 4050ed9 | spec/spec.v024__2026-11-06_4050ed9.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |
 | x870i_layout.json | v002 | current | 2026-11-06 | 85af1a8 | x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json |

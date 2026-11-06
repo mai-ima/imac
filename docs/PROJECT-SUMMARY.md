@@ -8,7 +8,7 @@
 - バランサ: s=76 e=25 最長側365N/本 p=0.6、摩擦保持5.8N·m±8%、操作力目標≦25N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1091件 = 現行 311 + 履歴archive 780)
+## 2. ファイル構成(git追跡 1105件 = 現行 313 + 履歴archive 792)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
@@ -19,7 +19,7 @@
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
 | docs | 54 | 仕様・設計書・調査・監査記録 |
-| drawings | 46 | 図面(SVG/DXF/PDF入力) |
+| drawings | 48 | 図面(SVG/DXF/PDF入力) |
 | handoff | 67 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |

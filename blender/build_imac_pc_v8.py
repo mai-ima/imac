@@ -433,9 +433,9 @@ def slab_plate(name, a, b, r, zl0, zl1, mat):
 tray_obj = slab_plate('tray_plate', IW_ / 2 - 10, IH_ / 2 - 10, 38, 3.0, 5.0, principled('tray_alu', '#8d9198', 1.0, 0.42))      # 外周10mmを空ける(ドーム固定ハード用)
 insul_obj = slab_plate('tray_insulation', IW_ / 2 - 12, IH_ / 2 - 12, 36, 0.0, 3.0, principled('insul_sheet', '#3b3a37', 0.0, 0.85))
 _bm = bmesh.new()
-for (kx, ky) in KH:      # キーホール: 頭が通る丸穴 Ø9.2 + 上方向 12mm の細溝 W5.1(トレイを12mm下げて掛ける)
-    bmesh.ops.create_cone(_bm, cap_ends=True, segments=24, radius1=4.6, radius2=4.6, depth=12, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky, Z0 - 4.0)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))
-    bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky + 6, Z0 - 4.0)) @ Matrix.Diagonal((5.1, 12, 12, 1)))
+for (kx, ky) in KH:      # キーホール: 頭が通る丸穴 Ø10.2 + 上方向 12mm の細溝 W6.5(spec.fits.keyhole_slot_w。トレイを12mm下げて掛ける)
+    bmesh.ops.create_cone(_bm, cap_ends=True, segments=48, radius1=5.1, radius2=5.1, depth=12, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky, Z0 - 4.0)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))
+    bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky + 6, Z0 - 4.0)) @ Matrix.Diagonal((S['fits']['keyhole_slot_w'], 12, 12, 1)))
 _me = bpy.data.meshes.new('tray_keyhole_cutter'); _bm.to_mesh(_me); _bm.free(); kh_cut = bpy.data.objects.new('tray_keyhole_cutter', _me); kh_cut.hide_render = True; link(kh_cut)
 for _o in (tray_obj, insul_obj):
     _m = _o.modifiers.new('keyholes', 'BOOLEAN'); _m.object = kh_cut; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'

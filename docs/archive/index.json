@@ -28,6 +28,15 @@
    "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v003__2026-11-06_cf90ba1.md"
   },
   {
+   "src": "docs/PROJECT-SUMMARY.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "2405b76cc1dd06f85ab4feba1bd12e66e8a9cb86d9545dcf50ee499684da5218",
+   "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v004__2026-11-06_4050ed9.md"
+  },
+  {
    "src": "docs/README.md",
    "version": 1,
    "gen": "current",
@@ -271,6 +280,15 @@
    "file": "build-guide/build-guide.v003__2026-11-05_15a1bce.md"
   },
   {
+   "src": "docs/build-guide.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "4925658",
+   "sha256": "4dd1f76d88c28c0d8f45e8bcf3d88aa5e4a2004865f1d5f4935d2b099dc4e865",
+   "file": "build-guide/build-guide.v004__2026-11-05_4925658.md"
+  },
+  {
    "src": "docs/design-package-index.md",
    "version": 1,
    "gen": "current",
@@ -377,6 +395,15 @@
    "commit": "15a1bce",
    "sha256": "8899ce6fc73ef636be120a62bbcfab28e53ce2267d3136883a2fbc7869b5b4e8",
    "file": "failure-analysis/failure-analysis.v002__2026-11-05_15a1bce.md"
+  },
+  {
+   "src": "docs/failure-analysis.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "7655e1c222cb8d735dc6f2a5dd8673c01c2e48055f36351998da7fd845e6566f",
+   "file": "failure-analysis/failure-analysis.v003__2026-11-06_9ff6031.md"
   },
   {
    "src": "docs/fitcheck-report.txt",
@@ -694,6 +721,15 @@
    "file": "service-mechanisms/service-mechanisms.v004__2026-11-06_9ff6031.md"
   },
   {
+   "src": "docs/service-mechanisms.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "bb52cc1ea4ab22b506151ea060eed684197de7174846e8d95096212d00954fc7",
+   "file": "service-mechanisms/service-mechanisms.v005__2026-11-06_d97f07e.md"
+  },
+  {
    "src": "docs/source-status.md",
    "version": 1,
    "gen": "current",
@@ -953,6 +989,15 @@
    "commit": "853f219",
    "sha256": "a7bfe2fe4ab1295db5088ffde8a7916f385e10d8818daf812f1150ab17044002",
    "file": "wiring/wiring.v007__2026-11-06_853f219.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "3a2d7ad89b7caa9b7175084c5b330ed35ca9bd7d183becb2595006d5ce82aebb",
+   "file": "wiring/wiring.v008__2026-11-06_88f99b7.md"
   }
  ]
 }

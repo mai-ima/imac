@@ -173,6 +173,7 @@ loadGLB(gltf=>{
 
 
 /* ---- バランサのダイスプリング: チルトに合わせて両端ピン間で傾き・伸縮(上端=尾部レバー先端ピン、下端=スタンド側座) ---- */
+const HW_END=16; /* spec.hinge.balance_end_hw_mm: ピン間距離からばね座面までの端金物長(両端合計) */
 const struts=[]; window.__struts=struts;
 function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+k], seat=byName['spring_seat_bot'+k], parts=['spring_die'+k,'spring_guide_rod'+k].map(n=>byName[n]).filter(Boolean);
     if(pin&&seat&&parts.length) struts.push({pin,seat,parts,base:parts.map(o=>({p:o.position.clone(),q:o.quaternion.clone(),s:o.scale.clone()})),len0:0}); } updateStruts(true); }
@@ -182,7 +183,7 @@ function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld
       if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=new THREE.Vector3(0,1,0); }
       o.quaternion.copy(new THREE.Quaternion().setFromUnitVectors(st.dir0,d.clone().normalize())).multiply(st.base[i].q);
       const mid=a.clone().add(d.clone().multiplyScalar(0.5)); const m0=st.a0.clone().add(st.dir0.clone().multiplyScalar(st.len0/2));
-      o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*(L/st.len0), st.base[i].s.z); }); } }
+      o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*((L-HW_END)/(st.len0-HW_END)), st.base[i].s.z); }); } }
 function mixHex(a,b,t){ const c=new THREE.Color(a); c.lerp(new THREE.Color(b),t); return '#'+c.getHexString(); }
 function setColor(n){ color=n; const [b,s,c]=PALETTE[n];
   if(matBy['anodized_body']) matBy['anodized_body'].color.set(b); if(matBy['anodized_stand']) matBy['anodized_stand'].color.set(s);

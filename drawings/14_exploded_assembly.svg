@@ -123,7 +123,7 @@
 <text x="205.0" y="249.0" font-size="3.4" text-anchor="start" fill="#222" >⑥ドーム(A5052 t2.0, 外装)</text>
 <text x="20.0" y="190.0" font-size="4" text-anchor="start" fill="#000" font-weight="bold">組立順</text>
 <text x="20.0" y="198.0" font-size="3.2" text-anchor="start" fill="#222" >A. 前面: 背板(スラブ枠一体)へパネルをM3で固定→ガラスをスラブ枠へ全周接着(U22, エアギャップ0.9)。</text>
-<text x="20.0" y="205.0" font-size="3.2" text-anchor="start" fill="#222" >B. 背板: 吊りピン×4(M3・肩径Ø5)、ヒンジブロック(貫通M6×4+裏当て鋼板)、接地スタッド。</text>
+<text x="20.0" y="205.0" font-size="3.2" text-anchor="start" fill="#222" >B. 背板: 吊りピン×4(M4・肩径Ø6)、ヒンジブロック(貫通M6×4+裏当て鋼板)、接地スタッド。</text>
 <text x="20.0" y="212.0" font-size="3.2" text-anchor="start" fill="#222" >C. トレイ(机上): スタンドオフ→基板(ITX4点)→CPU→ポンプ(AM5バックプレート)→DIMM→SSD。</text>
 <text x="20.0" y="219.0" font-size="3.2" text-anchor="start" fill="#222" >D. トレイ: ラジエーター(M3×4)→PSU(SFX M3×4)→GPU(クレードル)→ライザー→ファン→ctrl基板。</text>
 <text x="20.0" y="226.0" font-size="3.2" text-anchor="start" fill="#222" >E. 配線(W1〜W5)をコーム/タグで固定。通電前にBIOS確認(FlashBack)。</text>

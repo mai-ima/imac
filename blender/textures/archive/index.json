@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "blender/textures/wallpaper_blue.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "44f2d2a",
+   "sha256": "79aa6f9e72cf2412d326deefb0d36a5aa19201c09926178a11167e97369cb36a",
+   "file": "wallpaper_blue/wallpaper_blue.v001__2026-11-03_44f2d2a.png"
+  },
+  {
    "src": "blender/textures/wallpaper_silver.png",
    "version": 1,
    "gen": "current",

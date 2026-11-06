@@ -23,14 +23,16 @@ cx0, cy0, cz0 = lp('ctrl_board')
 for k, (dx, dy) in enumerate(((4, 4), (51, 4), (4, 146), (51, 146))): standoff(f'ctrl{k}', cx0 + dx, cy0 + dy, TZ, cz0, screw_z=cz0 + 1.6, hexr=2.9)
 for k, (dx, dy) in enumerate(((20, 12), (GW - 20, 12))): standoff(f'gpu{k}', gx + dx, gy + dy, TZ, gz)
 hw('スタンドオフ', 'PEM TSOA-M3 3.0mm(PSU/ラジエーター/ctrl/GPU)+M3×6', 4 + 4 + 4 + 2, 'SFX規格穴 U17 / ラジエーター穴はARCTIC公式図で確認要')
-# ---------- 吊りピン(肩ねじ Ø5×6 + 頭Ø9×3) + SUSブッシュ(Ø16×1.0, キーホール孔付き) + トレイ拘束ネジ ----------
+# ---------- 吊りピン(肩ねじ Ø6 + 頭Ø10×3) + SUSブッシュ(Ø16×1.0, キーホール孔付き) + トレイ拘束ネジ ----------
 for k, (kx, ky) in enumerate(KH):
     pyk = ky + 12             # 掛けた状態: ピンは細溝の上端
-    icyl(f'hang_pin{k}_shoulder', 2.5, 6, 'z', kx, pyk, 3.0, M['sus'], 24)
-    icyl(f'hang_pin{k}_head', 4.5, 3, 'z', kx, pyk, TZ + 1.0 + 1.5, M['sus'], 24)
+    icyl(f'hang_pin{k}_shoulder', 3.0, 6, 'z', kx, pyk, 3.0, M['sus'], 24)
+    icyl(f'hang_pin{k}_head', 5.0, 3, 'z', kx, pyk, TZ + 1.0 + 1.5, M['sus'], 24)
     icyl(f'hang_pin{k}_hexsocket', 1.6, .4, 'z', kx, pyk, TZ + 1.0 + 3.1, M['rubber'], 6)
-    b_ = icyl(f'hang_bushing{k}', 8, 1.0, 'z', kx, ky, TZ + .5, M['sus'], 32); mb = b_.modifiers.new('hole', 'BOOLEAN'); mb.object = kh_cut; mb.operation = 'DIFFERENCE'; mb.solver = 'EXACT'
-hw('吊り機構', 'SUS肩ねじ M3・肩径Ø5×6・頭Ø9×3(CP-04)', 4, '品番 U29'); hw('吊り機構', 'SUSブッシュ t1.0 Ø16(CP-05)', 4, '支圧補強')
+    # ブッシュは長丸(16×28): ピンが掛かる溝の上端(ky+12)までを支圧補強する(K-bush: 従来のØ16円板はピン位置に届かなかった)
+    for nm_, b_ in (('a', icyl(f'hang_bushing{k}a', 8, 1.0, 'z', kx, ky, TZ + .5, M['sus'], 48)), ('b', icyl(f'hang_bushing{k}b', 8, 1.0, 'z', kx, ky + 12, TZ + .5, M['sus'], 48)), ('c', ibox(f'hang_bushing{k}c', 16, 12, 1.0, kx - 8, ky, TZ, M['sus']))):
+        mb = b_.modifiers.new('hole', 'BOOLEAN'); mb.object = kh_cut; mb.operation = 'DIFFERENCE'; mb.solver = 'EXACT'
+hw('吊り機構', 'SUS肩ねじ M4・肩径Ø6×6・頭Ø10×3(CP-04)', 4, '品番 U29'); hw('吊り機構', 'SUSブッシュ t1.0 16×28長丸(CP-05)', 4, '支圧補強')
 for k, sx_ in enumerate((-60, 60)):
     icyl(f'tray_screw{k}', 3.2, 3.0, 'z', IW_ / 2 + sx_, 14, TZ + 1.5, M['alublack'], 24); icyl(f'tray_screw{k}_hex', 1.6, .3, 'z', IW_ / 2 + sx_, 14, TZ + 3.1, M['rubber'], 6)
 hw('固定', 'M3 T10 拘束ネジ(トレイ)', 2, '0.6N·m')
@@ -83,7 +85,7 @@ hb('hinge_backing_plate', 140, 22, 3, -70, 0, -SLAB + 2, M['sus']); hb('hinge_do
 for k, (bxx, byy) in enumerate(((-62, 5), (-62, 17), (62, 5), (62, 17))):
     cyl(f'hinge_bolt{k}', 3.0, 14, 'z', bxx, byy, -SLAB - 2, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 3.5, M['sus'], 6)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通
 hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼板)', 4, '6N·m+ネジロック'); hw('ヒンジ', 'SPCC裏当て板 t3 140×22 / A5052補強板 t4 144×22', 2, 'U29')
-cyl('hinge_axle', 6.0, 150, 'x', 0, HY, ZC, M['steel'], 24, body=False)
+cyl('hinge_axle', 6.0, 132, 'x', 0, HY, ZC, M['steel'], 48, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
 # ---- チルト・バランサ(v9): 圧縮ダイスプリング2本 + ヒンジ尾部レバー(軸から下へ e=25) / スタンド側アンカー(軸から下へ s=balance.json)。tools/balance_calc.py / model/balance.json ----
@@ -98,29 +100,31 @@ for k, sx_ in enumerate((-1, 1)):
     hb(f'spring_seat_bot{k}', 16, 3, 16, sx_ * 14 - 8, HY - BS + HW_ - 3, ZC - 8, M['sus'])
     cyl(f'spring_boss_top{k}', 3.8, 4, 'y', sx_ * 14, HY - BE - HW_ - 2, ZC, M['steel'], 16); cyl(f'spring_boss_bot{k}', 3.8, 4, 'y', sx_ * 14, HY - BS + HW_ + 2, ZC, M['steel'], 16)
     cyl(f'spring_die{k}', 8.0, BS - BE - 2 * HW_, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['spring'], 24)           # 呼称位置(0°)。実機は両端揺動ピンで ±19°振れる(モデルは0°固定の簡略)
-hb('stand_anchor_pin_bridge', 66, 6, 12, -33, HY - BS - 6, ZC - 6, M['sus'])
+hb('stand_anchor_bridge_plate', 60, 3, 18, -30, HY - BS - 6, ZC - 9, M['alublack'])                       # アンカーブリッジ(A5052 t3)+耳4枚+ピンØ8 (D04)
+for k_, xs_ in enumerate((-23, -9, 5, 19)): hb(f'stand_anchor_ear{k_}', 4, 9, 12, xs_, HY - BS - 3, ZC - 6, M['alublack'])
+cyl('stand_anchor_pin', S['neck']['lever_pin_d'] / 2, 48, 'x', 0, HY - BS, ZC, M['steel'], 32)
 hw('ヒンジ', f"ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用{BAL['stroke']:.1f}mm, 最長側{BAL['F0_longest_total']/2:.0f}N/最大{BAL['F0_longest_total']*(1+BAL['p'])/2:.0f}N 1本あたり, p={BAL['p']})+端部位置決めボス Ø7.6+両端揺動ピン(Ø8 17-4PH)", 2, 'U26/U51: 型番未選定。ばね軸は±19°揺動するため両端ピン支持のテレスコ式ガイドが必要')
-hw('ヒンジ', '尾部レバー SUS304 t5×幅14×長50 (e=25mm)+横ピン Ø6', 2, 'balance_calc.py')
+hw('ヒンジ', f"尾部レバー SUS304 t5×幅14×長{S['neck']['lever_len']:g} (e=25mm)+横ピン Ø{S['neck']['lever_pin_d']:g} SUS630", 2, 'balance_calc.py')
 NKh = S['neck']; LL = NKh['lever_len']
-for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー(長さ50)の側縁が、-15°側は側板間タイプレート(t6)のゴムパッド、+40°側は前カバー(t6)内面のゴムパッドに当たる
+for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー(長さ34, spec.neck.lever_len)の側縁が、-15°側は側板間タイプレート(t6)のゴムパッド、+40°側は前カバー(t6)内面のゴムパッドに当たる
     px0, px1 = NKh['pad_x']; xc = sx_ * (px0 + px1) / 2
     hb(f'hinge_stopper_dn{k}', px1 - px0, 6, NKh['pad_dn_z'][1] - NKh['pad_dn_z'][0], xc - (px1 - px0) / 2, HY - LL * math.cos(math.radians(-15)) - 3, ZC + NKh['pad_dn_z'][0], M['rubber'])
     hb(f'hinge_stopper_up{k}', px1 - px0, 6, NKh['pad_up_z'][1] - NKh['pad_up_z'][0], xc - (px1 - px0) / 2, NKh['tab_y_top'] - 6, ZC + NKh['pad_up_z'][0], M['rubber'])
-    cyl(f'spring_adjuster{k}', 4.0, 14, 'y', sx_ * 14, HY - BS - 10, ZC, M['sus'], 16)                        # ばね座の荷重調整ねじ M8(下座の下)。頭部実測重量に合わせて組立時に調整
+    cyl(f'spring_shim{k}', 8.0, 1.0, 'y', sx_ * 14, HY - BS + HW_ + 1.5, ZC, M['steel'], 32)                  # ピールシム(公称1.0mm: ばね下座とトラニオンの間。荷重調整=±27N/本)
 BTc = S['neck']['boot']; SYS_ = -DROP + S['swivel']['stack_h'] + S['neck']['base_t']
 for k_ in range(BTc['convolutions']):      # ゴム蛇腹ブーツ(簡略表示: 角形の山谷リング。実機は伸縮10〜48mm+せん断±10mm)
     yb = S['neck']['cover_top'] + k_ * (0 - S['neck']['cover_top']) / BTc['convolutions']; grow = 3.0 if k_ % 2 else 0.0
     for nm_, (bx_, bz0_, bw_, bd_) in (('f', (-62 - grow, ZC + S['neck']['front_cover_z'][1] - 4 + grow, 124 + 2 * grow, 2.0)), ('b', (-62 - grow, ZC + S['neck']['back_cover_z'][0] - 2 - grow, 124 + 2 * grow, 2.0))):
         hb(f'hinge_boot{k_}{nm_}', bw_, (0 - S['neck']['cover_top']) / BTc['convolutions'] * 0.9, bd_, bx_, yb, bz0_, M['rubber'], bev=.3)
-hw('ヒンジ', 'ゴム蛇腹ブーツ(シリコーン UL94 V-0, 山8, 伸縮10〜56mm)', 1, '指挟み防護(U53)。3Dは簡略表示')
+hw('ヒンジ', f"ゴム蛇腹ブーツ(シリコーン UL94 V-0, 山{S['neck']['boot']['convolutions']}, 伸縮{S['neck']['boot']['length_range_mm'][0]}〜{S['neck']['boot']['length_range_mm'][1]}mm)", 1, '指挟み防護(U53)。3Dは簡略表示')
 hb('stand_neck_tab', S['neck']['tab_x'][1] - S['neck']['tab_x'][0], S['neck']['tab_y_top'] - S['neck']['cover_top'], S['neck']['front_cover_z'][1] - S['neck']['front_cover_z'][0], S['neck']['tab_x'][0], S['neck']['cover_top'], ZC + S['neck']['front_cover_z'][0], M['stand'], bev=.5)      # 前カバーの立ち上がり(全幅, 側板間で両端支持: +40°ストッパ受け)
-hw('ヒンジ', 'ばね座 荷重調整ねじ M8(+ロックナット)', 2, '調整後公差 荷重±3%(spec.hinge)')
+hw('ヒンジ', 'ピールシム 0.25mm×8枚(ばね下座の荷重調整)', 2, '調整後公差 荷重±3%(spec.hinge) / D04')
 hw('ヒンジ', 'ネック基台 t8 + M5×4(ロータ板固定)/タイプレート t6(-15°ストッパ受け)/前カバー t6(+40°ストッパ受け)', 3, 'spec.neck')
 for k_, (bx_, bz_) in enumerate(((-40, -12), (40, -12), (-40, 12), (40, 12))):
     cyl(f'stand_neck_bolt{k_}', 2.5, 8.5, 'y', bx_, -DROP + S['swivel']['stack_h'] + 4.25 + 0.0, ZC + bz_, M['sus'], 12) if False else None
 hw('ヒンジ', '機械ストッパ ゴムパッド(チルト -15°/+40°。レバー側縁が当たる)', 4, 'strength_check.py')
-for k, xx in enumerate((-70, -22, 22, 70)): cyl(f'hinge_eclip{k}', 7.2, 1.2, 'x', xx, HY, ZC, M['sus'], 24, body=False)
-hw('ヒンジ', 'Eクリップ(軸Ø12用)', 4, ''); hw('ヒンジ', 'ヒンジ軸 Ø12 SUS×150', 1, '')
+for k, xx in enumerate((-63.6, 63.6)): cyl(f'hinge_eclip{k}', 7.6, 1.0, 'x', xx, HY, ZC, M['sus'], 24, body=False)
+hw('ヒンジ', 'E止め輪(軸Ø12用, 外側)', 2, 'D03'); hw('ヒンジ', 'ヒンジ軸 Ø12 SUS303×132', 1, 'D03')
 
 # ---- 首振りユニット(v9): 足上面(y=-DROP)に固定のステータ板 → クロスローラ軸受 → ロータ板 → ネック。左右±60°。tools/stability.py / motion_check.py ----
 SWV = S['swivel']; SY0 = -DROP; SX, SZ = 0.0, ZC           # 垂直首振り軸(スタンド中心線, ヒンジ軸と同じz)

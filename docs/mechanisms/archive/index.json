@@ -127,6 +127,15 @@
    "file": "03_neck_and_load_path/03_neck_and_load_path.v005__2026-11-06_88f99b7.md"
   },
   {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "cde57a6d6112587209865dd9835aeb645267c678f48628111debae720d76c3fd",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v006__2026-11-06_cf90ba1.md"
+  },
+  {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
    "version": 1,
    "gen": "current",
@@ -152,6 +161,15 @@
    "commit": "d97f07e",
    "sha256": "162ed12b2e6e6311b7b65abe1692b8a8d18317a7fdbbd1c1e5f1094237a60c6d",
    "file": "05_tray_hanging_service/05_tray_hanging_service.v001__2026-11-06_d97f07e.md"
+  },
+  {
+   "src": "docs/mechanisms/05_tray_hanging_service.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "13837bf35268abc54f284f939411d2a169b5d97ce98ac57cd83532889be8f287",
+   "file": "05_tray_hanging_service/05_tray_hanging_service.v002__2026-11-06_28dc82b.md"
   },
   {
    "src": "docs/mechanisms/06_pinch_guard.md",

@@ -20,7 +20,7 @@ row(f'ガスケット反力(圧縮{cmin*100:.1f}〜{cmax*100:.1f}%)', Fg(cmin), 
 cap = DS['latch_n'] * DS['latch_hold_N'] + DS['side_hooks'] * DS['side_hook_hold_N']; row('ラッチ+側辺フック容量 ≧ 最大反力×安全率', Fg(cmax) * DS['safety'], Fg(cmax) * DS['safety'], None, cap, 'N', f"(下辺ラッチ{DS['latch_n']}×{DS['latch_hold_N']}N+側辺フック{DS['side_hooks']}×{DS['side_hook_hold_N']}N={cap}N。硬すぎ=閉まらない/緩すぎ=保持不足)")
 Tl = lambda Fl: Fl / DS['latch_n'] * DS['latch_turn_lead_mm'] / 1000 / (math.pi / 2) / DS['latch_eff']      # 回すのは下辺ラッチ6点のみ(側辺フックは掛けるだけ)
 row('ラッチ回転トルク(T10, 最大反力時)', Tl(Fg(cmin)), Tl(Fg(cmax)), 0.05, 0.5, 'N·m', '手で回せる窓 0.05〜0.5N·m')
-# 2) トレイ吊りピン(肩Ø5 h8)とキーホール溝W5.1(+0.05/0): 隙間
+# 2) トレイ吊りピン(肩Ø6 h8)とキーホール溝W6.5(+0.05/0): 隙間
 c_lo = F['keyhole_slot_w'] + F['keyhole_slot_tol'][0] - (F['pin_shoulder_d'] + F['pin_tol'][1]); c_hi = F['keyhole_slot_w'] + F['keyhole_slot_tol'][1] - (F['pin_shoulder_d'] + F['pin_tol'][0])
 row('キーホール溝-吊りピン肩の隙間(4点の位置公差±%.1f積み上げ後)' % F['keyhole_pos_stack'], c_lo - F['keyhole_pos_stack'], c_hi, 0.05, F['keyhole_rattle_max'], 'mm', '最小=溝-ピンの最小隙間-位置公差積み上げ(トレイ側±0.1+背板側±0.1)。トレイの位置決めは別の位置決めピンが担うため、吊りの隙間は0.6まで許容')
 # 3) 位置決めピンØ4(g6) と ピン穴Ø4 H7

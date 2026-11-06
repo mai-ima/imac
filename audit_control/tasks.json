@@ -59,18 +59,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "done",
+     "足は spec.stand 360×310(CP-10も同値)。旧220×215/260×245 は現行ファイルで検出0(stale_check BAN)。stability は spec から計算"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "足は spec.stand 360×310(CP-10も同値)。旧220×215/260×245 は現行ファイルで検出0(stale_check BAN)。stability は spec から計算"
+   ],
+   "verification": "grep+stale_check+stability OK",
+   "decision": "SUPERSEDED(解決済)。質量/重心は推定=UNVERIFIED(K22)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -309,19 +316,26 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "blocked",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "blocked",
+     "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
+   "evidence": [
+    "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要"
+   ],
    "verification": "",
-   "decision": "",
-   "blocker_reason": "",
+   "decision": "CONFIRMED(未選定)。UNVERIFIED維持",
+   "blocker_reason": "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要",
    "defer_reason": "",
    "next_action": ""
   },
@@ -455,18 +469,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "done",
+     "gen_specs/gen_mechanisms/gen_project_summary 等は『自動生成』見出しを持つ。consistency_check が手書き数値と正規値の不一致を検出し再生成で FAIL0 を維持"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "gen_specs/gen_mechanisms/gen_project_summary 等は『自動生成』見出しを持つ。consistency_check が手書き数値と正規値の不一致を検出し再生成で FAIL0 を維持"
+   ],
+   "verification": "consistency_check FAIL0",
+   "decision": "PARTIAL(全生成物へ GENERATED/rev 付与は未了→XCHK)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -524,18 +545,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "done",
+     "CP-07: ガスケット溝は縁フランジt4.0(残肉2.5)、磁石は局所ボスt4.2(残肉1.1)。薄板t2直彫りは不可と dfm_check が参考NG表示"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "CP-07: ガスケット溝は縁フランジt4.0(残肉2.5)、磁石は局所ボスt4.2(残肉1.1)。薄板t2直彫りは不可と dfm_check が参考NG表示"
+   ],
+   "verification": "python3 tools/dfm_check.py",
+   "decision": "FALSE_POSITIVE(局所ボス設計あり)。ただし他CPのdfm未定義=UNVERIFIED(K24)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -650,18 +678,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "done",
+     "system-spec.md の『U01〜U30』手書きを台帳参照へ変更(tracker U01〜U61)"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "system-spec.md の『U01〜U30』手書きを台帳参照へ変更(tracker U01〜U61)"
+   ],
+   "verification": "grep",
+   "decision": "CONFIRMED(文書遅れ)→修正。FMEA件数は gen_fmea 出力が正",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -719,19 +754,26 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "blocked",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:23",
+     "blocked",
+     "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
+   "evidence": [
+    "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要"
+   ],
    "verification": "",
-   "decision": "",
-   "blocker_reason": "",
+   "decision": "CONFIRMED(未選定)。UNVERIFIED維持",
+   "blocker_reason": "型番/実機資料が未確定(ctrl基板/カメラ・マイク・スピーカー)。机上点灯・採用判断はユーザー/メーカー確認が必要",
    "defer_reason": "",
    "next_action": ""
   },
@@ -1776,18 +1818,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "discovered",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:17",
      "discovered",
      ""
+    ],
+    [
+     "2026-11-06 23:29",
+     "done",
+     "drawings/v10/D07_stopper_keyhole_detail.svg(詳細B ストッパ: 0°/-15°/+40°姿勢+ゴムパッド+前カバー/タイプレート、詳細C キーホール吊り: ピン/ブッシュ長丸/PEM)"
     ]
    ],
    "acceptance_criteria": "",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "drawings/v10/D07_stopper_keyhole_detail.svg(詳細B ストッパ: 0°/-15°/+40°姿勢+ゴムパッド+前カバー/タイプレート、詳細C キーホール吊り: ピン/ブッシュ長丸/PEM)"
+   ],
+   "verification": "gen_mech_sections.py実行+描画確認",
+   "decision": "ADD。上辺掛け爪/側辺フックの断面は D08 へ",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -1812,6 +1861,185 @@
    "history": [
     [
      "2026-11-06 23:22",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "KEY-UNI",
+   "title": "吊りピン/キーホール寸法の不統一(M3 Ø5 W5.1/Ø9.2 vs M4 Ø6 W6.5/Ø10.2)を spec.fits へ統一(docs/図面/BOM/Blender/FMEA/生成器)",
+   "description": "吊りピン/キーホール寸法の不統一(M3 Ø5 W5.1/Ø9.2 vs M4 Ø6 W6.5/Ø10.2)を spec.fits へ統一(docs/図面/BOM/Blender/FMEA/生成器)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json",
+    "blender/hardware_v8.py",
+    "tools/gen_mechanisms.py"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:25",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:25",
+     "done",
+     "約25ファイルの旧値を更新、Blenderキーホール穴Ø10.2+溝W6.5、consistency_check に溝幅/肩径/レバー長ファクト追加"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "約25ファイルの旧値を更新、Blenderキーホール穴Ø10.2+溝W6.5、consistency_check に溝幅/肩径/レバー長ファクト追加"
+   ],
+   "verification": "consistency_check FAIL0, gen_* 再生成OK, fit_tolerance OK",
+   "decision": "FIXED。部品型番U29/PEM引抜U29はUNVERIFIED",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "NECK-LEN",
+   "title": "尾部レバー長さ50(旧)/34(現行)混在を修正(03_neck文書の角z計算を spec から生成)",
+   "description": "尾部レバー長さ50(旧)/34(現行)混在を修正(03_neck文書の角z計算を spec から生成)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mechanisms.py"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:25",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:25",
+     "done",
+     "gen_mechanisms の ストッパ節を lever_len/pad値から計算、spec.json doc・hardware_v8 コメント修正"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "gen_mechanisms の ストッパ節を lever_len/pad値から計算、spec.json doc・hardware_v8 コメント修正"
+   ],
+   "verification": "gen_mechanisms 再生成+consistency_check(尾部レバー長ファクト)",
+   "decision": "FIXED",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "KEY-BUSH",
+   "title": "キーホール補強ブッシュ(CP-05)がピン掛かり位置(溝上端+12)に届かない欠陥: 16×28長丸へ変更(CP-05/Blender/BOM)",
+   "description": "キーホール補強ブッシュ(CP-05)がピン掛かり位置(溝上端+12)に届かない欠陥: 16×28長丸へ変更(CP-05/Blender/BOM)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json",
+    "blender/hardware_v8.py"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:26",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:26",
+     "done",
+     "CP-05=16×28長丸、Blender長丸ブッシュ3体、BOM更新"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "CP-05=16×28長丸、Blender長丸ブッシュ3体、BOM更新"
+   ],
+   "verification": "gen_specs/gen_mechanisms/gen_hardware_list 再生成OK, strength_check OK",
+   "decision": "FIXED(D07の詳細図で図示予定)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "D08",
+   "title": "上辺掛け爪(ドーム一体×6)・側辺フック×4 の局所断面図",
+   "description": "上辺掛け爪(ドーム一体×6)・側辺フック×4 の局所断面図",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mech_sections.py"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:29",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "MECH-IDX",
+   "title": "docs/mechanisms/README と docs/README の索引へ D03〜D07 を追加し、gen_handoff の PDF へ反映",
+   "description": "docs/mechanisms/README と docs/README の索引へ D03〜D07 を追加し、gen_handoff の PDF へ反映",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/mechanisms/README.md"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:29",
      "discovered",
      ""
     ]

@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,27 +98,30 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(19,12) scale(0.93)">
 <rect x="30" y="40" width="354.0" height="222.78" rx="20" fill="#f4f6f8" stroke="#000" stroke-width=".5"/>
-<rect x="66.0" y="149.38" width="102.0" height="102.0" fill="#9ac8a6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="117.0" y="200.38" font-size="2.6" text-anchor="middle" fill="#222">board (ASUS ROG STRIX X870-I )</text>
-<rect x="81.53999999999999" y="165.382" width="54.6" height="65.082" fill="#e0b080" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="108.84" y="197.92299999999997" font-size="2.6" text-anchor="middle" fill="#222">cooler (ARCTIC Liquid Freezer )</text>
-<rect x="279.0" y="68.14000000000001" width="72.0" height="166.2" fill="#b0c4de" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="315.0" y="151.24" font-size="2.6" text-anchor="middle" fill="#222">radiator (ARCTIC Liquid Freezer )</text>
-<rect x="182.4" y="65.26000000000002" width="90.0" height="174.0" fill="#9aa0ad" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="227.4" y="152.26" font-size="2.6" text-anchor="middle" fill="#222">gpu (RTX 5070 Ti 16GB 小型2スロ)</text>
-<rect x="168.0" y="175.78" width="14.399999999999999" height="53.4" fill="#444" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="175.2" y="202.48" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
-<rect x="72.0" y="65.98" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="109.5" y="95.98" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF1000 (SFX 10)</text>
-<rect x="148.8" y="55.78000000000001" width="33.0" height="90.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="165.29999999999998" y="100.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
-<rect x="144.6" y="166.99" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="152.1" y="191.035" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
-<rect x="68.4" y="161.98000000000002" width="80.00999999999999" height="4.8" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
-<text x="108.405" y="164.38" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
+<rect x="66.0" y="142.78" width="102.0" height="102.0" fill="#9ac8a6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="117.0" y="193.78" font-size="2.6" text-anchor="middle" fill="#222">board (ASUS ROG STRIX X870-I )</text>
+<rect x="81.53999999999999" y="164.02000000000004" width="65.082" height="54.6" fill="#e0b080" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="114.08099999999999" y="191.32000000000002" font-size="2.6" text-anchor="middle" fill="#222">cooler (ARCTIC Liquid Freezer )</text>
+<rect x="283.79999999999995" y="68.14000000000001" width="72.0" height="166.2" fill="#b0c4de" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="319.8" y="151.24" font-size="2.6" text-anchor="middle" fill="#222">radiator (ARCTIC Liquid Freezer )</text>
+<rect x="187.2" y="60.46000000000001" width="90.0" height="174.0" fill="#9aa0ad" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="232.2" y="147.46" font-size="2.6" text-anchor="middle" fill="#222">gpu (RTX 5070 Ti 16GB 小型2スロ)</text>
+<rect x="168.0" y="169.18" width="14.399999999999999" height="53.4" fill="#444" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="175.2" y="195.88" font-size="2.6" text-anchor="middle" fill="#222">riser (LINKUP AVA5 PCIe 5.0 x)</text>
+<rect x="72.0" y="71.98" width="75.0" height="60.0" fill="#c8c8c8" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="109.5" y="101.98" font-size="2.6" text-anchor="middle" fill="#222">psu (Corsair SF1000 (SFX 10)</text>
+<rect x="148.8" y="73.78" width="33.0" height="66.0" fill="#a9c0d6" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="165.29999999999998" y="106.78" font-size="2.6" text-anchor="middle" fill="#222">ctrl_board (4K eDPコントローラ基板(型番未確定))</text>
+<rect x="144.6" y="161.89" width="15.0" height="48.09" fill="#cfa" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="152.1" y="185.935" font-size="2.6" text-anchor="middle" fill="#222">ssd (Samsung 990 PRO with H)</text>
+<rect x="71.88" y="151.84" width="80.00999999999999" height="9.839999999999998" fill="#9cd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
+<text x="111.88499999999999" y="156.76" font-size="2.6" text-anchor="middle" fill="#222">ram (DDR5-6000 CL30 EXPO 32)</text>
 <rect x="43.2" y="242.38" width="16.8" height="15.6" fill="#ddd" fill-opacity=".8" stroke="#333" stroke-width=".3"/>
 <text x="51.599999999999994" y="250.18" font-size="2.6" text-anchor="middle" fill="#222">ac_inlet (IEC C14 AC インレット(内部延長C)</text>
 <circle cx="54.0" cy="220.78" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>

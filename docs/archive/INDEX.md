@@ -5,6 +5,7 @@
 | PROJECT-SUMMARY.md | v001 | current | 2026-11-06 | ce41db1 | PROJECT-SUMMARY/PROJECT-SUMMARY.v001__2026-11-06_ce41db1.md |
 | PROJECT-SUMMARY.md | v002 | current | 2026-11-06 | 877835f | PROJECT-SUMMARY/PROJECT-SUMMARY.v002__2026-11-06_877835f.md |
 | PROJECT-SUMMARY.md | v003 | current | 2026-11-06 | cf90ba1 | PROJECT-SUMMARY/PROJECT-SUMMARY.v003__2026-11-06_cf90ba1.md |
+| PROJECT-SUMMARY.md | v004 | current | 2026-11-06 | 4050ed9 | PROJECT-SUMMARY/PROJECT-SUMMARY.v004__2026-11-06_4050ed9.md |
 | README.md | v001 | current | 2026-11-06 | d97f07e | README/README.v001__2026-11-06_d97f07e.md |
 | README.md | v002 | current | 2026-11-06 | 02c4c72 | README/README.v002__2026-11-06_02c4c72.md |
 | README.md | v003 | current | 2026-11-06 | ce41db1 | README/README.v003__2026-11-06_ce41db1.md |
@@ -32,6 +33,7 @@
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |
 | build-guide.md | v002 | current | 2026-11-05 | 2f8c0ac | build-guide/build-guide.v002__2026-11-05_2f8c0ac.md |
 | build-guide.md | v003 | current | 2026-11-05 | 15a1bce | build-guide/build-guide.v003__2026-11-05_15a1bce.md |
+| build-guide.md | v004 | current | 2026-11-05 | 4925658 | build-guide/build-guide.v004__2026-11-05_4925658.md |
 | design-package-index.md | v001 | current | 2026-11-06 | 27ca8ce | design-package-index/design-package-index.v001__2026-11-06_27ca8ce.md |
 | design-v6.md | v001 | current | 2026-11-03 | 1bfcbfb | design-v6/design-v6.v001__2026-11-03_1bfcbfb.md |
 | design-v6.md | v002 | current | 2026-11-06 | fcba5fe | design-v6/design-v6.v002__2026-11-06_fcba5fe.md |
@@ -44,6 +46,7 @@
 | design.md | v007 | current | 2026-11-06 | d97f07e | design/design.v007__2026-11-06_d97f07e.md |
 | failure-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | failure-analysis/failure-analysis.v001__2026-11-05_017b7d9.md |
 | failure-analysis.md | v002 | current | 2026-11-05 | 15a1bce | failure-analysis/failure-analysis.v002__2026-11-05_15a1bce.md |
+| failure-analysis.md | v003 | current | 2026-11-06 | 9ff6031 | failure-analysis/failure-analysis.v003__2026-11-06_9ff6031.md |
 | fitcheck-report.txt | v001 | current | 2026-11-03 | ee3a42e | fitcheck-report/fitcheck-report.v001__2026-11-03_ee3a42e.txt |
 | fitcheck-report.txt | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck-report/fitcheck-report.v002__2026-11-05_2f8c0ac.txt |
 | fitcheck-report.txt | v003 | current | 2026-11-05 | fcba5fe | fitcheck-report/fitcheck-report.v003__2026-11-05_fcba5fe.txt |
@@ -79,6 +82,7 @@
 | service-mechanisms.md | v002 | current | 2026-11-05 | 434b29d | service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md |
 | service-mechanisms.md | v003 | current | 2026-11-05 | fcba5fe | service-mechanisms/service-mechanisms.v003__2026-11-05_fcba5fe.md |
 | service-mechanisms.md | v004 | current | 2026-11-06 | 9ff6031 | service-mechanisms/service-mechanisms.v004__2026-11-06_9ff6031.md |
+| service-mechanisms.md | v005 | current | 2026-11-06 | d97f07e | service-mechanisms/service-mechanisms.v005__2026-11-06_d97f07e.md |
 | source-status.md | v001 | current | 2026-11-03 | fdfd200 | source-status/source-status.v001__2026-11-03_fdfd200.md |
 | thermal-analysis.md | v001 | current | 2026-11-05 | 3c794e1 | thermal-analysis/thermal-analysis.v001__2026-11-05_3c794e1.md |
 | thermal-analysis.md | v002 | current | 2026-11-05 | 15a1bce | thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md |
@@ -108,3 +112,4 @@
 | wiring.md | v005 | current | 2026-11-06 | 9ff6031 | wiring/wiring.v005__2026-11-06_9ff6031.md |
 | wiring.md | v006 | current | 2026-11-06 | 514e2e0 | wiring/wiring.v006__2026-11-06_514e2e0.md |
 | wiring.md | v007 | current | 2026-11-06 | 853f219 | wiring/wiring.v007__2026-11-06_853f219.md |
+| wiring.md | v008 | current | 2026-11-06 | 88f99b7 | wiring/wiring.v008__2026-11-06_88f99b7.md |

@@ -271,6 +271,15 @@
    "file": "custom_parts/custom_parts.v016__2026-11-06_88f99b7.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 17,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "308d6d5505207cc2a92618a8e59abf80407ad77c24a5fd8fb0108fde010b75f5",
+   "file": "custom_parts/custom_parts.v017__2026-11-06_cf90ba1.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",
@@ -350,6 +359,15 @@
    "commit": "cf90ba1",
    "sha256": "d841c2516f77a501ae8a4ca6aea5198e0a102423d2c5a917704d80849f3c8f3d",
    "file": "hardware_list/hardware_list.v009__2026-11-06_cf90ba1.json"
+  },
+  {
+   "src": "model/hardware_list.json",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "dbd61f7e669b23dc021889dac9b80f8c7e7e51481879fcb7ef7df7cbfc268a53",
+   "file": "hardware_list/hardware_list.v010__2026-11-06_4050ed9.json"
   },
   {
    "src": "model/layout.json",
@@ -755,6 +773,15 @@
    "commit": "cf90ba1",
    "sha256": "e2a28e2c21084bcca229efe8212af9a920907099225c1a6f56e81c9f54e73622",
    "file": "spec/spec.v023__2026-11-06_cf90ba1.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 24,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "0368b7acb7c6262464a4cba5c36e8c3239c5e07a9b73492fb9246a03ba557f14",
+   "file": "spec/spec.v024__2026-11-06_4050ed9.json"
   },
   {
    "src": "model/x870i_layout.json",

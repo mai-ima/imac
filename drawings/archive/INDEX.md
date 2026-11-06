@@ -43,16 +43,19 @@
 | 06_service_tray_plan.svg | v004 | current | 2026-11-05 | 71b7afb | 06_service_tray_plan/06_service_tray_plan.v004__2026-11-05_71b7afb.svg |
 | 06_service_tray_plan.svg | v005 | current | 2026-11-06 | 80d7407 | 06_service_tray_plan/06_service_tray_plan.v005__2026-11-06_80d7407.svg |
 | 06_service_tray_plan.svg | v006 | current | 2026-11-06 | 9ff6031 | 06_service_tray_plan/06_service_tray_plan.v006__2026-11-06_9ff6031.svg |
+| 06_service_tray_plan.svg | v007 | current | 2026-11-06 | 514e2e0 | 06_service_tray_plan/06_service_tray_plan.v007__2026-11-06_514e2e0.svg |
 | 07_dome_latch_section.svg | v001 | current | 2026-11-03 | 307c9ea | 07_dome_latch_section/07_dome_latch_section.v001__2026-11-03_307c9ea.svg |
 | 07_dome_latch_section.svg | v002 | current | 2026-11-05 | fcba5fe | 07_dome_latch_section/07_dome_latch_section.v002__2026-11-05_fcba5fe.svg |
 | 07_dome_latch_section.svg | v003 | current | 2026-11-05 | 4925658 | 07_dome_latch_section/07_dome_latch_section.v003__2026-11-05_4925658.svg |
 | 07_dome_latch_section.svg | v004 | current | 2026-11-05 | 71b7afb | 07_dome_latch_section/07_dome_latch_section.v004__2026-11-05_71b7afb.svg |
 | 07_dome_latch_section.svg | v005 | current | 2026-11-06 | 80d7407 | 07_dome_latch_section/07_dome_latch_section.v005__2026-11-06_80d7407.svg |
 | 07_dome_latch_section.svg | v006 | current | 2026-11-06 | 9ff6031 | 07_dome_latch_section/07_dome_latch_section.v006__2026-11-06_9ff6031.svg |
+| 07_dome_latch_section.svg | v007 | current | 2026-11-06 | 514e2e0 | 07_dome_latch_section/07_dome_latch_section.v007__2026-11-06_514e2e0.svg |
 | 08_service_sequence.svg | v001 | current | 2026-11-03 | 307c9ea | 08_service_sequence/08_service_sequence.v001__2026-11-03_307c9ea.svg |
 | 08_service_sequence.svg | v002 | current | 2026-11-05 | fcba5fe | 08_service_sequence/08_service_sequence.v002__2026-11-05_fcba5fe.svg |
 | 08_service_sequence.svg | v003 | current | 2026-11-06 | 80d7407 | 08_service_sequence/08_service_sequence.v003__2026-11-06_80d7407.svg |
 | 08_service_sequence.svg | v004 | current | 2026-11-06 | 9ff6031 | 08_service_sequence/08_service_sequence.v004__2026-11-06_9ff6031.svg |
+| 08_service_sequence.svg | v005 | current | 2026-11-06 | 514e2e0 | 08_service_sequence/08_service_sequence.v005__2026-11-06_514e2e0.svg |
 | 09_board_layout.svg | v001 | current | 2026-11-05 | 27ca8ce | 09_board_layout/09_board_layout.v001__2026-11-05_27ca8ce.svg |
 | 09_board_layout.svg | v002 | current | 2026-11-06 | 80d7407 | 09_board_layout/09_board_layout.v002__2026-11-06_80d7407.svg |
 | 09_board_layout.svg | v003 | current | 2026-11-06 | 9ff6031 | 09_board_layout/09_board_layout.v003__2026-11-06_9ff6031.svg |
@@ -90,6 +93,7 @@
 | 12_wiring_diagram.svg | v006 | current | 2026-11-06 | 514e2e0 | 12_wiring_diagram/12_wiring_diagram.v006__2026-11-06_514e2e0.svg |
 | 12_wiring_diagram.svg | v007 | current | 2026-11-06 | 302823c | 12_wiring_diagram/12_wiring_diagram.v007__2026-11-06_302823c.svg |
 | 12_wiring_diagram.svg | v008 | current | 2026-11-06 | 853f219 | 12_wiring_diagram/12_wiring_diagram.v008__2026-11-06_853f219.svg |
+| 12_wiring_diagram.svg | v009 | current | 2026-11-06 | 88f99b7 | 12_wiring_diagram/12_wiring_diagram.v009__2026-11-06_88f99b7.svg |
 | 13_airflow_thermal.svg | v001 | current | 2026-11-05 | 27ca8ce | 13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg |
 | 13_airflow_thermal.svg | v002 | current | 2026-11-05 | 2f8c0ac | 13_airflow_thermal/13_airflow_thermal.v002__2026-11-05_2f8c0ac.svg |
 | 13_airflow_thermal.svg | v003 | current | 2026-11-05 | fcba5fe | 13_airflow_thermal/13_airflow_thermal.v003__2026-11-05_fcba5fe.svg |
@@ -102,6 +106,7 @@
 | 14_exploded_assembly.svg | v002 | current | 2026-11-05 | 4925658 | 14_exploded_assembly/14_exploded_assembly.v002__2026-11-05_4925658.svg |
 | 14_exploded_assembly.svg | v003 | current | 2026-11-06 | 80d7407 | 14_exploded_assembly/14_exploded_assembly.v003__2026-11-06_80d7407.svg |
 | 14_exploded_assembly.svg | v004 | current | 2026-11-06 | 514e2e0 | 14_exploded_assembly/14_exploded_assembly.v004__2026-11-06_514e2e0.svg |
+| 14_exploded_assembly.svg | v005 | current | 2026-11-06 | 302823c | 14_exploded_assembly/14_exploded_assembly.v005__2026-11-06_302823c.svg |
 | 15_bom_sheet.svg | v001 | current | 2026-11-05 | 27ca8ce | 15_bom_sheet/15_bom_sheet.v001__2026-11-05_27ca8ce.svg |
 | 15_bom_sheet.svg | v002 | current | 2026-11-05 | 3c794e1 | 15_bom_sheet/15_bom_sheet.v002__2026-11-05_3c794e1.svg |
 | 15_bom_sheet.svg | v003 | current | 2026-11-05 | 4925658 | 15_bom_sheet/15_bom_sheet.v003__2026-11-05_4925658.svg |
@@ -119,6 +124,7 @@
 | 16_cable_clips.svg | v005 | current | 2026-11-06 | 9ff6031 | 16_cable_clips/16_cable_clips.v005__2026-11-06_9ff6031.svg |
 | 16_cable_clips.svg | v006 | current | 2026-11-06 | 514e2e0 | 16_cable_clips/16_cable_clips.v006__2026-11-06_514e2e0.svg |
 | 16_cable_clips.svg | v007 | current | 2026-11-06 | 853f219 | 16_cable_clips/16_cable_clips.v007__2026-11-06_853f219.svg |
+| 16_cable_clips.svg | v008 | current | 2026-11-06 | 88f99b7 | 16_cable_clips/16_cable_clips.v008__2026-11-06_88f99b7.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |
 | outlines.dxf | v003 | current | 2026-11-05 | fcba5fe | outlines/outlines.v003__2026-11-05_fcba5fe.dxf |
@@ -133,3 +139,4 @@
 | outlines.dxf | v012 | current | 2026-11-06 | d97f07e | outlines/outlines.v012__2026-11-06_d97f07e.dxf |
 | outlines.dxf | v013 | current | 2026-11-06 | 853f219 | outlines/outlines.v013__2026-11-06_853f219.dxf |
 | outlines.dxf | v014 | current | 2026-11-06 | 88f99b7 | outlines/outlines.v014__2026-11-06_88f99b7.dxf |
+| outlines.dxf | v015 | current | 2026-11-06 | cf90ba1 | outlines/outlines.v015__2026-11-06_cf90ba1.dxf |

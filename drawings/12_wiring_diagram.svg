@@ -187,19 +187,26 @@
 <text x="190.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >456</text>
 <text x="212.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >600</text>
 <text x="240.0" y="259.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
-<text x="20.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >H1</text>
-<text x="32.0" y="265.0" font-size="2.9" text-anchor="start" fill="#222" >AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)</text>
-<text x="90.0" y="265.0" font-size="2.7" text-anchor="start" fill="#222" >ポンプ出口A(上面スタブ) → ラジエーター口A</text>
-<text x="170.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >-</text>
-<text x="190.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >378</text>
+<text x="20.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >W7</text>
+<text x="32.0" y="265.0" font-size="2.9" text-anchor="start" fill="#222" >内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加)</text>
+<text x="90.0" y="265.0" font-size="2.7" text-anchor="start" fill="#222" >GPU DP出力(ブラケット側) → ctrl_board 映像入力(DP/HDMI, 型番未確定 U51)</text>
+<text x="170.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >30</text>
+<text x="190.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >261</text>
 <text x="212.0" y="265.0" font-size="3" text-anchor="start" fill="#222" >450</text>
 <text x="240.0" y="265.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
-<text x="20.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >H2</text>
-<text x="32.0" y="271.0" font-size="2.9" text-anchor="start" fill="#222" >AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)</text>
-<text x="90.0" y="271.0" font-size="2.7" text-anchor="start" fill="#222" >ポンプ出口B(上面スタブ) → ラジエーター口B</text>
+<text x="20.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >H1</text>
+<text x="32.0" y="271.0" font-size="2.9" text-anchor="start" fill="#222" >AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)</text>
+<text x="90.0" y="271.0" font-size="2.7" text-anchor="start" fill="#222" >ポンプ出口A(上面スタブ) → ラジエーター口A</text>
 <text x="170.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >-</text>
-<text x="190.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >437</text>
+<text x="190.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >378</text>
 <text x="212.0" y="271.0" font-size="3" text-anchor="start" fill="#222" >450</text>
 <text x="240.0" y="271.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="277.0" font-size="3" text-anchor="start" fill="#222" >H2</text>
+<text x="32.0" y="277.0" font-size="2.9" text-anchor="start" fill="#222" >AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)</text>
+<text x="90.0" y="277.0" font-size="2.7" text-anchor="start" fill="#222" >ポンプ出口B(上面スタブ) → ラジエーター口B</text>
+<text x="170.0" y="277.0" font-size="3" text-anchor="start" fill="#222" >-</text>
+<text x="190.0" y="277.0" font-size="3" text-anchor="start" fill="#222" >437</text>
+<text x="212.0" y="277.0" font-size="3" text-anchor="start" fill="#222" >450</text>
+<text x="240.0" y="277.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
 <text x="20.0" y="266.0" font-size="3" text-anchor="start" fill="#222" >電力: 12V系 CPU PPT230W+GPU TGP300W+その他≈81W ≈ 611W / SF1000(1000W) = 61%(余裕39%)。補助電源: EPS 8ピン×1、GPU 12V-2x6×1(予備: EPS×1、PCIe 6+2×2)。</text>
 <text x="20.0" y="272.0" font-size="3" text-anchor="start" fill="#222" >接地: AC保護アース→PSU筐体→トレイ(M3スタンドオフ接触)→ドーム(ガスケット)→背板の順で導通。ファンはPWM 4pin。</text></g></svg>

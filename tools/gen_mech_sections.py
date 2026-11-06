@@ -333,7 +333,64 @@ def sheet_details():
     wrap_notes(body, 226, 100, notes, width=80)
     return body, A
 
+
+# ---------- D07 チルト端ストッパ(ゴムパッド) と キーホール吊り(トレイ) ----------
+def cylZ(r, u0, u1, y, ri=0):
+    """奥行(u=-z)方向の円柱: u0〜u1, 中心(x=0, y)。"""
+    c = cq.Workplane('XY').workplane(offset=-u1).center(0, y).circle(r).extrude(u1 - u0)
+    return c.cut(cq.Workplane('XY').workplane(offset=-u1 - 1).center(0, y).circle(ri).extrude(u1 - u0 + 2)) if ri else c
+def keyhole_parts():
+    F = S['fits']; P = {}; SW = F['keyhole_slot_w']; yp = 12.0                       # ピンの掛かり位置(丸穴中心から+12)
+    P['1'] = ('背板(スラブ背面) A5052 t2', rectu(23, 25, -12, 30, -20, 20), 'h_al')
+    P['2'] = ('PEMナット M4(背板にクリンチ)', cylZ(3.5, 21.5, 25, yp, 2.0), 'h_ss')
+    P['3'] = ('断熱シート 3.0', rectu(25, 28, -12, 30, -20, 20), 'h_ru')
+    P['4'] = ('サービストレイ A5052 t2.0(キーホール穴Ø10.2+溝W%g)' % SW, rectu(28, 30, -12, -5.1, -20, 20).union(rectu(28, 30, yp + SW / 2, 30, -20, 20)), 'h_al2')
+    P['5'] = ('補強ブッシュ SUS304 t1.0 (16×28長丸)', rectu(30, 31, -8, -5.1, -20, 20).union(rectu(30, 31, yp + SW / 2, 20, -20, 20)), 'h_st2')
+    sh = cylZ(F['pin_shoulder_d'] / 2, 25, 31, yp).union(cylZ(5, 31, 34, yp)).union(cylZ(2.0, 21.5, 25, yp)).cut(cylZ(1.6, 32.5, 34.1, yp))
+    P['6'] = ('吊りピン SUS304 肩径Ø%g h8×6.0, 頭Ø10×3, M4×3.5' % F['pin_shoulder_d'], sh, 'h_ss')
+    return P
+def sheet_stopper_keyhole():
+    N_ = S['neck']; H_ = S['hinge']; body = []; LL, LW, LT = N_['lever_len'], N_['lever_w'], N_['lever_t']
+    # --- 左: ストッパ(断面 x=0, 軸を原点, 横=u'=-z(前が左), 縦=y') ---
+    s = 2.3; ox = 112; oy = 72
+    XL = 26.5; lev = boxs(XL - LT / 2, XL + LT / 2, -LL, 0, -LW / 2, LW / 2).union(cq.Workplane('YZ').workplane(offset=XL - LT / 2).circle(12).extrude(LT)).cut(cylX(14, XL - LT, XL + LT))
+    def zy(a):  # 側縁の角(2点)のz,y: チルトa[deg](+で尾部が前=+z)
+        r = math.radians(a); return [(zc * math.cos(r) - yc * math.sin(r), zc * math.sin(r) + yc * math.cos(r)) for zc, yc in ((-LW / 2, -LL), (LW / 2, -LL), (LW / 2, 0), (-LW / 2, 0))]
+    S2 = {}
+    S2['1'] = ('尾部レバー SUS304 t%g×幅%g×長%g(0°の姿勢)' % (LT, LW, LL), lev, 'h_al')
+    S2['2'] = ('前カバー+タブ A6063 t6(+40°ストッパ受け)', rectu(-N_['front_cover_z'][1], -N_['front_cover_z'][0], -64, N_['tab_y_top'] - S['hinge']['axis_y'], -62, 62), 'h_al2')
+    S2['3'] = ('ゴムパッド(+40°側) t%g' % N_['pad_thick'], rectu(-N_['pad_up_z'][1], -N_['pad_up_z'][0], N_['tab_y_top'] - S['hinge']['axis_y'] - 6, N_['tab_y_top'] - S['hinge']['axis_y'], N_['pad_x'][0], N_['pad_x'][1]), 'h_ru')
+    S2['4'] = ('タイプレート A6063 t6(-15°ストッパ受け)', rectu(-N_['tie_z'][1], -N_['tie_z'][0], N_['tie_y'][0] - S['hinge']['axis_y'], N_['tie_y'][1] - S['hinge']['axis_y'], -62, 62), 'h_al')
+    ydn = S['hinge']['axis_y'] - 0 - LL * math.cos(math.radians(-15)) - 3 - S['hinge']['axis_y']
+    S2['5'] = ('ゴムパッド(-15°側) t%g' % N_['pad_thick'], rectu(-N_['pad_dn_z'][1], -N_['pad_dn_z'][0], ydn, ydn + 6, N_['pad_x'][0], N_['pad_x'][1]), 'h_ru')
+    o, Pa = sec_view(S2, (26.5, 0, 0), (1, 0, 0), (0, 0, -1), ox, oy, s, '詳細B チルト端ストッパ(断面: レバー/パッド位置 x=26.5)', ox, 38, only=None); body += o
+    X = lambda u: ox + s * u; Y = lambda y: oy - s * y
+    for a, lab, dash in ((-H_['tilt_min_deg'] * -1, f"{H_['tilt_min_deg']:+g}°端", '3 1.5'), (H_['tilt_max_deg'], f"{H_['tilt_max_deg']:+g}°端", '3 1.5')):
+        pts = [(-zz, yy) for zz, yy in zy(-a if False else (a))]
+        body.append('<polygon points="' + ' '.join(f'{X(u):.2f},{Y(y):.2f}' for u, y in pts) + f'" fill="none" stroke="#000" stroke-width=".3" stroke-dasharray="{dash}"/>')
+    body.append(DL.txt(X(-30), Y(-62) + 4, f"点線: チルト{H_['tilt_min_deg']:+g}°端 / {H_['tilt_max_deg']:+g}°端のレバー位置(実線は0°)", 2.2))
+    body.append(DL.ln(X(0), Y(12), X(0), Y(-66), .15, '9 1.5 1.5 1.5')); body.append(DL.ln(X(-42), Y(0), X(34), Y(0), .15, '9 1.5 1.5 1.5'))
+    body += DL.dim_h(X(-N_['pad_up_z'][1]), X(-N_['pad_up_z'][0]), Y(-56), f"パッド厚 {N_['pad_thick']:g}", 8)
+    for n_, px, py in [(1, 0, -20), (2, -35.2, -50), (3, -29.2, -24), (4, 24, -40), (5, 18, -32.8)]: body += balloon(X(px), Y(py), X(px) + (-22 if px < 0 else 24), Y(py) - 5, n_)
+    # --- 右: キーホール吊り(断面: ピン軸を含む鉛直面) ---
+    K = keyhole_parts(); s2 = 2.8; ox2 = 236 - s2 * 21; oy2 = 114 + s2 * 30
+    o, Pk = sec_view(K, (0, 0, 0), (1, 0, 0), (0, 0, -1), ox2, oy2, s2, '詳細C キーホール吊り(断面: ピン中心)', 252, 100); body += o
+    X2 = lambda u: ox2 + s2 * u; Y2 = lambda y: oy2 - s2 * y
+    body += DL.dim_v(Y2(12), Y2(0), X2(34), '掛け位置 12', 8)
+    body += DL.dim_h(X2(28), X2(31), Y2(-12) + 2, 'トレイ+ブッシュ 3.0', 6)
+    for k_, (n_, px, py) in enumerate([(1, 24, 22), (3, 26.5, 22), (4, 29, 22), (5, 30.5, 17), (2, 23, 14.5), (6, 32.5, 14.5)]): body += balloon(X2(px), Y2(py), 210, 124 + 15 * k_, n_)
+    rows = [('B' + k, v[0], {'1': '2', '3': '2', '5': '2'}.get(k, '1'), {'1': 'SUS304', '2': 'A6063-T5', '3': 'ウレタン/ゴム 60°', '4': 'A6063-T5', '5': 'ウレタン/ゴム 60°', '6': 'A6063-T5'}[k], {'1': 'CP-23', '2': 'CP-22', '3': 'CP-22付属', '4': 'CP-22', '5': 'CP-22付属', '6': 'CP-22'}[k]) for k, v in S2.items()]
+    rows += [('C' + k, v[0], {'4': '4', '5': '4', '6': '4', '2': '4'}.get(k, '1'), {'1': 'A5052-H32', '2': 'SUS304', '3': '断熱シート', '4': 'A5052-H32', '5': 'SUS304', '6': 'SUS304'}[k], {'1': 'CP-03', '2': '市販 PEM TSOA(U29)', '3': 'CP-14', '4': 'CP-06', '5': 'CP-05', '6': 'CP-04(U29)'}[k]) for k, v in K.items()]
+    body += partlist(214, 28, rows, 196)
+    notes = [f"ストッパ(B): チルト{H_['tilt_min_deg']:+g}°/{H_['tilt_max_deg']:+g}°端で、尾部レバー(1)の側縁の角が厚{N_['pad_thick']:g}mmのゴムパッド(3,5)へ圧縮{N_['pad_comp_mm']['up']:g}/{N_['pad_comp_mm']['dn']:g}mmだけ食い込んで止まる。受けは前カバー(2)とタイプレート(4)(t6)。位置は tools/neckgeom.py が spec から導出。",
+             f"キーホール(C): ピン(6)の頭Ø10がトレイの丸穴Ø10.2を通り、トレイを12mm下げるとピン肩Ø{S['fits']['pin_shoulder_d']:g}が溝W{S['fits']['keyhole_slot_w']:g}の上端に掛かる。支圧はトレイt2+ブッシュt1=3.0mm。ブッシュ(5)はピン掛かり位置(+12)まで覆う長丸(16×28)。",
+             'ピン(6)はPEMナット(2)へM4(1.7N·m+ネジロック)。引抜耐力・ピン肩の曲げ(30G時114MPa)は tools/strength_check.py。溝とピンのすき間(位置公差込み)は tools/fit_tolerance.py。',
+             '未確認: ゴムパッドの材質/硬度/耐久(U52)、PEM引抜耐力(U29)。寸法は設計値(未承認)。']
+    wrap_notes(body, 286, 112, notes, width=56)
+    return body, (S2, K)
+
 if __name__ == '__main__':
+    b, P = sheet_stopper_keyhole(); sheet(f'{OUT}/D07_stopper_keyhole_detail.svg', 'チルトストッパ・キーホール吊り 詳細断面', 'D07', b, 'B 2.3:1 / C 3.2:1', 'A6063/SUS304/ゴム', '-', '')
     b, P = sheet_details(); sheet(f'{OUT}/D06_dome_latch_detail.svg', 'ドーム着脱ラッチ・ガスケット 詳細断面', 'D06', b, '3.6:1', 'A5052/S45C/SUS304', '-', '')
     b, P = sheet_swivel(); sheet(f'{OUT}/D05_swivel_section.svg', '首振りユニット 内部構造・断面', 'D05', b, 'A-A 2.6:1 / C-C 0.56:1', 'A5052/SUS/PTFE', '-', '')
     b, P = sheet_balancer(); sheet(f'{OUT}/D04_balancer_section.svg', 'チルトバランサ 内部構造・断面', 'D04', b, '2:1', 'SUS/S45C/SWOSC-V/A5052', '-', '')

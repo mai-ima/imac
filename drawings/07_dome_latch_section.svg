@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,16 +98,19 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(19,12) scale(0.93)">
 <rect x="60" y="50" width="55.00000000000001" height="150" fill="#cfd3d8" stroke="#000" stroke-width=".4"/>
 <text x="62" y="46" font-size="3.4" text-anchor="start" fill="#222">前面スラブ(ガラス+パネル+背板)</text>
-<rect x="115.0" y="140" width="41.184" height="60" fill="#e8c8c8" stroke="#000" stroke-width=".3"/>
-<text x="119.0" y="136" font-size="2.8" text-anchor="start" fill="#222">キーホール吊りピン(M3・肩径Ø5 肩ねじ、背板M3にねじ込み)</text>
+<rect x="115.0" y="140" width="65.34" height="60" fill="#e8c8c8" stroke="#000" stroke-width=".3"/>
+<text x="119.0" y="136" font-size="2.8" text-anchor="start" fill="#222">キーホール吊りピン(M4・肩径Ø6 肩ねじ、背板M4にねじ込み)</text>
 <rect x="132.60000000000002" y="70" width="4.4" height="110" fill="#b9c4d0" stroke="#000" stroke-width=".4"/>
 <text x="138.60000000000002" y="80" font-size="2.8" text-anchor="start" fill="#222">サービストレイ A5052 t2.0(スタンドオフ 8mm)</text>
-<path d="M115.0 220 L337.20000000000005 135.51999999999998 L337.20000000000005 70" fill="none" stroke="#2a4a7a" stroke-width="1.6"/>
-<text x="313.8" y="53" font-size="2.8" text-anchor="start" fill="#222">ドーム(A5052 t2.0) 傾斜 60mm</text>
+<path d="M115.0 220 L471.40000000000003 135.51999999999998 L471.40000000000003 70" fill="none" stroke="#2a4a7a" stroke-width="1.6"/>
+<text x="448.00000000000006" y="53" font-size="2.8" text-anchor="start" fill="#222">ドーム(A5052 t2.0) 傾斜 60mm</text>
 <circle cx="123.80000000000001" cy="190" r="3" fill="#c0392b"/>
 <text x="129.8" y="192" font-size="2.8" text-anchor="start" fill="#222">下辺ラッチ(1/4回転, 下面の凹み内)。上辺は掛け爪フック</text>
 <rect x="117.2" y="170" width="4.840000000000001" height="4.840000000000001" fill="#555"/>

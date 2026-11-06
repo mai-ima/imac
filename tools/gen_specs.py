@@ -49,7 +49,7 @@ JM = [
  ('J01', '前面ガラス↔スラブ枠(CP-01↔CP-02/03)', '構造用シリコーン接着 厚1.0mm全周(OCA無し・パネルとはエアギャップ0.9)', '接着', '交換=加熱剥離(スラブ全体, L3)', 'ガラス割れ/剥離 FMEA'),
  ('J02', '(廃止) 前面枠↔背板 M3×16', 'v7で廃止: 前面モジュール固定ネジなし(P1)', '-', '-', 'C-3対応'),
  ('J03', 'パネル↔背板', 'M3×約18(BOE Fig.6穴, TSOA, 背板後面から)', '0.3〜0.4N·m(要データシート)', '可(L3: トレイ取り出し後)', 'COF部は押さない'),
- ('J04', '背板↔トレイ(吊り)', '肩ねじ M3×肩径Ø5 h8×3.0(CP-04)×4 + SUSブッシュ(CP-05)', '0.8N·m+ネジロック', '可(L2)', '30G: せん断50MPa/支圧65MPa'),
+ ('J04', '背板↔トレイ(吊り)', '肩ねじ M4×肩径Ø6 h8×6.0(支圧部=トレイ+ブッシュ3.0)(CP-04)×4 + SUSブッシュ(CP-05)', '1.7N·m+ネジロック', '可(L2)', '30G: せん断50MPa/支圧65MPa'),
  ('J05', 'トレイ拘束', 'M3 T10 拘束ねじ ×2(トレイ下辺)', '0.6N·m', '可(L2)', '外れ止め'),
  ('J06', '背板↔ドーム(位置決め)', 'Ø4 H7ピン×2(非対称配置)', '-', '-', 'ポカヨケ'),
  ('J07', '背板↔ドーム(保持)', '上辺: 掛け爪フック×6(ネジ無し) + 下辺: 1/4回転ラッチ×6(下面の凹み, T10) + 位置決め磁石×12 + EMIガスケット', 'ラッチ60N以上/点×6', '可(L1: 下面から)', '閉合力≤約340N(U30)'),
@@ -100,7 +100,7 @@ sc = 0.46; ox, oy = 30, 40; IW = 590; IH = 371.3
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>',
      f'<rect x="{ox}" y="{oy}" width="{IW*sc}" height="{IH*sc}" rx="10" fill="#f7f8fa" stroke="#000" stroke-width=".4"/>']
 for it in L['items']: x, y, z = it['pos']; a, b, c = it['size']; o.append(f'<rect x="{ox+x*sc:.1f}" y="{oy+(IH-y-b)*sc:.1f}" width="{a*sc:.1f}" height="{b*sc:.1f}" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="{ox+(x+a/2)*sc:.1f}" y="{oy+(IH-y-b/2)*sc:.1f}" font-size="3" text-anchor="middle" fill="#555">{it["id"]}</text>')
-cols = ['#c0392b', '#06c', '#1a7f37', '#a50', '#707', '#087', '#555', '#b0b']
+cols = ['#c0392b', '#06c', '#1a7f37', '#a50', '#707', '#087', '#555', '#b0b', '#e67e22', '#2c3e50', '#16a085', '#8e44ad']
 for k, c in enumerate(C):
     pts = c['pts']; o.append(f'<polyline fill="none" stroke="{cols[k]}" stroke-width=".7" points="' + ' '.join(f'{ox+p[0]*sc:.1f},{oy+(IH-p[1])*sc:.1f}' for p in pts) + '"/>')
     for q in clips[c['id']]: o.append(f'<circle cx="{ox+q[0]*sc:.1f}" cy="{oy+(IH-q[1])*sc:.1f}" r="1.1" fill="{cols[k]}"/>')

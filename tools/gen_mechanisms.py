@@ -141,7 +141,7 @@ w('03_neck_and_load_path.md', f'''# 03 ネック構造・ストッパ・荷重�
 | 前カバー | t6、z {nk['front_cover_z'][0]:g}〜{nk['front_cover_z'][1]:g}(+40°ストッパ受け)。後カバー t2 |
 | カバー上端 | y={nk['cover_top']:g}(蛇腹ブーツ取付) |
 ## 3. ストッパ(尾部レバー側縁が当たる)
-−15°側: レバー側縁 z=−(50·sin15°+7·cos15°)=約−19.7 → パッド面 −19.2(圧縮0.5mm)。+40°側: z=50·sin40°+7·cos40°=約37.5 → パッド面 36.5(圧縮1.0mm)。パッドはゴム(厚≈2mm)、押し荷重の受けは前カバー/タイプレート(t6)。
+−15°側: レバー側縁の角 z=−({nk['lever_len']:g}·sin15°+{nk['lever_w']/2:g}·cos15°)=約−{nk['lever_len']*math.sin(math.radians(15))+nk['lever_w']/2*math.cos(math.radians(15)):.1f} → パッド近面 −{-nk['pad_dn_z'][1]:.1f}(圧縮{nk['pad_comp_mm']['dn']:g}mm)。+40°側: z={nk['lever_len']:g}·sin40°+{nk['lever_w']/2:g}·cos40°=約{nk['lever_len']*math.sin(math.radians(40))+nk['lever_w']/2*math.cos(math.radians(40)):.1f} → パッド近面 {nk['pad_up_z'][0]:.1f}(圧縮{nk['pad_comp_mm']['up']:g}mm)。パッドは厚{nk['pad_thick']:g}mmのウレタン/ゴム(衝撃時は厚みの50%まで圧縮可)、押し荷重の受けは前カバー/タイプレート(t6)。
 ## 4. 掃引干渉・強度・指挟み(`tools/motion_check.py` / `tools/strength_check.py`)
 ```
 {mot}
@@ -189,13 +189,13 @@ w('05_tray_hanging_service.md', f'''# 05 サービストレイの吊り(キー�
 ## 2. 構成(CP-04/CP-05/CP-06)
 | 要素 | 仕様 |
 |---|---|
-| 吊りピン | SUS304肩ねじ M3、肩Ø5 h8、頭Ø9(CP-04)。背板PEM TSOAへ0.8N·m+ネジロック |
-| キーホール | 丸Ø9.2+溝W5.1(トレイを12mm下げて掛ける)。縁はSUS304 t1.0ブッシュ(CP-05)で補強 |
+| 吊りピン | SUS304肩ねじ M4、肩Ø{S['fits']['pin_shoulder_d']:g} h8×6.0(支圧部=トレイ+ブッシュ3.0)、頭Ø10×t3(CP-04)。背板PEM TSOA(M4)へ1.7N·m+ネジロック |
+| キーホール | 丸Ø10.2+溝W{S['fits']['keyhole_slot_w']:g}×長さ(トレイを12mm下げて掛ける)。縁はSUS304 t1.0ブッシュ(CP-05)で補強 |
 | 位置 | `model/layout.json` の keyholes(4点) |
 | 拘束 | M3 T10 拘束ネジ×2(下辺)。吊りが外れないようロック |
 | トレイ外形 | 570×351.3(角R38)、外周10mmはドーム固定ハード用に空ける |
 ## 3. 荷重(輸送衝撃30G)
-トレイ質量約6.6kg×30G=1,942N。**上側2点のみが荷重を受ける最悪ケースで1点約978N**(4点均等なら485N)。肩Ø5のせん断≈49.8MPa(SUS304)、支圧は実効t3.0のブッシュで65MPa。**肩根元の曲げは未評価**(R7指摘: 腕2.5mmで約199MPaと試算され、SUS304許容を超える恐れ → 肩下の隅Rとネジ座の再設計が必要)。雌ねじ引抜き耐力 U29。キーホール溝W5.1と吊りピン肩のすき間は0.1〜0.17mm、4点の位置公差の積み上げ(±0.1×…)で掛からない恐れがある(溝幅5.5以上への変更を検討)。
+トレイ質量約6.6kg×30G=1,942N。**上側2点のみが荷重を受ける最悪ケースで1点約978N**(4点均等なら485N)。肩Ø{S['fits']['pin_shoulder_d']:g}のせん断≈35MPa(SUS304)、支圧は実効t3.0のブッシュで約54MPa、**肩根元の曲げは腕2.5mmで約114MPa(許容137MPa, strength_check)**。雌ねじ引抜き耐力 U29(未検証)。キーホール溝W{S['fits']['keyhole_slot_w']:g}と吊りピン肩Ø{S['fits']['pin_shoulder_d']:g}のすき間は公称0.5mm、4点の位置公差(keyhole_pos_stack {S['fits']['keyhole_pos_stack']:g})を含めてもがたつき上限{S['fits']['keyhole_rattle_max']:g}mm以内かを tools/fit_tolerance.py で検査。
 ## 4. 引き出し手順
 拘束ネジ2本 → 12mm持ち上げてキーホールから外す → 背面へ約100mm引く → アンビリカル(全長380mm、整備余長100mm込み)とPE編組を外す → 取り出す。
 ## 5. 故障モード
