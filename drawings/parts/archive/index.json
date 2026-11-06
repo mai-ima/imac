@@ -460,6 +460,15 @@
    "file": "CP-10/CP-10.v005__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-10.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "6ed83c583d7b0841b368124b9e217df7956f1e472f27512bdf70fd02c2244481",
+   "file": "CP-10/CP-10.v006__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-11.svg",
    "version": 1,
    "gen": "current",

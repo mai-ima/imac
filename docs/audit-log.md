@@ -79,3 +79,6 @@
 - P1: stabilityの支持多角形をゴム脚外接+重心余裕10mmに、足360×310/バラスト3.5kg。balance_calcの操作力を(最大摩擦+公称残差)/0.41に、荷重調整ねじ(公差±3%)を設計に追加。PE編組をループ化(長さ170/90mm)しmotion_checkで検査。ストッパ受け(タイプレート/前カバーt6)を追加し両端の当たりを合否に。レバーをt5×14に増強し strength_check.py を新設。指挟み保護は未設計と文書訂正(U53)。
 - P2/P3: swivel_calcは未設定時に終了コード2(UNVERIFIED)、stale_checkは履歴文書以外の旧値をFAIL化(0件に是正)、custom_parts正規化+型検査、部品表を gen_hardware_list.py で生成物化、ASM割当/ストラット方向/分解量の整合、viewerタイトル修正。
 - 残: 指挟み保護(蛇腹ブーツ)、疲労/FEA、軸受・ばね型番、ダイスプリングの実荷重特性。
+
+## 業者提出パッケージ(handoff/)を作成
+- 見積依頼書(PDF/md/html)、BOM(xlsx/csv)、A3図面PDF 40枚、STEP(スタンド系9点, cadquery再読込で valid=True 確認)、DXF/穴表、SHA256SUMS、zip。PRELIMINARY明記。ドーム/背板/トレイ/ガラスのSTEP・展開図・GD&Tは未整備と依頼書に明記。

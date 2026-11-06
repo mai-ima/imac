@@ -13,6 +13,7 @@
 | audit-log.md | v008 | current | 2026-11-06 | 4482281 | audit-log/audit-log.v008__2026-11-06_4482281.md |
 | audit-log.md | v009 | current | 2026-11-06 | bfa86c4 | audit-log/audit-log.v009__2026-11-06_bfa86c4.md |
 | audit-log.md | v010 | current | 2026-11-06 | 2bb8cf1 | audit-log/audit-log.v010__2026-11-06_2bb8cf1.md |
+| audit-log.md | v011 | current | 2026-11-06 | 432b08c | audit-log/audit-log.v011__2026-11-06_432b08c.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |

@@ -100,6 +100,15 @@
    "file": "audit-log/audit-log.v010__2026-11-06_2bb8cf1.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "1eedbaf6227ea6650dada46debb2602f8f345b967ec7915f816a7a9763ec3b57",
+   "file": "audit-log/audit-log.v011__2026-11-06_432b08c.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
