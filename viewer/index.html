@@ -171,7 +171,7 @@ loadGLB(gltf=>{
 
 
 /* ---- バランサのダイスプリング: チルトに合わせて両端ピン間で傾き・伸縮(上端=尾部レバー先端ピン、下端=スタンド側座) ---- */
-const struts=[];
+const struts=[]; window.__struts=struts;
 function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+k], seat=byName['spring_seat_bot'+k], parts=['spring_die'+k,'spring_guide_rod'+k].map(n=>byName[n]).filter(Boolean);
     if(pin&&seat&&parts.length) struts.push({pin,seat,parts,base:parts.map(o=>({p:o.position.clone(),q:o.quaternion.clone(),s:o.scale.clone()})),len0:0}); } updateStruts(true); }
 function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld(true); const c=o=>new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
