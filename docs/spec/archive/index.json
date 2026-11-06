@@ -10,6 +10,15 @@
    "file": "README/README.v001__2026-11-05_b97eaae.md"
   },
   {
+   "src": "docs/spec/README.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "a77badc",
+   "sha256": "41c0450c983e580403a53142515d103f326f366580cd2a85c3fca301a8d581cd",
+   "file": "README/README.v002__2026-11-06_a77badc.md"
+  },
+  {
    "src": "docs/spec/custom-parts.md",
    "version": 1,
    "gen": "current",
@@ -82,6 +91,15 @@
    "file": "custom-parts/custom-parts.v008__2026-11-06_432b08c.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ef5ecbc",
+   "sha256": "7f75bc8f090a1ee174ba643d703a4922ba5ade872fdb27d42eb9d75b9f107837",
+   "file": "custom-parts/custom-parts.v009__2026-11-06_ef5ecbc.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -100,6 +118,15 @@
    "file": "design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md"
   },
   {
+   "src": "docs/spec/design-philosophy.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "75aebe01e4e61fd38260432f271a6a707acdf12dd1b4d69fe93262138c39befa",
+   "file": "design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md"
+  },
+  {
    "src": "docs/spec/hardware-list.md",
    "version": 1,
    "gen": "current",
@@ -107,6 +134,15 @@
    "commit": "9ff6031",
    "sha256": "d1f9dfaff787c4f04f035f5754956aad0a4b3a356e34c99129a39872fcfeb4ab",
    "file": "hardware-list/hardware-list.v001__2026-11-06_9ff6031.md"
+  },
+  {
+   "src": "docs/spec/hardware-list.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "ea88219367cd1479ce682261146846b274b612479e57e8ce0057358fe50236ae",
+   "file": "hardware-list/hardware-list.v002__2026-11-06_432b08c.md"
   },
   {
    "src": "docs/spec/joint-matrix.md",
@@ -206,6 +242,15 @@
    "commit": "c271477",
    "sha256": "ea2c9cc778a6122d2e127d95509c984e2c26d62526a3dfa6bc86ae212ce88063",
    "file": "system-spec/system-spec.v007__2026-11-06_c271477.md"
+  },
+  {
+   "src": "docs/spec/system-spec.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "7ed5c4c",
+   "sha256": "670871cea5b096e4830e6b46daf5b0c7cabb418dfb79051e8ba5e17578611d15",
+   "file": "system-spec/system-spec.v008__2026-11-06_7ed5c4c.md"
   },
   {
    "src": "docs/spec/wiring-spec.md",

@@ -64,6 +64,15 @@
    "file": "cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py"
   },
   {
+   "src": "tools/cablemodel.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "c13d7c4124a69b63f3a10b9c45b933b7fb06bd1fc3b07001f6ae66f6714911ae",
+   "file": "cablemodel/cablemodel.v003__2026-11-06_514e2e0.py"
+  },
+  {
    "src": "tools/drawlib.py",
    "version": 1,
    "gen": "current",
@@ -397,6 +406,15 @@
    "file": "joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/joint_calc.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "09f4e9e4e5d6ec39acbd3c8e1fc91f85246993086e1765aea465eddeb139914f",
+   "file": "joint_calc/joint_calc.v003__2026-11-06_4482281.py"
+  },
+  {
    "src": "tools/layout_search.py",
    "version": 1,
    "gen": "current",
@@ -449,6 +467,15 @@
    "commit": "4482281",
    "sha256": "03c6b8e191b45545a7cfe2e4b9bf90d04a05a7cceeb2b0bff41ddc4a01362c8d",
    "file": "motion_check/motion_check.v002__2026-11-06_4482281.py"
+  },
+  {
+   "src": "tools/motion_check.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "cb482fda5a29f642ab7ec41ef536ba192832a5d3638bacf9008312cc464c4e9c",
+   "file": "motion_check/motion_check.v003__2026-11-06_432b08c.py"
   },
   {
    "src": "tools/run_gates.sh",
@@ -548,6 +575,15 @@
    "commit": "4482281",
    "sha256": "4b875e00a24d90ff8a6767861fb6601fcbda374851324c2190c085be7544761e",
    "file": "stale_check/stale_check.v002__2026-11-06_4482281.py"
+  },
+  {
+   "src": "tools/stale_check.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "7433030b4ea5438de0860b4a26313ab2771128cfd3f9119291a7dc4c545e35e2",
+   "file": "stale_check/stale_check.v003__2026-11-06_432b08c.py"
   },
   {
    "src": "tools/swivel_calc.py",

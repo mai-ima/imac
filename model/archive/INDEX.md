@@ -21,10 +21,12 @@
 | custom_parts.json | v010 | current | 2026-11-06 | 2bb8cf1 | custom_parts/custom_parts.v010__2026-11-06_2bb8cf1.json |
 | custom_parts.json | v011 | current | 2026-11-06 | 302823c | custom_parts/custom_parts.v011__2026-11-06_302823c.json |
 | custom_parts.json | v012 | current | 2026-11-06 | 432b08c | custom_parts/custom_parts.v012__2026-11-06_432b08c.json |
+| custom_parts.json | v013 | current | 2026-11-06 | ef5ecbc | custom_parts/custom_parts.v013__2026-11-06_ef5ecbc.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
 | hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
 | hardware_list.json | v004 | current | 2026-11-06 | 4482281 | hardware_list/hardware_list.v004__2026-11-06_4482281.json |
+| hardware_list.json | v005 | current | 2026-11-06 | 432b08c | hardware_list/hardware_list.v005__2026-11-06_432b08c.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -57,3 +59,4 @@
 | spec.json | v011 | current | 2026-11-06 | 514e2e0 | spec/spec.v011__2026-11-06_514e2e0.json |
 | spec.json | v012 | current | 2026-11-06 | 7ed5c4c | spec/spec.v012__2026-11-06_7ed5c4c.json |
 | spec.json | v013 | current | 2026-11-06 | 4482281 | spec/spec.v013__2026-11-06_4482281.json |
+| spec.json | v014 | current | 2026-11-06 | 432b08c | spec/spec.v014__2026-11-06_432b08c.json |

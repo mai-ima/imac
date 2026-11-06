@@ -82,3 +82,8 @@
 
 ## 業者提出パッケージ(handoff/)を作成
 - 見積依頼書(PDF/md/html)、BOM(xlsx/csv)、A3図面PDF 40枚、STEP(スタンド系9点, cadquery再読込で valid=True 確認)、DXF/穴表、SHA256SUMS、zip。PRELIMINARY明記。ドーム/背板/トレイ/ガラスのSTEP・展開図・GD&Tは未整備と依頼書に明記。
+
+## 整理・不具合修正・機構設計書(ユーザー追加指示)
+- ビューア: 画面OFF時の黒面とスクリーンの干渉(z-fighting)を、offMatへのpolygonOffset適用と display/chin_print/camera のz分離で解消(Playwrightで再現→修正→確認)。正面の色: チン=本体色寄り/ベゼル=淡色に再配色し、7色で正面の色差が出るようにした(Blenderも同配色)。
+- 文書整理: 重複・旧版の md を統合/退避(design-v6, selection-v5, bom-verified, research, model-pipeline, research-hinge/joints/cables, hinge-design, design-package-index)。統合先 research-notes.md / tilt-swivel-design.md 付録A / docs/README.md。退避は tools/archive.py の版付きarchive(削除なし)、参照は一括置換。
+- 特殊機構: docs/mechanisms/ に専用設計書6本(チルトバランサ/首振り/ネック荷重経路/ドーム着脱/トレイ吊り/指挟み保護)を tools/gen_mechanisms.py で生成。指挟み保護は蛇腹ブーツ(伸縮10〜56mm)を設計し motion_check でゲート化。

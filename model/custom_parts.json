@@ -402,14 +402,14 @@
     "ヒンジブロック(150×22×24, A6063)+カバー",
     "摩擦ヒンジ(Reell PHL/PHC級)×2、ダイスプリング+尾部レバー(CP-23)",
     "機械ストッパ×2、Eクリップ×4、軸Ø10 SUS、貫通ボルトM6×4+SPCC裏当て+A5052補強板",
-    "設計トルク曲線: docs/hinge-design.md(質量実測 U25 後に確定)"
+    "設計トルク曲線: docs/tilt-swivel-design.md(質量実測 U25 後に確定)"
    ],
    "mates": [
     "CP-10",
     "CP-03"
    ],
    "mass_kg": 0.5,
-   "loads": "docs/hinge-design.md",
+   "loads": "docs/tilt-swivel-design.md",
    "life": "25,000回",
    "tests": [
     "トルク曲線",

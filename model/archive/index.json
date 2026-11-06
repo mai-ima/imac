@@ -172,6 +172,15 @@
    "file": "custom_parts/custom_parts.v012__2026-11-06_432b08c.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ef5ecbc",
+   "sha256": "1a67a15ac934b7e88535ad442e04193b0c31840e024da076ae30326864c56a73",
+   "file": "custom_parts/custom_parts.v013__2026-11-06_ef5ecbc.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",
@@ -206,6 +215,15 @@
    "commit": "4482281",
    "sha256": "5ff2b360d471577d790b15da4d6f165e58b907a8abcdd47b17d4f890e2ee4087",
    "file": "hardware_list/hardware_list.v004__2026-11-06_4482281.json"
+  },
+  {
+   "src": "model/hardware_list.json",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "224741e76aaf6a1d1a32d338dafaf23d3b0603455e5f6a361bd646260b98f5a8",
+   "file": "hardware_list/hardware_list.v005__2026-11-06_432b08c.json"
   },
   {
    "src": "model/layout.json",
@@ -494,6 +512,15 @@
    "commit": "4482281",
    "sha256": "37928fec28264b9053edc3124bc3a5e627d0865e2fd8d2a37521d6ea0cf2b69c",
    "file": "spec/spec.v013__2026-11-06_4482281.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 14,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "770355ae090b25ea301a701ecc33ac9ad2e0817c201d31a3a17c6bef3a6d5ff0",
+   "file": "spec/spec.v014__2026-11-06_432b08c.json"
   }
  ]
 }

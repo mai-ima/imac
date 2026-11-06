@@ -31,7 +31,7 @@ POD_T, POD_H, WALL = S['pod']['total_t'], S['pod']['h'], S['pod']['wall']
 POD_W = W - S['pod']['side_margin']
 IN_W, IN_D = POD_W - 2 * WALL, POD_T - SLAB - WALL
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
-ZC = -S['hinge']['axis_z_from_glass']      # ヒンジ軸のz(前面ガラスから)。docs/hinge-design.md
+ZC = -S['hinge']['axis_z_from_glass']      # ヒンジ軸のz(前面ガラスから)。docs/tilt-swivel-design.md
 X0, Y0, Z0 = -W / 2 + S['dome']['inset_left_right'] + WALL, S['dome']['inset_bottom'] + WALL, -SLAB      # 内部座標の原点(ドーム内側の左下)
 
 # ---------------- ユーティリティ ----------------

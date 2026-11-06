@@ -1,6 +1,6 @@
 # 未確認項目の台帳 (定期的に再調査して更新する)
 
-ルール: 項目が公式資料で確認できたら状態を「確認済」にして根拠URLと確認日を書き、`model/parts.json` / `layout.json` / Blenderモデル / `docs/bom-verified.md` に反映する。確認できなければ最終確認日だけ更新する。取得手段は `python3 tools/check_sources.py`(直接取得可否の確認)→ 取得できたPDFを読む → 取れなければWebSearch/サブエージェント。
+ルール: 項目が公式資料で確認できたら状態を「確認済」にして根拠URLと確認日を書き、`model/parts.json` / `layout.json` / Blenderモデル / `docs/bom-final.md` に反映する。確認できなければ最終確認日だけ更新する。取得手段は `python3 tools/check_sources.py`(直接取得可否の確認)→ 取得できたPDFを読む → 取れなければWebSearch/サブエージェント。
 
 | ID | 項目 | 影響 | 状態 | 次に試す取得先 | 最終確認 |
 |---|---|---|---|---|---|
@@ -32,8 +32,8 @@
 | U26 | カウンターバランスばね(旧: 定荷重ばね/ガススプリング)の型番 | チルト | 未選定 | Vulcan Spring/Misumi/Stabilus等 | 11/05 |
 | U27 | Reell PHL/PHC/PH35, Sugatsune HG-T70S30の寸法・寿命・材質の原典 | ヒンジ | 検索ベースのみ | メーカーPDF | 11/05 |
 | U28 | ヒンジ軸のz位置最適化 | チルト | 未実施 | tools/joint_calc.py | 11/05 |
-| U29 | PEMクリンチ部押抜/トルク値(t2.0)、N52 8×3吸着力、拘束ねじ(T10+保持)品番、ショルダーねじ(肩径4/5mm)品番とせん断強度 | 接合部 | UNVERIFIED | docs/research-joints.md | 11/05 |
-| U30 | EMIガスケット選定(SOFT-SHIELD 3500/Laird FoF等)と閉合力/圧縮量/SE実測 | 防塵/EMC/ドーム固定 | 候補のみ | docs/research-joints.md | 11/05 |
+| U29 | PEMクリンチ部押抜/トルク値(t2.0)、N52 8×3吸着力、拘束ねじ(T10+保持)品番、ショルダーねじ(肩径4/5mm)品番とせん断強度 | 接合部 | UNVERIFIED | docs/research-notes.md | 11/05 |
+| U30 | EMIガスケット選定(SOFT-SHIELD 3500/Laird FoF等)と閉合力/圧縮量/SE実測 | 防塵/EMC/ドーム固定 | 候補のみ | docs/research-notes.md | 11/05 |
 | U31 | Ø2.4mm穴格子(開口率33%)のWi-Fi 6GHz透過損失、RF窓を格子裏に置く可否 | 無線 | 未検証 | 試作でOTA測定 | 11/05 |
 | U32 | 全面均一格子の圧損/騒音/吸気分布(Apple式の通気)がGPU/AIOの冷却に十分か | 熱 | CFD/実測が必要 | 試作+温度ロギング | 11/05 |
 | U33 | ARCTIC LF III Pro 240 非RGB版(ACFRE00178A)の公式シート(ファン型番/LED/ケーブル構成)。現出典はA-RGB版 | BOM | 部分確認 | arctic.de 非RGB版製品ページ | 11/05 |
@@ -48,7 +48,7 @@
 | U42 | ctrl_board ゲート(docs/spec/panel-driver.md): 型番/外形/コネクタ位置/保証、背板アンビリカル開口との整合 | 実現性 | **未確定(最大リスク)** | Data-Modul/代替キット | 11/05 |
 | U43 | 現行iMac(M6)の日本円価格・発売後の実機ベンチ(Notebookcheck/Tom's等) | 比較基準 | 発売前(11/6発売)で未確認 | Apple Store日本/発売後レビュー | 11/05 |
 | U44 | CPU再選定: Ryzen 9 9950X3D等(TDP/PPT/ベンチ/BIOS対応/240mm AIOの冷却能力)とM6との比 | 性能要件 | 調査中 | docs/spec/performance-benchmark.md | 11/05 |
-| U45 | ケーブル曲げ半径/剛性(ATX/EPS/PCIe/ライザー/AIOホース/eDP/FFC)の公式値(docs/research-cables.md) | 配線 | 大半UNVERIFIED(暫定値で設計) | メーカー問合せ/実物測定 | 11/06 |
+| U45 | ケーブル曲げ半径/剛性(ATX/EPS/PCIe/ライザー/AIOホース/eDP/FFC)の公式値(docs/research-notes.md) | 配線 | 大半UNVERIFIED(暫定値で設計) | メーカー問合せ/実物測定 | 11/06 |
 | U46 | GPU: 小型RTX 5070 Ti(290×150×40)の具体型番・日本での入手性・価格・端子位置 | 部品/配置 | 未確定 | PNY/Zotac/Gigabyte小型版 | 11/06 |
 | U47 | Corsair SF1000(1000W SFX)の公式寸法/コネクタ/ケーブル長/価格 | 電源 | 未確認 | Corsair公式 | 11/06 |
 | U48 | パネル熱: データシート本文(LED仕様/湿度/LCM表面温度脚注)、背板温度の実測(docs/spec/panel-thermal.md) | 信頼性 | 未確認 | Data-Modul PDF/実機試験 | 11/06 |

@@ -1,6 +1,6 @@
 """配線・ホースの経路定義(単一情報源)。layout.json から座標を導き、model/cables.json を出力する。
 座標: トレイ内座標(mm, ドーム内側の左下原点, z=スラブ背面からの高さ)。経路は折れ線(Blenderではベジェで滑らかに)。
-各ケーブルの最小曲げ半径 mbr は暫定値(公式/規格の裏付け調査中: docs/research-cables.md)。"""
+各ケーブルの最小曲げ半径 mbr は暫定値(公式/規格の裏付け調査中: docs/research-notes.md)。"""
 import json, math, os
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 L = {i['id']: i for i in json.load(open(f'{R}/model/layout.json'))['items']}

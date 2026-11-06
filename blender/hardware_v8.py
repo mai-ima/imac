@@ -106,6 +106,12 @@ for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー
     hb(f'hinge_stopper_dn{k}', px1 - px0, 10, NKh['pad_dn_z'][1] - NKh['pad_dn_z'][0], xc - (px1 - px0) / 2, HY - LL * math.cos(math.radians(-15)) - 5, ZC + NKh['pad_dn_z'][0], M['rubber'])
     hb(f'hinge_stopper_up{k}', px1 - px0, 10, NKh['pad_up_z'][1] - NKh['pad_up_z'][0], xc - (px1 - px0) / 2, HY - LL * math.cos(math.radians(40)) - 5, ZC + NKh['pad_up_z'][0], M['rubber'])
     cyl(f'spring_adjuster{k}', 4.0, 14, 'y', sx_ * 14, HY - BS - 10, ZC, M['sus'], 16)                        # ばね座の荷重調整ねじ M8(下座の下)。頭部実測重量に合わせて組立時に調整
+BTc = S['neck']['boot']; SYS_ = -DROP + S['swivel']['stack_h'] + S['neck']['base_t']
+for k_ in range(BTc['convolutions']):      # ゴム蛇腹ブーツ(簡略表示: 角形の山谷リング。実機は伸縮10〜48mm+せん断±10mm)
+    yb = S['neck']['cover_top'] + k_ * (0 - S['neck']['cover_top']) / BTc['convolutions']; grow = 3.0 if k_ % 2 else 0.0
+    for nm_, (bx_, bz0_, bw_, bd_) in (('f', (-62 - grow, ZC + S['neck']['front_cover_z'][1] - 4 + grow, 124 + 2 * grow, 2.0)), ('b', (-62 - grow, ZC + S['neck']['back_cover_z'][0] - 2 - grow, 124 + 2 * grow, 2.0))):
+        hb(f'hinge_boot{k_}{nm_}', bw_, (0 - S['neck']['cover_top']) / BTc['convolutions'] * 0.9, bd_, bx_, yb, bz0_, M['rubber'], bev=.3)
+hw('ヒンジ', 'ゴム蛇腹ブーツ(シリコーン UL94 V-0, 山8, 伸縮10〜56mm)', 1, '指挟み防護(U53)。3Dは簡略表示')
 hw('ヒンジ', 'ばね座 荷重調整ねじ M8(+ロックナット)', 2, '調整後公差 荷重±3%(spec.hinge)')
 hw('ヒンジ', 'ネック基台 t8 + M5×4(ロータ板固定)/タイプレート t6(-15°ストッパ受け)/前カバー t6(+40°ストッパ受け)', 3, 'spec.neck')
 for k_, (bx_, bz_) in enumerate(((-40, -12), (40, -12), (-40, 12), (40, 12))):

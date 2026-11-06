@@ -514,6 +514,15 @@
    "file": "CP-11/CP-11.v005__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-11.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "44a5a24c1d8dcb3625d6e229ba5410cf4bddeb23a8e001527933bcf5af2bc6a5",
+   "file": "CP-11/CP-11.v006__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-12.svg",
    "version": 1,
    "gen": "current",

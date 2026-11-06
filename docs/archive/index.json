@@ -109,6 +109,15 @@
    "file": "audit-log/audit-log.v011__2026-11-06_432b08c.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ef5ecbc",
+   "sha256": "8236d164c16838704e6ddf901f6e0d06340c3c6d82c74faf3268ebebfead5727",
+   "file": "audit-log/audit-log.v012__2026-11-06_ef5ecbc.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
@@ -145,6 +154,15 @@
    "file": "bom-verified/bom-verified.v001__2026-11-03_165c355.md"
   },
   {
+   "src": "docs/bom-verified.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "3c794e1",
+   "sha256": "401ffa378e0f8f06b9baee6df58e3b118d5072703d974e6abcd1ebf5a5ef84ba",
+   "file": "bom-verified/bom-verified.v002__2026-11-06_3c794e1.md"
+  },
+  {
    "src": "docs/build-guide.md",
    "version": 1,
    "gen": "current",
@@ -172,6 +190,15 @@
    "file": "build-guide/build-guide.v003__2026-11-05_15a1bce.md"
   },
   {
+   "src": "docs/design-package-index.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "27ca8ce",
+   "sha256": "ac2baf7f4cc70b68d810b136aa607946b5e76830b5f974634025fbc6bd0e6653",
+   "file": "design-package-index/design-package-index.v001__2026-11-06_27ca8ce.md"
+  },
+  {
    "src": "docs/design-v6.md",
    "version": 1,
    "gen": "current",
@@ -179,6 +206,15 @@
    "commit": "1bfcbfb",
    "sha256": "cc497835d92e7582389266fe33c403f84a4337c81a4624b5c09f68d31284949c",
    "file": "design-v6/design-v6.v001__2026-11-03_1bfcbfb.md"
+  },
+  {
+   "src": "docs/design-v6.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fcba5fe",
+   "sha256": "8fe255c96927767a0108f7dfb6eef72d9a72581f78cb0786b0bc1e62029c7d02",
+   "file": "design-v6/design-v6.v002__2026-11-06_fcba5fe.md"
   },
   {
    "src": "docs/design.md",
@@ -325,6 +361,15 @@
    "file": "hinge-design/hinge-design.v004__2026-11-06_7ed5c4c.md"
   },
   {
+   "src": "docs/hinge-design.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "de96e88bcf42bd551c417f34018a4a17b1f1add5d243dfc9d4d7312c900ac50d",
+   "file": "hinge-design/hinge-design.v005__2026-11-06_4482281.md"
+  },
+  {
    "src": "docs/joint-analysis.md",
    "version": 1,
    "gen": "current",
@@ -379,6 +424,15 @@
    "file": "joint-analysis/joint-analysis.v006__2026-11-06_4482281.md"
   },
   {
+   "src": "docs/joint-analysis.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "d3329b55bc718af749783e5416c352d398c587b839850b39459f76ca25098773",
+   "file": "joint-analysis/joint-analysis.v007__2026-11-06_432b08c.md"
+  },
+  {
    "src": "docs/model-pipeline.md",
    "version": 1,
    "gen": "current",
@@ -395,6 +449,33 @@
    "commit": "165c355",
    "sha256": "e4ea62e6324595e27dd519e33b0efff27e46f5ac9cc36371b3452ca3399715d1",
    "file": "model-pipeline/model-pipeline.v002__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/research-cables.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "5b51abbf959262cfbb6e61d0231ca4000b2203d88b2571c2fa05b02fd9281ab7",
+   "file": "research-cables/research-cables.v001__2026-11-06_fc36218.md"
+  },
+  {
+   "src": "docs/research-hinge.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "017b7d9",
+   "sha256": "6ae357b60a86929e478a8168a212f28c005362ea0d8240a709fcd4fb536ec3ea",
+   "file": "research-hinge/research-hinge.v001__2026-11-06_017b7d9.md"
+  },
+  {
+   "src": "docs/research-joints.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "017b7d9",
+   "sha256": "e7098459760d00700787cf7a6808f1c383c40c0c639c2d3de577c29fd5faf759",
+   "file": "research-joints/research-joints.v001__2026-11-06_017b7d9.md"
   },
   {
    "src": "docs/research.md",
@@ -451,6 +532,15 @@
    "file": "selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md"
   },
   {
+   "src": "docs/selection-v5.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "3c794e1",
+   "sha256": "4891e0be3510d6eb75b9f21698fa6b94e7584337def91231cda3a02c8497327b",
+   "file": "selection-v5/selection-v5.v005__2026-11-06_3c794e1.md"
+  },
+  {
    "src": "docs/service-manual.md",
    "version": 1,
    "gen": "current",
@@ -485,6 +575,15 @@
    "commit": "fcba5fe",
    "sha256": "d0674e5e4d3dd16456a4eb4025aadb55693a79bb6396fe616126855a8b2a3c03",
    "file": "service-mechanisms/service-mechanisms.v003__2026-11-05_fcba5fe.md"
+  },
+  {
+   "src": "docs/service-mechanisms.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "55be615b8cd8ea7427475785f358631fb352881347b6f0b724456bce957a725a",
+   "file": "service-mechanisms/service-mechanisms.v004__2026-11-06_9ff6031.md"
   },
   {
    "src": "docs/source-status.md",
@@ -557,6 +656,15 @@
    "commit": "bfa86c4",
    "sha256": "90d9b33b216b4dc52c1b5d8b2d7048716b11422b5cc1394a07f435b70b9aebc3",
    "file": "tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md"
+  },
+  {
+   "src": "docs/tilt-swivel-design.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "ca54c2f38c5d456d3075ca3dfa176bf5eac47950ea33ca400c945d06cc651410",
+   "file": "tilt-swivel-design/tilt-swivel-design.v004__2026-11-06_432b08c.md"
   },
   {
    "src": "docs/unverified-tracker.md",
@@ -656,6 +764,15 @@
    "commit": "7ed5c4c",
    "sha256": "305535c114225fcd29f3fef98181aaae8282e0af73503bb5ada586c5b256812b",
    "file": "unverified-tracker/unverified-tracker.v011__2026-11-06_7ed5c4c.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "9112e0e34928d1499e0d7c5562a994493dbb8125843cf055a65b1eb9678ad35b",
+   "file": "unverified-tracker/unverified-tracker.v012__2026-11-06_4482281.md"
   },
   {
    "src": "docs/wiring.md",

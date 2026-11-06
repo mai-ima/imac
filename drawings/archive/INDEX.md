@@ -92,6 +92,7 @@
 | 15_bom_sheet.svg | v005 | current | 2026-11-06 | 80d7407 | 15_bom_sheet/15_bom_sheet.v005__2026-11-06_80d7407.svg |
 | 15_bom_sheet.svg | v006 | current | 2026-11-06 | 514e2e0 | 15_bom_sheet/15_bom_sheet.v006__2026-11-06_514e2e0.svg |
 | 15_bom_sheet.svg | v007 | current | 2026-11-06 | 302823c | 15_bom_sheet/15_bom_sheet.v007__2026-11-06_302823c.svg |
+| 15_bom_sheet.svg | v008 | current | 2026-11-06 | 432b08c | 15_bom_sheet/15_bom_sheet.v008__2026-11-06_432b08c.svg |
 | 16_cable_clips.svg | v001 | current | 2026-11-05 | b97eaae | 16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg |
 | 16_cable_clips.svg | v002 | current | 2026-11-05 | fcba5fe | 16_cable_clips/16_cable_clips.v002__2026-11-05_fcba5fe.svg |
 | 16_cable_clips.svg | v003 | current | 2026-11-05 | 71b7afb | 16_cable_clips/16_cable_clips.v003__2026-11-05_71b7afb.svg |
@@ -107,3 +108,4 @@
 | outlines.dxf | v008 | current | 2026-11-06 | 9ff6031 | outlines/outlines.v008__2026-11-06_9ff6031.dxf |
 | outlines.dxf | v009 | current | 2026-11-06 | 514e2e0 | outlines/outlines.v009__2026-11-06_514e2e0.dxf |
 | outlines.dxf | v010 | current | 2026-11-06 | 302823c | outlines/outlines.v010__2026-11-06_302823c.dxf |
+| outlines.dxf | v011 | current | 2026-11-06 | 432b08c | outlines/outlines.v011__2026-11-06_432b08c.dxf |

@@ -811,6 +811,15 @@
    "file": "15_bom_sheet/15_bom_sheet.v007__2026-11-06_302823c.svg"
   },
   {
+   "src": "drawings/15_bom_sheet.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "73bcbccc4bb0057463f0485f60d8d601a6f77bf0416fef44a7a2dbb790fe216a",
+   "file": "15_bom_sheet/15_bom_sheet.v008__2026-11-06_432b08c.svg"
+  },
+  {
    "src": "drawings/16_cable_clips.svg",
    "version": 1,
    "gen": "current",
@@ -944,6 +953,15 @@
    "commit": "302823c",
    "sha256": "f4c102cb8440d6e1e07f2644d23efa6055e8f149bde324116484af4e2022de30",
    "file": "outlines/outlines.v010__2026-11-06_302823c.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "c490ce150aebbd9f2fd6d13da45bd7a84693c2d5b10814ef6e7c7cae6212901d",
+   "file": "outlines/outlines.v011__2026-11-06_432b08c.dxf"
   }
  ]
 }

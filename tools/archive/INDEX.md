@@ -9,6 +9,7 @@
 | cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
 | cablemodel.py | v002 | current | 2026-11-06 | cca8bc2 | cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py |
+| cablemodel.py | v003 | current | 2026-11-06 | 514e2e0 | cablemodel/cablemodel.v003__2026-11-06_514e2e0.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
@@ -46,12 +47,14 @@
 | guard_no_delete.sh | v001 | current | 2026-11-03 | e1ff88f | guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh |
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |
 | joint_calc.py | v002 | current | 2026-11-05 | fcba5fe | joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py |
+| joint_calc.py | v003 | current | 2026-11-06 | 4482281 | joint_calc/joint_calc.v003__2026-11-06_4482281.py |
 | layout_search.py | v001 | current | 2026-11-03 | 2cd7df3 | layout_search/layout_search.v001__2026-11-03_2cd7df3.py |
 | massmodel.py | v001 | current | 2026-11-05 | fcba5fe | massmodel/massmodel.v001__2026-11-05_fcba5fe.py |
 | massmodel.py | v002 | current | 2026-11-05 | 71b7afb | massmodel/massmodel.v002__2026-11-05_71b7afb.py |
 | massmodel.py | v003 | current | 2026-11-06 | 9ff6031 | massmodel/massmodel.v003__2026-11-06_9ff6031.py |
 | motion_check.py | v001 | current | 2026-11-06 | 7ed5c4c | motion_check/motion_check.v001__2026-11-06_7ed5c4c.py |
 | motion_check.py | v002 | current | 2026-11-06 | 4482281 | motion_check/motion_check.v002__2026-11-06_4482281.py |
+| motion_check.py | v003 | current | 2026-11-06 | 432b08c | motion_check/motion_check.v003__2026-11-06_432b08c.py |
 | run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
 | run_gates.sh | v002 | current | 2026-11-06 | 7ed5c4c | run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh |
 | run_gates.sh | v003 | current | 2026-11-06 | bfa86c4 | run_gates/run_gates.v003__2026-11-06_bfa86c4.sh |
@@ -63,6 +66,7 @@
 | stability.py | v005 | current | 2026-11-06 | 4482281 | stability/stability.v005__2026-11-06_4482281.py |
 | stale_check.py | v001 | current | 2026-11-06 | c271477 | stale_check/stale_check.v001__2026-11-06_c271477.py |
 | stale_check.py | v002 | current | 2026-11-06 | 4482281 | stale_check/stale_check.v002__2026-11-06_4482281.py |
+| stale_check.py | v003 | current | 2026-11-06 | 432b08c | stale_check/stale_check.v003__2026-11-06_432b08c.py |
 | swivel_calc.py | v001 | current | 2026-11-06 | bfa86c4 | swivel_calc/swivel_calc.v001__2026-11-06_bfa86c4.py |
 | thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |

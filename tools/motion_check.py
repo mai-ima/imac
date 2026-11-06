@@ -98,8 +98,10 @@ pinch = []
 for a in tilts:
     for nn in ('前カバー', '後カバー'):
         g_ = gap(rot(HEAD['スラブ(前面ガラス+パネル+チン)'][2], a), NECK[nn][2]); pinch.append((g_, a, nn))
-gmin = min(pinch); in_zone = sorted({round(a) for g_, a, nn in pinch if 4 <= g_ <= 25})
-print(f'スラブ下縁-カバー上端の最小すき間 {gmin[0]:.1f}mm(チルト{gmin[1]:+.0f}° {gmin[2]})。4〜25mmの挟み込み域に入る角度: {len(in_zone)}段階 → [WARN] 蛇腹ブーツ/ガード未設計(U53)。合否はNGにせずUNVERIFIEDとして残す')
+gmin = min(pinch); gmax = max(pinch); in_zone = sorted({round(a) for g_, a, nn in pinch if 4 <= g_ <= 25}); BT = NK['boot']; lo, hi = BT['length_range_mm']
+ok_boot = lo <= gmin[0] and gmax[0] <= hi
+print(f'スラブ下縁-カバー上端のすき間 {gmin[0]:.1f}〜{gmax[0]:.1f}mm(最小: チルト{gmin[1]:+.0f}° {gmin[2]})。4〜25mmの挟み込み域に入る角度 {len(in_zone)}段階 → 蛇腹ブーツ(伸縮{lo}〜{hi}mm, spec.neck.boot)で隙間を塞ぐ設計 [{"OK(範囲内)" if ok_boot else "NG(ブーツの伸縮範囲外)"}]。ブーツの実特性・耐久・指進入試験は UNVERIFIED(U53)')
+if not ok_boot: bad += 1
 if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
 # PE編組の長さ: 可動範囲での端間距離の最大 + 余長 ≦ 編組長(model/pe_braids.json)
 PE = json.load(open(f'{R}/model/pe_braids.json'))

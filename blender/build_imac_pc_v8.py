@@ -31,7 +31,7 @@ POD_T, POD_H, WALL = S['dome']['total_t'], S['pod']['h'], S['pod']['wall']      
 POD_W = W - S['pod']['side_margin']
 IN_W, IN_D = POD_W - 2 * WALL, POD_T - SLAB - WALL
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
-ZC = -S['hinge']['axis_z_from_glass']      # ヒンジ軸のz(前面ガラスから)。docs/hinge-design.md
+ZC = -S['hinge']['axis_z_from_glass']      # ヒンジ軸のz(前面ガラスから)。docs/tilt-swivel-design.md
 X0, Y0, Z0 = -W / 2 + S['dome']['inset_left_right'] + WALL, S['dome']['inset_bottom'] + WALL, -SLAB      # 内部座標の原点(ドーム内側の左下)
 
 # ---------------- ユーティリティ ----------------
@@ -189,8 +189,10 @@ wp = os.path.join(TEXDIR, f'wallpaper_{A.color}.png'); wallpaper(wp, base_c, chi
 M = {}
 M['body'] = principled('anodized_body', base_c, 1.0, 0.38); add_bump(M['body'])
 M['stand'] = principled('anodized_stand', stand_c, 1.0, 0.34); add_bump(M['stand'])
-M['chin'] = principled('painted_chin', chin_c, 0.0, 0.28, coat=1.0, coat_rough=0.04)
-M['glass'] = principled('front_glass', '#EDEEF0', 0.0, 0.06, coat=1.0, coat_rough=0.02)
+def _mix(a, c2, t): return '#%02x%02x%02x' % tuple(int(int(a[i:i + 2], 16) * (1 - t) + int(c2[i:i + 2], 16) * t) for i in (1, 3, 5))
+chin_v = _mix(chin_c, base_c, .5); bezel_v = _mix(chin_c, '#ffffff', .3)      # viewer/index.html の setColor と同じ配色(前面の色差を明確に)
+M['chin'] = principled('painted_chin', chin_v, 0.0, 0.28, coat=1.0, coat_rough=0.04)
+M['glass'] = principled('front_glass', bezel_v, 0.0, 0.06, coat=1.0, coat_rough=0.02)
 M['screen'] = img_material('display', wp, emission=True, strength=1.1)
 M['black'] = principled('black_glass', '#050507', 0.0, 0.05, coat=1.0)
 M['dark'] = principled('dark_plastic', '#101114', 0.0, 0.55)

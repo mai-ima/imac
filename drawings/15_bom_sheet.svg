@@ -245,9 +245,9 @@
 <text x="250.0" y="153.6" font-size="2.6" text-anchor="start" fill="#222" >6</text>
 <text x="262.0" y="153.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-09.svg</text>
 <text x="10.0" y="158.8" font-size="2.6" text-anchor="start" fill="#222" >CP-10</text>
-<text x="28.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >スタンド(足+腕+ヒンジブロック)</text>
-<text x="150.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5押出+CNC</text>
-<text x="210.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >220x97x230</text>
+<text x="28.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >スタンド足(ballast内蔵)</text>
+<text x="150.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5(足本体)+SPCC鋼板ballast+A5052底</text>
+<text x="210.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >360x310x12</text>
 <text x="250.0" y="158.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-10.svg</text>
 <text x="10.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >CP-11</text>
