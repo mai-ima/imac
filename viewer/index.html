@@ -204,8 +204,8 @@ $('tScreen').onclick=e=>{ S.screen=!S.screen; displayMeshes.forEach(m=>m.materia
 $('sTilt').oninput=e=>{ const v=+e.target.value; $('vTilt').textContent=v+'°'; if(pivot) pivot.rotation.x=-v*Math.PI/180; updateStruts(); };
 $('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'°'; if(swivel) swivel.rotation.y=v*Math.PI/180; updateStruts(); };
 $('sExp').oninput=e=>{ S.explode=+e.target.value/100; $('vExp').textContent=Math.round(S.explode*100)+'%'; applyExplode(); };
-const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定)','約 60 W']],
-            1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定)','約 490 W']]};
+const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定, AC入力)','約 100 W']],
+            1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定, AC入力)','約 540 W(最大 約690 W)']]};
 function setLoad(n){ S.load=n; $('lIdle').setAttribute('aria-pressed',String(n===0)); $('lGame').setAttribute('aria-pressed',String(n===1)); $('read').innerHTML=READ[n].map(([a,b])=>`<span>${a}</span><span>${b}</span>`).join(''); }
 $('lIdle').onclick=()=>setLoad(0); $('lGame').onclick=()=>setLoad(1); setLoad(Q.get('load')==='1'?1:0);
 const PARTS=[

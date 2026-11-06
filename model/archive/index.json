@@ -136,6 +136,15 @@
    "file": "custom_parts/custom_parts.v008__2026-11-06_4482281.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "bfa86c4",
+   "sha256": "cc4d4ce8c35389f6f28ee8cb15d32485955dcfdf6ea550d62884944f27c60578",
+   "file": "custom_parts/custom_parts.v009__2026-11-06_bfa86c4.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",

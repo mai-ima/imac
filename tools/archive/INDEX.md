@@ -13,6 +13,7 @@
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |
 | fitcheck.py | v004 | current | 2026-11-05 | 71b7afb | fitcheck/fitcheck.v004__2026-11-05_71b7afb.py |
 | fitcheck.py | v005 | current | 2026-11-06 | fc36218 | fitcheck/fitcheck.v005__2026-11-06_fc36218.py |
+| fitcheck.py | v006 | current | 2026-11-06 | c271477 | fitcheck/fitcheck.v006__2026-11-06_c271477.py |
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
 | gen_drawing.py | v001 | current | 2026-11-03 | a2b24f4 | gen_drawing/gen_drawing.v001__2026-11-03_a2b24f4.py |
 | gen_drawing.py | v002 | current | 2026-11-03 | 0f4d0d7 | gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py |
@@ -48,6 +49,7 @@
 | motion_check.py | v001 | current | 2026-11-06 | 7ed5c4c | motion_check/motion_check.v001__2026-11-06_7ed5c4c.py |
 | run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
 | run_gates.sh | v002 | current | 2026-11-06 | 7ed5c4c | run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh |
+| run_gates.sh | v003 | current | 2026-11-06 | bfa86c4 | run_gates/run_gates.v003__2026-11-06_bfa86c4.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |
@@ -56,3 +58,4 @@
 | thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |
 | thermal_calc.py | v003 | current | 2026-11-05 | 71b7afb | thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py |
+| thermal_calc.py | v004 | current | 2026-11-06 | 9ff6031 | thermal_calc/thermal_calc.v004__2026-11-06_9ff6031.py |

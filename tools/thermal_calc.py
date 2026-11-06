@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """部品別の熱概算(再循環を含む簡易モデル) → docs/thermal-analysis.md。数値は公開仕様+仮定。CFD/実測で置換すること。"""
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import power_budget as PB
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 rho, cp = 1.2, 1005.0
 # 発熱(W): 出典は parts.json / 公式TDP・TGP, 内訳は仮定を明記
-Q = {'CPU 9950X3D (PPT 230W想定)': 230, 'GPU RTX 5070 Ti 小型 (TGP)': 300, '基板/VRM損失+RAM+SSD': 45, 'ファン/ポンプ': 16, 'PSU損失(750W中423W負荷, 効率≈91%)': 40, 'コントローラ+パネル(最大37.3W/0.9=41W)': 41}
+_b = PB.budget('最大(CPU PPT+GPU TGP同時)')   # 電力収支は tools/power_budget.py が単一源(二重計上なし, 合計=AC入力)
+Q = {'CPU 9950X3D (PPT 230W想定)': _b['cpu'], 'GPU RTX 5070 Ti 小型 (TGP)': _b['gpu'], '基板/VRM損失+RAM+SSD': _b['board'], 'ファン/ポンプ': _b['fans'], f"PSU損失(DC {_b['dc']:.0f}W→AC {_b['ac']:.0f}W, 効率{_b['eff']*100:.1f}%)": _b['psu_loss'], 'コントローラ+パネル': _b['panel']}
 P_tot = sum(Q.values())
 fans = {'ラジエーターP12 Pro×2': 131 * 2}   # m3/h 公称
 flow_nom = sum(fans.values())

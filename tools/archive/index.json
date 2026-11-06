@@ -100,6 +100,15 @@
    "file": "fitcheck/fitcheck.v005__2026-11-06_fc36218.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "c271477",
+   "sha256": "0785b384f9a90ca9b2fa6b339874e28be70a2de74598638693498a0698093b75",
+   "file": "fitcheck/fitcheck.v006__2026-11-06_c271477.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",
@@ -415,6 +424,15 @@
    "file": "run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh"
   },
   {
+   "src": "tools/run_gates.sh",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "bfa86c4",
+   "sha256": "c229770d851f71f7b4868a1829c52fd35d3ac561b7c4ab4b8e2556211d4ec12c",
+   "file": "run_gates/run_gates.v003__2026-11-06_bfa86c4.sh"
+  },
+  {
    "src": "tools/stability.py",
    "version": 1,
    "gen": "current",
@@ -485,6 +503,15 @@
    "commit": "71b7afb",
    "sha256": "e1794d2eaac408f864ac162b111512e6a02671093242342b106e767398c85a20",
    "file": "thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py"
+  },
+  {
+   "src": "tools/thermal_calc.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "08e9b60dcf5d1ab9680c2d85ea5ca66d94f03d8b2ac67fbb3943db0747281a1b",
+   "file": "thermal_calc/thermal_calc.v004__2026-11-06_9ff6031.py"
   }
  ]
 }

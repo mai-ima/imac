@@ -64,7 +64,8 @@ chk('干渉なし(許容組合せを除く)', ok, '全組合せ確認済')
 pass
 
 # ---- 電力 ----
-cpu = P['cpu']['facts']['ppt_w']; gpu = P['gpu']['facts']['tgp_w']; misc = 45; panel = 32.5/0.9
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import power_budget as PB
+_b = PB.budget('最大(CPU PPT+GPU TGP同時)'); cpu = _b['cpu']; gpu = _b['gpu']; misc = _b['board'] + _b['fans']; panel = _b['panel']
 load = cpu + gpu + misc + panel
 psu_w = P['psu']['facts'].get('provisional_w', 600)
 chk('電源容量(余裕30%以上)', load <= 0.7 * psu_w, f"CPU PPT{cpu}+GPU TGP{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= {psu_w}W x 0.7 = {0.7*psu_w:.0f}W (使用率 {load/psu_w*100:.0f}%)")

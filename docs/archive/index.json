@@ -82,6 +82,15 @@
    "file": "audit-log/audit-log.v008__2026-11-06_4482281.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "bfa86c4",
+   "sha256": "0d8650c6c19c7acd5ca62d8d2bdb15d9baeb7255774f2a628291d04a3f3aac61",
+   "file": "audit-log/audit-log.v009__2026-11-06_bfa86c4.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
@@ -485,6 +494,15 @@
    "commit": "71b7afb",
    "sha256": "5f4cd7613ae8699d4a0b26d9b3bc3c491652c8952bd064c95081b70149ba34d5",
    "file": "thermal-analysis/thermal-analysis.v003__2026-11-05_71b7afb.md"
+  },
+  {
+   "src": "docs/thermal-analysis.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "0bad27cdda42cdee8b6ec35b3ddf6aa6d6a447a260a0a41107c01dd38160aa5e",
+   "file": "thermal-analysis/thermal-analysis.v004__2026-11-06_9ff6031.md"
   },
   {
    "src": "docs/tilt-swivel-design.md",

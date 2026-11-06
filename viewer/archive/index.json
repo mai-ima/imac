@@ -206,6 +206,15 @@
    "commit": "bfa86c4",
    "sha256": "6afc7f9510515dcd87758441b9cf6924b4516c382e203af005244786341acb28",
    "file": "index/index.v007__2026-11-06_bfa86c4.html"
+  },
+  {
+   "src": "viewer/index.html",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e3fa041",
+   "sha256": "ff62b3696f27bf0d125289d337212345e6b2e5d340e6b0e56ecb21da3c46ef09",
+   "file": "index/index.v008__2026-11-06_e3fa041.html"
   }
  ]
 }
