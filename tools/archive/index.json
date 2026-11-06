@@ -352,6 +352,24 @@
    "file": "massmodel/massmodel.v002__2026-11-05_71b7afb.py"
   },
   {
+   "src": "tools/massmodel.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "ef6327a9130c2b73a1a86658cde6fce32d623c9f791cec334b0d8c39a97eea25",
+   "file": "massmodel/massmodel.v003__2026-11-06_9ff6031.py"
+  },
+  {
+   "src": "tools/run_gates.sh",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "c271477",
+   "sha256": "103cf8c3c23fd70cf8be7af56b23becbfb3f244d43504b302e2f04ff17b13f02",
+   "file": "run_gates/run_gates.v001__2026-11-06_c271477.sh"
+  },
+  {
    "src": "tools/stability.py",
    "version": 1,
    "gen": "current",
@@ -368,6 +386,15 @@
    "commit": "fcba5fe",
    "sha256": "9c5bfb1760891381793969da9e423e76c3e6bd086467fbefcf082f5ee5c8e049",
    "file": "stability/stability.v002__2026-11-05_fcba5fe.py"
+  },
+  {
+   "src": "tools/stability.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "e2ccbd0a9f85597d99fef9490b01296bd8dd86eb21cfba420346ee4872d21512",
+   "file": "stability/stability.v003__2026-11-06_9ff6031.py"
   },
   {
    "src": "tools/thermal_calc.py",

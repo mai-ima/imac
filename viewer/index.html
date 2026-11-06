@@ -77,7 +77,8 @@ body.clean .app{grid-template-columns:minmax(0,1fr)}
         <button class="btn" id="tAir" aria-pressed="false">エアフロー</button><button class="btn" id="tScreen" aria-pressed="true">画面ON</button>
       </div>
       <div style="display:grid;gap:8px;margin-top:12px">
-        <label class="sl" for="sTilt"><span>チルト</span><input id="sTilt" type="range" min="-5" max="25" value="0"><b id="vTilt">0°</b></label>
+        <label class="sl" for="sTilt"><span>チルト</span><input id="sTilt" type="range" min="-15" max="40" value="0"><b id="vTilt">0°</b></label>
+        <label class="sl" for="sSwivel"><span>首振り</span><input id="sSwivel" type="range" min="-60" max="60" value="0"><b id="vSwivel">0°</b></label>
         <label class="sl" for="sExp"><span>分解</span><input id="sExp" type="range" min="0" max="100" value="0"><b id="vExp">0%</b></label>
       </div>
     </section>
@@ -137,7 +138,7 @@ function drawScreen(t){ const [b,,c]=PALETTE[color]; const w=sc2.width,h=sc2.hei
 
 /* ---- GLB 読み込み ---- */
 const S={cover:true,labels:false,air:false,screen:true,load:0,explode:0,speed:0};
-let model, pivot, coverNode; const displayMeshes=[], rotors=[], byName={}, matBy={}, explodeGroups=[]; let ready=false;
+let model, pivot, swivel, coverNode; const displayMeshes=[], rotors=[], byName={}, matBy={}, explodeGroups=[]; let ready=false;
 const EXPLODE=[[['cover_','gasket'],240],[['pump','hose','txt_ihs','rad_','fan_rad'],110],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],70],[['psu','fan_psu','cable_atx24','cable_eps','cable_ac','txt_'],45],[['fan_exhaust'],85],[['ctrl_','cable_ctrl','cable_umb','ac_inlet'],30]];
 /* GLBは base64 テキスト(imac_pc.glb.txt)から読む(公開環境が .glb を配信しないため)。ローカルでは .glb にフォールバック */
 function loadGLB(onload,_p,onerr){
@@ -149,7 +150,7 @@ function loadGLB(onload,_p,onerr){
 loadGLB(gltf=>{
   model=gltf.scene; scene.add(model);
   model.traverse(o=>{ byName[o.name]=o; if(o.isMesh){ o.castShadow=o.receiveShadow=true; const m=o.material; if(m&&m.isMeshStandardMaterial){ m.envMapIntensity=1.9; if(m.metalness>.8) m.metalness=.62; if(m.roughness<.3) m.roughness=.3; } if(m&&m.name) matBy[m.name]=m; if(m&&m.name==='display') displayMeshes.push(o);} });
-  pivot=byName['tilt_pivot']; coverNode=byName['cover_back'];
+  pivot=byName['tilt_pivot']; swivel=byName['swivel_pivot']; coverNode=byName['cover_back'];
   const RPM={fan_gpu0_rotor:[0,1800],fan_gpu1_rotor:[0,1800],fan_rad0_rotor:[600,2400],fan_rad1_rotor:[600,2400],fan_exhaust_rotor:[500,1700],fan_psu_rotor:[0,1200],fan_pump_vrm_rotor:[800,2500]};   // アイドル/負荷(設計上の想定, 実測ではない)
   for(const n in RPM) if(byName[n]) rotors.push({o:byName[n],idle:RPM[n][0],load:RPM[n][1]});
   for(const [prefixes,amt] of EXPLODE){ const nodes=[]; model.traverse(o=>{ if(o.name&&prefixes.some(p=>o.name.startsWith(p))) nodes.push(o); });
@@ -161,6 +162,7 @@ loadGLB(gltf=>{
   setColor(color); $('loading').remove(); ready=true; goView(Q.get('view')||'back',true); applyExplode();
   if(Q.get('cut')==='1') setCover(false);
   if(Q.has('tilt')){ $('sTilt').value=Q.get('tilt'); $('sTilt').oninput({target:$('sTilt')}); }
+  if(Q.has('swivel')){ $('sSwivel').value=Q.get('swivel'); $('sSwivel').oninput({target:$('sSwivel')}); }
   if(Q.has('exp')){ $('sExp').value=Q.get('exp'); $('sExp').oninput({target:$('sExp')}); }
   if(Q.get('labels')==='1'){ S.labels=true; $('tLabel').setAttribute('aria-pressed','true'); }
   if(STATIC){ rotors.forEach((r,i)=>r.o.rotation.z=i*.8); for(let i=0;i<3;i++) frame(performance.now()+i*16); window.__ready=true; }
@@ -187,6 +189,7 @@ $('tLabel').onclick=e=>{ S.labels=!S.labels; e.currentTarget.setAttribute('aria-
 $('tAir').onclick=e=>{ S.air=!S.air; pts.visible=S.air; e.currentTarget.setAttribute('aria-pressed',String(S.air)); if(S.air&&S.cover) setCover(false); };
 $('tScreen').onclick=e=>{ S.screen=!S.screen; displayMeshes.forEach(m=>m.material=S.screen?screenMat:offMat); e.currentTarget.setAttribute('aria-pressed',String(S.screen)); };
 $('sTilt').oninput=e=>{ const v=+e.target.value; $('vTilt').textContent=v+'°'; if(pivot) pivot.rotation.x=-v*Math.PI/180; };
+$('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'°'; if(swivel) swivel.rotation.y=v*Math.PI/180; };
 $('sExp').oninput=e=>{ S.explode=+e.target.value/100; $('vExp').textContent=Math.round(S.explode*100)+'%'; applyExplode(); };
 const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定)','約 60 W']],
             1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定)','約 490 W']]};

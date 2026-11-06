@@ -30,9 +30,11 @@
 | fitcheck-report.txt | v004 | current | 2026-11-05 | 71b7afb | fitcheck-report/fitcheck-report.v004__2026-11-05_71b7afb.txt |
 | hinge-design.md | v001 | current | 2026-11-05 | 017b7d9 | hinge-design/hinge-design.v001__2026-11-05_017b7d9.md |
 | hinge-design.md | v002 | current | 2026-11-05 | fcba5fe | hinge-design/hinge-design.v002__2026-11-05_fcba5fe.md |
+| hinge-design.md | v003 | current | 2026-11-06 | 9ff6031 | hinge-design/hinge-design.v003__2026-11-06_9ff6031.md |
 | joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
 | joint-analysis.md | v002 | current | 2026-11-05 | fcba5fe | joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md |
 | joint-analysis.md | v003 | current | 2026-11-05 | 71b7afb | joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md |
+| joint-analysis.md | v004 | current | 2026-11-06 | 9ff6031 | joint-analysis/joint-analysis.v004__2026-11-06_9ff6031.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research.md | v001 | current | 2026-11-03 | 98bf25c | research/research.v001__2026-11-03_98bf25c.md |
@@ -58,6 +60,7 @@
 | unverified-tracker.md | v007 | current | 2026-11-05 | a404097 | unverified-tracker/unverified-tracker.v007__2026-11-05_a404097.md |
 | unverified-tracker.md | v008 | current | 2026-11-05 | 853c2f5 | unverified-tracker/unverified-tracker.v008__2026-11-05_853c2f5.md |
 | unverified-tracker.md | v009 | current | 2026-11-06 | fc36218 | unverified-tracker/unverified-tracker.v009__2026-11-06_fc36218.md |
+| unverified-tracker.md | v010 | current | 2026-11-06 | cca8bc2 | unverified-tracker/unverified-tracker.v010__2026-11-06_cca8bc2.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |
 | wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |
 | wiring.md | v003 | current | 2026-11-05 | fcba5fe | wiring/wiring.v003__2026-11-05_fcba5fe.md |

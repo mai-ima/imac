@@ -1,22 +1,41 @@
 #!/usr/bin/env python3
-"""転倒安定性(v7): 質量/重心は tools/massmodel.py(layout由来, 推定)。足はヒンジ軸を基準に前 foot_front/後 foot_back、幅 foot_w。
-出力: 前後の転倒余裕(チルト別)と、上端(地面から約0.5m)を押して転倒する最小水平力の概算。"""
+"""転倒安定性(v9: チルト×首振りの全格子)。質量/重心は tools/massmodel.py(layout由来, 推定)。
+頭部重心を ヒンジ軸まわりチルト → 垂直首振り軸まわりスイベル の順に動かし、足(長方形)に対する重心の余裕を方向別に求める。
+上端(地面から約0.5m)を水平に押して転倒する力 F = m·g·(重心から足縁までの距離)/上端高さ。目標: 前≥25N・後≥20N・左右≥30N。"""
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, f'{R}/tools')
 import massmodel as MM
 S = MM.S; hm, cz, cy, _ = MM.head_cg(); ms = MM.stand_mass()
-hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']; st = S['stand']
-front = hz - st['foot_front']; back = hz + st['foot_back']      # 前面ガラス基準z: 足の前端/後端(前=小さい値)
+hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']; st = S['stand']; sw = S['swivel']
+T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; SW = sw['range_deg']; sz = sw['axis_z_from_glass']
+front = hz - st['foot_front']; back = hz + st['foot_back']; half_w = st['foot_w'] / 2
 ground_y = -st['drop'] - 6; top_h = (MM.H - ground_y) / 1000.0
-print(f"ディスプレイ部 {hm:.1f}kg + スタンド {ms:.1f}kg = {hm+ms:.1f}kg / 重心(頭部) z={cz:.0f}mm y={cy:.0f}mm / ヒンジ軸 z={hz} y={hy} / 足 z={front:.0f}〜{back:.0f}mm 幅{st['foot_w']}mm / 上端高さ {top_h*1000:.0f}mm")
-res = []
-for tilt in (-5, 0, 10, 25):
+mt = hm + ms; zs = (front + back) / 2
+print(f"ディスプレイ部 {hm:.1f}kg + スタンド(首振りユニット込み) {ms:.1f}kg = {mt:.1f}kg / 頭部重心 z={cz:.0f} y={cy:.0f} / ヒンジ軸 z={hz} y={hy} / 首振り軸 z={sz} / 足 z={front:.0f}〜{back:.0f} 幅{st['foot_w']} / 上端高さ {top_h*1000:.0f}mm")
+GOAL = dict(front=25, back=20, side=30)
+worst = {'front': 1e9, 'back': 1e9, 'side': 1e9}; arg = {}
+tilts = [T0 + i * (T1 - T0) / 11 for i in range(12)]; swivs = [-SW + i * (2 * SW) / 12 for i in range(13)]
+def cg(tilt, swv):
     a = math.radians(tilt); dz = cz - hz; dy = cy - hy
-    zc = hz + dz * math.cos(a) + dy * math.sin(a)                 # 後方へ倒すと重心zが増える
-    # 全体重心(スタンドは足の中央付近 z=(front+back)/2 と仮定)
-    zt = (hm * zc + ms * (front + back) / 2) / (hm + ms)
-    mb, mf = back - zt, zt - front; F_f = (hm + ms) * 9.81 * mf / 1000 / top_h; F_b = (hm + ms) * 9.81 * mb / 1000 / top_h
-    print(f"チルト{tilt:+3d}°: 全体重心z={zt:6.1f} 前方余裕 {mf:6.1f}mm 後方余裕 {mb:6.1f}mm → 上端を前へ押す転倒力≈{F_f:.0f}N / 後ろへ≈{F_b:.0f}N [{'OK' if F_f>=25 and F_b>=20 else 'NG'}]")
-    res.append((tilt, mf, mb))
-Fl = (hm + ms) * 9.81 * (st['foot_w'] / 2 / 1000) / (top_h * 0.9)
-print(f"横転(幅{st['foot_w']}mm): 上端を横へ押す転倒力≈{Fl:.0f}N。目標(設計基準): 上端を押す転倒力 前≥25N・後≥20N・横≥30N(約2〜3kgf: 触れて倒れない)。")
+    zc = hz + dz * math.cos(a) + dy * math.sin(a)                  # チルト後の頭部重心z(後ろへ倒すと増える)
+    r = zc - sz; th = math.radians(swv)
+    x, z = r * math.sin(th), sz + r * math.cos(th)                 # 垂直軸まわりスイベル(軸は足内、スタンド側質量は軸上=足中央付近)
+    tx = (hm * x) / mt; tz = (hm * z + ms * zs) / mt
+    return tx, tz
+print('チルト\\首振り  ' + ' '.join(f'{s:+5.0f}' for s in swivs[::2]) + '   (最小転倒力[N]: 前/後/横の最小)')
+for t in tilts:
+    row = []
+    for s_ in swivs:
+        tx, tz = cg(t, s_)
+        mf, mb = tz - front, back - tz; ml = half_w - abs(tx)
+        Ff, Fb, Fs = (mt * 9.81 * m / 1000 / top_h for m in (mf, mb, ml))
+        for k, v in (('front', Ff), ('back', Fb), ('side', Fs)):
+            if v < worst[k]: worst[k] = v; arg[k] = (t, s_)
+        row.append(min(Ff / GOAL['front'], Fb / GOAL['back'], Fs / GOAL['side']))
+    print(f'{t:+6.1f}°      ' + ' '.join(f'{x*100:5.0f}' for x in row[::2]) + '  (目標比%)')
+ok = True
+for k, lbl in (('front', '前'), ('back', '後'), ('side', '横')):
+    good = worst[k] >= GOAL[k]; ok &= good
+    print(f"最悪 {lbl}: {worst[k]:.0f}N(目標≥{GOAL[k]}N) @チルト{arg[k][0]:+.0f}° 首振り{arg[k][1]:+.0f}° [{'OK' if good else 'NG'}]")
+print('総合:', 'OK(全格子で目標達成。質量/重心は推定=UNVERIFIED)' if ok else 'NG(目標未達: 足寸法/バラスト/首振り範囲の見直しが必要)')
+sys.exit(0 if ok else 1)

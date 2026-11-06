@@ -253,6 +253,15 @@
    "file": "hinge-design/hinge-design.v002__2026-11-05_fcba5fe.md"
   },
   {
+   "src": "docs/hinge-design.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "dbb9237decc991c38268694c9941a12fd731a779303e241b0ef266262044a80b",
+   "file": "hinge-design/hinge-design.v003__2026-11-06_9ff6031.md"
+  },
+  {
    "src": "docs/joint-analysis.md",
    "version": 1,
    "gen": "current",
@@ -278,6 +287,15 @@
    "commit": "71b7afb",
    "sha256": "c8d6b436174ba6f9356976a2e2835152f4cd82e6f45285d56a52e23ed65f4ad8",
    "file": "joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "b38d733dc5ce06db2ec9e2ce7285f444bcce6873aa31786c40a2d836f7c72a02",
+   "file": "joint-analysis/joint-analysis.v004__2026-11-06_9ff6031.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -503,6 +521,15 @@
    "commit": "fc36218",
    "sha256": "110449fd631f69de1a4145e573848a905c56344a84500a3aea478f64507fc600",
    "file": "unverified-tracker/unverified-tracker.v009__2026-11-06_fc36218.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cca8bc2",
+   "sha256": "8394c82a7cc61651b15a77a0c983263a87f40eb6329d9621a106dd6aa7970d6f",
+   "file": "unverified-tracker/unverified-tracker.v010__2026-11-06_cca8bc2.md"
   },
   {
    "src": "docs/wiring.md",

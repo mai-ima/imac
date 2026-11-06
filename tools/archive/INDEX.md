@@ -41,8 +41,11 @@
 | layout_search.py | v001 | current | 2026-11-03 | 2cd7df3 | layout_search/layout_search.v001__2026-11-03_2cd7df3.py |
 | massmodel.py | v001 | current | 2026-11-05 | fcba5fe | massmodel/massmodel.v001__2026-11-05_fcba5fe.py |
 | massmodel.py | v002 | current | 2026-11-05 | 71b7afb | massmodel/massmodel.v002__2026-11-05_71b7afb.py |
+| massmodel.py | v003 | current | 2026-11-06 | 9ff6031 | massmodel/massmodel.v003__2026-11-06_9ff6031.py |
+| run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
+| stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |
 | thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |
 | thermal_calc.py | v003 | current | 2026-11-05 | 71b7afb | thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py |

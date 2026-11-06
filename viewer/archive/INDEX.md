@@ -8,11 +8,14 @@
 | imac_pc.glb | v004 | current | 2026-11-05 | e1880f0 | imac_pc/imac_pc.v004__2026-11-05_e1880f0.glb |
 | imac_pc.glb | v005 | current | 2026-11-05 | 71b7afb | imac_pc/imac_pc.v005__2026-11-05_71b7afb.glb |
 | imac_pc.glb | v006 | current | 2026-11-06 | 09ad133 | imac_pc/imac_pc.v006__2026-11-06_09ad133.glb |
+| imac_pc.glb | v007 | current | 2026-11-06 | 9ff6031 | imac_pc/imac_pc.v007__2026-11-06_9ff6031.glb |
 | imac_pc.glb.txt | v001 | current | 2026-11-03 | 165c355 | imac_pc.glb/imac_pc.glb.v001__2026-11-03_165c355.txt |
 | imac_pc.glb.txt | v002 | current | 2026-11-05 | 5564531 | imac_pc.glb/imac_pc.glb.v002__2026-11-05_5564531.txt |
 | imac_pc.glb.txt | v003 | current | 2026-11-05 | 2f8c0ac | imac_pc.glb/imac_pc.glb.v003__2026-11-05_2f8c0ac.txt |
 | imac_pc.glb.txt | v004 | current | 2026-11-05 | a404097 | imac_pc.glb/imac_pc.glb.v004__2026-11-05_a404097.txt |
 | imac_pc.glb.txt | v005 | current | 2026-11-05 | 71b7afb | imac_pc.glb/imac_pc.glb.v005__2026-11-05_71b7afb.txt |
 | imac_pc.glb.txt | v006 | current | 2026-11-06 | 09ad133 | imac_pc.glb/imac_pc.glb.v006__2026-11-06_09ad133.txt |
+| imac_pc.glb.txt | v007 | current | 2026-11-06 | 9ff6031 | imac_pc.glb/imac_pc.glb.v007__2026-11-06_9ff6031.txt |
 | index.html | v001 | current | 2026-11-05 | 165c355 | index/index.v001__2026-11-05_165c355.html |
 | index.html | v002 | current | 2026-11-05 | 71b7afb | index/index.v002__2026-11-05_71b7afb.html |
+| index.html | v003 | current | 2026-11-06 | 09ad133 | index/index.v003__2026-11-06_09ad133.html |

@@ -15,7 +15,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--color', default='silver'); ap.add_argument('--view', default='front')
 ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'))
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
-ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0)
+ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
 ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='texture'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
@@ -365,8 +365,12 @@ box('stand_foot', fw, FT, FOOT, -fw / 2, -DROP - FT, ZC - S['stand']['foot_back'
 box('stand_ballast', fw - 24, 6, FOOT - 24, -(fw - 24) / 2, -DROP - FT + 3, ZC - S['stand']['foot_back'] + 12, M['steel'], body=False)   # 足内の鋼板ballast(6mm ≈1.8kg)
 for sx_ in (-1, 1):
     for sz_ in (-1, 1): cyl('stand_rubber_foot', 10, 2.5, 'y', sx_ * (fw / 2 - 24), -DROP - FT - 1.25, ZC - S['stand']['foot_back'] + FOOT / 2 + sz_ * (FOOT / 2 - 24), M['rubber'], 24, body=False)
-box('stand_arm', 120, DROP + HY + 11, 8, -60, -DROP, ZC - 4, M['stand'], bevel=2)
-ARM_OBJ = bpy.data.objects['stand_arm']; BODY_OBJS.remove(ARM_OBJ)
+ARM_H = DROP - S['swivel']['stack_h'] + HY + 11      # 首振りユニット(24mm)の上からヒンジ軸+11まで
+for _k, _dz in enumerate((-24, 18)):      # ネック: 前後2枚のプレート(間にバランサ用ダイスプリングを収める)
+    box(f'stand_arm{_k}', 120, ARM_H, 6, -60, -DROP + S['swivel']['stack_h'], ZC + _dz, M['stand'], bevel=1.5)
+for _k, _sx in enumerate((-60, 57)):      # 側面カバー(指が入らない・ばね/レバーを隠す)
+    box(f'stand_neck_side{_k}', 3, ARM_H, 48, _sx, -DROP + S['swivel']['stack_h'], ZC - 24, M['stand'], bevel=.8)
+ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); BODY_OBJS.remove(bpy.data.objects['stand_arm1'])
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----
 def label(txt, size, x, y, zl, mat, rot=0, ext=0.05, name=None, align='CENTER'):
@@ -575,7 +579,8 @@ for c_ in CABJ: cable('cable_' + c_['id'], [tuple(q) for q in c_['path']], c_['o
 exec(open(os.path.join(HERE, 'hardware_v8.py'), encoding='utf-8').read())      # 小部品(ばね/ネジ/ラッチ/ヒンジ機構等)
 
 # ---------------- アセンブリ(部品群)ごとにグルーピング: 各ファン/ポンプ/ラジエーター/GPU/PSU/基板/SSD/ctrl/AC/ケーブル/ヒンジ/スタンド/ドーム/トレイ/表示部を独立した親にする ----------------
-ASM = [('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_fan_rad0', ('fan_rad0',)), ('ASM_fan_rad1', ('fan_rad1',)), ('ASM_fan_psu', ('fan_psu',)), ('ASM_fan_pump_vrm', ('fan_pump_vrm',)),
+ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_friction', 'stand_swivel_bolt', 'stand_swivel_stop_tab', 'hinge_axle', 'hinge_eclip', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
+       ('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_fan_rad0', ('fan_rad0',)), ('ASM_fan_rad1', ('fan_rad1',)), ('ASM_fan_psu', ('fan_psu',)), ('ASM_fan_pump_vrm', ('fan_pump_vrm',)),
        ('ASM_dome', ('cover_', 'gasket', 'latch_', 'hook_', 'magnet', 'dowel_', 'rf_window', 'antenna')),
        ('ASM_tray', ('tray_', 'hang_', 'standoff_', 'screw_', 'pe_stud', 'pe_nut', 'pe_braid_tray', 'clip_', 'gpu_cradle')),
        ('ASM_gpu', ('gpu_', 'riser')), ('ASM_aio_pump', ('pump_',)), ('ASM_aio_rad', ('rad_',)), ('ASM_psu', ('psu_',)),
@@ -584,7 +589,7 @@ ASM = [('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_f
        ('ASM_stand_fixed', ('stand_', 'hinge_axle', 'hinge_eclip')),
        ('ASM_display', ('slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button')),
        ('ASM_board', ('board_', 'io_', 'vrm_', 'choke', 'cap', 'socket', 'cpu_', 'txt_', 'dimm', 'atx24', 'eps8', 'pcie_', 'chipset', 'm2_', 'am5_'))]
-FIXED = ('ASM_stand_fixed',)
+FIXED = ('ASM_stand_fixed', 'ASM_stand_neck')      # ネックは頭部とチルトしないが、首振りでは回る
 _asm = {}
 for ob in list(COLL.objects):
     if ob.parent is not None or ob.name.startswith('ASM_') or ob.name in ('floor', 'target', 'cam', 'key', 'back_key'): continue
@@ -610,6 +615,11 @@ for ob in COLL.objects:
     if ob in BODY_OBJS and ob.parent is None:
         ob.parent = PIV; ob.matrix_parent_inverse = PIV.matrix_world.inverted()
 PIV.rotation_euler = (-math.radians(A.tilt), 0, 0)   # +tiltで上端が後ろへ(Blender +Y=背面): X軸まわり -θ
+# 首振り(垂直軸=設計y軸=Blender Z): 頭部(PIV)とネック一式が回る。足・ステータ・軸受は固定。+swivelで画面が右へ向く
+SWIV = bpy.data.objects.new('swivel_pivot', None); COLL.objects.link(SWIV); SWIV.location = V(0, -DROP, ZC); bpy.context.view_layer.update()
+for o_ in [PIV] + [x for x in COLL.objects if x.name == 'ASM_stand_neck']:
+    mw = o_.matrix_world.copy(); o_.parent = SWIV; o_.matrix_world = mw
+SWIV.rotation_euler = (0, 0, math.radians(A.swivel))
 
 # ファン回転 (フレーム数指定時はアニメーション)
 for k, r in enumerate(rotors):

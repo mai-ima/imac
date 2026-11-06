@@ -86,19 +86,48 @@ hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼�
 cyl('hinge_axle', 5.0, 150, 'x', 0, HY, ZC, M['steel'], 24, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
-SPZ = ZC - 9
-cyl('spring_spool', 9, 40, 'x', 0, HY + 1, SPZ, M['spring'], 32); cyl('spring_spool_flange_l', 11, 2, 'x', -21, HY + 1, SPZ, M['sus'], 32); cyl('spring_spool_flange_r', 11, 2, 'x', 21, HY + 1, SPZ, M['sus'], 32)
-_bm = bmesh.new()      # 定荷重ばねの帯(幅40, 厚0.3): スプールに巻き付き、カムのフックへ接続
-_pts = [V(0, HY + 1 + 9.15 * math.sin(a_), SPZ + 9.15 * math.cos(a_)) for a_ in [i * math.pi / 12 for i in range(0, 13)]]
-for i in range(len(_pts) - 1):
-    v0, v1 = _pts[i], _pts[i + 1]; _bm.faces.new([_bm.verts.new((v0.x - 20, v0.y, v0.z)), _bm.verts.new((v0.x + 20, v0.y, v0.z)), _bm.verts.new((v1.x + 20, v1.y, v1.z)), _bm.verts.new((v1.x - 20, v1.y, v1.z))])
-_me = bpy.data.meshes.new('spring_strip'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(M['spring']); _so = bpy.data.objects.new('spring_strip', _me); _so.modifiers.new('s', 'SOLIDIFY').thickness = 0.3; link(_so)
-cyl('hinge_cam', 12, 4, 'x', 0, HY, ZC, M['sus'], 40); hb('hinge_cam_hook', 6, 8, 4, -3, HY + 10, ZC - 2, M['sus'])
-hb('spring_strip_tail', 40, 10, 0.3, -20, HY + 1, ZC - 9 + 9.15, M['spring'], bev=0)             # ばね帯の自由端(スプール上端→カムのフック)
-hw('ヒンジ', '定荷重ばね/カム式バランサ(ばね帯 幅40×t0.3+スプール+カム, 金属製保持)', 1, '型番 U26')
-hb('hinge_stopper_up', 12, 8, 10, -6, 13, ZC - 14, M['steel']); hb('hinge_stopper_dn', 12, 8, 10, -6, 1, ZC - 14, M['steel']); hw('ヒンジ', '機械ストッパ(-5°/+25°)', 2, '')
+# ---- チルト・バランサ(v9): 圧縮ダイスプリング2本 + ヒンジ尾部レバー(軸から下へ e=25) / スタンド側アンカー(軸から下へ s=65)。tools/balance_calc.py / model/balance.json ----
+BAL = json.load(open(os.path.join(ROOT, 'model', 'balance.json')))
+BS, BE = BAL['s'], BAL['e']
+for k, sx_ in enumerate((-1, 1)):
+    xl = sx_ * 26
+    hb(f'hinge_tail_lever{k}', 4, BE + 12, 12, xl - 2, HY - BE - 6, ZC - 6, M['sus'])                   # 尾部レバー(軸Ø10に固定, 先端に横ピン)
+    cyl(f'hinge_tail_pin{k}', 3.0, 20, 'x', xl - 6, HY - BE, ZC, M['steel'], 16)                       # 先端の横ピン(ばね上座を受ける)
+    hb(f'spring_seat_top{k}', 16, 3, 16, sx_ * 14 - 8, HY - BE - 3, ZC - 8, M['sus'])
+    hb(f'spring_seat_bot{k}', 16, 3, 16, sx_ * 14 - 8, HY - BS, ZC - 8, M['sus'])
+    cyl(f'spring_guide_rod{k}', 4.0, BS - BE - 6, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['steel'], 16)  # ガイドロッド
+    cyl(f'spring_die{k}', 8.0, BS - BE - 8, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['spring'], 24)      # ダイスプリング(外径16, 圧縮 8.6mm使用)
+hb('stand_anchor_pin_bridge', 66, 6, 12, -33, HY - BS - 6, ZC - 6, M['sus'])
+hw('ヒンジ', 'ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用8.6mm, 初期力360N/本)+ガイドロッド Ø8', 2, 'U26: 型番未選定(ミスミ等 SWH/SWM系を想定)')
+hw('ヒンジ', '尾部レバー SUS304 t4 (e=25mm)+横ピン Ø6', 2, 'balance_calc.py')
+POST_R = 34
+for k, sx_ in enumerate((-1, 1)):    # チルト端のストッパ: レバー側ピン(半径34)が当たる受けポスト(-15°側)と、ネックプレート内側のゴム(+40°側)
+    cyl(f'hinge_stopper_dn{k}', 4.0, 8, 'x', sx_ * 26, HY - POST_R * math.cos(math.radians(-15)) - 2, ZC + POST_R * math.sin(math.radians(-15)) - 7, M['rubber'], 16)
+    hb(f'hinge_stopper_up{k}', 8, 8, 3, sx_ * 26 - 4, HY - POST_R * math.cos(math.radians(40)) - 4, ZC + 18, M['rubber'])
+    cyl(f'hinge_lever_stoppin{k}', 2.5, 12, 'x', sx_ * 26, HY - POST_R, ZC, M['steel'], 12)
+hw('ヒンジ', '機械ストッパ+ゴムバンパ(チルト -15°/+40°)', 4, '')
 for k, xx in enumerate((-70, -22, 22, 70)): cyl(f'hinge_eclip{k}', 7.2, 1.2, 'x', xx, HY, ZC, M['sus'], 24, body=False)
 hw('ヒンジ', 'Eクリップ(軸Ø10用)', 4, ''); hw('ヒンジ', 'ヒンジ軸 Ø10 SUS×150', 1, '')
+
+# ---- 首振りユニット(v9): 足上面(y=-DROP)に固定のステータ板 → クロスローラ軸受 → ロータ板 → ネック。左右±60°。tools/stability.py / motion_check.py ----
+SWV = S['swivel']; SY0 = -DROP; SX, SZ = 0.0, ZC           # 垂直首振り軸(スタンド中心線, ヒンジ軸と同じz)
+cyl('stand_swivel_stator', 55, 6, 'y', SX, SY0 + 3, SZ, M['alublack'], 64)                                          # 足に固定: Ø110×6
+cyl('stand_swivel_bearing', SWV['bearing_od'] / 2, 12, 'y', SX, SY0 + 12, SZ, M['sus'], 64)                          # クロスローラ(スリューリング)軸受 OD100/ID60×12
+cyl('stand_swivel_bearing_bore', SWV['bearing_id'] / 2 - 0.5, 12.2, 'y', SX, SY0 + 12, SZ, M['dark'], 48)            # 内孔(暗部)
+cyl('stand_swivel_rotor', 55, 6, 'y', SX, SY0 + 21, SZ, M['alublack'], 64)                                          # 回転側: Ø110×6 (ネックのウェブが載る)
+cyl('stand_swivel_friction_ring', 47, 1.5, 'y', SX, SY0 + 6.9, SZ, M['rubber'], 64)                                  # PTFE/ゴム摩擦リング(波ばね予圧, 保持1.6N·m)
+for k in range(8):
+    ang = math.radians(k * 45 + 22.5); bx_, bz_ = SX + SWV['pcd'] / 2 * math.cos(ang), SZ + SWV['pcd'] / 2 * math.sin(ang)
+    cyl(f'stand_swivel_bolt{k}', 2.5, 7, 'y', bx_, SY0 + 25.5, bz_, M['sus'], 12)                                    # M5×8本(PCD80) 皿頭
+for sgn, nm in ((-1, 'l'), (1, 'r')):    # 角度ストッパ: ステータ側のブロック(±60°)とロータ側のタブ
+    ang = math.radians(90 + sgn * (SWV['range_deg'] + 8)); cyl(f'stand_swivel_stop_{nm}', 4.0, 6, 'y', SX + 50 * math.cos(ang), SY0 + 9, SZ + 50 * math.sin(ang), M['rubber'], 16)
+box('stand_swivel_stop_tab', 10, 5, 8, SX - 5, SY0 + 15.5, SZ + 44, M['sus'], bevel=.5, body=False)
+hw('首振り', 'クロスローラ軸受(スリューリング) OD100/ID60×12', 1, 'U50: 型番未選定(IKO/THK/NSKの小径品を想定)')
+hw('首振り', 'ステータ板・ロータ板 A5052 Ø110×t6 / 摩擦リング+波ばね', 2, '保持トルク1.6N·m')
+hw('首振り', 'M5皿ねじ PCD80', 8, ''); hw('首振り', 'ゴムストッパ(±60°)+ロータタブ', 3, '')
+box('stand_neck_web', 120, 6, 54, -60, SY0 + 24, ZC - 27, M['stand'], bevel=1.2, body=False)                         # ネックのウェブ(ロータに載る)
+cable('pe_braid_swivel', [(SX + 14, SY0 + 22, SZ + 36), (SX + 30, SY0 + 10, SZ + 52), (SX + 20, SY0 - 2, SZ + 60)], 1.8, M['pe_gy']) if False else None
+hw('接地', 'スイベル跨ぎ編組(ネック→足, 余長でねじれ±60°を許容)', 1, 'CP-18')
 din = lambda x, y, z: (x - X0, y - Y0, Z0 - z)      # 設計座標→内部座標
 cable('pe_braid_hinge', [din(-30, 6, -SLAB - 6), din(-30, -10, -SLAB - 20), din(-30, -40, ZC - 6)], 1.8, M['pe_gy']); hw('接地', 'ヒンジ跨ぎ可とう編組(背板→スタンド)', 1, 'CP-18')
 json.dump(HW, open(os.path.join(ROOT, 'model', 'hardware_list.json'), 'w'), ensure_ascii=False, indent=1)
