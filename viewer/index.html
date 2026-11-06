@@ -1,4 +1,4 @@
-<title>iMac風PC 3Dビューア v8</title>
+<title>iMac風PC 3Dビューア</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 /* Layout: 左に3Dビューポート、右に操作・部品パネル(狭い画面では上下に積む) */
@@ -177,7 +177,7 @@ function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+
 function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld(true); const c=o=>new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
   for(const st of struts){ const A=c(st.seat), B=c(st.pin);
     st.parts.forEach((o,i)=>{ const par=o.parent; const a=par.worldToLocal(A.clone()), b=par.worldToLocal(B.clone()); const d=b.clone().sub(a); const L=d.length();
-      if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=d.clone().normalize(); }
+      if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=new THREE.Vector3(0,1,0); }
       o.quaternion.copy(new THREE.Quaternion().setFromUnitVectors(st.dir0,d.clone().normalize())).multiply(st.base[i].q);
       const mid=a.clone().add(d.clone().multiplyScalar(0.5)); const m0=st.a0.clone().add(st.dir0.clone().multiplyScalar(st.len0/2));
       o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*(L/st.len0), st.base[i].s.z); }); } }

@@ -12,6 +12,7 @@
 | audit-log.md | v007 | current | 2026-11-06 | 2e0ab24 | audit-log/audit-log.v007__2026-11-06_2e0ab24.md |
 | audit-log.md | v008 | current | 2026-11-06 | 4482281 | audit-log/audit-log.v008__2026-11-06_4482281.md |
 | audit-log.md | v009 | current | 2026-11-06 | bfa86c4 | audit-log/audit-log.v009__2026-11-06_bfa86c4.md |
+| audit-log.md | v010 | current | 2026-11-06 | 2bb8cf1 | audit-log/audit-log.v010__2026-11-06_2bb8cf1.md |
 | bom-final.md | v001 | current | 2026-11-05 | 27ca8ce | bom-final/bom-final.v001__2026-11-05_27ca8ce.md |
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |
@@ -41,6 +42,7 @@
 | joint-analysis.md | v003 | current | 2026-11-05 | 71b7afb | joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md |
 | joint-analysis.md | v004 | current | 2026-11-06 | 9ff6031 | joint-analysis/joint-analysis.v004__2026-11-06_9ff6031.md |
 | joint-analysis.md | v005 | current | 2026-11-06 | 7ed5c4c | joint-analysis/joint-analysis.v005__2026-11-06_7ed5c4c.md |
+| joint-analysis.md | v006 | current | 2026-11-06 | 4482281 | joint-analysis/joint-analysis.v006__2026-11-06_4482281.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research.md | v001 | current | 2026-11-03 | 98bf25c | research/research.v001__2026-11-03_98bf25c.md |
@@ -60,6 +62,7 @@
 | thermal-analysis.md | v004 | current | 2026-11-06 | 9ff6031 | thermal-analysis/thermal-analysis.v004__2026-11-06_9ff6031.md |
 | tilt-swivel-design.md | v001 | current | 2026-11-06 | 7ed5c4c | tilt-swivel-design/tilt-swivel-design.v001__2026-11-06_7ed5c4c.md |
 | tilt-swivel-design.md | v002 | current | 2026-11-06 | 4482281 | tilt-swivel-design/tilt-swivel-design.v002__2026-11-06_4482281.md |
+| tilt-swivel-design.md | v003 | current | 2026-11-06 | bfa86c4 | tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |

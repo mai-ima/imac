@@ -64,6 +64,15 @@
    "file": "custom-parts/custom-parts.v006__2026-11-06_514e2e0.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "250584332a0325f8aafa940a4c6e47d3b1f87eaf2d5ec86ff321884855e608c9",
+   "file": "custom-parts/custom-parts.v007__2026-11-06_302823c.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -71,6 +80,24 @@
    "commit": "3c794e1",
    "sha256": "2ec8c77a881d6efd1e2e5f4f353c3f72caa90c7f78fa6b75e19a48809f5d42f4",
    "file": "design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md"
+  },
+  {
+   "src": "docs/spec/design-philosophy.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "184ad21",
+   "sha256": "e12f783900234674ec1b16e3964d7ffab9a8f4f229962a9527a4c94a667dd69d",
+   "file": "design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md"
+  },
+  {
+   "src": "docs/spec/hardware-list.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "d1f9dfaff787c4f04f035f5754956aad0a4b3a356e34c99129a39872fcfeb4ab",
+   "file": "hardware-list/hardware-list.v001__2026-11-06_9ff6031.md"
   },
   {
    "src": "docs/spec/joint-matrix.md",

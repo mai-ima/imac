@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """転倒安定性(v9: チルト×首振りの全格子)。質量/重心は tools/massmodel.py(layout由来, 推定)。
 頭部重心を ヒンジ軸まわりチルト → 垂直首振り軸まわりスイベル の順に動かし、足(長方形)に対する重心の余裕を方向別に求める。
-上端(地面から約0.5m)を水平に押して転倒する力 F = m·g·(重心から足縁までの距離)/上端高さ。目標: 前≥25N・後≥20N・左右≥30N。"""
+支持多角形=4個のゴム脚の外接長方形、重心余裕10mmを差し引く。上端(地面から約0.5m)を水平に押して転倒する力 F = m·g·(重心から足縁までの距離)/上端高さ。目標: 前≥25N・後≥20N・左右≥30N。"""
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, f'{R}/tools')
 import massmodel as MM
 S = MM.S; hm, cz, cy, _ = MM.head_cg(); ms = MM.stand_mass()
 hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']; st = S['stand']; sw = S['swivel']
 T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; SW = sw['range_deg']; sz = sw['axis_z_from_glass']
-front = hz - st['foot_front']; back = hz + st['foot_back']; half_w = st['foot_w'] / 2
+FOOT_IN = 24 - 10      # ゴム脚(Ø20)の外縁は足の縁から14mm内側(脚中心は縁から24mm)。支持多角形=4脚の外接長方形
+CG_TOL = 10.0          # 重心位置の不確かさ[mm](質量/重心は推定。実測まで安全側に余裕として差し引く)
+front = hz - st['foot_front'] + FOOT_IN; back = hz + st['foot_back'] - FOOT_IN; half_w = st['foot_w'] / 2 - FOOT_IN
 ground_y = -st['drop'] - 12; top_h = (MM.H - ground_y) / 1000.0
 mt = hm + ms; zs = (front + back) / 2
 print(f"ディスプレイ部 {hm:.1f}kg + スタンド(首振りユニット込み) {ms:.1f}kg = {mt:.1f}kg / 頭部重心 z={cz:.0f} y={cy:.0f} / ヒンジ軸 z={hz} y={hy} / 首振り軸 z={sz} / 足 z={front:.0f}〜{back:.0f} 幅{st['foot_w']} / 上端高さ {top_h*1000:.0f}mm")
@@ -28,7 +30,7 @@ for t in tilts:
     row = []
     for s_ in swivs:
         tx, tz = cg(t, s_)
-        mf, mb = tz - front, back - tz; ml = half_w - abs(tx)
+        mf, mb = tz - front - CG_TOL, back - tz - CG_TOL; ml = half_w - abs(tx) - CG_TOL
         Ff, Fb, Fs = (mt * 9.81 * m / 1000 / top_h for m in (mf, mb, ml))
         for k, v in (('front', Ff), ('back', Fb), ('side', Fs)):
             if v < worst[k]: worst[k] = v; arg[k] = (t, s_)

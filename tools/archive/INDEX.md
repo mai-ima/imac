@@ -2,7 +2,9 @@
 
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
+| audit_manifest.py | v001 | current | 2026-11-06 | c271477 | audit_manifest/audit_manifest.v001__2026-11-06_c271477.py |
 | balance_calc.py | v001 | current | 2026-11-06 | 7ed5c4c | balance_calc/balance_calc.v001__2026-11-06_7ed5c4c.py |
+| balance_calc.py | v002 | current | 2026-11-06 | 4482281 | balance_calc/balance_calc.v002__2026-11-06_4482281.py |
 | cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
 | cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
@@ -49,14 +51,19 @@
 | massmodel.py | v002 | current | 2026-11-05 | 71b7afb | massmodel/massmodel.v002__2026-11-05_71b7afb.py |
 | massmodel.py | v003 | current | 2026-11-06 | 9ff6031 | massmodel/massmodel.v003__2026-11-06_9ff6031.py |
 | motion_check.py | v001 | current | 2026-11-06 | 7ed5c4c | motion_check/motion_check.v001__2026-11-06_7ed5c4c.py |
+| motion_check.py | v002 | current | 2026-11-06 | 4482281 | motion_check/motion_check.v002__2026-11-06_4482281.py |
 | run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
 | run_gates.sh | v002 | current | 2026-11-06 | 7ed5c4c | run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh |
 | run_gates.sh | v003 | current | 2026-11-06 | bfa86c4 | run_gates/run_gates.v003__2026-11-06_bfa86c4.sh |
+| run_gates.sh | v004 | current | 2026-11-06 | 2bb8cf1 | run_gates/run_gates.v004__2026-11-06_2bb8cf1.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |
 | stability.py | v004 | current | 2026-11-06 | 7ed5c4c | stability/stability.v004__2026-11-06_7ed5c4c.py |
+| stability.py | v005 | current | 2026-11-06 | 4482281 | stability/stability.v005__2026-11-06_4482281.py |
 | stale_check.py | v001 | current | 2026-11-06 | c271477 | stale_check/stale_check.v001__2026-11-06_c271477.py |
+| stale_check.py | v002 | current | 2026-11-06 | 4482281 | stale_check/stale_check.v002__2026-11-06_4482281.py |
+| swivel_calc.py | v001 | current | 2026-11-06 | bfa86c4 | swivel_calc/swivel_calc.v001__2026-11-06_bfa86c4.py |
 | thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |
 | thermal_calc.py | v003 | current | 2026-11-05 | 71b7afb | thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py |

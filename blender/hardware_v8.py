@@ -91,47 +91,52 @@ BAL = json.load(open(os.path.join(ROOT, 'model', 'balance.json')))
 BS, BE = BAL['s'], BAL['e']
 for k, sx_ in enumerate((-1, 1)):
     xl = sx_ * 26
-    hb(f'hinge_tail_lever{k}', 4, BE + 6, 6, xl - 2, HY - BE - 6, ZC - 3, M['sus'])                              # 尾部レバー(軸Ø10にキー止め, 幅8)
+    hb(f'hinge_tail_lever{k}', S['neck']['lever_t'], S['neck']['lever_len'], S['neck']['lever_w'], sx_ * 26.5 - S['neck']['lever_t'] / 2, HY - S['neck']['lever_len'], ZC - S['neck']['lever_w'] / 2, M['sus'])                              # 尾部レバー(軸Ø10にキー止め, 幅8)
     cyl(f'hinge_tail_pin{k}', 3.0, 20, 'x', xl - sx_ * 6, HY - BE, ZC, M['steel'], 16)                          # 先端の横ピン(ばね上座の揺動ピン)
     hb(f'spring_seat_top{k}', 16, 3, 16, sx_ * 14 - 8, HY - BE - 3, ZC - 8, M['sus'])
     hb(f'spring_seat_bot{k}', 16, 3, 16, sx_ * 14 - 8, HY - BS, ZC - 8, M['sus'])
-    cyl(f'spring_guide_rod{k}', 4.0, BS - BE - 6, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['steel'], 16)
+    cyl(f'spring_guide_rod{k}', 3.25, BS - BE - 6, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['steel'], 16)
     cyl(f'spring_die{k}', 8.0, BS - BE - 8, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['spring'], 24)           # 呼称位置(0°)。実機は両端揺動ピンで ±19°振れる(モデルは0°固定の簡略)
 hb('stand_anchor_pin_bridge', 66, 6, 12, -33, HY - BS - 6, ZC - 6, M['sus'])
-hw('ヒンジ', 'ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用8.6mm, 最長側360N/最大486N 1本あたり)+ガイドロッド Ø8+両端揺動ピン', 2, 'U26/U51: 型番未選定。ばね軸は±19°揺動するため両端ピン支持のテレスコ式ガイドが必要')
-hw('ヒンジ', '尾部レバー SUS304 t4×幅6 (e=25mm)+横ピン Ø6', 2, 'balance_calc.py')
-POST_R = 29
-for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: レバー側ピン(半径29, Ø5)が、-15°側は受けポスト、+40°側は前カバー内面のゴムに当たる
-    ang_dn = math.radians(-15); ang_up = math.radians(40)
-    cyl(f'hinge_lever_stoppin{k}', 2.5, 12, 'x', sx_ * 26, HY - POST_R, ZC, M['steel'], 12)
-    cyl(f'hinge_stopper_dn{k}', 3.0, 3.5, 'x', sx_ * 30.25, HY - POST_R * math.cos(ang_dn) - 1, ZC + POST_R * math.sin(ang_dn) - 5.5, M['rubber'], 16)
-    hb(f'hinge_stopper_up{k}', 3.5, 8, 2.4, sx_ * 30.25 - 1.75, HY - POST_R * math.cos(ang_up) - 4, ZC + 21.4, M['rubber'])
-hw('ヒンジ', '機械ストッパ+ゴムバンパ(チルト -15°/+40°)', 4, '')
+hw('ヒンジ', f"ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用{BAL['stroke']:.1f}mm, 最長側{BAL['F0_longest_total']/2:.0f}N/最大{BAL['F0_longest_total']*(1+BAL['p'])/2:.0f}N 1本あたり, p={BAL['p']})+ガイドロッド Ø6.5+両端揺動ピン", 2, 'U26/U51: 型番未選定。ばね軸は±19°揺動するため両端ピン支持のテレスコ式ガイドが必要')
+hw('ヒンジ', '尾部レバー SUS304 t5×幅14×長50 (e=25mm)+横ピン Ø6', 2, 'balance_calc.py')
+NKh = S['neck']; LL = NKh['lever_len']
+for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー(長さ50)の側縁が、-15°側は側板間タイプレート(t6)のゴムパッド、+40°側は前カバー(t6)内面のゴムパッドに当たる
+    px0, px1 = NKh['pad_x']; xc = sx_ * (px0 + px1) / 2
+    hb(f'hinge_stopper_dn{k}', px1 - px0, 10, NKh['pad_dn_z'][1] - NKh['pad_dn_z'][0], xc - (px1 - px0) / 2, HY - LL * math.cos(math.radians(-15)) - 5, ZC + NKh['pad_dn_z'][0], M['rubber'])
+    hb(f'hinge_stopper_up{k}', px1 - px0, 10, NKh['pad_up_z'][1] - NKh['pad_up_z'][0], xc - (px1 - px0) / 2, HY - LL * math.cos(math.radians(40)) - 5, ZC + NKh['pad_up_z'][0], M['rubber'])
+    cyl(f'spring_adjuster{k}', 4.0, 14, 'y', sx_ * 14, HY - BS - 10, ZC, M['sus'], 16)                        # ばね座の荷重調整ねじ M8(下座の下)。頭部実測重量に合わせて組立時に調整
+hw('ヒンジ', 'ばね座 荷重調整ねじ M8(+ロックナット)', 2, '調整後公差 荷重±3%(spec.hinge)')
+hw('ヒンジ', 'ネック基台 t8 + M5×4(ロータ板固定)/タイプレート t6(-15°ストッパ受け)/前カバー t6(+40°ストッパ受け)', 3, 'spec.neck')
+for k_, (bx_, bz_) in enumerate(((-40, -12), (40, -12), (-40, 12), (40, 12))):
+    cyl(f'stand_neck_bolt{k_}', 2.5, 8.5, 'y', bx_, -DROP + S['swivel']['stack_h'] + 4.25 + 0.0, ZC + bz_, M['sus'], 12) if False else None
+hw('ヒンジ', '機械ストッパ ゴムパッド(チルト -15°/+40°。レバー側縁が当たる)', 4, 'strength_check.py')
 for k, xx in enumerate((-70, -22, 22, 70)): cyl(f'hinge_eclip{k}', 7.2, 1.2, 'x', xx, HY, ZC, M['sus'], 24, body=False)
 hw('ヒンジ', 'Eクリップ(軸Ø10用)', 4, ''); hw('ヒンジ', 'ヒンジ軸 Ø10 SUS×150', 1, '')
 
 # ---- 首振りユニット(v9): 足上面(y=-DROP)に固定のステータ板 → クロスローラ軸受 → ロータ板 → ネック。左右±60°。tools/stability.py / motion_check.py ----
 SWV = S['swivel']; SY0 = -DROP; SX, SZ = 0.0, ZC           # 垂直首振り軸(スタンド中心線, ヒンジ軸と同じz)
-cyl('stand_swivel_stator', 55, 6, 'y', SX, SY0 + 3, SZ, M['alublack'], 64)                                          # 足に固定: Ø110×6
+cyl('stand_swivel_stator', SWV['stator_r'], 6, 'y', SX, SY0 + 3, SZ, M['alublack'], 64)                                          # 足に固定: Ø110×6
 cyl('stand_swivel_bearing', SWV['bearing_od'] / 2, 12, 'y', SX, SY0 + 12, SZ, M['sus'], 64)                          # クロスローラ(スリューリング)軸受 OD100/ID60×12 (外輪=静止側)
 cyl('stand_swivel_bearing_inner', 40, 1.0, 'y', SX, SY0 + 18.5, SZ, M['steel'], 64)                                  # 内輪(回転側)の上面ボス: ロータ板は内輪にだけ接し、外輪とは1mm離れる
-cyl('stand_swivel_rotor', 55, 6, 'y', SX, SY0 + 22, SZ, M['alublack'], 64)                                          # 回転側: Ø110×6 (y19〜25)
+cyl('stand_swivel_rotor', SWV['rotor_r'], 6, 'y', SX, SY0 + 22, SZ, M['alublack'], 64)                                          # 回転側: Ø110×6 (y19〜25)
 cyl('stand_swivel_friction_ring', 35, 1.5, 'y', SX, SY0 + 6.75, SZ, M['rubber'], 48)                                 # 摩擦リング(内輪下面とステータ上面の間, 波ばね予圧, 保持1.6N·m)
 for k in range(6):
     ang = math.radians(k * 60 + 30); bx_, bz_ = SX + SWV['pcd_inner'] / 2 * math.cos(ang), SZ + SWV['pcd_inner'] / 2 * math.sin(ang)
-    cyl(f'stand_swivel_bolt{k}', 2.5, 3, 'y', bx_, SY0 + 26.5, bz_, M['sus'], 12)                                    # 内輪側 M5×6本(PCD70)の頭
+    cyl(f'stand_swivel_bolt{k}', 2.5, 0.6, 'y', bx_, SY0 + 25.3, bz_, M['sus'], 12)                                    # 内輪側 M5×6本(PCD70)の頭
 for k in range(6):
     ang = math.radians(k * 60); bx_, bz_ = SX + SWV['pcd_outer'] / 2 * math.cos(ang), SZ + SWV['pcd_outer'] / 2 * math.sin(ang)
     cyl(f'stand_swivel_bolt_o{k}', 2.5, 2, 'y', bx_, SY0 - 0.2, bz_, M['sus'], 12)                                   # 外輪側 M5×6本(PCD90)はステータ下面から(頭は足内)
-_SA = math.degrees(math.asin((4.0 + 5.0) / 60.0))       # 接触角の補正: ポスト半径4+タブ半幅5 を半径60で見た角度
+_SA = math.degrees(math.asin((5.0 + 5.0) / SWV['stop_r']))       # 接触角の補正: ポスト半径4+タブ半幅5 を半径60で見た角度
 for sgn, nm in ((-1, 'l'), (1, 'r')):    # 角度ストッパ: ステータ上のゴムポスト(r=60, ±(60+補正)°)と、ロータ側タブ(同じ高さ y19〜25)
-    ang = math.radians(90 + sgn * (SWV['range_deg'] + _SA)); cyl(f'stand_swivel_stop_{nm}', 4.0, 19, 'y', SX + 60 * math.cos(ang), SY0 + 15.5, SZ + 60 * math.sin(ang), M['rubber'], 16)
-box('stand_swivel_stop_tab', 10, 6, 18, SX - 5, SY0 + 19, SZ + 44, M['sus'], bevel=.5, body=False)
+    ang = math.radians(90 + sgn * (SWV['range_deg'] + _SA)); cyl(f'stand_swivel_stop_{nm}', 5.0, 25, 'y', SX + SWV['stop_r'] * math.cos(ang), SY0 + 12.5, SZ + SWV['stop_r'] * math.sin(ang), M['rubber'], 16)
+box('stand_swivel_stop_tab', 10, 6, SWV['stop_r'] + 4 - (SWV['rotor_r'] - 8), SX - 5, SY0 + 19, SZ + SWV['rotor_r'] - 8, M['sus'], bevel=.5, body=False)
 hw('首振り', 'クロスローラ軸受(スリューリング) OD100/ID60×12', 1, 'U50: 型番未選定(IKO/THK/NSKの小径品を想定)')
 hw('首振り', 'ステータ板・ロータ板 A5052 Ø110×t6 / 摩擦リング+波ばね', 2, '保持トルク1.6N·m')
 hw('首振り', 'M5ボルト 内輪PCD70×6 / 外輪PCD90×6(型番カタログ値は U50 で確認)', 12, ''); hw('首振り', 'ゴムストッパ(±60°)+ロータタブ', 3, '')
 hw('接地', 'スイベル跨ぎ編組(ネック→足, 余長でねじれ±60°を許容)', 1, 'CP-18')
 din = lambda x, y, z: (x - X0, y - Y0, Z0 - z)      # 設計座標→内部座標
-cable('pe_braid_swivel', [din(40, SY0 + 25, SZ - 10), din(52, SY0 + 14, SZ - 30), din(48, SY0 + 4, SZ - 40)], 1.8, M['pe_gy'])      # ネック(回転側)→足(固定側)の編組。余長でねじれ±60°を許容
-cable('pe_braid_hinge', [din(-30, 6, -SLAB - 6), din(-30, -10, -SLAB - 20), din(-30, -40, ZC - 6)], 1.8, M['pe_gy']); hw('接地', 'ヒンジ跨ぎ可とう編組(背板→スタンド)', 1, 'CP-18')
+PEJ = json.load(open(os.path.join(ROOT, 'model', 'pe_braids.json')))
+cable('pe_braid_swivel', [din(58, SY0 + 27, SZ - 8), din(75, SY0 + 34, SZ - 30), din(95, SY0 + 22, SZ - 70), din(85, SY0 + 14, SZ - 105), din(60, SY0 + 10, SZ - 100), din(60, SY0 + 5, SZ - 75), din(70, SY0 - 1, SZ - 55)], 1.8, M['pe_gy'])      # ネック(回転側)→足(固定側): ループで ±60° に追従(長さ model/pe_braids.json)
+cable('pe_braid_hinge', [din(-45, 12, -27 - 12), din(-48, 4, -27 - 8), din(-52, -6, -27 - 14), din(-50, -8, -27 - 26), din(-47, 0, -27 - 34), din(-45, 8, -27 - 40)], 1.8, M['pe_gy'])      # 頭部ヒンジブロック→ネック側: ストッパ(x±20〜32)の掃引域を避けx=-45〜-52のループ
 json.dump(HW, open(os.path.join(ROOT, 'model', 'hardware_list.json'), 'w'), ensure_ascii=False, indent=1)

@@ -301,25 +301,25 @@
 <text x="10.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >CP-20</text>
 <text x="28.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >首振りステータ板</text>
 <text x="150.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >110x110</text>
+<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >150x150</text>
 <text x="250.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-20.svg</text>
 <text x="10.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >CP-21</text>
-<text x="28.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板+ネックウェブ</text>
+<text x="28.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板</text>
 <text x="150.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >120x54</text>
+<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >144x144</text>
 <text x="250.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-21.svg</text>
 <text x="10.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >CP-22</text>
-<text x="28.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >ネックプレート(前後)</text>
+<text x="28.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >ネック(基台+側板+タイプレート+前後カバー)</text>
 <text x="150.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5</text>
-<text x="210.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >120x81</text>
+<text x="210.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >124x81</text>
 <text x="250.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-22.svg</text>
 <text x="10.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >CP-23</text>
-<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(尾部レバー+ダイスプリング2本)</text>
-<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >SUS304レバー t4 / ダイスプリング(JIS型, 市販)</text>
-<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >37x16</text>
+<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(尾部レバー+ダイスプリング2本+荷重調整ねじ)</text>
+<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >レバー SUS304 t5×幅14×長50 / ダイスプリング(JI</text>
+<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >50x14</text>
 <text x="250.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-23.svg</text>
 <text x="10.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >CP-24</text>

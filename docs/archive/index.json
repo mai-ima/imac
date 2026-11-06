@@ -91,6 +91,15 @@
    "file": "audit-log/audit-log.v009__2026-11-06_bfa86c4.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2bb8cf1",
+   "sha256": "745886b465c40e61150032152e207c14e000589e17efa4348a269af4b7a583c3",
+   "file": "audit-log/audit-log.v010__2026-11-06_2bb8cf1.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
@@ -352,6 +361,15 @@
    "file": "joint-analysis/joint-analysis.v005__2026-11-06_7ed5c4c.md"
   },
   {
+   "src": "docs/joint-analysis.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "fac4447b42aa8ec2e5b973434d0de39010ac0266cbf5e445835ebae49872a8c5",
+   "file": "joint-analysis/joint-analysis.v006__2026-11-06_4482281.md"
+  },
+  {
    "src": "docs/model-pipeline.md",
    "version": 1,
    "gen": "current",
@@ -521,6 +539,15 @@
    "commit": "4482281",
    "sha256": "dd379cc2c6c986f4f0dc41ba6948cbcc029b57b02298200704cbe4beffa81090",
    "file": "tilt-swivel-design/tilt-swivel-design.v002__2026-11-06_4482281.md"
+  },
+  {
+   "src": "docs/tilt-swivel-design.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "bfa86c4",
+   "sha256": "90d9b33b216b4dc52c1b5d8b2d7048716b11422b5cc1394a07f435b70b9aebc3",
+   "file": "tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md"
   },
   {
    "src": "docs/unverified-tracker.md",

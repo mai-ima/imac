@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "tools/audit_manifest.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "c271477",
+   "sha256": "611e1b7abc755b5bf14fe0a63b3800c6151fcf900ef146344919f2e1e0b30cae",
+   "file": "audit_manifest/audit_manifest.v001__2026-11-06_c271477.py"
+  },
+  {
    "src": "tools/balance_calc.py",
    "version": 1,
    "gen": "current",
@@ -8,6 +17,15 @@
    "commit": "7ed5c4c",
    "sha256": "8567fde3424759c809a68daf6aaa9402f8345b11ab7706bad81d66b1ad6066dd",
    "file": "balance_calc/balance_calc.v001__2026-11-06_7ed5c4c.py"
+  },
+  {
+   "src": "tools/balance_calc.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "7dc4dd17bfd437062937199f767f1295b039f6444cda50b63a132bf8635cc05a",
+   "file": "balance_calc/balance_calc.v002__2026-11-06_4482281.py"
   },
   {
    "src": "tools/cable_check.py",
@@ -424,6 +442,15 @@
    "file": "motion_check/motion_check.v001__2026-11-06_7ed5c4c.py"
   },
   {
+   "src": "tools/motion_check.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "03c6b8e191b45545a7cfe2e4b9bf90d04a05a7cceeb2b0bff41ddc4a01362c8d",
+   "file": "motion_check/motion_check.v002__2026-11-06_4482281.py"
+  },
+  {
    "src": "tools/run_gates.sh",
    "version": 1,
    "gen": "current",
@@ -449,6 +476,15 @@
    "commit": "bfa86c4",
    "sha256": "c229770d851f71f7b4868a1829c52fd35d3ac561b7c4ab4b8e2556211d4ec12c",
    "file": "run_gates/run_gates.v003__2026-11-06_bfa86c4.sh"
+  },
+  {
+   "src": "tools/run_gates.sh",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2bb8cf1",
+   "sha256": "c45ff70752ce5e057ee06b5da33b9836869d6b0bf9913b068b4cc2fdff8f5a79",
+   "file": "run_gates/run_gates.v004__2026-11-06_2bb8cf1.sh"
   },
   {
    "src": "tools/stability.py",
@@ -487,6 +523,15 @@
    "file": "stability/stability.v004__2026-11-06_7ed5c4c.py"
   },
   {
+   "src": "tools/stability.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "f8335b52149f9b3537e96444e1a0c795509cc1f75a7a5feaa5495d7c7d2932a2",
+   "file": "stability/stability.v005__2026-11-06_4482281.py"
+  },
+  {
    "src": "tools/stale_check.py",
    "version": 1,
    "gen": "current",
@@ -494,6 +539,24 @@
    "commit": "c271477",
    "sha256": "6619f25084888cca58f1aff085f618ddc68065cf47a84113c288ac95e0009562",
    "file": "stale_check/stale_check.v001__2026-11-06_c271477.py"
+  },
+  {
+   "src": "tools/stale_check.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4482281",
+   "sha256": "4b875e00a24d90ff8a6767861fb6601fcbda374851324c2190c085be7544761e",
+   "file": "stale_check/stale_check.v002__2026-11-06_4482281.py"
+  },
+  {
+   "src": "tools/swivel_calc.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "bfa86c4",
+   "sha256": "b383a0bec7977d93dcac735ba10ad9d0f594b85e91dd122b2f1ac958a319b69b",
+   "file": "swivel_calc/swivel_calc.v001__2026-11-06_bfa86c4.py"
   },
   {
    "src": "tools/thermal_calc.py",

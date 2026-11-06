@@ -371,14 +371,17 @@ BT = S['stand']['ballast_kg'] / (7.85e-6 * (fw - 24) * (FOOT - 24))      # 鋼�
 box('stand_ballast', fw - 24, BT, FOOT - 24, -(fw - 24) / 2, -DROP - FT + 3, ZC - S['stand']['foot_back'] + 12, M['steel'], body=False)   # 足内の鋼板ballast
 for sx_ in (-1, 1):
     for sz_ in (-1, 1): cyl('stand_rubber_foot', 10, 2.5, 'y', sx_ * (fw / 2 - 24), -DROP - FT - 1.25, ZC - S['stand']['foot_back'] + FOOT / 2 + sz_ * (FOOT / 2 - 24), M['rubber'], 24, body=False)
-ARM_H = DROP - S['swivel']['stack_h'] + HY + 11      # 首振りユニットの上からヒンジ軸+11まで
-SY_NECK = -DROP + S['swivel']['stack_h']
-for _k, _sx in enumerate((-62, 56)):      # ネック: 左右2枚の側板。ヒンジブロックの壁が回る領域(軸から半径13mm以内を除く)を避けるため、下部の本体+細いストリップ+軸まわりのボス(r11)の3要素で構成
-    box(f'stand_arm{_k}', 6, -16 - SY_NECK, 28, _sx, SY_NECK, ZC - 17, M['stand'], bevel=1.2)                  # 本体(ブロック下端より下)
-    box(f'stand_arm_strip{_k}', 6, HY + 16, 8, _sx, -16, ZC - 4, M['stand'], bevel=.8)                              # ストリップ(幅8)
-    cyl(f'stand_arm_boss{_k}', 11, 6, 'x', _sx + 3, HY, ZC, M['stand'], 40)                                         # 軸ボス(摩擦ヒンジ/軸受座)
-for _k, _zz in enumerate((ZC - 26, ZC + 24)):      # 前後カバー(指が入らない)。ヒンジブロック下端(y=0)の下に収める
-    box(f'stand_neck_cover{_k}', 120, -3 - SY_NECK, 2, -60, SY_NECK, _zz, M['stand'], bevel=.6)
+NK = S['neck']; ARM_H = DROP - S['swivel']['stack_h'] + HY + 11      # 首振りユニットの上からヒンジ軸+11まで
+SY_NECK = -DROP + S['swivel']['stack_h']; SY_SIDE = SY_NECK + NK['base_t']      # 基台の上から側板
+box('stand_neck_base', 2 * NK['base_half_x'], NK['base_t'], NK['base_z'][1] - NK['base_z'][0], -NK['base_half_x'], SY_NECK, ZC + NK['base_z'][0], M['stand'], bevel=1.0, body=False)    # ネック基台(ロータ板にM5×4で固定)
+for _k, _sx in enumerate((-NK['side_x'][1], NK['side_x'][0])):      # ネック側板: 本体+ストリップ+軸ボス(ヒンジブロックの壁の回転域=軸から半径13mm以内を避ける)
+    box(f'stand_arm{_k}', NK['side_x'][1] - NK['side_x'][0], NK['body_top'] - SY_SIDE, NK['side_z'][1] - NK['side_z'][0], _sx, SY_SIDE, ZC + NK['side_z'][0], M['stand'], bevel=1.2)
+    box(f'stand_arm_strip{_k}', NK['side_x'][1] - NK['side_x'][0], HY - NK['body_top'], NK['strip_w'], _sx, NK['body_top'], ZC - NK['strip_w'] / 2, M['stand'], bevel=.8)
+    cyl(f'stand_arm_boss{_k}', NK['boss_r'], NK['side_x'][1] - NK['side_x'][0], 'x', _sx + (NK['side_x'][1] - NK['side_x'][0]) / 2, HY, ZC, M['stand'], 40)
+box('stand_neck_tie', 2 * NK['side_x'][0], NK['tie_y'][1] - NK['tie_y'][0], NK['tie_z'][1] - NK['tie_z'][0], -NK['side_x'][0], NK['tie_y'][0], ZC + NK['tie_z'][0], M['stand'], bevel=.8)      # 側板をつなぐタイプレート t6(-15°ストッパの受け)
+for _k, (_zz0, _zz1) in enumerate((NK['back_cover_z'], NK['front_cover_z'])):      # 前後カバー(前は t6 の構造板: +40°ストッパの受け。後ろは指の進入防止の t2)
+    _zc0, _zc1 = (ZC + _zz0, ZC + _zz1) if _zz1 > _zz0 else (ZC + _zz1, ZC + _zz0)
+    box(f'stand_neck_cover{_k}', 120, NK['cover_top'] - SY_SIDE, _zz1 - _zz0, -60, SY_SIDE, ZC + _zz0, M['stand'], bevel=.6)
 ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); [BODY_OBJS.remove(bpy.data.objects[n_]) for n_ in ('stand_arm1', 'stand_arm_strip0', 'stand_arm_strip1', 'stand_arm_boss0', 'stand_arm_boss1') if bpy.data.objects[n_] in BODY_OBJS]
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----
@@ -588,7 +591,7 @@ for c_ in CABJ: cable('cable_' + c_['id'], [tuple(q) for q in c_['path']], c_['o
 exec(open(os.path.join(HERE, 'hardware_v8.py'), encoding='utf-8').read())      # 小部品(ばね/ネジ/ラッチ/ヒンジ機構等)
 
 # ---------------- アセンブリ(部品群)ごとにグルーピング: 各ファン/ポンプ/ラジエーター/GPU/PSU/基板/SSD/ctrl/AC/ケーブル/ヒンジ/スタンド/ドーム/トレイ/表示部を独立した親にする ----------------
-ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_friction', 'stand_swivel_bolt', 'stand_swivel_stop_tab', 'pe_braid_swivel', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
+ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_bearing_inner', 'stand_swivel_friction', 'stand_swivel_bolt0', 'stand_swivel_bolt1', 'stand_swivel_bolt2', 'stand_swivel_bolt3', 'stand_swivel_bolt4', 'stand_swivel_bolt5', 'stand_swivel_stop_tab', 'pe_braid_swivel', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
        ('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_fan_rad0', ('fan_rad0',)), ('ASM_fan_rad1', ('fan_rad1',)), ('ASM_fan_psu', ('fan_psu',)), ('ASM_fan_pump_vrm', ('fan_pump_vrm',)),
        ('ASM_dome', ('cover_', 'gasket', 'latch_', 'hook_', 'magnet', 'dowel_', 'rf_window', 'antenna')),
        ('ASM_tray', ('tray_', 'hang_', 'standoff_', 'screw_', 'pe_stud', 'pe_nut', 'pe_braid_tray', 'clip_', 'gpu_cradle')),
@@ -614,8 +617,8 @@ def shift_group(prefix_list, dz_):
         if any(ob.name.startswith(p) for p in prefix_list): ob.location += Vector((0, dz_, 0))
 if A.explode > 0:
     e = A.explode
-    shift_group(['cover_back', 'cover_filter', 'gasket'], 620 * e); shift_group(['fan_exhaust'], 440 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic'], 330 * e)
-    shift_group(['ac_inlet', 'cable_ac'], 260 * e); shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu', 'riser'], 210 * e); shift_group(['psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 140 * e)
+    shift_group(['cover_back', 'cover_filter', 'gasket'], 620 * e); shift_group(['fan_exhaust'], 440 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic', 'txt_ihs'], 330 * e)
+    shift_group(['ac_inlet', 'cable_ac'], 260 * e); shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu', 'riser'], 210 * e); shift_group(['psu', 'fan_psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 140 * e)
     shift_group(['ssd', 'txt_samsung', 'm2_screw'], 110 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 80 * e)
     shift_group(['slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button'], -300 * e)      # 前面(ディスプレイ)は前方へ
 if A.cut and A.explode == 0:

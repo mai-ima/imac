@@ -30,23 +30,31 @@ for tilt in [T0 + i * (T1 - T0) / 11 for i in range(12)]:
         mn_desk = min(mn_desk, low - floor_y)
 need = 30.0     # 指が入る/物が挟まる最小すき間(足上面側): 30mm以上を設計基準(要: 指挟み試験)
 print(f'頭部最低点の足上面からの最小すき間 {mn_foot:.1f}mm (チルト{arg[0]:+.0f}° 首振り{arg[1]:+.0f}°)、机面から {mn_desk:.1f}mm。設計基準 ≥{need}mm')
-# ---- ネック(固定側)と頭部(ヒンジ軸まわりに回転)の掃引干渉: yz断面のSAT(貫入深さ)。x範囲が重ならない組は除外 ----
+# ---- ネック(固定側)と頭部(ヒンジ軸まわりに回転)の掃引干渉: yz断面のSAT(貫入深さ)。寸法は model/spec.json の neck/hinge/balance から導出(部品ごとの手入力を避ける) ----
 import json
-BAL = json.load(open(f'{R}/model/balance.json')); BE = BAL['e']; ZC = -hz; HY = hy; SY = -drop + sw['stack_h']
+BAL = json.load(open(f'{R}/model/balance.json')); BE, BS = BAL['e'], BAL['s']; ZC = -hz; HY = hy; NK = S['neck']; SY = -drop + sw['stack_h']; SYS = SY + NK['base_t']
+PO = 29.0; cosd = lambda a: math.cos(math.radians(a))
 def rect(x0, x1, y0, y1, z0, z1): return (x0, x1, [(y0, z0), (y1, z0), (y1, z1), (y0, z1)])
-HEAD = {'ヒンジ底板': rect(-75, 75, 0, 22, -27, -25), 'ヒンジ左側板': rect(-75, -69, 0, 22, -61, -27), 'ヒンジ右側板': rect(69, 75, 0, 22, -61, -27),
+def circ(x0, x1, r, n=32, cy=None, cz=None):      # 外接多角形(実円より小さくならない)
+    rr = r / math.cos(math.pi / n); return (x0, x1, [(HY + rr * math.cos(2 * math.pi * k / n + math.pi / n), ZC + rr * math.sin(2 * math.pi * k / n + math.pi / n)) for k in range(n)])
+px0, px1 = NK['pad_x']
+HEAD = {'スラブ(前面ガラス+パネル+チン)': rect(-W / 2, W / 2, 0, H, -slab, 0),
+        'ヒンジ底板': rect(-75, 75, 0, 22, ZC - 20 + 0.0 - 7 + 0, ZC + 0), }
+HEAD = {'スラブ(前面ガラス+パネル+チン)': rect(-W / 2, W / 2, 0, H, -slab, 0), 'ヒンジ底板': rect(-75, 75, 0, 22, -27, -25), 'ヒンジ左側板': rect(-75, -69, 0, 22, -61, -27), 'ヒンジ右側板': rect(69, 75, 0, 22, -61, -27),
         'ヒンジカバー': rect(-69, 69, 0, 22, -61, -59), '裏当て板': rect(-70, 70, 0, 22, -23, -20), '補強板': rect(-72, 72, 0, 22, -20, -16),
-        '尾部レバー左': rect(-28, -24, HY - BE - 6, HY, ZC - 3, ZC + 3), '尾部レバー右': rect(24, 28, HY - BE - 6, HY, ZC - 3, ZC + 3),
-        'ストッパピン左': rect(-32, -20, HY - 29 - 2.5, HY - 29 + 2.5, ZC - 2.5, ZC + 2.5), 'ストッパピン右': rect(20, 32, HY - 29 - 2.5, HY - 29 + 2.5, ZC - 2.5, ZC + 2.5)}
-def octa(x0, x1, r=11):
-    return (x0, x1, [(HY + r * math.cos(math.radians(k * 45 + 22.5)), ZC + r * math.sin(math.radians(k * 45 + 22.5))) for k in range(8)])
-NECK = {'左側板(本体)': rect(-62, -56, SY, -16, ZC - 17, ZC + 11), '右側板(本体)': rect(56, 62, SY, -16, ZC - 17, ZC + 11),
-        '左ストリップ': rect(-62, -56, -16, HY, ZC - 4, ZC + 4), '右ストリップ': rect(56, 62, -16, HY, ZC - 4, ZC + 4), '左軸ボス': octa(-62, -56), '右軸ボス': octa(56, 62),
-        '前カバー': rect(-60, 60, SY, -3, ZC + 24, ZC + 26), '後カバー': rect(-60, 60, SY, -3, ZC - 26, ZC - 24),
-        'バンパ(+40°側)左': rect(-32, -28.5, HY - 29 * math.cos(math.radians(40)) - 4, HY - 29 * math.cos(math.radians(40)) + 4, ZC + 21.4, ZC + 23.8),
-        'バンパ(+40°側)右': rect(28.5, 32, HY - 29 * math.cos(math.radians(40)) - 4, HY - 29 * math.cos(math.radians(40)) + 4, ZC + 21.4, ZC + 23.8),
-        '受けポスト(-15°側)左': rect(-32, -28.5, HY - 29 * math.cos(math.radians(-15)) - 4, HY - 29 * math.cos(math.radians(-15)) + 2, ZC - 15.5, ZC - 9.5),
-        '受けポスト(-15°側)右': rect(28.5, 32, HY - 29 * math.cos(math.radians(-15)) - 4, HY - 29 * math.cos(math.radians(-15)) + 2, ZC - 15.5, ZC - 9.5)}
+        '尾部レバー左': rect(-29, -24, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2), '尾部レバー右': rect(24, 29, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2),
+        'ばね上座左': rect(-22, -6, HY - BE - 3, HY - BE, ZC - 8, ZC + 8), 'ばね上座右': rect(6, 22, HY - BE - 3, HY - BE, ZC - 8, ZC + 8),
+        }
+NECK = {'ネック基台': rect(-NK['base_half_x'], NK['base_half_x'], SY, SYS, ZC + NK['base_z'][0], ZC + NK['base_z'][1]),
+        '左側板(本体)': rect(-NK['side_x'][1], -NK['side_x'][0], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]), '右側板(本体)': rect(NK['side_x'][0], NK['side_x'][1], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]),
+        '左ストリップ': rect(-NK['side_x'][1], -NK['side_x'][0], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2), '右ストリップ': rect(NK['side_x'][0], NK['side_x'][1], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2),
+        '左軸ボス': circ(-NK['side_x'][1], -NK['side_x'][0], NK['boss_r']), '右軸ボス': circ(NK['side_x'][0], NK['side_x'][1], NK['boss_r']),
+        'タイプレート': rect(-NK['side_x'][0], NK['side_x'][0], NK['tie_y'][0], NK['tie_y'][1], ZC + NK['tie_z'][0], ZC + NK['tie_z'][1]),
+        '前カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]), '後カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['back_cover_z'][0], ZC + NK['back_cover_z'][1]),
+        'ゴムパッド(+40°側)左': rect(-px1, -px0, HY - NK['lever_len'] * cosd(40) - 5, HY - NK['lever_len'] * cosd(40) + 5, ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
+        'ゴムパッド(+40°側)右': rect(px0, px1, HY - NK['lever_len'] * cosd(40) - 5, HY - NK['lever_len'] * cosd(40) + 5, ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
+        'ゴムパッド(-15°側)左': rect(-px1, -px0, HY - NK['lever_len'] * cosd(-15) - 5, HY - NK['lever_len'] * cosd(-15) + 5, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1]),
+        'ゴムパッド(-15°側)右': rect(px0, px1, HY - NK['lever_len'] * cosd(-15) - 5, HY - NK['lever_len'] * cosd(-15) + 5, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1])}
 def rot(poly, a):
     c, s_ = math.cos(math.radians(a)), math.sin(math.radians(a)); out = []
     for (y, z) in poly:
@@ -65,22 +73,41 @@ def pen(P, Q):
             if o <= 0: return 0.0
             best = min(best, o)
     return best
-worst = {}
-tilts = [T0 + i * (T1 - T0) / 110 for i in range(111)]
+def gap(P, Q):
+    """凸多角形P,Qの最小距離(辺-点)。重なれば0。"""
+    if pen(P, Q) > 0: return 0.0
+    def pd(p, a, b):
+        ax, ay = a; bx, by = b; px, py = p; dx, dy = bx - ax, by - ay; t = max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy or 1))); return math.hypot(px - ax - t * dx, py - ay - t * dy)
+    return min(min(pd(p, Q[i], Q[(i + 1) % len(Q)]) for i in range(len(Q))) for p in P) if False else min([min(pd(p, Q[i], Q[(i + 1) % len(Q)]) for i in range(len(Q))) for p in P] + [min(pd(q, P[i], P[(i + 1) % len(P)]) for i in range(len(P))) for q in Q])
+worst = {}; tilts = [T0 + i * (T1 - T0) / 110 for i in range(111)]; STOP_HEAD = ('尾部レバー',); STOP_NECK = ('ゴムパッド',)
 for hn, (hx0, hx1, hp) in HEAD.items():
     for nn, (nx0, nx1, np_) in NECK.items():
         if hx1 <= nx0 or nx1 <= hx0: continue
         for a in tilts:
             d = pen(rot(hp, a), np_)
-            stop_pair = ('ストッパピン' in hn and ('バンパ' in nn or '受けポスト' in nn))
-            lim = 1.2 if stop_pair and (a <= T0 + 2.5 or a >= T1 - 2.5) else 0.05      # ゴムの圧縮代1.2mmまで許容(端のみ)
+            stop_pair = hn.startswith(STOP_HEAD) and nn.startswith(STOP_NECK)
+            lim = 1.2 if stop_pair and (a <= T0 + 2.5 or a >= T1 - 2.5) else 0.05      # ストッパはゴムの圧縮代1.2mmまで(端のみ)
             if d > lim: worst[(hn, nn)] = max(worst.get((hn, nn), 0), d)
-for (hn, nn), d in sorted(worst.items(), key=lambda kv: -kv[1])[:12]: print(f'[NG ] 掃引干渉 {hn} × {nn}: 最大貫入 {d:.1f}mm'); bad += 1
-# ストッパが実際に両端で効くか(ピンとバンパ/ポストの距離が端で ≤1mm 以内に接触するか)
-for lab, a, nm in (('-15°端', T0, '受けポスト(-15°側)'), ('+40°端', T1, 'バンパ(+40°側)')):
-    pin = rot(HEAD['ストッパピン右'][2], a); q = NECK[nm + '右'][2]
-    d = pen(pin, q); gap = min(math.hypot(py - qy, pz - qz) for py, pz in pin for qy, qz in q)
-    print(f'ストッパ{lab}: 貫入 {d:.2f}mm / 角点間距離 {gap:.1f}mm (接触=貫入0〜1mm か、角点間距離で目視確認)')
-print('ヒンジ側の動的すき間: 頭部ヒンジ側板(x±69〜75)とネック側板(x±56〜62)のx方向すき間=7mm(4〜25mmの挟み込み域。側面ガード/指挟み試験が必要: U53)')
-if bad: print('総合: NG(掃引干渉あり)'); sys.exit(1)
-ok = mn_foot >= need; print('総合:', 'OK(AABB/断面近似。実形状・指挟み試験はUNVERIFIED)' if ok else 'NG'); sys.exit(0 if ok else 1)
+for (hn, nn), d in sorted(worst.items(), key=lambda kv: -kv[1])[:14]: print(f'[NG ] 掃引干渉 {hn} × {nn}: 最大貫入 {d:.1f}mm'); bad += 1
+# ストッパが両端で必ず当たること(辺-点距離): 端(T0/T1)で貫入0〜1.2mm または 距離≦0.3mm でなければ NG(ストッパが効かない)
+for lab, a, nm in (('-15°端', T0, 'ゴムパッド(-15°側)右'), ('+40°端', T1, 'ゴムパッド(+40°側)右')):
+    pin = rot(HEAD['尾部レバー右'][2], a); q = NECK[nm][2]; d = pen(pin, q); g_ = gap(pin, q); eff = (0 < d <= 1.2) or g_ <= 0.3
+    print(f'ストッパ{lab}: 貫入 {d:.2f}mm / 最小距離 {g_:.2f}mm [{"OK(当たる)" if eff else "NG(当たらない/食い込み過大)"}]'); bad += 0 if eff else 1
+# 動的な挟み込み域: 頭部スラブ下縁と前後カバー上端の距離を全角度で計算(4〜25mmは指が挟まる危険域 EN 349 → 蛇腹ブーツ等の保護が必要。未設計=U53)
+pinch = []
+for a in tilts:
+    for nn in ('前カバー', '後カバー'):
+        g_ = gap(rot(HEAD['スラブ(前面ガラス+パネル+チン)'][2], a), NECK[nn][2]); pinch.append((g_, a, nn))
+gmin = min(pinch); in_zone = sorted({round(a) for g_, a, nn in pinch if 4 <= g_ <= 25})
+print(f'スラブ下縁-カバー上端の最小すき間 {gmin[0]:.1f}mm(チルト{gmin[1]:+.0f}° {gmin[2]})。4〜25mmの挟み込み域に入る角度: {len(in_zone)}段階 → [WARN] 蛇腹ブーツ/ガード未設計(U53)。合否はNGにせずUNVERIFIEDとして残す')
+if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
+# PE編組の長さ: 可動範囲での端間距離の最大 + 余長 ≦ 編組長(model/pe_braids.json)
+PE = json.load(open(f'{R}/model/pe_braids.json'))
+a_sw = 0.0; A0 = (NK['side_x'][1], 0.0); Bp = (0.0, -75.0)      # 水平面: ネック側(回転)端 r≈62、足側(固定)端 r≈75(背面側)。首振り±SWで端間距離が最大になる角度を探索
+dmax_sw = max(math.hypot(62 * math.sin(math.radians(s_)) - 75 * math.sin(math.radians(sg)), 62 * math.cos(math.radians(s_)) - 75 * math.cos(math.radians(sg))) for s_ in (-SW, 0, SW) for sg in (0,)) + 0
+pa = lambda a_: rot([(HY - 20, ZC - 20)], a_)[0]; pb = (HY - 10, ZC - 5)      # ヒンジ編組: 頭部側端(回転)/ネック側端(固定)の代表点
+dmax_h = max(math.hypot(pa(a_)[0] - pb[0], pa(a_)[1] - pb[1]) for a_ in tilts)
+for nm, dm, L in (('首振り編組', dmax_sw + 62 * 0.0, PE['swivel']['length_mm']), ('ヒンジ編組', dmax_h, PE['hinge']['length_mm'])):
+    ok_ = L >= dm + PE['min_slack_mm']; print(f'{nm}: 最大端間距離 {dm:.0f}mm + 余長{PE["min_slack_mm"]}mm ≦ 編組長 {L}mm [{"OK" if ok_ else "NG"}]'); bad += 0 if ok_ else 1
+if bad: print('総合: NG'); sys.exit(1)
+ok = mn_foot >= need; print('総合:', 'OK(断面近似。実形状・指挟み保護・疲労は UNVERIFIED。挟み込みはWARN)' if ok else 'NG'); sys.exit(0 if ok else 1)

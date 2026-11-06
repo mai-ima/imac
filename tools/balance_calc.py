@@ -12,7 +12,7 @@ import massmodel as MM
 S = MM.S; g = 9.81
 mh, cz, cy, _ = MM.head_cg(); hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']
 dz, dy = cz - hz, cy - hy
-T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; FR = S['hinge']['friction_hold_Nm']
+T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; H_ = S['hinge']; FR = H_['friction_hold_Nm']; FTOL = H_['friction_tol_pct'] / 100; FPCT = H_['balance_force_tol_pct'] / 100; CGMM = H_['balance_cg_tol_mm']
 angles = [T0 + i * (T1 - T0) / 22 for i in range(23)]
 def tg(a, ddy=0.0): a = math.radians(a); return mh * g * (dz * math.cos(a) + (dy + ddy) * math.sin(a)) / 1000
 def geom(a, s, e):
@@ -34,9 +34,13 @@ for s in range(50, 66, 5):
             for F0 in range(200, 2001, 20):
                 for sign in (1, -1):
                     r = resid(s, e, F0, p, sign, lmax, stroke); rr = max(abs(x) for x in r)
-                    if best is None or rr < best[0]: best = (rr, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free)
-rr, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free = best
-worst = max(abs(x) for fs in (0.9, 1.0, 1.1) for dd in (-10, 0, 10) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
+                    ww = max(abs(x) for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
+                    key = ww + 0.5 * rr      # 保持(最悪残差)と操作(公称残差)の両方を小さくする
+                    if best is None or key < best[0]: best = (key, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free)
+_, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free = best
+rr = max(abs(x) for x in resid(s, e, F0, p, sign, lmax, stroke))
+worst = max(abs(x) for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
+worst_raw = max(abs(x) for fs in (0.9, 1.1) for dd in (-10, 10) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
 tilt_ax = [math.degrees(math.atan2(geom(a, s, e)[2], geom(a, s, e)[3])) for a in angles]; swing = (min(tilt_ax), max(tilt_ax))
 k_rate = p * F0 / stroke / 2; fmax = F0 * (1 + p) / 2
 print(f'頭部 m={mh:.1f}kg dz={dz:.0f} dy={dy:.0f}mm, チルト{T0:+.0f}〜{T1:+.0f}°')
@@ -44,11 +48,14 @@ print(f'採用(2本合計): s={s}mm e={e}mm / 最長側荷重 F0={F0}N(1本{F0/2
 print(f'ばね自由長 ≧{free:.0f}mm、全たわみ{stroke*(1+1/p):.1f}mm、たわみ率 {ratio*100:.0f}%(許容≦40%)、ばね軸の揺れ角 {swing[0]:+.0f}〜{swing[1]:+.0f}°(両端揺動ピン必須)')
 print('角度: 重力τg / 公称残差 [N·m]')
 for a, rv in list(zip(angles, resid(s, e, F0, p, sign, lmax, stroke)))[::2]: print(f'{a:+6.1f}°: {tg(a):+7.2f} / {rv:+6.2f}')
-print(f'公称最大残差 {rr:.2f}N·m / 最悪残差(荷重±10%・重心±10mm) {worst:.2f}N·m / 摩擦保持(spec) {FR:.1f}N·m / 操作力(上端0.41m) {FR/0.41:.1f}N')
+fr_min, fr_max = FR * (1 - FTOL), FR * (1 + FTOL)
+op_force = (fr_max + rr) / 0.41           # 動かす力 = 摩擦(最大)+公称残差(ばね/重力の不釣合い)。上端0.41mで評価
+print(f'公称最大残差 {rr:.2f}N·m / 調整後の最悪残差(荷重±{FPCT*100:.0f}%・重心±{CGMM:.0f}mm) {worst:.2f}N·m / 未調整の最悪残差(±10%・±10mm) {worst_raw:.2f}N·m')
+print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+公称残差)/0.41 = {op_force:.1f}N(目標≦20N)')
 fails = []
 if ratio > 0.40: fails.append('ばねたわみ率>40%')
-if worst > FR: fails.append(f'最悪残差{worst:.1f} > 摩擦保持{FR}')
-if FR / 0.41 > 20: fails.append('摩擦保持による操作力>20N')
+if worst > fr_min: fails.append(f'最悪残差{worst:.2f} > 最小摩擦保持{fr_min:.2f}')
+if op_force > 20: fails.append(f'操作力{op_force:.1f}N > 20N')
 print('総合:', 'OK(ばね型番・実特性・重心はUNVERIFIED)' if not fails else 'NG ' + ' / '.join(fails))
 if '--write' in sys.argv:
     json.dump(dict(s=s, p_offset=0, e=e, F0_longest_total=F0, p=p, stroke=stroke, lmin=lmin, lmax=lmax, free_length_min=free, resid_nominal=rr, resid_worst=worst, sign=sign), open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)

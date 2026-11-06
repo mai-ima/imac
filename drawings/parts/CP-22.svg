@@ -57,7 +57,7 @@
 <line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
 <line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
 <text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
-<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">ネックプレート(前後)</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">ネック(基台+側板+タイプレート+前後カバー)</text>
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
@@ -104,17 +104,19 @@
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: PROPOSED(v9, 未試作)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
-<text x="2" y="8" font-size="5" font-weight="bold">CP-22 ネックプレート(前後)</text>
+<text x="2" y="8" font-size="5" font-weight="bold">CP-22 ネック(基台+側板+タイプレート+前後カバー)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 6.0 / 質量 0.9kg / 公差 ISO 2768-mK</text>
-<rect x="14" y="30" width="130.0" height="87.8" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
-<line x1="14" y1="123.75" x2="144.0" y2="123.75" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="128.75" font-size="3.4" text-anchor="middle" fill="#06c">120</text>
-<line x1="8" y1="30" x2="8" y2="117.75" stroke="#06c" stroke-width=".3"/><text x="6" y="73.875" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 73.875)">81</text>
+<rect x="14" y="30" width="130.0" height="84.9" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="14" y1="120.91935483870968" x2="144.0" y2="120.91935483870968" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="125.91935483870968" font-size="3.4" text-anchor="middle" fill="#06c">124</text>
+<line x1="8" y1="30" x2="8" y2="114.91935483870968" stroke="#06c" stroke-width=".3"/><text x="6" y="72.45967741935485" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 72.45967741935485)">81</text>
 <text x="156" y="30" font-size="2.6">加工: 押出+CNC</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: アルマイト(接地導通部マスキング)</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ISO 2768-mK</text>
-<text x="156" y="45.60000000000001" font-size="2.6">要素: 左右2枚の側板(t6): 下部本体+幅8のストリップ+軸ボスr11(ヒンジブロックの壁の回転域を避ける形</text>
-<text x="156" y="49.80000000000001" font-size="2.6">状)。前後カバー(t2)で指の進入を防ぐ</text>
-<text x="156" y="55.000000000000014" font-size="2.6">接合: ロータ板(CP-21)</text>
-<text x="156" y="60.20000000000002" font-size="2.6">接合: ヒンジ軸</text>
-<text x="156" y="65.40000000000002" font-size="2.6">接合: 摩擦ヒンジ</text>
+<text x="156" y="45.60000000000001" font-size="2.6">要素: 基台t8 124×72(ロータ板にM5×4)。左右側板t6(本体+幅8ストリップ+軸ボスr11)。タイプ</text>
+<text x="156" y="49.80000000000001" font-size="2.6">レートt6(-15°ストッパ受け)。前カバーt6(+40°ストッパ受け, ゴムパッド)、後カバーt2(指の進入防</text>
+<text x="156" y="54.000000000000014" font-size="2.6">止)</text>
+<text x="156" y="59.20000000000002" font-size="2.6">要素: 寸法の単一源は model/spec.json の neck</text>
+<text x="156" y="64.40000000000002" font-size="2.6">接合: ロータ板(CP-21)</text>
+<text x="156" y="69.60000000000002" font-size="2.6">接合: ヒンジ軸</text>
+<text x="156" y="74.80000000000003" font-size="2.6">接合: 摩擦ヒンジ</text>
 </g></svg>
