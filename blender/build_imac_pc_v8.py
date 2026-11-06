@@ -16,7 +16,7 @@ ap.add_argument('--color', default='silver'); ap.add_argument('--view', default=
 ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'))
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
-ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
+ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
 ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='texture'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
@@ -130,20 +130,25 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 TEXDIR = os.path.join(ROOT, 'blender', 'textures'); os.makedirs(TEXDIR, exist_ok=True)
 
 def wallpaper(path, base, light):
+    """macOSの標準壁紙風(深い青→紫→橙の斜めグラデーション+柔らかいリボン)。本体色の違いは中間色相だけに反映する(画面はどの色でも色鮮やかに見えるのが実物)。"""
     w, h = 2560, 1440
+    tint = tuple(int(light[i:i + 2], 16) for i in (1, 3, 5))
+    stops = [(0.0, (8, 22, 78)), (0.42, (66, 48, 196)), (0.72, tuple(int(0.6 * 214 + 0.4 * tint[k]) for k, _ in enumerate(tint)) if False else (214, 78, 170)), (1.0, (255, 150, 92))]
+    def col(t):
+        for (t0, c0), (t1, c1) in zip(stops, stops[1:]):
+            if t <= t1: u = (t - t0) / (t1 - t0); return tuple(int(c0[k] + (c1[k] - c0[k]) * u) for k in range(3))
+        return stops[-1][1]
     img = Image.new('RGB', (w, h)); px = img.load()
-    c0, c1 = [tuple(int(x[i:i + 2], 16) for i in (1, 3, 5)) for x in (light, base)]
-    c0 = tuple(min(255, int(v * 1.12 + 10)) for v in c1); c1 = tuple(int(v * .55) for v in c1)
     for y in range(h):
-        for x in range(0, w, 1):
-            t = (x / w * .55 + y / h * .45); px[x, y] = tuple(int(c0[k] + (c1[k] - c0[k]) * t) for k in range(3))
+        for x in range(w): px[x, y] = col(min(1.0, max(0.0, x / w * .62 + (1 - y / h) * .38)))
     over = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(over)
-    for i in range(9):
-        cx = 150 + i * 300; d.rounded_rectangle((cx - 120, -300, cx + 120, h + 300), 120, fill=(255, 255, 255, 70 if i % 2 else 30))
-    over = over.rotate(-12, resample=Image.BICUBIC, center=(w / 2, h / 2)).filter(ImageFilter.GaussianBlur(26))
+    for i in range(7):      # 柔らかいリボン
+        cx = 60 + i * 390; d.rounded_rectangle((cx - 150, -400, cx + 150, h + 400), 150, fill=(255, 255, 255, 46 if i % 2 else 22))
+    over = over.rotate(-16, resample=Image.BICUBIC, center=(w / 2, h / 2)).filter(ImageFilter.GaussianBlur(40))
     img = Image.alpha_composite(img.convert('RGBA'), over).convert('RGB'); d = ImageDraw.Draw(img, 'RGBA')
-    d.rectangle((0, 0, w, 34), fill=(255, 255, 255, 120)); d.rounded_rectangle((w / 2 - 340, h - 120, w / 2 + 340, h - 36), 36, fill=(255, 255, 255, 110))
-    for i in range(9): d.rounded_rectangle((w / 2 - 310 + i * 72, h - 108, w / 2 - 258 + i * 72, h - 56), 12, fill=(255, 255, 255, 180))
+    d.rectangle((0, 0, w, 36), fill=(20, 20, 40, 110))                       # メニューバー
+    d.rounded_rectangle((w / 2 - 340, h - 124, w / 2 + 340, h - 36), 38, fill=(255, 255, 255, 80))      # Dock風
+    for i in range(9): d.rounded_rectangle((w / 2 - 310 + i * 72, h - 110, w / 2 - 258 + i * 72, h - 58), 13, fill=tuple(int(v) for v in (255, 255, 255)) + (190,))
     img.save(path)
 
 def pcb_tex(path, w, h, seed, base, trace, label=''):
@@ -186,7 +191,7 @@ M['body'] = principled('anodized_body', base_c, 1.0, 0.38); add_bump(M['body'])
 M['stand'] = principled('anodized_stand', stand_c, 1.0, 0.34); add_bump(M['stand'])
 M['chin'] = principled('painted_chin', chin_c, 0.0, 0.28, coat=1.0, coat_rough=0.04)
 M['glass'] = principled('front_glass', '#EDEEF0', 0.0, 0.06, coat=1.0, coat_rough=0.02)
-M['screen'] = img_material('display', wp, emission=True, strength=0.65)
+M['screen'] = img_material('display', wp, emission=True, strength=1.1)
 M['black'] = principled('black_glass', '#050507', 0.0, 0.05, coat=1.0)
 M['dark'] = principled('dark_plastic', '#101114', 0.0, 0.55)
 M['plastic'] = principled('plastic', '#1a1c20', 0.0, 0.5)
@@ -639,14 +644,44 @@ for k, r in enumerate(rotors):
 if A.export:
     bpy.ops.export_scene.gltf(filepath=A.export, export_format='GLB', export_apply=True, use_renderable=True, export_animations=False)
 
+
+# ---------------- 写実化パス(レンダリング専用。GLB書き出しの後なのでGLBには影響しない) ----------------
+def realify():
+    for m in bpy.data.materials:
+        if not m.use_nodes or m.name in ('floor',) or 'Principled BSDF' not in m.node_tree.nodes: continue
+        nt = m.node_tree; b = nt.nodes['Principled BSDF']
+        emissive = b.inputs['Emission Strength'].default_value > 0.01 or m.name == 'display'
+        if not emissive:      # (1) 微小ベベル: エッジにハイライトが乗り、CGの鋭利さが消える
+            bv = nt.nodes.new('ShaderNodeBevel'); bv.samples = 6; bv.inputs['Radius'].default_value = 0.35
+            lk = b.inputs['Normal'].links
+            if lk and lk[0].from_node.type == 'BUMP': nt.links.new(bv.outputs['Normal'], lk[0].from_node.inputs['Normal'])
+            elif not lk: nt.links.new(bv.outputs['Normal'], b.inputs['Normal'])
+        if b.inputs['Metallic'].default_value >= 0.6 and not b.inputs['Roughness'].links:      # (2) 金属の粗さムラ(加工痕/指紋の薄いムラ)
+            r0 = b.inputs['Roughness'].default_value
+            tc = nt.nodes.new('ShaderNodeTexCoord'); no = nt.nodes.new('ShaderNodeTexNoise'); mr = nt.nodes.new('ShaderNodeMapRange')
+            no.inputs['Scale'].default_value = 0.06; no.inputs['Detail'].default_value = 5; no.inputs['Roughness'].default_value = 0.6
+            mr.inputs['To Min'].default_value = max(0.05, r0 - 0.07); mr.inputs['To Max'].default_value = r0 + 0.09
+            nt.links.new(tc.outputs['Object'], no.inputs['Vector']); nt.links.new(no.outputs['Fac'], mr.inputs['Value']); nt.links.new(mr.outputs['Result'], b.inputs['Roughness'])
+realify() if not A.flat else None
+
 # ---------------- 環境 / カメラ / レンダー ----------------
 floor = bpy.data.objects.new('floor', bpy.data.meshes.new('floor'))
 bmf = bmesh.new(); bmesh.ops.create_grid(bmf, x_segments=1, y_segments=1, size=6000); bmf.to_mesh(floor.data); bmf.free()
-floor.location = V(0, -DROP - 6.2, 0); floor.data.materials.append(principled('floor', '#e9ebef', 0, .9)); COLL.objects.link(floor); floor.is_shadow_catcher = True
+floor.location = V(0, -DROP - 12.0, 0); COLL.objects.link(floor)      # 足底(y=-DROP-12)に接する
+if A.flat:
+    floor.data.materials.append(principled('floor', '#e9ebef', 0, .9)); floor.is_shadow_catcher = True
+else:    # 半光沢の床: 製品の映り込み+接地影。遠方は背景色へ溶け込ませて水平線を消す
+    fm = principled('floor', '#e4e6ec', 0, .30); fnt = fm.node_tree; fb = fnt.nodes['Principled BSDF']
+    ftc = fnt.nodes.new('ShaderNodeTexCoord'); fvl = fnt.nodes.new('ShaderNodeVectorMath'); fvl.operation = 'LENGTH'; fmr = fnt.nodes.new('ShaderNodeMapRange')
+    fmr.inputs['From Min'].default_value = 1300; fmr.inputs['From Max'].default_value = 5200; fmr.interpolation_type = 'SMOOTHSTEP'
+    ftr = fnt.nodes.new('ShaderNodeBsdfTransparent'); fms = fnt.nodes.new('ShaderNodeMixShader'); fout = fnt.nodes['Material Output']
+    fnt.links.new(ftc.outputs['Object'], fvl.inputs[0]); fnt.links.new(fvl.outputs['Value'], fmr.inputs['Value']); fnt.links.new(fmr.outputs['Result'], fms.inputs['Fac'])
+    fnt.links.new(fb.outputs['BSDF'], fms.inputs[1]); fnt.links.new(ftr.outputs['BSDF'], fms.inputs[2]); fnt.links.new(fms.outputs['Shader'], fout.inputs['Surface'])    # 遠方は透明にして背景(world)へ溶け込ませる
+    floor.data.materials.append(fm)
 wd = bpy.data.worlds.new('studio'); wd.use_nodes = True; wnt = wd.node_tree; bg = wnt.nodes['Background']; scene.world = wd
 tcw = wnt.nodes.new('ShaderNodeTexCoord'); spw = wnt.nodes.new('ShaderNodeSeparateXYZ'); cr = wnt.nodes.new('ShaderNodeValToRGB')
 wnt.links.new(tcw.outputs['Generated'], spw.inputs['Vector']); wnt.links.new(spw.outputs['Z'], cr.inputs['Fac'])
-cr.color_ramp.elements[0].position = 0.35; cr.color_ramp.elements[0].color = hexc('#c8ccd6'); cr.color_ramp.elements[1].position = 0.85; cr.color_ramp.elements[1].color = hexc('#ffffff')
+cr.color_ramp.elements[0].position = 0.35; cr.color_ramp.elements[0].color = hexc('#c3c7d1' if A.flat else '#cfd3dc'); cr.color_ramp.elements[1].position = 0.85; cr.color_ramp.elements[1].color = hexc('#ffffff')
 e = cr.color_ramp.elements.new(0.5); e.color = hexc('#e6e9f0')
 wnt.links.new(cr.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 1.05
 def sun(name, rot, energy, color='#fff7ee', angle=4):
@@ -657,10 +692,21 @@ def area(name, loc, size, power, color='#ffffff'):
     l = bpy.data.lights.new(name, 'AREA'); l.energy = power; l.size = size; l.color = hexc(color)[:3]
     o = bpy.data.objects.new(name, l); o.location = loc; COLL.objects.link(o)
     tr = o.constraints.new('TRACK_TO'); tr.target = TGT; tr.track_axis = 'TRACK_NEGATIVE_Z'; tr.up_axis = 'UP_Y'
+def softbox(name, loc, w, h, strength, color='#ffffff'):      # 発光する大きな面光源: 金属/ガラスにスタジオ風の映り込みを作る。カメラには映らない
+    me = bpy.data.meshes.new(name); bm_ = bmesh.new(); bmesh.ops.create_grid(bm_, x_segments=1, y_segments=1, size=0.5); bm_.to_mesh(me); bm_.free()
+    o = bpy.data.objects.new(name, me); o.scale = (w, h, 1); o.location = loc; COLL.objects.link(o)
+    mt = bpy.data.materials.new(name); mt.use_nodes = True; nb = mt.node_tree.nodes['Principled BSDF']
+    nb.inputs['Base Color'].default_value = (0, 0, 0, 1); nb.inputs['Emission Color'].default_value = hexc(color); nb.inputs['Emission Strength'].default_value = strength
+    me.materials.append(mt); o.visible_camera = False; o.visible_shadow = False
+    tr = o.constraints.new('TRACK_TO'); tr.target = TGT; tr.track_axis = 'TRACK_Z'; tr.up_axis = 'UP_Y'
 TGT = bpy.data.objects.new('target', None); TGT.location = V(0, 190, -40); COLL.objects.link(TGT)
 cam_d = bpy.data.cameras.new('cam'); cam_d.lens = 70; cam_d.clip_start = 10; cam_d.clip_end = 20000; cam_d.sensor_width = 36
 cam = bpy.data.objects.new('cam', cam_d); COLL.objects.link(cam); scene.camera = cam
 tt = cam.constraints.new('TRACK_TO'); tt.target = TGT; tt.track_axis = 'TRACK_NEGATIVE_Z'; tt.up_axis = 'UP_Y'
+if not A.flat:
+    D_ = 2300; ty_ = TGT.location.z      # ソフトボックス(リング配置): 左右の縦長ストリップ、天面の大型、背後のリム
+    softbox('sb_top', V(0, 1900, -45), 2200, 1400, 9.0); softbox('sb_l', V(-D_, 420, -300), 520, 1500, 14.0, '#fff4e6'); softbox('sb_r', V(D_, 380, -200), 520, 1500, 11.0, '#eaf1ff')
+    softbox('sb_front', V(500, 350, 2300), 1500, 900, 5.0); softbox('sb_back', V(-400, 400, -2400), 1500, 900, 6.0); softbox('sb_rim', V(1700, 700, -1900), 400, 1200, 18.0, '#f2f6ff')
 k = 1.0 if A.panel == 24 else 1.18
 VIEWS = {'front': ((560, 330, 1900), (0, 205, -30)), 'back': ((-700, 330, -1950), (0, 200, -45)), 'side': ((1900, 270, -80), (0, 190, -45)),
          'inside': ((40, 215, -1380), (0, 205, -45)), 'top': ((0, 1600, -60), (0, 100, -45)), 'closeup': ((-330, 200, -560), (-205, 120, -40)), 'io': ((-820, 120, -430), (-250, 70, -40)),
@@ -673,10 +719,18 @@ if A.focus:   # 内部座標(x,y,z)を注視し、背面側から az/el で周�
     c3 = t3 + Vector((A.dist * math.sin(az_) * math.cos(el_), A.dist * math.sin(el_), -A.dist * math.cos(az_) * math.cos(el_)))
     cam.location = V(c3.x, c3.y, c3.z); TGT.location = V(t3.x, t3.y, t3.z)
 cam_d.lens = A.lens
+if not A.flat and A.view not in ('inside', 'explode', 'top') and not A.focus:      # 被写界深度(軽め: f/9)でカメラ写真らしく
+    cam_d.dof.use_dof = True; cam_d.dof.focus_object = TGT; cam_d.dof.aperture_fstop = 9.0
 r = scene.render; r.engine = 'CYCLES'; w_, h_ = [int(x) for x in A.res.split('x')]; r.resolution_x, r.resolution_y, r.resolution_percentage = w_, h_, 100
-cy = scene.cycles; cy.device = 'CPU'; cy.samples = A.samples; cy.use_denoising = True; cy.denoiser = 'OPENIMAGEDENOISE'; cy.max_bounces = 8; cy.transparent_max_bounces = 16
+cy = scene.cycles; cy.device = 'CPU'; cy.samples = A.samples; cy.use_denoising = True; cy.denoiser = 'OPENIMAGEDENOISE'; cy.max_bounces = 12; cy.glossy_bounces = 8 if hasattr(cy, 'glossy_bounces') else 8; cy.transparent_max_bounces = 16
 cy.preview_samples = 16
-scene.view_settings.view_transform = 'Standard'; scene.view_settings.look = 'None'; scene.view_settings.exposure = -0.35
+if A.flat: scene.view_settings.view_transform = 'Standard'; scene.view_settings.look = 'None'; scene.view_settings.exposure = -0.35
+else:
+    try: scene.view_settings.view_transform = 'AgX'
+    except Exception: scene.view_settings.view_transform = 'Standard'
+    try: scene.view_settings.look = 'AgX - Medium High Contrast'
+    except Exception: pass
+    scene.view_settings.exposure = -0.6
 r.image_settings.file_format = 'PNG'; r.image_settings.color_mode = 'RGB'
 os.makedirs(os.path.dirname(A.out), exist_ok=True)
 if A.save_blend: bpy.ops.wm.save_as_mainfile(filepath=A.save_blend)

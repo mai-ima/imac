@@ -129,12 +129,13 @@ const floor=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMa
 const sc2=document.createElement('canvas'); sc2.width=768; sc2.height=432; const sg=sc2.getContext('2d');
 const screenTex=new THREE.CanvasTexture(sc2); screenTex.colorSpace=THREE.SRGBColorSpace; screenTex.flipY=false;
 const screenMat=new THREE.MeshBasicMaterial({map:screenTex,toneMapped:false}), offMat=new THREE.MeshStandardMaterial({color:'#0a0a0c',roughness:.15});
-function drawScreen(t){ const [b,,c]=PALETTE[color]; const w=sc2.width,h=sc2.height;
-  const g=sg.createLinearGradient(0,0,w,h); g.addColorStop(0,c); g.addColorStop(1,b); sg.fillStyle=g; sg.fillRect(0,0,w,h);
-  for(let i=0;i<9;i++){ const x=(i*110+Math.sin(t*.4+i)*30)%(w+120)-60; sg.save(); sg.translate(x+60,h/2); sg.rotate(-.18);
-    const gg=sg.createLinearGradient(-50,0,50,0); gg.addColorStop(0,'rgba(255,255,255,.55)'); gg.addColorStop(.5,'rgba(255,255,255,.05)'); gg.addColorStop(1,'rgba(0,0,0,.28)');
-    sg.fillStyle=gg; sg.beginPath(); sg.roundRect(-46,-h*.8,92,h*1.6,46); sg.fill(); sg.restore(); }
-  sg.fillStyle='rgba(255,255,255,.55)'; sg.fillRect(0,0,w,13); sg.fillStyle='rgba(255,255,255,.45)'; sg.beginPath(); sg.roundRect(w/2-120,h-34,240,26,10); sg.fill(); screenTex.needsUpdate=true; }
+function drawScreen(t){ const w=sc2.width,h=sc2.height;      // 壁紙: 深い青→紫→橙(どの本体色でも画面は色鮮やか)
+  const g=sg.createLinearGradient(0,h,w,0); g.addColorStop(0,'#081650'); g.addColorStop(.42,'#4230c4'); g.addColorStop(.72,'#d64eaa'); g.addColorStop(1,'#ff965c'); sg.fillStyle=g; sg.fillRect(0,0,w,h);
+  for(let i=0;i<7;i++){ const x=(i*150+Math.sin(t*.4+i)*30)%(w+150)-75; sg.save(); sg.translate(x+60,h/2); sg.rotate(-.28);
+    const gg=sg.createLinearGradient(-60,0,60,0); gg.addColorStop(0,'rgba(255,255,255,.22)'); gg.addColorStop(.5,'rgba(255,255,255,.08)'); gg.addColorStop(1,'rgba(255,255,255,.0)');
+    sg.fillStyle=gg; sg.beginPath(); sg.roundRect(-58,-h*.9,116,h*1.8,58); sg.fill(); sg.restore(); }
+  sg.fillStyle='rgba(20,20,40,.45)'; sg.fillRect(0,0,w,13); sg.fillStyle='rgba(255,255,255,.32)'; sg.beginPath(); sg.roundRect(w/2-130,h-36,260,28,12); sg.fill();
+  for(let i=0;i<9;i++){ sg.fillStyle='rgba(255,255,255,.8)'; sg.beginPath(); sg.roundRect(w/2-118+i*27,h-32,20,20,5); sg.fill(); } screenTex.needsUpdate=true; }
 
 /* ---- GLB 読み込み ---- */
 const S={cover:true,labels:false,air:false,screen:true,load:0,explode:0,speed:0};

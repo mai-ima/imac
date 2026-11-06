@@ -1,0 +1,13 @@
+{
+ "entries": [
+  {
+   "src": "blender/textures/wallpaper_silver.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "44f2d2a",
+   "sha256": "7cff3fe0d32bea26b4610e673b303954d79a32e61c65c290cb27b21d13400580",
+   "file": "wallpaper_silver/wallpaper_silver.v001__2026-11-03_44f2d2a.png"
+  }
+ ]
+}
