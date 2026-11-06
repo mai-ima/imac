@@ -80,6 +80,15 @@
    "commit": "165c355",
    "sha256": "0f1ac5747c20205fa7c5cea0af3313a87a5c0b0bf31abfa0bda9e6bd7652a45b",
    "file": "render_all/render_all.v001__2026-11-03_165c355.sh"
+  },
+  {
+   "src": "blender/render_all.sh",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "7f1eac8",
+   "sha256": "cdaaa6c2dcb0a9e0c2bb691c6a596faa06bde9261fe86e49762db012bc15fefd",
+   "file": "render_all/render_all.v002__2026-11-05_7f1eac8.sh"
   }
  ]
 }

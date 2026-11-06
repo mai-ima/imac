@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 高品質レンダリング一式 (Cycles / CPU)。前提: bpy モジュール入りの Python (例: uv venv --python 3.11 && uv pip install bpy pillow)
 PY=${PY:-/tmp/bl/.venv/bin/python}; cd "$(dirname "$0")/.."
-R="$PY -W ignore blender/build_imac_pc_v6.py"; OUT=render/blender
+R="$PY -W ignore blender/build_imac_pc_v8.py"; OUT=render/blender
 mkdir -p $OUT
 $R --view front   --color silver --res 1920x1080 --samples 128 --out $OUT/front_silver.png --save-blend blender/imac_pc.blend --export viewer/imac_pc.glb
 $R --view front   --color blue   --tilt 8 --res 1920x1080 --samples 128 --out $OUT/front_blue_tilt.png
