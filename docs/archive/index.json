@@ -469,6 +469,15 @@
    "file": "joint-analysis/joint-analysis.v008__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/joint-analysis.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "e771a0d21af1b0c342118fcfce122b746a6787e94a5ebf81622f220ee8f85bbf",
+   "file": "joint-analysis/joint-analysis.v009__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/model-pipeline.md",
    "version": 1,
    "gen": "current",
@@ -872,6 +881,15 @@
    "commit": "514e2e0",
    "sha256": "7db10d273a22569b39b3e75078db6f869b4e6505d97e0337a0324be2fd853f44",
    "file": "wiring/wiring.v006__2026-11-06_514e2e0.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "a7bfe2fe4ab1295db5088ffde8a7916f385e10d8818daf812f1150ab17044002",
+   "file": "wiring/wiring.v007__2026-11-06_853f219.md"
   }
  ]
 }

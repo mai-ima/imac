@@ -78,6 +78,8 @@ dd2 = dome_depth(edge_dist(_g['pos'][0] + 60, GPLUG, _Wd, _Hd, _Rc))
 chk('GPU出力プラグ空間(30mm)と傾斜面', dd2 >= 28 + 3, f"プラグ先端 y={GPLUG:.0f} での内面深さ {dd2:.1f}mm >= プラグ上端z28+3(窓: cover_gpu_cutter)")
 _r = [i for i in L['items'] if i['id'] == 'radiator'][0]
 dd3 = dome_depth(edge_dist(_r['pos'][0] + _r['size'][0], _r['pos'][1] + _r['size'][1] / 2, _Wd, _Hd, _Rc))
+chk('I/O・GPU窓がドーム縁まで連続(プラグを外から挿せる)', S['windows']['io_y0'] <= -2 and S['windows']['gpu_y0'] <= -2, f"io窓 y0={S['windows']['io_y0']}, GPU窓 y0={S['windows']['gpu_y0']} (<=-2 で縁を貫通)")
+chk('ホース上空経路とドーム/フィルタの隙間', S['dome']['total_t'] - S['slab_t'] - S['pod']['wall'] - 3 - (143.0 + 6.2) >= 5.0, f"内奥行{S['dome']['total_t']-S['slab_t']-S['pod']['wall']}-フィルタ3 - ホース上端149.2 >= 5mm")
 chk('ラジエーター右端と傾斜面', dd3 >= _r['pos'][2] + _r['size'][2] + 3, f"右端での内面深さ {dd3:.1f}mm >= ラジエーター上端 {_r['pos'][2]+_r['size'][2]:.0f}+3")
 # ---- 電力 ----
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import power_budget as PB

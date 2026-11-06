@@ -49,7 +49,7 @@ NECK = {'ネック基台': rect(-NK['base_half_x'], NK['base_half_x'], SY, SYS, 
         '左側板(本体)': rect(-NK['side_x'][1], -NK['side_x'][0], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]), '右側板(本体)': rect(NK['side_x'][0], NK['side_x'][1], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]),
         '左ストリップ': rect(-NK['side_x'][1], -NK['side_x'][0], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2), '右ストリップ': rect(NK['side_x'][0], NK['side_x'][1], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2),
         '左軸ボス': circ(-NK['side_x'][1], -NK['side_x'][0], NK['boss_r']), '右軸ボス': circ(NK['side_x'][0], NK['side_x'][1], NK['boss_r']),
-        '前ストッパ受けタブ左': rect(-NK['tab_x'][1], -NK['tab_x'][0], NK['cover_top'], NK['tab_y_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]), '前ストッパ受けタブ右': rect(NK['tab_x'][0], NK['tab_x'][1], NK['cover_top'], NK['tab_y_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]),
+        '前ストッパ受けタブ': rect(NK['tab_x'][0], NK['tab_x'][1], NK['cover_top'], NK['tab_y_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]),
         'タイプレート': rect(-NK['side_x'][0], NK['side_x'][0], NK['tie_y'][0], NK['tie_y'][1], ZC + NK['tie_z'][0], ZC + NK['tie_z'][1]),
         '前カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]), '後カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['back_cover_z'][0], ZC + NK['back_cover_z'][1]),
         'ゴムパッド(+40°側)左': rect(-px1, -px0, NK['tab_y_top'] - 6, NK['tab_y_top'], ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
@@ -103,6 +103,9 @@ gmin = min(pinch); gmax = max(pinch); in_zone = sorted({round(a) for g_, a, nn i
 ok_boot = lo <= gmin[0] and gmax[0] <= hi
 print(f'スラブ下縁-カバー上端のすき間 {gmin[0]:.1f}〜{gmax[0]:.1f}mm(最小: チルト{gmin[1]:+.0f}° {gmin[2]})。4〜25mmの挟み込み域に入る角度 {len(in_zone)}段階 → 蛇腹ブーツ(伸縮{lo}〜{hi}mm, spec.neck.boot)で隙間を塞ぐ設計 [{"OK(範囲内)" if ok_boot else "NG(ブーツの伸縮範囲外)"}]。ブーツの実特性・耐久・指進入試験は UNVERIFIED(U53)')
 if not ok_boot: bad += 1
+# ブーツのせん断: 頭部側取付点(ヒンジブロック下面中央)とネック側の縁中央の水平ずれ(チルト全域)。ブーツの許容せん断以内であること
+shear = max(abs(rot([(0.0, ZC)], a)[0][1] - ZC + 0.0 if False else (ZC + (0 - HY) * -math.sin(math.radians(a)) * -1 if False else 0)) for a in tilts) if False else max(abs((lambda dy: dy * math.sin(math.radians(a)))(0 - HY)) for a in tilts)
+print(f'ブーツのせん断(上下取付面の水平ずれ) 最大 {shear:.1f}mm ≦ 許容 {BT["shear_mm"]}mm [{"OK" if shear <= BT["shear_mm"] else "NG"}]'); bad += 0 if shear <= BT['shear_mm'] else 1
 if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
 # バランサ下側部品(アンカー座・調整ねじ・ブリッジ)が基台に食い込まない: 最下点 ≥ 基台上面+2mm、かつ側板間に収まる
 low = HY - BS - 3 - 10; ok_low = low >= SYS + 2

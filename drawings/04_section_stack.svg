@@ -116,16 +116,16 @@
 <text x="93.28" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 93.28 37)">断熱シート</text>
 <rect x="95.67999999999999" y="40" width="3.2" height="90" fill="#ccd" stroke="#000" stroke-width=".3"/>
 <text x="97.27999999999999" y="37" font-size="2.8" text-anchor="middle" transform="rotate(-30 97.27999999999999 37)">背板 A5052</text>
-<rect x="98.88" y="86.80000000000001" width="251.20000000000002" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
+<rect x="98.88" y="86.80000000000001" width="264.0" height="43.199999999999996" fill="#dde" stroke="#000" stroke-width=".3"/>
 <line x1="60" y1="131" x2="60" y2="140" stroke="#000" stroke-width="0.18"/>
 <line x1="100.0" y1="131" x2="100.0" y2="140" stroke="#000" stroke-width="0.18"/>
 <line x1="60" y1="138" x2="100.0" y2="138" stroke="#000" stroke-width="0.25"/>
 <path d="M60,138 l3,-1 v2 z M100.0,138 l-3,-1 v2 z" fill="#000"/>
 <text x="80.00" y="137.00" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">スラブ 25.0</text>
 <line x1="60" y1="131" x2="60" y2="152" stroke="#000" stroke-width="0.18"/>
-<line x1="351.2" y1="131" x2="351.2" y2="152" stroke="#000" stroke-width="0.18"/>
-<line x1="60" y1="150" x2="351.2" y2="150" stroke="#000" stroke-width="0.25"/>
-<path d="M60,150 l3,-1 v2 z M351.2,150 l-3,-1 v2 z" fill="#000"/>
-<text x="205.60" y="149.00" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">総厚 182</text>
-<text x="60" y="175" font-size="4">厚み構成(拡大 x1.6 の概略図)。ドーム板厚 t2.0(外面最大厚 182)。内部有効奥行 最大 154.0mm</text>
+<line x1="364.0" y1="131" x2="364.0" y2="152" stroke="#000" stroke-width="0.18"/>
+<line x1="60" y1="150" x2="364.0" y2="150" stroke="#000" stroke-width="0.25"/>
+<path d="M60,150 l3,-1 v2 z M364.0,150 l-3,-1 v2 z" fill="#000"/>
+<text x="212.00" y="149.00" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">総厚 190</text>
+<text x="60" y="175" font-size="4">厚み構成(拡大 x1.6 の概略図)。ドーム板厚 t2.0(外面最大厚 190)。内部有効奥行 最大 162.0mm</text>
 </g></svg>

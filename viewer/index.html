@@ -107,7 +107,7 @@ const $ = id => document.getElementById(id);
 const PALETTE={silver:['#D2D3D5','#BBBCBE','#D7D8DA'],blue:['#5882B2','#9EB2CD','#BACEE9'],purple:['#8581B4','#ACA3C0','#C9C5E6'],pink:['#E16280','#E7A9B6','#FFCFDB'],orange:['#E5734E','#F0B498','#FFCCAF'],yellow:['#EFD344','#DCCB97','#FDEEB7'],green:['#41965F','#A2BFAD','#B9D8C6']};
 const NAMES={silver:'シルバー',blue:'ブルー',purple:'パープル',pink:'ピンク',orange:'オレンジ',yellow:'イエロー',green:'グリーン'};
 let color=PALETTE[Q.get('color')]?Q.get('color'):'silver';
-const SLAB=25, DOME_T=182, DOME_W=596, DOME_H=377, DOME_Y0=24, WALL=3;   // 設計値(model/spec.json)
+const SLAB=25, DOME_T=190, DOME_W=596, DOME_H=377, DOME_Y0=24, WALL=3;   // 設計値(model/spec.json)
 
 /* ---- renderer / scene ---- */
 const canvas=$('c'), view=$('view');

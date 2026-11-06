@@ -54,6 +54,7 @@
 | joint-analysis.md | v006 | current | 2026-11-06 | 4482281 | joint-analysis/joint-analysis.v006__2026-11-06_4482281.md |
 | joint-analysis.md | v007 | current | 2026-11-06 | 432b08c | joint-analysis/joint-analysis.v007__2026-11-06_432b08c.md |
 | joint-analysis.md | v008 | current | 2026-11-06 | d97f07e | joint-analysis/joint-analysis.v008__2026-11-06_d97f07e.md |
+| joint-analysis.md | v009 | current | 2026-11-06 | 853f219 | joint-analysis/joint-analysis.v009__2026-11-06_853f219.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research-cables.md | v001 | current | 2026-11-06 | fc36218 | research-cables/research-cables.v001__2026-11-06_fc36218.md |
@@ -99,3 +100,4 @@
 | wiring.md | v004 | current | 2026-11-06 | 80d7407 | wiring/wiring.v004__2026-11-06_80d7407.md |
 | wiring.md | v005 | current | 2026-11-06 | 9ff6031 | wiring/wiring.v005__2026-11-06_9ff6031.md |
 | wiring.md | v006 | current | 2026-11-06 | 514e2e0 | wiring/wiring.v006__2026-11-06_514e2e0.md |
+| wiring.md | v007 | current | 2026-11-06 | 853f219 | wiring/wiring.v007__2026-11-06_853f219.md |

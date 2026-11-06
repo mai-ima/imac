@@ -28,6 +28,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v003__2026-11-06_853f219.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "26edc8bf3f35804ff644a4a3dffe2885d326e98aaeae9f2612dcb7a755c3dfd3",
+   "file": "01_tilt_balancer/01_tilt_balancer.v004__2026-11-06_28dc82b.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -44,6 +53,15 @@
    "commit": "02c4c72",
    "sha256": "23b6250d290fc824f891d1565e7e441c5c3b0dd3e0157bbf72210e3a0e76617f",
    "file": "02_swivel/02_swivel.v002__2026-11-06_02c4c72.md"
+  },
+  {
+   "src": "docs/mechanisms/02_swivel.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "5d2ea4fd0273d60966a5f82ecae8c1ea247b7d8a31e58c1cdf27615028d93f77",
+   "file": "02_swivel/02_swivel.v003__2026-11-06_853f219.md"
   },
   {
    "src": "docs/mechanisms/03_neck_and_load_path.md",
@@ -71,6 +89,15 @@
    "commit": "853f219",
    "sha256": "da51cd98309b89faccbc317db5899ef3f2494eac969cede3194a24e90df228f0",
    "file": "03_neck_and_load_path/03_neck_and_load_path.v003__2026-11-06_853f219.md"
+  },
+  {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "322df8581bd34846351e8230298c0dab56eb4da347a4c3793a023d7bfb65a77e",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v004__2026-11-06_28dc82b.md"
   },
   {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
@@ -109,6 +136,15 @@
    "file": "06_pinch_guard/06_pinch_guard.v001__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/mechanisms/06_pinch_guard.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "1c19da02ded20198ca6cc3729cf2f089a4927c49faf5e763f61f3e5c652a744a",
+   "file": "06_pinch_guard/06_pinch_guard.v002__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/mechanisms/07_fits_and_feel.md",
    "version": 1,
    "gen": "current",
@@ -116,6 +152,15 @@
    "commit": "02c4c72",
    "sha256": "b072590e6652776f8b64e4e441a425fdee211f733fc0e094621cc4a416d3f444",
    "file": "07_fits_and_feel/07_fits_and_feel.v001__2026-11-06_02c4c72.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "896ed43f057eaf48a1af49ae4d17d7ddb8689656ffa43af4ebb6889206c8d016",
+   "file": "07_fits_and_feel/07_fits_and_feel.v002__2026-11-06_28dc82b.md"
   },
   {
    "src": "docs/mechanisms/README.md",

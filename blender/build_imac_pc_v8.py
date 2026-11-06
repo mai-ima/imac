@@ -362,9 +362,9 @@ bx, by, bz = lp('board')
 def cutbox(name, x0, y0, z0, w, h, d):
     c = ibox(name, w, h, d, x0, y0, z0, None); c.hide_render = True; BODY_OBJS.append(c); return c
 ax_, ay_, az_ = lp('ac_inlet')
-c_io = cutbox('cover_io_cutter', bx + 12, by - 18, 2, 120, 22, 94)
+WIN = S['windows']; c_io = cutbox('cover_io_cutter', bx + 12, WIN['io_y0'], 2, 120, (by - 18 + 22) - WIN['io_y0'], 94)      # I/O窓は縁(y<0)まで連続した切り欠き
 c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 26, 94)
-c_gpu = cutbox('cover_gpu_cutter', gx + 2, gy - 30, 2, 124, 26, 94)      # GPU出力(HDMI+DP×3)のプラグ空間(オーバーモールド約30mm)まで開ける
+c_gpu = cutbox('cover_gpu_cutter', gx + 2, WIN['gpu_y0'], 2, 124, (gy - 4) - WIN['gpu_y0'], 94)      # GPU出力(HDMI+DP×3)のプラグ空間まで縁から連続して開ける
 mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
     for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
@@ -444,7 +444,7 @@ Z1 = bz + 1.6          # 基板上面
 IOX = BL['io_x_ranges']
 # 後部I/O(下向き): 公式図でx範囲確定、ブロック内の並びは未確認(代表的な構成で配置)
 io_x0, io_x1 = IOX['HDMI_U10G34'][0] - 2, IOX['M2_WIFI'][1] + 2
-ibox('io_shield', io_x1 - io_x0, 26, 44.45, bx + io_x0, by - 2, Z1, M['steel'])
+ibox('io_shield', io_x1 - io_x0, 26, 30, bx + io_x0, by - 2, Z1, M['steel'])      # I/Oブロック実高≈28〜30mm(ASUS p.26実測)。シャーシ開口規格44.45とは別
 def port(name, xc, zc, w, h, inner=None):
     ibox(name + '_shell', w, 1.4, h, bx + xc - w / 2, by - 3.4, Z1 + zc - h / 2, M['steel'], .2)
     ibox(name + '_hole', w - 3, 1.5, h - 3, bx + xc - (w - 3) / 2, by - 3.5, Z1 + zc - (h - 3) / 2, inner or M['dark'])
@@ -454,15 +454,15 @@ mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
 #  列C(x59〜73): USB 2.0 Type-A ×2 縦積み             列D(x77〜91): USB 2.0 Type-A / USB4 40G Type-C
 #  列E(x93〜112): RJ45(2.5GbE) / USB 10G赤 / USB 10G Type-C   Wi-Fi: SMAアンテナ ×2 縦積み(x113〜122)。各列内の上下位置は図の読み取り(±2mm程度)
 usb_red = principled('usb_red', '#c8202b', 0, .5); usb2_in = principled('usb2_black', '#15161a', 0, .5)
-port('io_a10g_1', 24.5, 38, 14.5, 7, usb_red); port('io_a10g_2', 24.5, 26, 14.5, 7, usb_red); port('io_hdmi', 24.5, 10, 15, 6.5)
-port('io_btn_clr', 44, 40.5, 3.6, 3.6); port('io_btn_fb', 51, 40.5, 3.6, 3.6); port('io_a10g_3', 47.5, 25, 14.5, 7, usb_red); port('io_usb4_c1', 47.5, 10, 9, 3.6)
-port('io_usb2_1', 66, 38, 14.5, 7, usb2_in); port('io_usb2_2', 66, 26, 14.5, 7, usb2_in)
-port('io_usb2_3', 84.5, 25, 14.5, 7, usb2_in); port('io_usb4_c2', 84.5, 10, 9, 3.6)
-port('io_rj45', 102.5, 36, 16, 13.5, M['alu']); port('io_a10g_4', 102.5, 22, 14.5, 7, usb_red); port('io_usbc_10g', 102.5, 9, 9, 3.6)
-for k, zz in enumerate((14, 34)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
+port('io_a10g_1', 24.5, 23.3, 14.5, 7, usb_red); port('io_a10g_2', 24.5, 15.0, 14.5, 7, usb_red); port('io_hdmi', 24.5, 2.8, 15, 6.5)
+port('io_btn_clr', 44, 19.6, 6.5, 3.9); port('io_btn_fb', 51, 19.6, 6.5, 3.9); port('io_a10g_3', 47.5, 12.9, 14.5, 7, usb_red); port('io_usb4_c1', 47.5, 3.0, 9, 3.6)
+port('io_usb2_1', 66, 16.5, 14.5, 7, usb2_in); port('io_usb2_2', 66, 9.0, 14.5, 7, usb2_in)
+port('io_usb2_3', 83.5, 11.6, 14.5, 7, usb2_in); port('io_usb4_c2', 83.5, 2.7, 9, 3.6)
+port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 14.5, 7, usb_red); port('io_usbc_10g', 101.5, 3.0, 9, 3.6)
+for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
-ibox('vrm_shroud', 98, 36, 22, bx + 8, by + 24, Z1, M['shroud'], 1.5)
-ibox('vrm_trim', 98, 1.2, 22.1, bx + 8, by + 24, Z1, M['silver_trim'])
+ibox('vrm_shroud', 98, 36, 14, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
+ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
@@ -511,21 +511,18 @@ icyl('m2_screw', 1.6, 3, 'z', sd[0] + 12.5, sd[1] + 78.5, sd_z + 1.5, M['steel']
 # ===== CPU水冷 ARCTIC Liquid Freezer III Pro 240: ポンプ(Ø91 × 68.5)。コールドプレートはIHS上面に接する =====
 cl = lp('cooler'); cs = ls('cooler'); pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # CPU中心(=円盤中心)。ポンプ筐体は+x側に17.5mm張り出す(hose長450mmでラジエーターへ届くため。-x側はVRM/EPS、+y側はDIMM、-y側はVRMと干渉。layout: x=cl[0]..cl[0]+108.47)
 pump_mat = principled('arctic_pump', '#18191c', 0.4, 0.4)
-# ---- ARCTIC Liquid Freezer III Pro ポンプ(公式2D図面 ACFRE00178A〜189A共通 p.1 を直接確認): 下から コールドプレート → VRMファンの開放ケージ → Ø91の円盤キャップ(logo) → 上面から垂直なホース口 ----
-ibox('pump_coldplate_sq', 44, 44, 4, pcx - 22, pcy - 22, cl[2], M['copper'], .5)
-ibox('pump_base_block', 48, 48, 4, pcx - 24, pcy - 24, cl[2] + 4, pump_mat, 1.0)                  # ベース(ねじ座を含む)
-for k_ in range(12):      # VRMファンを囲むアーチ状リブの開放ケージ(z 8〜42, 半径≈42)
-    an_ = math.radians(k_ * 30); ibox(f'pump_cage_rib{k_}', 4, 4, 34, pcx + 42 * math.cos(an_) - 2, pcy + 42 * math.sin(an_) - 2, cl[2] + 8, pump_mat, .8)
-icyl('pump_cage_ring_low', 43, 2.5, 'z', pcx, pcy, cl[2] + 9, pump_mat, 64) if False else None
-icyl('pump_cap', 45.5, 13, 'z', pcx, pcy, cl[2] + 42 + 6.5, pump_mat, 96)                         # Ø91 円盤キャップ(厚≈13, z42〜55)
-icyl('pump_cap_top', 44, 0.6, 'z', pcx, pcy, cl[2] + 55.3, M['alublack'], 96)                      # 上面プレート(ARCTICロゴ面)
-for k_ in range(30):      # 上面の放射フィン(装飾)
-    an_ = math.radians(k_ * 12); ibox(f'pump_fin{k_}', 18, 1.0, 0.4, pcx + 24 * math.cos(an_) - 9 if False else pcx - 9 + 24 * math.cos(an_), pcy - .5 + 24 * math.sin(an_), cl[2] + 55.6, M['dark'], 0) if False else None
-ibox('pump_motor_housing', 28, 46, 38, pcx + 35.0, pcy - 23, cl[2] + 8, pump_mat, 6.0)             # ポンプ筐体(円盤の+x側に張り出し、全長108.47mm)
-make_fan('fan_pump_vrm', 55, 12, 7, M['dark'], principled('vrm_blade', '#1b1c20', 0, .45), principled('vrm_hub', '#101114', .2, .4), pcx, pcy, cl[2] + 16)      # VRMファン(径は未確認 U58: 55mmは仮置き)。ケージ内
-for sgn, nm in ((1, 'a'), (-1, 'b')):      # ホース口: 上面から垂直。スイベルナット(ローレット)z55〜68.5 + スタブ z68.5〜81。+x側のスタブ位置 x=pcx+54.5, 間隔≈26mm
-    icyl(f'pump_swivel_{nm}', 7.0, 13.5, 'z', pcx + 54.5, pcy + sgn * 13, cl[2] + 55 + 6.75, M['alublack'], 24)
-    icyl(f'pump_fitting_{nm}', 4.2, 12.5, 'z', pcx + 54.5, pcy + sgn * 13, cl[2] + 68.5 + 6.25, M['alublack'], 24)
+PJ = json.load(open(os.path.join(ROOT, 'model', 'pump.json')))      # ARCTIC 2D図面の実測値(単一源。tools/gen_cad_drawings.py の図面と同じ)
+def pbox(name, xr, yr, zr, mat, bev=0.8): ibox(name, xr[1] - xr[0], yr[1] - yr[0], zr[1] - zr[0], pcx + xr[0], pcy + yr[0], cl[2] + zr[0], mat, bev)
+def pcyl(name, d, zr, mat, cx=0.0, cy=0.0, seg=64): icyl(name, d / 2, zr[1] - zr[0], 'z', pcx + cx, pcy + cy, cl[2] + (zr[0] + zr[1]) / 2, mat, seg)
+cp_ = PJ['coldplate']; pbox('pump_coldplate_sq', cp_['x'], cp_['y'], cp_['z'], M['copper'], .5)                  # 銅コールドプレート(約40.1×43.6, 中心は円盤中心から+2mm)
+pbox('pump_base_block', (-PJ['base']['size'][0] / 2, PJ['base']['size'][0] / 2), (-PJ['base']['size'][1] / 2, PJ['base']['size'][1] / 2), PJ['base']['z'], pump_mat, 1.0)
+for k_ in range(PJ['cage']['ribs']):      # VRMファンを囲むアーチ状リブの開放ケージ
+    an_ = math.radians(k_ * 360 / PJ['cage']['ribs']); pbox(f'pump_cage_rib{k_}', (PJ['cage']['r'] * math.cos(an_) - 2, PJ['cage']['r'] * math.cos(an_) + 2), (PJ['cage']['r'] * math.sin(an_) - 2, PJ['cage']['r'] * math.sin(an_) + 2), PJ['cage']['z'], pump_mat, .8)
+pcyl('pump_cap_lip', PJ['cap_lip']['d'], PJ['cap_lip']['z'], pump_mat, seg=96); pcyl('pump_cap_top', PJ['cap_top']['d'], PJ['cap_top']['z'], M['alublack'], seg=96)      # キャップ2段(リップ+トッププレート)
+pbox('pump_housing_body', PJ['housing_body']['x'], PJ['housing_body']['y'], PJ['housing_body']['z'], pump_mat, 6.0); pbox('pump_elbow', PJ['elbow']['x'], PJ['elbow']['y'], PJ['elbow']['z'], pump_mat, 5.0)      # 筐体本体+エルボ状出口
+make_fan('fan_pump_vrm', PJ['vrm_fan']['d'], PJ['vrm_fan']['z'][1] - PJ['vrm_fan']['z'][0], 7, M['dark'], principled('vrm_blade', '#1b1c20', 0, .45), principled('vrm_hub', '#101114', .2, .4), pcx, pcy, cl[2] + PJ['vrm_fan']['z'][0])      # VRMファン(径・中心は未確認 U58)
+for k_, sy_ in enumerate(PJ['stub_y']):      # ホース口: 上面から垂直。スイベルナット(Ø20.4)+スタブ(Ø11.1)。y位置は図面の読み取り(左右ミラーは未確認)
+    pcyl(f'pump_swivel_{k_}', PJ['nut']['d'], PJ['nut']['z'], M['alublack'], PJ['stub_x'], sy_, 24); pcyl(f'pump_fitting_{k_}', PJ['stub']['d'], PJ['stub']['z'], M['alublack'], PJ['stub_x'], sy_, 24)
 for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):            # AM5取付穴 54×90mm(AM4互換パターン, Noctua等の公開資料)。長辺(90)はポンプのホース出口方向と直交(ARCTIC 2D図面 Bottom View)。バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
     z_top_, z_bot_ = cl[2] + 14, bz - 1
     icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)
@@ -535,7 +532,7 @@ rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
 for k in range(2):
-    make_fan(f'fan_rad{k}', 120, 25, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%
+    make_fan(f'fan_rad{k}', 120, 28, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%
 def cable(name, pts, r, mat):
     cu = bpy.data.curves.new(name, 'CURVE'); cu.dimensions = '3D'; cu.bevel_depth = r; cu.bevel_resolution = 6; cu.fill_mode = 'FULL'; cu.use_fill_caps = True
     sp = cu.splines.new('POLY'); sp.points.add(len(pts) - 1)       # cablemodelのfillet済み折れ線をそのまま使う(曲げ半径はtools/cable_check.pyで検査済)

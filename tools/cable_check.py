@@ -39,7 +39,7 @@ for c in CM.CAB:
         for it in L:
             x, y, z = it['pos']; sx, sy, sz = it['size']
             if it['id'] == 'cooler':      # ポンプ: 円盤キャップ(Ø91×z0〜55)+VRMケージ+側方筐体(+x側17.5mm張出, z8〜46)。ホース口スタブ(z55〜81)は被さる部分なので除外
-                ccx, ccy = x + 45.5, y + sy / 2; hit = (math.hypot(p[0] - ccx, p[1] - ccy) < 45.5 + r and z - r < p[2] < z + 55 + r) or (ccx + 35 - r < p[0] < ccx + 63 + r and abs(p[1] - ccy) < 23 + r and z + 8 - r < p[2] < z + 46 + r)
+                ccx, ccy = x + 45.5, y + sy / 2; hit = (math.hypot(p[0] - ccx, p[1] - ccy) < 45.5 + r and z - r < p[2] < z + 55 + r) or (ccx + 27 - r < p[0] < ccx + 63 + r and abs(p[1] - ccy) < 29 + r and z + 2 - r < p[2] < z + 52 + r)
             else: hit = x - r < p[0] < x + sx + r and y - r < p[1] < y + sy + r and z - r < p[2] < z + sz + r
             if hit:
                 issues.append(f"{it['id']}と干渉 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f})"); break

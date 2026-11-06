@@ -19,6 +19,7 @@
 | 03_pod_cover.svg | v006 | current | 2026-11-06 | 80d7407 | 03_pod_cover/03_pod_cover.v006__2026-11-06_80d7407.svg |
 | 03_pod_cover.svg | v007 | current | 2026-11-06 | 514e2e0 | 03_pod_cover/03_pod_cover.v007__2026-11-06_514e2e0.svg |
 | 03_pod_cover.svg | v008 | current | 2026-11-06 | 302823c | 03_pod_cover/03_pod_cover.v008__2026-11-06_302823c.svg |
+| 03_pod_cover.svg | v009 | current | 2026-11-06 | 853f219 | 03_pod_cover/03_pod_cover.v009__2026-11-06_853f219.svg |
 | 04_section_stack.svg | v001 | current | 2026-11-03 | fd22dea | 04_section_stack/04_section_stack.v001__2026-11-03_fd22dea.svg |
 | 04_section_stack.svg | v002 | current | 2026-11-05 | b97eaae | 04_section_stack/04_section_stack.v002__2026-11-05_b97eaae.svg |
 | 04_section_stack.svg | v003 | current | 2026-11-05 | fcba5fe | 04_section_stack/04_section_stack.v003__2026-11-05_fcba5fe.svg |
@@ -26,6 +27,7 @@
 | 04_section_stack.svg | v005 | current | 2026-11-06 | 80d7407 | 04_section_stack/04_section_stack.v005__2026-11-06_80d7407.svg |
 | 04_section_stack.svg | v006 | current | 2026-11-06 | 514e2e0 | 04_section_stack/04_section_stack.v006__2026-11-06_514e2e0.svg |
 | 04_section_stack.svg | v007 | current | 2026-11-06 | 302823c | 04_section_stack/04_section_stack.v007__2026-11-06_302823c.svg |
+| 04_section_stack.svg | v008 | current | 2026-11-06 | 853f219 | 04_section_stack/04_section_stack.v008__2026-11-06_853f219.svg |
 | 05_stand.svg | v001 | current | 2026-11-03 | b096d9e | 05_stand/05_stand.v001__2026-11-03_b096d9e.svg |
 | 05_stand.svg | v002 | current | 2026-11-05 | fcba5fe | 05_stand/05_stand.v002__2026-11-05_fcba5fe.svg |
 | 05_stand.svg | v003 | current | 2026-11-05 | 71b7afb | 05_stand/05_stand.v003__2026-11-05_71b7afb.svg |
@@ -55,6 +57,7 @@
 | 09_board_layout.svg | v003 | current | 2026-11-06 | 9ff6031 | 09_board_layout/09_board_layout.v003__2026-11-06_9ff6031.svg |
 | 09_board_layout.svg | v004 | current | 2026-11-06 | 514e2e0 | 09_board_layout/09_board_layout.v004__2026-11-06_514e2e0.svg |
 | 09_board_layout.svg | v005 | current | 2026-11-06 | 302823c | 09_board_layout/09_board_layout.v005__2026-11-06_302823c.svg |
+| 09_board_layout.svg | v006 | current | 2026-11-06 | 853f219 | 09_board_layout/09_board_layout.v006__2026-11-06_853f219.svg |
 | 10_placement_dimensioned.svg | v001 | current | 2026-11-05 | 27ca8ce | 10_placement_dimensioned/10_placement_dimensioned.v001__2026-11-05_27ca8ce.svg |
 | 10_placement_dimensioned.svg | v002 | current | 2026-11-05 | 2f8c0ac | 10_placement_dimensioned/10_placement_dimensioned.v002__2026-11-05_2f8c0ac.svg |
 | 10_placement_dimensioned.svg | v003 | current | 2026-11-05 | fcba5fe | 10_placement_dimensioned/10_placement_dimensioned.v003__2026-11-05_fcba5fe.svg |
@@ -62,6 +65,7 @@
 | 10_placement_dimensioned.svg | v005 | current | 2026-11-06 | 80d7407 | 10_placement_dimensioned/10_placement_dimensioned.v005__2026-11-06_80d7407.svg |
 | 10_placement_dimensioned.svg | v006 | current | 2026-11-06 | 514e2e0 | 10_placement_dimensioned/10_placement_dimensioned.v006__2026-11-06_514e2e0.svg |
 | 10_placement_dimensioned.svg | v007 | current | 2026-11-06 | 302823c | 10_placement_dimensioned/10_placement_dimensioned.v007__2026-11-06_302823c.svg |
+| 10_placement_dimensioned.svg | v008 | current | 2026-11-06 | 853f219 | 10_placement_dimensioned/10_placement_dimensioned.v008__2026-11-06_853f219.svg |
 | 11a_section_AA.svg | v001 | current | 2026-11-05 | 27ca8ce | 11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg |
 | 11a_section_AA.svg | v002 | current | 2026-11-05 | 2f8c0ac | 11a_section_AA/11a_section_AA.v002__2026-11-05_2f8c0ac.svg |
 | 11a_section_AA.svg | v003 | current | 2026-11-05 | fcba5fe | 11a_section_AA/11a_section_AA.v003__2026-11-05_fcba5fe.svg |
@@ -69,12 +73,14 @@
 | 11a_section_AA.svg | v005 | current | 2026-11-06 | 80d7407 | 11a_section_AA/11a_section_AA.v005__2026-11-06_80d7407.svg |
 | 11a_section_AA.svg | v006 | current | 2026-11-06 | 514e2e0 | 11a_section_AA/11a_section_AA.v006__2026-11-06_514e2e0.svg |
 | 11a_section_AA.svg | v007 | current | 2026-11-06 | 302823c | 11a_section_AA/11a_section_AA.v007__2026-11-06_302823c.svg |
+| 11a_section_AA.svg | v008 | current | 2026-11-06 | 853f219 | 11a_section_AA/11a_section_AA.v008__2026-11-06_853f219.svg |
 | 11b_section_BB.svg | v001 | current | 2026-11-05 | 27ca8ce | 11b_section_BB/11b_section_BB.v001__2026-11-05_27ca8ce.svg |
 | 11b_section_BB.svg | v002 | current | 2026-11-05 | fcba5fe | 11b_section_BB/11b_section_BB.v002__2026-11-05_fcba5fe.svg |
 | 11b_section_BB.svg | v003 | current | 2026-11-05 | 71b7afb | 11b_section_BB/11b_section_BB.v003__2026-11-05_71b7afb.svg |
 | 11b_section_BB.svg | v004 | current | 2026-11-06 | 80d7407 | 11b_section_BB/11b_section_BB.v004__2026-11-06_80d7407.svg |
 | 11b_section_BB.svg | v005 | current | 2026-11-06 | 514e2e0 | 11b_section_BB/11b_section_BB.v005__2026-11-06_514e2e0.svg |
 | 11b_section_BB.svg | v006 | current | 2026-11-06 | 302823c | 11b_section_BB/11b_section_BB.v006__2026-11-06_302823c.svg |
+| 11b_section_BB.svg | v007 | current | 2026-11-06 | 853f219 | 11b_section_BB/11b_section_BB.v007__2026-11-06_853f219.svg |
 | 12_wiring_diagram.svg | v001 | current | 2026-11-05 | 27ca8ce | 12_wiring_diagram/12_wiring_diagram.v001__2026-11-05_27ca8ce.svg |
 | 12_wiring_diagram.svg | v002 | current | 2026-11-05 | 2f8c0ac | 12_wiring_diagram/12_wiring_diagram.v002__2026-11-05_2f8c0ac.svg |
 | 12_wiring_diagram.svg | v003 | current | 2026-11-05 | fcba5fe | 12_wiring_diagram/12_wiring_diagram.v003__2026-11-05_fcba5fe.svg |
@@ -82,6 +88,7 @@
 | 12_wiring_diagram.svg | v005 | current | 2026-11-06 | 9ff6031 | 12_wiring_diagram/12_wiring_diagram.v005__2026-11-06_9ff6031.svg |
 | 12_wiring_diagram.svg | v006 | current | 2026-11-06 | 514e2e0 | 12_wiring_diagram/12_wiring_diagram.v006__2026-11-06_514e2e0.svg |
 | 12_wiring_diagram.svg | v007 | current | 2026-11-06 | 302823c | 12_wiring_diagram/12_wiring_diagram.v007__2026-11-06_302823c.svg |
+| 12_wiring_diagram.svg | v008 | current | 2026-11-06 | 853f219 | 12_wiring_diagram/12_wiring_diagram.v008__2026-11-06_853f219.svg |
 | 13_airflow_thermal.svg | v001 | current | 2026-11-05 | 27ca8ce | 13_airflow_thermal/13_airflow_thermal.v001__2026-11-05_27ca8ce.svg |
 | 13_airflow_thermal.svg | v002 | current | 2026-11-05 | 2f8c0ac | 13_airflow_thermal/13_airflow_thermal.v002__2026-11-05_2f8c0ac.svg |
 | 13_airflow_thermal.svg | v003 | current | 2026-11-05 | fcba5fe | 13_airflow_thermal/13_airflow_thermal.v003__2026-11-05_fcba5fe.svg |
@@ -103,12 +110,14 @@
 | 15_bom_sheet.svg | v007 | current | 2026-11-06 | 302823c | 15_bom_sheet/15_bom_sheet.v007__2026-11-06_302823c.svg |
 | 15_bom_sheet.svg | v008 | current | 2026-11-06 | 432b08c | 15_bom_sheet/15_bom_sheet.v008__2026-11-06_432b08c.svg |
 | 15_bom_sheet.svg | v009 | current | 2026-11-06 | d97f07e | 15_bom_sheet/15_bom_sheet.v009__2026-11-06_d97f07e.svg |
+| 15_bom_sheet.svg | v010 | current | 2026-11-06 | 853f219 | 15_bom_sheet/15_bom_sheet.v010__2026-11-06_853f219.svg |
 | 16_cable_clips.svg | v001 | current | 2026-11-05 | b97eaae | 16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg |
 | 16_cable_clips.svg | v002 | current | 2026-11-05 | fcba5fe | 16_cable_clips/16_cable_clips.v002__2026-11-05_fcba5fe.svg |
 | 16_cable_clips.svg | v003 | current | 2026-11-05 | 71b7afb | 16_cable_clips/16_cable_clips.v003__2026-11-05_71b7afb.svg |
 | 16_cable_clips.svg | v004 | current | 2026-11-06 | 80d7407 | 16_cable_clips/16_cable_clips.v004__2026-11-06_80d7407.svg |
 | 16_cable_clips.svg | v005 | current | 2026-11-06 | 9ff6031 | 16_cable_clips/16_cable_clips.v005__2026-11-06_9ff6031.svg |
 | 16_cable_clips.svg | v006 | current | 2026-11-06 | 514e2e0 | 16_cable_clips/16_cable_clips.v006__2026-11-06_514e2e0.svg |
+| 16_cable_clips.svg | v007 | current | 2026-11-06 | 853f219 | 16_cable_clips/16_cable_clips.v007__2026-11-06_853f219.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |
 | outlines.dxf | v003 | current | 2026-11-05 | fcba5fe | outlines/outlines.v003__2026-11-05_fcba5fe.dxf |
@@ -121,3 +130,4 @@
 | outlines.dxf | v010 | current | 2026-11-06 | 302823c | outlines/outlines.v010__2026-11-06_302823c.dxf |
 | outlines.dxf | v011 | current | 2026-11-06 | 432b08c | outlines/outlines.v011__2026-11-06_432b08c.dxf |
 | outlines.dxf | v012 | current | 2026-11-06 | d97f07e | outlines/outlines.v012__2026-11-06_d97f07e.dxf |
+| outlines.dxf | v013 | current | 2026-11-06 | 853f219 | outlines/outlines.v013__2026-11-06_853f219.dxf |

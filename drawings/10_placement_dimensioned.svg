@@ -169,23 +169,23 @@
 <text x="94.5" y="33.8" font-size="2.6" text-anchor="middle" fill="#06c" >cooler x=85.9..194.4</text>
 <text x="323.4" y="46.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">部品  座標[x,y,z] / 外形 / 頂部z / ドーム許容z</text>
 <text x="323.4" y="54.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">board</text>
-<text x="323.4" y="58.5" font-size="2.3" text-anchor="start" fill="#000" >[60.0,30.0,11.3] [170.0,170.0,1.6] 頂12.9 許容73(縁30) OK</text>
+<text x="323.4" y="58.5" font-size="2.3" text-anchor="start" fill="#000" >[60.0,30.0,11.3] [170.0,170.0,1.6] 頂12.9 許容77(縁30) OK</text>
 <text x="323.4" y="65.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">cooler</text>
-<text x="323.4" y="69.5" font-size="2.3" text-anchor="start" fill="#000" >[85.9,73.6,19.6] [108.5,91.0,81.0] 頂100.5 許容154(縁74) OK</text>
+<text x="323.4" y="69.5" font-size="2.3" text-anchor="start" fill="#000" >[85.9,73.6,19.6] [108.5,91.0,81.0] 頂100.5 許容162(縁74) OK</text>
 <text x="323.4" y="76.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">radiator</text>
-<text x="323.4" y="80.5" font-size="2.3" text-anchor="start" fill="#000" >[423.0,47.4,23.0] [120.0,277.0,66.0] 頂89.0 許容128(縁47) OK</text>
+<text x="323.4" y="80.5" font-size="2.3" text-anchor="start" fill="#000" >[423.0,47.4,23.0] [120.0,277.0,66.0] 頂89.0 許容135(縁47) OK</text>
 <text x="323.4" y="87.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">gpu</text>
-<text x="323.4" y="91.5" font-size="2.3" text-anchor="start" fill="#000" >[262.0,47.2,8.0] [150.0,290.0,40.0] 頂48.0 許容87(縁34) OK</text>
+<text x="323.4" y="91.5" font-size="2.3" text-anchor="start" fill="#000" >[262.0,47.2,8.0] [150.0,290.0,40.0] 頂48.0 許容92(縁34) OK</text>
 <text x="323.4" y="98.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">riser</text>
-<text x="323.4" y="102.5" font-size="2.3" text-anchor="start" fill="#000" >[230.0,67.0,8.0] [24.0,89.0,12.0] 頂20.0 許容154(縁67) OK</text>
+<text x="323.4" y="102.5" font-size="2.3" text-anchor="start" fill="#000" >[230.0,67.0,8.0] [24.0,89.0,12.0] 頂20.0 許容162(縁67) OK</text>
 <text x="323.4" y="109.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">psu</text>
-<text x="323.4" y="113.5" font-size="2.3" text-anchor="start" fill="#000" >[70.0,218.0,8.0] [125.0,100.0,63.5] 頂71.5 許容143(縁53) OK</text>
+<text x="323.4" y="113.5" font-size="2.3" text-anchor="start" fill="#000" >[70.0,218.0,8.0] [125.0,100.0,63.5] 頂71.5 許容150(縁53) OK</text>
 <text x="323.4" y="120.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">ctrl_board</text>
-<text x="323.4" y="124.5" font-size="2.3" text-anchor="start" fill="#000" >[198.0,205.0,8.0] [55.0,110.0,15.0] 頂23.0 許容148(縁56) OK</text>
+<text x="323.4" y="124.5" font-size="2.3" text-anchor="start" fill="#000" >[198.0,205.0,8.0] [55.0,110.0,15.0] 頂23.0 許容156(縁56) OK</text>
 <text x="323.4" y="131.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">ssd</text>
-<text x="323.4" y="135.5" font-size="2.3" text-anchor="start" fill="#000" >[191.0,88.0,22.4] [25.0,80.2,8.9] 頂31.2 許容154(縁88) OK</text>
+<text x="323.4" y="135.5" font-size="2.3" text-anchor="start" fill="#000" >[191.0,88.0,22.4] [25.0,80.2,8.9] 頂31.2 許容162(縁88) OK</text>
 <text x="323.4" y="142.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">ram</text>
-<text x="323.4" y="146.5" font-size="2.3" text-anchor="start" fill="#000" >[69.8,168.5,12.9] [133.3,16.4,44.0] 頂57.0 許容154(縁70) OK</text>
+<text x="323.4" y="146.5" font-size="2.3" text-anchor="start" fill="#000" >[69.8,168.5,12.9] [133.3,16.4,44.0] 頂57.0 許容162(縁70) OK</text>
 <text x="323.4" y="153.0" font-size="2.7" text-anchor="start" fill="#000" font-weight="bold">ac_inlet</text>
-<text x="323.4" y="157.5" font-size="2.3" text-anchor="start" fill="#c0392b" >[22.0,8.0,8.0] [28.0,26.0,20.0] 頂28.0 許容12(縁8) 要確認</text>
-<text x="30.0" y="246.8" font-size="2.8" text-anchor="start" fill="#222" >ドーム内面: 許容z=6+148×smoothstep(d/64) (d=角丸矩形の縁までの最短距離)、最大154.0。</text></g></svg>
+<text x="323.4" y="157.5" font-size="2.3" text-anchor="start" fill="#c0392b" >[22.0,8.0,8.0] [28.0,26.0,20.0] 頂28.0 許容13(縁8) 要確認</text>
+<text x="30.0" y="246.8" font-size="2.8" text-anchor="start" fill="#222" >ドーム内面: 許容z=6+156×smoothstep(d/64) (d=角丸矩形の縁までの最短距離)、最大162.0。</text></g></svg>

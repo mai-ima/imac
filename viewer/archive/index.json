@@ -100,6 +100,15 @@
    "file": "imac_pc/imac_pc.v011__2026-11-06_d97f07e.glb"
   },
   {
+   "src": "viewer/imac_pc.glb",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "53d69b9d30b788fda10afbb6ad580b4b0d3c81e5cdf64323d059fb4b6675c062",
+   "file": "imac_pc/imac_pc.v012__2026-11-06_853f219.glb"
+  },
+  {
    "src": "viewer/imac_pc.glb.txt",
    "version": 1,
    "gen": "current",
@@ -197,6 +206,15 @@
    "commit": "d97f07e",
    "sha256": "00cbd579c4860779bb8d9e954f11b1805455306c1c48358eb18b60857a589c95",
    "file": "imac_pc.glb/imac_pc.glb.v011__2026-11-06_d97f07e.txt"
+  },
+  {
+   "src": "viewer/imac_pc.glb.txt",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "f81c57cd2245609be9c8683bf6edb9856cb16707ca8a5ca77ef8ff972567066e",
+   "file": "imac_pc.glb/imac_pc.glb.v012__2026-11-06_853f219.txt"
   },
   {
    "src": "viewer/index.html",
@@ -323,6 +341,15 @@
    "commit": "85af1a8",
    "sha256": "22e59c6d6dffdc637c179a211bd3cb8ad2b02c7e019775b3beb9c7c1e6add8a9",
    "file": "index/index.v014__2026-11-06_85af1a8.html"
+  },
+  {
+   "src": "viewer/index.html",
+   "version": 15,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "af545e3",
+   "sha256": "494f657613c3799017dd3ee129e5481acfc090d4293080a489ba789eddb06f14",
+   "file": "index/index.v015__2026-11-06_af545e3.html"
   }
  ]
 }

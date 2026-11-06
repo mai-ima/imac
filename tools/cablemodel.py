@@ -6,6 +6,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 L = {i['id']: i for i in json.load(open(f'{R}/model/layout.json'))['items']}
 bx, by, bz = L['board']['pos']; gx, gy, gz = L['gpu']['pos']; px, py, pz = L['psu']['pos']; cx, cy, cz = L['ctrl_board']['pos']
 rx, ry, rz = L['radiator']['pos']; cl = L['cooler']['pos']; cs = L['cooler']['size']; ax, ay, az = L['ac_inlet']['pos']
+PJ = json.load(open(f'{R}/model/pump.json')); SX, SYA, SYB, STIP = PJ['stub_x'], PJ['stub_y'][0], PJ['stub_y'][1], PJ['stub']['z'][1]
 HZ = 143.0      # ホース水平部の中心高さ(曲げ半径40mm仮置き+出口スタブ先端z81)
 Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤中心(筐体は+x側)
 CAB = [
@@ -22,9 +23,9 @@ CAB = [
  dict(id='W6', name='AC電源(C14インレット→PSU C13)', kind='cable', od=7.2, awg=16, mbr=14, frm='C14インレット', to='SF1000 AC入力', conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, mat='rubber',
       pts=[(ax + 14, ay + 28, az + 8), (36, 62, 22), (36, 300, 24), (56, 336, 22), (100, 348, 22), (125, 340, 22), (px + 62, py + 102, pz + 14)]),
  dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口A(上面スタブ)', to='ラジエーター口A', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
-      pts=[(pcx + 54.5, pcy - 13, cl[2] + 81), (pcx + 54.5, pcy - 13, HZ), (330, pcy - 13, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
+      pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (330, pcy + SYA, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
  dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
-      pts=[(pcx + 54.5, pcy + 13, cl[2] + 81), (pcx + 54.5, pcy + 13, HZ), (rx + 60 + 12, pcy + 13, HZ), (rx + 60 + 12, ry + 9, 100), (rx + 60 + 12, ry + 9, rz + 50)]),
+      pts=[(pcx + SX, pcy + SYB, cl[2] + STIP), (pcx + SX, pcy + SYB, HZ), (rx + 60 + 12, pcy + SYB, HZ), (rx + 60 + 12, ry + 9, 100), (rx + 60 + 12, ry + 9, rz + 50)]),
 ]
 def _unit(v): n = math.sqrt(sum(x * x for x in v)); return tuple(x / n for x in v)
 def fillet(pts, r):

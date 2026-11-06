@@ -42,23 +42,23 @@
 <circle cx="46.6" cy="99.5" r="1.1" fill="#087"/>
 <circle cx="90.7" cy="63.6" r="1.1" fill="#087"/>
 <text x="48.6" y="192.2" font-size="3.4" fill="#087">W6</text>
-<polyline fill="none" stroke="#555" stroke-width=".7" points="115.5,162.0 115.5,162.0 181.8,162.0 246.7,184.9 246.7,184.9"/>
-<circle cx="115.5" cy="162.0" r="1.1" fill="#555"/>
-<circle cx="143.1" cy="162.0" r="1.1" fill="#555"/>
-<circle cx="170.7" cy="162.0" r="1.1" fill="#555"/>
-<circle cx="207.8" cy="171.1" r="1.1" fill="#555"/>
-<circle cx="233.9" cy="180.3" r="1.1" fill="#555"/>
+<polyline fill="none" stroke="#555" stroke-width=".7" points="115.6,158.3 115.6,158.3 181.8,158.3 246.7,184.9 246.7,184.9"/>
+<circle cx="115.6" cy="158.4" r="1.1" fill="#555"/>
+<circle cx="143.2" cy="158.4" r="1.1" fill="#555"/>
+<circle cx="170.8" cy="158.4" r="1.1" fill="#555"/>
+<circle cx="207.3" cy="168.8" r="1.1" fill="#555"/>
+<circle cx="232.9" cy="179.2" r="1.1" fill="#555"/>
 <circle cx="246.7" cy="184.9" r="1.1" fill="#555"/>
 <circle cx="246.7" cy="184.9" r="1.1" fill="#555"/>
-<text x="117.5" y="160.0" font-size="3.4" fill="#555">H1</text>
-<polyline fill="none" stroke="#b0b" stroke-width=".7" points="115.5,150.0 115.5,150.0 257.7,150.0 257.7,184.9 257.7,184.9"/>
-<circle cx="115.5" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="143.1" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="170.7" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="198.3" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="225.9" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="253.5" cy="150.0" r="1.1" fill="#b0b"/>
-<circle cx="257.7" cy="174.0" r="1.1" fill="#b0b"/>
+<text x="117.6" y="156.3" font-size="3.4" fill="#555">H1</text>
+<polyline fill="none" stroke="#b0b" stroke-width=".7" points="115.6,147.0 115.6,147.0 257.7,147.0 257.7,184.9 257.7,184.9"/>
+<circle cx="115.6" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="143.2" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="170.8" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="198.4" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="226.0" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="253.6" cy="146.9" r="1.1" fill="#b0b"/>
+<circle cx="257.7" cy="171.4" r="1.1" fill="#b0b"/>
 <circle cx="257.7" cy="184.9" r="1.1" fill="#b0b"/>
-<text x="117.5" y="148.0" font-size="3.4" fill="#b0b">H2</text>
+<text x="117.6" y="145.0" font-size="3.4" fill="#b0b">H2</text>
 <rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/><text x="254" y="276" font-size="5">ケーブル経路とクリップ位置</text><text x="254" y="283" font-size="3.2">図番 PKG-16 / 単位 mm / 設計値(未承認) / docs/spec/wiring-spec.md</text></svg>

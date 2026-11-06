@@ -51,11 +51,12 @@ for a, rv in list(zip(angles, resid(s, e, F0, p, sign, lmax, stroke)))[::2]: pri
 fr_min, fr_max = FR * (1 - FTOL), FR * (1 + FTOL)
 op_force = (fr_max + worst) / 0.41           # 動かす力 = 摩擦(最大)+調整後の最悪残差(保持側と同じ最悪値で評価)。上端0.41mで評価
 print(f'公称最大残差 {rr:.2f}N·m / 調整後の最悪残差(荷重±{FPCT*100:.0f}%・重心±{CGMM:.0f}mm) {worst:.2f}N·m / 未調整の最悪残差(±10%・±10mm) {worst_raw:.2f}N·m')
-print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+最悪残差)/0.41 = {op_force:.1f}N(目標≦20N)')
+print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+最悪残差)/0.41 = {op_force:.1f}N(目標≦{H_["op_target_N"]:g}N)')
 fails = []
 if ratio > 0.40: fails.append('ばねたわみ率>40%')
-if worst > fr_min: fails.append(f'最悪残差{worst:.2f} > 最小摩擦保持{fr_min:.2f}')
-if op_force > 20: fails.append(f'操作力{op_force:.1f}N > 20N')
+fr_aged = fr_min * (1 - H_['friction_aging_loss'])
+if worst > fr_aged: fails.append(f'最悪残差{worst:.2f} > 経年後の最小摩擦保持{fr_aged:.2f}')
+if op_force > H_['op_target_N']: fails.append(f"操作力{op_force:.1f}N > {H_['op_target_N']:g}N")
 print('総合:', 'OK(ばね型番・実特性・重心はUNVERIFIED)' if not fails else 'NG ' + ' / '.join(fails))
 if '--write' in sys.argv:
     json.dump(dict(s=s, p_offset=0, e=e, F0_longest_total=F0, p=p, stroke=stroke, lmin=lmin, lmax=lmax, free_length_min=free, resid_nominal=rr, resid_worst=worst, sign=sign), open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)

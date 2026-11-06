@@ -112,8 +112,7 @@ for k_ in range(BTc['convolutions']):      # ゴム蛇腹ブーツ(簡略表示:
     for nm_, (bx_, bz0_, bw_, bd_) in (('f', (-62 - grow, ZC + S['neck']['front_cover_z'][1] - 4 + grow, 124 + 2 * grow, 2.0)), ('b', (-62 - grow, ZC + S['neck']['back_cover_z'][0] - 2 - grow, 124 + 2 * grow, 2.0))):
         hb(f'hinge_boot{k_}{nm_}', bw_, (0 - S['neck']['cover_top']) / BTc['convolutions'] * 0.9, bd_, bx_, yb, bz0_, M['rubber'], bev=.3)
 hw('ヒンジ', 'ゴム蛇腹ブーツ(シリコーン UL94 V-0, 山8, 伸縮10〜56mm)', 1, '指挟み防護(U53)。3Dは簡略表示')
-for k_, sx_ in enumerate((-1, 1)):      # 前カバーの立ち上がり(+40°ストッパパッドの受け。ブーツ内側)
-    hb(f'stand_neck_tab{k_}', S['neck']['tab_x'][1] - S['neck']['tab_x'][0], S['neck']['tab_y_top'] - S['neck']['cover_top'], S['neck']['front_cover_z'][1] - S['neck']['front_cover_z'][0], (S['neck']['tab_x'][0] if sx_ > 0 else -S['neck']['tab_x'][1]), S['neck']['cover_top'], ZC + S['neck']['front_cover_z'][0], M['stand'], bev=.5)
+hb('stand_neck_tab', S['neck']['tab_x'][1] - S['neck']['tab_x'][0], S['neck']['tab_y_top'] - S['neck']['cover_top'], S['neck']['front_cover_z'][1] - S['neck']['front_cover_z'][0], S['neck']['tab_x'][0], S['neck']['cover_top'], ZC + S['neck']['front_cover_z'][0], M['stand'], bev=.5)      # 前カバーの立ち上がり(全幅, 側板間で両端支持: +40°ストッパ受け)
 hw('ヒンジ', 'ばね座 荷重調整ねじ M8(+ロックナット)', 2, '調整後公差 荷重±3%(spec.hinge)')
 hw('ヒンジ', 'ネック基台 t8 + M5×4(ロータ板固定)/タイプレート t6(-15°ストッパ受け)/前カバー t6(+40°ストッパ受け)', 3, 'spec.neck')
 for k_, (bx_, bz_) in enumerate(((-40, -12), (40, -12), (-40, 12), (40, 12))):
