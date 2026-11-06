@@ -2,6 +2,7 @@
 
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
+| README.md | v001 | current | 2026-11-06 | d97f07e | README/README.v001__2026-11-06_d97f07e.md |
 | anatomy.md | v001 | current | 2026-11-03 | 78fc708 | anatomy/anatomy.v001__2026-11-03_78fc708.md |
 | audit-log.md | v001 | current | 2026-11-03 | fd22dea | audit-log/audit-log.v001__2026-11-03_fd22dea.md |
 | audit-log.md | v002 | current | 2026-11-05 | 7f1eac8 | audit-log/audit-log.v002__2026-11-05_7f1eac8.md |

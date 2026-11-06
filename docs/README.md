@@ -6,7 +6,7 @@
 - [spec/system-spec.md](spec/system-spec.md) システム仕様 / [spec/design-philosophy.md](spec/design-philosophy.md) 設計哲学 / [spec/grounding-spec.md](spec/grounding-spec.md) 保護接地 / [spec/panel-driver.md](spec/panel-driver.md) / [spec/panel-thermal.md](spec/panel-thermal.md) / [spec/standard-parts.md](spec/standard-parts.md) 副資材
 
 ## 2. 特殊機構(専用設計書)[生成+手書き]
-- [mechanisms/README.md](mechanisms/README.md): 01 チルトバランサ / 02 左右首振り / 03 ネック・ストッパ・荷重経路 / 04 ドーム着脱 / 05 トレイ吊り / 06 指挟み保護
+- [mechanisms/README.md](mechanisms/README.md): 01 チルトバランサ / 02 左右首振り / 03 ネック・ストッパ・荷重経路 / 04 ドーム着脱 / 05 トレイ吊り / 06 指挟み保護 / 07 はめあい・操作感
 - 旧: [tilt-swivel-design.md](tilt-swivel-design.md)(チルト・首振りの設計経緯と付録A=旧ヒンジ設計) / [service-mechanisms.md](service-mechanisms.md) / [service-manual.md](service-manual.md) / [build-guide.md](build-guide.md)
 
 ## 3. 部品・BOM

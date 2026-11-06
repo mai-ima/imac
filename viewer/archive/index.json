@@ -278,6 +278,15 @@
    "commit": "432b08c",
    "sha256": "5f100283193a31e8a1cabfc628366bca6527176442a5e4a4fb3743d1ff66198a",
    "file": "index/index.v011__2026-11-06_432b08c.html"
+  },
+  {
+   "src": "viewer/index.html",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "3fec0e46611803cbe774eef27840bdd1cc5a4a4f4822cc29a0e4b8e0fa9ac0c5",
+   "file": "index/index.v012__2026-11-06_d97f07e.html"
   }
  ]
 }

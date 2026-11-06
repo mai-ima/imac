@@ -23,7 +23,7 @@
  },
  "stand": {
   "w": 150,
-  "drop": 85,
+  "drop": 105,
   "foot_depth": 310,
   "foot_w": 360,
   "foot_front": 110,
@@ -102,11 +102,11 @@
  "hinge": {
   "axis_y": 10.0,
   "axis_z_from_glass": 40.0,
-  "doc": "v9: ヒンジ軸 z=40/y=10。チルト-15〜+40°。バランサ=ダイスプリング2本+尾部レバー(tools/balance_calc.py)、保持=対称摩擦ヒンジ(合計6N·m(Reell PHL/PHC級 最大3.4N·m×2を想定, U27))。ヒンジブロックは背板へ貫通ボルト+裏当て鋼板。",
+  "doc": "v9: ヒンジ軸 z=40/y=10。チルト-15〜+40°。バランサ=ダイスプリング2本+尾部レバー(tools/balance_calc.py)、保持=対称摩擦ヒンジ(合計4.3N·m±12%(Reell PHL/PHC級×2を想定。公差±12%以内の指定品が必要: U27))。ヒンジブロックは背板へ貫通ボルト+裏当て鋼板。",
   "tilt_min_deg": -15.0,
   "tilt_max_deg": 40.0,
-  "friction_hold_Nm": 4.5,
-  "friction_tol_pct": 15.0,
+  "friction_hold_Nm": 4.3,
+  "friction_tol_pct": 12.0,
   "balance_force_tol_pct": 3.0,
   "balance_cg_tol_mm": 3.0,
   "balance_note": "ばね座に荷重調整ねじ(M8)を設け、組立時に頭部重量(実測)へ合わせて調整後の公差(荷重±3%, 重心±3mm)を前提とする。未調整の公差(荷重±10%, 重心±10mm)では保持/操作が両立しない(balance_calc.py参照)"
@@ -190,5 +190,59 @@
    "shear_mm": 10,
    "note": "ヒンジブロック下面(頭部側)とネックカバー上端(y=-20)を囲み、指の進入を防ぐ。伸縮比≈5.6:1(山8)"
   }
+ },
+ "dome_seal": {
+  "line_force_N_per_mm": 0.08,
+  "perimeter_mm": 1947,
+  "thickness_mm": 3.0,
+  "comp_nom": 0.3,
+  "comp_tol": 0.083,
+  "latch_n": 6,
+  "latch_hold_N": 90,
+  "latch_turn_lead_mm": 3.0,
+  "latch_eff": 0.4,
+  "safety": 1.5,
+  "doc": "EMIガスケットは低閉合力品(≦0.08N/mm@30%圧縮)を指定。圧縮許容(積層公差±0.25mm/3mm=±8.3%)で最大1.44倍。ラッチは最大反力の1.5倍を保持できること。"
+ },
+ "fits": {
+  "keyhole_slot_w": 5.1,
+  "keyhole_slot_tol": [
+   0.0,
+   0.05
+  ],
+  "pin_shoulder_d": 5.0,
+  "pin_tol": [
+   -0.018,
+   0.0
+  ],
+  "dowel_d": 4.0,
+  "dowel_shaft_tol": [
+   -0.012,
+   -0.004
+  ],
+  "dowel_hole_tol": [
+   0.0,
+   0.012
+  ],
+  "axle_d": 10.0,
+  "axle_tol": [
+   -0.015,
+   0.0
+  ],
+  "axle_bore_tol": [
+   0.0,
+   0.015
+  ],
+  "swivel_preload_N": 400.0,
+  "swivel_preload_tol": 0.15,
+  "swivel_mu": [
+   0.1,
+   0.18
+  ],
+  "swivel_r_mm": 35.0,
+  "swivel_hold_window_Nm": [
+   1.0,
+   3.0
+  ]
  }
 }

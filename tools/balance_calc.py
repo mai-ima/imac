@@ -23,15 +23,15 @@ def spring_tau(a, s, e, F0, p, lmax, stroke, fscale=1.0):
 def resid(s, e, F0, p, sign, lmax, stroke, fscale=1.0, ddy=0.0):
     return [tg(a, ddy) + sign * spring_tau(a, s, e, F0, p, lmax, stroke, fscale) for a in angles]
 best = None
-for s in range(50, 66, 5):
+for s in range(50, 68, 2):
     for e in range(20, 56, 5):
         if e > s - 15: continue
         L = [geom(a, s, e)[4] for a in angles]; lmin, lmax = min(L), max(L); stroke = lmax - lmin
         if stroke < 8 or stroke > 30: continue
-        for p in (0.4, 0.5, 0.6, 0.7, 0.8, 1.0):
+        for p in (0.4, 0.5, 0.6, 0.7, 0.8, 1.0, 1.2, 1.5):
             free = lmax + stroke / p; ratio = stroke * (1 + 1 / p) / free
             if ratio > 0.40: continue
-            for F0 in range(200, 2001, 20):
+            for F0 in range(200, 2001, 10):
                 for sign in (1, -1):
                     r = resid(s, e, F0, p, sign, lmax, stroke); rr = max(abs(x) for x in r)
                     ww = max(abs(x) for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))

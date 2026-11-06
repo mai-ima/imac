@@ -28,6 +28,15 @@
    "file": "balance_calc/balance_calc.v002__2026-11-06_4482281.py"
   },
   {
+   "src": "tools/balance_calc.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "54e1d851e034f1a4ce20e88c91055a8f9b1c1fd872bca7c85febb480b6e70ef6",
+   "file": "balance_calc/balance_calc.v003__2026-11-06_432b08c.py"
+  },
+  {
    "src": "tools/cable_check.py",
    "version": 1,
    "gen": "current",
@@ -188,6 +197,15 @@
    "commit": "15a1bce",
    "sha256": "20723ed3cc62ccdfa2ca8a6790983061d99c9f261d615634ad3ab3232f26de15",
    "file": "gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py"
+  },
+  {
+   "src": "tools/gen_mechanisms.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "a3052229d5b5b1e142029cb92f164722434ba098303afaaa6904c6ac3e5d6643",
+   "file": "gen_mechanisms/gen_mechanisms.v001__2026-11-06_d97f07e.py"
   },
   {
    "src": "tools/gen_mfg_drawings.py",
@@ -478,6 +496,15 @@
    "file": "motion_check/motion_check.v003__2026-11-06_432b08c.py"
   },
   {
+   "src": "tools/motion_check.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "f33d7c4307e4c960e67ae71c528e48bb40a9fd20a342e1a13854af6ca9f43b2c",
+   "file": "motion_check/motion_check.v004__2026-11-06_d97f07e.py"
+  },
+  {
    "src": "tools/run_gates.sh",
    "version": 1,
    "gen": "current",
@@ -512,6 +539,15 @@
    "commit": "2bb8cf1",
    "sha256": "c45ff70752ce5e057ee06b5da33b9836869d6b0bf9913b068b4cc2fdff8f5a79",
    "file": "run_gates/run_gates.v004__2026-11-06_2bb8cf1.sh"
+  },
+  {
+   "src": "tools/run_gates.sh",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "c230430b9cb6bd04b18cb25a0f607b04bfe8e1dac6f722f7e6134496ef1a06c6",
+   "file": "run_gates/run_gates.v005__2026-11-06_432b08c.sh"
   },
   {
    "src": "tools/stability.py",

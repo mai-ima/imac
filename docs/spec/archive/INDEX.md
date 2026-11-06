@@ -13,11 +13,13 @@
 | custom-parts.md | v007 | current | 2026-11-06 | 302823c | custom-parts/custom-parts.v007__2026-11-06_302823c.md |
 | custom-parts.md | v008 | current | 2026-11-06 | 432b08c | custom-parts/custom-parts.v008__2026-11-06_432b08c.md |
 | custom-parts.md | v009 | current | 2026-11-06 | ef5ecbc | custom-parts/custom-parts.v009__2026-11-06_ef5ecbc.md |
+| custom-parts.md | v010 | current | 2026-11-06 | d97f07e | custom-parts/custom-parts.v010__2026-11-06_d97f07e.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |
 | hardware-list.md | v001 | current | 2026-11-06 | 9ff6031 | hardware-list/hardware-list.v001__2026-11-06_9ff6031.md |
 | hardware-list.md | v002 | current | 2026-11-06 | 432b08c | hardware-list/hardware-list.v002__2026-11-06_432b08c.md |
+| hardware-list.md | v003 | current | 2026-11-06 | d97f07e | hardware-list/hardware-list.v003__2026-11-06_d97f07e.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
 | joint-matrix.md | v002 | current | 2026-11-05 | fcba5fe | joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |

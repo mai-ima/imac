@@ -103,6 +103,9 @@ ok_boot = lo <= gmin[0] and gmax[0] <= hi
 print(f'スラブ下縁-カバー上端のすき間 {gmin[0]:.1f}〜{gmax[0]:.1f}mm(最小: チルト{gmin[1]:+.0f}° {gmin[2]})。4〜25mmの挟み込み域に入る角度 {len(in_zone)}段階 → 蛇腹ブーツ(伸縮{lo}〜{hi}mm, spec.neck.boot)で隙間を塞ぐ設計 [{"OK(範囲内)" if ok_boot else "NG(ブーツの伸縮範囲外)"}]。ブーツの実特性・耐久・指進入試験は UNVERIFIED(U53)')
 if not ok_boot: bad += 1
 if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
+# バランサ下側部品(アンカー座・調整ねじ・ブリッジ)が基台に食い込まない: 最下点 ≥ 基台上面+2mm、かつ側板間に収まる
+low = HY - BS - 3 - 10; ok_low = low >= SYS + 2
+print(f'バランサ最下点 y={low:.0f}mm(調整ねじ含む) / 基台上面 y={SYS:.0f}mm [{"OK" if ok_low else "NG(基台に干渉)"}]'); bad += 0 if ok_low else 1
 # PE編組の長さ: 可動範囲での端間距離の最大 + 余長 ≦ 編組長(model/pe_braids.json)
 PE = json.load(open(f'{R}/model/pe_braids.json'))
 a_sw = 0.0; A0 = (NK['side_x'][1], 0.0); Bp = (0.0, -75.0)      # 水平面: ネック側(回転)端 r≈62、足側(固定)端 r≈75(背面側)。首振り±SWで端間距離が最大になる角度を探索

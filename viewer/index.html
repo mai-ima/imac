@@ -123,7 +123,7 @@ const controls=new OrbitControls(camera,canvas); controls.enableDamping=true; co
 function sun(p,i,c,shadow){ const l=new THREE.DirectionalLight(c,i); l.position.set(...p); if(shadow){ l.castShadow=true; l.shadow.mapSize.set(2048,2048); Object.assign(l.shadow.camera,{left:-800,right:800,top:800,bottom:-350,near:100,far:3000}); l.shadow.radius=6; l.shadow.bias=-0.0004;} scene.add(l); }
 sun([500,800,900],2.0,'#fff',true); sun([-350,650,-950],1.6,'#fff4e8',true); sun([700,200,-600],.6,'#cfe0ff',false);
 scene.add(new THREE.HemisphereLight('#fff','#8a92a3',1.0));
-const floor=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMaterial({opacity:.14})); floor.rotation.x=-Math.PI/2; floor.position.y=-99.7; floor.receiveShadow=true; scene.add(floor);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMaterial({opacity:.14})); floor.rotation.x=-Math.PI/2; floor.position.y=-119.7; floor.receiveShadow=true; scene.add(floor);
 
 /* ---- 画面(壁紙は動的) ---- */
 const sc2=document.createElement('canvas'); sc2.width=768; sc2.height=432; const sg=sc2.getContext('2d');

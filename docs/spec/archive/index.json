@@ -100,6 +100,15 @@
    "file": "custom-parts/custom-parts.v009__2026-11-06_ef5ecbc.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "941da45dca64f5c8c040fd393a6cda7fe0a923d3005a626e4a7eeaa9b8deedae",
+   "file": "custom-parts/custom-parts.v010__2026-11-06_d97f07e.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -143,6 +152,15 @@
    "commit": "432b08c",
    "sha256": "ea88219367cd1479ce682261146846b274b612479e57e8ce0057358fe50236ae",
    "file": "hardware-list/hardware-list.v002__2026-11-06_432b08c.md"
+  },
+  {
+   "src": "docs/spec/hardware-list.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "cf5f6622e1dcff6fd31571b946fdada20d20c12f4b0c1875b4b0a1f171a2a639",
+   "file": "hardware-list/hardware-list.v003__2026-11-06_d97f07e.md"
   },
   {
    "src": "docs/spec/joint-matrix.md",

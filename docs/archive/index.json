@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "docs/README.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "d459fd82033421c358e6e143d78847be1fa96c959214aee922aa56b1b63c5d93",
+   "file": "README/README.v001__2026-11-06_d97f07e.md"
+  },
+  {
    "src": "docs/anatomy.md",
    "version": 1,
    "gen": "current",
