@@ -10,6 +10,15 @@
    "file": "cable_check/cable_check.v001__2026-11-06_fc36218.py"
   },
   {
+   "src": "tools/cable_check.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cca8bc2",
+   "sha256": "1964ff44c582d02ba0208c77a3e24566b963b611897d6b4f5d157092575c8891",
+   "file": "cable_check/cable_check.v002__2026-11-06_cca8bc2.py"
+  },
+  {
    "src": "tools/cablemodel.py",
    "version": 1,
    "gen": "current",
@@ -17,6 +26,24 @@
    "commit": "fc36218",
    "sha256": "85b6081c94d35be5b9d0d63c53d0c71adb3b7cb7ea4fc8eda9923cd9f0f64d20",
    "file": "cablemodel/cablemodel.v001__2026-11-06_fc36218.py"
+  },
+  {
+   "src": "tools/cablemodel.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cca8bc2",
+   "sha256": "1b645412c5c185faaa958de611719588165caa0ac8c01b42a87a995a217b6813",
+   "file": "cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py"
+  },
+  {
+   "src": "tools/drawlib.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "d08973603c115ba5f85fb72b04b418439c9fe3f89a9c7dba8ccb22290c6a16b7",
+   "file": "drawlib/drawlib.v001__2026-11-06_80d7407.py"
   },
   {
    "src": "tools/fitcheck.py",
@@ -145,6 +172,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v005__2026-11-05_184ad21.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "0bd7dc0145a3ac37d84223afc990481b41390ae604cc0ee71a04f22b8f2d1e4f",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v006__2026-11-06_80d7407.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",
@@ -190,6 +226,15 @@
    "file": "gen_package/gen_package.v005__2026-11-06_80d7407.py"
   },
   {
+   "src": "tools/gen_package.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "9b9efdc421a0766df657f68b2c63f3427e589adba1f6604be9df24aa10b4b9ff",
+   "file": "gen_package/gen_package.v006__2026-11-06_9ff6031.py"
+  },
+  {
    "src": "tools/gen_service_drawings.py",
    "version": 1,
    "gen": "current",
@@ -215,6 +260,15 @@
    "commit": "4925658",
    "sha256": "2b34e56e5471bb90bf28bf1d23901f66d2e46785141e46d1cd7a8e666ab9df55",
    "file": "gen_service_drawings/gen_service_drawings.v003__2026-11-05_4925658.py"
+  },
+  {
+   "src": "tools/gen_service_drawings.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "e016cdb53a8d0009962be67b03241c8c31a0596f54267c2f2c8473526e1ec2d9",
+   "file": "gen_service_drawings/gen_service_drawings.v004__2026-11-06_80d7407.py"
   },
   {
    "src": "tools/gen_specs.py",

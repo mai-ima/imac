@@ -395,14 +395,15 @@ def slab_plate(name, a, b, r, zl0, zl1, mat):
     for i in range(len(pts)): j = (i + 1) % len(pts); bm.faces.new((top[i], top[j], bot[j], bot[i]))
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:]); bm.to_mesh(me); bm.free()
     ob = bpy.data.objects.new(name, me); me.materials.append(mat); return link(ob)
-tray_obj = slab_plate('tray_plate', IW_ / 2, IH_ / 2, 44, 3.0, 5.0, principled('tray_alu', '#8d9198', 1.0, 0.42))
-slab_plate('tray_insulation', IW_ / 2 - 2, IH_ / 2 - 2, 42, 0.0, 3.0, principled('insul_sheet', '#3b3a37', 0.0, 0.85))
+tray_obj = slab_plate('tray_plate', IW_ / 2 - 10, IH_ / 2 - 10, 38, 3.0, 5.0, principled('tray_alu', '#8d9198', 1.0, 0.42))      # 外周10mmを空ける(ドーム固定ハード用)
+insul_obj = slab_plate('tray_insulation', IW_ / 2 - 12, IH_ / 2 - 12, 36, 0.0, 3.0, principled('insul_sheet', '#3b3a37', 0.0, 0.85))
 _bm = bmesh.new()
 for (kx, ky) in KH:      # キーホール: 頭が通る丸穴 Ø9.2 + 上方向 12mm の細溝 W5.1(トレイを12mm下げて掛ける)
     bmesh.ops.create_cone(_bm, cap_ends=True, segments=24, radius1=4.6, radius2=4.6, depth=12, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky, Z0 - 4.0)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky + 6, Z0 - 4.0)) @ Matrix.Diagonal((5.1, 12, 12, 1)))
 _me = bpy.data.meshes.new('tray_keyhole_cutter'); _bm.to_mesh(_me); _bm.free(); kh_cut = bpy.data.objects.new('tray_keyhole_cutter', _me); kh_cut.hide_render = True; link(kh_cut)
-_m = tray_obj.modifiers.new('keyholes', 'BOOLEAN'); _m.object = kh_cut; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
+for _o in (tray_obj, insul_obj):
+    _m = _o.modifiers.new('keyholes', 'BOOLEAN'); _m.object = kh_cut; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 
 # ===== Mini-ITX 基板: ASUS ROG STRIX X870-I GAMING WIFI (170x170、レイアウトは公式マニュアル図の実測) =====
 BL = json.load(open(os.path.join(ROOT, 'model', 'x870i_layout.json')))
@@ -480,9 +481,10 @@ make_fan('fan_pump_vrm', 55, 12, 7, M['dark'], principled('vrm_blade', '#1b1c20'
 for sgn, nm in ((1, 'a'), (-1, 'b')):
     ibox(f'pump_port_{nm}', 20, 14, 14, pcx + 38, pcy + sgn * 14 - 7, cl[2] + 9, pump_mat, 2)    # ホース出口(右側面, ポンプ右縁から外向き)
     icyl(f'pump_fitting_{nm}', 6.2, 8, 'x', pcx + 52, pcy + sgn * 14, cl[2] + 16, M['alublack'], 24)
-for k_, (dx_, dy_) in enumerate(((-34, -34), (34, -34), (-34, 34), (34, 34))):            # AM5バックプレート固定: ばね付きM4 x4
-    icyl(f'pump_screw{k_}', 3.2, 14, 'z', pcx + dx_, pcy + dy_, cl[2] + 14, M['steel'], 16)
-    icyl(f'pump_spring{k_}', 4.4, 8, 'z', pcx + dx_, pcy + dy_, cl[2] + 7, M['alu'], 16)
+for k_, (dx_, dy_) in enumerate(((-34, -34), (34, -34), (-34, 34), (34, 34))):            # AM5バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
+    z_top_, z_bot_ = cl[2] + 14, bz - 1
+    icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)
+    icyl(f'pump_spring{k_}', 4.4, 8, 'z', pcx + dx_, pcy + dy_, cl[2] + 4 + 4, M['alu'], 16)
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
@@ -534,7 +536,7 @@ for k, fy_ in enumerate(fy_list):
     make_fan(f'fan_gpu{k}', 110, 8, 11, M['dark'], principled('gpu_blade', '#222428', .2, .45), principled('gpu_hub', '#2a2c31', .3, .4), gx + GW / 2, fy_, gz + 29)
     bpy.data.objects[f'fan_gpu{k}_frame'].hide_render = True
 ibox('gpu_trim', GW, 1.6, 13.1, gx, gy + GL / 2, gz + 27, M['silver_trim'])             # 2基のファンの間の銀アクセント
-label('DUAL', 6, gx + GW - 12, gy + 40, gz + 40, M['print_w'], rot=90, name='txt_gpu_dual', ext=0.08)       # ※PNY品の刻印は未確認: 仮表記(U46)
+# GPU刻印: PNY品の刻印は未確認(U46)のため描画しない(推測の作り込みを避ける)
 ibox('gpu_bracket', GW, 1.5, GT + 2, gx, gy - 1.5, gz - 1, M['steel'], .3)              # 出力ブラケット(下端)
 for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))): ibox(f'gpu_port{k}', w_, 3, 6.5, gx + 20 + k * 28, gy - 3, gz + 7, M['dark'], .3)
 ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4)       # 12V-2x6コネクタ(カード上面の端, 位置は想定)

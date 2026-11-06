@@ -3,7 +3,10 @@
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
 | cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
+| cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
+| cablemodel.py | v002 | current | 2026-11-06 | cca8bc2 | cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py |
+| drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
 | fitcheck.py | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py |
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |
@@ -18,14 +21,17 @@
 | gen_mfg_drawings.py | v003 | current | 2026-11-05 | fcba5fe | gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py |
 | gen_mfg_drawings.py | v004 | current | 2026-11-05 | a404097 | gen_mfg_drawings/gen_mfg_drawings.v004__2026-11-05_a404097.py |
 | gen_mfg_drawings.py | v005 | current | 2026-11-05 | 184ad21 | gen_mfg_drawings/gen_mfg_drawings.v005__2026-11-05_184ad21.py |
+| gen_mfg_drawings.py | v006 | current | 2026-11-06 | 80d7407 | gen_mfg_drawings/gen_mfg_drawings.v006__2026-11-06_80d7407.py |
 | gen_package.py | v001 | current | 2026-11-05 | 27ca8ce | gen_package/gen_package.v001__2026-11-05_27ca8ce.py |
 | gen_package.py | v002 | current | 2026-11-05 | 2f8c0ac | gen_package/gen_package.v002__2026-11-05_2f8c0ac.py |
 | gen_package.py | v003 | current | 2026-11-05 | fcba5fe | gen_package/gen_package.v003__2026-11-05_fcba5fe.py |
 | gen_package.py | v004 | current | 2026-11-05 | 4925658 | gen_package/gen_package.v004__2026-11-05_4925658.py |
 | gen_package.py | v005 | current | 2026-11-06 | 80d7407 | gen_package/gen_package.v005__2026-11-06_80d7407.py |
+| gen_package.py | v006 | current | 2026-11-06 | 9ff6031 | gen_package/gen_package.v006__2026-11-06_9ff6031.py |
 | gen_service_drawings.py | v001 | current | 2026-11-03 | 307c9ea | gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py |
 | gen_service_drawings.py | v002 | current | 2026-11-05 | fcba5fe | gen_service_drawings/gen_service_drawings.v002__2026-11-05_fcba5fe.py |
 | gen_service_drawings.py | v003 | current | 2026-11-05 | 4925658 | gen_service_drawings/gen_service_drawings.v003__2026-11-05_4925658.py |
+| gen_service_drawings.py | v004 | current | 2026-11-06 | 80d7407 | gen_service_drawings/gen_service_drawings.v004__2026-11-06_80d7407.py |
 | gen_specs.py | v001 | current | 2026-11-05 | b97eaae | gen_specs/gen_specs.v001__2026-11-05_b97eaae.py |
 | gen_specs.py | v002 | current | 2026-11-05 | fcba5fe | gen_specs/gen_specs.v002__2026-11-05_fcba5fe.py |
 | gen_specs.py | v003 | current | 2026-11-06 | 80d7407 | gen_specs/gen_specs.v003__2026-11-06_80d7407.py |

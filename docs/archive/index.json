@@ -539,6 +539,15 @@
    "commit": "80d7407",
    "sha256": "a411c2b5e798751634353580e6305a839880e292b5dbcd35380956db54902da6",
    "file": "wiring/wiring.v004__2026-11-06_80d7407.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "f7257f3563429120ee1a8eb830ab2049e1e326815d93fc07401efbd3e4911dec",
+   "file": "wiring/wiring.v005__2026-11-06_9ff6031.md"
   }
  ]
 }

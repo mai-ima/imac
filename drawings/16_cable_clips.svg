@@ -20,22 +20,21 @@
 <circle cx="55.8" cy="174.6" r="1.1" fill="#06c"/>
 <circle cx="60.4" cy="194.2" r="1.1" fill="#06c"/>
 <text x="70.6" y="104.8" font-size="3.4" fill="#06c">W2</text>
-<polyline fill="none" stroke="#1a7f37" stroke-width=".7" points="103.6,106.8 103.6,116.5 128.9,111.9 168.0,93.5 168.0,72.3 210.3,72.3 210.3,72.3"/>
+<polyline fill="none" stroke="#1a7f37" stroke-width=".7" points="103.6,106.8 103.6,116.5 128.9,111.9 168.0,90.3 168.0,67.3 202.5,67.3 202.5,67.3"/>
 <circle cx="103.6" cy="106.8" r="1.1" fill="#1a7f37"/>
-<circle cx="153.1" cy="100.5" r="1.1" fill="#1a7f37"/>
-<circle cx="195.6" cy="72.3" r="1.1" fill="#1a7f37"/>
-<circle cx="210.3" cy="72.3" r="1.1" fill="#1a7f37"/>
+<circle cx="152.4" cy="98.9" r="1.1" fill="#1a7f37"/>
+<circle cx="195.6" cy="67.3" r="1.1" fill="#1a7f37"/>
+<circle cx="202.5" cy="67.3" r="1.1" fill="#1a7f37"/>
 <text x="105.6" y="104.8" font-size="3.4" fill="#1a7f37">W3</text>
 <polyline fill="none" stroke="#a50" stroke-width=".7" points="112.3,106.8 116.5,109.6 123.8,111.9"/>
 <circle cx="112.3" cy="106.8" r="1.1" fill="#a50"/>
 <circle cx="123.8" cy="111.9" r="1.1" fill="#a50"/>
 <text x="114.3" y="104.8" font-size="3.4" fill="#a50">W4</text>
-<polyline fill="none" stroke="#707" stroke-width=".7" points="134.0,53.5 132.1,49.8 85.2,48.9 43.8,48.9 29.1,48.9"/>
-<circle cx="134.0" cy="53.5" r="1.1" fill="#707"/>
-<circle cx="104.6" cy="49.2" r="1.1" fill="#707"/>
-<circle cx="57.6" cy="48.9" r="1.1" fill="#707"/>
-<circle cx="29.1" cy="48.9" r="1.1" fill="#707"/>
-<text x="136.0" y="51.5" font-size="3.4" fill="#707">W5</text>
+<polyline fill="none" stroke="#707" stroke-width=".7" points="126.6,70.5 126.6,57.6 120.2,51.2 102.7,49.3 79.7,50.3 48.4,49.8 36.4,49.8"/>
+<circle cx="126.6" cy="70.5" r="1.1" fill="#707"/>
+<circle cx="52.1" cy="49.8" r="1.1" fill="#707"/>
+<circle cx="36.4" cy="49.8" r="1.1" fill="#707"/>
+<text x="128.6" y="68.5" font-size="3.4" fill="#707">W5</text>
 <polyline fill="none" stroke="#087" stroke-width=".7" points="46.6,194.2 46.6,182.3 46.6,72.8 55.8,56.2 76.0,50.7 87.5,54.4 90.7,59.0"/>
 <circle cx="46.6" cy="194.2" r="1.1" fill="#087"/>
 <circle cx="46.6" cy="154.7" r="1.1" fill="#087"/>
@@ -43,21 +42,19 @@
 <circle cx="46.6" cy="99.5" r="1.1" fill="#087"/>
 <circle cx="90.7" cy="59.0" r="1.1" fill="#087"/>
 <text x="48.6" y="192.2" font-size="3.4" fill="#087">W6</text>
-<polyline fill="none" stroke="#555" stroke-width=".7" points="111.6,167.5 138.6,167.6 138.6,199.8 257.7,199.8 257.7,189.0"/>
+<polyline fill="none" stroke="#555" stroke-width=".7" points="111.6,167.5 117.4,180.4 138.6,183.2 138.6,199.8 257.7,199.8 257.7,189.0"/>
 <circle cx="111.6" cy="167.5" r="1.1" fill="#555"/>
-<circle cx="138.6" cy="194.5" r="1.1" fill="#555"/>
 <circle cx="166.2" cy="199.8" r="1.1" fill="#555"/>
 <circle cx="193.8" cy="199.8" r="1.1" fill="#555"/>
 <circle cx="221.4" cy="199.8" r="1.1" fill="#555"/>
 <circle cx="249.0" cy="199.8" r="1.1" fill="#555"/>
 <circle cx="257.7" cy="189.0" r="1.1" fill="#555"/>
 <text x="113.6" y="165.5" font-size="3.4" fill="#555">H1</text>
-<polyline fill="none" stroke="#b0b" stroke-width=".7" points="111.6,154.6 127.5,154.7 127.5,166.6 132.1,196.5 239.3,196.5 239.3,189.0"/>
+<polyline fill="none" stroke="#b0b" stroke-width=".7" points="111.6,154.6 127.5,154.7 127.5,166.6 127.5,178.6 134.0,196.5 239.3,196.5 239.3,189.0"/>
 <circle cx="111.6" cy="154.6" r="1.1" fill="#b0b"/>
-<circle cx="131.7" cy="193.5" r="1.1" fill="#b0b"/>
-<circle cx="159.7" cy="196.5" r="1.1" fill="#b0b"/>
-<circle cx="187.3" cy="196.5" r="1.1" fill="#b0b"/>
-<circle cx="214.9" cy="196.5" r="1.1" fill="#b0b"/>
+<circle cx="161.6" cy="196.5" r="1.1" fill="#b0b"/>
+<circle cx="189.2" cy="196.5" r="1.1" fill="#b0b"/>
+<circle cx="216.8" cy="196.5" r="1.1" fill="#b0b"/>
 <circle cx="239.3" cy="189.0" r="1.1" fill="#b0b"/>
 <text x="113.6" y="152.6" font-size="3.4" fill="#b0b">H2</text>
 <rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/><text x="254" y="276" font-size="5">ケーブル経路とクリップ位置</text><text x="254" y="283" font-size="3.2">図番 PKG-16 / 単位 mm / 設計値(未承認) / docs/spec/wiring-spec.md</text></svg>

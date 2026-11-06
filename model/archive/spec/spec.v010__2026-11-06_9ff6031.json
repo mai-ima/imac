@@ -1,0 +1,107 @@
+{
+ "_doc": "外形・ドーム・色の共通仕様(単位mm)。部品は parts.json、配置は layout.json。",
+ "panel_size": 27,
+ "panels": {
+  "24": {
+   "w": 527.0,
+   "h": 296.5
+  },
+  "27": {
+   "w": 596.7,
+   "h": 335.7
+  }
+ },
+ "bezel": 11.6,
+ "chin": 68,
+ "slab_t": 25.0,
+ "corner": 10,
+ "pod": {
+  "total_t": 129,
+  "h": 256,
+  "side_margin": 27,
+  "wall": 3
+ },
+ "stand": {
+  "w": 150,
+  "drop": 85,
+  "foot_depth": 230,
+  "foot_w": 220,
+  "foot_front": 90,
+  "foot_back": 140,
+  "ballast_kg": 2.0
+ },
+ "palette": {
+  "silver": [
+   "#D2D3D5",
+   "#BBBCBE",
+   "#D7D8DA"
+  ],
+  "blue": [
+   "#5882B2",
+   "#9EB2CD",
+   "#BACEE9"
+  ],
+  "purple": [
+   "#8581B4",
+   "#ACA3C0",
+   "#C9C5E6"
+  ],
+  "pink": [
+   "#E16280",
+   "#E7A9B6",
+   "#FFCFDB"
+  ],
+  "orange": [
+   "#E5734E",
+   "#F0B498",
+   "#FFCCAF"
+  ],
+  "yellow": [
+   "#EFD344",
+   "#DCCB97",
+   "#FDEEB7"
+  ],
+  "green": [
+   "#41965F",
+   "#A2BFAD",
+   "#B9D8C6"
+  ]
+ },
+ "palette_doc": "[背面, スタンド, チン] Apple公式画像から実測",
+ "body_w": 620.0,
+ "panel_module": {
+  "name": "BOE MV270QUM-N50 (包絡線。LG LM270WR3-SSC1 608.8x355.3x12.8 も内包)",
+  "outline": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "active": [
+   596.736,
+   335.664
+  ],
+  "aa_to_outline_LRUD": [
+   6.032,
+   6.032,
+   5.968,
+   13.668
+  ]
+ },
+ "dome": {
+  "_doc": "iMac Pro/2012風の背面ドーム: 縁は薄く(slab+数mm)、中央に向かって傾斜して最大厚に達する。base=ドームの外形(スラブ背面上の矩形)。run=縁から最大厚に達するまでの水平距離。d0=縁での内部有効奥行。",
+  "inset_left_right": 12,
+  "inset_bottom": 24,
+  "inset_top": 14,
+  "corner_r": 50,
+  "run": 64,
+  "edge_inner_depth": 6,
+  "total_t": 129,
+  "sheet_t": 2.0
+ },
+ "hinge": {
+  "axis_y": 10.0,
+  "axis_z_from_glass": 38.0,
+  "doc": "v8: 軸を重心の背面側に置き-5°〜+25°のトルクをほぼ一方向にする(tools/joint_calc.pyの実値で確認。重心は tools/massmodel.py がlayoutから導出)。ヒンジブロックは背板へ貫通ボルト+裏当て鋼板。"
+ },
+ "v7_notes": "v8(2026-11-06)確定値: slab_t 25(ガラス1.1+エアギャップ0.9+パネル13.3+空気層4.0+断熱3.0+背板2.0=24.3, 余裕0.7)。総厚はdome.total_t 129に一本化(内奥行101=総厚-slab-壁3, 縁の内奥行6, run 64)。トレイ板z3〜5(断熱3mmを介して背板に吊る)、基板6.35mm/他3.0mmスタンドオフ。ヒンジ軸 z=38/y=10(背板後面から13mm後方=Ø22ヒンジが背板に干渉しない最小位置。トルクのゼロ交差≈-1°)。足220×215+鋼板ballast(足内6mm≈1.8kg)。"
+}

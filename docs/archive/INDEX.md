@@ -62,3 +62,4 @@
 | wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |
 | wiring.md | v003 | current | 2026-11-05 | fcba5fe | wiring/wiring.v003__2026-11-05_fcba5fe.md |
 | wiring.md | v004 | current | 2026-11-06 | 80d7407 | wiring/wiring.v004__2026-11-06_80d7407.md |
+| wiring.md | v005 | current | 2026-11-06 | 9ff6031 | wiring/wiring.v005__2026-11-06_9ff6031.md |

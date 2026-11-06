@@ -17,12 +17,17 @@ def circ_r(a, b, c):
     area2 = math.sqrt(sum(v * v for v in cr))
     return float('inf') if area2 < 1e-9 else ab * bc * ca / (2 * area2)
 # 各ケーブルが「始点/終点の機器」と接するのは許容: 端点から 20mm 以内は無視
+# 小物障害物(AABB): 吊りピン頭, PEスタッド, GPU低背ステー, 基板スタンドオフ等
+OBST = []
+for (kx, ky) in json.load(open(f'{R}/model/layout.json'))['keyholes']: OBST.append(('吊りピン', kx - 5, ky + 7, 5.5, kx + 5, ky + 17, 9.5))
+OBST.append(('PEスタッド', 22, 116, 5, 30, 124, 14)); gx_, gy_ = [i for i in L if i['id'] == 'gpu'][0]['pos'][:2]; gw_ = [i for i in L if i['id'] == 'gpu'][0]['size'][0]
+OBST.append(('GPUステー', gx_ - 2, gy_ - 14, 5, gx_ + gw_ + 2, gy_ - 4, 14))
 bad = 0
 for c in CM.CAB:
     r = c['od'] / 2; pts = dense(c['path']); n = len(pts)
     issues = []
     for i, p in enumerate(pts):
-        if i < 7 or i > n - 8: continue            # 端点付近(≈20mm)
+        if i < 2 or i > n - 3: continue            # 端点付近(≈6mm)のみ除外
         for it in L:
             x, y, z = it['pos']; sx, sy, sz = it['size']
             if it['id'] == 'cooler':      # ポンプは円筒(Ø91)として判定
@@ -30,6 +35,8 @@ for c in CM.CAB:
             else: hit = x - r < p[0] < x + sx + r and y - r < p[1] < y + sy + r and z - r < p[2] < z + sz + r
             if hit:
                 issues.append(f"{it['id']}と干渉 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f})"); break
+        for (nm, x0, y0, z0, x1, y1, z1) in OBST:
+            if x0 - r < p[0] < x1 + r and y0 - r < p[1] < y1 + r and z0 - r < p[2] < z1 + r: issues.append(f'{nm}と干渉 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f})'); break
         # ドーム内面
         dmin = min(p[0], 590 - p[0], p[1], 371.3 - p[1]); s_ = max(0, min(1, dmin / Dm['run'])); lim = Dm['edge_inner_depth'] + (S['dome']['total_t'] - S['slab_t'] - 3 - Dm['edge_inner_depth']) * s_ * s_ * (3 - 2 * s_)
         if p[2] + r + 2 > lim: issues.append(f'ドーム内面に接触 @({p[0]:.0f},{p[1]:.0f},z{p[2]:.0f}) 許容{lim:.0f}')

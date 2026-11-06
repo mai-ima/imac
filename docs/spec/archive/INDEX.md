@@ -7,6 +7,7 @@
 | custom-parts.md | v002 | current | 2026-11-05 | 3c794e1 | custom-parts/custom-parts.v002__2026-11-05_3c794e1.md |
 | custom-parts.md | v003 | current | 2026-11-05 | fcba5fe | custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md |
 | custom-parts.md | v004 | current | 2026-11-05 | 184ad21 | custom-parts/custom-parts.v004__2026-11-05_184ad21.md |
+| custom-parts.md | v005 | current | 2026-11-06 | 9ff6031 | custom-parts/custom-parts.v005__2026-11-06_9ff6031.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |
@@ -19,3 +20,4 @@
 | wiring-spec.md | v001 | current | 2026-11-05 | b97eaae | wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md |
 | wiring-spec.md | v002 | current | 2026-11-05 | fcba5fe | wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md |
 | wiring-spec.md | v003 | current | 2026-11-06 | 80d7407 | wiring-spec/wiring-spec.v003__2026-11-06_80d7407.md |
+| wiring-spec.md | v004 | current | 2026-11-06 | 9ff6031 | wiring-spec/wiring-spec.v004__2026-11-06_9ff6031.md |

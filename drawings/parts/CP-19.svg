@@ -46,10 +46,10 @@
 <text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
 <text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
 <text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
-<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<line x1="1" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="405" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="1" x2="210.0" y2="15" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="282" x2="210.0" y2="296" stroke="#000" stroke-width="0.5"/>
 <rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
 <line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
 <line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
@@ -79,7 +79,7 @@
 <text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
 <text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
 <text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
-<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値) / PRELIMINARY</text>
 <g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
 <text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
 <rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
@@ -103,9 +103,9 @@
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-19 断熱シート/断熱スペーサ(トレイ-背板, パネル熱遮断)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 3.0 / 質量 0.2kg / 公差 ±0.3</text>
-<rect x="14" y="30" width="130.0" height="81.5" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
-<line x1="14" y1="117.48293515358363" x2="144.0" y2="117.48293515358363" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="122.48293515358363" font-size="3.4" text-anchor="middle" fill="#06c">586</text>
-<line x1="8" y1="30" x2="8" y2="111.48293515358363" stroke="#06c" stroke-width=".3"/><text x="6" y="70.74146757679182" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 70.74146757679182)">367.3</text>
+<rect x="14" y="30" width="130.0" height="79.8" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="14" y1="115.76855123674912" x2="144.0" y2="115.76855123674912" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="120.76855123674912" font-size="3.4" text-anchor="middle" fill="#06c">566</text>
+<line x1="8" y1="30" x2="8" y2="109.76855123674912" stroke="#06c" stroke-width=".3"/><text x="6" y="69.88427561837456" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 69.88427561837456)">347.3</text>
 <text x="156" y="30" font-size="2.6">加工: ダイカット(キーホール・スタンドオフ逃げ・ネジ逃げ)</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: -</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ±0.3</text>

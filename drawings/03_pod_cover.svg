@@ -46,10 +46,10 @@
 <text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
 <text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
 <text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
-<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<line x1="1" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="405" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="1" x2="210.0" y2="15" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="282" x2="210.0" y2="296" stroke="#000" stroke-width="0.5"/>
 <rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
 <line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
 <line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
@@ -79,7 +79,7 @@
 <text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
 <text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
 <text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
-<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値) / PRELIMINARY</text>
 <g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
 <text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
 <rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
@@ -100,7 +100,7 @@
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">注記: 図示の外形は設計値。展開図/曲げ線/穴径の詳細はCP部品図(drawings/parts)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
-<g transform="translate(19,12) scale(0.93)">
+<g transform="translate(0,0)">
 <rect x="40" y="30" width="298.0" height="188.65" rx="25.0" fill="#c4c8ce" stroke="#000" stroke-width="0.5"/>
 <rect x="59.5" y="49.5" width="259.0" height="149.65" fill="#fff" stroke="#000" stroke-width=".3" stroke-dasharray="2,1"/>
 <text x="189.0" y="124.325" font-size="3.4" text-anchor="middle">均一パーフォレーション領域 518×299 (Ø2.4 千鳥 ピッチ4.0, 板厚2.0)</text>
@@ -108,15 +108,17 @@
 <rect x="136.5" y="205.65" width="71.0" height="10.0" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="172.0" y="210.65" font-size="2.4" text-anchor="middle" fill="#c0392b">GPU出力スロット</text>
 <rect x="310.5" y="202.65" width="16.0" height="13.0" rx="2" fill="#fff" stroke="#c0392b" stroke-width=".4"/><text x="318.5" y="209.15" font-size="2.4" text-anchor="middle" fill="#c0392b">ACインレット</text>
 <rect x="169.0" y="60.0" width="40.0" height="15.0" fill="none" stroke="#06c" stroke-width=".4" stroke-dasharray="1.5,1"/><text x="189.0" y="68.0" font-size="2.4" text-anchor="middle" fill="#06c">RF窓ゾーン(平板 60×30, 格子裏)</text>
-<line x1="40" y1="228.65" x2="338.0" y2="228.65" stroke="#c0392b" stroke-width="0.3"/>
-<line x1="40" y1="218.65" x2="40" y2="230.65" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="338.0" y1="218.65" x2="338.0" y2="230.65" stroke="#c0392b" stroke-width="0.2"/>
-<text x="189.0" y="227.15" font-size="3.6" text-anchor="middle" fill="#c0392b">596</text>
-<line x1="348.0" y1="30" x2="348.0" y2="218.65" stroke="#c0392b" stroke-width="0.3"/>
-<line x1="338.0" y1="30" x2="350.0" y2="30" stroke="#c0392b" stroke-width="0.2"/>
-<line x1="338.0" y1="218.65" x2="350.0" y2="218.65" stroke="#c0392b" stroke-width="0.2"/>
-<text x="346.5" y="124.325" font-size="3.6" text-anchor="middle" fill="#c0392b" transform="rotate(-90 346.5 124.325)">377.3</text>
+<line x1="40" y1="219.65" x2="40" y2="230.65" stroke="#000" stroke-width="0.18"/>
+<line x1="338.0" y1="219.65" x2="338.0" y2="230.65" stroke="#000" stroke-width="0.18"/>
+<line x1="40" y1="228.65" x2="338.0" y2="228.65" stroke="#000" stroke-width="0.25"/>
+<path d="M40,228.65 l3,-1 v2 z M338.0,228.65 l-3,-1 v2 z" fill="#000"/>
+<text x="189.00" y="227.65" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">596</text>
+<line x1="347.0" y1="30" x2="336.0" y2="30" stroke="#000" stroke-width="0.18"/>
+<line x1="347.0" y1="218.65" x2="336.0" y2="218.65" stroke="#000" stroke-width="0.18"/>
+<line x1="338.0" y1="30" x2="338.0" y2="218.65" stroke="#000" stroke-width="0.25"/>
+<path d="M338.0,30 l-1,3 h2 z M338.0,218.65 l-1,-3 h2 z" fill="#000"/>
+<text x="337.00" y="124.33" font-size="2.8" text-anchor="middle" transform="rotate(-90 337.00 124.33)">377.3</text>
 <polyline fill="none" stroke="#000" stroke-width=".6" points="363.0,43.6 364.8,44.0 366.6,45.0 368.4,46.7 370.2,48.9 372.0,51.5 373.8,54.6 375.6,58.0 377.4,61.6 379.2,65.5 381.0,69.4 382.8,73.4 384.6,77.4 386.4,81.3 388.2,85.0 390.0,88.5 391.8,91.7 393.6,94.5 395.4,96.9 397.2,98.7 399.0,100.0"/>
 <text x="348.0" y="34" font-size="2.8">縁→内側プロファイル(内奥行 6→101.0mm)</text>
-<text x="40" y="24" font-size="4">ドーム CP-07(背面から見た図: x反転): A5052 t3 絞り / 六角穴 φ4.2 ピッチ7.0 千鳥 / ラッチ穴×6, 位置決めピン穴Ø4×2 / EMIガスケット溝 3.0×1.5 / アルマイトII</text>
+<text x="40" y="24" font-size="4">ドーム CP-07(背面から見た図: x反転): A5052 t2.0 / 均一パーフォレーション Ø2.4×ピッチ4.0 千鳥 / 下辺ラッチ6+上辺フック6 / 位置決めピン穴Ø4×2 / EMIガスケット溝 3.0×1.5 / アルマイトII</text>
 </g></svg>

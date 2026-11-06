@@ -46,10 +46,10 @@
 <text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
 <text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
 <text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
-<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
-<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<line x1="1" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="405" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="1" x2="210.0" y2="15" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="282" x2="210.0" y2="296" stroke="#000" stroke-width="0.5"/>
 <rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
 <line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
 <line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
@@ -57,7 +57,7 @@
 <line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
 <line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
 <text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
-<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">アンビリカルハーネス(eDP/12V/USB, 全長280mm)</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
@@ -79,7 +79,7 @@
 <text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
 <text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
 <text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
-<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値) / PRELIMINARY</text>
 <g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
 <text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
 <rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
@@ -101,7 +101,7 @@
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 未選定(U19)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
-<text x="2" y="8" font-size="5" font-weight="bold">CP-17 アンビリカルハーネス(eDP/12V/USB, 全長280mm)</text>
+<text x="2" y="8" font-size="5" font-weight="bold">CP-17 アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 - / 質量 0.05kg / 公差 -</text>
 <text x="156" y="30" font-size="2.6">加工: 規格品</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: -</text>

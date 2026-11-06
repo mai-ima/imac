@@ -32,7 +32,7 @@ def free_point(tx, ty, margin=14):
             d=(gx-tx)**2+(gy-ty)**2
             if best is None or d<best[0]: best=(d,gx,gy)
     return (best[1],best[2])
-kh = [free_point(60,60), free_point(IW-60,60), free_point(60,IH-60), free_point(IW-60,IH-60)]
+kh = [tuple(k_) for k_ in L['keyholes']]      # layout.json が単一情報源(部品から18mm以上離れた点)
 print('キーホール位置(トレイ内座標):', kh)
 KH = kh
 for (x,y) in kh: b += [f'<circle cx="{ox+x*sc}" cy="{oy+(IH-y)*sc}" r="3" fill="none" stroke="#c0392b" stroke-width=".4"/>', T(ox+x*sc+4, oy+(IH-y)*sc-3,'キーホール吊りピン',2.4,fill='#c0392b')]

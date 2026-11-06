@@ -130,7 +130,7 @@ b.append(T(20, 222, 'ID', 3, 'start', '#000', 'font-weight="bold"'));
 for c0, tx_ in (('名称', 32), ('PSU側→機器側', 90), ('線径AWG', 170), ('設計長mm', 190), ('PSU付属mm', 212), ('判定', 240)): b.append(T(tx_, 222, c0, 3, 'start', '#000', 'font-weight="bold"'))
 for n, c in enumerate(CAB):
     y = 229 + n * 6; b.append(T(20, y, c['id'], 3)); b.append(T(32, y, c['name'], 2.9)); b.append(T(90, y, f"{c['frm']} → {c['to']}", 2.7)); b.append(T(170, y, str(c['awg'] or '-'), 3)); b.append(T(190, y, str(c['len_mm']), 3)); b.append(T(212, y, str(c['ref_mm'] or '-'), 3)); b.append(T(240, y, c['verdict'], 3, 'start', '#000' if c['verdict'] == 'OK' else '#c0392b'))
-b.append(T(20, 266, '電力: 12V系 CPU162W+GPU180W+その他≒60W ⇒ ピーク約400W / 750W = 53%(余裕47%)。補助電源はEPS×1, PCIe 8pin×1のみ使用(予備: EPS×1, PCIe×1, 12V-2x6×1)。', 3))
+b.append(T(20, 266, '電力: 12V系 CPU PPT230W+GPU TGP300W+その他≈81W ≈ 611W / SF1000(1000W) = 61%(余裕39%)。補助電源: EPS 8ピン×1、GPU 12V-2x6×1(予備: EPS×1、PCIe 6+2×2)。', 3))
 b.append(T(20, 272, '接地: AC保護アース→PSU筐体→トレイ(M3スタンドオフ接触)→ドーム(ガスケット)→背板の順で導通。ファンはPWM 4pin。', 3))
 save('12_wiring_diagram.svg', b)
 
@@ -160,7 +160,7 @@ b.append(T(tx, 52 + len(heat) * 6 + 24, '懸念: ドームの穴開口率・吸�
 save('13_airflow_thermal.svg', b)
 
 # ================= 14 分解組立図(側面の積層) =================
-b = head('分解組立図(側面)と組立順', 'PKG-14', note='番号=組立順。外装(自作)=①④⑤、他は市販品')
+b = head('分解組立図(側面)と組立順', 'PKG-14', note='番号=組立順。自作=①前面ガラス ③背板 ④トレイ ⑥ドーム(+スタンド/ヒンジ)、市販品=②パネル ⑤内部部品')
 layers = [('①前面ガラス(スラブ枠に接着, 自作/外注)', 'glass', 6), ('②パネル 27型4K (LG LM270WR3 / BOE N50)', 'panel', 14), ('③背板(A5052 t2.0, スラブ枠一体)+吊りピン×4+ヒンジブロック', 'back', 3), ('④サービストレイ(A5052 t2.0)', 'tray', 3), ('⑤部品: 基板/GPU/PSU/ラジエーター/ファン/ctrl', 'parts', 60), ('⑥ドーム(A5052 t2.0, 外装)', 'dome', 3)]
 y = 40; ox = 40
 for i, (t, k, h) in enumerate(layers):
@@ -176,12 +176,18 @@ save('14_exploded_assembly.svg', b)
 rows = []
 for k in ('panel', 'ctrl_board', 'board', 'cpu', 'cooler', 'radiator', 'gpu', 'riser', 'psu', 'ac_inlet', 'ssd', 'ram', 'camera_audio'):
     p = P[k]; rows.append((k, p['name'], p['maker'], 'x'.join(f'{v:g}' for v in p['dims']), p['status'], (p.get('sources') or [''])[0]))
-b = head('部品表(BOM) 市販品一覧', 'PKG-15', note='status: official=公式確認 / retail=小売一致 / assumed=未確認')
-b.append(T(10, 20, 'ID', 3.4, 'start', '#000', 'font-weight="bold"')); 
-for h_, x_ in (('名称', 40), ('メーカー', 190), ('外形mm', 235), ('状態', 280)): b.append(T(x_, 20, h_, 3.4, 'start', '#000', 'font-weight="bold"'))
-for n, r in enumerate(rows):
-    yy = 28 + n * 8; b.append(T(10, yy, r[0], 3)); b.append(T(40, yy, r[1][:62], 2.8)); b.append(T(190, yy, r[2][:22], 2.8)); b.append(T(235, yy, r[3], 2.8)); b.append(T(280, yy, r[4][:40], 2.6, 'start', '#c0392b' if r[4].startswith(('assumed', '未')) else '#000'))
-b.append(T(10, 28 + len(rows) * 8 + 8, '自作部品(外装): 前面ガラス / 背板(スラブ枠一体) / サービストレイ / ドーム / スタンド+ヒンジ(バランスばね+摩擦トルク) / トリムリング → 製造図面 MFG-01〜05, SVC-06〜08。', 3))
+CPJ = json.load(open(f'{R}/model/custom_parts.json'))['parts']
+b = head('部品表(BOM) 市販品+特注部品', 'PKG-15', note='status: official=公式確認 / retail=小売一致 / assumed=未確認。数量は設計値', scale='NTS')
+cols = (('ID/No', 10), ('名称', 28), ('メーカー/材質', 150), ('外形mm', 210), ('数量', 250), ('状態/図番', 262))
+for h_, x_ in cols: b.append(T(x_, 24, h_, 3.0, 'start', '#000', 'font-weight="bold"'))
+b.append(line(8, 26, 400, 26, '#000', .35))
+y = 31
+for r in rows:
+    b += [T(10, y, r[0], 2.6), T(28, y, r[1][:46], 2.4), T(150, y, r[2][:24], 2.4), T(210, y, r[3], 2.4), T(250, y, '1', 2.6), T(262, y, r[4], 2.4, 'start', '#c0392b' if r[4] == 'assumed' else '#000')]; y += 6
+b.append(line(8, y - 3, 400, y - 3, '#000', .2)); y += 3
+for c_ in CPJ:
+    b += [T(10, y, c_['id'], 2.6), T(28, y, c_['name'][:46], 2.4), T(150, y, c_['material'][:34], 2.2), T(210, y, 'x'.join(f'{v:g}' for v in c_['size'] if v) or '-', 2.4), T(250, y, str(c_['qty']), 2.6), T(262, y, f"drawings/parts/{c_['id']}.svg", 2.2)]; y += 5.2
+    if y > 232: break
 save('15_bom_sheet.svg', b)
 
 # ================= docs =================

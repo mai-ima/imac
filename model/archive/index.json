@@ -91,6 +91,24 @@
    "file": "custom_parts/custom_parts.v004__2026-11-05_184ad21.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "86608ae832f8ae8931f16907c06b92affdfe239dbdf82627fac9661726136857",
+   "file": "custom_parts/custom_parts.v005__2026-11-06_9ff6031.json"
+  },
+  {
+   "src": "model/hardware_list.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "09ad133",
+   "sha256": "58927dae8f7ecbdaf985ad42094f788be71dca88a465a58f825ebae1c3bdca99",
+   "file": "hardware_list/hardware_list.v001__2026-11-06_09ad133.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",
@@ -172,6 +190,15 @@
    "file": "layout/layout.v009__2026-11-06_fc36218.json"
   },
   {
+   "src": "model/layout.json",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cca8bc2",
+   "sha256": "c10e345faf40f828129804c39faa3642f47407de30a9327286a90936245aa5f1",
+   "file": "layout/layout.v010__2026-11-06_cca8bc2.json"
+  },
+  {
    "src": "model/parts.json",
    "version": 1,
    "gen": "gen-001",
@@ -242,6 +269,15 @@
    "commit": "71b7afb",
    "sha256": "15856e99911f899792e9b4b6becb9b6a48e47c8cc2e2465f4969dd2dc5f8c330",
    "file": "parts/parts.v008__2026-11-06_71b7afb.json"
+  },
+  {
+   "src": "model/parts.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "e71d171d746f65d3a973d88cdd3e91d037c40df796f24caccd06bfa9af331ea4",
+   "file": "parts/parts.v009__2026-11-06_fc36218.json"
   },
   {
    "src": "model/spec.json",
@@ -323,6 +359,15 @@
    "commit": "fc36218",
    "sha256": "f0c1cb5983c8a2a771998ac63317ee5280979940ac1907ba54987ec8a561e9f8",
    "file": "spec/spec.v009__2026-11-06_fc36218.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "6a47b46068ea6c2e77994b906f32f090a4533d6998faa8bb8b61974ef920efe5",
+   "file": "spec/spec.v010__2026-11-06_9ff6031.json"
   }
  ]
 }

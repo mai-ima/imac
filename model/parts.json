@@ -96,7 +96,7 @@
    "https://www.notebookcheck.net/AMD-Ryzen-9-9950X3D-Review-Ryzen-7-9800X3D-levels-of-gaming-performance-and-power-efficiency-for-50-markup-over-the-Ryzen-9-9950X.976049.0.html",
    "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html"
   ],
-  "note": "AMD公式: TDP120W/Tjmax95℃/L3 96MB/PCIe5.0、**液冷推奨**。PPT162Wは第三者値。性能は制限せず、フル負荷でTjmax以内に収まる冷却(240mm AIO等)を選定する",
+  "note": "Ryzen 9 9950X3D: TDP170W(PBP170/MTP230)/L3 128MB+L2 16MB/PPT230W想定(公式PPTは未取得 U44)",
   "status_note": "v7.1: M6 iMacのCPU(マルチ)を上回るため9800X3Dから変更(docs/spec/performance-benchmark.md)。TDP170W(PBP170/MTP230)はレビュー引用値、公式PPT/Tjmaxは取得不可でUNVERIFIED(U44)。AMDの冷却推奨240/280mm(Club386経由)。"
  },
  "cooler": {

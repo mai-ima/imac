@@ -37,23 +37,23 @@ hw('固定', 'M3 T10 拘束ネジ(トレイ)', 2, '0.6N·m')
 # ---------- トレイハンドル・接地スタッド ----------
 for k, sx_ in enumerate((-40, 40)): ibox(f'tray_handle_post{k}', 6, 6, 8, IW_ / 2 + sx_ - 3, IH_ - 18, TZ, M['sus'], .6)
 cable('tray_handle_wire', [(IW_ / 2 - 40, IH_ - 15, TZ + 7), (IW_ / 2 - 40, IH_ - 40, TZ + 7), (IW_ / 2 + 40, IH_ - 40, TZ + 7), (IW_ / 2 + 40, IH_ - 15, TZ + 7)], 1.5, M['sus']); hw('取っ手', 'トレイ折りたたみ線材ハンドル(SUS φ3)', 1, '')
-icyl('pe_stud_tray', 2.0, 8, 'z', 40, 40, TZ + 4, M['sus'], 12); icyl('pe_nut_tray', 3.5, 2, 'z', 40, 40, TZ + 8, M['sus'], 6)
-cable('pe_braid_tray_a', [(40, 40, TZ + 9), (40, 60, TZ + 12), (60, 70, TZ + 9)], 1.6, M['pe_gy']); cable('pe_braid_tray_b', [(40, 40, TZ + 9), (30, 52, TZ + 14), (20, 66, TZ + 9)], 1.6, M['pe_gy'])
+icyl('pe_stud_tray', 2.0, 8, 'z', 26, 120, TZ + 4, M['sus'], 12); icyl('pe_nut_tray', 3.5, 2, 'z', 26, 120, TZ + 8, M['sus'], 6)
+cable('pe_braid_tray_a', [(26, 120, TZ + 9), (22, 135, TZ + 12), (14, 150, TZ + 3)], 1.6, M['pe_gy']); cable('pe_braid_tray_b', [(26, 120, TZ + 9), (22, 105, TZ + 12), (14, 90, TZ + 3)], 1.6, M['pe_gy'])
 hw('接地', 'M4接地スタッド+ナット(トレイ)/ボンディング編組6mm²(トレイ-背板)', 2, 'CP-18 / 導通≤0.1Ω')
 # ---------- ドーム固定: 下辺ラッチ6・上辺フック6・磁石12(+SUSディスク)・位置決めピン2 ----------
 bot_y = DOME_Y0; top_y = DOME_Y0 + DOME_H
 for k, xx in enumerate((-250, -150, -50, 50, 150, 250)):
     cyl(f'latch_cam{k}', 4.0, 7, 'y', xx, bot_y + 5.5, dz(4.5), M['sus'], 20)
     cyl(f'latch_hex{k}', 1.8, .4, 'y', xx, bot_y + 1.7, dz(4.5), M['rubber'], 6)
-    box(f'latch_strike{k}', 18, 10, 1.2, xx - 9, bot_y + 8, dz(1.2), M['sus'])
+    box(f'latch_strike{k}', 18, 6, 1.2, xx - 9, bot_y + 4, dz(1.2), M['sus'])
     box(f'hook_tab{k}', 14, 7, 1.5, xx - 7, top_y - 7, dz(5.5), M['alu']); box(f'hook_strike{k}', 16, 8, 1.2, xx - 8, top_y - 9, dz(1.2), M['sus'])
 hw('ドーム固定', '1/4回転ラッチ(拘束, T10)', 6, '下辺, 下面の凹みから操作, 品番 U29'); hw('ドーム固定', 'SPCCストライク板 Niめっき t1.2', 12, 'ラッチ6+フック6'); hw('ドーム固定', '掛け爪フック(ドーム一体)', 6, '上辺, 3mmスライドで掛ける')
-mag_pos = [(-200, top_y - 10), (0, top_y - 10), (200, top_y - 10), (-200, bot_y + 10), (0, bot_y + 10), (200, bot_y + 10)]
-mag_pos += [(DOME_X0 + 10, DOME_Y0 + DOME_H * f) for f in (.25, .5, .75)] + [(DOME_X0 + DOME_W - 10, DOME_Y0 + DOME_H * f) for f in (.25, .5, .75)]
+mag_pos = [(-200, top_y - 6), (0, top_y - 6), (200, top_y - 6), (-200, bot_y + 6), (0, bot_y + 6), (200, bot_y + 6)]
+mag_pos += [(DOME_X0 + 6, DOME_Y0 + DOME_H * f) for f in (.25, .5, .75)] + [(DOME_X0 + DOME_W - 6, DOME_Y0 + DOME_H * f) for f in (.25, .5, .75)]
 for k, (mx, my) in enumerate(mag_pos):
     cyl(f'magnet{k}', 4.0, 3, 'z', mx, my, dz(4.5), M['magnet'], 20); cyl(f'magnet_disc{k}', 4.5, 1.0, 'z', mx, my, dz(.5), M['sus'], 20)
 hw('ドーム固定', 'ネオジム磁石 N52 φ8×3(ドーム側)', 12, '位置決め補助, 吸着力 U29'); hw('ドーム固定', '磁石相手 SUSディスク φ9×1.0(背板側)', 12, '')
-for k, (dxp, dyp) in enumerate(((-180, top_y - 20), (140, top_y - 20))): cyl(f'dowel_pin{k}', 2.0, 8, 'z', dxp, dyp, dz(4.0), M['sus'], 16)
+for k, (dxp, dyp) in enumerate(((-180, top_y - 6), (140, top_y - 6))): cyl(f'dowel_pin{k}', 2.0, 8, 'z', dxp, dyp, dz(4.0), M['sus'], 16)
 hw('ドーム固定', '位置決めピン Ø4 H7×8(非対称)', 2, '')
 # ---------- ケーブルクリップ(トレイ上、ケーブル高さz≤30の区間のみ。それ以外は部品へ結束) ----------
 nclip = 0
@@ -67,8 +67,9 @@ for c_ in CABJ:
             ibox(f'clip_pad{nclip}', 12, 8, .8, b_[0] - 6, b_[1] - 4, TZ, M['pom'], .2); ibox(f'clip_post{nclip}', 3, 6, max(1, b_[2] - TZ - 1), b_[0] - 1.5, b_[1] - 3, TZ + .8, M['pom'], .3)
 hw('配線', 'ケーブルクリップ(POM, 粘着/PEM)', nclip, 'トレイ上 z≤30の区間のみ(他は部品へ結束)')
 # ---------- GPUクレードル・電源ボタン・RF窓・AM5バックプレート ----------
-ibox('gpu_cradle_base', GW, 10, 3, gx, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_l', 4, 10, 36, gx - 2, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_r', 4, 10, 36, gx + GW - 2, gy - 14, TZ, M['alublack'], .6)
-ibox('gpu_cradle_lever', 40, 4, 6, gx + GW / 2 - 20, gy - 12, TZ + 30, M['sus'], .6); hw('支持', 'GPUクレードル(A5052 t2.0+POM当て, 工具なしクランプ)', 1, 'CP-14')
+ibox('gpu_cradle_base', GW, 10, 3, gx, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_l', 4, 10, 9, gx - 2, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_r', 4, 10, 9, gx + GW - 2, gy - 14, TZ, M['alublack'], .6)
+for k_, xx_ in enumerate((gx + 18, gx + GW - 18)): icyl(f'gpu_bracket_screw{k_}', 2.6, 5, 'y', xx_, gy - 3, gz + 38, M['steel'], 12) if False else None
+hw('支持', 'GPU低背ステー(A5052 t2.0, z5〜14: ホース/ポート挿抜空間を避ける)+ブラケットねじ', 1, 'CP-14 / ホース(z16〜)との干渉無し')
 cyl('power_button', 3.0, 4, 'y', X0 + bx + 40 - X0 + 0, DOME_Y0 + 18, dz(12), M['alu'], 20); hw('操作', '電源ボタン(モーメンタリ, 背面左下の凹み内)', 1, '型番未選定')
 rf_zl = d_inner(30) - 8          # 平板をドーム内面(上辺から30mmの最も浅い所)より下に置く(傾斜に突き出さない)
 ibox('rf_window_plate', 60, 30, 2, IW_ / 2 - 30, IH_ - 60, rf_zl, principled('pc_rf', '#202226', 0, .5)); hw('無線', 'RF窓 PC樹脂t2.0(格子裏, Wi-Fi 7アンテナ×2)', 1, 'CP-12 / U31: 平板をドーム上辺の浅い位置に取付(形状要検討)')
@@ -76,24 +77,26 @@ for k, xx in enumerate((IW_ / 2 - 20, IW_ / 2 + 20)): ibox(f'antenna{k}', 30, 1.
 ibox('am5_backplate', 70, 70, 3, bx + sx_ - 35, by + sy_ - 35, bz - 3, M['alublack'], .8); hw('冷却', 'AM5バックプレート+ばね付きM4×4(ポンプ固定)', 1, 'ARCTIC付属')
 # ---------- ヒンジ機構(全部品): ヒンジブロック/摩擦ヒンジ/ばね/カム/ストッパ/軸/Eクリップ/貫通ボルト+裏当て ----------
 hb = lambda name, w, h, d, x, y, z, mat, body=True, bev=.6: box(name, w, h, d, x, y, z, mat, bevel=bev, body=body)
-hb('hinge_block_base', 150, 22, 4, -75, 0, -SLAB - 4, M['stand']); hb('hinge_cheek_l', 6, 22, 32, -75, 0, -SLAB - 32, M['stand']); hb('hinge_cheek_r', 6, 22, 32, 69, 0, -SLAB - 32, M['stand'])
-hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 34, M['stand'])
-hb('hinge_backing_plate', 90, 22, 3, -45, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 110, 22, 4, -55, 0, -SLAB + 5, M['alu'])
-for k, (bxx, byy) in enumerate(((-55, 5), (-55, 17), (55, 5), (55, 17))):
-    cyl(f'hinge_bolt{k}', 3.0, 26, 'z', bxx, byy, -SLAB - 9, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 5.5, M['sus'], 6)
-hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼板)', 4, '6N·m+ネジロック'); hw('ヒンジ', 'SPCC裏当て板 t3 90×22 / A5052補強板 t4', 2, 'U29')
+hb('hinge_block_base', 150, 22, 2, -75, 0, -SLAB - 2, M['stand']); hb('hinge_cheek_l', 6, 22, 34, -75, 0, -SLAB - 34, M['stand']); hb('hinge_cheek_r', 6, 22, 34, 69, 0, -SLAB - 34, M['stand'])
+hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 36, M['stand'])
+hb('hinge_backing_plate', 140, 22, 3, -70, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 144, 22, 4, -72, 0, -SLAB + 5, M['alu'])     # 背板の前(チン空洞側): 裏当て鋼板140幅+補強板144幅(ボルト±62を覆う)
+for k, (bxx, byy) in enumerate(((-62, 5), (-62, 17), (62, 5), (62, 17))):
+    cyl(f'hinge_bolt{k}', 3.0, 14, 'z', bxx, byy, -SLAB - 2, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 3.5, M['sus'], 6)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通
+hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼板)', 4, '6N·m+ネジロック'); hw('ヒンジ', 'SPCC裏当て板 t3 140×22 / A5052補強板 t4 144×22', 2, 'U29')
 cyl('hinge_axle', 5.0, 150, 'x', 0, HY, ZC, M['steel'], 24, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
-cyl('spring_spool', 9, 40, 'x', 0, HY + 1, ZC - 8, M['spring'], 32); cyl('spring_spool_flange_l', 11, 2, 'x', -21, HY + 1, ZC - 8, M['sus'], 32); cyl('spring_spool_flange_r', 11, 2, 'x', 21, HY + 1, ZC - 8, M['sus'], 32)
-_bm = bmesh.new()      # 定荷重ばねの帯(幅40, 厚0.3): スプールに巻き付く
-_pts = [V(0, HY + 1 + 9.15 * math.sin(a_), ZC - 8 + 9.15 * math.cos(a_)) for a_ in [i * math.pi / 12 for i in range(0, 13)]]
+SPZ = ZC - 9
+cyl('spring_spool', 9, 40, 'x', 0, HY + 1, SPZ, M['spring'], 32); cyl('spring_spool_flange_l', 11, 2, 'x', -21, HY + 1, SPZ, M['sus'], 32); cyl('spring_spool_flange_r', 11, 2, 'x', 21, HY + 1, SPZ, M['sus'], 32)
+_bm = bmesh.new()      # 定荷重ばねの帯(幅40, 厚0.3): スプールに巻き付き、カムのフックへ接続
+_pts = [V(0, HY + 1 + 9.15 * math.sin(a_), SPZ + 9.15 * math.cos(a_)) for a_ in [i * math.pi / 12 for i in range(0, 13)]]
 for i in range(len(_pts) - 1):
     v0, v1 = _pts[i], _pts[i + 1]; _bm.faces.new([_bm.verts.new((v0.x - 20, v0.y, v0.z)), _bm.verts.new((v0.x + 20, v0.y, v0.z)), _bm.verts.new((v1.x + 20, v1.y, v1.z)), _bm.verts.new((v1.x - 20, v1.y, v1.z))])
 _me = bpy.data.meshes.new('spring_strip'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(M['spring']); _so = bpy.data.objects.new('spring_strip', _me); _so.modifiers.new('s', 'SOLIDIFY').thickness = 0.3; link(_so)
-cyl('hinge_cam', 12, 4, 'x', 0, HY, ZC, M['sus'], 40); hb('hinge_cam_hook', 6, 8, 4, -3, HY + 18, ZC - 2, M['sus'])
+cyl('hinge_cam', 12, 4, 'x', 0, HY, ZC, M['sus'], 40); hb('hinge_cam_hook', 6, 8, 4, -3, HY + 10, ZC - 2, M['sus'])
+hb('spring_strip_tail', 40, 10, 0.3, -20, HY + 1, ZC - 9 + 9.15, M['spring'], bev=0)             # ばね帯の自由端(スプール上端→カムのフック)
 hw('ヒンジ', '定荷重ばね/カム式バランサ(ばね帯 幅40×t0.3+スプール+カム, 金属製保持)', 1, '型番 U26')
-hb('hinge_stopper_up', 12, 8, 10, -6, HY + 12, ZC - 14, M['steel']); hb('hinge_stopper_dn', 12, 8, 10, -6, HY - 20, ZC - 14, M['steel']); hw('ヒンジ', '機械ストッパ(-5°/+25°)', 2, '')
+hb('hinge_stopper_up', 12, 8, 10, -6, 13, ZC - 14, M['steel']); hb('hinge_stopper_dn', 12, 8, 10, -6, 1, ZC - 14, M['steel']); hw('ヒンジ', '機械ストッパ(-5°/+25°)', 2, '')
 for k, xx in enumerate((-70, -22, 22, 70)): cyl(f'hinge_eclip{k}', 7.2, 1.2, 'x', xx, HY, ZC, M['sus'], 24, body=False)
 hw('ヒンジ', 'Eクリップ(軸Ø10用)', 4, ''); hw('ヒンジ', 'ヒンジ軸 Ø10 SUS×150', 1, '')
 din = lambda x, y, z: (x - X0, y - Y0, Z0 - z)      # 設計座標→内部座標

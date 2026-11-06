@@ -4,7 +4,7 @@ ISO 128-20(線の種類: 太0.5/細0.25, 破線/一点鎖線), ISO 129-1(寸法�
 使い方: frame(title, num, scale='1:1', material='', finish='', rev='C', sheet='1/1', note='') -> SVG要素の文字列リスト(viewBox 0 0 420 297)。"""
 import datetime, os
 W, H = 420, 297
-DATE = datetime.date.today().isoformat()
+DATE = '2026-11-06'      # 発行日(リリース時に更新。再生成のたびに変わらないよう固定)
 OWNER = 'iMac-style PC project (design values, unapproved)'
 def esc(s): return str(s).replace('&', '&amp;').replace('<', '&lt;')
 def txt(x, y, s, sz=2.6, a='start', w='normal', fill='#000'): return f'<text x="{x:.2f}" y="{y:.2f}" font-size="{sz}" text-anchor="{a}" font-weight="{w}" fill="{fill}">{esc(s)}</text>'
@@ -26,7 +26,7 @@ def frame(title, num, scale='1:1', material='-', finish='-', rev='C', sheet='1/1
         o += [txt(20 + (W - 30) * (k - .5) / 8, 13.2, str(k), 2.4, 'middle'), txt(20 + (W - 30) * (k - .5) / 8, H - 11.4, str(k), 2.4, 'middle')]
     for k in range(1, 4): y = 10 + (H - 20) * k / 4; o += [ln(20, y, 25, y, .25), ln(W - 10, y, W - 15, y, .25)]
     for k, lab in enumerate('DCBA'): o += [txt(15, 10 + (H - 20) * (k + .5) / 4 + 1, lab, 2.4, 'middle'), txt(W - 5, 10 + (H - 20) * (k + .5) / 4 + 1, lab, 2.4, 'middle')]
-    o += [ln(1, H / 2, 6, H / 2, .5), ln(W - 6, H / 2, W - 1, H / 2, .5), ln(W / 2 + 5, 1, W / 2 + 5, 6, .5), ln(W / 2 + 5, H - 6, W / 2 + 5, H - 1, .5)]      # 中心マーク
+    o += [ln(1, H / 2, 25, H / 2, .5), ln(W - 15, H / 2, W - 1, H / 2, .5), ln(W / 2, 1, W / 2, 15, .5), ln(W / 2, H - 15, W / 2, H - 1, .5)]      # 中心マーク(用紙端〜図枠の内側5mm, ISO 5457)
     # 表題欄(ISO 7200): 右下 180×40
     bx, by, bw, bh = W - 10 - 180, H - 10 - 44, 180, 44
     o.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="#fff" stroke="#000" stroke-width=".5"/>')
@@ -38,7 +38,7 @@ def frame(title, num, scale='1:1', material='-', finish='-', rev='C', sheet='1/1
           txt(bx + 102, by + 30, '普通公差 / General tol.', 1.9, fill='#555'), txt(bx + 102, by + 33.5, tol, 2.3),
           txt(bx + 142, by + 18, '改訂 / Rev.', 1.9, fill='#555'), txt(bx + 142, by + 24.5, rev, 4.0, w='bold'), txt(bx + 142, by + 30, '用紙 / Sheet', 1.9, fill='#555'), txt(bx + 142, by + 33.5, f'{size}  {sheet}', 2.3),
           txt(bx + 102, by + 4, '縮尺 / Scale', 1.9, fill='#555'), txt(bx + 102, by + 10.5, scale, 3.6, w='bold'), txt(bx + 142, by + 4, '単位 / Unit', 1.9, fill='#555'), txt(bx + 142, by + 10.5, 'mm', 3.6, w='bold'),
-          txt(bx + 102, by + 38.5, '作成 / Drawn', 1.9, fill='#555'), txt(bx + 102, by + 42, f'Claude {DATE}', 2.3), txt(bx + 142, by + 38.5, '承認 / Approved', 1.9, fill='#555'), txt(bx + 142, by + 42, '未承認(設計値)', 2.3)]
+          txt(bx + 102, by + 38.5, '作成 / Drawn', 1.9, fill='#555'), txt(bx + 102, by + 42, f'Claude {DATE}', 2.3), txt(bx + 142, by + 38.5, '承認 / Approved', 1.9, fill='#555'), txt(bx + 142, by + 42, '未承認(設計値) / PRELIMINARY', 2.3)]
     o.append(projection_symbol(bx - 26, by + 30, third))
     o.append(txt(bx - 26, by + 24, '第三角法 / 3rd angle' if third else '第一角法 / 1st angle', 2.0))
     # 改訂履歴(ISO 7200の補助): 表題欄の左
