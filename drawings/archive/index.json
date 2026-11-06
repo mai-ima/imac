@@ -154,6 +154,15 @@
    "file": "05_stand/05_stand.v003__2026-11-05_71b7afb.svg"
   },
   {
+   "src": "drawings/05_stand.svg",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "a9e170552ec6456c35fed9beea53c5b13cc084c9b6f43bfa6c20b6579e56bf7b",
+   "file": "05_stand/05_stand.v004__2026-11-06_80d7407.svg"
+  },
+  {
    "src": "drawings/06_service_tray_plan.svg",
    "version": 1,
    "gen": "current",
@@ -188,6 +197,15 @@
    "commit": "71b7afb",
    "sha256": "20098ba8cbaae3107c890c3ee7d6cf36040f1dc992847797bd98889a4f5fe2cd",
    "file": "06_service_tray_plan/06_service_tray_plan.v004__2026-11-05_71b7afb.svg"
+  },
+  {
+   "src": "drawings/06_service_tray_plan.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "f7198f4330aec935c11171c20bb31d5825ededb9d0b6453d86d6185d86f98238",
+   "file": "06_service_tray_plan/06_service_tray_plan.v005__2026-11-06_80d7407.svg"
   },
   {
    "src": "drawings/07_dome_latch_section.svg",
@@ -226,6 +244,15 @@
    "file": "07_dome_latch_section/07_dome_latch_section.v004__2026-11-05_71b7afb.svg"
   },
   {
+   "src": "drawings/07_dome_latch_section.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "b9643ffb297e2d9cb774e020288982a055e5db0563e668e44b91a199677a38f6",
+   "file": "07_dome_latch_section/07_dome_latch_section.v005__2026-11-06_80d7407.svg"
+  },
+  {
    "src": "drawings/08_service_sequence.svg",
    "version": 1,
    "gen": "current",
@@ -244,6 +271,15 @@
    "file": "08_service_sequence/08_service_sequence.v002__2026-11-05_fcba5fe.svg"
   },
   {
+   "src": "drawings/08_service_sequence.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "da3ed81bbb150835ee389a96adc77d200211f5af7fb4522bb294c6e7c13c95df",
+   "file": "08_service_sequence/08_service_sequence.v003__2026-11-06_80d7407.svg"
+  },
+  {
    "src": "drawings/09_board_layout.svg",
    "version": 1,
    "gen": "current",
@@ -251,6 +287,15 @@
    "commit": "27ca8ce",
    "sha256": "f0fb9806aa76c1f668b80a52bc4d1993b435d5e684051acf1ee46bb0e0ce49b2",
    "file": "09_board_layout/09_board_layout.v001__2026-11-05_27ca8ce.svg"
+  },
+  {
+   "src": "drawings/09_board_layout.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "bf1657c8bafa84a2a944a9e2da682b14aa43a6d7f83d97fe70a9ec87527520bf",
+   "file": "09_board_layout/09_board_layout.v002__2026-11-06_80d7407.svg"
   },
   {
    "src": "drawings/10_placement_dimensioned.svg",
@@ -379,6 +424,15 @@
    "file": "12_wiring_diagram/12_wiring_diagram.v003__2026-11-05_fcba5fe.svg"
   },
   {
+   "src": "drawings/12_wiring_diagram.svg",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "e5c166cef8efb7b3e5673e4d2e09a67249e067d0ad10d6d16c97fb38944dacb1",
+   "file": "12_wiring_diagram/12_wiring_diagram.v004__2026-11-06_80d7407.svg"
+  },
+  {
    "src": "drawings/13_airflow_thermal.svg",
    "version": 1,
    "gen": "current",
@@ -413,6 +467,15 @@
    "commit": "71b7afb",
    "sha256": "468bac1ca803058b7b0908dfee21d691a9a36e16b5dd318c880e5b0e7931e4ae",
    "file": "13_airflow_thermal/13_airflow_thermal.v004__2026-11-05_71b7afb.svg"
+  },
+  {
+   "src": "drawings/13_airflow_thermal.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "2207fc4a27e394fb7adeaccfc6e034793d113de34feceab598b4ebd8cf745db7",
+   "file": "13_airflow_thermal/13_airflow_thermal.v005__2026-11-06_80d7407.svg"
   },
   {
    "src": "drawings/14_exploded_assembly.svg",
@@ -496,6 +559,15 @@
    "file": "16_cable_clips/16_cable_clips.v003__2026-11-05_71b7afb.svg"
   },
   {
+   "src": "drawings/16_cable_clips.svg",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "608b0a358c2b3176d306dbc2aa1236ea018ab42d4e97aa18169f5ba6b95f299c",
+   "file": "16_cable_clips/16_cable_clips.v004__2026-11-06_80d7407.svg"
+  },
+  {
    "src": "drawings/outlines.dxf",
    "version": 1,
    "gen": "current",
@@ -548,6 +620,15 @@
    "commit": "184ad21",
    "sha256": "d8601184926e3921e092e01db70fedc2eee3ffcf80763b144d229e0b98d93127",
    "file": "outlines/outlines.v006__2026-11-05_184ad21.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "f75df1fc031f4bce22235118ecc7a9b60a481e14745d19109c18805ac2a696f4",
+   "file": "outlines/outlines.v007__2026-11-06_80d7407.dxf"
   }
  ]
 }

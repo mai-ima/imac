@@ -30,6 +30,8 @@
 <line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
 <text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
 <text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
 <line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
@@ -96,23 +98,22 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
-<text x="22.00" y="284.50" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
+<text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-10 スタンド(足+腕+ヒンジブロック)</text>
-<text x="2" y="14" font-size="3">数量 1 / 板厚 8.0 / 質量 1.8kg / 公差 ±0.1(ヒンジ軸穴H7)</text>
-<rect x="14" y="30" width="130.0" height="42.5" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
-<line x1="14" y1="78.5" x2="144.0" y2="78.5" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="83.5" font-size="3.4" text-anchor="middle" fill="#06c">260</text>
-<line x1="8" y1="30" x2="8" y2="72.5" stroke="#06c" stroke-width=".3"/><text x="6" y="51.25" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 51.25)">85</text>
+<text x="2" y="14" font-size="3">数量 1 / 板厚 8.0 / 質量 3.8kg / 公差 ±0.1(ヒンジ軸穴H7)</text>
+<rect x="14" y="30" width="130.0" height="57.3" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="14" y1="93.31818181818181" x2="144.0" y2="93.31818181818181" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="98.31818181818181" font-size="3.4" text-anchor="middle" fill="#06c">220</text>
+<line x1="8" y1="30" x2="8" y2="87.31818181818181" stroke="#06c" stroke-width=".3"/><text x="6" y="58.65909090909091" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 58.65909090909091)">97</text>
 <text x="156" y="30" font-size="2.6">加工: 押出→CNC(ヒンジ受け、M6穴、ケーブル通し)</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: 硬質アルマイト(接触面)+ダイヤモンドカット</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ±0.1(ヒンジ軸穴H7)</text>
-<text x="156" y="45.60000000000001" font-size="2.6">要素: 足: 幅260×奥行245(ヒンジ軸の前110/後135)、ゴム足×4</text>
-<text x="156" y="50.80000000000001" font-size="2.6">要素: 腕: A6063 t8 + ヒンジブロック(15mm厚, 背板へM6貫通×4+裏当て鋼板)</text>
-<text x="156" y="56.000000000000014" font-size="2.6">要素: ヒンジ軸 z=43(前面ガラスから) y=10: 重心の背面側(後方へ倒れるトルクが-5°〜+25°でほ</text>
-<text x="156" y="60.20000000000002" font-size="2.6">ぼ一方向)</text>
-<text x="156" y="65.40000000000002" font-size="2.6">要素: バランスばね取付座、機械ストッパ(-5°/+25°)</text>
-<text x="156" y="70.60000000000002" font-size="2.6">要素: ケーブル通し(AC電源はスタンド背後へ)</text>
-<text x="156" y="75.80000000000003" font-size="2.6">接合: CP-03背板</text>
-<text x="156" y="81.00000000000003" font-size="2.6">接合: CP-11ヒンジ</text>
+<text x="156" y="45.60000000000001" font-size="2.6">要素: 足: 幅220×奥行230(ヒンジ軸の前90/後140)、厚12mm中空+鋼板ballast 6mm(≈</text>
+<text x="156" y="49.80000000000001" font-size="2.6">1.8kg)</text>
+<text x="156" y="55.000000000000014" font-size="2.6">要素: ゴム足φ20×4</text>
+<text x="156" y="60.20000000000002" font-size="2.6">要素: 腕: A6063 t8(幅120)、ヒンジ軸Ø10を保持</text>
+<text x="156" y="65.40000000000002" font-size="2.6">要素: ヒンジ機構は CP-11 / ヒンジブロックは背板へM6貫通×4+裏当て鋼板</text>
+<text x="156" y="70.60000000000002" font-size="2.6">接合: CP-03背板</text>
+<text x="156" y="75.80000000000003" font-size="2.6">接合: CP-11ヒンジ</text>
 </g></svg>

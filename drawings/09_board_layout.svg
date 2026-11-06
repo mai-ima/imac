@@ -152,7 +152,7 @@
 <text x="250.0" y="40.0" font-size="3.6" text-anchor="start" fill="#000" font-weight="bold">番号</text>
 <text x="262.0" y="40.0" font-size="3.6" text-anchor="start" fill="#000" font-weight="bold">部位(位置[x,y]・大きさ)</text>
 <text x="250.0" y="46.2" font-size="3" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="46.2" font-size="2.5" text-anchor="start" fill="#222" >AM5ソケット(LGA1718, 40x40 IHS: AMD Ryzen 7 9800X3D) [41.4,59.1] 60.0x60.0</text>
+<text x="262.0" y="46.2" font-size="2.5" text-anchor="start" fill="#222" >AM5ソケット(LGA1718, 40x40 IHS: AMD Ryzen 9 9950X3D) [41.4,59.1] 60.0x60.0</text>
 <text x="250.0" y="52.4" font-size="3" text-anchor="start" fill="#222" >2</text>
 <text x="262.0" y="52.4" font-size="2.5" text-anchor="start" fill="#222" >CPU IHS 40x40 [51.4,69.1] 40.0x40.0</text>
 <text x="250.0" y="58.6" font-size="3" text-anchor="start" fill="#222" >3</text>

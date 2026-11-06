@@ -87,7 +87,7 @@ w += ['', '## 固定点(クリップ位置)']
 for c in C: w += [f"### {c['id']} {c['name']}"] + [f'- P{i+1}: ({q[0]}, {q[1]}, z{q[2]})' for i, q in enumerate(clips[c['id']])]
 w += ['', '## 主要コネクタのピン割当(規格の一般仕様。部品の実物で要確認)',
  '- ATX 24ピン: 3.3V×3, 5V×4, 12V×2, GND×9ほか(ATX12V 3.1 標準)。PS_ON#(16番)は基板が制御。',
- '- EPS 8ピン(4+4): 12V×4 / GND×4。CPU 12V は9800X3Dの162W PPT(約14A)に対し十分。',
+ '- EPS 8ピン(4+4): 12V×4 / GND×4。CPU 12V は9950X3DのPPT230W(約19A)に対しEPS 8ピン(最大288W級)で足りる。',
  '- PCIe 6+2: 12V×3 / GND×5(8ピン)。GPU TGP 180W+PCIeスロット75W上限。',
  '- ファン 4ピン PWM: GND / +12V / TACH / PWM(25kHz)。ポンプ(AIO)も基板AIO_PUMP/CPU_FANヘッダ、VRMファンはポンプ付属ケーブル。',
  '- eDP(30ピン): 差動ペア×(最大4レーン)+AUX+HPD+VDD+LCD_VDD+BL制御(PWM/EN)+LED電源。パネルBOE N50の公式ピン表と一致させる(U19)。',
@@ -100,7 +100,7 @@ sc = 0.46; ox, oy = 30, 40; IW = 590; IH = 371.3
 o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect x="4" y="4" width="412" height="289" fill="none" stroke="#000" stroke-width=".5"/>',
      f'<rect x="{ox}" y="{oy}" width="{IW*sc}" height="{IH*sc}" rx="10" fill="#f7f8fa" stroke="#000" stroke-width=".4"/>']
 for it in L['items']: x, y, z = it['pos']; a, b, c = it['size']; o.append(f'<rect x="{ox+x*sc:.1f}" y="{oy+(IH-y-b)*sc:.1f}" width="{a*sc:.1f}" height="{b*sc:.1f}" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="{ox+(x+a/2)*sc:.1f}" y="{oy+(IH-y-b/2)*sc:.1f}" font-size="3" text-anchor="middle" fill="#555">{it["id"]}</text>')
-cols = ['#c0392b', '#06c', '#1a7f37', '#a50', '#707', '#087']
+cols = ['#c0392b', '#06c', '#1a7f37', '#a50', '#707', '#087', '#555', '#b0b']
 for k, c in enumerate(C):
     pts = c['pts']; o.append(f'<polyline fill="none" stroke="{cols[k]}" stroke-width=".7" points="' + ' '.join(f'{ox+p[0]*sc:.1f},{oy+(IH-p[1])*sc:.1f}' for p in pts) + '"/>')
     for q in clips[c['id']]: o.append(f'<circle cx="{ox+q[0]*sc:.1f}" cy="{oy+(IH-q[1])*sc:.1f}" r="1.1" fill="{cols[k]}"/>')

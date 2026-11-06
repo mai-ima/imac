@@ -46,6 +46,15 @@
    "file": "cables/cables.v005__2026-11-06_cca8bc2.json"
   },
   {
+   "src": "model/cables.json",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "5a5da89072e9bf03295337868bb482dfd5db31fc0a65e1ba365df1f85e9f69e2",
+   "file": "cables/cables.v006__2026-11-06_80d7407.json"
+  },
+  {
    "src": "model/custom_parts.json",
    "version": 1,
    "gen": "current",
@@ -71,6 +80,15 @@
    "commit": "fcba5fe",
    "sha256": "b8deba13bc60849b62fa5c2db53e37bd9888228d2e06dc053f4b91ae78451ff7",
    "file": "custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json"
+  },
+  {
+   "src": "model/custom_parts.json",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "184ad21",
+   "sha256": "17cde32a36f92629a02a2628cb66f00fec7ca50be1ce112c6b716b391ef2b3fb",
+   "file": "custom_parts/custom_parts.v004__2026-11-05_184ad21.json"
   },
   {
    "src": "model/layout.json",
@@ -296,6 +314,15 @@
    "commit": "71b7afb",
    "sha256": "09f87aaa18da5fae74b095167ea52358085ba15d65c7d98007af5bb4669c6908",
    "file": "spec/spec.v008__2026-11-05_71b7afb.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "f0c1cb5983c8a2a771998ac63317ee5280979940ac1907ba54987ec8a561e9f8",
+   "file": "spec/spec.v009__2026-11-06_fc36218.json"
   }
  ]
 }

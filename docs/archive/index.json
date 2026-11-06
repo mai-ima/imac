@@ -181,6 +181,15 @@
    "file": "failure-analysis/failure-analysis.v001__2026-11-05_017b7d9.md"
   },
   {
+   "src": "docs/failure-analysis.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "15a1bce",
+   "sha256": "8899ce6fc73ef636be120a62bbcfab28e53ce2267d3136883a2fbc7869b5b4e8",
+   "file": "failure-analysis/failure-analysis.v002__2026-11-05_15a1bce.md"
+  },
+  {
    "src": "docs/fitcheck-report.txt",
    "version": 1,
    "gen": "current",
@@ -208,6 +217,15 @@
    "file": "fitcheck-report/fitcheck-report.v003__2026-11-05_fcba5fe.txt"
   },
   {
+   "src": "docs/fitcheck-report.txt",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "7b17fc3cd7613f85eef4e16615ee572eb771a4583a99fbe843c5917ff224d30e",
+   "file": "fitcheck-report/fitcheck-report.v004__2026-11-05_71b7afb.txt"
+  },
+  {
    "src": "docs/hinge-design.md",
    "version": 1,
    "gen": "current",
@@ -215,6 +233,15 @@
    "commit": "017b7d9",
    "sha256": "11d348c722e201784b02f4f7f77ad5bb07232a18511cabf9e60d4c123f563002",
    "file": "hinge-design/hinge-design.v001__2026-11-05_017b7d9.md"
+  },
+  {
+   "src": "docs/hinge-design.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "3a6f3da876bdb96a9a6dfc36c514a1beef7c542ea1fa99fd28b4b99d7a8cbb91",
+   "file": "hinge-design/hinge-design.v002__2026-11-05_fcba5fe.md"
   },
   {
    "src": "docs/joint-analysis.md",
@@ -233,6 +260,15 @@
    "commit": "fcba5fe",
    "sha256": "8ccd04b3bb70a88cd49266fa3de2b72b0b9dde13dbf4a6d0b2101d8b67aa8c44",
    "file": "joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "c8d6b436174ba6f9356976a2e2835152f4cd82e6f45285d56a52e23ed65f4ad8",
+   "file": "joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -334,6 +370,15 @@
    "file": "service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md"
   },
   {
+   "src": "docs/service-mechanisms.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "d0674e5e4d3dd16456a4eb4025aadb55693a79bb6396fe616126855a8b2a3c03",
+   "file": "service-mechanisms/service-mechanisms.v003__2026-11-05_fcba5fe.md"
+  },
+  {
    "src": "docs/source-status.md",
    "version": 1,
    "gen": "current",
@@ -359,6 +404,15 @@
    "commit": "15a1bce",
    "sha256": "9b9f29afb65992e3b6b50f24a6c8ef1c140ea1a10bd04862c7d32284418edf6c",
    "file": "thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md"
+  },
+  {
+   "src": "docs/thermal-analysis.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "5f4cd7613ae8699d4a0b26d9b3bc3c491652c8952bd064c95081b70149ba34d5",
+   "file": "thermal-analysis/thermal-analysis.v003__2026-11-05_71b7afb.md"
   },
   {
    "src": "docs/unverified-tracker.md",
@@ -467,6 +521,15 @@
    "commit": "fcba5fe",
    "sha256": "a79bf33fe47eddf5c445677bb5e12b559f2390096cb544c0e3cb707851619612",
    "file": "wiring/wiring.v003__2026-11-05_fcba5fe.md"
+  },
+  {
+   "src": "docs/wiring.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "a411c2b5e798751634353580e6305a839880e292b5dbcd35380956db54902da6",
+   "file": "wiring/wiring.v004__2026-11-06_80d7407.md"
   }
  ]
 }

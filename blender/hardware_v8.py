@@ -76,8 +76,8 @@ for k, xx in enumerate((IW_ / 2 - 20, IW_ / 2 + 20)): ibox(f'antenna{k}', 30, 1.
 ibox('am5_backplate', 70, 70, 3, bx + sx_ - 35, by + sy_ - 35, bz - 3, M['alublack'], .8); hw('冷却', 'AM5バックプレート+ばね付きM4×4(ポンプ固定)', 1, 'ARCTIC付属')
 # ---------- ヒンジ機構(全部品): ヒンジブロック/摩擦ヒンジ/ばね/カム/ストッパ/軸/Eクリップ/貫通ボルト+裏当て ----------
 hb = lambda name, w, h, d, x, y, z, mat, body=True, bev=.6: box(name, w, h, d, x, y, z, mat, bevel=bev, body=body)
-hb('hinge_block_base', 150, 22, 4, -75, 0, -SLAB - 4, M['stand']); hb('hinge_cheek_l', 6, 22, 24, -75, 0, -SLAB - 24, M['stand']); hb('hinge_cheek_r', 6, 22, 24, 69, 0, -SLAB - 24, M['stand'])
-hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 26, M['stand'])
+hb('hinge_block_base', 150, 22, 4, -75, 0, -SLAB - 4, M['stand']); hb('hinge_cheek_l', 6, 22, 32, -75, 0, -SLAB - 32, M['stand']); hb('hinge_cheek_r', 6, 22, 32, 69, 0, -SLAB - 32, M['stand'])
+hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 34, M['stand'])
 hb('hinge_backing_plate', 90, 22, 3, -45, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 110, 22, 4, -55, 0, -SLAB + 5, M['alu'])
 for k, (bxx, byy) in enumerate(((-55, 5), (-55, 17), (55, 5), (55, 17))):
     cyl(f'hinge_bolt{k}', 3.0, 26, 'z', bxx, byy, -SLAB - 9, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 5.5, M['sus'], 6)
@@ -85,13 +85,13 @@ hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼�
 cyl('hinge_axle', 5.0, 150, 'x', 0, HY, ZC, M['steel'], 24, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
-cyl('spring_spool', 9, 40, 'x', 0, HY + 1, ZC + 11, M['spring'], 32); cyl('spring_spool_flange_l', 11, 2, 'x', -21, HY + 1, ZC + 11, M['sus'], 32); cyl('spring_spool_flange_r', 11, 2, 'x', 21, HY + 1, ZC + 11, M['sus'], 32)
+cyl('spring_spool', 9, 40, 'x', 0, HY + 1, ZC - 8, M['spring'], 32); cyl('spring_spool_flange_l', 11, 2, 'x', -21, HY + 1, ZC - 8, M['sus'], 32); cyl('spring_spool_flange_r', 11, 2, 'x', 21, HY + 1, ZC - 8, M['sus'], 32)
 _bm = bmesh.new()      # 定荷重ばねの帯(幅40, 厚0.3): スプールに巻き付く
-_pts = [V(0, HY + 1 + 9.15 * math.sin(a_), ZC + 11 + 9.15 * math.cos(a_)) for a_ in [i * math.pi / 12 for i in range(0, 13)]]
+_pts = [V(0, HY + 1 + 9.15 * math.sin(a_), ZC - 8 + 9.15 * math.cos(a_)) for a_ in [i * math.pi / 12 for i in range(0, 13)]]
 for i in range(len(_pts) - 1):
     v0, v1 = _pts[i], _pts[i + 1]; _bm.faces.new([_bm.verts.new((v0.x - 20, v0.y, v0.z)), _bm.verts.new((v0.x + 20, v0.y, v0.z)), _bm.verts.new((v1.x + 20, v1.y, v1.z)), _bm.verts.new((v1.x - 20, v1.y, v1.z))])
 _me = bpy.data.meshes.new('spring_strip'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(M['spring']); _so = bpy.data.objects.new('spring_strip', _me); _so.modifiers.new('s', 'SOLIDIFY').thickness = 0.3; link(_so)
-cyl('hinge_cam', 20, 4, 'x', 0, HY, ZC, M['sus'], 40); hb('hinge_cam_hook', 6, 8, 4, -3, HY + 18, ZC - 2, M['sus'])
+cyl('hinge_cam', 12, 4, 'x', 0, HY, ZC, M['sus'], 40); hb('hinge_cam_hook', 6, 8, 4, -3, HY + 18, ZC - 2, M['sus'])
 hw('ヒンジ', '定荷重ばね/カム式バランサ(ばね帯 幅40×t0.3+スプール+カム, 金属製保持)', 1, '型番 U26')
 hb('hinge_stopper_up', 12, 8, 10, -6, HY + 12, ZC - 14, M['steel']); hb('hinge_stopper_dn', 12, 8, 10, -6, HY - 20, ZC - 14, M['steel']); hw('ヒンジ', '機械ストッパ(-5°/+25°)', 2, '')
 for k, xx in enumerate((-70, -22, 22, 70)): cyl(f'hinge_eclip{k}', 7.2, 1.2, 'x', xx, HY, ZC, M['sus'], 24, body=False)

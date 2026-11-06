@@ -4,12 +4,14 @@
 
 | ID | 名称 | 接続 | AWG | コネクタ | 設計長mm | PSU付属mm | 判定 |
 |---|---|---|---|---|---|---|---|
-| W1 | ATX 24ピン | PSU modular(24p) → 基板 ATX24 | 18 | 24p (20+4) | 65 | 300 | OK |
-| W2 | CPU EPS 8ピン | PSU modular(EPS) → 基板 CPU_12V(8p) | 16 | EPS 4+4 | 260 | 400 | OK |
-| W3 | GPU PCIe 6+2ピン | PSU modular(PCIe) → GPU 8ピン | 16 | PCIe 6+2 | 280 | 400 | OK |
-| W6 | AC電源(C14インレット→PSU C13) | C14インレット → SF750 AC入力 | 16 | C13(内部延長600mm級: 市販品要確認 U40) | 576 | 600 | OK |
-| W4 | コントローラ基板 12V | PSU modular(SATA/周辺) → ctrl_board DC入力 | 20 | SATA電源 or 2pin | 456 | - | OK |
-| W5 | アンビリカル(eDP 30p/12V/USB) | ctrl_board eDP → パネル背面コネクタ | - | eDP 30p + 12V + USB2 (ハーネス全長250mm=整備余長含む) | 355 | 250 | 不足(延長/別ケーブル要) |
+| W1 | ATX 24ピン(短尺カスタム長) | PSU modular(24p) → 基板 ATX24 | 18 | 24p (20+4) | 50 | - | OK |
+| W2 | CPU EPS 8ピン(短尺) | PSU modular(EPS) → 基板 CPU_12V(8p) | 16 | EPS 4+4 | 243 | - | OK |
+| W3 | GPU 12V-2x6(16AWG) | PSU modular(12V-2x6) → GPU 12V-2x6 | 16 | 12V-2x6: コネクタ後方35mm直線 | 379 | 400 | OK |
+| W4 | コントローラ基板 12V(短尺) | PSU modular(SATA/周辺) → ctrl_board DC入力 | 20 | SATA電源 or 2pin | 37 | - | OK |
+| W5 | アンビリカル(eDP 30p/12V/USB) | ctrl_board eDP → パネル背面コネクタ | - | eDP 30p + 12V + USB2 (全長280mm=整備余長込み) | 267 | 280 | OK |
+| W6 | AC電源(C14インレット→PSU C13) | C14インレット → SF1000 AC入力 | 16 | C13(内部延長600mm級: 市販品要確認 U40) | 447 | 600 | OK |
+| H1 | AIOホース(ポンプ出口A→ラジエーター遠側口) | ポンプ出口A → ラジエーター口(遠側) | - | ARCTIC 450mm/ID6.0 | 399 | 450 | OK |
+| H2 | AIOホース(ポンプ出口B→ラジエーター近側口) | ポンプ出口B → ラジエーター口(近側) | - | ARCTIC 450mm/ID6.0 | 371 | 450 | OK |
 
 ## 配線ルール
 - 電源線は番号タグ+色。最小曲げ半径: 24p/EPS/PCIe は線外径の6倍以上(約30mm)。

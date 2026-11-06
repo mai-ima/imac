@@ -91,6 +91,15 @@
    "file": "gen_fmea/gen_fmea.v001__2026-11-05_017b7d9.py"
   },
   {
+   "src": "tools/gen_fmea.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "15a1bce",
+   "sha256": "20723ed3cc62ccdfa2ca8a6790983061d99c9f261d615634ad3ab3232f26de15",
+   "file": "gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py"
+  },
+  {
    "src": "tools/gen_mfg_drawings.py",
    "version": 1,
    "gen": "current",
@@ -172,6 +181,15 @@
    "file": "gen_package/gen_package.v004__2026-11-05_4925658.py"
   },
   {
+   "src": "tools/gen_package.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "b83832968064dda960a58a20d6f4a306549f8f26777743ca275b9df03cffeb58",
+   "file": "gen_package/gen_package.v005__2026-11-06_80d7407.py"
+  },
+  {
    "src": "tools/gen_service_drawings.py",
    "version": 1,
    "gen": "current",
@@ -217,6 +235,15 @@
    "file": "gen_specs/gen_specs.v002__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/gen_specs.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "e61dbabc32fcf4e218656cd5bc7001bdfead4ab388e45b218b6ac528ac22eb89",
+   "file": "gen_specs/gen_specs.v003__2026-11-06_80d7407.py"
+  },
+  {
    "src": "tools/guard_no_delete.sh",
    "version": 1,
    "gen": "current",
@@ -253,6 +280,15 @@
    "file": "massmodel/massmodel.v001__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/massmodel.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "6e0559eb13d1d2072abf9801c236e4fed68f2d52bc5b8da679107d4b105502bf",
+   "file": "massmodel/massmodel.v002__2026-11-05_71b7afb.py"
+  },
+  {
    "src": "tools/stability.py",
    "version": 1,
    "gen": "current",
@@ -260,6 +296,15 @@
    "commit": "1bfcbfb",
    "sha256": "c1628b4b3d4f5a1098d6ad6a52cf1288f8d7416d06fa4709a7c3fcde5bc3ee37",
    "file": "stability/stability.v001__2026-11-03_1bfcbfb.py"
+  },
+  {
+   "src": "tools/stability.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "9c5bfb1760891381793969da9e423e76c3e6bd086467fbefcf082f5ee5c8e049",
+   "file": "stability/stability.v002__2026-11-05_fcba5fe.py"
   },
   {
    "src": "tools/thermal_calc.py",
@@ -278,6 +323,15 @@
    "commit": "15a1bce",
    "sha256": "6dd6aa5c8eea5b2e60aeae345a54fe437da1b753252e94e629366adf594f2a92",
    "file": "thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py"
+  },
+  {
+   "src": "tools/thermal_calc.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "e1794d2eaac408f864ac162b111512e6a02671093242342b106e767398c85a20",
+   "file": "thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py"
   }
  ]
 }

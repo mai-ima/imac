@@ -30,6 +30,8 @@
 <line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
 <text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
 <text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
 <line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
@@ -96,7 +98,7 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
-<text x="22.00" y="284.50" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
+<text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-06 サービストレイ</text>
@@ -126,10 +128,13 @@
 <text x="156" y="56.000000000000014" font-size="2.6">要素: ラジエーター取付4点(ARCTIC公式図)</text>
 <text x="156" y="61.20000000000002" font-size="2.6">要素: ファン/ctrl基板/ケーブルコーム/クリップ取付</text>
 <text x="156" y="66.40000000000002" font-size="2.6">要素: GPUクレードル座</text>
-<text x="156" y="71.60000000000002" font-size="2.6">要素: 吊りキーホール×4+拘束ネジ穴×2</text>
-<text x="156" y="76.80000000000003" font-size="2.6">要素: ハンドル(折りたたみ線材, 上端)</text>
-<text x="156" y="82.00000000000003" font-size="2.6">要素: AC電源インレット(C14)取付(下辺)・接地スタッドM4</text>
-<text x="156" y="87.20000000000003" font-size="2.6">要素: ボンディング編組取付座×2</text>
-<text x="156" y="92.40000000000003" font-size="2.6">接合: CP-03(吊りピン)</text>
-<text x="156" y="97.60000000000004" font-size="2.6">接合: 全内部部品</text>
+<text x="156" y="71.60000000000002" font-size="2.6">要素: ハンドル(折りたたみ線材, 上端)</text>
+<text x="156" y="76.80000000000003" font-size="2.6">要素: AC電源インレット(C14)取付(下辺)・接地スタッドM4</text>
+<text x="156" y="82.00000000000003" font-size="2.6">要素: ボンディング編組取付座×2</text>
+<text x="156" y="87.20000000000003" font-size="2.6">要素: トレイ板z3〜5(スラブ背面から)。背板との間に断熱シート3mm(CP-19)</text>
+<text x="156" y="92.40000000000003" font-size="2.6">要素: 吊りキーホール×4(丸Ø9.2+細溝W5.1×12, SUSブッシュCP-05)+拘束ネジ穴×2</text>
+<text x="156" y="97.60000000000004" font-size="2.6">要素: 角R44(ドーム内角に合わせる)</text>
+<text x="156" y="102.80000000000004" font-size="2.6">要素: スタンドオフ: 基板6.35mm×4、他3.0mm(PSU/ラジエーター/ctrl/GPUクレードル)</text>
+<text x="156" y="108.00000000000004" font-size="2.6">接合: CP-03(吊りピン)</text>
+<text x="156" y="113.20000000000005" font-size="2.6">接合: 全内部部品</text>
 </g></svg>

@@ -134,12 +134,12 @@
 <line x1="96.70" y1="50.12" x2="96.70" y2="36.32" stroke="#c0392b" stroke-width="0.9"  marker-end="url(#ar)"/>
 <text x="89.8" y="50.1" font-size="2.6" text-anchor="middle" fill="#c0392b" >正圧の逃げ: プレナムの熱気を全面格子から排気(ケースファン無し)</text>
 <text x="321.4" y="44.0" font-size="4" text-anchor="start" fill="#000" font-weight="bold">熱収支(ピーク)</text>
-<text x="321.4" y="52.0" font-size="3" text-anchor="start" fill="#222" >CPU Ryzen 7 9800X3D PPT: 162 W</text>
-<text x="321.4" y="58.0" font-size="3" text-anchor="start" fill="#222" >GPU RTX 5060 Ti TGP: 180 W</text>
+<text x="321.4" y="52.0" font-size="3" text-anchor="start" fill="#222" >CPU Ryzen 9 9950X3D PPT: 230 W</text>
+<text x="321.4" y="58.0" font-size="3" text-anchor="start" fill="#222" >GPU RTX 5070 Ti TGP: 300 W</text>
 <text x="321.4" y="64.0" font-size="3" text-anchor="start" fill="#222" >基板/SSD/RAM/ファン: 40 W</text>
 <text x="321.4" y="70.0" font-size="3" text-anchor="start" fill="#222" >PSU損失(効率92%): 35 W</text>
 <text x="321.4" y="76.0" font-size="3" text-anchor="start" fill="#222" >コントローラ/パネル: 30 W</text>
-<text x="321.4" y="85.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">合計 約447 W</text>
+<text x="321.4" y="85.0" font-size="3.4" text-anchor="start" fill="#000" font-weight="bold">合計 約635 W</text>
 <text x="321.4" y="94.0" font-size="2.8" text-anchor="start" fill="#222" >正圧設計: ラジエーターは外気直吸気(CPU熱はプレナムへ入る)。詳細 docs/thermal-analysis.md</text>
 <text x="321.4" y="100.0" font-size="2.8" text-anchor="start" fill="#222" >ΔT計算は tools/fitcheck.py。実機は①CPU/GPU温度②ファン回転数③表面温度の実測が必須(未測定)。</text>
 <text x="321.4" y="106.0" font-size="2.8" text-anchor="start" fill="#c0392b" >懸念: ドームの穴開口率・吸気経路の圧損、ポンプ下のSSD/VRM冷却(VRMファン60mm付き)。</text></g></svg>

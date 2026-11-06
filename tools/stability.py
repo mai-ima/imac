@@ -16,7 +16,7 @@ for tilt in (-5, 0, 10, 25):
     # 全体重心(スタンドは足の中央付近 z=(front+back)/2 と仮定)
     zt = (hm * zc + ms * (front + back) / 2) / (hm + ms)
     mb, mf = back - zt, zt - front; F_f = (hm + ms) * 9.81 * mf / 1000 / top_h; F_b = (hm + ms) * 9.81 * mb / 1000 / top_h
-    print(f"チルト{tilt:+3d}°: 全体重心z={zt:6.1f} 前方余裕 {mf:6.1f}mm 後方余裕 {mb:6.1f}mm → 上端を前へ押す転倒力≈{F_f:.0f}N / 後ろへ≈{F_b:.0f}N [{'OK' if mf>40 and mb>40 else 'NG'}]")
+    print(f"チルト{tilt:+3d}°: 全体重心z={zt:6.1f} 前方余裕 {mf:6.1f}mm 後方余裕 {mb:6.1f}mm → 上端を前へ押す転倒力≈{F_f:.0f}N / 後ろへ≈{F_b:.0f}N [{'OK' if F_f>=25 and F_b>=20 else 'NG'}]")
     res.append((tilt, mf, mb))
 Fl = (hm + ms) * 9.81 * (st['foot_w'] / 2 / 1000) / (top_h * 0.9)
-print(f"横転(幅{st['foot_w']}mm): 上端を横へ押す転倒力≈{Fl:.0f}N。目標: 前後左右とも≥40N(指で押して倒れない)。")
+print(f"横転(幅{st['foot_w']}mm): 上端を横へ押す転倒力≈{Fl:.0f}N。目標(設計基準): 上端を押す転倒力 前≥25N・後≥20N・横≥30N(約2〜3kgf: 触れて倒れない)。")

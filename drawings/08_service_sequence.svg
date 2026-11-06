@@ -30,6 +30,8 @@
 <line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
 <text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
 <text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
 <line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>

@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#222"/></marker><marker id="ag" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1a7f37"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
+<rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
+<line x1="68.75" y1="10" x2="68.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="68.75" y1="287" x2="68.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="44.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<text x="44.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<line x1="117.5" y1="10" x2="117.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="117.5" y1="287" x2="117.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="93.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<text x="93.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<line x1="166.25" y1="10" x2="166.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="166.25" y1="287" x2="166.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="141.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<text x="141.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<line x1="215.0" y1="10" x2="215.0" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="215.0" y1="287" x2="215.0" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="190.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<text x="190.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<line x1="263.75" y1="10" x2="263.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="263.75" y1="287" x2="263.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="239.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<text x="239.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<line x1="312.5" y1="10" x2="312.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="312.5" y1="287" x2="312.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="288.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<text x="288.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<line x1="361.25" y1="10" x2="361.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="148.5" x2="405" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="217.75" x2="25" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="217.75" x2="405" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<text x="15.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="415.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="15.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="415.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="15.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<line x1="1" y1="148.5" x2="6" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="414" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="1" x2="215.0" y2="6" stroke="#000" stroke-width="0.5"/>
+<line x1="215.0" y1="291" x2="215.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
+<line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
+<line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="257" x2="330" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
+<text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">配線図(電源・信号・冷却)</text>
+<text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
+<text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
+<text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
+<text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-PKG-12</text>
+<text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
+<text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
+<text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
+<text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
+<text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
+<text x="332.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">NTS</text>
+<text x="372.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">単位 / Unit</text>
+<text x="372.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">mm</text>
+<text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
+<text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
+<text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値)</text>
+<g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
+<text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
+<rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
+<line x1="130" y1="254" x2="200" y2="254" stroke="#000" stroke-width="0.25"/>
+<line x1="138" y1="249" x2="138" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="170" y1="249" x2="170" y2="287" stroke="#000" stroke-width="0.25"/>
+<text x="132.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">Rev</text>
+<text x="140.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">内容 / Description</text>
+<text x="172.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">日付</text>
+<text x="132.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">A</text>
+<text x="140.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">初版(v6)</text>
+<text x="172.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-03</text>
+<text x="132.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">B</text>
+<text x="140.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">ドーム/トレイ/v7</text>
+<text x="172.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-05</text>
+<text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
+<text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
+<text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">ケーブル長は経路折れ線長×1.15。PSU付属長は小売記載(未確認)</text>
+<text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+<g transform="translate(19,12) scale(0.93)">
+<rect x="20.00" y="120.00" width="40.00" height="20.00" rx="2" fill="#fde" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="40.0" y="128.0" font-size="3" text-anchor="middle" fill="#222" >AC100V</text>
+<text x="40.0" y="134.0" font-size="3" text-anchor="middle" fill="#222" >C14インレット</text>
+<rect x="80.00" y="115.00" width="50.00" height="30.00" rx="2" fill="#ddd" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="105.0" y="126.0" font-size="3.4" text-anchor="middle" fill="#222" >Corsair SF750</text>
+<text x="105.0" y="133.0" font-size="2.8" text-anchor="middle" fill="#222" >SFX 750W 80+Plat</text>
+<text x="105.0" y="139.0" font-size="2.6" text-anchor="middle" fill="#222" >ATX3.1 / 12V-2x6対応</text>
+<line x1="60.00" y1="130.00" x2="80.00" y2="130.00" stroke="#c00" stroke-width="0.6"  marker-end="url(#ar)"/>
+<text x="70.0" y="128.0" font-size="2.6" text-anchor="middle" fill="#222" >C13(AC)</text>
+<rect x="190.00" y="40.00" width="80.00" height="22.00" rx="2" fill="#eef" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="230.0" y="52.0" font-size="3" text-anchor="middle" fill="#222" >ASUS X870-I(ATX24+EPS)</text>
+<line x1="130.00" y1="130.00" x2="190.00" y2="51.00" stroke="#06c" stroke-width="0.5"  marker-end="url(#ar)"/>
+<text x="160.0" y="88.5" font-size="2.8" text-anchor="middle" fill="#06c" >W1,W2</text>
+<rect x="190.00" y="75.00" width="80.00" height="22.00" rx="2" fill="#eef" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="230.0" y="87.0" font-size="3" text-anchor="middle" fill="#222" >ASUS Dual RTX 5060 Ti(8pin)</text>
+<line x1="130.00" y1="130.00" x2="190.00" y2="86.00" stroke="#06c" stroke-width="0.5"  marker-end="url(#ar)"/>
+<text x="160.0" y="106.0" font-size="2.8" text-anchor="middle" fill="#06c" >W3</text>
+<rect x="190.00" y="110.00" width="80.00" height="22.00" rx="2" fill="#eef" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="230.0" y="122.0" font-size="3" text-anchor="middle" fill="#222" >4K eDPコントローラ(12V)</text>
+<line x1="130.00" y1="130.00" x2="190.00" y2="121.00" stroke="#06c" stroke-width="0.5"  marker-end="url(#ar)"/>
+<text x="160.0" y="123.5" font-size="2.8" text-anchor="middle" fill="#06c" >W4</text>
+<rect x="190.00" y="145.00" width="80.00" height="22.00" rx="2" fill="#eef" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="230.0" y="157.0" font-size="3" text-anchor="middle" fill="#222" >Noctua NF-A12x25(基板FAN_HDR)</text>
+<line x1="130.00" y1="130.00" x2="190.00" y2="156.00" stroke="#888" stroke-width="0.5" stroke-dasharray="2,1" marker-end="url(#ar)"/>
+<text x="160.0" y="141.0" font-size="2.8" text-anchor="middle" fill="#06c" >基板</text>
+<rect x="190.00" y="180.00" width="80.00" height="22.00" rx="2" fill="#eef" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="230.0" y="192.0" font-size="3" text-anchor="middle" fill="#222" >ARCTIC AIO ポンプ/P12 Pro×2(基板)</text>
+<line x1="130.00" y1="130.00" x2="190.00" y2="191.00" stroke="#888" stroke-width="0.5" stroke-dasharray="2,1" marker-end="url(#ar)"/>
+<text x="160.0" y="158.5" font-size="2.8" text-anchor="middle" fill="#06c" >基板</text>
+<rect x="300.00" y="110.00" width="60.00" height="22.00" rx="2" fill="#fed" fill-opacity="1" stroke="#333" stroke-width="0.4"/>
+<text x="330.0" y="122.0" font-size="3" text-anchor="middle" fill="#222" >パネル 4K LM270WR3</text>
+<line x1="270.00" y1="121.00" x2="300.00" y2="121.00" stroke="#a50" stroke-width="0.5"  marker-end="url(#ar)"/>
+<text x="285.0" y="118.0" font-size="2.8" text-anchor="middle" fill="#a50" >W5 アンビリカル</text>
+<text x="20.0" y="215.0" font-size="4" text-anchor="start" fill="#000" font-weight="bold">ケーブル表</text>
+<text x="20.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">ID</text>
+<text x="32.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">名称</text>
+<text x="90.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">PSU側→機器側</text>
+<text x="170.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">線径AWG</text>
+<text x="190.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">設計長mm</text>
+<text x="212.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">PSU付属mm</text>
+<text x="240.0" y="222.0" font-size="3" text-anchor="start" fill="#000" font-weight="bold">判定</text>
+<text x="20.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >W1</text>
+<text x="32.0" y="229.0" font-size="2.9" text-anchor="start" fill="#222" >ATX 24ピン</text>
+<text x="90.0" y="229.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(24p) → 基板 ATX24</text>
+<text x="170.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >18</text>
+<text x="190.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >65</text>
+<text x="212.0" y="229.0" font-size="3" text-anchor="start" fill="#222" >300</text>
+<text x="240.0" y="229.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="235.0" font-size="3" text-anchor="start" fill="#222" >W2</text>
+<text x="32.0" y="235.0" font-size="2.9" text-anchor="start" fill="#222" >CPU EPS 8ピン</text>
+<text x="90.0" y="235.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(EPS) → 基板 CPU_12V(8p)</text>
+<text x="170.0" y="235.0" font-size="3" text-anchor="start" fill="#222" >16</text>
+<text x="190.0" y="235.0" font-size="3" text-anchor="start" fill="#222" >260</text>
+<text x="212.0" y="235.0" font-size="3" text-anchor="start" fill="#222" >400</text>
+<text x="240.0" y="235.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >W3</text>
+<text x="32.0" y="241.0" font-size="2.9" text-anchor="start" fill="#222" >GPU PCIe 6+2ピン</text>
+<text x="90.0" y="241.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(PCIe) → GPU 8ピン</text>
+<text x="170.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >16</text>
+<text x="190.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >280</text>
+<text x="212.0" y="241.0" font-size="3" text-anchor="start" fill="#222" >400</text>
+<text x="240.0" y="241.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >W6</text>
+<text x="32.0" y="247.0" font-size="2.9" text-anchor="start" fill="#222" >AC電源(C14インレット→PSU C13)</text>
+<text x="90.0" y="247.0" font-size="2.7" text-anchor="start" fill="#222" >C14インレット → SF750 AC入力</text>
+<text x="170.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >16</text>
+<text x="190.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >576</text>
+<text x="212.0" y="247.0" font-size="3" text-anchor="start" fill="#222" >600</text>
+<text x="240.0" y="247.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >W4</text>
+<text x="32.0" y="253.0" font-size="2.9" text-anchor="start" fill="#222" >コントローラ基板 12V</text>
+<text x="90.0" y="253.0" font-size="2.7" text-anchor="start" fill="#222" >PSU modular(SATA/周辺) → ctrl_board DC入力</text>
+<text x="170.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >20</text>
+<text x="190.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >456</text>
+<text x="212.0" y="253.0" font-size="3" text-anchor="start" fill="#222" >-</text>
+<text x="240.0" y="253.0" font-size="3" text-anchor="start" fill="#000" >OK</text>
+<text x="20.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >W5</text>
+<text x="32.0" y="259.0" font-size="2.9" text-anchor="start" fill="#222" >アンビリカル(eDP 30p/12V/USB)</text>
+<text x="90.0" y="259.0" font-size="2.7" text-anchor="start" fill="#222" >ctrl_board eDP → パネル背面コネクタ</text>
+<text x="170.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >-</text>
+<text x="190.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >355</text>
+<text x="212.0" y="259.0" font-size="3" text-anchor="start" fill="#222" >250</text>
+<text x="240.0" y="259.0" font-size="3" text-anchor="start" fill="#c0392b" >不足(延長/別ケーブル要)</text>
+<text x="20.0" y="266.0" font-size="3" text-anchor="start" fill="#222" >電力: 12V系 CPU162W+GPU180W+その他≒60W ⇒ ピーク約400W / 750W = 53%(余裕47%)。補助電源はEPS×1, PCIe 8pin×1のみ使用(予備: EPS×1, PCIe×1, 12V-2x6×1)。</text>
+<text x="20.0" y="272.0" font-size="3" text-anchor="start" fill="#222" >接地: AC保護アース→PSU筐体→トレイ(M3スタンドオフ接触)→ドーム(ガスケット)→背板の順で導通。ファンはPWM 4pin。</text></g></svg>

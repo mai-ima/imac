@@ -30,6 +30,8 @@
 <line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
 <text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
 <text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
 <line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
 <line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
@@ -96,7 +98,7 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
-<text x="22.00" y="284.50" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計</text>
+<text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-05 キーホール補強ブッシュ</text>

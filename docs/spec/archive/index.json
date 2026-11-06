@@ -28,6 +28,15 @@
    "file": "custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "184ad21",
+   "sha256": "9f55f14ce6a568ac7397ca37086615ee245800fb5288f35f2238f3decc6449bc",
+   "file": "custom-parts/custom-parts.v004__2026-11-05_184ad21.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -44,6 +53,15 @@
    "commit": "b97eaae",
    "sha256": "c7b4965ca832ad25ba46693db12ebaa0e26cd254db8bfe685f5ed687a07aefaf",
    "file": "joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md"
+  },
+  {
+   "src": "docs/spec/panel-thermal.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "62fca52755db989762dd53ff6923e45153c2d2e3e4ab7662179985e226c72092",
+   "file": "panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md"
   },
   {
    "src": "docs/spec/performance-benchmark.md",
@@ -91,6 +109,15 @@
    "file": "system-spec/system-spec.v004__2026-11-05_71b7afb.md"
   },
   {
+   "src": "docs/spec/system-spec.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "618764708bd6384540fbd0db77f29a2e5e2a11c177365ae524379d7a17708981",
+   "file": "system-spec/system-spec.v005__2026-11-06_fc36218.md"
+  },
+  {
    "src": "docs/spec/wiring-spec.md",
    "version": 1,
    "gen": "current",
@@ -107,6 +134,15 @@
    "commit": "fcba5fe",
    "sha256": "7540a9a5a0255cff881300a5cb17cb3ddb73642aad091ddb6e7ba672d2384233",
    "file": "wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md"
+  },
+  {
+   "src": "docs/spec/wiring-spec.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "80d7407",
+   "sha256": "3efebb04f7b70017b348498a25446551f03ad9cafd7e7dc432a91300070cce52",
+   "file": "wiring-spec/wiring-spec.v003__2026-11-06_80d7407.md"
   }
  ]
 }

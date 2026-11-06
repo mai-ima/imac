@@ -33,7 +33,7 @@ Y = lambda y: oy + (B - y) * sc; X = lambda x: ox + x * sc
 b.append(rect(ox, oy, B * sc, B * sc, '#eaf3ea', '#000', .6))
 feats = []
 sx, sy = BL['socket_center']
-feats += [('AM5ソケット(LGA1718, 40x40 IHS: AMD Ryzen 7 9800X3D)', sx - 30, sy - 30, 60, 60, '#cfd2d6'), ('CPU IHS 40x40', sx - 20, sy - 20, 40, 40, '#9da3ab')]
+feats += [('AM5ソケット(LGA1718, 40x40 IHS: AMD Ryzen 9 9950X3D)', sx - 30, sy - 30, 60, 60, '#cfd2d6'), ('CPU IHS 40x40', sx - 20, sy - 20, 40, 40, '#9da3ab')]
 for i, (y0, y1) in enumerate(BL['dimm_slots']['y']): feats.append((f'DDR5 DIMMスロット{i+1} (x{BL["dimm_slots"]["x"][0]}-{BL["dimm_slots"]["x"][1]})', BL['dimm_slots']['x'][0], y0, BL['dimm_slots']['x'][1] - BL['dimm_slots']['x'][0], y1 - y0, '#9cd'))
 a = BL['atx_pwr']; feats.append(('ATX 24ピン', a['x'][0], a['y'][0], a['x'][1] - a['x'][0], a['y'][1] - a['y'][0], '#fff'))
 a = BL['cpu_12v']; feats.append(('CPU 8ピン(EPS)', a['x'][0], a['y'][0], a['x'][1] - a['x'][0], a['y'][1] - a['y'][0], '#fff'))
@@ -111,25 +111,16 @@ save('11b_section_BB.svg', section('断面 B-B (x=350: GPU/ラジエーター)',
 
 # ================= 配線(ケーブル定義と長さ) =================
 bx, by, bz = I['board']['pos']; gx, gy, gz = I['gpu']['pos']; px, py, pz = I['psu']['pos']; cx, cy, cz = I['ctrl_board']['pos']; Z1 = bz + 1.6
-CAB = [
- dict(id='W1', name='ATX 24ピン', frm='PSU modular(24p)', to='基板 ATX24', awg=18, conn='24p (20+4)', ref_mm=300, pts=[(px+20, py-6, pz+25), (px+8, py-20, pz+30), (bx+36, by+176, Z1+20), (bx+38, by+164, Z1+12)]),
- dict(id='W2', name='CPU EPS 8ピン', frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', awg=16, conn='EPS 4+4', ref_mm=400, pts=[(px+38, py-6, pz+25), (px+30, py-16, 30), (bx-6, 190, 26), (bx-6, by+40, 18), (bx+6, by+12, Z1+8)]),
- dict(id='W3', name='GPU PCIe 6+2ピン', frm='PSU modular(PCIe)', to='GPU 8ピン', awg=16, conn='PCIe 6+2', ref_mm=400, pts=[(px+76, py-6, pz+25), (px+100, py-20, 40), (300, 198, 58), (gx+102, gy+205, 58), (gx+102, gy+212, gz+42)]),
- dict(id='W6', name='AC電源(C14インレット→PSU C13)', frm='C14インレット', to='SF750 AC入力', awg=16, conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, pts=[(454, 44, 14), (436, 58, 14), (412, 70, 12), (412, 300, 12), (350, 325, 12), (213, 322, 12), (213, 305, 15)]),
- dict(id='W4', name='コントローラ基板 12V', frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', awg=20, conn='SATA電源 or 2pin', ref_mm=0, pts=[(px+2, py+50, 22), (120, 215, 24), (88, 200, 18), (80, 150, 10), (cx+50, cy+112, cz+4)]),
- dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', frm='ctrl_board eDP', to='パネル背面コネクタ', awg=0, conn='eDP 30p + 12V + USB2 (ハーネス全長250mm=整備余長含む)', ref_mm=250, pts=[(cx+28, cy+146, cz+5), (cx+20, cy+165, 9), (8, 180, 6), (-2, 180, 1)]),
-]
-def plen(p): return sum(math.dist(p[i], p[i+1]) for i in range(len(p)-1))
-for c in CAB: c['len_mm'] = round(plen(c['pts']) * 1.15); c['verdict'] = ('OK' if (c['ref_mm'] == 0 or c['len_mm'] <= c['ref_mm']) else '不足(延長/別ケーブル要)')
-json.dump({'_doc': '配線定義(トレイ内座標)。長さ=経路折れ線長×1.15(余長)。ref_mm=PSU付属ケーブル長(小売記載、公式未確認)', 'cables': CAB}, open(f'{R}/model/cables.json', 'w'), ensure_ascii=False, indent=1)
+import cablemodel as CM      # 配線の単一情報源(tools/cablemodel.py → model/cables.json)
+CAB = CM.CAB
 
 # ================= 12 配線図 =================
 b = head('配線図(電源・信号・冷却)', 'PKG-12', note='ケーブル長は経路折れ線長×1.15。PSU付属長は小売記載(未確認)')
 def box(x, y, w, h, t, c='#eef', s=3.2): return [rect(x, y, w, h, c, '#333', .4, 1, 2), T(x + w / 2, y + h / 2 + 1, t, s, 'middle')]
 b += [rect(20, 120, 40, 20, '#fde', '#333', .4, 1, 2)]; b.append(T(40, 128, 'AC100V', 3, 'middle')); b.append(T(40, 134, 'C14インレット', 3, 'middle'))
-b += [rect(80, 115, 50, 30, '#ddd', '#333', .4, 1, 2)]; b.append(T(105, 126, 'Corsair SF750', 3.4, 'middle')); b.append(T(105, 133, 'SFX 750W 80+Plat', 2.8, 'middle')); b.append(T(105, 139, 'ATX3.1 / 12V-2x6対応', 2.6, 'middle'))
+b += [rect(80, 115, 50, 30, '#ddd', '#333', .4, 1, 2)]; b.append(T(105, 126, 'Corsair SF1000', 3.4, 'middle')); b.append(T(105, 133, 'SFX 1000W 80+Plat', 2.8, 'middle')); b.append(T(105, 139, 'ATX3.1 / 12V-2x6対応', 2.6, 'middle'))
 b.append(line(60, 130, 80, 130, '#c00', .6, '', 'marker-end="url(#ar)"')); b.append(T(70, 128, 'C13(AC)', 2.6, 'middle'))
-tg = [('ASUS X870-I(ATX24+EPS)', 40, 'W1,W2'), ('ASUS Dual RTX 5060 Ti(8pin)', 75, 'W3'), ('4K eDPコントローラ(12V)', 110, 'W4'), ('Noctua NF-A12x25(基板FAN_HDR)', 145, '基板'), ('ARCTIC AIO ポンプ/P12 Pro×2(基板)', 180, '基板')]
+tg = [('ASUS X870-I(ATX24+EPS)', 40, 'W1,W2'), ('RTX 5070 Ti(12V-2x6)', 75, 'W3'), ('4K eDPコントローラ(12V)', 110, 'W4'), ('Noctua NF-A12x25(基板FAN_HDR)', 145, '基板'), ('ARCTIC AIO ポンプ/P12 Pro×2(基板)', 180, '基板')]
 for (nm, y, cid) in tg:
     b += box(190, y, 80, 22, nm, '#eef', 3)
     b.append(line(130, 130, 190, y + 11, '#06c' if cid.startswith('W') else '#888', .5, '' if cid.startswith('W') else '2,1', 'marker-end="url(#ar)"')); b.append(T(160, (130 + y + 11) / 2 - 2, cid, 2.8, 'middle', '#06c'))
@@ -159,7 +150,7 @@ for k in range(2): b.append(arrow(fx + 25 + k * 50, fy + 130, fx + 25 + k * 50, 
 b.append(T(ox + (fx + 60) * sc, oy + (IH - fy - 130) * sc, '正圧の逃げ: プレナムの熱気を全面格子から排気(ケースファン無し)', 2.6, 'middle', '#c0392b'))
 tx = ox + IW * sc + 20
 b.append(T(tx, 44, '熱収支(ピーク)', 4, 'start', '#000', 'font-weight="bold"'))
-heat = [('CPU Ryzen 7 9800X3D PPT', 162), ('GPU RTX 5060 Ti TGP', 180), ('基板/SSD/RAM/ファン', 40), ('PSU損失(効率92%)', 35), ('コントローラ/パネル', 30)]
+heat = [('CPU Ryzen 9 9950X3D PPT', 230), ('GPU RTX 5070 Ti TGP', 300), ('基板/SSD/RAM/ファン', 40), ('PSU損失(効率92%)', 35), ('コントローラ/パネル', 30)]
 tot = sum(v for _, v in heat)
 for n, (k, v) in enumerate(heat): b.append(T(tx, 52 + n * 6, f'{k}: {v} W', 3))
 b.append(T(tx, 52 + len(heat) * 6 + 3, f'合計 約{tot} W', 3.4, 'start', '#000', 'font-weight="bold"'))
