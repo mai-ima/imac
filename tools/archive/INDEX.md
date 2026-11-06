@@ -8,6 +8,7 @@
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
 | cablemodel.py | v002 | current | 2026-11-06 | cca8bc2 | cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
+| drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
 | fitcheck.py | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py |
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |
@@ -25,6 +26,7 @@
 | gen_mfg_drawings.py | v004 | current | 2026-11-05 | a404097 | gen_mfg_drawings/gen_mfg_drawings.v004__2026-11-05_a404097.py |
 | gen_mfg_drawings.py | v005 | current | 2026-11-05 | 184ad21 | gen_mfg_drawings/gen_mfg_drawings.v005__2026-11-05_184ad21.py |
 | gen_mfg_drawings.py | v006 | current | 2026-11-06 | 80d7407 | gen_mfg_drawings/gen_mfg_drawings.v006__2026-11-06_80d7407.py |
+| gen_mfg_drawings.py | v007 | current | 2026-11-06 | 514e2e0 | gen_mfg_drawings/gen_mfg_drawings.v007__2026-11-06_514e2e0.py |
 | gen_package.py | v001 | current | 2026-11-05 | 27ca8ce | gen_package/gen_package.v001__2026-11-05_27ca8ce.py |
 | gen_package.py | v002 | current | 2026-11-05 | 2f8c0ac | gen_package/gen_package.v002__2026-11-05_2f8c0ac.py |
 | gen_package.py | v003 | current | 2026-11-05 | fcba5fe | gen_package/gen_package.v003__2026-11-05_fcba5fe.py |

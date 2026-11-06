@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,6 +98,9 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">status: official=公式確認 / retail=小売一致 / assumed=未確認。数量は設計値</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(19,12) scale(0.93)">
@@ -249,7 +252,7 @@
 <text x="262.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-10.svg</text>
 <text x="10.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >CP-11</text>
 <text x="28.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >チルト機構(ヒンジ+カウンターバランス)</text>
-<text x="150.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2〜4 + 定荷重ば</text>
+<text x="150.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持6N·m</text>
 <text x="210.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >-</text>
 <text x="250.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-11.svg</text>
@@ -294,4 +297,34 @@
 <text x="150.0" y="200.4" font-size="2.2" text-anchor="start" fill="#222" >断熱シート t3 (エアロゲル/フェノールフォーム, k≤0.04W</text>
 <text x="210.0" y="200.4" font-size="2.4" text-anchor="start" fill="#222" >566x347.3</text>
 <text x="250.0" y="200.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="200.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-19.svg</text></g></svg>
+<text x="262.0" y="200.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-19.svg</text>
+<text x="10.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >CP-20</text>
+<text x="28.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >首振りステータ板</text>
+<text x="150.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >110x110</text>
+<text x="250.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-20.svg</text>
+<text x="10.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >CP-21</text>
+<text x="28.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板+ネックウェブ</text>
+<text x="150.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >120x54</text>
+<text x="250.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-21.svg</text>
+<text x="10.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >CP-22</text>
+<text x="28.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >ネックプレート(前後)</text>
+<text x="150.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5</text>
+<text x="210.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >120x81</text>
+<text x="250.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-22.svg</text>
+<text x="10.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >CP-23</text>
+<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(尾部レバー+ダイスプリング2本)</text>
+<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >SUS304レバー t4 / ダイスプリング(JIS型, 市販)</text>
+<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >37x16</text>
+<text x="250.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-23.svg</text>
+<text x="10.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >CP-24</text>
+<text x="28.0" y="226.4" font-size="2.4" text-anchor="start" fill="#222" >ACコード引張逃がしクランプ(インレット背面)</text>
+<text x="150.0" y="226.4" font-size="2.2" text-anchor="start" fill="#222" >PA66-GF30(難燃UL94 V-0)+SUSばね</text>
+<text x="210.0" y="226.4" font-size="2.4" text-anchor="start" fill="#222" >40x28</text>
+<text x="250.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="226.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-24.svg</text></g></svg>

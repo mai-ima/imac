@@ -8,8 +8,10 @@
 | custom-parts.md | v003 | current | 2026-11-05 | fcba5fe | custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md |
 | custom-parts.md | v004 | current | 2026-11-05 | 184ad21 | custom-parts/custom-parts.v004__2026-11-05_184ad21.md |
 | custom-parts.md | v005 | current | 2026-11-06 | 9ff6031 | custom-parts/custom-parts.v005__2026-11-06_9ff6031.md |
+| custom-parts.md | v006 | current | 2026-11-06 | 514e2e0 | custom-parts/custom-parts.v006__2026-11-06_514e2e0.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
+| joint-matrix.md | v002 | current | 2026-11-05 | fcba5fe | joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |
 | performance-benchmark.md | v001 | current | 2026-11-05 | 853c2f5 | performance-benchmark/performance-benchmark.v001__2026-11-05_853c2f5.md |
 | system-spec.md | v001 | current | 2026-11-05 | b97eaae | system-spec/system-spec.v001__2026-11-05_b97eaae.md |

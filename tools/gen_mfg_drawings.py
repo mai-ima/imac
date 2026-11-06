@@ -78,11 +78,39 @@ b += dim_h(x0, x0 + SLAB * k, y0 + 90, f'スラブ {SLAB}', 8) + dim_h(x0, x0 + 
 b += [f'<text x="{x0}" y="{y0+135}" font-size="4">厚み構成(拡大 x1.6 の概略図)。ドーム板厚 t{SHEET_T}(外面最大厚 {Dm["total_t"]})。内部有効奥行 最大 {Dm["total_t"]-SLAB-WALL}mm</text>']
 sheet('04_section_stack', '厚み構成(断面)', 'MFG-04', b)
 
-# ---------------- 05 スタンド ----------------
-b = [rrect(gx, gy, ST_W * sc, (DROP) * sc, 3, fill='#c8cbd0', stroke='#000', stroke_width=.5), rrect(gx - 10, gy + DROP * sc, (ST_W + 20) * sc, 6 * sc, 2, fill='#c8cbd0', stroke='#000', stroke_width=.5)]
-b += dim_h(gx, gx + ST_W * sc, gy + DROP * sc + 4, f'幅 {ST_W}', 10) + dim_v(gx + ST_W * sc, gy, gy + DROP * sc, f'{DROP}', 6)
-b += [f'<text x="{gx}" y="{gy-6}" font-size="4">スタンド(一枚板) A6063/A5052 t8 アルマイト。足 奥行{FOOT}。ヒンジ: 市販トルクヒンジ(型番はBOM確定後)</text>']
-sheet('05_stand', 'スタンド', 'MFG-05', b)
+# ---------------- 05 スタンド(v9: 足300×290 + 首振りユニット + ネック + チルトバランサ) ----------------
+SWv = S['swivel']; STv = S['stand']; HYv = S['hinge']['axis_y']; BALv = json.load(open(f'{R}/model/balance.json'))
+b = []; s5 = 0.5
+# 平面図(上から) 原点 (40,50)。上=背面側 / 下=前面側
+ox, oy = 40, 50; fw5, fd5 = STv['foot_w'], STv['foot_depth']; cx5, cy5 = ox + fw5 * s5 / 2, oy + STv['foot_back'] * s5      # 首振り軸(足の中心線, 前100/後190)
+b.append(rrect(ox, oy, fw5 * s5, fd5 * s5, 3, fill='#e3e5e8', stroke='#000', stroke_width=.5))
+b.append(f'<circle cx="{cx5}" cy="{cy5}" r="{SWv["bearing_od"]/2*s5}" fill="#c8cbd0" stroke="#000" stroke-width=".4"/><circle cx="{cx5}" cy="{cy5}" r="{SWv["bearing_id"]/2*s5}" fill="#fff" stroke="#000" stroke-width=".3"/><circle cx="{cx5}" cy="{cy5}" r="{55*s5}" fill="none" stroke="#000" stroke-width=".3" stroke-dasharray="2 1"/>')
+for sg_ in (-1, 1):
+    ang = math.radians(90 + sg_ * (SWv['range_deg'] + 8.6)); b.append(f'<circle cx="{cx5 + 60*s5*math.cos(ang):.1f}" cy="{cy5 + 60*s5*math.sin(ang):.1f}" r="{4*s5}" fill="#333"/>')
+for k_ in range(6):
+    for (r_, lab) in ((SWv['pcd_inner']/2, 'i'), (SWv['pcd_outer']/2, 'o')):
+        an = math.radians(k_ * 60 + (30 if lab == 'i' else 0)); b.append(f'<circle cx="{cx5 + r_*s5*math.cos(an):.1f}" cy="{cy5 + r_*s5*math.sin(an):.1f}" r="1.2" fill="none" stroke="#000" stroke-width=".25"/>')
+for sx_ in (-1, 1):
+    for sy_ in (-1, 1): b.append(f'<circle cx="{ox + fw5*s5/2 + sx_*(fw5/2-24)*s5}" cy="{oy + fd5*s5/2 + sy_*(fd5/2-24)*s5}" r="{10*s5}" fill="#444"/>')
+b += dim_h(ox, ox + fw5 * s5, oy + fd5 * s5 + 6, f'幅 {fw5}', 8) + dim_v(ox + fw5 * s5 + 6, oy, oy + fd5 * s5, f'奥行 {fd5} (軸から前{STv["foot_front"]}/後{STv["foot_back"]})', 8)
+b += dim_v(ox - 6, oy, cy5, f'後 {STv["foot_back"]}', 6) + dim_v(ox - 14, cy5, oy + fd5 * s5, f'前 {STv["foot_front"]}', 6)
+b.append(f'<text x="{ox}" y="{oy-8}" font-size="4">平面図(上=背面) 首振りユニット Ø{SWv["bearing_od"]:g}軸受 / ストッパポスト r60 ±{SWv["range_deg"]+8.6:.1f}° / 軸受ボルト 内輪PCD{SWv["pcd_inner"]:g}×6・外輪PCD{SWv["pcd_outer"]:g}×6 / ゴム足Ø20×4</text>')
+# 側面断面(右へ): 縦は y=0 を地面。横=z(前面が左)
+sx0, sy0 = 250, 150; s6 = 0.9
+def Y(y): return sy0 - (y + DROP + 12) * s6         # y(設計)→図の縦(上が+)
+b.append(rrect(sx0, Y(-DROP), fd5 * s6 * 0.5, 12 * s6, 1, fill='#e3e5e8', stroke='#000', stroke_width=.4))      # 足(縮尺注: 側面図は奥行を0.5倍に圧縮表示)
+zc6 = sx0 + STv['foot_front'] * s6 * 0.5
+for i_, (lab, h_, col) in enumerate((('ステータ板 t6', 6, '#c8cbd0'), ('クロスローラ軸受 12', 12, '#aeb3ba'), ('ロータ板 t6 (+1内輪ボス)', 7, '#c8cbd0'))):
+    y0_ = -DROP + sum(h for h in (6, 12, 7)[:i_]); b.append(rrect(zc6 - 55 * s6 / 2 * 1.0, Y(y0_ + h_), 55 * s6, h_ * s6, .5, fill=col, stroke='#000', stroke_width=.3)); b.append(f'<text x="{zc6+34*s6}" y="{Y(y0_+h_/2)+1}" font-size="2.4">{lab}</text>')
+b.append(rrect(zc6 - 14 * s6, Y(HYv + 11), 28 * s6, (HYv + 11 - (-DROP + SWv['stack_h'])) * s6, 0.5, fill='#d7dadf', stroke='#000', stroke_width=.4))         # ネック側板(幅28)
+b.append(f'<circle cx="{zc6}" cy="{Y(HYv)}" r="{11*s6}" fill="#bfc3c9" stroke="#000" stroke-width=".4"/><circle cx="{zc6}" cy="{Y(HYv)}" r="{5*s6}" fill="#555"/>')          # 摩擦ヒンジ+軸
+e_, s_ = BALv['e'], BALv['s']
+b.append(f'<line x1="{zc6}" y1="{Y(HYv)}" x2="{zc6}" y2="{Y(HYv-e_)}" stroke="#a00" stroke-width="1.4"/><line x1="{zc6}" y1="{Y(HYv-e_)}" x2="{zc6}" y2="{Y(HYv-s_)}" stroke="#06a" stroke-width="2.2"/>')
+b.append(f'<text x="{zc6+10}" y="{Y(HYv-e_)+1}" font-size="2.4" fill="#a00">尾部レバー e={e_}</text><text x="{zc6+10}" y="{Y(HYv-(e_+s_)/2)+1}" font-size="2.4" fill="#06a">ダイスプリング(取付長{BALv["lmin"]:.0f}〜{BALv["lmax"]:.0f}) アンカー s={s_}</text>')
+b += dim_v(zc6 + 45, Y(-DROP), Y(HYv), f'足上面〜ヒンジ軸 {DROP+HYv}', 8) + dim_v(zc6 - 40, Y(-DROP + SWv['stack_h']), Y(-DROP), f'首振りユニット {SWv["stack_h"]:g}', 8)
+b.append(f'<text x="{sx0-60}" y="{sy0-125}" font-size="4">側面断面(奥行は0.5倍に圧縮)</text><text x="{sx0-60}" y="{sy0-119}" font-size="2.8">足t12+ballast / 首振り積層25 / ネック側板 / ヒンジ軸Ø10+摩擦ヒンジ / バランサ</text>')
+b.append(f'<text x="40" y="{oy+fd5*s5+40}" font-size="3">注記: チルト {S["hinge"]["tilt_min_deg"]:+g}°〜{S["hinge"]["tilt_max_deg"]:+g}°(ゴムストッパ)、首振り ±{SWv["range_deg"]:g}°(ゴムポスト)。ballast鋼板 {STv["ballast_kg"]}kg。部品: CP-10/20/21/22/23。型番は U26/U50/U51。図面はPRELIMINARY(設計値)。</text>')
+sheet('05_stand', 'スタンド(足・首振り・ネック・バランサ)', 'MFG-05', b)
 
 # ---------------- DXF (v8: 現行形状。レイヤ別・実寸 mm・単位mm。背板/トレイ/ドームは前面視の座標(x右/y上)) ----------------
 doc = ezdxf.new('R2010'); doc.units = 4; msp = doc.modelspace()

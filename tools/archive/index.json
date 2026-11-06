@@ -55,6 +55,15 @@
    "file": "drawlib/drawlib.v001__2026-11-06_80d7407.py"
   },
   {
+   "src": "tools/drawlib.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "99b9bfea07a1353ad0eb9dc3d183d5f88d63d6a3f93ba07d6d1cba4ca5bdfd34",
+   "file": "drawlib/drawlib.v002__2026-11-06_514e2e0.py"
+  },
+  {
    "src": "tools/fitcheck.py",
    "version": 1,
    "gen": "current",
@@ -206,6 +215,15 @@
    "commit": "80d7407",
    "sha256": "0bd7dc0145a3ac37d84223afc990481b41390ae604cc0ee71a04f22b8f2d1e4f",
    "file": "gen_mfg_drawings/gen_mfg_drawings.v006__2026-11-06_80d7407.py"
+  },
+  {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "fc7c04c137ad3908c9fb6542194613bb4cf96d452225179c47f7bd8bd52ae59a",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v007__2026-11-06_514e2e0.py"
   },
   {
    "src": "tools/gen_package.py",

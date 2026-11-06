@@ -61,7 +61,7 @@
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
-<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">対称摩擦ヒンジ(Reell PHL/PHC級)×2〜4 + 定荷重ばね/ガススプリング(型番未選定)</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持6N·m) + ダイスプリング2本+尾部レバー(CP-2</text>
 <text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
 <text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
 <text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,6 +98,9 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 方式決定・部品未選定(U26/U27)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
@@ -107,7 +110,7 @@
 <text x="156" y="35.2" font-size="2.6">表面処理: -</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: 同軸度±0.05</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: ヒンジブロック(150×22×24, A6063)+カバー</text>
-<text x="156" y="50.80000000000001" font-size="2.6">要素: 摩擦ヒンジ(Reell PHL/PHC級)×2、定荷重ばね+カム(スプール+ばね帯 幅40×t0.3)</text>
+<text x="156" y="50.80000000000001" font-size="2.6">要素: 摩擦ヒンジ(Reell PHL/PHC級)×2、ダイスプリング+尾部レバー(CP-23)</text>
 <text x="156" y="56.000000000000014" font-size="2.6">要素: 機械ストッパ×2、Eクリップ×4、軸Ø10 SUS、貫通ボルトM6×4+SPCC裏当て+A5052補強板</text>
 <text x="156" y="61.20000000000002" font-size="2.6">要素: 設計トルク曲線: docs/hinge-design.md(質量実測 U25 後に確定)</text>
 <text x="156" y="66.40000000000002" font-size="2.6">接合: CP-10</text>

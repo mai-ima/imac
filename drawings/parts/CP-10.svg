@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,6 +98,9 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
@@ -109,8 +112,8 @@
 <text x="156" y="30" font-size="2.6">加工: 押出→CNC(ヒンジ受け、M6穴、ケーブル通し)</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: 硬質アルマイト(接触面)+ダイヤモンドカット</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ±0.1(ヒンジ軸穴H7)</text>
-<text x="156" y="45.60000000000001" font-size="2.6">要素: 足: 幅220×奥行230(ヒンジ軸の前90/後140)、厚12mm中空+鋼板ballast 6mm(≈</text>
-<text x="156" y="49.80000000000001" font-size="2.6">1.8kg)</text>
+<text x="156" y="45.60000000000001" font-size="2.6">要素: 足: 幅300×奥行290(ヒンジ軸の前100/後190)、厚12mm中空+鋼板ballast(3.0k</text>
+<text x="156" y="49.80000000000001" font-size="2.6">g, 厚さは質量から算出≈5.2mm)。上面中央に首振りユニット(CP-20)</text>
 <text x="156" y="55.000000000000014" font-size="2.6">要素: ゴム足φ20×4</text>
 <text x="156" y="60.20000000000002" font-size="2.6">要素: 腕: A6063 t8(幅120)、ヒンジ軸Ø10を保持</text>
 <text x="156" y="65.40000000000002" font-size="2.6">要素: ヒンジ機構は CP-11 / ヒンジブロックは背板へM6貫通×4+裏当て鋼板</text>

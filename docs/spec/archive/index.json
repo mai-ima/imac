@@ -55,6 +55,15 @@
    "file": "custom-parts/custom-parts.v005__2026-11-06_9ff6031.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "46c29f52f5772039c43786b17fb4d79365aab495a13fc5933b4355db268bb92c",
+   "file": "custom-parts/custom-parts.v006__2026-11-06_514e2e0.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -71,6 +80,15 @@
    "commit": "b97eaae",
    "sha256": "c7b4965ca832ad25ba46693db12ebaa0e26cd254db8bfe685f5ed687a07aefaf",
    "file": "joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md"
+  },
+  {
+   "src": "docs/spec/joint-matrix.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "21c1b02e965f49b5c3fe0c6b4c53d62713b6146d1991eed4b9478d46d88b41ab",
+   "file": "joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md"
   },
   {
    "src": "docs/spec/panel-thermal.md",

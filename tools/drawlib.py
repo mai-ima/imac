@@ -1,7 +1,7 @@
 """業界標準(ISO)準拠の図枠/表題欄ライブラリ。
 参照規格: ISO 5457(用紙サイズ/図枠: A3=420×297, 余白 左20/他10, 中心マーク, 区画記号), ISO 7200(表題欄の必須項目: 図面番号/題名/所有者/作成者/承認者/日付/改訂/用紙番号/用紙サイズ/縮尺/投影法/単位),
 ISO 128-20(線の種類: 太0.5/細0.25, 破線/一点鎖線), ISO 129-1(寸法記入: 矢印・補助線), ISO 2768-mK(普通公差), ISO 5456-2(第三角法の投影記号), ISO 1101(幾何公差の枠), ISO 1302(表面性状記号)。
-使い方: frame(title, num, scale='1:1', material='', finish='', rev='C', sheet='1/1', note='') -> SVG要素の文字列リスト(viewBox 0 0 420 297)。"""
+使い方: frame(title, num, scale='1:1', material='', finish='', rev='D', sheet='1/1', note='') -> SVG要素の文字列リスト(viewBox 0 0 420 297)。"""
 import datetime, os
 W, H = 420, 297
 DATE = '2026-11-06'      # 発行日(リリース時に更新。再生成のたびに変わらないよう固定)
@@ -15,7 +15,7 @@ def projection_symbol(x, y, third=True):
     # 円錐台の正面図(台形) と 側面図(同心円)  第三角法: 側面図(右)が正面図の右側
     s += ['<path d="M0,2 L9,0 L9,8 L0,6 Z"/>', ln(-1, 4, 10, 4, .15, '3,0.6,0.6,0.6'), '<circle cx="15" cy="4" r="4"/>', '<circle cx="15" cy="4" r="2"/>', ln(10, 4, 20, 4, .15, '3,0.6,0.6,0.6'), ln(15, -1, 15, 9, .15, '3,0.6,0.6,0.6')]
     s.append('</g>'); return ''.join(s)
-def frame(title, num, scale='1:1', material='-', finish='-', rev='C', sheet='1/1', note='', tol='ISO 2768-mK', third=True, size='A3'):
+def frame(title, num, scale='1:1', material='-', finish='-', rev='D', sheet='1/1', note='', tol='ISO 2768-mK', third=True, size='A3'):
     o = []
     o.append('<rect width="100%" height="100%" fill="#fff"/>')
     o.append(f'<rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="#000" stroke-width=".18"/>')                 # 用紙外形(トリム)
@@ -46,7 +46,8 @@ def frame(title, num, scale='1:1', material='-', finish='-', rev='C', sheet='1/1
     o += [f'<rect x="{rx}" y="{ry}" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>', ln(rx, ry + 5, rx + 70, ry + 5, .25), ln(rx + 8, ry, rx + 8, ry + 38, .25), ln(rx + 40, ry, rx + 40, ry + 38, .25),
           txt(rx + 2, ry + 3.6, 'Rev', 2.0), txt(rx + 10, ry + 3.6, '内容 / Description', 2.0), txt(rx + 42, ry + 3.6, '日付', 2.0),
           txt(rx + 2, ry + 9, 'A', 2.0), txt(rx + 10, ry + 9, '初版(v6)', 2.0), txt(rx + 42, ry + 9, '2026-11-03', 2.0), txt(rx + 2, ry + 14, 'B', 2.0), txt(rx + 10, ry + 14, 'ドーム/トレイ/v7', 2.0), txt(rx + 42, ry + 14, '2026-11-05', 2.0),
-          txt(rx + 2, ry + 19, rev, 2.0), txt(rx + 10, ry + 19, 'v8: 5070Ti/SF1000/断熱/再配置', 2.0), txt(rx + 42, ry + 19, DATE, 2.0)]
+          txt(rx + 2, ry + 19, 'C', 2.0), txt(rx + 10, ry + 19, 'v8: 5070Ti/SF1000/断熱/再配置', 2.0), txt(rx + 42, ry + 19, '2026-11-06', 2.0),
+          txt(rx + 2, ry + 24, 'D', 2.0), txt(rx + 10, ry + 24, 'v9: 首振り/チルト拡大', 2.0), txt(rx + 42, ry + 24, DATE, 2.0)]
     if note: o.append(txt(22, by - 2, note[:150], 2.4))
     o.append(txt(22, 18.5, '注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。', 2.3, fill='#444'))
     return o

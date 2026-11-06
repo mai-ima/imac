@@ -69,7 +69,7 @@
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
 <text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
 <text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
-<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">C</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
 <text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
 <text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
 <text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
@@ -98,6 +98,9 @@
 <text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
 <text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
 <text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
 <g transform="translate(22,18) scale(1.2)">
@@ -108,19 +111,24 @@
 <line x1="8" y1="30" x2="8" y2="112.29697986577182" stroke="#06c" stroke-width=".3"/><text x="6" y="71.14848993288591" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 71.14848993288591)">377.3</text>
 <text x="156" y="30" font-size="2.6">加工: [試作] 5軸CNC削り出し(中空形状, t2.0相当)または2ピース溶接+研磨+アルマイト / [量産</text>
 <text x="156" y="34.2" font-size="2.6">] 絞り(ハイドロフォーム)。板厚はt2.0に統一(spec.dome.sheet_t)。製法/金型費は U39</text>
-<text x="156" y="39.400000000000006" font-size="2.6">表面処理: アルマイトII(外面)/接地面マスク</text>
-<text x="156" y="44.60000000000001" font-size="2.6">公差: 外形±0.3, 縁面の平面度0.3(ガスケット面)</text>
-<text x="156" y="49.80000000000001" font-size="2.6">要素: 縁の内奥行6mm→内面最大101mm(smoothstep, run 64mm)、外面最大総厚はスラブ2</text>
-<text x="156" y="54.000000000000014" font-size="2.6">5+104=129</text>
-<text x="156" y="59.20000000000002" font-size="2.6">要素: 全面均一パーフォレーション Ø2.4×ピッチ4.0 千鳥(縁から36mm内側)</text>
-<text x="156" y="64.40000000000002" font-size="2.6">要素: 上辺フック×6 / 下辺ラッチ穴×6(下面向き凹み) / 位置決めピン穴Ø4×2 / 磁石ポケット×12</text>
-<text x="156" y="69.60000000000002" font-size="2.6">要素: EMIガスケット溝(幅3.0×深さ1.5, 周長約1947mm)</text>
-<text x="156" y="74.80000000000003" font-size="2.6">要素: 下辺傾斜面の開口: I/Oスロット120×22 / GPU出力スロット142×20 / ACインレット3</text>
-<text x="156" y="79.00000000000003" font-size="2.6">2×26 / 電源ボタン</text>
-<text x="156" y="84.20000000000003" font-size="2.6">要素: RF窓: 上辺の浅い位置に平板(60×30)を取付(傾斜面を避ける)</text>
-<text x="156" y="89.40000000000003" font-size="2.6">要素: 内側に黒メッシュフィルタ(ドーム内面追従の殻, 磁石保持)</text>
-<text x="156" y="94.60000000000004" font-size="2.6">接合: CP-03背板(ラッチ+ピン+磁石)</text>
-<text x="156" y="99.80000000000004" font-size="2.6">接合: CP-08ガスケット</text>
-<text x="156" y="105.00000000000004" font-size="2.6">接合: CP-12 RF窓</text>
-<text x="156" y="110.20000000000005" font-size="2.6">接合: CP-13フィルタドロワー</text>
+<text x="156" y="38.400000000000006" font-size="2.6"> / 局所増肉(縁フランジt4.0・磁石ボスt4.2)は削り出し前提。絞り量産では別体リング(接着/溶接)に分割</text>
+<text x="156" y="42.60000000000001" font-size="2.6">(U39)</text>
+<text x="156" y="47.80000000000001" font-size="2.6">表面処理: アルマイトII(外面)/接地面マスク</text>
+<text x="156" y="53.000000000000014" font-size="2.6">公差: 外形±0.3, 縁面の平面度0.3(ガスケット面)</text>
+<text x="156" y="58.20000000000002" font-size="2.6">要素: 縁の内奥行6mm→内面最大101mm(smoothstep, run 64mm)、外面最大総厚はスラブ2</text>
+<text x="156" y="62.40000000000002" font-size="2.6">5+104=129</text>
+<text x="156" y="67.60000000000002" font-size="2.6">要素: 全面均一パーフォレーション Ø2.4×ピッチ4.0 千鳥(縁から36mm内側)</text>
+<text x="156" y="72.80000000000003" font-size="2.6">要素: 上辺フック×6 / 下辺ラッチ穴×6(下面向き凹み) / 位置決めピン穴Ø4×2 / 磁石ポケット×12</text>
+<text x="156" y="78.00000000000003" font-size="2.6">要素: EMIガスケット溝(幅3.0×深さ1.5, 周長約1947mm)。溝のある縁フランジのみ局所t4.0に増</text>
+<text x="156" y="82.20000000000003" font-size="2.6">肉(残肉2.5mm)</text>
+<text x="156" y="87.40000000000003" font-size="2.6">要素: 下辺傾斜面の開口: I/Oスロット120×22 / GPU出力スロット142×20 / ACインレット3</text>
+<text x="156" y="91.60000000000004" font-size="2.6">2×26 / 電源ボタン</text>
+<text x="156" y="96.80000000000004" font-size="2.6">要素: RF窓: 上辺の浅い位置に平板(60×30)を取付(傾斜面を避ける)</text>
+<text x="156" y="102.00000000000004" font-size="2.6">要素: 内側に黒メッシュフィルタ(ドーム内面追従の殻, 磁石保持)</text>
+<text x="156" y="107.20000000000005" font-size="2.6">要素: 磁石ポケット×12(Ø8.1×深さ3.1)は局所ボス(t4.2)の裏側に設け、残肉1.1mm。薄板t2.</text>
+<text x="156" y="111.40000000000005" font-size="2.6">0には直接彫らない</text>
+<text x="156" y="116.60000000000005" font-size="2.6">接合: CP-03背板(ラッチ+ピン+磁石)</text>
+<text x="156" y="121.80000000000005" font-size="2.6">接合: CP-08ガスケット</text>
+<text x="156" y="127.00000000000006" font-size="2.6">接合: CP-12 RF窓</text>
+<text x="156" y="132.20000000000005" font-size="2.6">接合: CP-13フィルタドロワー</text>
 </g></svg>
