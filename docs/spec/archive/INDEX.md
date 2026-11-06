@@ -35,6 +35,7 @@
 | system-spec.md | v006 | current | 2026-11-06 | 9ff6031 | system-spec/system-spec.v006__2026-11-06_9ff6031.md |
 | system-spec.md | v007 | current | 2026-11-06 | c271477 | system-spec/system-spec.v007__2026-11-06_c271477.md |
 | system-spec.md | v008 | current | 2026-11-06 | 7ed5c4c | system-spec/system-spec.v008__2026-11-06_7ed5c4c.md |
+| system-spec.md | v009 | current | 2026-11-06 | d97f07e | system-spec/system-spec.v009__2026-11-06_d97f07e.md |
 | wiring-spec.md | v001 | current | 2026-11-05 | b97eaae | wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md |
 | wiring-spec.md | v002 | current | 2026-11-05 | fcba5fe | wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md |
 | wiring-spec.md | v003 | current | 2026-11-06 | 80d7407 | wiring-spec/wiring-spec.v003__2026-11-06_80d7407.md |

@@ -37,6 +37,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v004__2026-11-06_28dc82b.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "41f040ee613272798e74d597be2d00e9630c1b3d81f86e95d9fc6c58e47f76b0",
+   "file": "01_tilt_balancer/01_tilt_balancer.v005__2026-11-06_88f99b7.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -161,6 +170,15 @@
    "commit": "28dc82b",
    "sha256": "896ed43f057eaf48a1af49ae4d17d7ddb8689656ffa43af4ebb6889206c8d016",
    "file": "07_fits_and_feel/07_fits_and_feel.v002__2026-11-06_28dc82b.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "259c5e14624ca412fa09c844025f5dd1bf1b095d400fb8370065c1d4fb75ced1",
+   "file": "07_fits_and_feel/07_fits_and_feel.v003__2026-11-06_88f99b7.md"
   },
   {
    "src": "docs/mechanisms/README.md",

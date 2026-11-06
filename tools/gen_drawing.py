@@ -67,7 +67,7 @@ part(360,40,28,100,"#ddd","予備")
 T(bx+pod_w/2,by+pod_h+24,"I/O: 背面左下スリット(USB-C x4 + HDMI/DP, 2.5GbE)  ※基板I/Oを延長ブラケットで引き出し",10)
 dim_h(bx,bx+pod_w,by+pod_h+46,f"ポッド幅 {pod_w}")
 # ---------- 注記 ----------
-notes=["根拠: Apple公式 iMac(24インチ,M6) 仕様 — 幅54.7cm / 高さ46.1cm / 足の奥行14.7cm / 足の幅13cm /","表示領域4,480x2,520(16:9, 実測23.5型) / 重量4.42kg。本機は23.8型4K IPS市販パネル(有効527x296.5)で代替。","iMac本体の厚さ約11.5mm(過去モデル公称)に対し、本機は前面スラブ14mm + 背面ポッドで総厚70mm。"]
+notes=["根拠: Apple公式 iMac(24インチ,M6) 仕様 — 幅54.7cm / 高さ46.1cm / 足の奥行14.7cm / 足の幅13cm /","表示領域4,480x2,520(16:9, 実測23.5型) / 重量4.42kg。本機は23.8型4K IPS市販パネル(有効527x296.5)で代替。","iMac本体の厚さ約11.5mm(過去モデル公称)に対し、本機は前面スラブ25mm + 背面ドームで総厚190mm(spec.json)。"]
 for i,n in enumerate(notes): T(bx+pod_w*S+60,by+i*20+20,n,11,"start")
 out.append('</svg>')
 open("concept/blueprint.svg","w",encoding="utf-8").write("\n".join(out))

@@ -3,6 +3,7 @@
 読み順: ①`spec/system-spec.md`(仕様の正本) → ②`mechanisms/`(特殊機構の専用設計書) → ③部品/BOM → ④解析 → ⑤監査/未確認。**[生成]**は `tools/` が出力する生成物で、手で直さず元データ(`model/*.json`)かスクリプトを直す。
 
 ## 1. 仕様(正本)
+- [PRINCIPLES.md](PRINCIPLES.md) 基本思想・制作思想(不変条件・周回チェックリスト)
 - [spec/system-spec.md](spec/system-spec.md) システム仕様 / [spec/design-philosophy.md](spec/design-philosophy.md) 設計哲学 / [spec/grounding-spec.md](spec/grounding-spec.md) 保護接地 / [spec/panel-driver.md](spec/panel-driver.md) / [spec/panel-thermal.md](spec/panel-thermal.md) / [spec/standard-parts.md](spec/standard-parts.md) 副資材
 
 ## 2. 特殊機構(専用設計書)[生成+手書き]

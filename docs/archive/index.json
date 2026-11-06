@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "docs/PROJECT-SUMMARY.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ce41db1",
+   "sha256": "eb1c9d79e603b0a0ffd29059e9c45846dd57e3e49c8a522c374eab7bc9291304",
+   "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v001__2026-11-06_ce41db1.md"
+  },
+  {
    "src": "docs/README.md",
    "version": 1,
    "gen": "current",
@@ -17,6 +26,15 @@
    "commit": "02c4c72",
    "sha256": "f5b3beb0b4ea7935a3d54df9b77c31e624ea812a13f499a5c794413fa8772182",
    "file": "README/README.v002__2026-11-06_02c4c72.md"
+  },
+  {
+   "src": "docs/README.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ce41db1",
+   "sha256": "265adbf4793b8587c1d06a137a0209e5223ce93b598df4815476fe4ba2e5f65e",
+   "file": "README/README.v003__2026-11-06_ce41db1.md"
   },
   {
    "src": "docs/anatomy.md",
@@ -314,6 +332,15 @@
    "commit": "165c355",
    "sha256": "8bc6e84d12fc383b7caae97a02048db8e2539acc362e95dc4289e33467323288",
    "file": "design/design.v006__2026-11-03_165c355.md"
+  },
+  {
+   "src": "docs/design.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "9d4e51225f276e2debf168993589dfd064c5d2dbe4f872b2921598ffd55359d5",
+   "file": "design/design.v007__2026-11-06_d97f07e.md"
   },
   {
    "src": "docs/failure-analysis.md",

@@ -8,7 +8,7 @@
 - バランサ: s=66 e=25 最長側355N/本 p=0.5、摩擦保持5.8N·m±8%、操作力目標≦25N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1020件 = 現行 295 + 履歴archive 725)
+## 2. ファイル構成(git追跡 1027件 = 現行 298 + 履歴archive 729)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
@@ -17,12 +17,12 @@
 | blender | 23 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
-| docs | 52 | 仕様・設計書・調査・監査記録 |
-| drawings | 43 | 図面(SVG/DXF/PDF入力) |
+| docs | 53 | 仕様・設計書・調査・監査記録 |
+| drawings | 44 | 図面(SVG/DXF/PDF入力) |
 | handoff | 67 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |
-| tools | 46 | 生成器・計算・検査ゲート |
+| tools | 47 | 生成器・計算・検査ゲート |
 | viewer | 3 | Three.jsビューア+GLB |
 
 ## 3. 主要ファイル(一行要約)
@@ -49,6 +49,7 @@
 - `gen_mechanisms.py` — 特殊機構の専用設計書を docs/mechanisms/*.md に生成する(数値は model/*.json と tools/*_calc.py の出力から埋め込み、手書きの旧値を残さない)。
 - `gen_mfg_drawings.py` — 自作する外装の製造図面を model/spec.json から生成する(DXF + 寸法入りSVG)。
 - `gen_package.py` — 設計図一式(基板配置・寸法入り配置図・断面・配線図・エアフロー・分解組立・BOM)を model/*.json から生成する。
+- `gen_project_summary.py` — 全(現行)ファイルを走査して docs/PROJECT-SUMMARY.md を生成する: ディレクトリ別の役割と件数、主要ファイルの一行要約、現行の主要数値(spec.jsonから)、未確認件数、ゲート結果。
 - `gen_service_drawings.py` — 整備機構の図面(SVG)を model/spec.json と model/layout.json から生成する。
 - `gen_specs.py` — 仕様書一式の生成: docs/spec/*.md, drawings/parts/CP-*.svg, drawings/16_cable_clips.svg。
 - `guard_no_delete.sh` — 過去の仕様書・設計図・図面・モデルの削除を禁止するガード(pre-commitフックから呼ぶ)。
@@ -85,6 +86,7 @@
 
 ### docs/
 
+- `PROJECT-SUMMARY.md` — プロジェクト要約(自動生成 2026-11-06)
 - `README.md` — docs/ 索引(現行: v9)
 - `anatomy.md` — iMac 24インチ 部位と配置
 - `audit-criteria.md` — 監査基準 (厳格版)

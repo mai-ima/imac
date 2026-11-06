@@ -1,7 +1,7 @@
 # iMac風 一体型ゲーミングPC 設計書 (v4: 全て市販品/外装のみ特注)
 
 - 目標: 現行最新iMac(M6, 249,800円〜)と同等以下の価格で、同等以上の性能+ゲーム可+拡張性。外観はiMac風、**内部は全て市販品**。
-- 決定事項: 27型4K(BOE MV270QUM-N50)。本体 620×415.3mm、前面スラブ18mm、背面ポッド込み総厚84mm。
+- 決定事項: 27型4K(BOE MV270QUM-N50)。本体 620×415.3mm、前面スラブ18mm、背面ドーム込み総厚190mm(spec.json)。
 - 部品・寸法・根拠・実現性の検証は **`docs/bom-final.md`**(BOMと未確認一覧)、iMac調査は `docs/research-notes.md` / `docs/anatomy.md`、モデルの構成は `docs/build-guide.md`。
 - 実現性チェック: `python3 tools/fitcheck.py`(結果: `docs/fitcheck-report.txt`)。
 

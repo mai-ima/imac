@@ -78,7 +78,7 @@ b += dim_h(x0, x0 + SLAB * k, y0 + 90, f'スラブ {SLAB}', 8) + dim_h(x0, x0 + 
 b += [f'<text x="{x0}" y="{y0+135}" font-size="4">厚み構成(拡大 x1.6 の概略図)。ドーム板厚 t{SHEET_T}(外面最大厚 {Dm["total_t"]})。内部有効奥行 最大 {Dm["total_t"]-SLAB-WALL}mm</text>']
 sheet('04_section_stack', '厚み構成(断面)', 'MFG-04', b)
 
-# ---------------- 05 スタンド(v9: 足300×290 + 首振りユニット + ネック + チルトバランサ) ----------------
+# ---------------- 05 スタンド(v10: 足360×310 + 首振りユニット + ネック + チルトバランサ) ----------------
 SWv = S['swivel']; STv = S['stand']; HYv = S['hinge']['axis_y']; BALv = json.load(open(f'{R}/model/balance.json'))
 b = []; s5 = 0.5
 # 平面図(上から) 原点 (40,50)。上=背面側 / 下=前面側
