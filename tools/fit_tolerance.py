@@ -37,7 +37,7 @@ row('首振り操作力(画面端0.31m)', Tlo / 0.31, Thi / 0.31, None, 20.0, 'N
 # 6) チルト: 保持(最小摩擦≧最悪残差) と 操作力(最大摩擦+公称残差)/0.41 ≦ 20N
 FR = H['friction_hold_Nm']; ft = H['friction_tol_pct'] / 100; resid_nom = BAL['resid_nominal']; resid_w = BAL['resid_worst']
 row('チルト保持: 最小摩擦 ≧ 最悪残差', FR * (1 - ft), FR * (1 - ft), resid_w, None, 'N·m', f'最悪残差{resid_w:.2f}N·m(調整後公差)', 0.0)
-row('チルト操作力(上端0.41m)', (FR * (1 - ft) - resid_nom) / 0.41 if FR * (1 - ft) > resid_nom else 0.0, (FR * (1 + ft) + resid_nom) / 0.41, None, 20.0, 'N', '(最大摩擦+公称残差)/0.41。20Nに対し余裕が小さい場合はWARN', 0.0)
+row('チルト操作力(上端0.41m, 最悪=最大摩擦+調整後の最悪残差)', (FR * (1 - ft) - resid_w) / 0.41 if FR * (1 - ft) > resid_w else 0.0, (FR * (1 + ft) + resid_w) / 0.41, None, 20.0, 'N', '保持と同じ最悪残差で評価(R7指摘: 公称残差での評価は非対称で甘かった)。20Nに対し余裕が小さい場合はWARN', 0.0)
 # 7) 首振り: 軸受のガタ(予圧)→ 画面端のカタつき
 play = 0.02; edge = play / (S['swivel']['bearing_od'] / 2) * 310.0
 row('軸受ガタ起因の画面端の動き', 0.0, edge, None, 0.3, 'mm', '軸受の予圧指定(ラジアル遊び≦0.02mm)が必要(U50)', 0)

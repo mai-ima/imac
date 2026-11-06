@@ -49,9 +49,9 @@ print(f'ばね自由長 ≧{free:.0f}mm、全たわみ{stroke*(1+1/p):.1f}mm、�
 print('角度: 重力τg / 公称残差 [N·m]')
 for a, rv in list(zip(angles, resid(s, e, F0, p, sign, lmax, stroke)))[::2]: print(f'{a:+6.1f}°: {tg(a):+7.2f} / {rv:+6.2f}')
 fr_min, fr_max = FR * (1 - FTOL), FR * (1 + FTOL)
-op_force = (fr_max + rr) / 0.41           # 動かす力 = 摩擦(最大)+公称残差(ばね/重力の不釣合い)。上端0.41mで評価
+op_force = (fr_max + worst) / 0.41           # 動かす力 = 摩擦(最大)+調整後の最悪残差(保持側と同じ最悪値で評価)。上端0.41mで評価
 print(f'公称最大残差 {rr:.2f}N·m / 調整後の最悪残差(荷重±{FPCT*100:.0f}%・重心±{CGMM:.0f}mm) {worst:.2f}N·m / 未調整の最悪残差(±10%・±10mm) {worst_raw:.2f}N·m')
-print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+公称残差)/0.41 = {op_force:.1f}N(目標≦20N)')
+print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+最悪残差)/0.41 = {op_force:.1f}N(目標≦20N)')
 fails = []
 if ratio > 0.40: fails.append('ばねたわみ率>40%')
 if worst > fr_min: fails.append(f'最悪残差{worst:.2f} > 最小摩擦保持{fr_min:.2f}')

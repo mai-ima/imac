@@ -451,10 +451,17 @@ def port(name, xc, zc, w, h, inner=None):
     ibox(name + '_shell', w, 1.4, h, bx + xc - w / 2, by - 3.4, Z1 + zc - h / 2, M['steel'], .2)
     ibox(name + '_hole', w - 3, 1.5, h - 3, bx + xc - (w - 3) / 2, by - 3.5, Z1 + zc - (h - 3) / 2, inner or M['dark'])
 mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
-port('io_hdmi', mid('HDMI_U10G34'), 10, 15, 6.5); port('io_usb_a1', mid('HDMI_U10G34'), 24, 14.5, 7, principled('usb_blue', '#2a6df0', 0, .5)); port('io_usb_a2', mid('HDMI_U10G34'), 36, 14.5, 7)
-port('io_usb4_a', mid('U40G_EC1_U10G11'), 10, 9, 3.6); port('io_usb_a3', mid('U40G_EC1_U10G11'), 36, 14.5, 7)
-port('io_usb4_c', mid('U40G_EC2'), 12, 9, 3.6); port('io_rj45', mid('LAN_U10G_C7'), 12, 16, 13.5, M['alu']); port('io_usbc2', mid('LAN_U10G_C7'), 30, 9, 3.6)
-for k, xs in enumerate((bx + 115.5, bx + 119.5)): icyl(f'io_sma{k}', 3.2, 5, 'y', xs, by - 5, Z1 + 38, M['gold'], 20)
+# リアI/O配置: ASUS公式マニュアル p.26 の図(外側から見た並び)を読み取り。左→右:
+#  列A(x15〜34): USB 10G赤(Type-A)×2 縦積み / HDMI    列B(x40〜55): ボタン(CLR_CMOS/BIOS FlashBack) / USB 10G赤 / USB4 40G Type-C
+#  列C(x59〜73): USB 2.0 Type-A ×2 縦積み             列D(x77〜91): USB 2.0 Type-A / USB4 40G Type-C
+#  列E(x93〜112): RJ45(2.5GbE) / USB 10G赤 / USB 10G Type-C   Wi-Fi: SMAアンテナ ×2 縦積み(x113〜122)。各列内の上下位置は図の読み取り(±2mm程度)
+usb_red = principled('usb_red', '#c8202b', 0, .5); usb2_in = principled('usb2_black', '#15161a', 0, .5)
+port('io_a10g_1', 24.5, 38, 14.5, 7, usb_red); port('io_a10g_2', 24.5, 26, 14.5, 7, usb_red); port('io_hdmi', 24.5, 10, 15, 6.5)
+port('io_btn_clr', 44, 40.5, 3.6, 3.6); port('io_btn_fb', 51, 40.5, 3.6, 3.6); port('io_a10g_3', 47.5, 25, 14.5, 7, usb_red); port('io_usb4_c1', 47.5, 10, 9, 3.6)
+port('io_usb2_1', 66, 38, 14.5, 7, usb2_in); port('io_usb2_2', 66, 26, 14.5, 7, usb2_in)
+port('io_usb2_3', 84.5, 25, 14.5, 7, usb2_in); port('io_usb4_c2', 84.5, 10, 9, 3.6)
+port('io_rj45', 102.5, 36, 16, 13.5, M['alu']); port('io_a10g_4', 102.5, 22, 14.5, 7, usb_red); port('io_usbc_10g', 102.5, 9, 9, 3.6)
+for k, zz in enumerate((14, 34)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
 ibox('vrm_shroud', 98, 36, 22, bx + 8, by + 24, Z1, M['shroud'], 1.5)
 ibox('vrm_trim', 98, 1.2, 22.1, bx + 8, by + 24, Z1, M['silver_trim'])
@@ -593,7 +600,9 @@ for k in range(6):
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 64.2))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((92, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
 ibox('psu_label', 70, 38, .3, px_ + 28, py_ + 30, pz_ + 63.5, M['sf_label'])     # 仕様ラベル(内容は未確認のため無地)
-for i in range(6): ibox(f'psu_socket{i}', 13, 5, 9, px_ + 8 + i * 19, py_ - 4, pz_ + 25, M['rubber'], .4)
+# モジュラーソケット10個(レビュー/小売の記載。公式図は未取得 U59): 2段×5列(上段5=大, 下段5=小)の想定配置
+for i in range(5):
+    ibox(f'psu_socket{i}', 17, 5, 11, px_ + 6 + i * 23, py_ - 4, pz_ + 36, M['rubber'], .4); ibox(f'psu_socket{i + 5}', 11, 5, 9, px_ + 9 + i * 23, py_ - 4, pz_ + 20, M['rubber'], .4)
 
 # ===== パネル用コントローラ基板(4K eDP, 150x55 横置き。型番未確定) =====
 cx_, cy_, cz_ = lp('ctrl_board')

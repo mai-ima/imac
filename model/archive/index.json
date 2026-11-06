@@ -19,6 +19,15 @@
    "file": "balance/balance.v002__2026-11-06_4482281.json"
   },
   {
+   "src": "model/balance.json",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "a2044a0ea4a84ace8debcc2d4d8c60f96ac56fe482b74de554c8a70eca058d8a",
+   "file": "balance/balance.v003__2026-11-06_02c4c72.json"
+  },
+  {
    "src": "model/cables.json",
    "version": 1,
    "gen": "current",
@@ -622,6 +631,15 @@
    "file": "spec/spec.v017__2026-11-06_85af1a8.json"
   },
   {
+   "src": "model/spec.json",
+   "version": 18,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "41eba00c83f75d93121c6d6a5151b93daefb67fa7142af1cc071efadc1106eef",
+   "file": "spec/spec.v018__2026-11-06_853f219.json"
+  },
+  {
    "src": "model/x870i_layout.json",
    "version": 1,
    "gen": "current",
@@ -629,6 +647,15 @@
    "commit": "fd22dea",
    "sha256": "1905e295028c108cda84c76114832c560aba861bf23ee6e7b2bbb3101c9a339c",
    "file": "x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json"
+  },
+  {
+   "src": "model/x870i_layout.json",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "85af1a8",
+   "sha256": "721f6da8e9b208db0ff863bc0d2f27e8575a0b60015a44e70e209fc3836ee1e5",
+   "file": "x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json"
   }
  ]
 }

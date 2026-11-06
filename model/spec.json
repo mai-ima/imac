@@ -103,11 +103,11 @@
  "hinge": {
   "axis_y": 10.0,
   "axis_z_from_glass": 40.0,
-  "doc": "v9: ヒンジ軸 z=40/y=10。チルト-15〜+40°。バランサ=ダイスプリング2本+尾部レバー(tools/balance_calc.py)、保持=対称摩擦ヒンジ(合計4.3N·m±12%(Reell PHL/PHC級×2を想定。公差±12%以内の指定品が必要: U27))。ヒンジブロックは背板へ貫通ボルト+裏当て鋼板。",
+  "doc": "v9: ヒンジ軸 z=40/y=10。チルト-15〜+40°。バランサ=ダイスプリング2本+尾部レバー(tools/balance_calc.py)、保持=対称摩擦ヒンジ(合計4.1N·m±8%(調整式の摩擦ヒンジ×2。出荷時に実測して±8%へ追い込む。型番/公差は U27))。ヒンジブロックは背板へ貫通ボルト+裏当て鋼板。",
   "tilt_min_deg": -15.0,
   "tilt_max_deg": 40.0,
-  "friction_hold_Nm": 4.3,
-  "friction_tol_pct": 12.0,
+  "friction_hold_Nm": 4.1,
+  "friction_tol_pct": 8.0,
   "balance_force_tol_pct": 3.0,
   "balance_cg_tol_mm": 3.0,
   "balance_note": "ばね座に荷重調整ねじ(M8)を設け、組立時に頭部重量(実測)へ合わせて調整後の公差(荷重±3%, 重心±3mm)を前提とする。未調整の公差(荷重±10%, 重心±10mm)では保持/操作が両立しない(balance_calc.py参照)"

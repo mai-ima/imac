@@ -19,6 +19,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v002__2026-11-06_02c4c72.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "6dc4a26f82e5c83127f8381bdafe758c7191a1b9598dfbf326f0cb181ec4786d",
+   "file": "01_tilt_balancer/01_tilt_balancer.v003__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -55,6 +64,15 @@
    "file": "03_neck_and_load_path/03_neck_and_load_path.v002__2026-11-06_02c4c72.md"
   },
   {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "da51cd98309b89faccbc317db5899ef3f2494eac969cede3194a24e90df228f0",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v003__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
    "version": 1,
    "gen": "current",
@@ -64,6 +82,24 @@
    "file": "04_dome_latch_gasket/04_dome_latch_gasket.v001__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/mechanisms/04_dome_latch_gasket.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "3aeba471540b3d0a4ba6478ec693a5e423011e710a16d0bebe26ed5988c0a025",
+   "file": "04_dome_latch_gasket/04_dome_latch_gasket.v002__2026-11-06_02c4c72.md"
+  },
+  {
+   "src": "docs/mechanisms/05_tray_hanging_service.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "162ed12b2e6e6311b7b65abe1692b8a8d18317a7fdbbd1c1e5f1094237a60c6d",
+   "file": "05_tray_hanging_service/05_tray_hanging_service.v001__2026-11-06_d97f07e.md"
+  },
+  {
    "src": "docs/mechanisms/06_pinch_guard.md",
    "version": 1,
    "gen": "current",
@@ -71,6 +107,15 @@
    "commit": "d97f07e",
    "sha256": "644bbfdb8766110fff53a528f6538241a05adce87779bf692eae59efca1e86cd",
    "file": "06_pinch_guard/06_pinch_guard.v001__2026-11-06_d97f07e.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "b072590e6652776f8b64e4e441a425fdee211f733fc0e094621cc4a416d3f444",
+   "file": "07_fits_and_feel/07_fits_and_feel.v001__2026-11-06_02c4c72.md"
   },
   {
    "src": "docs/mechanisms/README.md",

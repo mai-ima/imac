@@ -6,6 +6,7 @@
 | balance_calc.py | v001 | current | 2026-11-06 | 7ed5c4c | balance_calc/balance_calc.v001__2026-11-06_7ed5c4c.py |
 | balance_calc.py | v002 | current | 2026-11-06 | 4482281 | balance_calc/balance_calc.v002__2026-11-06_4482281.py |
 | balance_calc.py | v003 | current | 2026-11-06 | 432b08c | balance_calc/balance_calc.v003__2026-11-06_432b08c.py |
+| balance_calc.py | v004 | current | 2026-11-06 | 02c4c72 | balance_calc/balance_calc.v004__2026-11-06_02c4c72.py |
 | cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
 | cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
 | cable_check.py | v003 | current | 2026-11-06 | 514e2e0 | cable_check/cable_check.v003__2026-11-06_514e2e0.py |
@@ -15,6 +16,7 @@
 | cablemodel.py | v004 | current | 2026-11-06 | d97f07e | cablemodel/cablemodel.v004__2026-11-06_d97f07e.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
+| fit_tolerance.py | v001 | current | 2026-11-06 | 02c4c72 | fit_tolerance/fit_tolerance.v001__2026-11-06_02c4c72.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
 | fitcheck.py | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py |
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |
@@ -29,6 +31,7 @@
 | gen_fmea.py | v002 | current | 2026-11-05 | 15a1bce | gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py |
 | gen_mechanisms.py | v001 | current | 2026-11-06 | d97f07e | gen_mechanisms/gen_mechanisms.v001__2026-11-06_d97f07e.py |
 | gen_mechanisms.py | v002 | current | 2026-11-06 | 02c4c72 | gen_mechanisms/gen_mechanisms.v002__2026-11-06_02c4c72.py |
+| gen_mechanisms.py | v003 | current | 2026-11-06 | 85af1a8 | gen_mechanisms/gen_mechanisms.v003__2026-11-06_85af1a8.py |
 | gen_mfg_drawings.py | v001 | current | 2026-11-03 | b096d9e | gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py |
 | gen_mfg_drawings.py | v002 | current | 2026-11-05 | b97eaae | gen_mfg_drawings/gen_mfg_drawings.v002__2026-11-05_b97eaae.py |
 | gen_mfg_drawings.py | v003 | current | 2026-11-05 | fcba5fe | gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py |

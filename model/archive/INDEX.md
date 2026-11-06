@@ -4,6 +4,7 @@
 |---|---|---|---|---|---|
 | balance.json | v001 | current | 2026-11-06 | 7ed5c4c | balance/balance.v001__2026-11-06_7ed5c4c.json |
 | balance.json | v002 | current | 2026-11-06 | 4482281 | balance/balance.v002__2026-11-06_4482281.json |
+| balance.json | v003 | current | 2026-11-06 | 02c4c72 | balance/balance.v003__2026-11-06_02c4c72.json |
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
@@ -71,4 +72,6 @@
 | spec.json | v015 | current | 2026-11-06 | d97f07e | spec/spec.v015__2026-11-06_d97f07e.json |
 | spec.json | v016 | current | 2026-11-06 | 02c4c72 | spec/spec.v016__2026-11-06_02c4c72.json |
 | spec.json | v017 | current | 2026-11-06 | 85af1a8 | spec/spec.v017__2026-11-06_85af1a8.json |
+| spec.json | v018 | current | 2026-11-06 | 853f219 | spec/spec.v018__2026-11-06_853f219.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |
+| x870i_layout.json | v002 | current | 2026-11-06 | 85af1a8 | x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json |

@@ -37,6 +37,15 @@
    "file": "balance_calc/balance_calc.v003__2026-11-06_432b08c.py"
   },
   {
+   "src": "tools/balance_calc.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "49aa1ed613bacd47c461f73f69024debedf5df7279e50d0cc9fee2726139c675",
+   "file": "balance_calc/balance_calc.v004__2026-11-06_02c4c72.py"
+  },
+  {
    "src": "tools/cable_check.py",
    "version": 1,
    "gen": "current",
@@ -116,6 +125,15 @@
    "commit": "514e2e0",
    "sha256": "99b9bfea07a1353ad0eb9dc3d183d5f88d63d6a3f93ba07d6d1cba4ca5bdfd34",
    "file": "drawlib/drawlib.v002__2026-11-06_514e2e0.py"
+  },
+  {
+   "src": "tools/fit_tolerance.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "6d276b92a1e98fbd0110ea7e82a017cdb8520c3417f04efc11dc4ecc4dc80c77",
+   "file": "fit_tolerance/fit_tolerance.v001__2026-11-06_02c4c72.py"
   },
   {
    "src": "tools/fitcheck.py",
@@ -242,6 +260,15 @@
    "commit": "02c4c72",
    "sha256": "17309f27c6cc57dffdec752dcb6a970ec936377819c269c899465e41a3c73acf",
    "file": "gen_mechanisms/gen_mechanisms.v002__2026-11-06_02c4c72.py"
+  },
+  {
+   "src": "tools/gen_mechanisms.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "85af1a8",
+   "sha256": "0de00617a72c03b60030ab415cc32e658b280be476be0652065b44847dbac341",
+   "file": "gen_mechanisms/gen_mechanisms.v003__2026-11-06_85af1a8.py"
   },
   {
    "src": "tools/gen_mfg_drawings.py",
