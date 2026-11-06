@@ -136,6 +136,15 @@
    "file": "system-spec/system-spec.v005__2026-11-06_fc36218.md"
   },
   {
+   "src": "docs/spec/system-spec.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "87746482986db0cc422109de1cfee146f2aaecd2f28f65ba9825af50386f6eab",
+   "file": "system-spec/system-spec.v006__2026-11-06_9ff6031.md"
+  },
+  {
    "src": "docs/spec/wiring-spec.md",
    "version": 1,
    "gen": "current",

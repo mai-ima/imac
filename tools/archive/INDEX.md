@@ -11,6 +11,7 @@
 | fitcheck.py | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py |
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |
 | fitcheck.py | v004 | current | 2026-11-05 | 71b7afb | fitcheck/fitcheck.v004__2026-11-05_71b7afb.py |
+| fitcheck.py | v005 | current | 2026-11-06 | fc36218 | fitcheck/fitcheck.v005__2026-11-06_fc36218.py |
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
 | gen_drawing.py | v001 | current | 2026-11-03 | a2b24f4 | gen_drawing/gen_drawing.v001__2026-11-03_a2b24f4.py |
 | gen_drawing.py | v002 | current | 2026-11-03 | 0f4d0d7 | gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py |

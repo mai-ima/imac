@@ -4,6 +4,11 @@ import json, os, sys, itertools
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S = json.load(open(f'{R}/model/spec.json')); P = json.load(open(f'{R}/model/parts.json')); L = json.load(open(f'{R}/model/layout.json'))
 ok = True
+unverified = []
+def unv(name, detail):
+    """実物/公式未確認の項目。PASSにせず UNVERIFIED として数える(偽PASS防止, K23)。"""
+    unverified.append(name); print(f"[UNV] {name}: {detail}")
+
 def chk(name, cond, detail):
     global ok; ok &= bool(cond); print(f"[{'OK ' if cond else 'NG '}] {name}: {detail}")
 
@@ -63,8 +68,8 @@ cpu = P['cpu']['facts']['ppt_w']; gpu = P['gpu']['facts']['tgp_w']; misc = 45; p
 load = cpu + gpu + misc + panel
 psu_w = P['psu']['facts'].get('provisional_w', 600)
 chk('電源容量(余裕30%以上)', load <= 0.7 * psu_w, f"CPU PPT{cpu}+GPU TGP{gpu}+他{misc}+パネル{panel:.0f} = {load:.0f} W <= {psu_w}W x 0.7 = {0.7*psu_w:.0f}W (使用率 {load/psu_w*100:.0f}%)")
-chk('PCIe補助電源', True, 'GPU 8ピン x1 <- SF750 の 6+2 ピン x2 のうち1本(コネクタ数は小売情報、公式未確認。ケーブル400mm)')
-chk('パネル電源', True, 'コントローラ基板 12V <- SF750 のSATA/Molex(ケーブル要確認)(パネル VDD 10V は基板が生成。型番一致が条件)')
+unv('GPU電源コネクタ(12V-2x6)', 'PSU(SF1000)の12V-2x6ケーブル有無・長さは公式未確認(U34)。W3の経路長はcable_checkで検査済みだが、コネクタ形状はUNVERIFIED')
+unv('パネル/コントローラ12V給電', 'コントローラ基板型番未選定(U37)のため給電仕様・コネクタ互換は未検証')
 
 # ---- 冷却 ----
 heat = cpu + gpu + misc + (500*0 + load*0.1)   # 電源損失10%
@@ -73,5 +78,6 @@ air = (nfan * (P['fan']['facts']['airflow_m3h'] if 'fan' in P else 0) + (2 * 131
 dT = heat / (1.2*1005*air/3600)
 chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ケースファン{nfan}基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
 print(f"[注意] CPU冷却: {P['cpu']['name']} PPT {cpu}W(制限なし)に対し240mm AIO(AMD推奨は240/280mm級, 実測はUNVERIFIED)。実機での温度確認が必須")
-print('\n総合:', 'すべて満たす(ただし assumed/retail 項目は実物確認が必要)' if ok else '未達あり')
+print(f'\nUNVERIFIED {len(unverified)} 件: ' + ', '.join(unverified))
+print('\n総合:', ('計算可能な項目はすべて満たす(UNVERIFIED項目は合格扱いではない)') if ok else '未達あり')
 sys.exit(0 if ok else 1)

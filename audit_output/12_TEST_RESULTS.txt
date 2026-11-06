@@ -1,0 +1,38 @@
+=== python3 tools/stale_check.py
+[WARN] docs/unverified-tracker.md: 旧GPU(5070 Ti): …ign Manager | 11/03 | | U06 | ASUS Dual RTX 5060 Ti: 排気方向・ファン数・PCIeレーン数(x16/x8)・ブラケット側ポート並び…
+[WARN] docs/unverified-tracker.md: 旧GPU(5070 Ti): … ASUS公式写真/仕様、NVIDIA公式 | 11/03 | | U07 | RTX 5060 Ti 16GBの入手性(終息報道) | 調達 | 非公式報道のみ | 国内小売在庫、…
+[WARN] model/parts.json: 旧CPU(9950X3Dへ置換済) ※比較対象は例外: ….net/AMD-Ryzen-9-9950X3D-Review-Ryzen-7-9800X3D-levels-of-gaming-performance-and-power-…
+[WARN] model/parts.json: 旧CPU(9950X3Dへ置換済) ※比較対象は例外: …tus_note": "v7.1: M6 iMacのCPU(マルチ)を上回るため9800X3Dから変更(docs/spec/performance-benchmark.md)…
+[WARN] model/parts.json: 旧PSU(SF1000): …のでPSUは基板の近くに置く必要がある",   "status_note": "SF750(750W)では電源余裕30%を満たさなくなったため1000Wへ(寸法は同じSF…
+[WARN] tools/check_sources.py: 旧CPU(9950X3Dへ置換済) ※比較対象は例外: …12s_datasheet_es_v3_web.pdf",  "U05 AMD 9800X3D": "https://www.amd.com/en/products/proc…
+exit=0
+=== python3 tools/fitcheck.py
+[OK ] 排気温度上昇: 発熱636W / 風量144 m3/h(ケースファン0基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT=13.2K (<=20K目標)
+[注意] CPU冷却: AMD Ryzen 9 9950X3D PPT 230W(制限なし)に対し240mm AIO(AMD推奨は240/280mm級, 実測はUNVERIFIED)。実機での温度確認が必須
+
+UNVERIFIED 2 件: GPU電源コネクタ(12V-2x6), パネル/コントローラ12V給電
+
+総合: 計算可能な項目はすべて満たす(UNVERIFIED項目は合格扱いではない)
+exit=0
+=== python3 tools/cablemodel.py
+cables.json 8
+exit=0
+=== python3 tools/cable_check.py
+[OK ] W4 コントローラ基板 12V(短尺) len=37mm od=4.4
+[OK ] W5 アンビリカル(eDP 30p/12V/USB) len=265mm od=6.0
+[OK ] W6 AC電源(C14インレット→PSU C13) len=447mm od=7.2
+[OK ] H1 AIOホース(ポンプ出口A→ラジエーター遠側口) len=384mm od=12.4
+[OK ] H2 AIOホース(ポンプ出口B→ラジエーター近側口) len=378mm od=12.4
+総合: 問題なし
+exit=0
+=== python3 tools/stability.py
+ディスプレイ部 15.4kg + スタンド 3.8kg = 19.2kg / 重心(頭部) z=40mm y=195mm / ヒンジ軸 z=40.0 y=10.0 / 足 z=-50〜180mm 幅220mm / 上端高さ 506mm
+チルト -5°: 全体重心z=  32.0 前方余裕   82.0mm 後方余裕  148.0mm → 上端を前へ押す転倒力≈31N / 後ろへ≈55N [OK]
+チルト +0°: 全体重心z=  44.9 前方余裕   94.9mm 後方余裕  135.1mm → 上端を前へ押す転倒力≈35N / 後ろへ≈50N [OK]
+チルト+10°: 全体重心z=  70.6 前方余裕  120.6mm 後方余裕  109.4mm → 上端を前へ押す転倒力≈45N / 後ろへ≈41N [OK]
+チルト+25°: 全体重心z= 107.5 前方余裕  157.5mm 後方余裕   72.5mm → 上端を前へ押す転倒力≈59N / 後ろへ≈27N [OK]
+横転(幅220mm): 上端を横へ押す転倒力≈46N。目標(設計基準): 上端を押す転倒力 前≥25N・後≥20N・横≥30N(約2〜3kgf: 触れて倒れない)。
+exit=0
+=== python3 tools/audit_manifest.py
+620 件 {'ARCHIVE(旧版)': 444, 'SOURCE(手書きソース)': 25, 'GENERATED(生成物)': 73, 'DOC': 41, 'CANON(正規データ)': 11, 'TOOL(生成/検証)': 26} syntax_fail= 0
+exit=0

@@ -82,6 +82,15 @@
    "file": "fitcheck/fitcheck.v004__2026-11-05_71b7afb.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "898441651e4d89e3ea7e76e275e0072f85d0c97e5729db2690dd2374bfa70aac",
+   "file": "fitcheck/fitcheck.v005__2026-11-06_fc36218.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",

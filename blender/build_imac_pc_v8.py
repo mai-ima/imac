@@ -445,7 +445,7 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     return link(ob)
 sx_, sy_ = BL['socket_center']
 smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)])
-# AM5ソケット + 9800X3D (IHS 'AMD RYZEN 7 9800X3D')
+# AM5ソケット + Ryzen 9 9950X3D (IHS刻印: 'AMD' 'RYZEN' の2行のみ確認済)
 sx_, sy_ = BL['socket_center']
 ibox('socket', 60, 60, 4, bx + sx_ - 30, by + sy_ - 30, Z1, principled('socket', '#2a2c31', 0, .5))
 ibox('cpu_ihs', 40, 40, 2.6, bx + sx_ - 20, by + sy_ - 20, Z1 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)
@@ -541,7 +541,7 @@ ibox('gpu_bracket', GW, 1.5, GT + 2, gx, gy - 1.5, gz - 1, M['steel'], .3)      
 for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))): ibox(f'gpu_port{k}', w_, 3, 6.5, gx + 20 + k * 28, gy - 3, gz + 7, M['dark'], .3)
 ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4)       # 12V-2x6コネクタ(カード上面の端, 位置は想定)
 
-# ===== 電源: Corsair SF750 (SFX 125x63.5x100)。ファン面を上(ドーム側)、モジュラー端子面を基板側 =====
+# ===== 電源: Corsair SF1000 (SFX 125x63.5x100)。ファン面を上(ドーム側)、モジュラー端子面を基板側 =====
 px_, py_, pz_ = lp('psu')
 ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
 wire = principled('psu_wire', '#2a2c31', .9, .4)
