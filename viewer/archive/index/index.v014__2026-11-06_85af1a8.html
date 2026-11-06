@@ -1,0 +1,258 @@
+<title>iMac風PC 3Dビューア</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: 左に3Dビューポート、右に操作・部品パネル(狭い画面では上下に積む) */
+:root{
+  --bg:#eceef2; --panel:#f8f9fb; --line:#d5d9e0; --fg:#15181d; --muted:#5b6370;
+  --accent:#2f6fed; --accent-fg:#fff; --good:#1a7f37; --warn:#b45309; --chip-ring:#15181d;
+  --font-ui:"IBM Plex Sans JP","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-num:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12151a; --panel:#1a1e25; --line:#2b313b; --fg:#e8ebf0; --muted:#9aa3b2;
+  --accent:#6b9bff; --accent-fg:#0b1020; --good:#4cc26b; --warn:#f0a04b; --chip-ring:#e8ebf0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151a; --panel:#1a1e25; --line:#2b313b; --fg:#e8ebf0; --muted:#9aa3b2;
+  --accent:#6b9bff; --accent-fg:#0b1020; --good:#4cc26b; --warn:#f0a04b; --chip-ring:#e8ebf0; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);font-size:14px;line-height:1.55}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 360px;height:100%;min-height:0}
+.view{position:relative;min-height:0;min-width:0;overflow:hidden}
+#c{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lb{position:absolute;transform:translate(-50%,-100%);background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-size:11px;white-space:nowrap;box-shadow:0 1px 4px #0003}
+.lb::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:10px;background:var(--muted)}
+.hud{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:14px;display:flex;gap:8px;flex-wrap:wrap;max-width:calc(100% - 32px)}
+.pill{background:color-mix(in srgb,var(--panel) 90%,transparent);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--muted);font-family:var(--font-num)}
+#loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px}
+.side{background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding-block:16px;padding-left:16px;padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px;min-width:0}
+h1{font-size:17px;margin:0}
+h2{font-size:12px;margin:0 0 8px;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.sub{color:var(--muted);font-size:12px;margin:2px 0 0}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+button,input{font:inherit;color:inherit}
+.btn{background:transparent;border:1px solid var(--line);border-radius:8px;padding:6px 11px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:inset 0 0 0 1px #0003}
+.chip[aria-pressed="true"]{border-color:var(--chip-ring)}
+.sl{display:grid;grid-template-columns:64px minmax(0,1fr) 44px;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.sl input{width:100%;accent-color:var(--accent)}
+.sl b{font-family:var(--font-num);font-weight:500;color:var(--fg);text-align:right}
+.read{display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-size:13px}
+.read span:nth-child(even){font-family:var(--font-num);text-align:right}
+.note{font-size:12px;color:var(--muted)}
+.parts{display:flex;flex-direction:column;gap:6px}
+details{border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+summary{cursor:pointer;font-weight:600;font-size:13px}
+details p{margin:6px 0 2px;font-size:12px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;border-radius:4px;padding:0 6px;margin-left:6px;border:1px solid currentColor}
+.t-ok{color:var(--good)}.t-est{color:var(--warn)}
+body.clean .side,body.clean .hud{display:none}
+body.clean .app{grid-template-columns:minmax(0,1fr)}
+@media (max-width:860px){.app{grid-template-columns:minmax(0,1fr);grid-template-rows:56vh minmax(0,1fr)}.side{border-left:0;border-top:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="app">
+  <div class="view" id="view">
+    <canvas id="c" aria-label="iMac風一体型ゲーミングPCの3Dモデル"></canvas>
+    <div id="labels"></div><div id="loading">モデルを読み込み中…</div>
+    <div class="hud"><span class="pill" id="hudView">背面</span><span class="pill">ドラッグで回転 / ホイールで拡大 / 右ドラッグで移動</span></div>
+  </div>
+  <aside class="side">
+    <div>
+      <h1>iMac風 一体型ゲーミングPC</h1>
+      <p class="sub">27型4K / 本体 620×415mm / スラブ25mm + 背面ドーム(最大総厚129mm)。内部は全て市販品、外装のみ特注。設計 v9(背面から表示)。</p>
+    </div>
+    <section><h2>カラー(Apple公式7色の実測値)</h2><div class="chips" id="chips"></div></section>
+    <section><h2>視点</h2>
+      <div class="row" id="views"><button class="btn" data-v="front">正面</button><button class="btn" data-v="back">背面</button><button class="btn" data-v="side">側面</button><button class="btn" data-v="inside">内部</button></div>
+    </section>
+    <section><h2>表示</h2>
+      <div class="row">
+        <button class="btn" id="tCover" aria-pressed="true">背面カバー</button><button class="btn" id="tLabel" aria-pressed="false">部品名</button>
+        <button class="btn" id="tAir" aria-pressed="false">エアフロー</button><button class="btn" id="tScreen" aria-pressed="true">画面ON</button>
+      </div>
+      <div style="display:grid;gap:8px;margin-top:12px">
+        <label class="sl" for="sTilt"><span>チルト</span><input id="sTilt" type="range" min="-15" max="40" value="0"><b id="vTilt">0°</b></label>
+        <label class="sl" for="sSwivel"><span>首振り</span><input id="sSwivel" type="range" min="-60" max="60" value="0"><b id="vSwivel">0°</b></label>
+        <label class="sl" for="sExp"><span>分解</span><input id="sExp" type="range" min="0" max="200" value="0"><b id="vExp">0%</b></label>
+      </div>
+    </section>
+    <section><h2>動作(シミュレーション)</h2>
+      <div class="row" style="margin-bottom:10px"><button class="btn" id="lIdle" aria-pressed="true">アイドル</button><button class="btn" id="lGame" aria-pressed="false">ゲーム負荷</button></div>
+      <div class="read" id="read"></div>
+      <p class="note" style="margin:8px 0 0">回転数の見た目と数値は設計上の想定で、実測ではありません。</p>
+    </section>
+    <section><h2>部品と根拠(すべて市販品)</h2><div class="parts" id="parts"></div></section>
+    <p class="note">モデルは Blender で作成した GLB を読み込んでいます(blender/build_imac_pc_v6.py)。通気の穴は軽量化のためこのビューアでは粗い配列です(正規の仕様は Ø2.4×ピッチ4.0)。実在部品は公開寸法に合わせた再現で、メーカーのCADではありません。基板上の部品位置は典型例です。</p>
+  </aside>
+</div>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+
+const Q = new URLSearchParams(location.search), STATIC = Q.has('static');
+if(Q.has('clean')) document.body.classList.add('clean');
+const $ = id => document.getElementById(id);
+const PALETTE={silver:['#D2D3D5','#BBBCBE','#D7D8DA'],blue:['#5882B2','#9EB2CD','#BACEE9'],purple:['#8581B4','#ACA3C0','#C9C5E6'],pink:['#E16280','#E7A9B6','#FFCFDB'],orange:['#E5734E','#F0B498','#FFCCAF'],yellow:['#EFD344','#DCCB97','#FDEEB7'],green:['#41965F','#A2BFAD','#B9D8C6']};
+const NAMES={silver:'シルバー',blue:'ブルー',purple:'パープル',pink:'ピンク',orange:'オレンジ',yellow:'イエロー',green:'グリーン'};
+let color=PALETTE[Q.get('color')]?Q.get('color'):'silver';
+const SLAB=25, DOME_T=129, DOME_W=596, DOME_H=377, DOME_Y0=24, WALL=3;   // 設計値(model/spec.json)
+
+/* ---- renderer / scene ---- */
+const canvas=$('c'), view=$('view');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
+renderer.outputColorSpace=THREE.SRGBColorSpace; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.15;
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene(); const pm=new THREE.PMREMGenerator(renderer);
+scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;
+const isDark=()=>document.documentElement.dataset.theme==='dark'||(document.documentElement.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);
+scene.background=new THREE.Color(isDark()?'#12151a':'#eceef2');
+const camera=new THREE.PerspectiveCamera(28,1,10,8000);
+const controls=new OrbitControls(camera,canvas); controls.enableDamping=true; controls.dampingFactor=.08; controls.minDistance=120; controls.maxDistance=3000;
+function sun(p,i,c,shadow){ const l=new THREE.DirectionalLight(c,i); l.position.set(...p); if(shadow){ l.castShadow=true; l.shadow.mapSize.set(2048,2048); Object.assign(l.shadow.camera,{left:-800,right:800,top:800,bottom:-350,near:100,far:3000}); l.shadow.radius=6; l.shadow.bias=-0.0004;} scene.add(l); }
+sun([500,800,900],2.0,'#fff',true); sun([-350,650,-950],1.6,'#fff4e8',true); sun([700,200,-600],.6,'#cfe0ff',false);
+scene.add(new THREE.HemisphereLight('#fff','#8a92a3',1.0));
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMaterial({opacity:.14})); floor.rotation.x=-Math.PI/2; floor.position.y=-119.7; floor.receiveShadow=true; scene.add(floor);
+
+/* ---- 画面(壁紙は動的) ---- */
+const sc2=document.createElement('canvas'); sc2.width=768; sc2.height=432; const sg=sc2.getContext('2d');
+const screenTex=new THREE.CanvasTexture(sc2); screenTex.colorSpace=THREE.SRGBColorSpace; screenTex.flipY=false;
+const screenMat=new THREE.MeshBasicMaterial({map:screenTex,toneMapped:false}), offMat=new THREE.MeshStandardMaterial({color:'#0a0a0c',roughness:.15,polygonOffset:true,polygonOffsetFactor:-6,polygonOffsetUnits:-6});
+function drawScreen(t){ const w=sc2.width,h=sc2.height;      // 壁紙: 深い青→紫→橙(どの本体色でも画面は色鮮やか)
+  const g=sg.createLinearGradient(0,h,w,0); g.addColorStop(0,'#081650'); g.addColorStop(.42,'#4230c4'); g.addColorStop(.72,'#d64eaa'); g.addColorStop(1,'#ff965c'); sg.fillStyle=g; sg.fillRect(0,0,w,h);
+  for(let i=0;i<7;i++){ const x=(i*150+Math.sin(t*.4+i)*30)%(w+150)-75; sg.save(); sg.translate(x+60,h/2); sg.rotate(-.28);
+    const gg=sg.createLinearGradient(-60,0,60,0); gg.addColorStop(0,'rgba(255,255,255,.22)'); gg.addColorStop(.5,'rgba(255,255,255,.08)'); gg.addColorStop(1,'rgba(255,255,255,.0)');
+    sg.fillStyle=gg; sg.beginPath(); sg.roundRect(-58,-h*.9,116,h*1.8,58); sg.fill(); sg.restore(); }
+  sg.fillStyle='rgba(20,20,40,.45)'; sg.fillRect(0,0,w,13); sg.fillStyle='rgba(255,255,255,.32)'; sg.beginPath(); sg.roundRect(w/2-130,h-36,260,28,12); sg.fill();
+  for(let i=0;i<9;i++){ sg.fillStyle='rgba(255,255,255,.8)'; sg.beginPath(); sg.roundRect(w/2-118+i*27,h-32,20,20,5); sg.fill(); } screenTex.needsUpdate=true; }
+
+/* ---- GLB 読み込み ---- */
+const S={cover:true,labels:false,air:false,screen:true,load:0,explode:0,speed:0};
+let model, pivot, swivel, coverNode; const displayMeshes=[], rotors=[], byName={}, matBy={}, explodeGroups=[]; let ready=false;
+const EXPLODE=[[['display','front_glass','chin_print','camera','mic','power_button'],-300],[['cover_','gasket','hook_','dowel_','antenna','rf_window'],620],[['fan_exhaust'],440],[['pump','hose','txt_ihs','rad_','fan_rad','fan_pump','txt_arctic'],330],[['ac_inlet','cable_ac'],260],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],210],[['psu','fan_psu','cable_atx24','cable_eps','txt_sf','txt_plat'],140],[['ssd_','txt_samsung','m2_screw'],110],[['ctrl_','cable_'],80]];   // 分解量[mm]@100%。スライダは最大200%(=2倍)
+/* GLBは base64 テキスト(imac_pc.glb.txt)から読む(公開環境が .glb を配信しないため)。ローカルでは .glb にフォールバック */
+function loadGLB(onload,_p,onerr){
+  const L=new GLTFLoader();
+  fetch('imac_pc.glb.txt').then(r=>{ if(!r.ok) throw new Error(r.status); return r.text(); })
+    .then(t=>{ const bin=atob(t.trim()); const buf=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) buf[i]=bin.charCodeAt(i); L.parse(buf.buffer,'',onload,onerr); })
+    .catch(()=>L.load('imac_pc.glb',onload,undefined,onerr));
+}
+loadGLB(gltf=>{
+  model=gltf.scene; scene.add(model);
+  model.traverse(o=>{ byName[o.name]=o; if(o.isMesh){ o.castShadow=o.receiveShadow=true; const m=o.material; if(m&&m.isMeshStandardMaterial){ m.envMapIntensity=1.9; if(m.metalness>.8) m.metalness=.62; if(m.roughness<.3) m.roughness=.3; } if(m&&m.name) matBy[m.name]=m; if(m&&m.name==='display') displayMeshes.push(o);} });
+  pivot=byName['tilt_pivot']; swivel=byName['swivel_pivot']; coverNode=byName['cover_back'];
+  const RPM={fan_gpu0_rotor:[0,1800],fan_gpu1_rotor:[0,1800],fan_rad0_rotor:[600,2400],fan_rad1_rotor:[600,2400],fan_exhaust_rotor:[500,1700],fan_psu_rotor:[0,1200],fan_pump_vrm_rotor:[800,2500]};   // アイドル/負荷(設計上の想定, 実測ではない)
+  for(const n in RPM) if(byName[n]) rotors.push({o:byName[n],idle:RPM[n][0],load:RPM[n][1]});
+  for(const n of ['display','chin_print','camera']){ const o=byName[n]; if(o) o.position.z+=(n==='display'?0.35:0.2); }   // ガラス前面(z=0)から物理的に離して z-fighting を根絶(画面ON/OFFどちらでも)
+  for(const [prefixes,amt] of EXPLODE){ const nodes=[]; model.traverse(o=>{ if(o.name&&prefixes.some(p=>o.name.startsWith(p))) nodes.push(o); });
+    const set=new Set(nodes); const top=nodes.filter(o=>{ let p=o.parent; while(p){ if(set.has(p)) return false; p=p.parent;} return true; });
+    explodeGroups.push({nodes:top,amt,base:top.map(o=>o.position.clone())}); }
+  displayMeshes.forEach(m=>{ m.material=screenMat; });
+  for(const n of ['painted_chin','black_glass']) if(matBy[n]){ matBy[n].polygonOffset=true; matBy[n].polygonOffsetFactor=-4; matBy[n].polygonOffsetUnits=-4; }   // ガラス面との重なり(z-fighting)対策
+  screenMat.polygonOffset=true; screenMat.polygonOffsetFactor=-6; screenMat.polygonOffsetUnits=-6;
+  setColor(color); $('loading').remove(); ready=true; initStruts(); goView(Q.get('view')||'back',true); applyExplode();
+  if(Q.get('cut')==='1') setCover(false);
+  if(Q.has('tilt')){ $('sTilt').value=Q.get('tilt'); $('sTilt').oninput({target:$('sTilt')}); }
+  if(Q.has('swivel')){ $('sSwivel').value=Q.get('swivel'); $('sSwivel').oninput({target:$('sSwivel')}); }
+  if(Q.has('exp')){ $('sExp').value=Q.get('exp'); $('sExp').oninput({target:$('sExp')}); }
+  if(Q.get('labels')==='1'){ S.labels=true; $('tLabel').setAttribute('aria-pressed','true'); }
+  if(STATIC){ rotors.forEach((r,i)=>r.o.rotation.z=i*.8); for(let i=0;i<3;i++) frame(performance.now()+i*16); window.__ready=true; }
+},undefined,e=>{ const l=$('loading'); if(l) l.textContent='モデルを読み込めませんでした: '+(e&&e.message||e); });
+
+
+/* ---- バランサのダイスプリング: チルトに合わせて両端ピン間で傾き・伸縮(上端=尾部レバー先端ピン、下端=スタンド側座) ---- */
+const struts=[]; window.__struts=struts;
+function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+k], seat=byName['spring_seat_bot'+k], parts=['spring_die'+k,'spring_guide_rod'+k].map(n=>byName[n]).filter(Boolean);
+    if(pin&&seat&&parts.length) struts.push({pin,seat,parts,base:parts.map(o=>({p:o.position.clone(),q:o.quaternion.clone(),s:o.scale.clone()})),len0:0}); } updateStruts(true); }
+function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld(true); const c=o=>new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
+  for(const st of struts){ const A=c(st.seat), B=c(st.pin);
+    st.parts.forEach((o,i)=>{ const par=o.parent; const a=par.worldToLocal(A.clone()), b=par.worldToLocal(B.clone()); const d=b.clone().sub(a); const L=d.length();
+      if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=new THREE.Vector3(0,1,0); }
+      o.quaternion.copy(new THREE.Quaternion().setFromUnitVectors(st.dir0,d.clone().normalize())).multiply(st.base[i].q);
+      const mid=a.clone().add(d.clone().multiplyScalar(0.5)); const m0=st.a0.clone().add(st.dir0.clone().multiplyScalar(st.len0/2));
+      o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*(L/st.len0), st.base[i].s.z); }); } }
+function mixHex(a,b,t){ const c=new THREE.Color(a); c.lerp(new THREE.Color(b),t); return '#'+c.getHexString(); }
+function setColor(n){ color=n; const [b,s,c]=PALETTE[n];
+  if(matBy['anodized_body']) matBy['anodized_body'].color.set(b); if(matBy['anodized_stand']) matBy['anodized_stand'].color.set(s);
+  const chin=mixHex(c,b,.5), bezel=mixHex(c,'#ffffff',.3);      // 前面: チンは本体色寄りの濃い色、ベゼル(前面ガラス)はその淡色 → どの色でも正面から色の違いが分かる
+  if(matBy['painted_chin']) matBy['painted_chin'].color.set(chin); if(matBy['front_glass']) matBy['front_glass'].color.set(bezel);
+  document.querySelectorAll('.chip').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.c===n))); drawScreen(0); }
+function setCover(on){ S.cover=on; $('tCover').setAttribute('aria-pressed',String(on)); applyExplode(); }
+function applyExplode(){ if(!ready) return; const e=S.explode;
+  for(const g of explodeGroups) g.nodes.forEach((o,i)=>{ o.position.copy(g.base[i]); o.position.z-=g.amt*e; }); // 背面(-z)方向へ
+  model.traverse(o=>{ if(o.name.startsWith('cover_')||o.name==='gasket') o.visible=S.cover; }); }
+
+/* ---- UI ---- */
+const chips=$('chips'); for(const k of Object.keys(PALETTE)){ const b=document.createElement('button'); b.className='chip'; b.dataset.c=k; b.title=NAMES[k]; b.setAttribute('aria-label',NAMES[k]); b.style.background=PALETTE[k][0]; b.onclick=()=>setColor(k); chips.appendChild(b); }
+const VIEWS={front:{p:[560,330,1900],t:[0,205,-30],name:'正面'},back:{p:[-700,330,-1950],t:[0,200,-45],name:'背面'},side:{p:[1900,270,-80],t:[0,190,-45],name:'側面'},inside:{p:[40,215,-1380],t:[0,205,-45],name:'内部(ドームなし)'}};
+let tween=null;
+function goView(n,instant){ if(!VIEWS[n]) n='back'; const v=VIEWS[n]; $('hudView').textContent=v.name; if(n==='inside') setCover(false);
+  if(instant){ camera.position.set(...v.p); controls.target.set(...v.t); controls.update(); return; }
+  tween={t:0,p0:camera.position.clone(),t0:controls.target.clone(),p1:new THREE.Vector3(...v.p),t1:new THREE.Vector3(...v.t)}; }
+document.querySelectorAll('#views button').forEach(b=>b.onclick=()=>goView(b.dataset.v));
+$('tCover').onclick=()=>setCover(!S.cover);
+$('tLabel').onclick=e=>{ S.labels=!S.labels; e.currentTarget.setAttribute('aria-pressed',String(S.labels)); };
+$('tAir').onclick=e=>{ S.air=!S.air; pts.visible=S.air; e.currentTarget.setAttribute('aria-pressed',String(S.air)); if(S.air&&S.cover) setCover(false); };
+$('tScreen').onclick=e=>{ S.screen=!S.screen; displayMeshes.forEach(m=>m.material=S.screen?screenMat:offMat); e.currentTarget.setAttribute('aria-pressed',String(S.screen)); };
+$('sTilt').oninput=e=>{ const v=+e.target.value; $('vTilt').textContent=v+'°'; if(pivot) pivot.rotation.x=-v*Math.PI/180; updateStruts(); };
+$('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'°'; if(swivel) swivel.rotation.y=v*Math.PI/180; updateStruts(); };
+$('sExp').oninput=e=>{ S.explode=+e.target.value/100; $('vExp').textContent=Math.round(S.explode*100)+'%'; applyExplode(); };
+const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定, AC入力)','約 100 W']],
+            1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定, AC入力)','約 540 W(最大 約690 W)']]};
+function setLoad(n){ S.load=n; $('lIdle').setAttribute('aria-pressed',String(n===0)); $('lGame').setAttribute('aria-pressed',String(n===1)); $('read').innerHTML=READ[n].map(([a,b])=>`<span>${a}</span><span>${b}</span>`).join(''); }
+$('lIdle').onclick=()=>setLoad(0); $('lGame').onclick=()=>setLoad(1); setLoad(Q.get('load')==='1'?1:0);
+const PARTS=[
+ ['ディスプレイ: BOE MV270QUM-N50 27型4K IPS','609.4×355.6×13.3mm / 有効596.7×335.7mm / eDP 4lane 30pin / 2.45kg / 最大37.3W / LCM表面温度0〜48℃','ok','BOE公式データシート(Panelook/Data-Modul)。背板温度は目標≤40℃(断熱+空気層7mm)。ガラスはスラブ枠に接着、パネルとはエアギャップ。'],
+ ['パネル制御基板(型番未確定・最大リスク)','縦置き55×150×15mmの予約空間','est','保証付きキットの確認が購入前ゲート(docs/spec/panel-driver.md)。'],
+ ['マザーボード: ASUS ROG STRIX X870-I GAMING WIFI','170×170mm / AM5 / DDR5×2 / USB4×2 / 2.5GbE / Wi-Fi 7','ok','外形/I/O構成はASUS公式。部品位置はマニュアル図の実測。VRM高さ等は未確認。'],
+ ['CPU: AMD Ryzen 9 9950X3D','16C/32T / TDP170W(PPT 230W想定) / AM5','est','M6 iMacのマルチ性能を上回る。単発性能はM6に及ばない。PPT/Tjmaxの公式値は未取得。'],
+ ['CPUクーラー: ARCTIC Liquid Freezer III Pro 240','ポンプ108.47×Ø91×68.5 / ラジエーター277×120×38 / ホース450mm','ok','ARCTIC公式2D図面で寸法確認。9950X3D(230W)の実温度は未検証。ホース曲げ半径は未確認(U45/U49)。'],
+ ['GPU: RTX 5070 Ti 16GB 小型2スロット(寸法基準 PNY Slim)','290×150×40mm / 300W / 12V-2x6','est','4KでCyberpunk/CoD/Cities SK2を快適に遊ぶための最小構成。具体型番/入手性は未確定(U46)。'],
+ ['PCIeライザー: LINKUP AVA5 PCIe5.0 x16 20cm','フラットリボン','est','幅・厚み・曲げ半径は未確認(最大リスクの一つ)。'],
+ ['電源: Corsair SF1000 (SFX 1000W)','125×100×63.5mm','est','1000Wへ変更(使用率約61%)。公式仕様は未取得(U47)。'],
+ ['SSD: Samsung 990 PRO with Heatsink 1TB','80.15×25×8.88mm / PCIe4.0 x4','ok','Samsung公式データシート。'],
+ ['メモリ: DDR5-6000 CL30 EXPO 32GB (2×16GB)','133.35×〜44mm','est','型番未選定。'],
+ ['AC電源・接地','C14インレット(下辺左)+内部延長C13 / 保護接地は専用導体+編組','est','docs/spec/grounding-spec.md。型番未選定。'],
+ ['ヒンジ機構(全部品を描画)','ヒンジブロック+摩擦ヒンジ×2+ダイスプリング式バランサ(尾部レバー)+ストッパ+軸+Eクリップ+貫通ボルト+首振りユニット','est','部品の型番は未選定(U26/U27)。ばね・ネジ・ラッチ・磁石・ピン等の一覧: docs/spec/hardware-list.md'],
+ ['外装(特注)','A5052 t2.0(ドーム/背板/トレイ)・A6063スタンド・強化ガラス','est','板金/絞り加工は外注見積が必要(U39)。']];
+$('parts').innerHTML=PARTS.map(([n,s,t,m])=>`<details><summary>${n}<span class="tag ${t==='ok'?'t-ok':'t-est'}">${t==='ok'?'仕様確認済':'要確認'}</span></summary><p>${s}</p><p>${m}</p></details>`).join('');
+
+/* ---- ラベル / エアフロー ---- */
+const LABELS=[['MV270QUM-N50 ディスプレイ','display',0],['ASUS X870-I','board_pcb',1],['Ryzen 9 9950X3D','cpu_ihs',1],['ARCTIC LF III ポンプ','pump_body',1],['ラジエーター 240mm','rad_core',1],['RTX 5070 Ti 小型(PNY Slim基準)','gpu_shroud_body',1],['Corsair SF1000','psu_body',1],['ヒンジブロック','hinge_block_base',0],['eDP制御基板(型番未定)','ctrl_pcb',1],['990 PRO','ssd_body',1],['DDR5','dimm0_body',1],['ACインレット','ac_inlet_body',1],['サービストレイ','tray_plate',1]];
+const labelsEl=$('labels'); const LB=LABELS.map(([t,n,internal])=>{ const d=document.createElement('div'); d.className='lb'; d.textContent=t; labelsEl.appendChild(d); return {d,n,internal,p:null}; });
+const V3=new THREE.Vector3();
+function updateLabels(){ const rect=view.getBoundingClientRect();
+  for(const l of LB){ const o=byName[l.n]; const on=ready&&S.labels&&(!l.internal||!S.cover); l.d.style.display=on?'block':'none'; if(!on||!o) continue;
+    if(!l.p){ const b=new THREE.Box3().setFromObject(o); l.p=o.worldToLocal(b.getCenter(new THREE.Vector3())); }
+    V3.copy(l.p); o.localToWorld(V3); V3.project(camera); l.d.style.left=((V3.x+1)/2*rect.width)+'px'; l.d.style.top=((1-V3.y)/2*rect.height)+'px'; } }
+const NP=240,pPos=new Float32Array(NP*3),pCol=new Float32Array(NP*3),pVel=[]; const pGeo=new THREE.BufferGeometry(); pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3)); pGeo.setAttribute('color',new THREE.BufferAttribute(pCol,3));
+const pts=new THREE.Points(pGeo,new THREE.PointsMaterial({size:3.2,vertexColors:true,transparent:true,opacity:.85,depthWrite:false})); pts.visible=false; scene.add(pts);
+const rr=(s=>()=>(s=(s*16807)%2147483647)/2147483647)(99);
+function respawn(i){ const out=rr()<.5; pPos[i*3]=-DOME_W/2+WALL+rr()*(DOME_W-2*WALL); pPos[i*3+1]=DOME_Y0+WALL+(out?200+rr()*150:2); pPos[i*3+2]=-(SLAB+3+4+rr()*(DOME_T-SLAB-10)); pVel[i]=[(rr()-.5)*6,40+rr()*40]; }
+for(let i=0;i<NP;i++){ respawn(i); pPos[i*3+1]+=rr()*370; }
+
+/* ---- ループ ---- */
+function resize(){ const r=view.getBoundingClientRect(); const w=Q.get('w')?+Q.get('w'):r.width,h=Q.get('h')?+Q.get('h'):r.height; renderer.setPixelRatio(Math.min(devicePixelRatio||1,STATIC?+(Q.get('dpr')||2):2)); renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(view); addEventListener('resize',resize); resize();
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>scene.background.set(isDark()?'#12151a':'#eceef2'));
+let last=performance.now(),tk=0;
+function frame(now){ const dt=Math.min(.05,(now-last)/1000); last=now; tk++;
+  S.speed+=((S.load?1:0)-S.speed)*Math.min(1,dt*2.5);
+  for(const r of rotors){ const rpm=r.idle+(r.load-r.idle)*S.speed; r.o.rotation.z-=rpm/60*2*Math.PI*dt*.12; }
+  if(S.screen&&tk%2===0) drawScreen(now/1000);
+  if(pts.visible){ for(let i=0;i<NP;i++){ const v=pVel[i]; pPos[i*3]+=v[0]*dt; pPos[i*3+1]+=v[1]*dt*(.6+S.speed*1.4); const t=Math.min(1,(pPos[i*3+1]-DOME_Y0)/370); pCol[i*3]=.2+.8*t; pCol[i*3+1]=.6-.35*t; pCol[i*3+2]=1-.9*t; if(pPos[i*3+1]>DOME_Y0+WALL+370) respawn(i);} pGeo.attributes.position.needsUpdate=true; pGeo.attributes.color.needsUpdate=true; }
+  if(tween){ tween.t=Math.min(1,tween.t+dt*1.6); const e=tween.t*tween.t*(3-2*tween.t); camera.position.lerpVectors(tween.p0,tween.p1,e); controls.target.lerpVectors(tween.t0,tween.t1,e); if(tween.t>=1) tween=null; }
+  controls.update(); updateLabels(); renderer.render(scene,camera); if(!STATIC) requestAnimationFrame(frame); }
+if(!STATIC) requestAnimationFrame(frame);
+</script>

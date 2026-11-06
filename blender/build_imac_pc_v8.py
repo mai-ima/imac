@@ -130,25 +130,23 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 TEXDIR = os.path.join(ROOT, 'blender', 'textures'); os.makedirs(TEXDIR, exist_ok=True)
 
 def wallpaper(path, base, light):
-    """macOSの標準壁紙風(深い青→紫→橙の斜めグラデーション+柔らかいリボン)。本体色の違いは中間色相だけに反映する(画面はどの色でも色鮮やかに見えるのが実物)。"""
+    """本体色ごとの壁紙(spec.wallpaper の4停止点グラデーション+柔らかいリボン)。ビューアの drawScreen と同じ配色。"""
     w, h = 2560, 1440
-    tint = tuple(int(light[i:i + 2], 16) for i in (1, 3, 5))
-    stops = [(0.0, (8, 22, 78)), (0.42, (66, 48, 196)), (0.72, tuple(int(0.6 * 214 + 0.4 * tint[k]) for k, _ in enumerate(tint)) if False else (214, 78, 170)), (1.0, (255, 150, 92))]
+    stops_hex = S['wallpaper'].get(A.color, S['wallpaper']['silver']); cs = [tuple(int(x[i:i + 2], 16) for i in (1, 3, 5)) for x in stops_hex]
     def col(t):
-        for (t0, c0), (t1, c1) in zip(stops, stops[1:]):
-            if t <= t1: u = (t - t0) / (t1 - t0); return tuple(int(c0[k] + (c1[k] - c0[k]) * u) for k in range(3))
-        return stops[-1][1]
+        t = min(1.0, max(0.0, t)) * (len(cs) - 1); i = min(len(cs) - 2, int(t)); u = t - i
+        return tuple(int(cs[i][k] + (cs[i + 1][k] - cs[i][k]) * u) for k in range(3))
     img = Image.new('RGB', (w, h)); px = img.load()
     for y in range(h):
-        for x in range(w): px[x, y] = col(min(1.0, max(0.0, x / w * .62 + (1 - y / h) * .38)))
+        for x in range(w): px[x, y] = col(x / w * .62 + (1 - y / h) * .38)
     over = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(over)
-    for i in range(7):      # 柔らかいリボン
-        cx = 60 + i * 390; d.rounded_rectangle((cx - 150, -400, cx + 150, h + 400), 150, fill=(255, 255, 255, 46 if i % 2 else 22))
+    for i in range(7):
+        cx = 60 + i * 390; d.rounded_rectangle((cx - 150, -400, cx + 150, h + 400), 150, fill=(255, 255, 255, 30 if i % 2 else 14))
     over = over.rotate(-16, resample=Image.BICUBIC, center=(w / 2, h / 2)).filter(ImageFilter.GaussianBlur(40))
     img = Image.alpha_composite(img.convert('RGBA'), over).convert('RGB'); d = ImageDraw.Draw(img, 'RGBA')
-    d.rectangle((0, 0, w, 36), fill=(20, 20, 40, 110))                       # メニューバー
-    d.rounded_rectangle((w / 2 - 340, h - 124, w / 2 + 340, h - 36), 38, fill=(255, 255, 255, 80))      # Dock風
-    for i in range(9): d.rounded_rectangle((w / 2 - 310 + i * 72, h - 110, w / 2 - 258 + i * 72, h - 58), 13, fill=tuple(int(v) for v in (255, 255, 255)) + (190,))
+    d.rectangle((0, 0, w, 36), fill=(20, 20, 40, 110))
+    d.rounded_rectangle((w / 2 - 340, h - 124, w / 2 + 340, h - 36), 38, fill=(255, 255, 255, 80))
+    for i in range(9): d.rounded_rectangle((w / 2 - 310 + i * 72, h - 110, w / 2 - 258 + i * 72, h - 58), 13, fill=(255, 255, 255, 190))
     img.save(path)
 
 def pcb_tex(path, w, h, seed, base, trace, label=''):

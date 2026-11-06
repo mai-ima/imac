@@ -107,7 +107,7 @@ const $ = id => document.getElementById(id);
 const PALETTE={silver:['#D2D3D5','#BBBCBE','#D7D8DA'],blue:['#5882B2','#9EB2CD','#BACEE9'],purple:['#8581B4','#ACA3C0','#C9C5E6'],pink:['#E16280','#E7A9B6','#FFCFDB'],orange:['#E5734E','#F0B498','#FFCCAF'],yellow:['#EFD344','#DCCB97','#FDEEB7'],green:['#41965F','#A2BFAD','#B9D8C6']};
 const NAMES={silver:'シルバー',blue:'ブルー',purple:'パープル',pink:'ピンク',orange:'オレンジ',yellow:'イエロー',green:'グリーン'};
 let color=PALETTE[Q.get('color')]?Q.get('color'):'silver';
-const SLAB=25, DOME_T=129, DOME_W=596, DOME_H=377, DOME_Y0=24, WALL=3;   // 設計値(model/spec.json)
+const SLAB=25, DOME_T=182, DOME_W=596, DOME_H=377, DOME_Y0=24, WALL=3;   // 設計値(model/spec.json)
 
 /* ---- renderer / scene ---- */
 const canvas=$('c'), view=$('view');
@@ -129,10 +129,11 @@ const floor=new THREE.Mesh(new THREE.PlaneGeometry(6000,6000),new THREE.ShadowMa
 const sc2=document.createElement('canvas'); sc2.width=768; sc2.height=432; const sg=sc2.getContext('2d');
 const screenTex=new THREE.CanvasTexture(sc2); screenTex.colorSpace=THREE.SRGBColorSpace; screenTex.flipY=false;
 const screenMat=new THREE.MeshBasicMaterial({map:screenTex,toneMapped:false}), offMat=new THREE.MeshStandardMaterial({color:'#0a0a0c',roughness:.15,polygonOffset:true,polygonOffsetFactor:-6,polygonOffsetUnits:-6});
-function drawScreen(t){ const w=sc2.width,h=sc2.height;      // 壁紙: 深い青→紫→橙(どの本体色でも画面は色鮮やか)
-  const g=sg.createLinearGradient(0,h,w,0); g.addColorStop(0,'#081650'); g.addColorStop(.42,'#4230c4'); g.addColorStop(.72,'#d64eaa'); g.addColorStop(1,'#ff965c'); sg.fillStyle=g; sg.fillRect(0,0,w,h);
+/*WALL*/const WALLPAPER={"silver": ["#10131f", "#3a4570", "#8b93b8", "#e6e8f2"], "blue": ["#04163f", "#0a4aa8", "#2e9bff", "#a8e0ff"], "purple": ["#1a0a45", "#5a2fc2", "#b25cf0", "#f2c2ff"], "pink": ["#3b0a2a", "#b0225e", "#ff5f93", "#ffc1c9"], "orange": ["#3a0e05", "#c7380f", "#ff8a2a", "#ffd79a"], "yellow": ["#2b2305", "#a07d00", "#ffd21f", "#fff3a3"], "green": ["#031f12", "#0b6b3a", "#2fbf71", "#c6f5b5"]};/*ENDWALL*/
+function drawScreen(t){ const w=sc2.width,h=sc2.height; const st=WALLPAPER[color]||WALLPAPER.silver||['#10131f','#3a4570','#8b93b8','#e6e8f2'];      // 本体色ごとの壁紙(spec.wallpaper と同一)
+  const g=sg.createLinearGradient(0,h,w,0); st.forEach((c,i)=>g.addColorStop(i/(st.length-1),c)); sg.fillStyle=g; sg.fillRect(0,0,w,h);
   for(let i=0;i<7;i++){ const x=(i*150+Math.sin(t*.4+i)*30)%(w+150)-75; sg.save(); sg.translate(x+60,h/2); sg.rotate(-.28);
-    const gg=sg.createLinearGradient(-60,0,60,0); gg.addColorStop(0,'rgba(255,255,255,.22)'); gg.addColorStop(.5,'rgba(255,255,255,.08)'); gg.addColorStop(1,'rgba(255,255,255,.0)');
+    const gg=sg.createLinearGradient(-60,0,60,0); gg.addColorStop(0,'rgba(255,255,255,.13)'); gg.addColorStop(.5,'rgba(255,255,255,.05)'); gg.addColorStop(1,'rgba(255,255,255,.0)');
     sg.fillStyle=gg; sg.beginPath(); sg.roundRect(-58,-h*.9,116,h*1.8,58); sg.fill(); sg.restore(); }
   sg.fillStyle='rgba(20,20,40,.45)'; sg.fillRect(0,0,w,13); sg.fillStyle='rgba(255,255,255,.32)'; sg.beginPath(); sg.roundRect(w/2-130,h-36,260,28,12); sg.fill();
   for(let i=0;i<9;i++){ sg.fillStyle='rgba(255,255,255,.8)'; sg.beginPath(); sg.roundRect(w/2-118+i*27,h-32,20,20,5); sg.fill(); } screenTex.needsUpdate=true; }
