@@ -47,6 +47,7 @@
 | massmodel.py | v003 | current | 2026-11-06 | 9ff6031 | massmodel/massmodel.v003__2026-11-06_9ff6031.py |
 | motion_check.py | v001 | current | 2026-11-06 | 7ed5c4c | motion_check/motion_check.v001__2026-11-06_7ed5c4c.py |
 | run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
+| run_gates.sh | v002 | current | 2026-11-06 | 7ed5c4c | run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |

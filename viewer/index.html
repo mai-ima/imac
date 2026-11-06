@@ -159,7 +159,7 @@ loadGLB(gltf=>{
   displayMeshes.forEach(m=>{ m.material=screenMat; });
   for(const n of ['painted_chin','black_glass']) if(matBy[n]){ matBy[n].polygonOffset=true; matBy[n].polygonOffsetFactor=-4; matBy[n].polygonOffsetUnits=-4; }   // ガラス面との重なり(z-fighting)対策
   screenMat.polygonOffset=true; screenMat.polygonOffsetFactor=-6; screenMat.polygonOffsetUnits=-6;
-  setColor(color); $('loading').remove(); ready=true; goView(Q.get('view')||'back',true); applyExplode();
+  setColor(color); $('loading').remove(); ready=true; initStruts(); goView(Q.get('view')||'back',true); applyExplode();
   if(Q.get('cut')==='1') setCover(false);
   if(Q.has('tilt')){ $('sTilt').value=Q.get('tilt'); $('sTilt').oninput({target:$('sTilt')}); }
   if(Q.has('swivel')){ $('sSwivel').value=Q.get('swivel'); $('sSwivel').oninput({target:$('sSwivel')}); }
@@ -168,6 +168,18 @@ loadGLB(gltf=>{
   if(STATIC){ rotors.forEach((r,i)=>r.o.rotation.z=i*.8); for(let i=0;i<3;i++) frame(performance.now()+i*16); window.__ready=true; }
 },undefined,e=>{ const l=$('loading'); if(l) l.textContent='モデルを読み込めませんでした: '+(e&&e.message||e); });
 
+
+/* ---- バランサのダイスプリング: チルトに合わせて両端ピン間で傾き・伸縮(上端=尾部レバー先端ピン、下端=スタンド側座) ---- */
+const struts=[];
+function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+k], seat=byName['spring_seat_bot'+k], parts=['spring_die'+k,'spring_guide_rod'+k].map(n=>byName[n]).filter(Boolean);
+    if(pin&&seat&&parts.length) struts.push({pin,seat,parts,base:parts.map(o=>({p:o.position.clone(),q:o.quaternion.clone(),s:o.scale.clone()})),len0:0}); } updateStruts(true); }
+function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld(true); const c=o=>new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
+  for(const st of struts){ const A=c(st.seat), B=c(st.pin);
+    st.parts.forEach((o,i)=>{ const par=o.parent; const a=par.worldToLocal(A.clone()), b=par.worldToLocal(B.clone()); const d=b.clone().sub(a); const L=d.length();
+      if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=d.clone().normalize(); }
+      o.quaternion.copy(new THREE.Quaternion().setFromUnitVectors(st.dir0,d.clone().normalize())).multiply(st.base[i].q);
+      const mid=a.clone().add(d.clone().multiplyScalar(0.5)); const m0=st.a0.clone().add(st.dir0.clone().multiplyScalar(st.len0/2));
+      o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*(L/st.len0), st.base[i].s.z); }); } }
 function setColor(n){ color=n; const [b,s,c]=PALETTE[n];
   if(matBy['anodized_body']) matBy['anodized_body'].color.set(b); if(matBy['anodized_stand']) matBy['anodized_stand'].color.set(s); if(matBy['painted_chin']) matBy['painted_chin'].color.set(c);
   document.querySelectorAll('.chip').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.c===n))); drawScreen(0); }
@@ -188,8 +200,8 @@ $('tCover').onclick=()=>setCover(!S.cover);
 $('tLabel').onclick=e=>{ S.labels=!S.labels; e.currentTarget.setAttribute('aria-pressed',String(S.labels)); };
 $('tAir').onclick=e=>{ S.air=!S.air; pts.visible=S.air; e.currentTarget.setAttribute('aria-pressed',String(S.air)); if(S.air&&S.cover) setCover(false); };
 $('tScreen').onclick=e=>{ S.screen=!S.screen; displayMeshes.forEach(m=>m.material=S.screen?screenMat:offMat); e.currentTarget.setAttribute('aria-pressed',String(S.screen)); };
-$('sTilt').oninput=e=>{ const v=+e.target.value; $('vTilt').textContent=v+'°'; if(pivot) pivot.rotation.x=-v*Math.PI/180; };
-$('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'°'; if(swivel) swivel.rotation.y=v*Math.PI/180; };
+$('sTilt').oninput=e=>{ const v=+e.target.value; $('vTilt').textContent=v+'°'; if(pivot) pivot.rotation.x=-v*Math.PI/180; updateStruts(); };
+$('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'°'; if(swivel) swivel.rotation.y=v*Math.PI/180; updateStruts(); };
 $('sExp').oninput=e=>{ S.explode=+e.target.value/100; $('vExp').textContent=Math.round(S.explode*100)+'%'; applyExplode(); };
 const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定)','約 60 W']],
             1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定)','約 490 W']]};

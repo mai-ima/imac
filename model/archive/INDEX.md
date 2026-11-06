@@ -16,6 +16,7 @@
 | custom_parts.json | v005 | current | 2026-11-06 | 9ff6031 | custom_parts/custom_parts.v005__2026-11-06_9ff6031.json |
 | custom_parts.json | v006 | current | 2026-11-06 | 514e2e0 | custom_parts/custom_parts.v006__2026-11-06_514e2e0.json |
 | custom_parts.json | v007 | current | 2026-11-06 | 7ed5c4c | custom_parts/custom_parts.v007__2026-11-06_7ed5c4c.json |
+| custom_parts.json | v008 | current | 2026-11-06 | 4482281 | custom_parts/custom_parts.v008__2026-11-06_4482281.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
 | hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
