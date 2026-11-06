@@ -64,6 +64,15 @@
    "file": "audit-log/audit-log.v006__2026-11-06_a77badc.md"
   },
   {
+   "src": "docs/audit-log.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2e0ab24",
+   "sha256": "e7fa4a0d17715ae62a3d76f6a8a755f1ad746d80ff4a3372d438614248560968",
+   "file": "audit-log/audit-log.v007__2026-11-06_2e0ab24.md"
+  },
+  {
    "src": "docs/bom-final.md",
    "version": 1,
    "gen": "current",
@@ -271,6 +280,15 @@
    "file": "hinge-design/hinge-design.v003__2026-11-06_9ff6031.md"
   },
   {
+   "src": "docs/hinge-design.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "7ed5c4c",
+   "sha256": "7dd8e8cc3d35cf47a9b8eddeb53d0e40ed1b5b1993346ddeef8520de8e8d362d",
+   "file": "hinge-design/hinge-design.v004__2026-11-06_7ed5c4c.md"
+  },
+  {
    "src": "docs/joint-analysis.md",
    "version": 1,
    "gen": "current",
@@ -305,6 +323,15 @@
    "commit": "9ff6031",
    "sha256": "b38d733dc5ce06db2ec9e2ce7285f444bcce6873aa31786c40a2d836f7c72a02",
    "file": "joint-analysis/joint-analysis.v004__2026-11-06_9ff6031.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "7ed5c4c",
+   "sha256": "4a7e366439b687e389e9fdefab8c862186ae54ed3f22535267a189e82954d331",
+   "file": "joint-analysis/joint-analysis.v005__2026-11-06_7ed5c4c.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -451,6 +478,15 @@
    "file": "thermal-analysis/thermal-analysis.v003__2026-11-05_71b7afb.md"
   },
   {
+   "src": "docs/tilt-swivel-design.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "7ed5c4c",
+   "sha256": "95ab61d965d57289112bc3e657a08a644533ccf332d245697f61280592237946",
+   "file": "tilt-swivel-design/tilt-swivel-design.v001__2026-11-06_7ed5c4c.md"
+  },
+  {
    "src": "docs/unverified-tracker.md",
    "version": 1,
    "gen": "current",
@@ -539,6 +575,15 @@
    "commit": "cca8bc2",
    "sha256": "8394c82a7cc61651b15a77a0c983263a87f40eb6329d9621a106dd6aa7970d6f",
    "file": "unverified-tracker/unverified-tracker.v010__2026-11-06_cca8bc2.md"
+  },
+  {
+   "src": "docs/unverified-tracker.md",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "7ed5c4c",
+   "sha256": "305535c114225fcd29f3fef98181aaae8282e0af73503bb5ada586c5b256812b",
+   "file": "unverified-tracker/unverified-tracker.v011__2026-11-06_7ed5c4c.md"
   },
   {
    "src": "docs/wiring.md",

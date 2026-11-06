@@ -362,15 +362,19 @@ gasket()
 # スタンド(足+腕)。ヒンジ機構(ばね/摩擦ヒンジ/ブロック等)は後段の hardware で全部品を描画
 FT = 12.0; fw = S['stand']['foot_w']; HY = S['hinge']['axis_y']
 box('stand_foot', fw, FT, FOOT, -fw / 2, -DROP - FT, ZC - S['stand']['foot_back'], M['stand'], bevel=2.2, body=False)
-box('stand_ballast', fw - 24, 6, FOOT - 24, -(fw - 24) / 2, -DROP - FT + 3, ZC - S['stand']['foot_back'] + 12, M['steel'], body=False)   # 足内の鋼板ballast(6mm ≈1.8kg)
+BT = S['stand']['ballast_kg'] / (7.85e-6 * (fw - 24) * (FOOT - 24))      # 鋼板ballastの厚さ[mm]=質量から算出(spec.jsonが単一源)
+box('stand_ballast', fw - 24, BT, FOOT - 24, -(fw - 24) / 2, -DROP - FT + 3, ZC - S['stand']['foot_back'] + 12, M['steel'], body=False)   # 足内の鋼板ballast
 for sx_ in (-1, 1):
     for sz_ in (-1, 1): cyl('stand_rubber_foot', 10, 2.5, 'y', sx_ * (fw / 2 - 24), -DROP - FT - 1.25, ZC - S['stand']['foot_back'] + FOOT / 2 + sz_ * (FOOT / 2 - 24), M['rubber'], 24, body=False)
-ARM_H = DROP - S['swivel']['stack_h'] + HY + 11      # 首振りユニット(24mm)の上からヒンジ軸+11まで
-for _k, _dz in enumerate((-24, 18)):      # ネック: 前後2枚のプレート(間にバランサ用ダイスプリングを収める)
-    box(f'stand_arm{_k}', 120, ARM_H, 6, -60, -DROP + S['swivel']['stack_h'], ZC + _dz, M['stand'], bevel=1.5)
-for _k, _sx in enumerate((-60, 57)):      # 側面カバー(指が入らない・ばね/レバーを隠す)
-    box(f'stand_neck_side{_k}', 3, ARM_H, 48, _sx, -DROP + S['swivel']['stack_h'], ZC - 24, M['stand'], bevel=.8)
-ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); BODY_OBJS.remove(bpy.data.objects['stand_arm1'])
+ARM_H = DROP - S['swivel']['stack_h'] + HY + 11      # 首振りユニットの上からヒンジ軸+11まで
+SY_NECK = -DROP + S['swivel']['stack_h']
+for _k, _sx in enumerate((-62, 56)):      # ネック: 左右2枚の側板。ヒンジブロックの壁が回る領域(軸から半径13mm以内を除く)を避けるため、下部の本体+細いストリップ+軸まわりのボス(r11)の3要素で構成
+    box(f'stand_arm{_k}', 6, -16 - SY_NECK, 28, _sx, SY_NECK, ZC - 17, M['stand'], bevel=1.2)                  # 本体(ブロック下端より下)
+    box(f'stand_arm_strip{_k}', 6, HY + 16, 8, _sx, -16, ZC - 4, M['stand'], bevel=.8)                              # ストリップ(幅8)
+    cyl(f'stand_arm_boss{_k}', 11, 6, 'x', _sx + 3, HY, ZC, M['stand'], 40)                                         # 軸ボス(摩擦ヒンジ/軸受座)
+for _k, _zz in enumerate((ZC - 26, ZC + 24)):      # 前後カバー(指が入らない)。ヒンジブロック下端(y=0)の下に収める
+    box(f'stand_neck_cover{_k}', 120, -3 - SY_NECK, 2, -60, SY_NECK, _zz, M['stand'], bevel=.6)
+ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); [BODY_OBJS.remove(bpy.data.objects[n_]) for n_ in ('stand_arm1', 'stand_arm_strip0', 'stand_arm_strip1', 'stand_arm_boss0', 'stand_arm_boss1') if bpy.data.objects[n_] in BODY_OBJS]
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----
 def label(txt, size, x, y, zl, mat, rot=0, ext=0.05, name=None, align='CENTER'):
@@ -579,13 +583,13 @@ for c_ in CABJ: cable('cable_' + c_['id'], [tuple(q) for q in c_['path']], c_['o
 exec(open(os.path.join(HERE, 'hardware_v8.py'), encoding='utf-8').read())      # 小部品(ばね/ネジ/ラッチ/ヒンジ機構等)
 
 # ---------------- アセンブリ(部品群)ごとにグルーピング: 各ファン/ポンプ/ラジエーター/GPU/PSU/基板/SSD/ctrl/AC/ケーブル/ヒンジ/スタンド/ドーム/トレイ/表示部を独立した親にする ----------------
-ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_friction', 'stand_swivel_bolt', 'stand_swivel_stop_tab', 'hinge_axle', 'hinge_eclip', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
+ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_friction', 'stand_swivel_bolt', 'stand_swivel_stop_tab', 'pe_braid_swivel', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
        ('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_fan_rad0', ('fan_rad0',)), ('ASM_fan_rad1', ('fan_rad1',)), ('ASM_fan_psu', ('fan_psu',)), ('ASM_fan_pump_vrm', ('fan_pump_vrm',)),
        ('ASM_dome', ('cover_', 'gasket', 'latch_', 'hook_', 'magnet', 'dowel_', 'rf_window', 'antenna')),
        ('ASM_tray', ('tray_', 'hang_', 'standoff_', 'screw_', 'pe_stud', 'pe_nut', 'pe_braid_tray', 'clip_', 'gpu_cradle')),
        ('ASM_gpu', ('gpu_', 'riser')), ('ASM_aio_pump', ('pump_',)), ('ASM_aio_rad', ('rad_',)), ('ASM_psu', ('psu_',)),
        ('ASM_ssd', ('ssd_', 'txt_samsung', 'm2_screw')), ('ASM_ctrl', ('ctrl_',)), ('ASM_ac_inlet', ('ac_inlet',)), ('ASM_cables', ('cable_',)),
-       ('ASM_hinge', ('hinge_block', 'hinge_cheek', 'hinge_cover', 'hinge_backing', 'hinge_doubler', 'hinge_bolt', 'hinge_friction', 'hinge_cam', 'hinge_stopper', 'spring_', 'pe_braid_hinge')),
+       ('ASM_hinge', ('hinge_axle', 'hinge_eclip', 'hinge_block', 'hinge_cheek', 'hinge_cover', 'hinge_backing', 'hinge_doubler', 'hinge_bolt', 'hinge_friction', 'hinge_cam', 'hinge_stopper', 'spring_', 'pe_braid_hinge')),
        ('ASM_stand_fixed', ('stand_', 'hinge_axle', 'hinge_eclip')),
        ('ASM_display', ('slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button')),
        ('ASM_board', ('board_', 'io_', 'vrm_', 'choke', 'cap', 'socket', 'cpu_', 'txt_', 'dimm', 'atx24', 'eps8', 'pcie_', 'chipset', 'm2_', 'am5_'))]

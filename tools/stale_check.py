@@ -11,7 +11,7 @@ inner = S['dome']['total_t'] - S['dome']['sheet_t'] * 0 - 28   # 129-28=101 (内
 # 2) 旧値/廃止語(現行ファイルのみ)
 BAN = [(r'9800X3D', '旧CPU(9950X3Dへ置換済) ※比較対象は例外'), (r'SF750', '旧PSU(SF1000)'), (r'z\s*=\s*43\b', '旧ヒンジ軸z=43'),
        (r'足220×215|foot_depth["\']?\s*[:=]\s*215', '旧スタンド足寸法'), (r'CP-15(?!.*(廃止|removed|欠番))', '廃止CP-15の残存'),
-       (r'φ\s*4\.2\s*/\s*(ピッチ|pitch)\s*7', '旧穴φ4.2/ピッチ7'), (r'RTX 5060 Ti', '旧GPU(5070 Ti)')]
+       (r'φ\s*4\.2\s*/\s*(ピッチ|pitch)\s*7', '旧穴φ4.2/ピッチ7'), (r'RTX 5060 Ti', '旧GPU(5070 Ti)'), (r'220\s*[×x]\s*230|220\s*[×x]\s*215', '旧スタンド足220×230/215(現行300×290)'), (r'定荷重ばね|カム式', '旧バランサ(定荷重ばね/カム)'), (r'[-−]5\s*°?\s*(〜|~|/|から)\s*\+?25\s*°', '旧チルト範囲-5〜+25°'), (r'z\s*=\s*38\b', '旧ヒンジ軸z=38'), (r'ballast\s*1\.8|ballast\s*2\.0|ballast2kg', '旧ballast質量')]
 files = [f for f in subprocess.check_output(['git', 'ls-files'], cwd=R, text=True).split('\n')
          if f and '/archive/' not in f and not f.startswith('archive/') and f.endswith(('.py', '.json', '.md', '.html', '.svg', '.csv'))
          and not f.startswith('audit_output/') and f != 'tools/stale_check.py']

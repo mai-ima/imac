@@ -2,6 +2,7 @@
 
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
+| balance.json | v001 | current | 2026-11-06 | 7ed5c4c | balance/balance.v001__2026-11-06_7ed5c4c.json |
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
@@ -14,8 +15,10 @@
 | custom_parts.json | v004 | current | 2026-11-05 | 184ad21 | custom_parts/custom_parts.v004__2026-11-05_184ad21.json |
 | custom_parts.json | v005 | current | 2026-11-06 | 9ff6031 | custom_parts/custom_parts.v005__2026-11-06_9ff6031.json |
 | custom_parts.json | v006 | current | 2026-11-06 | 514e2e0 | custom_parts/custom_parts.v006__2026-11-06_514e2e0.json |
+| custom_parts.json | v007 | current | 2026-11-06 | 7ed5c4c | custom_parts/custom_parts.v007__2026-11-06_7ed5c4c.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
+| hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -46,3 +49,4 @@
 | spec.json | v009 | current | 2026-11-06 | fc36218 | spec/spec.v009__2026-11-06_fc36218.json |
 | spec.json | v010 | current | 2026-11-06 | 9ff6031 | spec/spec.v010__2026-11-06_9ff6031.json |
 | spec.json | v011 | current | 2026-11-06 | 514e2e0 | spec/spec.v011__2026-11-06_514e2e0.json |
+| spec.json | v012 | current | 2026-11-06 | 7ed5c4c | spec/spec.v012__2026-11-06_7ed5c4c.json |

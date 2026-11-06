@@ -12,9 +12,11 @@
 | build_imac_pc_v8.py | v001 | current | 2026-11-06 | 09ad133 | build_imac_pc_v8/build_imac_pc_v8.v001__2026-11-06_09ad133.py |
 | build_imac_pc_v8.py | v002 | current | 2026-11-06 | 514e2e0 | build_imac_pc_v8/build_imac_pc_v8.v002__2026-11-06_514e2e0.py |
 | build_imac_pc_v8.py | v003 | current | 2026-11-06 | c271477 | build_imac_pc_v8/build_imac_pc_v8.v003__2026-11-06_c271477.py |
+| build_imac_pc_v8.py | v004 | current | 2026-11-06 | 7ed5c4c | build_imac_pc_v8/build_imac_pc_v8.v004__2026-11-06_7ed5c4c.py |
 | hardware_v8.py | v001 | current | 2026-11-06 | 09ad133 | hardware_v8/hardware_v8.v001__2026-11-06_09ad133.py |
 | hardware_v8.py | v002 | current | 2026-11-06 | 9ff6031 | hardware_v8/hardware_v8.v002__2026-11-06_9ff6031.py |
 | hardware_v8.py | v003 | current | 2026-11-06 | 514e2e0 | hardware_v8/hardware_v8.v003__2026-11-06_514e2e0.py |
+| hardware_v8.py | v004 | current | 2026-11-06 | 7ed5c4c | hardware_v8/hardware_v8.v004__2026-11-06_7ed5c4c.py |
 | imac_pc.blend | v001 | current | 2026-11-05 | 165c355 | imac_pc/imac_pc.v001__2026-11-05_165c355.blend |
 | render_all.sh | v001 | current | 2026-11-03 | 165c355 | render_all/render_all.v001__2026-11-03_165c355.sh |
 | render_all.sh | v002 | current | 2026-11-05 | 7f1eac8 | render_all/render_all.v002__2026-11-05_7f1eac8.sh |
