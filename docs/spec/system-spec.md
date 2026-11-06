@@ -15,8 +15,8 @@ iMac(27型相当)の外観・体験を再現しつつ、内部をすべて市販
 | 冷却 | ARCTIC Liquid Freezer III Pro 240(ラジエーターP12 Pro×2は外気直吸気)。ケースファン無し: 正圧のプレナムを全面格子とPSU/GPUファンで排気 | 公式2D図面 |
 | 電源 | Corsair SF1000(SFX 1000W, 80+Platinum) | 未確認(U47) |
 | ディスプレイ | 27型4K(LG LM270WR3-SSC1 / BOE MV270QUM-N50)+保証付き制御基板 | 制御基板未確定(U13) |
-| 消費電力 | ピーク約611W(CPU230+GPU300+他45+パネル36), PSU使用率61%(1000W) | fitcheck |
-| 比較基準 | Apple M6 iMac: GPUは5060 Ti 16GBが上回る見込み、**CPUは9950X3Dでマルチ(GB6≈1.05倍, CB24≈1.7倍)は上回るが、単発は約0.6〜0.77倍でM6に及ばない**(docs/spec/performance-benchmark.md) | 報道/集計値ベース |
+| 消費電力 | ピーク DC約636W(CPU230+GPU300+基板等45+ファン16+パネル/制御45), AC入力約688W(PSU損失52W), PSU使用率64%(1000W): tools/power_budget.py が単一源 | fitcheck |
+| 比較基準 | Apple M6 iMac: GPUは5070 Ti 16GBが上回る見込み、**CPUは9950X3Dでマルチ(GB6≈1.05倍, CB24≈1.7倍)は上回るが、単発は約0.6〜0.77倍でM6に及ばない**(docs/spec/performance-benchmark.md) | 報道/集計値ベース |
 
 ## 3. 外形・構造仕様
 - 本体 620.0×415.3mm(パネル27型 596.7×335.7、ベゼル11.6、チン68)、スラブ厚25mm、背面ドーム最大総厚190mm(縁の内奥行6mm, 傾斜64mm)(縁は薄く中央へ傾斜)、スタンド: 腕幅150、足 幅360×奥行310(+鋼板ballast3.5kg)、ヒンジ軸 z=45/y=10。

@@ -107,13 +107,14 @@
 <text x="2" y="8" font-size="5" font-weight="bold">CP-20 首振りステータ板</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 6.0 / 質量 0.15kg / 公差 ISO 2768-mK</text>
 <rect x="14" y="30" width="90.0" height="90.0" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
-<line x1="14" y1="126.0" x2="104.0" y2="126.0" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="59.0" y="131.0" font-size="3.4" text-anchor="middle" fill="#06c">150</text>
-<line x1="8" y1="30" x2="8" y2="120.0" stroke="#06c" stroke-width=".3"/><text x="6" y="75.0" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 75.0)">150</text>
+<line x1="14" y1="126.0" x2="104.0" y2="126.0" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="59.0" y="131.0" font-size="3.4" text-anchor="middle" fill="#06c">190</text>
+<line x1="8" y1="30" x2="8" y2="120.0" stroke="#06c" stroke-width=".3"/><text x="6" y="75.0" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 75.0)">190</text>
 <text x="156" y="30" font-size="2.6">加工: CNC旋盤+フライス</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: アルマイト(接地導通部マスキング)</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ISO 2768-mK</text>
-<text x="156" y="45.60000000000001" font-size="2.6">要素: Ø150×t6ステータ。外輪側M5×6本(PCD90)、足へ4×M6皿ねじ、ゴムストッパポスト(Ø10鋼</text>
-<text x="156" y="49.80000000000001" font-size="2.6">芯, r78, ±66.6°)、摩擦リング面(Ra1.6)</text>
-<text x="156" y="55.000000000000014" font-size="2.6">接合: 足(CP-10)上面</text>
-<text x="156" y="60.20000000000002" font-size="2.6">接合: クロスローラ軸受外輪</text>
+<text x="156" y="45.60000000000001" font-size="2.6">要素: Ø190×t6ステータ(中心穴Ø52、摩擦座凹部 r28〜42 深さ3)。外輪側M5×6本(PCD90)</text>
+<text x="156" y="49.80000000000001" font-size="2.6">、足へ4×M6、ゴムストッパポスト(Ø10、鋼芯Ø6、r86、±66.7°)、摩擦リング面(Ra1.6) — D</text>
+<text x="156" y="54.000000000000014" font-size="2.6">05</text>
+<text x="156" y="59.20000000000002" font-size="2.6">接合: 足(CP-10)上面</text>
+<text x="156" y="64.40000000000002" font-size="2.6">接合: クロスローラ軸受外輪</text>
 </g></svg>

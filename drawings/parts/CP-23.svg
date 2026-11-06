@@ -61,7 +61,7 @@
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
-<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">レバー SUS304 t5×幅14×長50 / ダイスプリング(JIS型, 市販) / 調整ねじ M8</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">レバー SUS304 t5×幅14×長34 / 横ピン Ø8 SUS630 / ダイスプリング(JIS型, 市販) </text>
 <text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
 <text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">レバー: 無処理(パッシベーション)</text>
 <text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
@@ -106,16 +106,17 @@
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-23 チルトバランサ(尾部レバー+ダイスプリング2本+荷重調整ねじ)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 5.0 / 質量 0.35kg / 公差 ISO 2768-mK</text>
-<rect x="14" y="30" width="130.0" height="36.4" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
-<line x1="14" y1="72.4" x2="144.0" y2="72.4" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="77.4" font-size="3.4" text-anchor="middle" fill="#06c">50</text>
-<line x1="8" y1="30" x2="8" y2="66.4" stroke="#06c" stroke-width=".3"/><text x="6" y="48.2" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 48.2)">14</text>
+<rect x="14" y="30" width="130.0" height="53.5" rx="8.0" fill="#eef2f6" stroke="#000" stroke-width=".5"/>
+<line x1="14" y1="89.52941176470588" x2="144.0" y2="89.52941176470588" stroke="#06c" stroke-width=".3" marker-start="url(#a)" marker-end="url(#a)"/><text x="79.0" y="94.52941176470588" font-size="3.4" text-anchor="middle" fill="#06c">34</text>
+<line x1="8" y1="30" x2="8" y2="83.52941176470588" stroke="#06c" stroke-width=".3"/><text x="6" y="56.76470588235294" font-size="3.4" text-anchor="middle" fill="#06c" transform="rotate(-90 6 56.76470588235294)">14</text>
 <text x="156" y="30" font-size="2.6">加工: レーザー+曲げ(レバー)</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: レバー: 無処理(パッシベーション)</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: ISO 2768-mK</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: e=25mm, s=76mm, 最長側365N/本・最大584N/本(model/balance.jso</text>
 <text x="156" y="49.80000000000001" font-size="2.6">n)</text>
-<text x="156" y="55.000000000000014" font-size="2.6">要素: ばね座に荷重調整ねじ(組立時に頭部実測重量へ調整: 荷重±3%)</text>
-<text x="156" y="60.20000000000002" font-size="2.6">要素: レバー側縁がストッパパッドに当たる(-15°/+40°)</text>
-<text x="156" y="65.40000000000002" font-size="2.6">接合: ヒンジ軸</text>
-<text x="156" y="70.60000000000002" font-size="2.6">接合: ネックプレート</text>
+<text x="156" y="55.000000000000014" font-size="2.6">要素: ばね下座とトラニオンの間のピールシム(0.25mm×8, 公称4枚)で荷重調整(±27N/本)。組立時に</text>
+<text x="156" y="59.20000000000002" font-size="2.6">頭部実測重量へ合わせる — D04</text>
+<text x="156" y="64.40000000000002" font-size="2.6">要素: レバー側縁がストッパパッドに当たる(-15°/+40°)</text>
+<text x="156" y="69.60000000000002" font-size="2.6">接合: ヒンジ軸</text>
+<text x="156" y="74.80000000000003" font-size="2.6">接合: ネックプレート</text>
 </g></svg>

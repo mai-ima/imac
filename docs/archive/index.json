@@ -37,6 +37,15 @@
    "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v004__2026-11-06_4050ed9.md"
   },
   {
+   "src": "docs/PROJECT-SUMMARY.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "dfdb12661a65fefacd38991aa52c76f1162ecc2cc150ea7c7604c739848ec60a",
+   "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v005__2026-11-06_93238a3.md"
+  },
+  {
    "src": "docs/README.md",
    "version": 1,
    "gen": "current",
@@ -379,6 +388,15 @@
    "file": "design/design.v007__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/design.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "a9a5b4f9120b88140cfdd089191a57006e88fd799f5949a666be9d74ea984122",
+   "file": "design/design.v008__2026-11-06_877835f.md"
+  },
+  {
    "src": "docs/failure-analysis.md",
    "version": 1,
    "gen": "current",
@@ -404,6 +422,15 @@
    "commit": "9ff6031",
    "sha256": "7655e1c222cb8d735dc6f2a5dd8673c01c2e48055f36351998da7fd845e6566f",
    "file": "failure-analysis/failure-analysis.v003__2026-11-06_9ff6031.md"
+  },
+  {
+   "src": "docs/failure-analysis.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "0200eaf1ef24733fd234095a8c1a6269316382048711460085c9c1c3d61c66de",
+   "file": "failure-analysis/failure-analysis.v004__2026-11-06_93238a3.md"
   },
   {
    "src": "docs/fitcheck-report.txt",
@@ -440,6 +467,15 @@
    "commit": "71b7afb",
    "sha256": "7b17fc3cd7613f85eef4e16615ee572eb771a4583a99fbe843c5917ff224d30e",
    "file": "fitcheck-report/fitcheck-report.v004__2026-11-05_71b7afb.txt"
+  },
+  {
+   "src": "docs/fitcheck-report.txt",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "c1aa947f2067cca2c402af572cbaf75336a1ddb90d682d68778ff4076b7c5dfe",
+   "file": "fitcheck-report/fitcheck-report.v005__2026-11-06_9ff6031.txt"
   },
   {
    "src": "docs/hinge-design.md",
@@ -566,6 +602,15 @@
    "commit": "853f219",
    "sha256": "e771a0d21af1b0c342118fcfce122b746a6787e94a5ebf81622f220ee8f85bbf",
    "file": "joint-analysis/joint-analysis.v009__2026-11-06_853f219.md"
+  },
+  {
+   "src": "docs/joint-analysis.md",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "59766120235996b5c40d003ad164559b3a375c47842dd54305de642f03940c4f",
+   "file": "joint-analysis/joint-analysis.v010__2026-11-06_88f99b7.md"
   },
   {
    "src": "docs/model-pipeline.md",
@@ -730,6 +775,15 @@
    "file": "service-mechanisms/service-mechanisms.v005__2026-11-06_d97f07e.md"
   },
   {
+   "src": "docs/service-mechanisms.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "09b99ff55a05f4e0f59c1822337dd24952ba9d99a822a09c4c3fb13147a67ab5",
+   "file": "service-mechanisms/service-mechanisms.v006__2026-11-06_93238a3.md"
+  },
+  {
    "src": "docs/source-status.md",
    "version": 1,
    "gen": "current",
@@ -775,6 +829,15 @@
    "file": "thermal-analysis/thermal-analysis.v004__2026-11-06_9ff6031.md"
   },
   {
+   "src": "docs/thermal-analysis.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2bb8cf1",
+   "sha256": "b9c146f76fd35896dd1793db4651a65d4ca6e393a5aace150c8dc14645da6ffb",
+   "file": "thermal-analysis/thermal-analysis.v005__2026-11-06_2bb8cf1.md"
+  },
+  {
    "src": "docs/tilt-swivel-design.md",
    "version": 1,
    "gen": "current",
@@ -809,6 +872,15 @@
    "commit": "432b08c",
    "sha256": "ca54c2f38c5d456d3075ca3dfa176bf5eac47950ea33ca400c945d06cc651410",
    "file": "tilt-swivel-design/tilt-swivel-design.v004__2026-11-06_432b08c.md"
+  },
+  {
+   "src": "docs/tilt-swivel-design.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "b74e33be54c466d9b8481ec77f9c91d49a62df7084d197b24700b61605a0e5cf",
+   "file": "tilt-swivel-design/tilt-swivel-design.v005__2026-11-06_d97f07e.md"
   },
   {
    "src": "docs/unverified-tracker.md",

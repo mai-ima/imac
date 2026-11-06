@@ -136,6 +136,15 @@
    "file": "custom-parts/custom-parts.v013__2026-11-06_cf90ba1.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 14,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "1cc39c61082c440ee74b10450be8991b41cf6d1fcae9ce6a2ce4d7c3664d13e2",
+   "file": "custom-parts/custom-parts.v014__2026-11-06_93238a3.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -161,6 +170,15 @@
    "commit": "432b08c",
    "sha256": "75aebe01e4e61fd38260432f271a6a707acdf12dd1b4d69fe93262138c39befa",
    "file": "design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md"
+  },
+  {
+   "src": "docs/spec/gaming-requirements.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "cc1cb4f413fa318dcf170f638f8b470ae46c0f421034c2520f09704bb91b6801",
+   "file": "gaming-requirements/gaming-requirements.v001__2026-11-06_fc36218.md"
   },
   {
    "src": "docs/spec/hardware-list.md",
@@ -215,6 +233,15 @@
    "commit": "cf90ba1",
    "sha256": "da14e562cd44c36e7b16e993003cc57438c79dcde147bbfc7741d0034a108d3f",
    "file": "hardware-list/hardware-list.v006__2026-11-06_cf90ba1.md"
+  },
+  {
+   "src": "docs/spec/hardware-list.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "32f4abba2d0b43bac459278400a180c27b8cbfb2abdec94741122cee04732afe",
+   "file": "hardware-list/hardware-list.v007__2026-11-06_93238a3.md"
   },
   {
    "src": "docs/spec/hole-table.md",
@@ -280,6 +307,15 @@
    "file": "panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md"
   },
   {
+   "src": "docs/spec/panel-thermal.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "9ff6031",
+   "sha256": "21a487dc3ce61efecbcd1f47c33a268bda984c54390ef976a122c1f3cf4acb59",
+   "file": "panel-thermal/panel-thermal.v002__2026-11-06_9ff6031.md"
+  },
+  {
    "src": "docs/spec/performance-benchmark.md",
    "version": 1,
    "gen": "current",
@@ -305,6 +341,15 @@
    "commit": "cf90ba1",
    "sha256": "347796154661f0d81a1402f09d17a8c3f205915deb65b34395a2690403917d46",
    "file": "standard-parts/standard-parts.v002__2026-11-06_cf90ba1.md"
+  },
+  {
+   "src": "docs/spec/standard-parts.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "6458566cd4d37de40cb8f054832eb69baaefb269da36401faa033ad090ba6b09",
+   "file": "standard-parts/standard-parts.v003__2026-11-06_93238a3.md"
   },
   {
    "src": "docs/spec/system-spec.md",
@@ -395,6 +440,15 @@
    "commit": "877835f",
    "sha256": "a5a73a976b0679256a4bb6a32b20ec65eedd631f843cf78b79998b9fb30fbef1",
    "file": "system-spec/system-spec.v010__2026-11-06_877835f.md"
+  },
+  {
+   "src": "docs/spec/system-spec.md",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "71388554d9ec1230b4f90e35f266ca137ddc8a03e32c02840e67b576e959ee89",
+   "file": "system-spec/system-spec.v011__2026-11-06_93238a3.md"
   },
   {
    "src": "docs/spec/wiring-spec.md",

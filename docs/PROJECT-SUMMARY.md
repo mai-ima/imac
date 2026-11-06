@@ -8,22 +8,22 @@
 - バランサ: s=76 e=25 最長側365N/本 p=0.6、摩擦保持5.8N·m±8%、操作力目標≦25N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1105件 = 現行 313 + 履歴archive 792)
+## 2. ファイル構成(git追跡 1158件 = 現行 324 + 履歴archive 834)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
 | (root) | 2 |  |
-| audit_control | 4 |  |
+| audit_control | 5 |  |
 | audit_output | 5 | 監査台帳・指摘一覧 |
-| blender | 23 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
+| blender | 24 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
 | docs | 54 | 仕様・設計書・調査・監査記録 |
-| drawings | 48 | 図面(SVG/DXF/PDF入力) |
-| handoff | 67 | 業者提出パッケージ |
+| drawings | 49 | 図面(SVG/DXF/PDF入力) |
+| handoff | 74 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |
-| tools | 52 | 生成器・計算・検査ゲート |
+| tools | 53 | 生成器・計算・検査ゲート |
 | viewer | 3 | Three.jsビューア+GLB |
 
 ## 3. 主要ファイル(一行要約)

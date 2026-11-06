@@ -92,7 +92,8 @@ unv('GPU電源コネクタ(12V-2x6)', 'PSU(SF1000)の12V-2x6ケーブル有無�
 unv('パネル/コントローラ12V給電', 'コントローラ基板型番未選定(U37)のため給電仕様・コネクタ互換は未検証')
 
 # ---- 冷却 ----
-heat = cpu + gpu + misc + (500*0 + load*0.1)   # 電源損失10%
+import power_budget as _PB      # K08: 電力・発熱は power_budget(DC/AC/PSU損失を同一式で)を単一源にする
+_pk = _PB.budget('最大(CPU PPT+GPU TGP同時)'); heat = _pk['heat']      # 筐体内発熱=AC入力(保存則)
 nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
 air = (nfan * (P['fan']['facts']['airflow_m3h'] if 'fan' in P else 0) + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)

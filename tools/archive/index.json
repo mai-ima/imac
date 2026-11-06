@@ -343,6 +343,15 @@
    "file": "fitcheck/fitcheck.v010__2026-11-06_cf90ba1.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "91b0fd66fd2bfd25395672935b55eae1c0b121ec9f28ba373cf62166fef7fa61",
+   "file": "fitcheck/fitcheck.v011__2026-11-06_4050ed9.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",
@@ -829,6 +838,15 @@
    "file": "joint_calc/joint_calc.v005__2026-11-06_877835f.py"
   },
   {
+   "src": "tools/joint_calc.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "e2668e5015d3e1f7b9ea8ae6b131bde9565028544c586caf4da5ff71ca82bf0b",
+   "file": "joint_calc/joint_calc.v006__2026-11-06_93238a3.py"
+  },
+  {
    "src": "tools/layout_search.py",
    "version": 1,
    "gen": "current",
@@ -1079,6 +1097,15 @@
    "commit": "d97f07e",
    "sha256": "201f98306bc66b094d2120aa2ebdf53857cb54facead29dc53e3dd61f45e4401",
    "file": "stale_check/stale_check.v004__2026-11-06_d97f07e.py"
+  },
+  {
+   "src": "tools/stale_check.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "8346d47cddf3d036702b2680154abcab2c89183a9ae4c337c7f069fc42d5ca4b",
+   "file": "stale_check/stale_check.v005__2026-11-06_4050ed9.py"
   },
   {
    "src": "tools/strength_check.py",

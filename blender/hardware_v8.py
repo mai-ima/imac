@@ -128,10 +128,10 @@ hw('ヒンジ', 'E止め輪(軸Ø12用, 外側)', 2, 'D03'); hw('ヒンジ', '�
 
 # ---- 首振りユニット(v9): 足上面(y=-DROP)に固定のステータ板 → クロスローラ軸受 → ロータ板 → ネック。左右±60°。tools/stability.py / motion_check.py ----
 SWV = S['swivel']; SY0 = -DROP; SX, SZ = 0.0, ZC           # 垂直首振り軸(スタンド中心線, ヒンジ軸と同じz)
-cyl('stand_swivel_stator', SWV['stator_r'], 6, 'y', SX, SY0 + 3, SZ, M['alublack'], 64)                                          # 足に固定: Ø110×6
+cyl('stand_swivel_stator', SWV['stator_r'], 6, 'y', SX, SY0 + 3, SZ, M['alublack'], 64)                                          # 足に固定: Ø190×6
 cyl('stand_swivel_bearing', SWV['bearing_od'] / 2, 12, 'y', SX, SY0 + 12, SZ, M['sus'], 64)                          # クロスローラ(スリューリング)軸受 OD100/ID60×12 (外輪=静止側)
 cyl('stand_swivel_bearing_inner', 40, 1.0, 'y', SX, SY0 + 18.5, SZ, M['steel'], 64)                                  # 内輪(回転側)の上面ボス: ロータ板は内輪にだけ接し、外輪とは1mm離れる
-cyl('stand_swivel_rotor', SWV['rotor_r'], 6, 'y', SX, SY0 + 22, SZ, M['alublack'], 64)                                          # 回転側: Ø110×6 (y19〜25)
+cyl('stand_swivel_rotor', SWV['rotor_r'], 6, 'y', SX, SY0 + 22, SZ, M['alublack'], 64)                                          # 回転側: Ø152×6 (y19〜25)
 cyl('stand_swivel_friction_ring', 35, 1.5, 'y', SX, SY0 + 6.75, SZ, M['rubber'], 48)                                 # 摩擦リング(内輪下面とステータ上面の間, 波ばね予圧, 保持1.6N·m)
 for k in range(6):
     ang = math.radians(k * 60 + 30); bx_, bz_ = SX + SWV['pcd_inner'] / 2 * math.cos(ang), SZ + SWV['pcd_inner'] / 2 * math.sin(ang)
@@ -144,7 +144,7 @@ for sgn, nm in ((-1, 'l'), (1, 'r')):    # 角度ストッパ: ステータ上�
     ang = math.radians(90 + sgn * (SWV['range_deg'] + _SA)); cyl(f'stand_swivel_stop_{nm}', 5.0, 25, 'y', SX + SWV['stop_r'] * math.cos(ang), SY0 + 12.5, SZ + SWV['stop_r'] * math.sin(ang), M['rubber'], 16)
 box('stand_swivel_stop_tab', 10, 6, SWV['stop_r'] + 4 - (SWV['rotor_r'] - 8), SX - 5, SY0 + 19, SZ + SWV['rotor_r'] - 8, M['sus'], bevel=.5, body=False)
 hw('首振り', 'クロスローラ軸受(スリューリング) OD100/ID60×12', 1, 'U50: 型番未選定(IKO/THK/NSKの小径品を想定)')
-hw('首振り', 'ステータ板・ロータ板 A5052 Ø110×t6 / 摩擦リング+波ばね', 2, '保持トルク1.6N·m')
+hw('首振り', f"ステータ板Ø{2*SWV['stator_r']:g}・ロータ板Ø{2*SWV['rotor_r']:g} A5052 t6 / 摩擦リング+波ばね", 2, f"保持トルク{SWV['holding_torque_Nm']:g}N·m(D05)")
 hw('首振り', 'M5ボルト 内輪PCD70×6 / 外輪PCD90×6(型番カタログ値は U50 で確認)', 12, ''); hw('首振り', 'ゴムストッパ(±60°)+ロータタブ', 3, '')
 hw('接地', 'スイベル跨ぎ編組(ネック→足, 余長でねじれ±60°を許容)', 1, 'CP-18')
 din = lambda x, y, z: (x - X0, y - Y0, Z0 - z)      # 設計座標→内部座標

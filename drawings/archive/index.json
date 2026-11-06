@@ -1241,6 +1241,15 @@
    "commit": "cf90ba1",
    "sha256": "0d02314f1468438e7dcdfc8717b79d3594331d4cfe33dbba99e462ac2f635901",
    "file": "outlines/outlines.v015__2026-11-06_cf90ba1.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 16,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "50bcf775223c17f0768e6b4d71e3c50cda62fe7e56e375d921e45f7a6c3e0714",
+   "file": "outlines/outlines.v016__2026-11-06_93238a3.dxf"
   }
  ]
 }

@@ -2051,6 +2051,44 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "R9-DOCS",
+   "title": "R9 docs監査125件(P0 7/P1 40/P2 56/P3 22): reports/R9_docs.md を順次修正。済: R9D-001〜004,021,022,023,025,026,029,033〜035,067,074(部分)",
+   "description": "R9 docs監査125件(P0 7/P1 40/P2 56/P3 22): reports/R9_docs.md を順次修正。済: R9D-001〜004,021,022,023,025,026,029,033〜035,067,074(部分)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "audit_control/reports/R9_docs.md"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-06 23:33",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:33",
+     "in_progress",
+     "P0全件(001-004,021,022,067)と P1 の一部を修正。残: P1 の design.md/anatomy/failure-analysis/system-spec/panel-thermal/wiring 等とP2/P3"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "P0全件(001-004,021,022,067)と P1 の一部を修正。残: P1 の design.md/anatomy/failure-analysis/system-spec/panel-thermal/wiring 等とP2/P3"
+   ],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }
