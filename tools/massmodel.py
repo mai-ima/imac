@@ -7,11 +7,11 @@ D = S['dome']; slab = S['slab_t']; W = S['body_w']; H = S['panels'][str(S['panel
 rho = 2.68e-6; g = 9.81
 def cg_item(k):
     x, y, z = L[k]['pos']; sx, sy, sz = L[k]['size']
-    return slab + z + sz / 2, D['inset_bottom'] + S['pod']['wall'] + y + sy / 2
+    return slab + z + sz / 2, D['inset_bottom'] + S['dome']['inner_wall_offset_mm'] + y + sy / 2
 def dome_integral(step=6.0):
     """ドーム殻(smoothstep曲面)の表面積と重心zを数値積分(傾斜による面積増を含む)。穿孔33%開口を質量に反映。"""
     import math
-    dw, dh = W - 2 * D['inset_left_right'], H - D['inset_bottom'] - D['inset_top']; Rc = D['corner_r']; inner = D['total_t'] - slab - S['pod']['wall']
+    dw, dh = W - 2 * D['inset_left_right'], H - D['inset_bottom'] - D['inset_top']; Rc = D['corner_r']; inner = D['total_t'] - slab - S['dome']['inner_wall_offset_mm']
     A = 0.0; Az = 0.0; nx, ny = int(dw / step), int(dh / step)
     for i in range(nx):
         for j in range(ny):

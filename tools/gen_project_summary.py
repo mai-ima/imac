@@ -22,7 +22,7 @@ S = json.load(open(f'{R}/model/spec.json')); B = json.load(open(f'{R}/model/bala
 unv = sum(1 for l in open(f'{R}/docs/unverified-tracker.md', encoding='utf-8') if l.startswith('| U'))
 o = [f'# プロジェクト要約(自動生成 {datetime.date.today()})', '', '`tools/gen_project_summary.py` が全ファイルを走査して生成。手で直さない。', '',
      '## 1. 現行の主要数値(model/spec.json)',
-     f"- 本体: 幅{S['body_w']}mm×スラブ厚{S['slab_t']}mm、ドーム総厚{S['dome']['total_t']}mm(内奥行{S['dome']['total_t']-S['slab_t']-S['pod']['wall']}mm。ポンプ垂直出口ホース用)",
+     f"- 本体: 幅{S['body_w']}mm×スラブ厚{S['slab_t']}mm、ドーム総厚{S['dome']['total_t']}mm(内奥行{S['dome']['total_t']-S['slab_t']-S['dome']['inner_wall_offset_mm']}mm。ポンプ垂直出口ホース用)",
      f"- スタンド: 足{S['stand']['foot_w']}×{S['stand']['foot_depth']}mm、ballast {S['stand']['ballast_kg']}kg、チルト{S['hinge']['tilt_min_deg']:+g}〜{S['hinge']['tilt_max_deg']:+g}°、首振り±{S['swivel']['range_deg']:g}°、ヒンジ軸 z={S['hinge']['axis_z_from_glass']}",
      f"- バランサ: s={B['s']} e={B['e']} 最長側{B['F0_longest_total']/2:.0f}N/本 p={B['p']}、摩擦保持{S['hinge']['friction_hold_Nm']}N·m±{S['hinge']['friction_tol_pct']:g}%、操作力目標≦{S['hinge']['op_target_N']:g}N",
      f"- 未確認事項(U台帳): {unv}件(docs/unverified-tracker.md)", '',

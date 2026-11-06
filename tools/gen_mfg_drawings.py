@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT = f'{R}/dra
 S = json.load(open(f'{R}/model/spec.json'))
 panel_w, panel_h = S['panels'][str(S['panel_size'])]['w'], S['panels'][str(S['panel_size'])]['h']
 W, BEZ, CHIN, SLAB = S['body_w'], S['bezel'], S['chin'], S['slab_t']; H = panel_h + BEZ + CHIN
-POD_T, POD_H, WALL = S['pod']['total_t'], S['pod']['h'], S['pod']['wall']; POD_W = W - S['pod']['side_margin']
+POD_T, POD_H, WALL = S['pod']['total_t'], S['pod']['h'], S['dome']['inner_wall_offset_mm']; POD_W = W - S['pod']['side_margin']
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
 CORNER = S['corner']; PO = S['panel_module']['outline']
 

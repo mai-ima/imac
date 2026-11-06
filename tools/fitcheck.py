@@ -25,7 +25,7 @@ stack = 1.1 + 0.9 + out[2] + 1.0 + 2.0
 chk('前面スラブ厚', stack <= slab, f"ガラス1.1+エアギャップ0.9(OCA無し)+パネル{out[2]}+隙間1.0+背板2.0 = {stack:.1f} <= {slab} (余裕{slab-stack:.1f})")
 
 # ---- ポッド内部 ----
-wl = S['pod']['wall']
+wl = S['dome']['inner_wall_offset_mm']
 if 'dome' in S:
     Dm = S['dome']; IN = (W - 2*Dm['inset_left_right'] - 2*wl, H - Dm['inset_bottom'] - Dm['inset_top'] - 2*wl, Dm['total_t'] - slab - wl)
     def dome_depth(d): return Dm['edge_inner_depth'] + (IN[2] - Dm['edge_inner_depth']) * (lambda s: s*s*(3-2*s))(max(0.0, min(1.0, d / Dm['run'])))   # smoothstep: Blenderモデル/図面と同一
@@ -80,7 +80,7 @@ chk('GPU出力プラグ空間(30mm)と傾斜面', dd2 >= 28 + 3, f"プラグ先�
 _r = [i for i in L['items'] if i['id'] == 'radiator'][0]
 dd3 = dome_depth(edge_dist(_r['pos'][0] + _r['size'][0], _r['pos'][1] + _r['size'][1] / 2, _Wd, _Hd, _Rc))
 chk('I/O・GPU窓がドーム縁まで連続(プラグを外から挿せる)', S['windows']['io_y0'] <= -2 and S['windows']['gpu_y0'] <= -2, f"io窓 y0={S['windows']['io_y0']}, GPU窓 y0={S['windows']['gpu_y0']} (<=-2 で縁を貫通)")
-chk('ホース上空経路とドーム/フィルタの隙間', S['dome']['total_t'] - S['slab_t'] - S['pod']['wall'] - 3 - (143.0 + 6.2) >= 5.0, f"内奥行{S['dome']['total_t']-S['slab_t']-S['pod']['wall']}-フィルタ3 - ホース上端149.2 >= 5mm")
+chk('ホース上空経路とドーム/フィルタの隙間', S['dome']['total_t'] - S['slab_t'] - S['dome']['inner_wall_offset_mm'] - 3 - (143.0 + 6.2) >= 5.0, f"内奥行{S['dome']['total_t']-S['slab_t']-S['dome']['inner_wall_offset_mm']}-フィルタ3 - ホース上端149.2 >= 5mm")
 chk('ラジエーター右端と傾斜面', dd3 >= _r['pos'][2] + _r['size'][2] + 3, f"右端での内面深さ {dd3:.1f}mm >= ラジエーター上端 {_r['pos'][2]+_r['size'][2]:.0f}+3")
 # ---- 電力 ----
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import power_budget as PB

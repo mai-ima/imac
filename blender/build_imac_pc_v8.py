@@ -17,17 +17,18 @@ ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
-ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
+ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='texture'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
+POLY_INIT = A.poly
 
 # ---------------- 寸法 ----------------
 PW, PH = S['panels'][str(A.panel)]['w'], S['panels'][str(A.panel)]['h']
 BEZ, CHIN, SLAB = (S['bezel'] if A.panel == 27 else 10), S['chin'], S['slab_t']
 W = S['body_w'] if A.panel == 27 else 547.0
 H = PH + BEZ + CHIN
-POD_T, POD_H, WALL = S['dome']['total_t'], S['pod']['h'], S['pod']['wall']      # 総厚はdome.total_tに一本化
+POD_T, POD_H, WALL = S['dome']['total_t'], S['pod']['h'], S['dome']['inner_wall_offset_mm']      # 総厚はdome.total_tに一本化
 POD_W = W - S['pod']['side_margin']
 IN_W, IN_D = POD_W - 2 * WALL, POD_T - SLAB - WALL
 ST_W, DROP, FOOT = S['stand']['w'], S['stand']['drop'], S['stand']['foot_depth']
@@ -52,7 +53,9 @@ def link(ob, body=True):
     if body: BODY_OBJS.append(ob)
     return ob
 
+POLY = POLY_INIT
 def smooth(ob, bevel=0.0, seg=2, curved=False):
+    seg = max(seg, int(round(seg * POLY)))
     """面取りは小さな平面ファセット(切削アルミ風)。曲面(円筒の側面)のみスムースシェーディング。"""
     if bevel > 0:
         m = ob.modifiers.new('bevel', 'BEVEL'); m.width = bevel; m.segments = seg; m.limit_method = 'ANGLE'; m.angle_limit = math.radians(40)
@@ -74,6 +77,7 @@ def box(name, w, h, d, x, y, z, mat, bevel=0.0, body=True, uv=False):
 def cyl(name, r, length, axis, cx, cy, cz, mat, seg=48, bevel=0.0, body=True):
     """設計図座標の中心(cx,cy,cz)・軸 'x'|'y'|'z'(y=上, z=奥行)。"""
     me = bpy.data.meshes.new(name); bm = bmesh.new()
+    seg = min(192, max(seg, int(round(seg * POLY))))
     bmesh.ops.create_cone(bm, cap_ends=True, segments=seg, radius1=r, radius2=r, depth=length)   # 軸=Blender Z
     bm.to_mesh(me); bm.free()
     ob = bpy.data.objects.new(name, me)

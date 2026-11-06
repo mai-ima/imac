@@ -29,7 +29,7 @@ HIST = ('docs/audit-log.md','docs/selection-','docs/research-','docs/source-stat
 SKIPCTX = r'旧|比較|変更前|before|supersed|置換|廃止|履歴|stale|旧版|から変更|→|仮置き|従来|v[0-9]+まで|Appendix'
 fails=[]; warns=[]
 files = [f for f in subprocess.check_output(['git','ls-files','-co','--exclude-standard'],cwd=R,text=True).split('\n')
-         if f and '/archive/' not in f and not f.startswith(('archive/','audit_output/','handoff/','render/','concept/'))
+         if f and '/archive/' not in f and not f.startswith(('archive/','audit_output/','audit_control/','handoff/','render/','concept/'))
          and f.endswith(('.py','.json','.md','.html','.svg','.csv','.sh'))]
 for f in files:
     if f.endswith('glb.txt') or f.startswith('viewer/imac_pc'): continue

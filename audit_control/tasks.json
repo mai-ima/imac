@@ -19,18 +19,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:22",
+     "done",
+     "spec.json に dome.inner_wall_offset_mm=3.0 を新設し fitcheck/massmodel/gen_mfg_drawings を移行。pod.wall はレガシー注記。stale_check が pod.wall 参照を検出"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "spec.json に dome.inner_wall_offset_mm=3.0 を新設し fitcheck/massmodel/gen_mfg_drawings を移行。pod.wall はレガシー注記。stale_check が pod.wall 参照を検出"
+   ],
+   "verification": "stale_check FAIL0 / fitcheck・stability OK",
+   "decision": "PARTIAL: 別物理量ではなく同値のレガシー名混在だった→ADAPT(名前の意味を明文化)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -263,18 +270,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:22",
+     "in_review",
+     "power_budget(AC入力97/540/688W, DC499/636W, PSU損失, 筐体内発熱=AC入力)で境界を分離済み。viewer表示(約100/540/690W)は整合、デモ値注記を追加"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "power_budget(AC入力97/540/688W, DC499/636W, PSU損失, 筐体内発熱=AC入力)で境界を分離済み。viewer表示(約100/540/690W)は整合、デモ値注記を追加"
+   ],
+   "verification": "python3 tools/power_budget.py; viewer READ表",
+   "decision": "PARTIAL→ADAPT。491/504/552Wの旧値は現行ファイルで stale_check 未検出。thermal_calc側の同一シナリオ照合は継続",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -402,18 +416,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:22",
+     "done",
+     "gen_mfg_drawings の pod.wall→dome.inner_wall_offset_mm、φ4.2/ピッチ7 は stale_check BAN で現行ファイル0件"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "gen_mfg_drawings の pod.wall→dome.inner_wall_offset_mm、φ4.2/ピッチ7 は stale_check BAN で現行ファイル0件"
+   ],
+   "verification": "stale_check",
+   "decision": "SUPERSEDED/一部CONFIRMED→修正",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -660,18 +681,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-06 23:07",
      "triaged",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:22",
+     "in_review",
+     "viewer/index.html: 温度/電力表示に『推定デモ値』注記を追加。WALL=3 は dome.inner_wall_offset_mm と一致"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "viewer/index.html: 温度/電力表示に『推定デモ値』注記を追加。WALL=3 は dome.inner_wall_offset_mm と一致"
+   ],
+   "verification": "grep/目視",
+   "decision": "PARTIAL。GLB差(blender/imac_pc.glb は古い11-03版)は archive 退避を検討(K20b)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -1376,18 +1404,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "ready",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "ready",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:17",
+     "done",
+     "drawings/v10/D05_swivel_section.svg(A-A半断面+C-Cストッパ平面, 部品表15点, 注記)"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "drawings/v10/D05_swivel_section.svg(A-A半断面+C-Cストッパ平面, 部品表15点, 注記)"
+   ],
+   "verification": "gen_mech_sections.py 実行+Playwright描画確認",
+   "decision": "ADD。軸受/波ばね型番U50/U52はUNVERIFIED",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "bearing 高さ13・ステータ凹部・摩擦リング+波ばねの断面を作図"
@@ -1405,18 +1440,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "ready",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "ready",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:17",
+     "done",
+     "drawings/v10/D06_dome_latch_detail.svg(下辺ラッチ+EMIガスケット断面, 部品表8点)"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "drawings/v10/D06_dome_latch_detail.svg(下辺ラッチ+EMIガスケット断面, 部品表8点)"
+   ],
+   "verification": "描画確認",
+   "decision": "ADD(部分)。上辺フック/キーホール/ストッパパッドは D07 へ分離",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -1470,18 +1512,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_review",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "in_review",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:17",
+     "done",
+     "balance_calc: HW=16/s≤76/座屈細長比ゲート、Blender hardware_v8 ばね座/ボス、D04"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "balance_calc: HW=16/s≤76/座屈細長比ゲート、Blender hardware_v8 ばね座/ボス、D04"
+   ],
+   "verification": "balance_calc exit0, motion_check OK, consistency 0 fail",
+   "decision": "ADD/MODIFY。ばね型番U26",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -1502,18 +1551,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_review",
+   "status": "done",
    "history": [
     [
      "2026-11-06 23:07",
      "in_review",
      "seeded"
+    ],
+    [
+     "2026-11-06 23:17",
+     "done",
+     "strength_check: 横ピンØ8 SUS630 145MPa≦667MPa"
     ]
    ],
    "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "strength_check: 横ピンØ8 SUS630 145MPa≦667MPa"
+   ],
+   "verification": "strength_check 全OK",
+   "decision": "MODIFY(Ø6はSUS304で330MPa NG→Ø8+17-4PH)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -1693,6 +1749,69 @@
    "history": [
     [
      "2026-11-06 23:09",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "D07",
+   "title": "上辺掛け爪・側辺フック・キーホール吊り(Ø6ピン/スロット6.5)・ゴムストッパパッドの局所断面図 D07",
+   "description": "上辺掛け爪・側辺フック・キーホール吊り(Ø6ピン/スロット6.5)・ゴムストッパパッドの局所断面図 D07",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mech_sections.py"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:17",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K20b",
+   "title": "blender/imac_pc.glb(11-03古版)と viewer/imac_pc.glb の関係を整理: 古い方をarchiveへ退避しREADMEに正を明記",
+   "description": "blender/imac_pc.glb(11-03古版)と viewer/imac_pc.glb の関係を整理: 古い方をarchiveへ退避しREADMEに正を明記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "blender/imac_pc.glb",
+    "viewer/imac_pc.glb"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:22",
      "discovered",
      ""
     ]

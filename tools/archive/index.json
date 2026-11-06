@@ -181,6 +181,15 @@
    "file": "consistency_check/consistency_check.v001__2026-11-06_877835f.py"
   },
   {
+   "src": "tools/consistency_check.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "1ed64f5ac916464440a631bb3e54824eef4d493f61830cbeb03be4f7cc234b81",
+   "file": "consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/drawlib.py",
    "version": 1,
    "gen": "current",
@@ -307,6 +316,15 @@
    "file": "fitcheck/fitcheck.v009__2026-11-06_88f99b7.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "bcb0057d6024de0209b08aa95b2ba8495f10f77d99edbed34605f2276fdd2ef3",
+   "file": "fitcheck/fitcheck.v010__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",
@@ -386,6 +404,15 @@
    "commit": "ce41db1",
    "sha256": "bf7a35623faa7992c0e1445d0d28a398c9f59201834f3925fab7cd9f3bfba05a",
    "file": "gen_handoff/gen_handoff.v002__2026-11-06_ce41db1.py"
+  },
+  {
+   "src": "tools/gen_mech_sections.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "bf74e514df6dec427f524f6e239467e11d06f5eb5e3ab7cd1dc0b9d6f28b9240",
+   "file": "gen_mech_sections/gen_mech_sections.v001__2026-11-06_cf90ba1.py"
   },
   {
    "src": "tools/gen_mechanisms.py",
@@ -514,6 +541,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v009__2026-11-06_877835f.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "dc80c4b8bf224e34e9187e689f31986818f6dd8a004a4fa00401e3befec1e8d5",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v010__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",
@@ -566,6 +602,15 @@
    "commit": "9ff6031",
    "sha256": "9b9efdc421a0766df657f68b2c63f3427e589adba1f6604be9df24aa10b4b9ff",
    "file": "gen_package/gen_package.v006__2026-11-06_9ff6031.py"
+  },
+  {
+   "src": "tools/gen_project_summary.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ce41db1",
+   "sha256": "2faef540361435f78422e49a6fd7c9847458528ce83aa419ef84c89a05671761",
+   "file": "gen_project_summary/gen_project_summary.v001__2026-11-06_ce41db1.py"
   },
   {
    "src": "tools/gen_service_drawings.py",
@@ -737,6 +782,15 @@
    "commit": "7ed5c4c",
    "sha256": "65bf4b4c04f8197f56f4ca557af52ef9d4917f1f97bdf88d142bd6f2861be89d",
    "file": "massmodel/massmodel.v004__2026-11-06_7ed5c4c.py"
+  },
+  {
+   "src": "tools/massmodel.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "bda2c78c4a9e75e6e2b3280c35c3419e62939dd3fd6718e758d3ec3e3afcfb56",
+   "file": "massmodel/massmodel.v005__2026-11-06_88f99b7.py"
   },
   {
    "src": "tools/motion_check.py",
@@ -926,6 +980,15 @@
    "commit": "432b08c",
    "sha256": "7433030b4ea5438de0860b4a26313ab2771128cfd3f9119291a7dc4c545e35e2",
    "file": "stale_check/stale_check.v003__2026-11-06_432b08c.py"
+  },
+  {
+   "src": "tools/stale_check.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "201f98306bc66b094d2120aa2ebdf53857cb54facead29dc53e3dd61f45e4401",
+   "file": "stale_check/stale_check.v004__2026-11-06_d97f07e.py"
   },
   {
    "src": "tools/strength_check.py",

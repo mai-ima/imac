@@ -201,6 +201,140 @@ def sheet_balancer():
     return body, P
 E_0 = 0
 
+
+# ---------- D05 首振りユニット(クロスローラ軸受+摩擦リング+波ばね+ストッパ) 軸=Y, 座標: ステータ下面 y=0, 足上面=y0 ----------
+def ringY(ro, ri, y0, y1, xc=0.0, zc=0.0):
+    c = cq.Workplane('XZ').workplane(offset=-y1).center(xc, zc).circle(ro).extrude(y1 - y0)
+    return c.cut(cq.Workplane('XZ').workplane(offset=-y1 - 1).center(xc, zc).circle(ri).extrude(y1 - y0 + 2)) if ri > 0 else c
+def swivel_parts():
+    sw = S['swivel']; RS, RR = sw['stator_r'], sw['rotor_r']; P = {}
+    st = ringY(RS, 26, 0, 6).cut(ringY(42, 28, 3, 6.5))                                                        # ステータ: 中心穴Ø52, 摩擦座凹部(r28〜42, 深さ3)
+    for a in range(0, 360, 60): st = st.cut(cq.Workplane('XZ').workplane(offset=1).center(45 * math.cos(math.radians(a)), 45 * math.sin(math.radians(a))).circle(2.6).extrude(-8))
+    P['1'] = ('ステータ板 A5052 t6 Ø190(中心穴Ø52, 摩擦座凹部)', st, 'h_al')
+    rect = lambda r0, r1, y0, y1: ringY(r1, r0, y0, y1)
+    dia = lambda xc, yc, hh: cq.Workplane('XY').box(2 * hh, 2 * hh, 12).rotate((0, 0, 0), (0, 0, 1), 0).translate((xc, yc, 0)).rotate((xc, yc, 0), (xc, yc, 1), 45)
+    inner = rect(30, 39.85, 6, 18); outer = rect(40.65, 50, 6, 18)
+    rol = None
+    for sgn in (1, -1):
+        d_ = cq.Workplane('XY').box(4, 4, 4).rotate((0, 0, 0), (0, 0, 1), 45 * sgn).translate((40.25, 12, 0))
+        rr_ = cq.Workplane('XY').box(4, 4, 4).rotate((0, 0, 0), (0, 0, 1), -45 * sgn).translate((-40.25, 12, 0))
+        rol = d_.union(rr_) if rol is None else rol
+        break
+    pocket = cq.Workplane('XY').box(4.4, 4.4, 4.4).rotate((0, 0, 0), (0, 0, 1), 45)
+    pk = revY_profile([(40.25 - 3.1, 12), (40.25, 12 + 3.1), (40.25 + 3.1, 12), (40.25, 12 - 3.1)])
+    inner = inner.cut(pk); outer = outer.cut(pk)
+    P['2'] = ('クロスローラ軸受 外輪 (OD100, 静止側)', outer, 'h_st')
+    P['3'] = ('クロスローラ軸受 内輪 (ID60, 回転側)', inner, 'h_st2')
+    P['4'] = ('ころ(交差配列, 代表)', revY_profile([(40.25 - 2.83, 12), (40.25, 12 + 2.83), (40.25 + 2.83, 12), (40.25, 12 - 2.83)]), 'h_ss')
+    P['5'] = ('内輪スペーサ Ø60/Ø80 t1.0 (SUS304)', ringY(40, 30, 18, 19), 'h_ss')
+    ro = ringY(RR, 26, 19, 25)
+    for a in range(0, 360, 60): ro = ro.cut(cq.Workplane('XZ').workplane(offset=-26).center(35 * math.cos(math.radians(a + 30)), 35 * math.sin(math.radians(a + 30))).circle(2.8).extrude(7))
+    P['6'] = ('ロータ板 A5052 t6 Ø152(中心穴Ø52)', ro, 'h_al2')
+    P['7'] = ('摩擦リング PTFE系 Ø60/Ø80 t1.5', ringY(40, 30, 4.5, 6), 'h_ru')
+    P['8'] = ('波ばね Ø58/Ø82 SUS t0.3(3山, 自由高2.0→1.5)', ringY(41, 29, 3, 4.5), 'h_cu')
+    cy_ = lambda xc, y_top, L, r: cq.Workplane('XZ').workplane(offset=-y_top).center(xc, 0).circle(r).extrude(L)          # y_top から下へ L の円柱
+    P['9'] = ('M5 皿ボルト×6 PCD70(内輪)', cy_(35, 25, 15, 2.5).union(cy_(-35, 25, 15, 2.5)), 'h_ss')
+    P['10'] = ('M5×16 ボルト×6 PCD90(外輪→ステータ)', cy_(45, 14, 17, 2.5).union(cy_(45, 0, 3, 4.2)).union(cy_(-45, 14, 17, 2.5)).union(cy_(-45, 0, 3, 4.2)), 'h_ss')
+    ft = boxs(-100, 100, -12, 0, -100, 100)
+    for xb in (-80, 80): ft = ft.cut(cy_(xb, 0, 12, 3.2))
+    for xb in (-45, 45): ft = ft.cut(cy_(xb, 0, 3.5, 4.8))
+    P['11'] = ('足(CP-10 一部) A5052 t12', ft, 'h_al')
+    P['12'] = ('M6 ボルト×4(ステータ→足)', cy_(80, 10, 20, 3).union(cy_(80, 10, 4, 5)).union(cy_(-80, 10, 20, 3)).union(cy_(-80, 10, 4, 5)), 'h_ss')
+    return P
+def revY_profile(pts):
+    """(r,y)多角形をY軸まわりに360°回転(断面形状から回転体を作る)。"""
+    return cq.Workplane('XY').polyline(pts).close().revolve(360, (0, 0, 0), (0, 1, 0))
+def stop_parts():
+    """ストッパ(平面図用): ロータのタブ+ステータ上のゴムポスト(鋼芯)。位置は spec.swivel(stop_r, range_deg)。"""
+    sw = S['swivel']; P = {}; SA = 6.7
+    tab = boxs(-5, 5, 19, 25, -(sw['stop_r'] + 4), -(sw['rotor_r'] - 8))           # 中立位置: タブは -Z 側(=設計の後方 90°)に向く
+    P['13'] = ('ストッパタブ SUS304 t6×10(ロータ板に固定)', tab, 'h_ss')
+    core = None; rub = None
+    for sg in (-1, 1):
+        ang = math.radians(-90 + sg * (sw['range_deg'] + SA)); x, z = sw['stop_r'] * math.cos(ang), sw['stop_r'] * math.sin(ang)
+        c_ = cq.Workplane('XZ').workplane(offset=-31).center(x, z).circle(3).extrude(25); r_ = ringY(5, 3, 6, 25, x, z)
+        core = c_ if core is None else core.union(c_); rub = r_ if rub is None else rub.union(r_)
+    P['14'] = ('ストッパポスト 鋼芯Ø6(ステータ圧入)', core, 'h_st')
+    P['15'] = ('ストッパポスト ゴムスリーブ Ø10(NBR 70°)', rub, 'h_ru')
+    return P
+def sheet_swivel():
+    P = swivel_parts(); sw = S['swivel']; body = []; s = 2.6; ox = 34 - s * 22; oy = 62 + s * 25
+    clip = boxs(22, 200, -100, 100, -100, 100)
+    PC = {k: (n, sol.intersect(clip), h) for k, (n, sol, h) in P.items()}
+    o, Pa = sec_view(PC, (0, 0, 0), (0, 0, 1), (1, 0, 0), ox, oy, s, '断面 A-A (z=0, 軸の右側のみ。軸中心線は左 x=0)', ox + s * 60, 40); body += o
+    X = lambda r: ox + s * r; Y = lambda y: oy - s * y
+    body.append(DL.ln(X(22) - 6, Y(0), X(100) + 8, Y(0), .12, '4 2'))
+    body += DL.dim_v(Y(25), Y(0), X(22), f"積層高さ {sw['stack_h']:g}", -8)
+    body += DL.dim_v(Y(18), Y(6), X(50) + 2, '軸受 12', 8) if False else []
+    body += DL.dim_h(X(30), X(50), Y(-12) + 2, '軸受 ID60/OD100', 8)
+    body += DL.dim_h(X(22), X(95), Y(-12) + 2, f"ステータ r{sw['stator_r']:g}(Ø{2*sw['stator_r']:g})", 20)
+    body += DL.dim_h(X(22), X(76), Y(25) - 2, f"ロータ r{sw['rotor_r']:g}(Ø{2*sw['rotor_r']:g})", -26) if False else []
+    items = [(6, 60, 22), (9, 35, 21), (5, 35, 18.5), (3, 33, 14), (4, 40.25, 12), (2, 46, 14), (7, 35, 5.2), (8, 35, 3.6), (1, 70, 3), (10, 45, 10), (12, 80, 8), (11, 90, -6)]
+    items.sort(key=lambda i: i[1]); n = len(items); x0 = X(30); x1 = X(95) + 5; step = (x1 - x0) / (n - 1)
+    for k, (num, px, py) in enumerate(items): body += balloon(X(px), Y(py), x0 + k * step, 52, num)
+    allp = dict(P); allp.update(stop_parts())
+    o, Pp = sec_view(allp, (0, 22, 0), (0, 1, 0), (1, 0, 0), 332, 178, 0.56, "断面 C-C (y=22 ロータ高さを上から見る: ストッパ)", 332, 116, only=('6', '13', '14', '15', '1', '10', '9')); body += o
+    body.append(DL.txt(332, 178 + 0.56 * 100 + 5, f"ポスト位置 ±{sw['range_deg'] + 6.7:g}° → 実効 ±{sw['range_deg']:g}°(タブ半幅5+ポスト半径5 の接触角補正6.7°)", 2.2, 'middle'))
+    rows = [(k, v[0], {'4': '多数', '9': '6', '10': '6', '12': '4', '14': '2', '15': '2'}.get(k, '1'), {'1': 'A5052-H32', '2': 'SUJ2相当', '3': 'SUJ2相当', '4': 'SUJ2', '5': 'SUS304', '6': 'A5052-H32', '7': 'PTFE+ガラス繊維', '8': 'SUS301', '9': 'SUS(A2-70)', '10': 'SUS(A2-70)', '11': 'A5052', '12': 'SUS(A2-70)', '13': 'SUS304', '14': 'SUS304', '15': 'NBR 70'}[k],
+             {'1': 'CP-20', '2': '市販(型番U50)', '3': '市販(型番U50)', '4': '市販(軸受内)', '5': 'CP-21付属', '6': 'CP-21', '7': '市販素材加工(U52)', '8': '市販(型番U52)', '9': '市販', '10': '市販', '11': 'CP-10', '12': '市販', '13': 'CP-21付属', '14': 'CP-20付属', '15': 'CP-20付属'}[k]) for k, v in sorted(allp.items(), key=lambda kv: int(kv[0]))]
+    body += partlist(244, 28, rows, 166)
+    notes = ['構成(下から上): 足(11) → ステータ板(1) → 外輪(2: M5×6 PCD90でステータへ) / 内輪(3: M5皿×6 PCD70でロータへ) → 内輪スペーサ(5) → ロータ板(6)。外輪上面とロータ下面は1mm空き。',
+             '摩擦: ステータ凹部(r28〜42, 深さ3)に波ばね(8)+摩擦リング(7)。波ばねが摩擦リングを内輪下面へ押し付け予圧(公称400N, 摩擦半径35mm, μ=0.1〜0.18)→保持トルク1〜3N·m。',
+             '調整: 摩擦リング厚(t1.5)または波ばね枚数で予圧を調整。ロータ板を外せばアクセス可(整備者L3)。ゆるゆる/硬すぎの許容窓は tools/fit_tolerance.py。',
+             '軸受型番(U50)・波ばね(U52)・摩擦材PTFE系のμ/摩耗(U52)は未確定。寸法は代表値でUNVERIFIED。内部ケーブルは通さない(PEのみ編組ループで跨ぐ)。',
+             'ストッパ(13〜15): ロータのタブがステータ上のゴムポストに当たり±60°で停止。衝突エネルギー17mJ(swivel_calc)。']
+    wrap_notes(body, 26, 200, notes, width=78)
+    return body, allp
+
+
+# ---------- D06 着脱・吊り・ストッパの詳細(局所断面) ----------
+def ext(pts, x0=-12, x1=12):
+    """(u=ガラスからの奥行, y) の多角形を X 方向に押し出す。断面は法線+X・横軸=奥行(u)で作図: 投影座標 (u, y)。"""
+    return cq.Workplane('YZ').workplane(offset=x0).polyline([(y, -u) for u, y in pts]).close().extrude(x1 - x0)
+def rectu(u0, u1, y0, y1, x0=-12, x1=12): return ext([(u0, y0), (u1, y0), (u1, y1), (u0, y1)], x0, x1)
+def detail_parts():
+    F = S['fits']; DS = S['dome_seal']; P = {}
+    # A: 下辺ラッチ+EMIガスケット(断面=ラッチ位置 x=0)。u=奥行(背板後面 u=25), y=本体下端からの高さ
+    A = {}
+    A['1'] = ('背板(スラブ背面) A5052 t2', rectu(23, 25, 0, 46, -30, 30), 'h_al')
+    A['2'] = ('チン外皮 A6063 t3(下面・前面側は省略)', rectu(2, 23, 0, 3, -30, 30), 'h_al2')
+    A['3'] = ('ラッチ受けブラケット S45C(基台に固定)', rectu(10, 21, 3, 17, -9, 9).cut(cylU(4.1, 2, 18)), 'h_st')
+    A['4'] = ('1/4回転ラッチ軸 SUS Ø8(頭部T10, カム付)', cylU(4, 0.8, 18).union(cylU(6.5, 15.5, 18)), 'h_ss')
+    A['5'] = ('皿ばね×2(予圧, 保持90N)', ringY_u(7.5, 4.3, 14, 15.6), 'h_st2')
+    A['6'] = ('ドーム縁フランジ A5052 t4(ガスケット溝 深1.5)', ext([(25.5, 24.5), (29.5, 24.5), (29.5, 46), (25.5, 46), (25.5, 38), (27, 38), (27, 31), (25.5, 31)], -30, 30), 'h_al')
+    A['7'] = ('ラッチ爪(ドーム側タブ) SUS304 t2', ext([(14, 17.5), (29.5, 17.5), (29.5, 24.5), (27.5, 24.5), (27.5, 19.5), (14, 19.5)], -9, 9), 'h_ss')
+    A['8'] = ('EMIガスケット(導電ファブリックオーバーフォーム 3.0→圧縮2.0)', rectu(25.0, 27.0, 31, 38, -30, 30), 'h_ru')
+    A['9'] = ('位置決めピン Ø4 (非対称2本)', cq.Workplane('XY').box(1, 1, 1).translate((200, 0, 0)), 'h_ss')
+    A['10'] = ('補助磁石 N52 Ø8×3(局所ボス t4.2)', cq.Workplane('XY').box(1, 1, 1).translate((200, 0, 0)), 'h_br')
+    return A
+def cylU(r, y0, y1, u=15.5, ri=0): 
+    c = cq.Workplane('XZ').workplane(offset=-y1).center(0, -u).circle(r).extrude(y1 - y0)
+    return c.cut(cq.Workplane('XZ').workplane(offset=-y1 - 1).center(0, -u).circle(ri).extrude(y1 - y0 + 2)) if ri else c
+def ringY_u(ro, ri, y0, y1): return cylU(ro, y0, y1, 15.5, ri)
+def sheet_details():
+    DS = S['dome_seal']; A = detail_parts(); body = []; s = 3.6; ox = 34 - s * 8; oy = 56 + s * 46
+    A = {k: v for k, v in A.items() if k not in ('9', '10')}
+    o, Pa = sec_view(A, (0, 0, 0), (1, 0, 0), (0, 0, -1), ox, oy, s, '詳細A 下辺ラッチ+EMIガスケット(断面: ラッチ中心)', 150, 34); body += o
+    X = lambda u: ox + s * u; Y = lambda y: oy - s * y
+    body += DL.dim_v(Y(38), Y(31), X(29.5), '溝幅 7', 10)
+    body += DL.dim_h(X(25.5), X(27), Y(31) + 1, '溝深 1.5', 12)
+    body += DL.dim_h(X(25), X(25.5), Y(46) - 2, '継ぎ目 0.5', -8)
+    body += DL.dim_h(X(25), X(29.5), Y(46) - 2, 'フランジ t4', -18)
+    for n, px, py in [(1, 24, 50), (2, 12, 1.5), (3, 14, 12), (4, 14, 5), (5, 11, 14.8), (6, 28, 52), (7, 20, 18.5), (8, 26, 34.5)]: body += balloon(X(px), Y(py), X(px) + (50 if px >= 20 else -8) if False else (X(46) if px >= 20 else X(2)), Y(py) - (8 if n in (6,) else 0), n)
+    body.append(DL.txt(ox + s * 28, oy + s * 3, '前(ガラス) ← → 後(ドーム)', 2.4, 'middle'))
+    rows = [(k, v[0], '6' if k in ('3',) else '1', {'1': 'A5052-H32', '2': 'A6063-T5', '3': 'S45C', '4': 'SUS304', '5': 'SUP10', '6': 'A5052-H32', '7': 'SUS304', '8': '導電フォーム'}[k], {'1': 'CP-02/03', '2': 'CP-02/03', '3': 'CP-08', '4': 'CP-08(型番U29)', '5': 'CP-08', '6': 'CP-07', '7': 'CP-07', '8': 'CP-09(U61)'}[k]) for k, v in A.items()]
+    rows[2] = (rows[2][0], rows[2][1], '6', rows[2][3], rows[2][4]); rows[3] = (rows[3][0], rows[3][1], '6', rows[3][3], rows[3][4])
+    body += partlist(226, 28, rows, 184)
+    notes = [f"ラッチ(4)を T10 で1/4回転: カムが爪(7)を後方→前方へ引き込み、ドーム縁フランジ(6)をスラブ背板(1)へ押し付ける(リード{DS['latch_turn_lead_mm']:g}mm/90°, 皿ばね(5)で予圧)。1点保持{DS['latch_hold_N']}N×{DS['latch_n']}点。",
+             f"ガスケット(8): 厚3.0を溝(深1.5)規制で圧縮率{DS['comp_nom']*100:.0f}%(公称2.0mm)。線荷重{DS['line_force_N_per_mm']}N/mm×周長{DS['perimeter_mm']}mm=約{DS['line_force_N_per_mm']*DS['perimeter_mm']:.0f}N。フランジと背板の継ぎ目は 0.5mm。",
+             '上辺は掛け爪(ドーム一体)×6、左右辺は掛け爪×4(各40N)、位置決めピンØ4×2(非対称)で誤組立を防止。補助磁石は上辺・下辺に計12個(N52 Ø8×3)。',
+             'EMI: ドーム縁の導電面(アルマイトのマスキング)とガスケットで導通。保護接地(PE)編組はドーム側ラグ+背板側スタッドで接続(CP-18, 脱着時の再接続を要確認 A08)。',
+             'ラッチ型番・実保持力(U29)、ガスケット実閉合力(U61)は未確定。寸法は代表値でUNVERIFIED。']
+    wrap_notes(body, 226, 100, notes, width=80)
+    return body, A
+
 if __name__ == '__main__':
+    b, P = sheet_details(); sheet(f'{OUT}/D06_dome_latch_detail.svg', 'ドーム着脱ラッチ・ガスケット 詳細断面', 'D06', b, '3.6:1', 'A5052/S45C/SUS304', '-', '')
+    b, P = sheet_swivel(); sheet(f'{OUT}/D05_swivel_section.svg', '首振りユニット 内部構造・断面', 'D05', b, 'A-A 2.6:1 / C-C 0.56:1', 'A5052/SUS/PTFE', '-', '')
     b, P = sheet_balancer(); sheet(f'{OUT}/D04_balancer_section.svg', 'チルトバランサ 内部構造・断面', 'D04', b, '2:1', 'SUS/S45C/SWOSC-V/A5052', '-', '')
     b, P = sheet_hinge(); sheet(f'{OUT}/D03_tilt_hinge_section.svg', 'チルト摩擦ヒンジ 内部構造・断面', 'D03', b, 'A-A 3.2:1 / B-B 4:1', 'SUS303/S45C/焼結青銅/A6063', '-', '')

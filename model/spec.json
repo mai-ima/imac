@@ -19,7 +19,8 @@
   "total_t": 190,
   "h": 256,
   "side_margin": 27,
-  "wall": 3
+  "wall": 3,
+  "_legacy": "v6ポッド由来のレガシー値。現行ツールは dome.inner_wall_offset_mm を使う(K01で一本化)"
  },
  "stand": {
   "w": 150,
@@ -94,6 +95,8 @@
   "inset_bottom": 24,
   "inset_top": 14,
   "corner_r": 50,
+  "inner_wall_offset_mm": 3.0,
+  "_inner_wall_offset_doc": "ドーム内面(トレイ側)から有効空間までの控え。板厚sheet_t(2.0)+組立クリアランス1.0。fitcheck/massmodel/図面生成はこの値を使う。旧pod.wallは同値のレガシー名(v6ポッド)で参照禁止。",
   "run": 64,
   "edge_inner_depth": 6,
   "total_t": 190,

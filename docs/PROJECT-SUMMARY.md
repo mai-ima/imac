@@ -8,21 +8,22 @@
 - バランサ: s=76 e=25 最長側365N/本 p=0.6、摩擦保持5.8N·m±8%、操作力目標≦25N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1043件 = 現行 300 + 履歴archive 743)
+## 2. ファイル構成(git追跡 1091件 = 現行 311 + 履歴archive 780)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
-| (root) | 1 |  |
+| (root) | 2 |  |
+| audit_control | 4 |  |
 | audit_output | 5 | 監査台帳・指摘一覧 |
 | blender | 23 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
 | docs | 54 | 仕様・設計書・調査・監査記録 |
-| drawings | 44 | 図面(SVG/DXF/PDF入力) |
+| drawings | 46 | 図面(SVG/DXF/PDF入力) |
 | handoff | 67 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |
-| tools | 48 | 生成器・計算・検査ゲート |
+| tools | 52 | 生成器・計算・検査ゲート |
 | viewer | 3 | Three.jsビューア+GLB |
 
 ## 3. 主要ファイル(一行要約)
@@ -30,6 +31,7 @@
 ### tools/
 
 - `archive.py` — 版管理アーカイブ。各ディレクトリ直下の archive/ に、ファイルごとの過去版を連番(vNNN)で保存する。
+- `audit_control_init.py` — audit_control/ の台帳を初期化/更新する。tasks.json は唯一の正規タスク台帳(既存IDは上書きしない)。
 - `audit_manifest.py` — 全ファイル台帳(SHA-256/種別/役割/検証状態)を audit_output/01_FULL_FILE_MANIFEST.csv に出力。
 - `balance_calc.py` — チルト・バランサ(圧縮ダイスプリング2本+ヒンジ尾部レバー)の寸法探索とゲート。
 - `cable_check.py` — 配線の干渉・曲げ半径・長さの検査。部品(layout AABB)との貫通、ケーブル同士の近接、折れ角の曲げ半径(外接円)を判定する。
@@ -47,6 +49,7 @@
 - `gen_fmea.py` — 故障モード影響解析(FMEA)表を生成する: docs/failure-analysis.md。S=影響度, O=発生頻度, D=検出困難度(1〜10, 設計時の主観評価: 試験で更新)。RPN=S*O*D。
 - `gen_handoff.py` — 業者提出パッケージ(handoff/)の生成。実行: /tmp/bl/.venv/bin/python tools/gen_handoff.py(cadquery/openpyxl が必要)
 - `gen_hardware_list.py` — model/hardware_list.json(blender/hardware_v8.py が出力)から docs/spec/hardware-list.md を生成する。手書きしない(旧値の残存防止)。
+- `gen_mech_sections.py` — 機構の内部構造・断面図(ハッチング、バルーン、部品表、動作注記)。cadquery で実形状を組み、切断面をハッチして描く。
 - `gen_mechanisms.py` — 特殊機構の専用設計書を docs/mechanisms/*.md に生成する(数値は model/*.json と tools/*_calc.py の出力から埋め込み、手書きの旧値を残さない)。
 - `gen_mfg_drawings.py` — 自作する外装の製造図面を model/spec.json から生成する(DXF + 寸法入りSVG)。
 - `gen_package.py` — 設計図一式(基板配置・寸法入り配置図・断面・配線図・エアフロー・分解組立・BOM)を model/*.json から生成する。
@@ -66,6 +69,7 @@
 - `strength_check.py` — 簡易強度ゲート(手計算級の概算。FEA・疲労・実材料データの代替ではない)。許容応力=降伏/安全率1.5。荷重ケース: バランサ最大ばね力、画面上端50N押し(ストッパ/首振りストッパ)、頭部重量。
 - `swivel_calc.py` — 首振り軸受の要求仕様(静荷重+操作荷重+衝撃)と操作力・ストッパ荷重の概算。軸受の実定格(spec.swivel.bearing_moment_rating_Nm)が未設定なら UNVERIFIED。
 - `sync_wallpaper.py` — spec.json の wallpaper を viewer/index.html の /*WALL*/ ... /*ENDWALL*/ に埋め込む(単一源の同期)。
+- `task.py` — 台帳更新CLI: python3 tools/task.py ID STATUS "証拠" ["検証"] ["判定/決定"]   例) task.py K14 done "README修正" "grep確認" "CONF
 - `thermal_calc.py` — 部品別の熱概算(再循環を含む簡易モデル) → docs/thermal-analysis.md。数値は公開仕様+仮定。CFD/実測で置換すること。
 
 ### model/

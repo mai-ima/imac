@@ -211,7 +211,7 @@ $('sSwivel').oninput=e=>{ const v=+e.target.value; $('vSwivel').textContent=v+'�
 $('sExp').oninput=e=>{ S.explode=+e.target.value/100; $('vExp').textContent=Math.round(S.explode*100)+'%'; applyExplode(); };
 const READ={0:[['CPU温度(推定)','38 °C'],['GPU温度(推定)','35 °C'],['ラジエーターファン','600 rpm'],['GPUファン','停止(0rpm)'],['ケースファン','500 rpm'],['消費電力(推定, AC入力)','約 100 W']],
             1:[['CPU温度(推定)','77 °C'],['GPU温度(推定)','72 °C'],['ラジエーターファン','2400 rpm'],['GPUファン','1800 rpm'],['ケースファン','1700 rpm'],['消費電力(推定, AC入力)','約 540 W(最大 約690 W)']]};
-function setLoad(n){ S.load=n; $('lIdle').setAttribute('aria-pressed',String(n===0)); $('lGame').setAttribute('aria-pressed',String(n===1)); $('read').innerHTML=READ[n].map(([a,b])=>`<span>${a}</span><span>${b}</span>`).join(''); }
+function setLoad(n){ S.load=n; $('lIdle').setAttribute('aria-pressed',String(n===0)); $('lGame').setAttribute('aria-pressed',String(n===1)); $('read').innerHTML=READ[n].map(([a,b])=>`<span>${a}</span><span>${b}</span>`).join('')+'<span style="grid-column:1/-1;font-size:11px;opacity:.7">※推定のデモ値(実測ではありません)。電力は tools/power_budget.py(AC入力 97/540/688W)と整合、温度・回転数は未実測(U18)。</span>'; }
 $('lIdle').onclick=()=>setLoad(0); $('lGame').onclick=()=>setLoad(1); setLoad(Q.get('load')==='1'?1:0);
 const PARTS=[
  ['ディスプレイ: BOE MV270QUM-N50 27型4K IPS','609.4×355.6×13.3mm / 有効596.7×335.7mm / eDP 4lane 30pin / 2.45kg / 最大37.3W / LCM表面温度0〜48℃','ok','BOE公式データシート(Panelook/Data-Modul)。背板温度は目標≤40℃(断熱+空気層7mm)。ガラスはスラブ枠に接着、パネルとはエアギャップ。'],

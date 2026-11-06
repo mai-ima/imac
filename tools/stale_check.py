@@ -11,11 +11,11 @@ inner = S['dome']['total_t'] - S['dome']['sheet_t'] * 0 - 28   # 129-28=101 (内
 # 2) 旧値/廃止語(現行ファイルのみ)
 BAN = [(r'9800X3D', '旧CPU(9950X3Dへ置換済) ※比較対象は例外'), (r'SF750', '旧PSU(SF1000)'), (r'z\s*=\s*43\b', '旧ヒンジ軸z=43'),
        (r'足220×215|foot_depth["\']?\s*[:=]\s*215', '旧スタンド足寸法'), (r'CP-15(?!.*(廃止|removed|欠番))', '廃止CP-15の残存'),
-       (r'φ\s*4\.2\s*/\s*(ピッチ|pitch)\s*7', '旧穴φ4.2/ピッチ7'), (r'RTX 5060 Ti', '旧GPU(5070 Ti)'), (r'220\s*[×x]\s*230|220\s*[×x]\s*215', '旧スタンド足220×230/215(現行300×290)'), (r'定荷重ばね|カム式', '旧バランサ(定荷重ばね/カム)'), (r'[-−]5\s*°?\s*(〜|~|/|から)\s*\+?25\s*°', '旧チルト範囲-5〜+25°'), (r'z\s*=\s*38\b', '旧ヒンジ軸z=38'), (r'ballast\s*1\.8|ballast\s*2\.0|ballast2kg', '旧ballast質量'), (r'360\s*N\s*/\s*本|486\s*N|最長側360', '旧ばね荷重(現行は balance.json: 350/525N)'), (r'荷重変化率\s*35\s*%|進行率35', '旧ばね荷重変化率35%(現行 p=0.5)'), (r'stand_neck_side', '旧側面カバー部材名')]
-HIST = ('docs/audit-log.md', 'docs/selection-', 'docs/research-', 'docs/source-status', 'docs/unverified-tracker', 'docs/bom-final', 'docs/logo-catalog', 'docs/spec/performance-benchmark', 'docs/spec/gaming-requirements', 'docs/tilt-swivel-design.md', 'docs/tilt-swivel-design.md', 'docs/joint-analysis.md', 'blender/build_imac_pc_v6.py', 'tools/check_sources.py', 'tools/stale_check.py')      # 履歴/比較/出典記録(旧値の言及が目的の文書)。生成物・仕様・コードは対象
+       (r'φ\s*4\.2\s*/\s*(ピッチ|pitch)\s*7', '旧穴φ4.2/ピッチ7'), (r'RTX 5060 Ti', '旧GPU(5070 Ti)'), (r'220\s*[×x]\s*230|220\s*[×x]\s*215', '旧スタンド足220×230/215(現行300×290)'), (r'定荷重ばね|カム式', '旧バランサ(定荷重ばね/カム)'), (r'[-−]5\s*°?\s*(〜|~|/|から)\s*\+?25\s*°', '旧チルト範囲-5〜+25°'), (r'z\s*=\s*38\b', '旧ヒンジ軸z=38'), (r'ballast\s*1\.8|ballast\s*2\.0|ballast2kg', '旧ballast質量'), (r'360\s*N\s*/\s*本|486\s*N|最長側360', '旧ばね荷重(現行は balance.json: 350/525N)'), (r'荷重変化率\s*35\s*%|進行率35', '旧ばね荷重変化率35%(現行 p=0.5)'), (r'stand_neck_side', '旧側面カバー部材名'), (r"\['pod'\]\['wall'\]", 'pod.wall 参照(K01: dome.inner_wall_offset_mm を使う)')]
+HIST = ('docs/audit-log.md', 'docs/selection-', 'docs/research-', 'docs/source-status', 'docs/unverified-tracker', 'docs/bom-final', 'docs/logo-catalog', 'docs/spec/performance-benchmark', 'docs/spec/gaming-requirements', 'docs/tilt-swivel-design.md', 'docs/tilt-swivel-design.md', 'docs/joint-analysis.md', 'blender/build_imac_pc_v6.py', 'blender/build_imac_pc.py', 'tools/check_sources.py', 'tools/stale_check.py')      # 履歴/比較/出典記録(旧値の言及が目的の文書)。生成物・仕様・コードは対象
 files = [f for f in subprocess.check_output(['git', 'ls-files'], cwd=R, text=True).split('\n')
          if f and '/archive/' not in f and not f.startswith('archive/') and f.endswith(('.py', '.json', '.md', '.html', '.svg', '.csv'))
-         and not f.startswith('audit_output/') and f != 'tools/stale_check.py']
+         and not f.startswith(('audit_output/', 'audit_control/')) and f not in ('tools/stale_check.py', 'tools/audit_control_init.py')]
 for f in files:
     try: t = open(f'{R}/{f}', encoding='utf-8').read()
     except Exception: continue
