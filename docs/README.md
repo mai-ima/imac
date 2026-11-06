@@ -10,6 +10,7 @@
 - 旧: [tilt-swivel-design.md](tilt-swivel-design.md)(チルト・首振りの設計経緯と付録A=旧ヒンジ設計) / [service-mechanisms.md](service-mechanisms.md) / [service-manual.md](service-manual.md) / [build-guide.md](build-guide.md)
 
 ## 3. 部品・BOM
+- [PROJECT-SUMMARY.md](PROJECT-SUMMARY.md)(全ファイル要約・自動生成)
 - [bom-final.md](bom-final.md)[生成] / [spec/custom-parts.md](spec/custom-parts.md)[生成] / [spec/hardware-list.md](spec/hardware-list.md)[生成] / [spec/joint-matrix.md](spec/joint-matrix.md)[生成] / [spec/hole-table.md](spec/hole-table.md)[生成] / [logo-catalog.md](logo-catalog.md)
 
 ## 4. 解析・配線(生成物)

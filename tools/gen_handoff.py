@@ -69,7 +69,7 @@ for nm, rows in (('01_BOM_purchased', buy), ('01_BOM_custom', cus)):
 # ---------------- DXF/ホール表 ----------------
 shutil.copy(f'{R}/drawings/outlines.dxf', f'{H}/04_DXF/outlines.dxf'); shutil.copy(f'{R}/docs/spec/hole-table.md', f'{H}/04_DXF/hole-table.md')
 # ---------------- 図面一覧(PDFは別工程で生成) ----------------
-svgs = sorted(f for f in os.listdir(f'{R}/drawings') if f.endswith('.svg')) ; psv = sorted(f for f in os.listdir(f'{R}/drawings/parts') if f.endswith('.svg'))
+svgs = sorted(f for f in os.listdir(f'{R}/drawings') if f.endswith('.svg')) + sorted('v10/' + f for f in os.listdir(f'{R}/drawings/v10') if f.endswith('.svg')) ; psv = sorted(f for f in os.listdir(f'{R}/drawings/parts') if f.endswith('.svg'))
 json.dump(dict(sheets=[f'drawings/{f}' for f in svgs] + [f'drawings/parts/{f}' for f in psv]), open(f'{H}/02_PDF/_sources.json', 'w'), indent=1)
 print('BOM/DXF/sources done', len(svgs) + len(psv), 'drawings')
 

@@ -30,10 +30,12 @@
 | fitcheck.py | v007 | current | 2026-11-06 | 2bb8cf1 | fitcheck/fitcheck.v007__2026-11-06_2bb8cf1.py |
 | fitcheck.py | v008 | current | 2026-11-06 | 853f219 | fitcheck/fitcheck.v008__2026-11-06_853f219.py |
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
+| gen_cad_drawings.py | v001 | current | 2026-11-06 | 88f99b7 | gen_cad_drawings/gen_cad_drawings.v001__2026-11-06_88f99b7.py |
 | gen_drawing.py | v001 | current | 2026-11-03 | a2b24f4 | gen_drawing/gen_drawing.v001__2026-11-03_a2b24f4.py |
 | gen_drawing.py | v002 | current | 2026-11-03 | 0f4d0d7 | gen_drawing/gen_drawing.v002__2026-11-03_0f4d0d7.py |
 | gen_fmea.py | v001 | current | 2026-11-05 | 017b7d9 | gen_fmea/gen_fmea.v001__2026-11-05_017b7d9.py |
 | gen_fmea.py | v002 | current | 2026-11-05 | 15a1bce | gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py |
+| gen_handoff.py | v001 | current | 2026-11-06 | ef5ecbc | gen_handoff/gen_handoff.v001__2026-11-06_ef5ecbc.py |
 | gen_mechanisms.py | v001 | current | 2026-11-06 | d97f07e | gen_mechanisms/gen_mechanisms.v001__2026-11-06_d97f07e.py |
 | gen_mechanisms.py | v002 | current | 2026-11-06 | 02c4c72 | gen_mechanisms/gen_mechanisms.v002__2026-11-06_02c4c72.py |
 | gen_mechanisms.py | v003 | current | 2026-11-06 | 85af1a8 | gen_mechanisms/gen_mechanisms.v003__2026-11-06_85af1a8.py |

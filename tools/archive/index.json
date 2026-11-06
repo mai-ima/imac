@@ -253,6 +253,15 @@
    "file": "gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py"
   },
   {
+   "src": "tools/gen_cad_drawings.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "5af10e50c779b85d88a6bc0b9fce4ad886c669d67e92bc416b22adf709bb9e6c",
+   "file": "gen_cad_drawings/gen_cad_drawings.v001__2026-11-06_88f99b7.py"
+  },
+  {
    "src": "tools/gen_drawing.py",
    "version": 1,
    "gen": "current",
@@ -287,6 +296,15 @@
    "commit": "15a1bce",
    "sha256": "20723ed3cc62ccdfa2ca8a6790983061d99c9f261d615634ad3ab3232f26de15",
    "file": "gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py"
+  },
+  {
+   "src": "tools/gen_handoff.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ef5ecbc",
+   "sha256": "a8ae6749aecc68c1ef80515dd419c1e10c4498ff6ba547e2c9eb91421aa2dd23",
+   "file": "gen_handoff/gen_handoff.v001__2026-11-06_ef5ecbc.py"
   },
   {
    "src": "tools/gen_mechanisms.py",
