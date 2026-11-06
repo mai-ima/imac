@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461351.975150463
+2461351.9920717594
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461351.975150463
+2461351.9920717594
   9
 $TDUUPDATE
  40
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{40E6E425-063A-4CC5-A42E-890A09BAB747}
+{71DEF581-7E20-4246-BAA3-15D5AD0EC192}
   9
 $VERSIONGUID
   2
-{B8623042-0ED3-41A1-94CC-A6EF97A657E7}
+{B74BA0D2-18CC-420D-AD80-E02D295DB6EA}
   9
 $EXTNAMES
 290
@@ -1323,9 +1323,9 @@ ISM
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -1339,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -2861,7 +2861,7 @@ AcDbCircle
  30
 0.0
  40
-1.25
+2.8
   0
 CIRCLE
   5
@@ -2881,7 +2881,7 @@ AcDbCircle
  30
 0.0
  40
-1.25
+2.8
   0
 CIRCLE
   5
@@ -2901,7 +2901,7 @@ AcDbCircle
  30
 0.0
  40
-1.25
+2.8
   0
 CIRCLE
   5
@@ -2921,7 +2921,7 @@ AcDbCircle
  30
 0.0
  40
-1.25
+2.8
   0
 CIRCLE
   5
@@ -3043,7 +3043,7 @@ AcDbText
  40
 6.0
   1
-BACKPLATE A5052-H32 t2.0 / hang-pin M3 tapped (PEM TSOA) x4 at keyhole pin positions / hinge block M6 clearance D6.6 x4 / PE stud M4
+BACKPLATE A5052-H32 t2.0 / hang-pin PEM TSOA-M4 x4 (hole D5.6 provisional, U29) at keyhole pin positions / hinge block M6 clearance D6.6 x4 / PE stud M4
 100
 AcDbText
   0
@@ -3059,15 +3059,15 @@ TRAY_OUTLINE
 100
 AcDbLine
  10
-1644.0
+1648.0
  20
-0.0
+10.0
  30
 0.0
  11
-2146.0
+2142.0
  21
-0.0
+10.0
  31
 0.0
   0
@@ -3083,15 +3083,15 @@ TRAY_OUTLINE
 100
 AcDbLine
  10
-2190.0
+2180.0
  20
-44.0
+48.0
  30
 0.0
  11
-2190.0
+2180.0
  21
-327.3
+323.3
  31
 0.0
   0
@@ -3107,15 +3107,15 @@ TRAY_OUTLINE
 100
 AcDbLine
  10
-2146.0
+2142.0
  20
-371.3
+361.3
  30
 0.0
  11
-1644.0
+1648.0
  21
-371.3
+361.3
  31
 0.0
   0
@@ -3131,15 +3131,15 @@ TRAY_OUTLINE
 100
 AcDbLine
  10
-1600.0
+1610.0
  20
-327.3
+323.3
  30
 0.0
  11
-1600.0
+1610.0
  21
-44.0
+48.0
  31
 0.0
   0
@@ -3155,13 +3155,13 @@ TRAY_OUTLINE
 100
 AcDbCircle
  10
-2146.0
+2142.0
  20
-44.0
+48.0
  30
 0.0
  40
-44.0
+38.0
 100
 AcDbArc
  50
@@ -3181,13 +3181,13 @@ TRAY_OUTLINE
 100
 AcDbCircle
  10
-2146.0
+2142.0
  20
-327.3
+323.3
  30
 0.0
  40
-44.0
+38.0
 100
 AcDbArc
  50
@@ -3207,13 +3207,13 @@ TRAY_OUTLINE
 100
 AcDbCircle
  10
-1644.0
+1648.0
  20
-327.3
+323.3
  30
 0.0
  40
-44.0
+38.0
 100
 AcDbArc
  50
@@ -3233,13 +3233,13 @@ TRAY_OUTLINE
 100
 AcDbCircle
  10
-1644.0
+1648.0
  20
-44.0
+48.0
  30
 0.0
  40
-44.0
+38.0
 100
 AcDbArc
  50
@@ -3265,7 +3265,7 @@ AcDbCircle
  30
 0.0
  40
-4.6
+5.1
   0
 LINE
   5
@@ -3279,13 +3279,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-1637.45
+1636.75
  20
 70.0
  30
 0.0
  11
-1637.45
+1636.75
  21
 82.0
  31
@@ -3303,13 +3303,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-1642.55
+1643.25
  20
 70.0
  30
 0.0
  11
-1642.55
+1643.25
  21
 82.0
  31
@@ -3333,7 +3333,7 @@ AcDbCircle
  30
 0.0
  40
-2.55
+3.25
 100
 AcDbArc
  50
@@ -3359,7 +3359,7 @@ AcDbCircle
  30
 0.0
  40
-4.6
+5.1
   0
 LINE
   5
@@ -3373,13 +3373,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-2151.45
+2150.75
  20
 60.0
  30
 0.0
  11
-2151.45
+2150.75
  21
 72.0
  31
@@ -3397,13 +3397,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-2156.55
+2157.25
  20
 60.0
  30
 0.0
  11
-2156.55
+2157.25
  21
 72.0
  31
@@ -3427,7 +3427,7 @@ AcDbCircle
  30
 0.0
  40
-2.55
+3.25
 100
 AcDbArc
  50
@@ -3453,7 +3453,7 @@ AcDbCircle
  30
 0.0
  40
-4.6
+5.1
   0
 LINE
   5
@@ -3467,13 +3467,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-1637.45
+1636.75
  20
 302.0
  30
 0.0
  11
-1637.45
+1636.75
  21
 314.0
  31
@@ -3491,13 +3491,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-1642.55
+1643.25
  20
 302.0
  30
 0.0
  11
-1642.55
+1643.25
  21
 314.0
  31
@@ -3521,7 +3521,7 @@ AcDbCircle
  30
 0.0
  40
-2.55
+3.25
 100
 AcDbArc
  50
@@ -3547,7 +3547,7 @@ AcDbCircle
  30
 0.0
  40
-4.6
+5.1
   0
 LINE
   5
@@ -3561,13 +3561,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-2151.45
+2150.75
  20
 302.0
  30
 0.0
  11
-2151.45
+2150.75
  21
 314.0
  31
@@ -3585,13 +3585,13 @@ TRAY_KEYHOLE
 100
 AcDbLine
  10
-2156.55
+2157.25
  20
 302.0
  30
 0.0
  11
-2156.55
+2157.25
  21
 314.0
  31
@@ -3615,7 +3615,7 @@ AcDbCircle
  30
 0.0
  40
-2.55
+3.25
 100
 AcDbArc
  50
@@ -4063,7 +4063,7 @@ AcDbText
  40
 6.0
   1
-TRAY A5052-H32 t2.0 590x371.3 R44 / keyhole D10.2 + slot W6.5 (up) / PEM TSOA-M3 holes D4.0 (values pending U17/U29)
+TRAY A5052-H32 t2.0 570x351.3 R38 / keyhole D10.2 + slot W6.5 (up) / PEM TSOA-M3 holes D4.0 (values pending U17/U29)
 100
 AcDbText
   0
@@ -232213,7 +232213,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-06T23:24:13.129166+00:00
+1.4.5 @ 2026-11-06T23:48:35.275953+00:00
   0
 DICTIONARYVAR
   5
@@ -232225,7 +232225,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-06T23:24:13.307480+00:00
+1.4.5 @ 2026-11-06T23:48:35.454392+00:00
   0
 ENDSEC
   0

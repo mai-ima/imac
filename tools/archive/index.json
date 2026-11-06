@@ -73,6 +73,15 @@
    "file": "balance_calc/balance_calc.v007__2026-11-06_877835f.py"
   },
   {
+   "src": "tools/balance_calc.py",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "25edb87acfe971432193392601fdc5ed3ca2fc4202739c9dacb7c14d29e04781",
+   "file": "balance_calc/balance_calc.v008__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/cable_check.py",
    "version": 1,
    "gen": "current",
@@ -107,6 +116,15 @@
    "commit": "853f219",
    "sha256": "d3360e654e7178b1ab2fc3516f75f19afb84dc82a2f29ca5228641c520221ec8",
    "file": "cable_check/cable_check.v004__2026-11-06_853f219.py"
+  },
+  {
+   "src": "tools/cable_check.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "2313bffdf867807cc0c4429a806bc13453b345d318b6694daed52f3d952f4640",
+   "file": "cable_check/cable_check.v005__2026-11-06_88f99b7.py"
   },
   {
    "src": "tools/cablemodel.py",
@@ -460,6 +478,15 @@
    "file": "gen_mech_sections/gen_mech_sections.v002__2026-11-06_4050ed9.py"
   },
   {
+   "src": "tools/gen_mech_sections.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "cad48cc167e58e9a23cf84fb97549ae9f0cad790189e66ab12cd6dcae183cb5d",
+   "file": "gen_mech_sections/gen_mech_sections.v003__2026-11-06_93238a3.py"
+  },
+  {
    "src": "tools/gen_mechanisms.py",
    "version": 1,
    "gen": "current",
@@ -512,6 +539,15 @@
    "commit": "cf90ba1",
    "sha256": "5db9be89697edecd8b4053fffb615cc8ae01e74834eea88e430fbf92eb9a8659",
    "file": "gen_mechanisms/gen_mechanisms.v006__2026-11-06_cf90ba1.py"
+  },
+  {
+   "src": "tools/gen_mechanisms.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "365bdbdb4cf053e1a62aad7d2ea5d8359f8aedaa2457e4d60b320c7729dd6b18",
+   "file": "gen_mechanisms/gen_mechanisms.v007__2026-11-06_93238a3.py"
   },
   {
    "src": "tools/gen_mfg_drawings.py",
@@ -613,6 +649,15 @@
    "file": "gen_mfg_drawings/gen_mfg_drawings.v011__2026-11-06_4050ed9.py"
   },
   {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "90bfca431dab54c0ff8c418d09485b83a96e9626259a4de9404ed07322b3438d",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v012__2026-11-06_93238a3.py"
+  },
+  {
    "src": "tools/gen_package.py",
    "version": 1,
    "gen": "current",
@@ -683,6 +728,15 @@
    "commit": "ce41db1",
    "sha256": "2faef540361435f78422e49a6fd7c9847458528ce83aa419ef84c89a05671761",
    "file": "gen_project_summary/gen_project_summary.v001__2026-11-06_ce41db1.py"
+  },
+  {
+   "src": "tools/gen_project_summary.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "77edf084493f8cb3a99985e8984d24e16b05c4e8fe77b3a3181823435be57c70",
+   "file": "gen_project_summary/gen_project_summary.v002__2026-11-06_4050ed9.py"
   },
   {
    "src": "tools/gen_service_drawings.py",
@@ -782,6 +836,15 @@
    "commit": "cf90ba1",
    "sha256": "f49da430c5e9fb74b7da7d388dfa4b004ae5e8b3def3b63364f09136fd844921",
    "file": "gen_specs/gen_specs.v006__2026-11-06_cf90ba1.py"
+  },
+  {
+   "src": "tools/gen_specs.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "313543cfb47c51300dee0ada6323ab3acb0aeff6a65d8bd33617c008810e1631",
+   "file": "gen_specs/gen_specs.v007__2026-11-06_93238a3.py"
   },
   {
    "src": "tools/guard_no_delete.sh",
@@ -964,6 +1027,15 @@
    "file": "motion_check/motion_check.v007__2026-11-06_88f99b7.py"
   },
   {
+   "src": "tools/motion_check.py",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "2e89c095df18c66a9547ed11f1428a6cc97f61076279f6bf013423b2f30746e9",
+   "file": "motion_check/motion_check.v008__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/run_gates.sh",
    "version": 1,
    "gen": "current",
@@ -1016,6 +1088,15 @@
    "commit": "02c4c72",
    "sha256": "81275a1e4f5a2dbb4bddbc2d433d89b4d2c388d58536fdc64dde41e928d83fc0",
    "file": "run_gates/run_gates.v006__2026-11-06_02c4c72.sh"
+  },
+  {
+   "src": "tools/run_gates.sh",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "0073c42c44ebf5f517ba16d9a7e3a180a251d9fa017e8e074b3097cfb50099d9",
+   "file": "run_gates/run_gates.v007__2026-11-06_877835f.sh"
   },
   {
    "src": "tools/stability.py",
@@ -1108,6 +1189,15 @@
    "file": "stale_check/stale_check.v005__2026-11-06_4050ed9.py"
   },
   {
+   "src": "tools/stale_check.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "7804be254156f8da2aabdff5b7b1a2e395a414fbd657179b4e36e30b4d6516d3",
+   "file": "stale_check/stale_check.v006__2026-11-06_e7a16e1.py"
+  },
+  {
    "src": "tools/strength_check.py",
    "version": 1,
    "gen": "current",
@@ -1133,6 +1223,15 @@
    "commit": "88f99b7",
    "sha256": "49fbcc21e4d5b99f49eb7384f01be561c67c5c33b7bdd79c3807897b411665ff",
    "file": "strength_check/strength_check.v003__2026-11-06_88f99b7.py"
+  },
+  {
+   "src": "tools/strength_check.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "7f68d831bc7506b1b5b66dffac7324b794f4e257db4660624ab92cf2da012137",
+   "file": "strength_check/strength_check.v004__2026-11-06_cf90ba1.py"
   },
   {
    "src": "tools/swivel_calc.py",

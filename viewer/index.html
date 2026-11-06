@@ -172,18 +172,15 @@ loadGLB(gltf=>{
 },undefined,e=>{ const l=$('loading'); if(l) l.textContent='モデルを読み込めませんでした: '+(e&&e.message||e); });
 
 
-/* ---- バランサのダイスプリング: チルトに合わせて両端ピン間で傾き・伸縮(上端=尾部レバー先端ピン、下端=スタンド側座) ---- */
-const HW_END=16; /* spec.hinge.balance_end_hw_mm: ピン間距離からばね座面までの端金物長(両端合計) */
+/* ---- バランサ(カム+ローラ従動子+ダイスプリング): チルトに合わせてローラ/キャリア/案内ロッドが鉛直に下がり、ばねが圧縮される。ρ(a)は model/balance.json の解析解(tools/balance_calc.py) ---- */
+const CAM={L0:39.3,rho0:30.0,prof:[[-15.0, 30.9], [-13.0, 30.67], [-11.0, 30.48], [-9.0, 30.32], [-7.0, 30.19], [-5.0, 30.09], [-3.0, 30.03], [-1.0, 30.0], [1.0, 30.01], [3.0, 30.05], [5.0, 30.12], [7.0, 30.22], [9.0, 30.36], [11.0, 30.53], [13.0, 30.73], [15.0, 30.95], [17.0, 31.21], [19.0, 31.49], [21.0, 31.8], [23.0, 32.13], [25.0, 32.48], [27.0, 32.85], [29.0, 33.24], [31.0, 33.65], [33.0, 34.07], [35.0, 34.51], [37.0, 34.96], [39.0, 35.42]]};
+function camRho(a){ const P=CAM.prof; if(a<=P[0][0]) return P[0][1]; for(let i=1;i<P.length;i++){ if(a<=P[i][0]){ const t=(a-P[i-1][0])/(P[i][0]-P[i-1][0]); return P[i-1][1]+t*(P[i][1]-P[i-1][1]); } } return P[P.length-1][1]; }
 const struts=[]; window.__struts=struts;
-function initStruts(){ for(const k of [0,1]){ const pin=byName['hinge_tail_pin'+k], seat=byName['spring_seat_bot'+k], parts=['spring_die'+k,'spring_guide_rod'+k].map(n=>byName[n]).filter(Boolean);
-    if(pin&&seat&&parts.length) struts.push({pin,seat,parts,base:parts.map(o=>({p:o.position.clone(),q:o.quaternion.clone(),s:o.scale.clone()})),len0:0}); } updateStruts(true); }
-function updateStruts(first){ if(!struts.length) return; scene.updateMatrixWorld(true); const c=o=>new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3());
-  for(const st of struts){ const A=c(st.seat), B=c(st.pin);
-    st.parts.forEach((o,i)=>{ const par=o.parent; const a=par.worldToLocal(A.clone()), b=par.worldToLocal(B.clone()); const d=b.clone().sub(a); const L=d.length();
-      if(first&&i===0) st.len0=L; if(first&&i===0) st.a0=a.clone(); const up=new THREE.Vector3(0,1,0); if(first){ st.dir0=new THREE.Vector3(0,1,0); }
-      o.quaternion.copy(new THREE.Quaternion().setFromUnitVectors(st.dir0,d.clone().normalize())).multiply(st.base[i].q);
-      const mid=a.clone().add(d.clone().multiplyScalar(0.5)); const m0=st.a0.clone().add(st.dir0.clone().multiplyScalar(st.len0/2));
-      o.position.copy(st.base[i].p).add(mid.sub(m0)); o.scale.set(st.base[i].s.x, st.base[i].s.y*((L-HW_END)/(st.len0-HW_END)), st.base[i].s.z); }); } }
+function initStruts(){ for(const k of [0,1]){ const mv=['cam_roller','cam_roller_pin','cam_carrier','cam_rod'].map(n=>byName[n+k]).filter(Boolean), sp=byName['spring_die'+k];
+    if(mv.length&&sp) struts.push({mv,sp,base:mv.map(o=>o.position.clone()),spb:{p:sp.position.clone(),s:sp.scale.clone()},L0:0}); } updateStruts(true); }
+function updateStruts(first){ if(!struts.length) return; const a=-(pivot?pivot.rotation.x:0)*180/Math.PI, d=camRho(a)-CAM.rho0;
+  for(const st of struts){ st.mv.forEach((o,i)=>{ const par=o.parent; const w=new THREE.Vector3(); par.getWorldScale(w); o.position.copy(st.base[i]); o.position.y-=d/(w.y||1); });
+    const w=new THREE.Vector3(); st.sp.parent.getWorldScale(w); const k=(CAM.L0-d)/CAM.L0; st.sp.scale.set(st.spb.s.x,st.spb.s.y*k,st.spb.s.z); st.sp.position.copy(st.spb.p); st.sp.position.y-=d/2/(w.y||1); } }
 function mixHex(a,b,t){ const c=new THREE.Color(a); c.lerp(new THREE.Color(b),t); return '#'+c.getHexString(); }
 function setColor(n){ color=n; const [b,s,c]=PALETTE[n];
   if(matBy['anodized_body']) matBy['anodized_body'].color.set(b); if(matBy['anodized_stand']) matBy['anodized_stand'].color.set(s);
@@ -226,7 +223,7 @@ const PARTS=[
  ['SSD: Samsung 990 PRO with Heatsink 1TB','80.15×25×8.88mm / PCIe4.0 x4','ok','Samsung公式データシート。'],
  ['メモリ: DDR5-6000 CL30 EXPO 32GB (2×16GB)','133.35×〜44mm','est','型番未選定。'],
  ['AC電源・接地','C14インレット(下辺左)+内部延長C13 / 保護接地は専用導体+編組','est','docs/spec/grounding-spec.md。型番未選定。'],
- ['ヒンジ機構(全部品を描画)','ヒンジブロック+摩擦ヒンジ×2+ダイスプリング式バランサ(尾部レバー)+ストッパ+軸+Eクリップ+貫通ボルト+首振りユニット','est','部品の型番は未選定(U26/U27)。ばね・ネジ・ラッチ・磁石・ピン等の一覧: docs/spec/hardware-list.md'],
+ ['ヒンジ機構(全部品を描画)','ヒンジブロック+摩擦ヒンジ×2+カム式バランサ(カム板+ローラ+ダイスプリング)+ストッパ+軸+Eクリップ+貫通ボルト+首振りユニット','est','部品の型番は未選定(U26/U27)。ばね・ネジ・ラッチ・磁石・ピン等の一覧: docs/spec/hardware-list.md'],
  ['外装(特注)','A5052 t2.0(ドーム/背板/トレイ)・A6063スタンド・強化ガラス','est','板金/絞り加工は外注見積が必要(U39)。']];
 $('parts').innerHTML=PARTS.map(([n,s,t,m])=>`<details><summary>${n}<span class="tag ${t==='ok'?'t-ok':'t-est'}">${t==='ok'?'仕様確認済':'要確認'}</span></summary><p>${s}</p><p>${m}</p></details>`).join('');
 

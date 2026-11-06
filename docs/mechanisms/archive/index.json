@@ -55,6 +55,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v006__2026-11-06_877835f.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "c060a0e2795329171a9eed97bf133abbac15787ba628081b0e39606487ee43d2",
+   "file": "01_tilt_balancer/01_tilt_balancer.v007__2026-11-06_cf90ba1.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -136,6 +145,15 @@
    "file": "03_neck_and_load_path/03_neck_and_load_path.v006__2026-11-06_cf90ba1.md"
   },
   {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "d23626c7f736e1620c8830269f6c0b8b6ac5128c661132cfe05c2ccda1db5d63",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v007__2026-11-06_93238a3.md"
+  },
+  {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
    "version": 1,
    "gen": "current",
@@ -199,6 +217,15 @@
    "file": "06_pinch_guard/06_pinch_guard.v003__2026-11-06_88f99b7.md"
   },
   {
+   "src": "docs/mechanisms/06_pinch_guard.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "1dbcb1a64a83dbe5a99965ad211866422fee9c8fc80851a0046511e74009cff5",
+   "file": "06_pinch_guard/06_pinch_guard.v004__2026-11-06_cf90ba1.md"
+  },
+  {
    "src": "docs/mechanisms/07_fits_and_feel.md",
    "version": 1,
    "gen": "current",
@@ -233,6 +260,15 @@
    "commit": "877835f",
    "sha256": "d05ea99bb1a6c654fe9cce1d99ae35cfc1dbea5f153095c79a15ac4e99fa67fc",
    "file": "07_fits_and_feel/07_fits_and_feel.v004__2026-11-06_877835f.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "373ced07dcc8eea076e4ed3affdd8e108ef32315d79553041d40e0fd6a1972a7",
+   "file": "07_fits_and_feel/07_fits_and_feel.v005__2026-11-06_cf90ba1.md"
   },
   {
    "src": "docs/mechanisms/README.md",

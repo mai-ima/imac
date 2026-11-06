@@ -61,7 +61,7 @@
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
-<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持5.8N·m) + ダイスプリング2本+尾部レバー(CP</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持3.0N·m) + カム式バランサ(CP-23: カム板</text>
 <text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
 <text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
 <text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
@@ -110,8 +110,8 @@
 <text x="156" y="35.2" font-size="2.6">表面処理: -</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: 同軸度±0.05</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: ヒンジブロック(150×22×24, A6063)+カバー</text>
-<text x="156" y="50.80000000000001" font-size="2.6">要素: 摩擦ヒンジ(Reell PHL/PHC級)×2、ダイスプリング+尾部レバー(CP-23)</text>
-<text x="156" y="56.000000000000014" font-size="2.6">要素: 機械ストッパ×2、Eクリップ×4、軸Ø12 SUS、貫通ボルトM6×4+SPCC裏当て+A5052補強板</text>
+<text x="156" y="50.80000000000001" font-size="2.6">要素: 摩擦ヒンジ(Reell PHL/PHC級)×2、カム式バランサ(CP-23)</text>
+<text x="156" y="56.000000000000014" font-size="2.6">要素: 機械ストッパ×2、E止め輪×2、軸Ø12 SUS、貫通ボルトM6×4+SPCC裏当て+A5052補強板</text>
 <text x="156" y="61.20000000000002" font-size="2.6">要素: 設計トルク曲線: docs/tilt-swivel-design.md(質量実測 U25 後に確定)</text>
 <text x="156" y="66.40000000000002" font-size="2.6">接合: CP-10</text>
 <text x="156" y="71.60000000000002" font-size="2.6">接合: CP-03</text>

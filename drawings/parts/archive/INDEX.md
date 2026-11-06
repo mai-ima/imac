@@ -71,6 +71,7 @@
 | CP-11.svg | v006 | current | 2026-11-06 | 302823c | CP-11/CP-11.v006__2026-11-06_302823c.svg |
 | CP-11.svg | v007 | current | 2026-11-06 | d97f07e | CP-11/CP-11.v007__2026-11-06_d97f07e.svg |
 | CP-11.svg | v008 | current | 2026-11-06 | cf90ba1 | CP-11/CP-11.v008__2026-11-06_cf90ba1.svg |
+| CP-11.svg | v009 | current | 2026-11-06 | e7a16e1 | CP-11/CP-11.v009__2026-11-06_e7a16e1.svg |
 | CP-12.svg | v001 | current | 2026-11-05 | b97eaae | CP-12/CP-12.v001__2026-11-05_b97eaae.svg |
 | CP-12.svg | v002 | current | 2026-11-05 | 3c794e1 | CP-12/CP-12.v002__2026-11-05_3c794e1.svg |
 | CP-12.svg | v003 | current | 2026-11-06 | 80d7407 | CP-12/CP-12.v003__2026-11-06_80d7407.svg |
@@ -110,4 +111,5 @@
 | CP-23.svg | v001 | current | 2026-11-06 | 302823c | CP-23/CP-23.v001__2026-11-06_302823c.svg |
 | CP-23.svg | v002 | current | 2026-11-06 | 432b08c | CP-23/CP-23.v002__2026-11-06_432b08c.svg |
 | CP-23.svg | v003 | current | 2026-11-06 | cf90ba1 | CP-23/CP-23.v003__2026-11-06_cf90ba1.svg |
+| CP-23.svg | v004 | current | 2026-11-06 | e7a16e1 | CP-23/CP-23.v004__2026-11-06_e7a16e1.svg |
 | README.md | v001 | current | 2026-11-06 | 514e2e0 | README/README.v001__2026-11-06_514e2e0.md |

@@ -8,5 +8,6 @@
 | 04 | [背面ドーム着脱](04_dome_latch_gasket.md) | ラッチ・フック・ピン・磁石・EMIガスケット / `dfm_check.py` |
 | 05 | [トレイ吊りと引き出し](05_tray_hanging_service.md) | キーホール・SUSブッシュ・拘束ネジ・アンビリカル |
 | 06 | [指挟み保護(蛇腹ブーツ)](06_pinch_guard.md) | シリコーン蛇腹ブーツ / `motion_check.py` |
+| 07 | [はめあい・操作感(ゆるゆる/硬すぎ)](07_fits_and_feel.md) | 公差・摩擦・ばね・ガスケット / `fit_tolerance.py` |
 
 これらは `tools/gen_mechanisms.py` が生成する(手で直さず、model/*.json か tools の計算を直す)。単一源: `model/spec.json`(hinge/swivel/neck/stand)、`model/balance.json`、`model/custom_parts.json`。

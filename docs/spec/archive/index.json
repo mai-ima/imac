@@ -145,6 +145,15 @@
    "file": "custom-parts/custom-parts.v014__2026-11-06_93238a3.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 15,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "38366a0aeb35e46dcc590160e78c6465a7a7c87201101bec8416831368572349",
+   "file": "custom-parts/custom-parts.v015__2026-11-06_e7a16e1.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -244,6 +253,15 @@
    "file": "hardware-list/hardware-list.v007__2026-11-06_93238a3.md"
   },
   {
+   "src": "docs/spec/hardware-list.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "d274ea73339ffd460d79fe22e34c743e7cd1188fa08637642e7bdc968082fb52",
+   "file": "hardware-list/hardware-list.v008__2026-11-06_e7a16e1.md"
+  },
+  {
    "src": "docs/spec/hole-table.md",
    "version": 1,
    "gen": "current",
@@ -296,6 +314,15 @@
    "commit": "cf90ba1",
    "sha256": "9e39670e17289dca789ea6582a36379e06fb5e433d1963dc9baad7737059b263",
    "file": "joint-matrix/joint-matrix.v004__2026-11-06_cf90ba1.md"
+  },
+  {
+   "src": "docs/spec/joint-matrix.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "7eec72bd82af3497cdc12be157b2a94e366209f25260dade789dd4b53d5ae7d2",
+   "file": "joint-matrix/joint-matrix.v005__2026-11-06_93238a3.md"
   },
   {
    "src": "docs/spec/panel-thermal.md",

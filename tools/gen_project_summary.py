@@ -24,7 +24,7 @@ o = [f'# プロジェクト要約(自動生成 {datetime.date.today()})', '', '`
      '## 1. 現行の主要数値(model/spec.json)',
      f"- 本体: 幅{S['body_w']}mm×スラブ厚{S['slab_t']}mm、ドーム総厚{S['dome']['total_t']}mm(内奥行{S['dome']['total_t']-S['slab_t']-S['dome']['inner_wall_offset_mm']}mm。ポンプ垂直出口ホース用)",
      f"- スタンド: 足{S['stand']['foot_w']}×{S['stand']['foot_depth']}mm、ballast {S['stand']['ballast_kg']}kg、チルト{S['hinge']['tilt_min_deg']:+g}〜{S['hinge']['tilt_max_deg']:+g}°、首振り±{S['swivel']['range_deg']:g}°、ヒンジ軸 z={S['hinge']['axis_z_from_glass']}",
-     f"- バランサ: s={B['s']} e={B['e']} 最長側{B['F0_longest_total']/2:.0f}N/本 p={B['p']}、摩擦保持{S['hinge']['friction_hold_Nm']}N·m±{S['hinge']['friction_tol_pct']:g}%、操作力目標≦{S['hinge']['op_target_N']:g}N",
+     f"- バランサ: カム式(ρ0={B['rho0']:g}mm、ばね0°{B['F0_total']/2:.0f}N/本・最大{B['F_spring_max']:.0f}N)、摩擦保持{S['hinge']['friction_hold_Nm']}N·m±{S['hinge']['friction_tol_pct']:g}%、操作力目標≦{S['hinge']['op_target_N']:g}N",
      f"- 未確認事項(U台帳): {unv}件(docs/unverified-tracker.md)", '',
      f'## 2. ファイル構成(git追跡 {len(files)}件 = 現行 {len(cur)} + 履歴archive {arch})', '', '| ディレクトリ | 現行件数 | 役割 |', '|---|---|---|']
 role = {'model': '単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…)', 'tools': '生成器・計算・検査ゲート', 'blender': '3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py)', 'docs': '仕様・設計書・調査・監査記録', 'drawings': '図面(SVG/DXF/PDF入力)', 'viewer': 'Three.jsビューア+GLB', 'render': 'レンダリング画像', 'handoff': '業者提出パッケージ', 'audit_output': '監査台帳・指摘一覧', 'cad': 'OpenSCAD', 'concept': 'コンセプト画像', 'archive': '旧版(削除せず保存)'}

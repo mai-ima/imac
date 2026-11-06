@@ -104,7 +104,7 @@ def sheet_hinge():
     notes = ['動作: ヒンジ本体(2)は頭部側に固定、ヒンジ軸(1)はネック側板(11)にDカット圧入で固定(回らない)。頭部のチルトで(2)が軸まわりに回り、ハウジング内の',
              '  摩擦板(5; 外径キーでハウジングと一体)と摩擦ディスク(6; Dボアで軸と一体)の間に滑りが生じて保持トルクを発生する。',
              '調整: 調整キャップ(8)を頭部内側(トレイ取外し後)からピンスパナで回し、皿ばね(7)の押し付けを増減。止めねじ(9)で固定。',
-             '保持トルク: 公称5.8N·m(2個合計)±8%・経年-30%を見込む。ばね荷重/μ/皿ばね特性は実測で確定(U27)。操作力目標≦25N(要ユーザー確認)。',
+             f'保持トルク: 公称{S["hinge"]["friction_hold_Nm"]:g}N·m(2個合計)±8%・経年-30%を見込む。ばね荷重/μ/皿ばね特性は実測で確定(U27)。操作力目標≦{S["hinge"]["op_target_N"]:g}N。',
              '市販摩擦ヒンジ(5〜8)は代表的な内部構造を図示。型番確定(U27)までは寸法・材質は代表値でUNVERIFIED。(2)の耳板・尾部レバーは特注(CP-23)。',
              'ハウジング外径Ø22は軸y=10に対し底面y=-1。ブーツ内空間に1mm突出する(干渉なし)。寿命目標25,000往復で保持低下≦30%(U51)。']
     for i, t_ in enumerate(notes): body.append(DL.txt(186, 224 + i * 3.6, t_, 2.0))
@@ -118,49 +118,35 @@ def spring_solid(xc, y_bot, length, n=10, wire=3.0, od=16.0):
     sp = prof.sweep(cq.Workplane(obj=helix), isFrenet=True)
     return sp.rotate((0, 0, 0), (1, 0, 0), -90).translate((xc, y_bot, 0))
 def balancer_parts():
-    N_ = S['neck']; PD = N_['lever_pin_d']; BAL = json.load(open(f'{R}/model/balance.json')); E_, S_ = -BAL['e'], -BAL['s']; hw2 = S['hinge']['balance_end_hw_mm'] / 2   # E_=-25(上ピン), S_=-76(下ピン)
+    """R9T-001で再設計: カム板(頭部側)+ローラ従動子+案内ロッド付きダイスプリング2本。座標: y'=軸からの上下(下が負), x=左右, z=奥行(0=ばね軸面)"""
+    N_ = S['neck']; BAL = json.load(open(f'{R}/model/balance.json')); BC = S['hinge']['balance_cam']; rho0, Rr, XS = BC['rho0_mm'], BC['roller_r_mm'], 14.0
     P = {}
     lev = None
     for sx in (-1, 1):
-        l_ = boxs(sx * 26.5 - 2.5, sx * 26.5 + 2.5, -N_['lever_len'], 0, -7, 7).union(cq.Workplane('YZ').workplane(offset=sx * 26.5 - 2.5).circle(12).extrude(5))
-        l_ = l_.cut(cq.Workplane('YZ').workplane(offset=sx * 26.5 - 3).center(E_, 0).circle(PD / 2).extrude(6)).cut(cq.Workplane('YZ').workplane(offset=sx * 26.5 - 3).circle(7).extrude(6))
+        l_ = boxs(sx * 26.5 - 2.5, sx * 26.5 + 2.5, -N_['lever_len'], 0, -7, 7).union(cq.Workplane('YZ').workplane(offset=sx * 26.5 - 2.5).circle(12).extrude(5)).cut(cq.Workplane('YZ').workplane(offset=sx * 26.5 - 3).circle(7).extrude(6))
         lev = l_ if lev is None else lev.union(l_)
-    P['1'] = ('尾部レバー(ヒンジ本体の耳板, 左右)', lev, 'h_al')
+    P['1'] = ('尾部レバー(ストッパ用・ヒンジ耳板一体, 左右)', lev, 'h_al')
     P['2'] = ('ヒンジ軸 Ø12(部分)', cylX(12, -34, 34), 'h_ss')
-    P['3'] = (f'レバー先端 横ピン Ø{PD:g} (SUS630 H1025)', cq.Workplane('YZ').workplane(offset=-32).center(E_, 0).circle(PD / 2).extrude(64), 'h_st')
-    up = None
+    camc = [(math.radians(a), r - Rr) for a, r in BAL['cam_profile_pitch_radius']]
+    pts = [(-camc[0][1] * math.sin(camc[0][0]), -10)] + [(-r * math.sin(a), -r * math.cos(a)) for a, r in camc] + [(-camc[-1][1] * math.sin(camc[-1][0]), -10)]     # (zl, yl)
+    cp = None
     for sx in (-1, 1):
-        xc = sx * 14
-        b = cq.Workplane('YZ').workplane(offset=xc - 5).center(E_, 0).circle(6).extrude(10).cut(cq.Workplane('YZ').workplane(offset=xc - 6).center(E_, 0).circle(PD / 2).extrude(12))
-        yt = E_ - hw2
-        d = cq.Workplane('XZ').workplane(offset=-(yt + 2)).center(xc, 0).circle(8).extrude(2)           # 座円盤(上): y'=yt..yt+2 ←XZ法線は-Y: offset=-y
-        bs = cq.Workplane('XZ').workplane(offset=-yt).center(xc, 0).circle(3.8).extrude(4)                 # 位置決めボス: yt-4..yt
-        w = b.union(d).union(bs); up = w if up is None else up.union(w)
-    P['4'] = ('ロッドエンド(上, 左右) ばね座+位置決めボスØ7.6', up, 'h_st2')
-    sp = None
-    yt = E_ - hw2; yb = S_ + hw2 + 1.0                                       # 下端: 座円盤1+ピールシム1.0 を除いたばね下端
+        w = cq.Workplane('YZ').workplane(offset=sx * XS - 3).polyline([(y, z) for z, y in pts]).close().extrude(6); cp = w if cp is None else cp.union(w)
+    P['3'] = ('カム板 SUS304 t6(ヒンジブロック底面にM4×2で固定, 左右)', cp, 'h_st2')
+    yr = -rho0; rl = None; pn = None; cr = None; rod = None; sp = None; seat = None
     for sx in (-1, 1):
-        w = spring_solid(sx * 14, yb, yt - yb); sp = w if sp is None else sp.union(w)
-    P['5'] = ('ダイスプリング Ø16×Ø8 (JIS金型用, 線径3.0, 自由長≧' + f"{BAL['free_length_min']:.0f}mm)", sp, 'h_cu')
-    lo = None; sh = None
-    for sx in (-1, 1):
-        xc = sx * 14
-        b = cq.Workplane('YZ').workplane(offset=xc - 5).center(S_, 0).circle(6).extrude(10).cut(cq.Workplane('YZ').workplane(offset=xc - 6).center(S_, 0).circle(PD / 2).extrude(12))
-        d = cq.Workplane('XZ').workplane(offset=-(S_ + 6)).center(xc, 0).circle(8).extrude(1.0)        # 座円盤(下) y'=S_+6..S_+7
-        bs = cq.Workplane('XZ').workplane(offset=-(S_ + hw2)).center(xc, 0).circle(3.8).extrude(4)
-        w = b.union(d); lo = w if lo is None else lo.union(w)
-        s_ = ringXY(8, 4.2, xc, S_ + hw2 - 1.0, S_ + hw2); sh = s_ if sh is None else sh.union(s_)
-    P['6'] = ('トラニオン(下, 左右) ばね座', lo, 'h_st2')
-    P['7'] = ('ピールシム 0.25mm×8枚(公称4枚=1.0mm)', sh, 'h_br')
-    P['8'] = (f'アンカーピン Ø{PD:g}', cq.Workplane('YZ').workplane(offset=-24).center(S_, 0).circle(PD / 2).extrude(48), 'h_st')
-    br = boxs(-30, 30, S_ - 6, S_ - 3, -9, 9)
-    for xs in (-23, -9, 5, 19):
-        br = br.union(boxs(xs, xs + 4, S_ - 6, S_, -9, 9)).union(cq.Workplane('YZ').workplane(offset=xs).center(S_, 0).circle(6).extrude(4))
-    br = br.cut(cq.Workplane('YZ').workplane(offset=-30).center(S_, 0).circle(PD / 2).extrude(60))
-    for xb in (-27, 27): br = br.cut(cq.Workplane('XZ').workplane(offset=-(S_ - 3)).center(xb, 0).circle(2.7).extrude(3.2))
-    P['9'] = ('アンカーブリッジ(A5052 t3+耳4枚)', br, 'h_al2')
-    P['10'] = ('M5皿ボルト×4 (SUS, 基台へ)', cq.Workplane('XZ').workplane(offset=-(S_ - 3)).center(27, 0).circle(2.5).extrude(14).union(cq.Workplane('XZ').workplane(offset=-(S_ - 3)).center(-27, 0).circle(2.5).extrude(14)), 'h_ss')
-    P['11'] = ('ネック基台 t8(CP-21)', boxs(-34, 34, S_ - 6 - 8, S_ - 6, -30, 30), 'h_al')
+        xc = sx * XS
+        r_ = cylX(2 * Rr, xc - 4, xc + 4).translate((0, yr, 0)); rl = r_ if rl is None else rl.union(r_)
+        q_ = cylX(6, xc - 7, xc + 7).translate((0, yr, 0)); pn = q_ if pn is None else pn.union(q_)
+        c_ = boxs(xc - 8, xc + 8, yr - Rr - 5, yr - Rr, -8, 8).cut(cq.Workplane('XZ').workplane(offset=-(yr - Rr)).center(xc, 0).circle(3.4).extrude(5)); cr = c_ if cr is None else cr.union(c_)
+        ytop = yr - Rr - 5; d_ = cq.Workplane('XZ').workplane(offset=-ytop).center(xc, 0).circle(3.25).extrude(48); rod = d_ if rod is None else rod.union(d_)
+        w = spring_solid(xc, ytop - BAL['lmax'], BAL['lmax']); sp = w if sp is None else sp.union(w)
+        s_ = boxs(xc - 8, xc + 8, -BAL['s'], -BAL['s'] + 2.7, -8, 8).cut(cq.Workplane('XZ').workplane(offset=BAL['s']).center(xc, 0).circle(3.5).extrude(3)); seat = s_ if seat is None else seat.union(s_)
+    P['4'] = ('ローラ Ø%g×8(焼入れ, ニードル軸受入り)' % (2 * Rr), rl, 'h_ss'); P['5'] = ('ローラ軸 Ø6', pn, 'h_st')
+    P['6'] = ('従動子キャリア(ばね上座) S45C', cr, 'h_st2'); P['7'] = ('案内ロッド Ø6.5(キャリアに圧入)', rod, 'h_ss')
+    P['8'] = ('ダイスプリング Ø16×Ø8(線径3.0, k=%g N/mm, 自由長≧%.0fmm)' % (BAL['k_spring'], BAL['free_length_min']), sp, 'h_cu')
+    P['9'] = ('ばね座 SUS304 t2.7(Ø7穴, シムで荷重調整)', seat, 'h_br')
+    P['10'] = ('ネック基台 t8(CP-22, 案内ロッド用 止まり穴Ø7)', boxs(-34, 34, -BAL['s'] - 8, -BAL['s'], -30, 30).cut(cq.Workplane('XZ').workplane(offset=BAL['s'] + 7).center(-XS, 0).circle(3.5).extrude(7)).cut(cq.Workplane('XZ').workplane(offset=BAL['s'] + 7).center(XS, 0).circle(3.5).extrude(7)), 'h_al')
     return P
 def ringXY(ro, ri, xc, y0, y1): return cq.Workplane('XZ').workplane(offset=-y1).center(xc, 0).circle(ro).circle(ri).extrude(y1 - y0)
 def wrap_notes(body, x, y0, notes, width=84, step=3.7, size=2.1):
@@ -171,32 +157,28 @@ def wrap_notes(body, x, y0, notes, width=84, step=3.7, size=2.1):
     return y
 def sheet_balancer():
     P = balancer_parts(); body = []; s = 2.0; ox = 112; oy = 62
-    o, Pa = sec_view(P, (0, 0, 0), (0, 0, 1), (1, 0, 0), ox, oy, s, '断面 A-A (z=0: 両ばね軸・両レバー・ピンを含む面, チルト0°)', ox, 30); body += o
-    for xx in (-14, 14): body.append(DL.ln(ox + s * xx, oy - s * 8, ox + s * xx, oy + s * 92, .18, '9 1.5 1.5 1.5'))
+    BAL = json.load(open(f'{R}/model/balance.json')); BC = S['hinge']['balance_cam']; rho0 = BC['rho0_mm']
+    o, Pa = sec_view(P, (0, 0, 0), (0, 0, 1), (1, 0, 0), ox, oy, s, '断面 A-A (z=0: 両ばね軸の面, チルト0°の姿勢)', ox, 30); body += o
+    for xx in (-14, 14): body.append(DL.ln(ox + s * xx, oy - s * 12, ox + s * xx, oy + s * 92, .18, '9 1.5 1.5 1.5'))
     body.append(DL.ln(ox - s * 34, oy, ox + s * 34, oy, .18, '9 1.5 1.5 1.5'))
-    BAL = json.load(open(f'{R}/model/balance.json')); e, sA = BAL['e'], BAL['s']; hw = S['hinge']['balance_end_hw_mm']
     xl = ox - s * 34
-    body += DL.dim_v(oy + s * e, oy + s * sA, xl, f"ピン間 {sA - e:g}(0°)", -10)
-    body += DL.dim_v(oy + s * (e + hw / 2), oy + s * (sA - hw / 2), xl, f"ばね長 {sA - e - hw:g}", -22)
-    body += DL.dim_v(oy, oy + s * e, xl, f"e={e}", -34)
-    body += DL.dim_v(oy, oy + s * sA, xl, f"s={sA}", -46)
-    body += DL.dim_h(ox - s * 30, ox + s * 30, oy + s * 90.5, 'アンカーブリッジ L60', 6)
-    body += DL.dim_h(ox, ox + s * 14, oy - s * 8, 'ばね中心 14', -4)
-    items = [(1, 26.5, -30), (3, 31, -25), (4, 18, -31), (5, 20, -50), (7, 20, -68.4), (6, 18, -70.5), (8, 22, -76), (9, 7, -80), (10, 27, -84), (11, 30, -88), (2, 33, -3)]
-    items.sort(key=lambda i: -i[2] if False else i[2], reverse=True)
-    lx = ox + s * 34 + 22; ylast = -1e9
+    body += DL.dim_v(oy, oy + s * rho0, xl, f"ローラ中心 ρ0={rho0:g}", -10)
+    body += DL.dim_v(oy + s * (rho0 + 11), oy + s * (BAL['s'] - 2.7), xl, f"ばね取付長 {BAL['lmax']:.1f}", -22)
+    body += DL.dim_v(oy, oy + s * BAL['s'], xl, f"ばね座まで {BAL['s']:g}", -34)
+    body += DL.dim_h(ox, ox + s * 14, oy - s * 12, 'ばね中心 14', -4)
+    items = [(1, 26.5, -30), (3, 14, -16), (4, 14, -30), (5, 18, -30), (6, 14, -40), (7, 14, -62), (8, 20, -55), (9, 14, -80), (10, 28, -86), (2, 28, -3)]
+    items.sort(key=lambda i: i[2], reverse=True); lx = ox + s * 34 + 22; ylast = -1e9
     for n, px, py in items:
         yb = max(oy - s * py, ylast + 9); ylast = yb; body += balloon(ox + s * px, oy - s * py, lx, yb, n)
-    rows = [(k, v[0], {'1': '2', '4': '2', '5': '2', '6': '2', '7': '2', '10': '4'}.get(k, '1'), {'1': 'SUS304 t5', '2': 'SUS303', '3': 'SUS630-H1025', '4': 'S45C', '5': 'SWOSC-V(クロムシリコン)', '6': 'S45C', '7': 'SUS304 t0.25', '8': 'SUS630-H1025', '9': 'A5052-H32', '10': 'SUS', '11': 'A6063-T5'}[k],
-             {'1': 'CP-23', '2': 'CP-20', '3': 'CP-23', '4': 'CP-23', '5': '市販(型番未選定U26)', '6': 'CP-23', '7': '市販ピールシム', '8': 'CP-23', '9': 'CP-23', '10': '市販', '11': 'CP-21'}[k]) for k, v in P.items()]
+    rows = [(k, v[0], {'1': '2', '3': '2', '4': '2', '5': '2', '6': '2', '7': '2', '8': '2', '9': '2'}.get(k, '1'), {'1': 'SUS304 t5', '2': 'SUS303', '3': 'SUS304 t6', '4': 'SUJ2', '5': 'SUS630', '6': 'S45C', '7': 'SUS303', '8': 'SWOSC-V', '9': 'SUS304', '10': 'A6063-T5'}[k],
+             {'1': 'CP-23', '2': 'CP-20', '3': 'CP-23(新)', '4': '市販ローラ', '5': 'CP-23', '6': 'CP-23', '7': 'CP-23', '8': '市販(型番U26)', '9': 'CP-23', '10': 'CP-22'}[k]) for k, v in P.items()]
     body += partlist(226, 28, rows, 184)
-    notes = ['原理: 頭部の重力モーメントはチルト角で増える。ばね(5)が尾部レバー(1)先端のピン(3)を押し、ばね力×てこ腕が角度の正弦にほぼ比例して変わることで重力モーメントを相殺する。',
-             '構造: ばねは上端のロッドエンド(4)と下端のトラニオン(6)で両端を揺動ピン(3)(8)支持する。座の位置決めボス(Ø7.6)がばね内径(Ø8)に嵌まる。案内ロッドなし(取付長/平均径<4で座屈しにくい)。',
-             '調整(荷重): ばね下座とトラニオンの間のピールシム(7; 0.25mm×8)を増減し、ばね荷重を±約27N/本(±7%)調整。組立時に頭部の実測重量へ合わせ、トルクペイントで封印(整備者L3のみ再調整)。',
-             f'幾何: 上ピンは軸から下へ{e}mm、下ピン(アンカー)は{sA}mm。端金物の長さ計{hw:g}mm(ピン中心→ばね座面が片側{hw/2:g}mm)。ばね長=ピン間-{hw:g}mm。',
-             'ばね軸はチルトで-16〜+7°揺動する。ばね1本折損時は残り1本+摩擦ヒンジ(D03)+ゴムストッパで減速・保持(tools/strength_check.py)。',
-             '座標: 縦=ヒンジ軸からの距離(下が負)、横=左右。図は0°の姿勢。軸・ヒンジ本体はD03、ストッパ/ネックは docs/mechanisms/03。',
-             '市販ばね(5)・ピールシム(7)の型番は未確定(U26/U51)。寸法は代表値でUNVERIFIED。ばね疲労(25,000回)は未評価。']
+    notes = ['原理: 頭部の重力による位置エネルギーの増え方(≒m·g·dy·(1-cos a))を、ばねに蓄えるエネルギーの増え方で打ち消す。頭部側のカム板(3)が回ると、軸の真下の直線上でローラ(4)が押し下げられ、ばね(8)がより圧縮される。',
+             f'設計: ローラ中心の軸からの距離ρ(a)を F0·(ρ-ρ0)+k/2·(ρ-ρ0)²=∫重力トルク da で解く(tools/balance_calc.py)。ρ0={rho0:g}→最大{max(r for _, r in BAL["cam_profile_pitch_radius"]):.1f}mm、圧力角最大{BAL["pressure_angle_deg"]:g}°。',
+             '旧方式(尾部レバー先端と下のアンカー間の圧縮ばね)は、ピン間距離が|a|で伸びてばねが緩み、エネルギーが減るため転倒方向のトルクになる。エネルギー法で確認し廃止(R9T-001)。',
+             '案内ロッド(7)がばね内を貫通して基台の止まり穴に入る。ばね折損時も破片はロッド周りに留まり、ローラは落下しない。ばね座(9)のシムで荷重を±約8%調整(0.25mm刻み)。',
+             'ばね1本折損時は復元トルクが半減し、残りの1本+摩擦ヒンジ(D03)+ゴムストッパで減速・保持(tools/strength_check.py)。',
+             '尾部レバー(1)はストッパ専用(D07)。カム板は頭部の運動に追従し、motion_check で掃引干渉を検査。カム面の加工精度・ローラ摩擦・ばね型番は未確定(U26/U51)でUNVERIFIED。']
     wrap_notes(body, 226, 104, notes)
     return body, P
 E_0 = 0

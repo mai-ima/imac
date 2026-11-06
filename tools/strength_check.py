@@ -7,14 +7,14 @@ import massmodel as MM
 S = MM.S; N = S['neck']; sw = S['swivel']; BAL = json.load(open(f'{R}/model/balance.json')); g = 9.81
 SF = 1.5; Y = {'SUS630-H1025': 1000, 'SUS304': 205.0, 'A6063-T5': 145.0, 'A5052-H32': 193.0, 'SUS(ボルトA2-70)': 450.0}
 mh = MM.head_cg()[0]; W_head = mh * g
-F_spring_max = BAL['F0_longest_total'] * (1 + BAL['p']) / 2        # 1本あたり最大 [N]
+F_spring_max = BAL['F_spring_max']        # 1本あたり最大 [N](カム方式: balance_calc の最大ばね荷重)
 push = 50.0; h_top = 0.41; M_push = push * h_top               # 画面上端を押す [N·m]
 bad = 0
 def chk(name, sigma, mat, note=''):
     global bad; allow = Y[mat] / SF; ok = sigma <= allow; bad += 0 if ok else 1
     print(f'[{"OK " if ok else "NG "}] {name}: 応力 {sigma:.0f} MPa ≤ 許容 {allow:.0f} MPa({mat}降伏{Y[mat]:.0f}/SF{SF}) {note}')
 # 1) 尾部レバー(片持ち, 根元曲げ): 1本が受けるばね力×腕e
-e = BAL['e']; Mlev = F_spring_max * e / 1000.0 * 1.0                # N·m(ばね力が軸直角成分でほぼ全部かかる保守側)
+e = BAL['e'] * math.sin(math.radians(S['hinge']['tilt_max_deg'])); Mlev = F_spring_max * e / 1000.0      # N·m: 従動子の鉛直力×(カム接触点のレバー座標での水平オフセット=カム最大半径×sin40°)
 t, w = N['lever_t'], N['lever_w']; Z = t * w * w / 6.0
 chk(f'尾部レバー曲げ(t{t:g}×幅{w:g})', Mlev * 1000 / Z, 'SUS304', f'M={Mlev:.1f}N·m/本')
 # 2) 尾部レバー+軸: キー溝/軸Ø12の曲げ(レバー位置x=26から摩擦ヒンジx=45までの19mm)
@@ -46,16 +46,14 @@ chk('首振りストッパポストØ10 曲げ', Fpost * Lp / (math.pi * 10 ** 3
 Tq = 18.0 / 2; tau = Tq * 1000 / (math.pi * d ** 3 / 16); sig = Max * 1000 / Zax; chk('ヒンジ軸Ø12 曲げ+捩り合成(Mises)', math.sqrt(sig ** 2 + 3 * tau ** 2), 'SUS304', f'捩り{Tq:.1f}N·m/側(キー溝の応力集中・疲労は未評価)')
 # 8) 単一故障: ばね1本折損 → 頭部が端へ落ちて停止ストッパへ衝突するエネルギー(摩擦は最小値)
 def tg(a): a = math.radians(a); return mh * g * (MM.head_cg()[2] - S['hinge']['axis_y']) * math.sin(a) / 1000
-s_, e_, F0, p_, lmax, stroke, sign = BAL['s'], BAL['e'], BAL['F0_longest_total'], BAL['p'], BAL['lmax'], BAL['stroke'], BAL['sign']
-def sp(a, frac):
-    ar = math.radians(a); Bz, By = -e_ * math.sin(ar), -e_ * math.cos(ar); vz, vy = Bz, By + s_; l = math.hypot(vz, vy); F = frac * F0 * (1 + p_ * (lmax - l) / stroke); return (Bz * (F * vy / l) - By * (F * vz / l)) / 1000
+def tgf(a): ar = math.radians(a); return mh * g * ((MM.head_cg()[1] - S['hinge']['axis_z_from_glass']) * math.cos(ar) + (MM.head_cg()[2] - S['hinge']['axis_y']) * math.sin(ar)) / 1000      # 重力トルク
 FRm = S['hinge']['friction_hold_Nm'] * (1 - S['hinge']['friction_tol_pct'] / 100); Ihead = mh * (MM.head_cg()[2] - S['hinge']['axis_y']) ** 2 / 1e6 + mh * (0.415 ** 2 + 0.15 ** 2) / 12
 Emax = 0.0
 for a0 in range(int(S['hinge']['tilt_min_deg']), int(S['hinge']['tilt_max_deg']) + 1, 5):
     for tgt in (S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']):
         n = 100; E = 0.0; d_ = 1 if tgt > a0 else -1
         for i in range(n):
-            a = a0 + (tgt - a0) * (i + .5) / n; net = (tg(a) + sign * sp(a, 0.5)) * d_ - FRm; E += max(0.0, net) * math.radians(abs(tgt - a0)) / n
+            a = a0 + (tgt - a0) * (i + .5) / n; net = (0.5 * tgf(a)) * d_ - FRm; E += max(0.0, net) * math.radians(abs(tgt - a0)) / n      # ばね1本折損: 復元トルクが半減(カム方式は公称で重力と釣り合うので残りは重力の50%)
         Emax = max(Emax, E)
 stroke_pad = N['pad_thick'] * 0.5 / 1000.0; Fimp = Emax / stroke_pad; Zl = N['lever_t'] * N['lever_w'] ** 2 / 6.0
 chk('ばね1本折損→ストッパ衝突: レバー曲げ(ピーク=平均力×2)', 2.0 * Fimp / 2 * N['lever_len'] / Zl, 'SUS304', f'落下E={Emax:.2f}J(I={Ihead:.2f}kg·m², ω≈{math.sqrt(2*Emax/Ihead):.1f}rad/s)、パッド圧縮{N["pad_thick"]*0.5:g}mm→衝撃力{Fimp:.0f}N(2本分担)')

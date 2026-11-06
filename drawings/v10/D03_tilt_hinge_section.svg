@@ -310,7 +310,7 @@
 <text x="186.00" y="224.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">動作: ヒンジ本体(2)は頭部側に固定、ヒンジ軸(1)はネック側板(11)にDカット圧入で固定(回らない)。頭部のチルトで(2)が軸まわりに回り、ハウジング内の</text>
 <text x="186.00" y="227.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">  摩擦板(5; 外径キーでハウジングと一体)と摩擦ディスク(6; Dボアで軸と一体)の間に滑りが生じて保持トルクを発生する。</text>
 <text x="186.00" y="231.20" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">調整: 調整キャップ(8)を頭部内側(トレイ取外し後)からピンスパナで回し、皿ばね(7)の押し付けを増減。止めねじ(9)で固定。</text>
-<text x="186.00" y="234.80" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">保持トルク: 公称5.8N·m(2個合計)±8%・経年-30%を見込む。ばね荷重/μ/皿ばね特性は実測で確定(U27)。操作力目標≦25N(要ユーザー確認)。</text>
+<text x="186.00" y="234.80" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">保持トルク: 公称3N·m(2個合計)±8%・経年-30%を見込む。ばね荷重/μ/皿ばね特性は実測で確定(U27)。操作力目標≦20N。</text>
 <text x="186.00" y="238.40" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">市販摩擦ヒンジ(5〜8)は代表的な内部構造を図示。型番確定(U27)までは寸法・材質は代表値でUNVERIFIED。(2)の耳板・尾部レバーは特注(CP-23)。</text>
 <text x="186.00" y="242.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">ハウジング外径Ø22は軸y=10に対し底面y=-1。ブーツ内空間に1mm突出する(干渉なし)。寿命目標25,000往復で保持低下≦30%(U51)。</text>
 </svg>

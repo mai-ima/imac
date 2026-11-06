@@ -43,8 +43,13 @@ HEAD = {'スラブ(前面ガラス+パネル+チン)': rect(-W / 2, W / 2, 0, H,
 HEAD = {'スラブ(前面ガラス+パネル+チン)': rect(-W / 2, W / 2, 0, H, -slab, 0), 'ヒンジ底板': rect(-75, 75, 0, 22, -27, -25), 'ヒンジ左側板': rect(-75, -69, 0, 22, -61, -27), 'ヒンジ右側板': rect(69, 75, 0, 22, -61, -27),
         'ヒンジカバー': rect(-69, 69, 0, 22, -61, -59), '裏当て板': rect(-70, 70, 0, 22, -23, -20), '補強板': rect(-72, 72, 0, 22, -20, -16),
         '尾部レバー左': rect(-29, -24, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2), '尾部レバー右': rect(24, 29, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2),
-        'ばね上座左': rect(-22, -6, HY - BE - 3, HY - BE, ZC - 8, ZC + 8), 'ばね上座右': rect(6, 22, HY - BE - 3, HY - BE, ZC - 8, ZC + 8),
         }
+# カム板(R9T-001: ヒンジブロック底面 yl=-10 に取付、x=±14, t6)。カム面=ローラ接触点軌跡(頭部座標 zl=-r sinψ, yl=-r cosψ, r=ρ(ψ)-ローラ半径)
+CAMP = [(math.radians(a), r - BAL['roller_r']) for a, r in BAL['cam_profile_pitch_radius']]
+for sx, nm in ((-14, '左'), (14, '右')):
+    for i in range(len(CAMP) - 1):
+        (p0, r0), (p1, r1) = CAMP[i], CAMP[i + 1]; z0, y0 = -r0 * math.sin(p0), -r0 * math.cos(p0); z1, y1 = -r1 * math.sin(p1), -r1 * math.cos(p1)
+        HEAD[f'カム板{nm}{i}'] = rect(sx - 3, sx + 3, HY + min(y0, y1), HY - 10, ZC + min(z0, z1), ZC + max(z0, z1))
 NECK = {'ネック基台': rect(-NK['base_half_x'], NK['base_half_x'], SY, SYS, ZC + NK['base_z'][0], ZC + NK['base_z'][1]),
         '左側板(本体)': rect(-NK['side_x'][1], -NK['side_x'][0], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]), '右側板(本体)': rect(NK['side_x'][0], NK['side_x'][1], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]),
         '左ストリップ': rect(-NK['side_x'][1], -NK['side_x'][0], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2), '右ストリップ': rect(NK['side_x'][0], NK['side_x'][1], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2),
@@ -108,8 +113,8 @@ shear = max(abs(rot([(0.0, ZC)], a)[0][1] - ZC + 0.0 if False else (ZC + (0 - HY
 print(f'ブーツのせん断(上下取付面の水平ずれ) 最大 {shear:.1f}mm ≦ 許容 {BT["shear_mm"]}mm [{"OK" if shear <= BT["shear_mm"] else "NG"}]'); bad += 0 if shear <= BT['shear_mm'] else 1
 if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
 # バランサ下側部品(アンカー座・調整ねじ・ブリッジ)が基台に食い込まない: 最下点 ≥ 基台上面+2mm、かつ側板間に収まる
-low = HY - BS - 6; ok_low = low >= SYS - 1e-6     # アンカー=クレビス受け(耳R6)が基台上面に着座(ボルト固定)。調整ねじ等はばね端金物(balance_end_hw_mm)の内側
-print(f'バランサ最下点(アンカー耳R6) y={low:.0f}mm / 基台上面 y={SYS:.0f}mm [{"OK" if ok_low else "NG(基台に干渉)"}]'); bad += 0 if ok_low else 1
+low = HY - BS; ok_low = low >= SYS - 1e-6     # アンカー=クレビス受け(耳R6)が基台上面に着座(ボルト固定)。調整ねじ等はばね端金物(balance_end_hw_mm)の内側
+print(f'バランサ最下点(ばね座下面) y={low:.0f}mm / 基台上面 y={SYS:.0f}mm [{"OK" if ok_low else "NG(基台に干渉)"}]'); bad += 0 if ok_low else 1
 # PE編組の長さ: 可動範囲での端間距離の最大 + 余長 ≦ 編組長(model/pe_braids.json)
 PE = json.load(open(f'{R}/model/pe_braids.json'))
 a_sw = 0.0; A0 = (NK['side_x'][1], 0.0); Bp = (0.0, -75.0)      # 水平面: ネック側(回転)端 r≈62、足側(固定)端 r≈75(背面側)。首振り±SWで端間距離が最大になる角度を探索

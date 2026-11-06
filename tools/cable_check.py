@@ -60,3 +60,4 @@ for i, a in enumerate(CM.CAB):
         da, db = dense(a['path']), dense(b['path']); need = (a['od'] + b['od']) / 2 + 0.5; md = min(math.dist(p, q) for p in da[7:-7] for q in db[7:-7]) if len(da) > 14 and len(db) > 14 else 99
         if md < need: print('[NG ] 近接', a['id'], b['id'], f'最小間隔 {md:.1f}mm < 必要 {need:.1f}mm'); bad += 1
 print('総合:', '問題なし' if not bad else f'{bad}件の問題')
+sys.exit(1 if bad else 0)

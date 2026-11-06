@@ -2089,6 +2089,124 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "R9T-001",
+   "title": "チルトバランサの物理的向き不成立(圧縮ばね+下アンカーは転倒方向)を、カム板+ローラ+案内ロッド付きダイスプリングへ再設計",
+   "description": "チルトバランサの物理的向き不成立(圧縮ばね+下アンカーは転倒方向)を、カム板+ローラ+案内ロッド付きダイスプリングへ再設計",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/balance_calc.py",
+    "model/spec.json",
+    "model/balance.json",
+    "blender/hardware_v8.py",
+    "tools/gen_mech_sections.py"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:47",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:47",
+     "done",
+     "エネルギー法で旧方式の転倒向きを確認→balance_calc全面改訂(解析解ρ(a)+エネルギー微分検算+圧力角/細長比/摩擦ゲート)、spec.balance_cam、balance.json(カムプロファイル)、strength/motion(カム板掃引干渉)/Blender/D04/文書/CP-23更新。最悪残差3.4→0.83N·m、操作力24.5→9.9N(摩擦5.8→3.0, 目標20Nへ復帰)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "エネルギー法で旧方式の転倒向きを確認→balance_calc全面改訂(解析解ρ(a)+エネルギー微分検算+圧力角/細長比/摩擦ゲート)、spec.balance_cam、balance.json(カムプロファイル)、strength/motion(カム板掃引干渉)/Blender/D04/文書/CP-23更新。最悪残差3.4→0.83N·m、操作力24.5→9.9N(摩擦5.8→3.0, 目標20Nへ復帰)"
+   ],
+   "verification": "run_gates 全exit0(swivelのみUNVERIFIED=2), motion_check カム板掃引OK, strength_check OK",
+   "decision": "REPLACE。カム面加工精度・ローラ型番・ばね型番はUNVERIFIED。viewer のばね挙動JSは未更新(次)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R9-TOOLS",
+   "title": "R9 tools監査56件(P0 4/P1 10/P2 29/P3 13): reports/R9_tools.md。済: R9T-001(カム方式へ再設計), 002(cable_check exit), 003(run_gates欠落/UNVERIFIED→exit2)。残: 004/005(推定値ゲートの扱い), 007/008(閾値緩和の見直し), 011/012/013 他",
+   "description": "R9 tools監査56件(P0 4/P1 10/P2 29/P3 13): reports/R9_tools.md。済: R9T-001(カム方式へ再設計), 002(cable_check exit), 003(run_gates欠落/UNVERIFIED→exit2)。残: 004/005(推定値ゲートの扱い), 007/008(閾値緩和の見直し), 011/012/013 他",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "audit_control/reports/R9_tools.md"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-06 23:51",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:51",
+     "in_progress",
+     "R9T-001/002/003 修正済"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "R9T-001/002/003 修正済"
+   ],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R9-DRAW",
+   "title": "R9 図面/BOM監査80件未解決(P0 1/P1 9/P2 43/P3 27)+修正済F01〜F11: reports/R9_drawings.md。済: R9G-001(DXFキーホール/トレイ外形/背板穴), 012〜014(handoff再生成+SHA, tools/handoff_build.sh)。残: D04読めない寸法→D04は再作図で解消, 05_stand ストッパr60±68.6°, 02/11/15/CP-02/07/10 の直書き数値",
+   "description": "R9 図面/BOM監査80件未解決(P0 1/P1 9/P2 43/P3 27)+修正済F01〜F11: reports/R9_drawings.md。済: R9G-001(DXFキーホール/トレイ外形/背板穴), 012〜014(handoff再生成+SHA, tools/handoff_build.sh)。残: D04読めない寸法→D04は再作図で解消, 05_stand ストッパr60±68.6°, 02/11/15/CP-02/07/10 の直書き数値",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "audit_control/reports/R9_drawings.md"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-06 23:51",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-06 23:51",
+     "in_progress",
+     "R9G-001/012/013/014/020(D04再作図) 修正"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "R9G-001/012/013/014/020(D04再作図) 修正"
+   ],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }

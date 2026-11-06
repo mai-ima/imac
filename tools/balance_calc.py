@@ -1,67 +1,68 @@
 #!/usr/bin/env python3
-"""チルト・バランサ(圧縮ダイスプリング2本+ヒンジ尾部レバー)の寸法探索とゲート。
-頭部重力トルク τg(a)=m·g·(dz·cos a+dy·sin a) を、スタンド内のばねが尾部レバー経由で相殺する。
-幾何: 尾部レバー先端B(ヘッド側, 軸から下へ e, ヘッドと共に回転)とスタンド側アンカーA(軸から下へ s)の間にばね。
-ばね特性: 力 F = F0·(1+p·u)。F0=最長側(圧縮最小)の荷重(2本合計)、u=圧縮率(0最長〜1最短)、p=荷重変化率(ばね定数 k=p·F0/ストローク)。
-  全たわみ=ストローク·(1+1/p)、自由長=最長取付長+ストローク/p、たわみ率=全たわみ/自由長(JIS金型ばね軽荷重は≦40%を目安に採用)。
-ゲート(満たさなければ終了コード1): たわみ率≦40% / 最悪残差(荷重±10%・重心±10mm)≦摩擦保持トルク(spec) / 摩擦保持から計算した操作力≦25N / ばね軸の最大揺れ角(情報)。
-既定では model/balance.json を書き換えない(--write のときだけ上書き)。実行: python3 tools/balance_calc.py [--write]"""
+"""チルト・バランサ(カム+ローラ従動子+圧縮ダイスプリング2本)の設計とゲート。 R9T-001対応で全面改訂(2026-11-06)。
+旧方式(尾部レバー先端のピンを、下のアンカーとの間の圧縮ばねで押す)は、ピン間距離が|a|で伸びるほどばねが緩む=エネルギーが減るため
+復元でなく**転倒方向のトルク**になる(圧縮ばねは A と B が軸の同じ側だと不安定)。エネルギー法で再計算して確認済み → 廃止。
+新方式: 頭部のレバー先端をカム面とし、軸の真下の直線上を動くローラ(従動子)を圧縮ばねで押し上げる。
+  ローラ中心のピッチ半径 ρ(a)(軸からの距離)を、重力ポテンシャルの増分を相殺するよう解く:  F0·(ρ-ρ0)+k_tot/2·(ρ-ρ0)² = G(a)
+  ここで G(a)=∫tg da。トルクは エネルギー法 τ=-dU/da で独立に検算する(符号規約に依存しない)。
+実行: python3 tools/balance_calc.py [--write](--write のときだけ model/balance.json を更新)。"""
 import math, os, sys, json
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, f'{R}/tools')
 import massmodel as MM
-S = MM.S; g = 9.81
-mh, cz, cy, _ = MM.head_cg(); hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']
-dz, dy = cz - hz, cy - hy
-T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; H_ = S['hinge']; FR = H_['friction_hold_Nm']; FTOL = H_['friction_tol_pct'] / 100; FPCT = H_['balance_force_tol_pct'] / 100; CGMM = H_['balance_cg_tol_mm']
-HW = H_['balance_end_hw_mm'] if 'balance_end_hw_mm' in H_ else 0.0     # ばね両端の金物長(上:ロッドエンド/下:ばね座+調整ねじ)。ばね自体の長さ=ピン間距離-HW
+S = MM.S; g = 9.81; H_ = S['hinge']; BC = H_['balance_cam']
+mh, cz, cy, _ = MM.head_cg(); hz, hy = H_['axis_z_from_glass'], H_['axis_y']; dz, dy = cz - hz, cy - hy
+T0, T1 = H_['tilt_min_deg'], H_['tilt_max_deg']; FR = H_['friction_hold_Nm']; FTOL = H_['friction_tol_pct'] / 100; FPCT = H_['balance_force_tol_pct'] / 100; CGMM = H_['balance_cg_tol_mm']
+rho0, F0, ks, Rr = BC['rho0_mm'], BC['F0_total_N'], BC['k_spring_N_mm'], BC['roller_r_mm']; kt = 2 * ks
 angles = [T0 + i * (T1 - T0) / 22 for i in range(23)]
-def tg(a, ddy=0.0): a = math.radians(a); return mh * g * (dz * math.cos(a) + (dy + ddy) * math.sin(a)) / 1000
-def geom(a, s, e):
-    ar = math.radians(a); Bz, By = -e * math.sin(ar), -e * math.cos(ar); vz, vy = Bz, By + s; return Bz, By, vz, vy, math.hypot(vz, vy)
-def spring_tau(a, s, e, F0, p, lmax, stroke, fscale=1.0):
-    Bz, By, vz, vy, l = geom(a, s, e); u = (lmax - l) / stroke; F = fscale * F0 * (1 + p * u)
-    return (Bz * (F * vy / l) - By * (F * vz / l)) / 1000
-def resid(s, e, F0, p, sign, lmax, stroke, fscale=1.0, ddy=0.0):
-    return [tg(a, ddy) + sign * spring_tau(a, s, e, F0, p, lmax, stroke, fscale) for a in angles]
-best = None
-for s in range(50, 78, 2):          # s≦76: アンカーピン中心がネック基台上面(y=-72)から6mm以上上(クレビス受け)
-    for e in range(20, 30, 1):
-        if e > s - 15 or e > S['neck']['lever_len'] - 6: continue
-        L = [geom(a, s, e)[4] for a in angles]; lmin, lmax = min(L), max(L); stroke = lmax - lmin
-        if stroke < 8 or stroke > 30: continue
-        for p in (0.4, 0.5, 0.6, 0.7, 0.8, 1.0, 1.2, 1.5):
-            free = lmax - HW + stroke / p; ratio = stroke * (1 + 1 / p) / free
-            if ratio > 0.40: continue
-            for F0 in range(200, 2001, 10):
-                for sign in (1, -1):
-                    r = resid(s, e, F0, p, sign, lmax, stroke); rr = max(abs(x) for x in r)
-                    ww = max(abs(x) for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
-                    key = ww + 0.5 * rr      # 保持(最悪残差)と操作(公称残差)の両方を小さくする
-                    if best is None or key < best[0]: best = (key, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free)
-_, s, e, F0, p, sign, stroke, lmin, lmax, ratio, free = best
-rr = max(abs(x) for x in resid(s, e, F0, p, sign, lmax, stroke))
-worst = max(abs(x) for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
-worst_raw = max(abs(x) for fs in (0.9, 1.1) for dd in (-10, 10) for x in resid(s, e, F0, p, sign, lmax, stroke, fs, dd))
-tilt_ax = [math.degrees(math.atan2(geom(a, s, e)[2], geom(a, s, e)[3])) for a in angles]; swing = (min(tilt_ax), max(tilt_ax))
-k_rate = p * F0 / stroke / 2; fmax = F0 * (1 + p) / 2
-print(f'頭部 m={mh:.1f}kg dz={dz:.0f} dy={dy:.0f}mm, チルト{T0:+.0f}〜{T1:+.0f}°')
-print(f'採用(2本合計): s={s}mm e={e}mm / 最長側荷重 F0={F0}N(1本{F0/2:.0f}N, 最大 {fmax:.0f}N/本) / 荷重変化率 p={p} → ばね定数 {k_rate:.1f}N/mm/本 / ストローク{stroke:.1f}mm(取付長 {lmin:.0f}〜{lmax:.0f}mm)')
-print(f'ばね自由長 ≧{free:.0f}mm、全たわみ{stroke*(1+1/p):.1f}mm、たわみ率 {ratio*100:.0f}%(許容≦40%)、ばね軸の揺れ角 {swing[0]:+.0f}〜{swing[1]:+.0f}°(両端揺動ピン必須)')
-print('角度: 重力τg / 公称残差 [N·m]')
-for a, rv in list(zip(angles, resid(s, e, F0, p, sign, lmax, stroke)))[::2]: print(f'{a:+6.1f}°: {tg(a):+7.2f} / {rv:+6.2f}')
-fr_min, fr_max = FR * (1 - FTOL), FR * (1 + FTOL)
-op_force = (fr_max + worst) / 0.41           # 動かす力 = 摩擦(最大)+調整後の最悪残差(保持側と同じ最悪値で評価)。上端0.41mで評価
-print(f'公称最大残差 {rr:.2f}N·m / 調整後の最悪残差(荷重±{FPCT*100:.0f}%・重心±{CGMM:.0f}mm) {worst:.2f}N·m / 未調整の最悪残差(±10%・±10mm) {worst_raw:.2f}N·m')
-print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 最小摩擦 ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+最悪残差)/0.41 = {op_force:.1f}N(目標≦{H_["op_target_N"]:g}N)')
+def Gj(a):                      # ∫0^a tg da [N·mm]  (a: rad)。tg=m g (dz cos a+dy sin a)/1000 [N·m]
+    return mh * g * (dz * math.sin(a) + dy * (1 - math.cos(a)))
+def rho(a):                     # F0 x + kt/2 x² = G → x
+    G = Gj(math.radians(a)); x = G / F0 if kt == 0 else (-F0 + math.sqrt(F0 * F0 + 2 * kt * G)) / kt
+    return rho0 + x
+def Us(a, fs=1.0): x = rho(a) - rho0; return fs * (F0 * x + kt / 2 * x * x)         # ばねポテンシャル [N·mm]
+def Ug(a, dd=0.0): r = math.radians(a); return mh * g * (dz * math.sin(r) + (dy + dd) * (1 - math.cos(r)))   # 重力ポテンシャル [N·mm]
+# 符号: Ug は a の増加で増える(頭部を持ち上げる)。残差=重力トルク(増加方向)-ばねの復元トルク。
+def resid(a, fs=1.0, dd=0.0, h=1e-3):
+    d = lambda f: (f(a + h) - f(a - h)) / (2 * math.radians(h)) / 1000
+    return d(lambda x: Ug(x, dd)) - fs * d(lambda x: Us(x))       # = 重力トルク(増加方向)-ばねの復元トルク [N·m]
+def dRho(a, h=1e-3): return (rho(a + h) - rho(a - h)) / (2 * math.radians(h))      # mm/rad
+rr = [resid(a) for a in angles]; rnom = max(abs(x) for x in rr)
+worst = max(abs(resid(a, fs, dd)) for a in angles for fs in (1 - FPCT, 1 + FPCT) for dd in (-CGMM, CGMM))
+worst_raw = max(abs(resid(a, fs, dd)) for a in angles for fs in (0.9, 1.1) for dd in (-10, 10))
+rhos = [rho(a) for a in angles]; xs = [r - rho0 for r in rhos]
+Fmax = (F0 + kt * max(xs)) / 2; Fmin = F0 / 2                                   # 1本あたり [N]
+dmin, dmax = Fmin / ks, Fmax / ks                                              # ばね たわみ [mm]
+free = dmax / 0.40                                                              # たわみ率≦40% に必要な自由長
+Lmax, Lmin = free - dmin, free - dmax                                           # 取付長 [mm]
+phi = max(math.degrees(math.atan(abs(dRho(a)) / rho(a))) for a in angles)       # 圧力角(従動子が軸を通る直線上: tanφ=(dρ/da)/ρ)
+cam_r = [r - Rr for r in rhos]                                                  # カム面の軸からの距離(ローラ半径分内側)
+fr_min, fr_max = FR * (1 - FTOL), FR * (1 + FTOL); fr_aged = fr_min * (1 - H_['friction_aging_loss'])
+op_force = (fr_max + worst) / 0.41
+D_MEAN = 13.0; slen = Lmax / D_MEAN
+print(f"頭部 m={mh:.1f}kg dz={dz:.0f} dy={dy:.0f}mm, チルト{T0:+.0f}〜{T1:+.0f}° / 方式: カム+ローラ従動子+圧縮ダイスプリング2本(x=±{BC['spring_x_mm']:g})")
+print(f"ピッチ半径 ρ0={rho0:g}mm → 最大{max(rhos):.1f}mm / カム面半径 {min(cam_r):.1f}〜{max(cam_r):.1f}mm(レバー長{S['neck']['lever_len']:g}) / 圧力角 最大{phi:.1f}°(目標≦30°)")
+print(f"ばね(1本): 初期荷重{F0/2:.0f}N(0°)・最大{Fmax:.0f}N / ばね定数{ks:g}N/mm / たわみ{dmin:.1f}〜{dmax:.1f}mm / 自由長≧{free:.0f}mm(たわみ率40%) / 取付長{Lmin:.1f}〜{Lmax:.1f}mm / 取付長÷平均径={slen:.1f}(案内ロッドで拘束)")
+print('角度: 重力τg / 残差(エネルギー法) [N·m]')
+for a, rv in list(zip(angles, rr))[::2]: print(f'{a:+6.1f}°: {MM.S and mh*g*(dz*math.cos(math.radians(a))+dy*math.sin(math.radians(a)))/1000:+7.2f} / {rv:+6.2f}')
+print(f'公称最大残差 {rnom:.2f}N·m / 調整後の最悪残差(荷重±{FPCT*100:.0f}%・重心±{CGMM:.0f}mm) {worst:.2f}N·m / 未調整の最悪残差(±10%・±10mm) {worst_raw:.2f}N·m')
+print(f'摩擦保持 公称{FR:.1f}N·m(公差±{FTOL*100:.0f}% → {fr_min:.2f}〜{fr_max:.2f}) / 保持条件: 経年後の最小摩擦{fr_aged:.2f} ≧ 最悪残差 / 操作力(上端0.41m)=(最大摩擦+最悪残差)/0.41 = {op_force:.1f}N(目標≦{H_["op_target_N"]:g}N)')
+# 独立検算: 旧方式(圧縮ばね+下アンカー, エネルギー法)が転倒方向であることの再現(退行防止)
+def old_sign_check():
+    e, s, FF = 25.0, 76.0, 365.0; l = lambda a: math.hypot(e * math.sin(math.radians(a)), s - e * math.cos(math.radians(a)))
+    return (l(40) > l(0))      # ピン間距離が増える=圧縮ばねは緩む=エネルギー減少=駆動側
 fails = []
-if ratio > 0.40: fails.append('ばねたわみ率>40%')
-fr_aged = fr_min * (1 - H_['friction_aging_loss'])
+if not old_sign_check(): fails.append('退行検査: 旧方式の幾何前提が変わった')
+if rnom > 0.3: fails.append(f'公称残差{rnom:.2f}N·m(解析解のはずが大きい)')
+if free and dmax / free > 0.4001: fails.append('たわみ率>40%')
+if phi > 30: fails.append(f'圧力角{phi:.1f}°>30°')
+if max(cam_r) > S['neck']['lever_len']: fails.append('カム面がレバー長を超える')
 if worst > fr_aged: fails.append(f'最悪残差{worst:.2f} > 経年後の最小摩擦保持{fr_aged:.2f}')
 if op_force > H_['op_target_N']: fails.append(f"操作力{op_force:.1f}N > {H_['op_target_N']:g}N")
-slen = (lmax - HW) / 13.0            # ばね取付長/平均径(JIS金型ばねOD16, 線径3 → 平均径13)。<4 なら案内なしで座屈しにくい目安
-print(f'座屈の目安: 最長取付長 {lmax-HW:.0f}mm / 平均径13mm = {slen:.1f}(<4で案内不要の目安)')
-if slen >= 4.0: fails.append(f'ばね細長比{slen:.1f}≧4(案内が必要)')
-print('総合:', 'OK(ばね型番・実特性・重心はUNVERIFIED)' if not fails else 'NG ' + ' / '.join(fails))
+if slen >= 4.0 and not BC.get('guide_rod'): fails.append(f'ばね細長比{slen:.1f}≧4(案内が必要)')
+print('総合:', 'OK(ばね型番・実特性・重心・カム加工精度はUNVERIFIED)' if not fails else 'NG ' + ' / '.join(fails))
 if '--write' in sys.argv:
-    json.dump(dict(s=s, p_offset=0, e=e, F0_longest_total=F0, p=p, stroke=stroke, lmin=lmin, lmax=lmax, free_length_min=free, resid_nominal=rr, resid_worst=worst, sign=sign), open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)
+    prof = [[round(a, 2), round(rho(a), 3)] for a in [T0 + i * (T1 - T0) / 55 for i in range(56)]]
+    json.dump(dict(model='cam_roller', rho0=rho0, roller_r=Rr, spring_x=BC['spring_x_mm'], k_spring=ks, F0_total=F0, F0_longest_total=F0, p=(F0 + kt * max(xs)) / F0 - 1, s=BC['base_seat_depth_mm'], e=round(max(cam_r), 2), p_offset=0,
+                   stroke=round(max(xs), 3), lmin=round(Lmin, 2), lmax=round(Lmax, 2), free_length_min=round(free, 1), F_spring_max=round(Fmax, 1), pressure_angle_deg=round(phi, 1), resid_nominal=round(rnom, 3), resid_worst=round(worst, 3), sign=1, cam_profile_pitch_radius=prof),
+              open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)
 sys.exit(1 if fails else 0)

@@ -46,6 +46,15 @@
    "file": "balance/balance.v005__2026-11-06_88f99b7.json"
   },
   {
+   "src": "model/balance.json",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "084b8f75e95317f116e2c191468b9a9d5c0ee9fa20d6e495426c2960088cbed1",
+   "file": "balance/balance.v006__2026-11-06_cf90ba1.json"
+  },
+  {
    "src": "model/cables.json",
    "version": 1,
    "gen": "current",
@@ -289,6 +298,15 @@
    "file": "custom_parts/custom_parts.v018__2026-11-06_93238a3.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 19,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "62875640f3e0a535f272b52a3b76309a7786371076afb42be64746b88e3ca459",
+   "file": "custom_parts/custom_parts.v019__2026-11-06_e7a16e1.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",
@@ -386,6 +404,15 @@
    "commit": "93238a3",
    "sha256": "51ea21c80a69ea613247576c274f8f36a2d341c9b1ed1b2b7c3ac50590bc18a5",
    "file": "hardware_list/hardware_list.v011__2026-11-06_93238a3.json"
+  },
+  {
+   "src": "model/hardware_list.json",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "75b96ddb350768b886bb192e139d05247ed72e3de6d0127a4a3b7086b74e9268",
+   "file": "hardware_list/hardware_list.v012__2026-11-06_e7a16e1.json"
   },
   {
    "src": "model/layout.json",
@@ -800,6 +827,15 @@
    "commit": "4050ed9",
    "sha256": "0368b7acb7c6262464a4cba5c36e8c3239c5e07a9b73492fb9246a03ba557f14",
    "file": "spec/spec.v024__2026-11-06_4050ed9.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 25,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "95cc01a80b7e70e326d089d573d38f7975c963ae849b51853411d80004b132a0",
+   "file": "spec/spec.v025__2026-11-06_93238a3.json"
   },
   {
    "src": "model/x870i_layout.json",

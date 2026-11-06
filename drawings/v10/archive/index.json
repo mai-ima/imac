@@ -8,6 +8,33 @@
    "commit": "ce41db1",
    "sha256": "d3c3884e60620c48634cbfb5d8602c8e76af82731f0eafbea26a475392d22295",
    "file": "D02_stand_assembly/D02_stand_assembly.v001__2026-11-06_ce41db1.svg"
+  },
+  {
+   "src": "drawings/v10/D02_stand_assembly.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "7ec1a080f0db728838f4584857682b3bd92e2f3bcdbf1b5807dec78f9f915a30",
+   "file": "D02_stand_assembly/D02_stand_assembly.v002__2026-11-06_cf90ba1.svg"
+  },
+  {
+   "src": "drawings/v10/D03_tilt_hinge_section.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "b38d4674bceca218b92c5e97ec50858e85778f88a689bbc06c2073e9019a2f0b",
+   "file": "D03_tilt_hinge_section/D03_tilt_hinge_section.v001__2026-11-06_cf90ba1.svg"
+  },
+  {
+   "src": "drawings/v10/D04_balancer_section.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "1531faab3ecfaf41b31ceb79fe0e283da27bce3733c7393ee76d7efae62c5c1a",
+   "file": "D04_balancer_section/D04_balancer_section.v001__2026-11-06_cf90ba1.svg"
   }
  ]
 }

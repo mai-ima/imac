@@ -127,15 +127,15 @@ note(OX, -12, 'GLASS t1.1 chemically tempered / AR+AFC / camera hole D4.0, mic h
 # (2) 背板 A5052 t2.0: 外形 + 吊りピン座(M3下穴 Ø2.5) + ヒンジブロックM6貫通(Ø6.6) + 接地スタッド(M4 Ø3.3)
 OX = 800; dxf_rrect(OX, 0, W, H, CORNER, 'BACKPLATE_OUTLINE')
 ix0 = Dm['inset_left_right'] + WALL; iy0 = Dm['inset_bottom'] + WALL      # トレイ内座標の原点(背板座標)
-for (kx, ky) in LAYJ['keyholes']: msp.add_circle((OX + ix0 + kx, iy0 + ky + 12), 1.25, dxfattribs={'layer': 'BACKPLATE_HOLES'})       # 吊りピン M3下穴(掛け位置=細溝の上端)
+for (kx, ky) in LAYJ['keyholes']: msp.add_circle((OX + ix0 + kx, iy0 + ky + 12), 2.8, dxfattribs={'layer': 'BACKPLATE_HOLES'})       # 吊りピン PEM TSOA-M4(掛け位置=細溝の上端。取付穴径はPEM規格表で確定=U29。仮Ø5.6)
 for sx_ in (-55, 55):
     for yy_ in (5, 17): msp.add_circle((OX + W / 2 + sx_, yy_), 3.3, dxfattribs={'layer': 'BACKPLATE_HOLES'})                            # ヒンジブロックM6貫通
 msp.add_circle((OX + W / 2 + 100, 10), 1.65, dxfattribs={'layer': 'BACKPLATE_HOLES'})                                                # 接地スタッドM4
-note(OX, -12, 'BACKPLATE A5052-H32 t2.0 / hang-pin M3 tapped (PEM TSOA) x4 at keyhole pin positions / hinge block M6 clearance D6.6 x4 / PE stud M4')
+note(OX, -12, 'BACKPLATE A5052-H32 t2.0 / hang-pin PEM TSOA-M4 x4 (hole D5.6 provisional, U29) at keyhole pin positions / hinge block M6 clearance D6.6 x4 / PE stud M4')
 # (3) トレイ A5052 t2.0 590x371.3 R44: キーホール(丸Ø10.2 + 細溝W6.5) + スタンドオフ穴(Ø4.0 PEM圧入: 規格値 U17/U29)
-OX = 1600; dxf_rrect(OX, 0, 590, 371.3, 44, 'TRAY_OUTLINE')
+OX = 1600; dxf_rrect(OX + 10, 10, 570, 351.3, 38, 'TRAY_OUTLINE')      # トレイ外形 570×351.3 R38(内部座標原点OXから10mm内側。部品図CP-06と同じ)
 for (kx, ky) in LAYJ['keyholes']:
-    msp.add_circle((OX + kx, ky), 4.6, dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_line((OX + kx - 2.55, ky), (OX + kx - 2.55, ky + 12), dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_line((OX + kx + 2.55, ky), (OX + kx + 2.55, ky + 12), dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_arc((OX + kx, ky + 12), 2.55, 0, 180, dxfattribs={'layer': 'TRAY_KEYHOLE'})
+    _sw = S['fits']['keyhole_slot_w'] / 2; msp.add_circle((OX + kx, ky), 5.1, dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_line((OX + kx - _sw, ky), (OX + kx - _sw, ky + 12), dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_line((OX + kx + _sw, ky), (OX + kx + _sw, ky + 12), dxfattribs={'layer': 'TRAY_KEYHOLE'}); msp.add_arc((OX + kx, ky + 12), _sw, 0, 180, dxfattribs={'layer': 'TRAY_KEYHOLE'})
 HOLES = []      # (部品, x, y)
 bx_, by_, _bz = LI2['board']['pos']
 for k, (hx, hy) in enumerate(((10.2, 6.4), (165.1, 6.4), (10.2, 163.8), (165.1, 163.8))): HOLES.append(('board(ITX規格値 U17)', bx_ + hx, by_ + hy))
@@ -149,7 +149,7 @@ gx_, gy_, _ = LI2['gpu']['pos']
 for (dx, dy) in ((20, 12), (130, 12)): HOLES.append(('gpu cradle', gx_ + dx, gy_ + dy))
 HOLES += [('tray拘束ネジ(M3 T10)', 295 - 60, 14), ('tray拘束ネジ(M3 T10)', 295 + 60, 14), ('PEスタッド M4', 40, 40)]
 for (nm, x_, y_) in HOLES: msp.add_circle((OX + x_, y_), 2.0 if 'M4' not in nm else 2.1, dxfattribs={'layer': 'TRAY_STANDOFF_HOLES'})
-note(OX, -12, 'TRAY A5052-H32 t2.0 590x371.3 R44 / keyhole D10.2 + slot W6.5 (up) / PEM TSOA-M3 holes D4.0 (values pending U17/U29)')
+note(OX, -12, 'TRAY A5052-H32 t2.0 570x351.3 R38 / keyhole D10.2 + slot W6.5 (up) / PEM TSOA-M3 holes D4.0 (values pending U17/U29)')
 # (4) ドーム A5052 t2.0: 外形 596x377.3 R50、均一パーフォレーション Ø2.4 ピッチ4.0 千鳥、下辺スロット、ラッチ/フック/ピン/磁石位置
 OX = 2400; DWd, DHd = W - 2 * Dm['inset_left_right'], H - Dm['inset_bottom'] - Dm['inset_top']
 dxf_rrect(OX, 0, DWd, DHd, Dm['corner_r'], 'DOME_OUTLINE')
