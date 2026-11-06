@@ -143,3 +143,4 @@
 | outlines.dxf | v015 | current | 2026-11-06 | cf90ba1 | outlines/outlines.v015__2026-11-06_cf90ba1.dxf |
 | outlines.dxf | v016 | current | 2026-11-06 | 93238a3 | outlines/outlines.v016__2026-11-06_93238a3.dxf |
 | outlines.dxf | v017 | current | 2026-11-06 | e7a16e1 | outlines/outlines.v017__2026-11-06_e7a16e1.dxf |
+| outlines.dxf | v018 | current | 2026-11-06 | 36dff8c | outlines/outlines.v018__2026-11-06_36dff8c.dxf |

@@ -5,7 +5,10 @@ import json, os, subprocess, math
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D = f'{R}/docs/mechanisms'; os.makedirs(D, exist_ok=True)
 S = json.load(open(f'{R}/model/spec.json')); BAL = json.load(open(f'{R}/model/balance.json')); CPd = {c['id']: c for c in json.load(open(f'{R}/model/custom_parts.json'))['parts']}
 H, sw, nk, st = S['hinge'], S['swivel'], S['neck'], S['stand']
-def run(tool): return subprocess.run(['python3', f'{R}/tools/{tool}'], capture_output=True, text=True).stdout.strip()
+def run(tool):
+    r = subprocess.run(['python3', f'{R}/tools/{tool}'], capture_output=True, text=True)
+    if r.returncode == 1 or 'Traceback' in r.stderr: raise SystemExit(f'{tool} が失敗(exit {r.returncode}): {r.stderr[-300:]}')      # R9T-009
+    return r.stdout.strip()
 def w(name, text): open(f'{D}/{name}', 'w', encoding='utf-8').write(text.strip() + '\n')
 HDR = '> 状態: 設計値(PRELIMINARY・未試作)。数値は model/spec.json・model/balance.json と tools/ の計算から自動埋め込み。未確認事項は末尾の表(U台帳 docs/unverified-tracker.md)。\n'
 bal, stab, mot, sc, swc = run('balance_calc.py'), run('stability.py'), run('motion_check.py'), run('strength_check.py'), run('swivel_calc.py')

@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "tools/audit_control_init.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "493b0f5e619dd67995b0a4bab53f295909ce222580015743d451feff5489c9cc",
+   "file": "audit_control_init/audit_control_init.v001__2026-11-06_cf90ba1.py"
+  },
+  {
    "src": "tools/audit_manifest.py",
    "version": 1,
    "gen": "current",
@@ -80,6 +89,15 @@
    "commit": "cf90ba1",
    "sha256": "25edb87acfe971432193392601fdc5ed3ca2fc4202739c9dacb7c14d29e04781",
    "file": "balance_calc/balance_calc.v008__2026-11-06_cf90ba1.py"
+  },
+  {
+   "src": "tools/balance_calc.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "938be52c02a9dca2b545224b072d0d795f5599abb16e6db72eacd091fd95aeaa",
+   "file": "balance_calc/balance_calc.v009__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/cable_check.py",
@@ -271,6 +289,15 @@
    "file": "fit_tolerance/fit_tolerance.v004__2026-11-06_cf90ba1.py"
   },
   {
+   "src": "tools/fit_tolerance.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "9ef7a4eabdc9569b8756b1d70dedaf4a8c6b199eb6af54685f86b53e68103c34",
+   "file": "fit_tolerance/fit_tolerance.v005__2026-11-06_93238a3.py"
+  },
+  {
    "src": "tools/fitcheck.py",
    "version": 1,
    "gen": "current",
@@ -368,6 +395,15 @@
    "commit": "4050ed9",
    "sha256": "91b0fd66fd2bfd25395672935b55eae1c0b121ec9f28ba373cf62166fef7fa61",
    "file": "fitcheck/fitcheck.v011__2026-11-06_4050ed9.py"
+  },
+  {
+   "src": "tools/fitcheck.py",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "b6ef7043707feea0bbd80a314ae4fa3fcc83f6b086f9f5579652369aed8e322c",
+   "file": "fitcheck/fitcheck.v012__2026-11-06_e7a16e1.py"
   },
   {
    "src": "tools/gen_anatomy.py",
@@ -550,6 +586,15 @@
    "file": "gen_mechanisms/gen_mechanisms.v007__2026-11-06_93238a3.py"
   },
   {
+   "src": "tools/gen_mechanisms.py",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "6dd71501112b4a9c164093745c8937f190593950016f260566b07ed8de637a7b",
+   "file": "gen_mechanisms/gen_mechanisms.v008__2026-11-06_36dff8c.py"
+  },
+  {
    "src": "tools/gen_mfg_drawings.py",
    "version": 1,
    "gen": "current",
@@ -656,6 +701,15 @@
    "commit": "93238a3",
    "sha256": "90bfca431dab54c0ff8c418d09485b83a96e9626259a4de9404ed07322b3438d",
    "file": "gen_mfg_drawings/gen_mfg_drawings.v012__2026-11-06_93238a3.py"
+  },
+  {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "a8f7ff28d643159b39d318130015156d203aaa7cb5d35d9458e266f2b0bf4392",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v013__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/gen_package.py",
@@ -845,6 +899,15 @@
    "commit": "93238a3",
    "sha256": "313543cfb47c51300dee0ada6323ab3acb0aeff6a65d8bd33617c008810e1631",
    "file": "gen_specs/gen_specs.v007__2026-11-06_93238a3.py"
+  },
+  {
+   "src": "tools/gen_specs.py",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "397c298c04e0de484ad6115f22006bbe6370bf5369b3c2ca98b708dd46d24ecd",
+   "file": "gen_specs/gen_specs.v008__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/guard_no_delete.sh",
@@ -1144,6 +1207,15 @@
    "file": "stability/stability.v005__2026-11-06_4482281.py"
   },
   {
+   "src": "tools/stability.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "f1b1b5773f588a7120321653d4f58ac5096b7bf55ea82290c54bd5644fd85df1",
+   "file": "stability/stability.v006__2026-11-06_432b08c.py"
+  },
+  {
    "src": "tools/stale_check.py",
    "version": 1,
    "gen": "current",
@@ -1232,6 +1304,15 @@
    "commit": "cf90ba1",
    "sha256": "7f68d831bc7506b1b5b66dffac7324b794f4e257db4660624ab92cf2da012137",
    "file": "strength_check/strength_check.v004__2026-11-06_cf90ba1.py"
+  },
+  {
+   "src": "tools/strength_check.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "34b902ef476891d15c01af74f22650c7240a66961155fb2bee602be459291738",
+   "file": "strength_check/strength_check.v005__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/swivel_calc.py",

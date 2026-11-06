@@ -1268,6 +1268,15 @@
    "commit": "e7a16e1",
    "sha256": "4c3d8d687cacd91698b18af6af66c024ff8b54bc8897ce0796020449887b5af8",
    "file": "outlines/outlines.v017__2026-11-06_e7a16e1.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 18,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "7c17e488e255121d2f5b9550a42a8eeff8d32defd53c3c52710d6cc07c170a96",
+   "file": "outlines/outlines.v018__2026-11-06_36dff8c.dxf"
   }
  ]
 }

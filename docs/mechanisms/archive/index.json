@@ -190,6 +190,15 @@
    "file": "05_tray_hanging_service/05_tray_hanging_service.v002__2026-11-06_28dc82b.md"
   },
   {
+   "src": "docs/mechanisms/05_tray_hanging_service.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "c2be663d5df4d7b67cca1a2f1d206ba4a796cb84ab469b305cd22b1e2c982632",
+   "file": "05_tray_hanging_service/05_tray_hanging_service.v003__2026-11-06_93238a3.md"
+  },
+  {
    "src": "docs/mechanisms/06_pinch_guard.md",
    "version": 1,
    "gen": "current",
@@ -269,6 +278,15 @@
    "commit": "cf90ba1",
    "sha256": "373ced07dcc8eea076e4ed3affdd8e108ef32315d79553041d40e0fd6a1972a7",
    "file": "07_fits_and_feel/07_fits_and_feel.v005__2026-11-06_cf90ba1.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "b96bd04d5ef8b9417cf8b060d6dbd10db67c8e3ec3455567134ffae0fbc89d3d",
+   "file": "07_fits_and_feel/07_fits_and_feel.v006__2026-11-06_36dff8c.md"
   },
   {
    "src": "docs/mechanisms/README.md",

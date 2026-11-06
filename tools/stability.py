@@ -45,4 +45,4 @@ for k, lbl in (('front', '前'), ('back', '後'), ('side', '横')):
 ok &= min_tip_deg >= 10.0
 print(f'傾斜安定(IEC 62368-1 の10°傾斜に相当): 全格子の最小転倒角 {min_tip_deg:.1f}° (≥10° で [{"OK" if min_tip_deg>=10 else "NG"}])。ACコードを横に引いた場合の転倒力 最小≈{min_cord:.0f}N(情報。コード固定クランプは U54)')
 print('総合:', 'OK(全格子で目標達成。質量/重心は推定=UNVERIFIED)' if ok else 'NG(目標未達: 足寸法/バラスト/首振り範囲の見直しが必要)')
-sys.exit(0 if ok else 1)
+sys.exit(1 if not ok else 2)      # 質量/重心は推定=UNVERIFIED

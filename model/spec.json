@@ -115,7 +115,7 @@
   "friction_tol_pct": 8.0,
   "balance_force_tol_pct": 3.0,
   "balance_cg_tol_mm": 3.0,
-  "balance_note": "ばね座に荷重調整ねじ(M8)を設け、組立時に頭部重量(実測)へ合わせて調整後の公差(荷重±3%, 重心±3mm)を前提とする。未調整の公差(荷重±10%, 重心±10mm)では保持/操作が両立しない(balance_calc.py参照)",
+  "balance_note": "ばね座のシム(0.25mm刻み)で荷重を調整し、組立時に頭部重量(実測)へ合わせて調整後の公差(荷重±3%, 重心±3mm)を前提とする。未調整の公差(荷重±10%, 重心±10mm)では保持/操作が両立しない(balance_calc.py参照)",
   "friction_aging_loss": 0.3,
   "op_target_N": 20
  },
@@ -230,7 +230,7 @@
   "side_hook_hold_N": 40
  },
  "fits": {
-  "keyhole_slot_w": 6.5,
+  "keyhole_slot_w": 6.3,
   "keyhole_slot_tol": [
    0.0,
    0.05

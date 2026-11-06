@@ -81,8 +81,8 @@ clips = {}
 for c in C: clips[c['id']] = [tuple(round(v, 1) for v in q) for q in sample(c['pts'])]
 w = ['# 内部配線仕様 (自動生成: tools/gen_specs.py / 元データ model/cables.json)', '', '座標はトレイ内座標(mm, 左下原点, z=トレイ面からの高さ)。クリップは約60mmピッチ(CP-16)。', '',
      '## ケーブル', '| ID | 名称 | 区間 | AWG | コネクタ | 設計長mm | 最小曲げ半径 | 判定 |', '|---|---|---|---|---|---|---|---|']
-MBR = {'W1': 30, 'W2': 20, 'W3': 20, 'W4': 15, 'W5': 25, 'W6': 25}
-for c in C: w.append(f"| {c['id']} | {c['name']} | {c['frm']} → {c['to']} | {c['awg'] or '-'} | {c['conn']} | {c['len_mm']} | {MBR.get(c['id'], 20)} mm(外径の約6倍) | {c['verdict']} |")
+MBR = {c['id']: c['mbr'] for c in C}      # R9T-013: 単一源は cablemodel.py
+for c in C: w.append(f"| {c['id']} | {c['name']} | {c['frm']} → {c['to']} | {c['awg'] or '-'} | {c['conn']} | {c['len_mm']} | {MBR.get(c['id'], 20)} mm | {c['verdict']} |")
 w += ['', '## 固定点(クリップ位置)']
 for c in C: w += [f"### {c['id']} {c['name']}"] + [f'- P{i+1}: ({q[0]}, {q[1]}, z{q[2]})' for i, q in enumerate(clips[c['id']])]
 w += ['', '## 主要コネクタのピン割当(規格の一般仕様。部品の実物で要確認)',

@@ -58,4 +58,4 @@ for a0 in range(int(S['hinge']['tilt_min_deg']), int(S['hinge']['tilt_max_deg'])
 stroke_pad = N['pad_thick'] * 0.5 / 1000.0; Fimp = Emax / stroke_pad; Zl = N['lever_t'] * N['lever_w'] ** 2 / 6.0
 chk('ばね1本折損→ストッパ衝突: レバー曲げ(ピーク=平均力×2)', 2.0 * Fimp / 2 * N['lever_len'] / Zl, 'SUS304', f'落下E={Emax:.2f}J(I={Ihead:.2f}kg·m², ω≈{math.sqrt(2*Emax/Ihead):.1f}rad/s)、パッド圧縮{N["pad_thick"]*0.5:g}mm→衝撃力{Fimp:.0f}N(2本分担)')
 print('注: 概算(静的・ピーク)。疲労(25,000回)、ばねの応力集中、キー溝、ボルト予圧、ステータ/ロータ板の曲げは未評価=UNVERIFIED。')
-sys.exit(1 if bad else 0)
+sys.exit(1 if bad else 2)      # 荷重は概算・疲労/FEA未評価=UNVERIFIED

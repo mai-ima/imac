@@ -5,15 +5,15 @@
 ## ケーブル
 | ID | 名称 | 区間 | AWG | コネクタ | 設計長mm | 最小曲げ半径 | 判定 |
 |---|---|---|---|---|---|---|---|
-| W1 | ATX 24ピン(短尺カスタム長) | PSU modular(24p) → 基板 ATX24 | 18 | 24p (20+4) | 28 | 30 mm(外径の約6倍) | OK |
-| W2 | CPU EPS 8ピン(短尺) | PSU modular(EPS) → 基板 CPU_12V(8p) | 16 | EPS 4+4 | 237 | 20 mm(外径の約6倍) | OK |
-| W3 | GPU 12V-2x6(16AWG) | PSU modular(12V-2x6) → GPU 12V-2x6 | 16 | 12V-2x6: コネクタ後方35mm直線 | 313 | 20 mm(外径の約6倍) | OK |
-| W4 | コントローラ基板 12V(短尺) | PSU modular(SATA/周辺) → ctrl_board DC入力 | 20 | SATA電源 or 2pin | 24 | 15 mm(外径の約6倍) | OK |
-| W5 | アンビリカル(eDP 30p/12V/USB) | ctrl_board eDP → パネル背面コネクタ | - | eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み) | 274 | 25 mm(外径の約6倍) | OK |
-| W6 | AC電源(C14インレット→PSU C13) | C14インレット → SF1000 AC入力 | 16 | C13(内部延長600mm級: 市販品要確認 U40) | 456 | 25 mm(外径の約6倍) | OK |
-| W7 | 内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加) | GPU DP出力(ブラケット側) → ctrl_board 映像入力(DP/HDMI, 型番未確定 U51) | 30 | DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4) | 261 | 20 mm(外径の約6倍) | OK |
-| H1 | AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口) | ポンプ出口A(上面スタブ) → ラジエーター口A | - | ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き) | 378 | 20 mm(外径の約6倍) | OK |
-| H2 | AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口) | ポンプ出口B(上面スタブ) → ラジエーター口B | - | ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き) | 437 | 20 mm(外径の約6倍) | OK |
+| W1 | ATX 24ピン(短尺カスタム長) | PSU modular(24p) → 基板 ATX24 | 18 | 24p (20+4) | 28 | 12 mm | OK |
+| W2 | CPU EPS 8ピン(短尺) | PSU modular(EPS) → 基板 CPU_12V(8p) | 16 | EPS 4+4 | 237 | 12 mm | OK |
+| W3 | GPU 12V-2x6(16AWG) | PSU modular(12V-2x6) → GPU 12V-2x6 | 16 | 12V-2x6: コネクタ後方35mm直線 | 313 | 20 mm | OK |
+| W4 | コントローラ基板 12V(短尺) | PSU modular(SATA/周辺) → ctrl_board DC入力 | 20 | SATA電源 or 2pin | 24 | 6 mm | OK |
+| W5 | アンビリカル(eDP 30p/12V/USB) | ctrl_board eDP → パネル背面コネクタ | - | eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み) | 274 | 16 mm | OK |
+| W6 | AC電源(C14インレット→PSU C13) | C14インレット → SF1000 AC入力 | 16 | C13(内部延長600mm級: 市販品要確認 U40) | 456 | 14 mm | OK |
+| W7 | 内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加) | GPU DP出力(ブラケット側) → ctrl_board 映像入力(DP/HDMI, 型番未確定 U51) | 30 | DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4) | 261 | 16 mm | OK |
+| H1 | AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口) | ポンプ出口A(上面スタブ) → ラジエーター口A | - | ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き) | 378 | 40 mm | OK |
+| H2 | AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口) | ポンプ出口B(上面スタブ) → ラジエーター口B | - | ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き) | 437 | 40 mm | OK |
 
 ## 固定点(クリップ位置)
 ### W1 ATX 24ピン(短尺カスタム長)

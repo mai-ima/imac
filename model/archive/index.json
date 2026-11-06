@@ -307,6 +307,15 @@
    "file": "custom_parts/custom_parts.v019__2026-11-06_e7a16e1.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 20,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "9b5ba954c7ab80dbbc2dc7c65ded5c3b57fb484d954f3a75e4a96273f5480b5c",
+   "file": "custom_parts/custom_parts.v020__2026-11-06_36dff8c.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",
@@ -836,6 +845,15 @@
    "commit": "93238a3",
    "sha256": "95cc01a80b7e70e326d089d573d38f7975c963ae849b51853411d80004b132a0",
    "file": "spec/spec.v025__2026-11-06_93238a3.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 26,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "c74edaaf6439f808259297dcb751a2a16852ae2947766a58540f76b357cd8f73",
+   "file": "spec/spec.v026__2026-11-06_36dff8c.json"
   },
   {
    "src": "model/x870i_layout.json",

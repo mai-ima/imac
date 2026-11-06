@@ -5,8 +5,9 @@ import csv, hashlib, json, os, subprocess, datetime
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); AC = f'{R}/audit_control'; os.makedirs(AC, exist_ok=True)
 NOW = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 def load(p, d):
+    if not os.path.exists(p): return d
     try: return json.load(open(p, encoding='utf-8'))
-    except Exception: return d
+    except Exception as e: raise SystemExit(f'{p} が壊れている({e})。台帳を上書きしないため中断(R9T-011)。git で復元してください')
 T = load(f'{AC}/tasks.json', {'schema': 1, 'tasks': []}); have = {t['id'] for t in T['tasks']}
 def add(id, title, sev='P2', typ='verify', origin='master_prompt', size='M', files=(), acc='', next_action='', status='triaged', deps=()):
     if id in have: return

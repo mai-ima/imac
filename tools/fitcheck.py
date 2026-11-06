@@ -101,4 +101,4 @@ chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(�
 print(f"[注意] CPU冷却: {P['cpu']['name']} PPT {cpu}W(制限なし)に対し240mm AIO(AMD推奨は240/280mm級, 実測はUNVERIFIED)。実機での温度確認が必須")
 print(f'\nUNVERIFIED {len(unverified)} 件: ' + ', '.join(unverified))
 print('\n総合:', ('計算可能な項目はすべて満たす(UNVERIFIED項目は合格扱いではない)') if ok else '未達あり')
-sys.exit(0 if ok else 1)
+sys.exit(1 if not ok else (2 if unverified else 0))

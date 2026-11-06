@@ -35,6 +35,15 @@
    "commit": "cf90ba1",
    "sha256": "1531faab3ecfaf41b31ceb79fe0e283da27bce3733c7393ee76d7efae62c5c1a",
    "file": "D04_balancer_section/D04_balancer_section.v001__2026-11-06_cf90ba1.svg"
+  },
+  {
+   "src": "drawings/v10/D07_stopper_keyhole_detail.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "effe99da8213922d98af895b75641ebc0e66b2fcef9a6139b86fa2ee4b34a8a0",
+   "file": "D07_stopper_keyhole_detail/D07_stopper_keyhole_detail.v001__2026-11-06_93238a3.svg"
   }
  ]
 }

@@ -65,4 +65,4 @@ if '--write' in sys.argv:
     json.dump(dict(model='cam_roller', rho0=rho0, roller_r=Rr, spring_x=BC['spring_x_mm'], k_spring=ks, F0_total=F0, F0_longest_total=F0, p=(F0 + kt * max(xs)) / F0 - 1, s=BC['base_seat_depth_mm'], e=round(max(cam_r), 2), p_offset=0,
                    stroke=round(max(xs), 3), lmin=round(Lmin, 2), lmax=round(Lmax, 2), free_length_min=round(free, 1), F_spring_max=round(Fmax, 1), pressure_angle_deg=round(phi, 1), resid_nominal=round(rnom, 3), resid_worst=round(worst, 3), sign=1, cam_profile_pitch_radius=prof),
               open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)
-sys.exit(1 if fails else 0)
+sys.exit(1 if fails else 2)      # ばね型番/実特性/重心が未確定=UNVERIFIED

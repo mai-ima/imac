@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<pattern id="h_st" patternUnits="userSpaceOnUse" width="1.3" height="1.3" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.3" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_st2" patternUnits="userSpaceOnUse" width="1.3" height="1.3" patternTransform="rotate(135)"><line x1="0" y1="0" x2="0" y2="1.3" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_al" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2.4" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_al2" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(135)"><line x1="0" y1="0" x2="0" y2="2.4" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_br" patternUnits="userSpaceOnUse" width="0.8" height="0.8" patternTransform="rotate(135)"><line x1="0" y1="0" x2="0" y2="0.8" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_ru" patternUnits="userSpaceOnUse" width="0.7" height="0.7" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.7" stroke="#000" stroke-width="0.3"/></pattern>
+<pattern id="h_ss" patternUnits="userSpaceOnUse" width="1.9" height="1.9" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.9" stroke="#000" stroke-width="0.22"/></pattern>
+<pattern id="h_cu" patternUnits="userSpaceOnUse" width="1.0" height="1.0" patternTransform="rotate(0)"><line x1="0" y1="0" x2="0" y2="1.0" stroke="#000" stroke-width="0.22"/></pattern>
+</defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
+<rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
+<line x1="68.75" y1="10" x2="68.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="68.75" y1="287" x2="68.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="44.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<text x="44.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">1</text>
+<line x1="117.5" y1="10" x2="117.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="117.5" y1="287" x2="117.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="93.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<text x="93.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">2</text>
+<line x1="166.25" y1="10" x2="166.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="166.25" y1="287" x2="166.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="141.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<text x="141.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3</text>
+<line x1="215.0" y1="10" x2="215.0" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="215.0" y1="287" x2="215.0" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="190.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<text x="190.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">4</text>
+<line x1="263.75" y1="10" x2="263.75" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="263.75" y1="287" x2="263.75" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="239.38" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<text x="239.38" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">5</text>
+<line x1="312.5" y1="10" x2="312.5" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="312.5" y1="287" x2="312.5" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="288.12" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<text x="288.12" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">6</text>
+<line x1="361.25" y1="10" x2="361.25" y2="15" stroke="#000" stroke-width="0.25"/>
+<line x1="361.25" y1="287" x2="361.25" y2="282" stroke="#000" stroke-width="0.25"/>
+<text x="336.88" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="336.88" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">7</text>
+<text x="385.62" y="13.20" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<text x="385.62" y="285.60" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">8</text>
+<line x1="20" y1="79.25" x2="25" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="79.25" x2="405" y2="79.25" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="148.5" x2="405" y2="148.5" stroke="#000" stroke-width="0.25"/>
+<line x1="20" y1="217.75" x2="25" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<line x1="410" y1="217.75" x2="405" y2="217.75" stroke="#000" stroke-width="0.25"/>
+<text x="15.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="415.00" y="45.62" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">D</text>
+<text x="15.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="415.00" y="114.88" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">C</text>
+<text x="15.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="415.00" y="184.12" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">B</text>
+<text x="15.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<text x="415.00" y="253.38" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">A</text>
+<line x1="1" y1="148.5" x2="25" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="405" y1="148.5" x2="419" y2="148.5" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="1" x2="210.0" y2="15" stroke="#000" stroke-width="0.5"/>
+<line x1="210.0" y1="282" x2="210.0" y2="296" stroke="#000" stroke-width="0.5"/>
+<rect x="230" y="243" width="180" height="44" fill="#fff" stroke="#000" stroke-width=".5"/>
+<line x1="230" y1="257" x2="410" y2="257" stroke="#000" stroke-width="0.25"/>
+<line x1="230" y1="269" x2="410" y2="269" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="257" x2="330" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
+<text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
+<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">チルトストッパ・キーホール吊り 詳細断面</text>
+<text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
+<text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
+<text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
+<text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A6063/SUS304/ゴム</text>
+<text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
+<text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-D07</text>
+<text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
+<text x="332.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ISO 2768-mK</text>
+<text x="372.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">改訂 / Rev.</text>
+<text x="372.00" y="267.50" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">D</text>
+<text x="372.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">用紙 / Sheet</text>
+<text x="372.00" y="276.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">A3  1/1</text>
+<text x="332.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">縮尺 / Scale</text>
+<text x="332.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">B 2.3:1 / C 3.2:1</text>
+<text x="372.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">単位 / Unit</text>
+<text x="372.00" y="253.50" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">mm</text>
+<text x="332.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">作成 / Drawn</text>
+<text x="332.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">Claude 2026-11-06</text>
+<text x="372.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">承認 / Approved</text>
+<text x="372.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">未承認(設計値) / PRELIMINARY</text>
+<g transform="translate(204,273)" stroke="#000" stroke-width=".25" fill="none"><path d="M0,2 L9,0 L9,8 L0,6 Z"/><line x1="-1" y1="4" x2="10" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><circle cx="15" cy="4" r="4"/><circle cx="15" cy="4" r="2"/><line x1="10" y1="4" x2="20" y2="4" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/><line x1="15" y1="-1" x2="15" y2="9" stroke="#000" stroke-width="0.15" stroke-dasharray="3,0.6,0.6,0.6"/></g>
+<text x="204.00" y="267.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">第三角法 / 3rd angle</text>
+<rect x="130" y="249" width="70" height="38" fill="#fff" stroke="#000" stroke-width=".25"/>
+<line x1="130" y1="254" x2="200" y2="254" stroke="#000" stroke-width="0.25"/>
+<line x1="138" y1="249" x2="138" y2="287" stroke="#000" stroke-width="0.25"/>
+<line x1="170" y1="249" x2="170" y2="287" stroke="#000" stroke-width="0.25"/>
+<text x="132.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">Rev</text>
+<text x="140.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">内容 / Description</text>
+<text x="172.00" y="252.60" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">日付</text>
+<text x="132.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">A</text>
+<text x="140.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">初版(v6)</text>
+<text x="172.00" y="258.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-03</text>
+<text x="132.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">B</text>
+<text x="140.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">ドーム/トレイ/v7</text>
+<text x="172.00" y="263.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-05</text>
+<text x="132.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">C</text>
+<text x="140.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v8: 5070Ti/SF1000/断熱/再配置</text>
+<text x="172.00" y="268.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="132.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">D</text>
+<text x="140.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">v9: 首振り/チルト拡大</text>
+<text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
+<text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+<g fill="none" stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#000" stroke-width="0.18"><polyline points="160.44,219.20 174.24,219.20"/><polyline points="174.24,219.20 174.24,122.60"/><polyline points="160.44,154.44 160.44,219.20"/><polyline points="146.64,154.44 160.44,154.44"/><polyline points="146.64,140.64 146.64,154.44"/><polyline points="160.44,140.64 146.64,140.64"/><polyline points="160.44,122.60 160.44,140.64"/><polyline points="174.24,122.60 160.44,122.60"/><polyline points="24.10,219.20 37.90,219.20"/><polyline points="37.90,219.20 37.90,134.10"/><polyline points="24.10,120.30 24.10,219.20"/><polyline points="51.70,120.30 24.10,120.30"/><polyline points="51.70,134.10 51.70,120.30"/><polyline points="37.90,134.10 51.70,134.10"/><polyline points="95.90,150.20 95.90,94.42"/><polyline points="95.90,150.20 128.10,150.20"/><polyline points="95.90,94.42 92.15,91.17 89.04,87.31 86.67,82.96 85.12,78.25 84.43,73.34 84.64,68.38 85.73,63.54 87.66,58.98 90.39,54.83 93.81,51.24 97.82,48.32 102.28,46.17 107.06,44.85 112.00,44.40 116.94,44.85 121.72,46.17 126.18,48.32 130.19,51.24 133.61,54.83 136.34,58.98 138.27,63.54 139.36,68.38 139.57,73.34 138.88,78.25 137.33,82.96 134.96,87.31 131.85,91.17 128.10,94.42"/><polyline points="128.10,150.20 128.10,94.42"/><polyline points="112.00,55.90 115.71,56.33 119.23,57.61 122.35,59.67 124.91,62.39 126.78,65.62 127.86,69.20 128.07,72.94 127.42,76.62 125.94,80.05 123.71,83.05 120.85,85.45 117.51,87.13 113.87,87.99 110.13,87.99 106.49,87.13 103.15,85.45 100.29,83.05 98.06,80.05 96.58,76.62 95.93,72.94 96.14,69.20 97.22,65.62 99.09,62.39 101.65,59.67 104.77,57.61 108.29,56.33 112.00,55.90"/></g></g>
+<path d="M95.90,94.42 L95.90,150.20 L128.10,150.20 L128.10,94.42 L131.07,91.95 L133.67,89.10 L135.84,85.91 L137.55,82.45 L138.75,78.78 L139.44,74.99 L139.59,71.13 L139.20,67.29 L138.27,63.54 L136.84,59.96 L134.91,56.62 L132.54,53.57 L129.77,50.88 L126.65,48.61 L123.25,46.80 L119.62,45.47 L115.85,44.67 L112.00,44.40 L108.15,44.67 L104.38,45.47 L100.75,46.80 L97.35,48.61 L94.23,50.88 L91.46,53.57 L89.09,56.62 L87.16,59.96 L85.73,63.54 L84.80,67.29 L84.41,71.13 L84.56,74.99 L85.25,78.78 L86.45,82.45 L88.16,85.91 L90.33,89.10 L92.93,91.95 L95.90,94.42 Z M112.00,55.90 L114.96,56.17 L117.82,56.99 L120.48,58.31 L122.85,60.10 L124.85,62.30 L126.41,64.82 L127.49,67.59 L128.03,70.51 L128.03,73.49 L127.49,76.41 L126.41,79.18 L124.85,81.70 L122.85,83.90 L120.48,85.69 L117.82,87.01 L114.96,87.83 L112.00,88.10 L109.04,87.83 L106.18,87.01 L103.52,85.69 L101.15,83.90 L99.15,81.70 L97.59,79.18 L96.51,76.41 L95.97,73.49 L95.97,70.51 L96.51,67.59 L97.59,64.82 L99.15,62.30 L101.15,60.10 L103.52,58.31 L106.18,56.99 L109.04,56.17 L112.00,55.90 Z " fill="url(#h_al)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M24.10,120.30 L24.10,219.20 L37.90,219.20 L37.90,120.30 L24.10,120.30 Z " fill="url(#h_al2)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M37.90,120.30 L37.90,134.10 L51.70,134.10 L51.70,120.30 L37.90,120.30 Z " fill="url(#h_ru)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M160.44,122.60 L160.44,219.20 L174.24,219.20 L174.24,122.60 L160.44,122.60 Z " fill="url(#h_al)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M146.64,140.64 L146.64,154.44 L160.44,154.44 L160.44,140.64 L146.64,140.64 Z " fill="url(#h_ru)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<text x="112.00" y="38.00" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">詳細B チルト端ストッパ(断面: レバー/パッド位置 x=26.5)</text>
+<polygon points="147.79,143.37 116.69,151.70 96.45,76.17 127.55,67.83" fill="none" stroke="#000" stroke-width=".3" stroke-dasharray="3 1.5"/>
+<polygon points="74.07,142.25 49.40,121.56 99.67,61.65 124.33,82.35" fill="none" stroke="#000" stroke-width=".3" stroke-dasharray="3 1.5"/>
+<text x="43.00" y="218.60" font-size="2.2" text-anchor="start" font-weight="normal" fill="#000">点線: チルト-15°端 / +40°端のレバー位置(実線は0°)</text>
+<line x1="112.0" y1="44.400000000000006" x2="112.0" y2="223.79999999999998" stroke="#000" stroke-width="0.15" stroke-dasharray="9 1.5 1.5 1.5"/>
+<line x1="15.400000000000006" y1="72.0" x2="190.2" y2="72.0" stroke="#000" stroke-width="0.15" stroke-dasharray="9 1.5 1.5 1.5"/>
+<line x1="37.900693388297086" y1="201.79999999999998" x2="37.900693388297086" y2="210.79999999999998" stroke="#000" stroke-width="0.18"/>
+<line x1="51.70069338829709" y1="201.79999999999998" x2="51.70069338829709" y2="210.79999999999998" stroke="#000" stroke-width="0.18"/>
+<line x1="37.900693388297086" y1="208.79999999999998" x2="51.70069338829709" y2="208.79999999999998" stroke="#000" stroke-width="0.25"/>
+<path d="M37.900693388297086,208.79999999999998 l3,-1 v2 z M51.70069338829709,208.79999999999998 l-3,-1 v2 z" fill="#000"/>
+<text x="44.80" y="207.80" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">パッド厚 6</text>
+<line x1="112.0" y1="118.0" x2="136.0" y2="113.0" stroke="#000" stroke-width="0.25"/>
+<circle cx="136.00" cy="113.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="136.00" y="114.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">1</text>
+<circle cx="112.00" cy="118.00" r=".7" fill="#000"/>
+<line x1="31.040000000000006" y1="187.0" x2="9.040000000000006" y2="182.0" stroke="#000" stroke-width="0.25"/>
+<circle cx="9.04" cy="182.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="9.04" y="183.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">2</text>
+<circle cx="31.04" cy="187.00" r=".7" fill="#000"/>
+<line x1="44.84" y1="127.19999999999999" x2="22.840000000000003" y2="122.19999999999999" stroke="#000" stroke-width="0.25"/>
+<circle cx="22.84" cy="122.20" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="22.84" y="123.40" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">3</text>
+<circle cx="44.84" cy="127.20" r=".7" fill="#000"/>
+<line x1="167.2" y1="164.0" x2="191.2" y2="159.0" stroke="#000" stroke-width="0.25"/>
+<circle cx="191.20" cy="159.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="191.20" y="160.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">4</text>
+<circle cx="167.20" cy="164.00" r=".7" fill="#000"/>
+<line x1="153.4" y1="147.44" x2="177.4" y2="142.44" stroke="#000" stroke-width="0.25"/>
+<circle cx="177.40" cy="142.44" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="177.40" y="143.64" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">5</text>
+<circle cx="153.40" cy="147.44" r=".7" fill="#000"/>
+<g fill="none" stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#000" stroke-width="0.18"><polyline points="241.60,231.60 261.20,231.60"/><polyline points="261.20,231.60 261.20,220.40"/><polyline points="241.60,174.20 241.60,231.60"/><polyline points="237.40,174.20 241.60,174.20"/><polyline points="237.40,174.20 237.40,154.60"/><polyline points="237.40,154.60 241.60,154.60"/><polyline points="241.60,114.00 241.60,154.60"/><polyline points="261.20,114.00 241.60,114.00"/><polyline points="261.20,142.00 261.20,114.00"/><polyline points="264.00,142.00 261.20,142.00"/><polyline points="264.00,150.40 264.00,142.00"/><polyline points="264.00,150.40 272.40,150.40"/><polyline points="272.40,159.92 272.40,150.40"/><polyline points="268.20,159.92 272.40,159.92"/><polyline points="268.20,168.88 268.20,159.92"/><polyline points="268.20,168.88 272.40,168.88"/><polyline points="272.40,178.40 272.40,168.88"/><polyline points="264.00,178.40 272.40,178.40"/><polyline points="264.00,178.40 264.00,172.80"/><polyline points="255.60,172.80 264.00,172.80"/><polyline points="255.60,212.28 255.60,172.80"/><polyline points="264.00,212.28 255.60,212.28"/><polyline points="264.00,220.40 264.00,212.28"/><polyline points="261.20,220.40 264.00,220.40"/><polyline points="255.60,156.00 264.00,156.00"/><polyline points="264.00,156.00 264.00,155.30"/><polyline points="255.60,155.30 264.00,155.30"/><polyline points="255.60,156.00 255.60,155.30"/><polyline points="264.00,155.30 264.00,155.35 264.00,155.40 264.00,155.45 264.00,155.50 264.00,155.55 264.00,155.60 264.00,155.65 264.00,155.70 264.00,155.75 264.00,155.80 264.00,155.85 264.00,155.90 264.00,155.95 264.00,156.00"/><polyline points="264.00,172.80 264.00,173.52 264.00,174.21 264.00,174.85 264.00,175.44 264.00,175.99 264.00,176.48 264.00,176.92 264.00,177.31 264.00,177.64 264.00,177.91 264.00,178.12 264.00,178.28 264.00,178.37 264.00,178.40"/><polyline points="272.40,168.88 272.40,168.77 272.40,168.44 272.40,167.90 272.40,167.19 272.40,166.34 272.40,165.40 272.40,164.40 272.40,163.40 272.40,162.46 272.40,161.61 272.40,160.90 272.40,160.36 272.40,160.03 272.40,159.92"/></g></g>
+<path d="M241.60,114.00 L241.60,231.60 L247.20,231.60 L247.20,114.00 L241.60,114.00 Z " fill="url(#h_al)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M237.40,170.00 L237.40,174.20 L247.20,174.20 L247.20,170.00 L237.40,170.00 Z M247.20,154.60 L237.40,154.60 L237.40,158.80 L247.20,158.80 L247.20,154.60 Z " fill="url(#h_ss)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M247.20,114.00 L247.20,231.60 L255.60,231.60 L255.60,114.00 L247.20,114.00 Z " fill="url(#h_ru)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M255.60,212.28 L255.60,231.60 L261.20,231.60 L261.20,212.28 L255.60,212.28 Z M255.60,114.00 L255.60,155.30 L261.20,155.30 L261.20,114.00 L255.60,114.00 Z " fill="url(#h_al2)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M261.20,212.28 L261.20,220.40 L264.00,220.40 L264.00,212.28 L261.20,212.28 Z M261.20,142.00 L261.20,155.30 L264.00,155.30 L264.00,142.00 L261.20,142.00 Z " fill="url(#h_st2)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M272.40,150.40 L264.00,150.40 L264.00,156.00 L247.20,156.00 L247.20,158.80 L237.40,158.80 L237.40,170.00 L247.20,170.00 L247.20,172.80 L264.00,172.80 L264.00,178.40 L272.40,178.40 L272.40,168.88 L268.20,168.88 L268.20,159.92 L272.40,159.92 L272.40,150.40 Z " fill="url(#h_ss)" fill-rule="evenodd" stroke="#000" stroke-width="0.45" stroke-linejoin="round"/>
+<text x="252.00" y="100.00" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">詳細C キーホール吊り(断面: ピン中心)</text>
+<line x1="271.4" y1="164.4" x2="278.4" y2="164.4" stroke="#000" stroke-width="0.18"/>
+<line x1="271.4" y1="198.0" x2="278.4" y2="198.0" stroke="#000" stroke-width="0.18"/>
+<line x1="280.4" y1="164.4" x2="280.4" y2="198.0" stroke="#000" stroke-width="0.25"/>
+<path d="M280.4,164.4 l-1,3 h2 z M280.4,198.0 l-1,-3 h2 z" fill="#000"/>
+<text x="279.40" y="181.20" font-size="2.8" text-anchor="middle" transform="rotate(-90 279.40 181.20)">掛け位置 12</text>
+<line x1="255.59999999999997" y1="234.6" x2="255.59999999999997" y2="241.6" stroke="#000" stroke-width="0.18"/>
+<line x1="264.0" y1="234.6" x2="264.0" y2="241.6" stroke="#000" stroke-width="0.18"/>
+<line x1="255.59999999999997" y1="239.6" x2="264.0" y2="239.6" stroke="#000" stroke-width="0.25"/>
+<path d="M255.59999999999997,239.6 l3,-1 v2 z M264.0,239.6 l-3,-1 v2 z" fill="#000"/>
+<text x="259.80" y="238.60" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">トレイ+ブッシュ 3.0</text>
+<line x1="244.39999999999998" y1="136.4" x2="210" y2="124" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="124.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="125.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">1</text>
+<circle cx="244.40" cy="136.40" r=".7" fill="#000"/>
+<line x1="251.39999999999998" y1="136.4" x2="210" y2="139" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="139.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="140.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">3</text>
+<circle cx="251.40" cy="136.40" r=".7" fill="#000"/>
+<line x1="258.4" y1="136.4" x2="210" y2="154" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="154.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="155.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">4</text>
+<circle cx="258.40" cy="136.40" r=".7" fill="#000"/>
+<line x1="262.59999999999997" y1="150.4" x2="210" y2="169" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="169.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="170.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">5</text>
+<circle cx="262.60" cy="150.40" r=".7" fill="#000"/>
+<line x1="241.59999999999997" y1="157.4" x2="210" y2="184" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="184.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="185.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">2</text>
+<circle cx="241.60" cy="157.40" r=".7" fill="#000"/>
+<line x1="268.2" y1="157.4" x2="210" y2="199" stroke="#000" stroke-width="0.25"/>
+<circle cx="210.00" cy="199.00" r="3.4" fill="#fff" stroke="#000" stroke-width=".35"/>
+<text x="210.00" y="200.20" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">6</text>
+<circle cx="268.20" cy="157.40" r=".7" fill="#000"/>
+<rect x="214" y="28" width="196" height="56.599999999999994" fill="#fff" stroke="#000" stroke-width=".4"/>
+<line x1="214" y1="34" x2="410" y2="34" stroke="#000" stroke-width="0.3"/>
+<text x="216.00" y="32.20" font-size="2.6" text-anchor="start" font-weight="bold" fill="#000">部品表 / PARTS LIST</text>
+<line x1="214" y1="38.6" x2="410" y2="38.6" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="37.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">B1</text>
+<text x="224.00" y="37.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">尾部レバー SUS304 t5×幅14×長34(0°の姿勢)</text>
+<text x="284.00" y="37.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">2</text>
+<text x="298.00" y="37.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS304</text>
+<text x="329.00" y="37.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-23</text>
+<line x1="214" y1="43.2" x2="410" y2="43.2" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="41.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">B2</text>
+<text x="224.00" y="41.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">前カバー+タブ A6063 t6(+40°ストッパ受け)</text>
+<text x="284.00" y="41.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">1</text>
+<text x="298.00" y="41.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">A6063-T5</text>
+<text x="329.00" y="41.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-22</text>
+<line x1="214" y1="47.8" x2="410" y2="47.8" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">B3</text>
+<text x="224.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ゴムパッド(+40°側) t6</text>
+<text x="284.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">2</text>
+<text x="298.00" y="46.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ウレタン/ゴム 60°</text>
+<text x="329.00" y="46.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-22付属</text>
+<line x1="214" y1="52.4" x2="410" y2="52.4" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="51.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">B4</text>
+<text x="224.00" y="51.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">タイプレート A6063 t6(-15°ストッパ受け)</text>
+<text x="284.00" y="51.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">1</text>
+<text x="298.00" y="51.10" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">A6063-T5</text>
+<text x="329.00" y="51.10" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-22</text>
+<line x1="214" y1="57.0" x2="410" y2="57.0" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="55.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">B5</text>
+<text x="224.00" y="55.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">ゴムパッド(-15°側) t6</text>
+<text x="284.00" y="55.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">2</text>
+<text x="298.00" y="55.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ウレタン/ゴム 60°</text>
+<text x="329.00" y="55.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-22付属</text>
+<line x1="214" y1="61.599999999999994" x2="410" y2="61.599999999999994" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="60.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C1</text>
+<text x="224.00" y="60.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">背板(スラブ背面) A5052 t2</text>
+<text x="284.00" y="60.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">1</text>
+<text x="298.00" y="60.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">A5052-H32</text>
+<text x="329.00" y="60.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-03</text>
+<line x1="214" y1="66.19999999999999" x2="410" y2="66.19999999999999" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C2</text>
+<text x="224.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">PEMナット M4(背板にクリンチ)</text>
+<text x="284.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">4</text>
+<text x="298.00" y="64.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS304</text>
+<text x="329.00" y="64.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">市販 PEM TSOA(U29)</text>
+<line x1="214" y1="70.8" x2="410" y2="70.8" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="69.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C3</text>
+<text x="224.00" y="69.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">断熱シート 3.0</text>
+<text x="284.00" y="69.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">1</text>
+<text x="298.00" y="69.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">断熱シート</text>
+<text x="329.00" y="69.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-14</text>
+<line x1="214" y1="75.4" x2="410" y2="75.4" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="74.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C4</text>
+<text x="224.00" y="74.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">サービストレイ A5052 t2.0(キーホール穴Ø10.2+溝W6.5)</text>
+<text x="284.00" y="74.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">4</text>
+<text x="298.00" y="74.10" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">A5052-H32</text>
+<text x="329.00" y="74.10" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-06</text>
+<line x1="214" y1="80.0" x2="410" y2="80.0" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="78.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C5</text>
+<text x="224.00" y="78.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">補強ブッシュ SUS304 t1.0 (16×28長丸)</text>
+<text x="284.00" y="78.70" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">4</text>
+<text x="298.00" y="78.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS304</text>
+<text x="329.00" y="78.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-05</text>
+<line x1="214" y1="84.6" x2="410" y2="84.6" stroke="#000" stroke-width="0.12"/>
+<text x="216.00" y="83.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">C6</text>
+<text x="224.00" y="83.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">吊りピン SUS304 肩径Ø6 h8×6.0, 頭Ø10×3, M4×3.5</text>
+<text x="284.00" y="83.30" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">4</text>
+<text x="298.00" y="83.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS304</text>
+<text x="329.00" y="83.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-04(U29)</text>
+<text x="286.00" y="112.00" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ストッパ(B): チルト-15°/+40°端で、尾部レバー(1)の側縁の角が厚6mmのゴムパッド(3,5)へ圧縮</text>
+<text x="289.00" y="115.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">1/0.5mmだけ食い込んで止まる。受けは前カバー(2)とタイプレート(4)(t6)。位置は tools/nec</text>
+<text x="289.00" y="119.40" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">kgeom.py が spec から導出。</text>
+<text x="286.00" y="124.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">キーホール(C): ピン(6)の頭Ø10がトレイの丸穴Ø10.2を通り、トレイを12mm下げるとピン肩Ø6が溝W</text>
+<text x="289.00" y="128.00" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">6.5の上端に掛かる。支圧はトレイt2+ブッシュt1=3.0mm。ブッシュ(5)はピン掛かり位置(+12)まで覆</text>
+<text x="289.00" y="131.70" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">う長丸(16×28)。</text>
+<text x="286.00" y="136.60" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ピン(6)はPEMナット(2)へM4(1.7N·m+ネジロック)。引抜耐力・ピン肩の曲げ(30G時114MPa)</text>
+<text x="289.00" y="140.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">は tools/strength_check.py。溝とピンのすき間(位置公差込み)は tools/fit_to</text>
+<text x="289.00" y="144.00" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">lerance.py。</text>
+<text x="286.00" y="148.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">未確認: ゴムパッドの材質/硬度/耐久(U52)、PEM引抜耐力(U29)。寸法は設計値(未承認)。</text>
+</svg>
