@@ -64,7 +64,7 @@ def stand_solids():
         side = body if side is None else side.union(body)
     P['ネック側板'] = side
     P['タイプレート/前後カバー/タブ'] = box(-nk['side_x'][0], nk['side_x'][0], nk['tie_y'][0], nk['tie_y'][1], ZC + nk['tie_z'][0], ZC + nk['tie_z'][1]).union(box(-60, 60, SYS, nk['cover_top'], ZC + nk['front_cover_z'][0], ZC + nk['front_cover_z'][1])).union(box(-60, 60, SYS, nk['cover_top'], ZC + nk['back_cover_z'][0], ZC + nk['back_cover_z'][1])).union(box(nk['tab_x'][0], nk['tab_x'][1], nk['cover_top'], nk['tab_y_top'], ZC + nk['front_cover_z'][0], ZC + nk['front_cover_z'][1]))
-    P['ヒンジ軸Ø12'] = cylX(12, -75, 75, HY, ZC)
+    P['ヒンジ軸Ø12'] = cylX(12, -66, 66, HY, ZC)
     lev = None
     for sx in (-1, 1):
         l_ = box(sx * 26.5 - nk['lever_t'] / 2, sx * 26.5 + nk['lever_t'] / 2, HY - nk['lever_len'], HY, ZC - nk['lever_w'] / 2, ZC + nk['lever_w'] / 2)

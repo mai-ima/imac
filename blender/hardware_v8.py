@@ -86,19 +86,20 @@ hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼�
 cyl('hinge_axle', 6.0, 150, 'x', 0, HY, ZC, M['steel'], 24, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
-# ---- チルト・バランサ(v9): 圧縮ダイスプリング2本 + ヒンジ尾部レバー(軸から下へ e=25) / スタンド側アンカー(軸から下へ s=65)。tools/balance_calc.py / model/balance.json ----
+# ---- チルト・バランサ(v9): 圧縮ダイスプリング2本 + ヒンジ尾部レバー(軸から下へ e=25) / スタンド側アンカー(軸から下へ s=balance.json)。tools/balance_calc.py / model/balance.json ----
 BAL = json.load(open(os.path.join(ROOT, 'model', 'balance.json')))
 BS, BE = BAL['s'], BAL['e']
 for k, sx_ in enumerate((-1, 1)):
     xl = sx_ * 26
     hb(f'hinge_tail_lever{k}', S['neck']['lever_t'], S['neck']['lever_len'], S['neck']['lever_w'], sx_ * 26.5 - S['neck']['lever_t'] / 2, HY - S['neck']['lever_len'], ZC - S['neck']['lever_w'] / 2, M['sus'])                              # 尾部レバー(軸Ø12にキー止め, 幅8)
-    cyl(f'hinge_tail_pin{k}', 3.0, 20, 'x', xl - sx_ * 6, HY - BE, ZC, M['steel'], 16)                          # 先端の横ピン(ばね上座の揺動ピン)
-    hb(f'spring_seat_top{k}', 16, 3, 16, sx_ * 14 - 8, HY - BE - 3, ZC - 8, M['sus'])
-    hb(f'spring_seat_bot{k}', 16, 3, 16, sx_ * 14 - 8, HY - BS, ZC - 8, M['sus'])
-    cyl(f'spring_guide_rod{k}', 3.25, BS - BE - 6, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['steel'], 16)
-    cyl(f'spring_die{k}', 8.0, BS - BE - 8, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['spring'], 24)           # 呼称位置(0°)。実機は両端揺動ピンで ±19°振れる(モデルは0°固定の簡略)
+    cyl(f'hinge_tail_pin{k}', S['neck']['lever_pin_d'] / 2, 20, 'x', xl - sx_ * 6, HY - BE, ZC, M['steel'], 16)                          # 先端の横ピン(ばね上座の揺動ピン)
+    HW_ = S['hinge']['balance_end_hw_mm'] / 2          # ばね端金物(ピン中心→ばね座面)=片側 HW/2
+    hb(f'spring_seat_top{k}', 16, 3, 16, sx_ * 14 - 8, HY - BE - HW_, ZC - 8, M['sus'])
+    hb(f'spring_seat_bot{k}', 16, 3, 16, sx_ * 14 - 8, HY - BS + HW_ - 3, ZC - 8, M['sus'])
+    cyl(f'spring_boss_top{k}', 3.8, 4, 'y', sx_ * 14, HY - BE - HW_ - 2, ZC, M['steel'], 16); cyl(f'spring_boss_bot{k}', 3.8, 4, 'y', sx_ * 14, HY - BS + HW_ + 2, ZC, M['steel'], 16)
+    cyl(f'spring_die{k}', 8.0, BS - BE - 2 * HW_, 'y', sx_ * 14, HY - (BS + BE) / 2, ZC, M['spring'], 24)           # 呼称位置(0°)。実機は両端揺動ピンで ±19°振れる(モデルは0°固定の簡略)
 hb('stand_anchor_pin_bridge', 66, 6, 12, -33, HY - BS - 6, ZC - 6, M['sus'])
-hw('ヒンジ', f"ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用{BAL['stroke']:.1f}mm, 最長側{BAL['F0_longest_total']/2:.0f}N/最大{BAL['F0_longest_total']*(1+BAL['p'])/2:.0f}N 1本あたり, p={BAL['p']})+ガイドロッド Ø6.5+両端揺動ピン", 2, 'U26/U51: 型番未選定。ばね軸は±19°揺動するため両端ピン支持のテレスコ式ガイドが必要')
+hw('ヒンジ', f"ダイスプリング(JIS金型用コイルばね Ø16, 圧縮使用{BAL['stroke']:.1f}mm, 最長側{BAL['F0_longest_total']/2:.0f}N/最大{BAL['F0_longest_total']*(1+BAL['p'])/2:.0f}N 1本あたり, p={BAL['p']})+端部位置決めボス Ø7.6+両端揺動ピン(Ø8 17-4PH)", 2, 'U26/U51: 型番未選定。ばね軸は±19°揺動するため両端ピン支持のテレスコ式ガイドが必要')
 hw('ヒンジ', '尾部レバー SUS304 t5×幅14×長50 (e=25mm)+横ピン Ø6', 2, 'balance_calc.py')
 NKh = S['neck']; LL = NKh['lever_len']
 for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー(長さ50)の側縁が、-15°側は側板間タイプレート(t6)のゴムパッド、+40°側は前カバー(t6)内面のゴムパッドに当たる

@@ -5,10 +5,10 @@
 ## 1. 現行の主要数値(model/spec.json)
 - 本体: 幅620.0mm×スラブ厚25.0mm、ドーム総厚190mm(内奥行162.0mm。ポンプ垂直出口ホース用)
 - スタンド: 足360×310mm、ballast 3.5kg、チルト-15〜+40°、首振り±60°、ヒンジ軸 z=45.0
-- バランサ: s=66 e=25 最長側355N/本 p=0.5、摩擦保持5.8N·m±8%、操作力目標≦25N
+- バランサ: s=76 e=25 最長側365N/本 p=0.6、摩擦保持5.8N·m±8%、操作力目標≦25N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1027件 = 現行 298 + 履歴archive 729)
+## 2. ファイル構成(git追跡 1043件 = 現行 300 + 履歴archive 743)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
@@ -17,12 +17,12 @@
 | blender | 23 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
-| docs | 53 | 仕様・設計書・調査・監査記録 |
+| docs | 54 | 仕様・設計書・調査・監査記録 |
 | drawings | 44 | 図面(SVG/DXF/PDF入力) |
 | handoff | 67 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |
-| tools | 47 | 生成器・計算・検査ゲート |
+| tools | 48 | 生成器・計算・検査ゲート |
 | viewer | 3 | Three.jsビューア+GLB |
 
 ## 3. 主要ファイル(一行要約)
@@ -36,6 +36,7 @@
 - `cablemodel.py` — 配線・ホースの経路定義(単一情報源)。layout.json から座標を導き、model/cables.json を出力する。
 - `cadviews.py` — cadquery の HLR(隠線処理)で実形状から正投影の線画(見える線/隠れ線)を取り出し、A3図面SVGへ配置する共通部品。
 - `check_sources.py` — 公式/一次情報URLの取得可否を確認し、状態を表示する(以前403/429だったものが取得可能になったかの検知用)。
+- `consistency_check.py` — 全ファイル矛盾検出: 正規値(model/*.json)と、現行の docs/drawings/py/svg/viewer 内の数値記述を突き合わせる。
 - `dfm_check.py` — 加工成立性(DFM)の簡易ゲート: 薄板への溝/ポケットの残肉 ≥ min_residual を custom_parts.json の dfm 値で検査(CP-07)。
 - `drawlib.py` — 業界標準(ISO)準拠の図枠/表題欄ライブラリ。
 - `fit_tolerance.py` — 機構の「ゆるゆる/硬すぎ」ゲート: 各インタフェースの公差(IT級・摩擦係数・ばね荷重・圧縮量)を最悪ケースで振り、遊び/操作力/保持力が許容窓に入るかを判定する。
@@ -86,6 +87,7 @@
 
 ### docs/
 
+- `PRINCIPLES.md` — 基本思想・制作思想(不変条件) — 各周で必ず確認する
 - `PROJECT-SUMMARY.md` — プロジェクト要約(自動生成 2026-11-06)
 - `README.md` — docs/ 索引(現行: v9)
 - `anatomy.md` — iMac 24インチ 部位と配置

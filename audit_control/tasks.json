@@ -1,0 +1,1709 @@
+{
+ "schema": 1,
+ "tasks": [
+  {
+   "id": "K01",
+   "title": "[K] ドームの板厚・内寸(pod.wall/dome.sheet_t/CP-07/03_pod_cover.svg/ビューアWALL)の意味と混在",
+   "description": "[K] ドームの板厚・内寸(pod.wall/dome.sheet_t/CP-07/03_pod_cover.svg/ビューアWALL)の意味と混在",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/spec.json",
+    "model/custom_parts.json",
+    "tools/fitcheck.py",
+    "viewer/index.html"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K02",
+   "title": "[K] スタンド寸法(足)と転倒計算の世代混在(CP-10/FMEA/joint-analysis)",
+   "description": "[K] スタンド寸法(足)と転倒計算の世代混在(CP-10/FMEA/joint-analysis)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/spec.json",
+    "tools/stability.py",
+    "docs/joint-analysis.md"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K03",
+   "title": "[K] 最大厚・前面積層・公差(116→190mm, 18/19mm, 断面図)",
+   "description": "[K] 最大厚・前面積層・公差(116→190mm, 18/19mm, 断面図)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/spec.json",
+    "drawings/11a_section_AA.svg"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K04",
+   "title": "[K] カメラ/マイク開口の図面不一致(01_front_glass.svg/CP-01)",
+   "description": "[K] カメラ/マイク開口の図面不一致(01_front_glass.svg/CP-01)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "drawings/01_front_glass.svg",
+    "drawings/parts/CP-01.svg"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "カメラ窓Ø4.0へ統一済み(01_front_glass.svg/CP-01.svg/custom_parts.json)。Ø3.6残存なし"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "カメラ窓Ø4.0へ統一済み(01_front_glass.svg/CP-01.svg/custom_parts.json)。Ø3.6残存なし"
+   ],
+   "verification": "grep",
+   "decision": "SUPERSEDED(解決済)。実カメラ型番確定まで窓径はUNVERIFIED(K21)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K05",
+   "title": "[K] fitcheck のAABB例外許可と偽PASS",
+   "description": "[K] fitcheck のAABB例外許可と偽PASS",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/fitcheck.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "fitcheck.py: 許容リスト allow の重なりを [EXPECTED_OVERLAP] として毎回明示出力(従来は無言)。cooler-ram/ssd は WARN も継続"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "fitcheck.py: 許容リスト allow の重なりを [EXPECTED_OVERLAP] として毎回明示出力(従来は無言)。cooler-ram/ssd は WARN も継続"
+   ],
+   "verification": "python3 tools/fitcheck.py 実行: EXPECTED_OVERLAP表示",
+   "decision": "PARTIAL→ADAPT。実形状(STEP)なし=UNVERIFIED維持。B-rep干渉は別タスク",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K06",
+   "title": "[K] stability の40N目標と判定ロジックの一致",
+   "description": "[K] stability の40N目標と判定ロジックの一致",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/stability.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "stability.py GOAL=front25/back20/side30 を判定と報告で同一使用(要求ID化はdocs/spec)。40Nは旧提案で現行要求ではない"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "stability.py GOAL=front25/back20/side30 を判定と報告で同一使用(要求ID化はdocs/spec)。40Nは旧提案で現行要求ではない"
+   ],
+   "verification": "python3 tools/stability.py exit0 全格子OK",
+   "decision": "SUPERSEDED(目標を25/20/30Nに確定。根拠=IEC10°傾斜+押力。要ユーザー確認)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K07",
+   "title": "[K] CPU 9950X3D/9800X3Dの情報混在",
+   "description": "[K] CPU 9950X3D/9800X3Dの情報混在",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/spec/wiring-spec.md",
+    "docs/thermal-analysis.md"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K08",
+   "title": "[K] 491/504/552/510W の DC/AC/熱境界の混在",
+   "description": "[K] 491/504/552/510W の DC/AC/熱境界の混在",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/power_budget.py",
+    "docs/spec"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K09",
+   "title": "[K] 液晶制御基板(ctrl_board)型番未確定・互換未検証",
+   "description": "[K] 液晶制御基板(ctrl_board)型番未確定・互換未検証",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/parts.json",
+    "docs/spec/panel-driver.md"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K10",
+   "title": "[K] GPU→液晶コントローラ映像ケーブル未定義/W4長さ不一致",
+   "description": "[K] GPU→液晶コントローラ映像ケーブル未定義/W4長さ不一致",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/cables.json"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:09",
+     "in_review",
+     "model/cables.json に W7(GPU DP→ctrl映像, 301mm級)を追加(tools/cablemodel.py)。cable_check 全OK(ライザー上越え/プラグ空間回避/曲げR16)"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "model/cables.json に W7(GPU DP→ctrl映像, 301mm級)を追加(tools/cablemodel.py)。cable_check 全OK(ライザー上越え/プラグ空間回避/曲げR16)"
+   ],
+   "verification": "python3 tools/cable_check.py 総合: 問題なし",
+   "decision": "CONFIRMED(未定義だった)→ADAPT。残: ファン/ポンプ/電源SW/カメラ/アンテナ配線(K10b)、ctrl映像入力コネクタ型番U",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K11",
+   "title": "[K] 防塵フィルタ(#100/#150)と通気孔仕様の競合(CP-13)",
+   "description": "[K] 防塵フィルタ(#100/#150)と通気孔仕様の競合(CP-13)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "drawings/parts/CP-13.svg"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "メッシュを#100に一本化: custom_parts.json CP-13, docs/spec/standard-parts.md(旧#150混在を解消)"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "メッシュを#100に一本化: custom_parts.json CP-13, docs/spec/standard-parts.md(旧#150混在を解消)"
+   ],
+   "verification": "grep '#150' 残存0",
+   "decision": "CONFIRMED→ADAPT(#100採用: 開口率/圧損優先。埃捕集は実測U)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K12",
+   "title": "[K] gen_mfg_drawings の旧パラメータ(φ4.2/ピッチ7/pod.wall)",
+   "description": "[K] gen_mfg_drawings の旧パラメータ(φ4.2/ピッチ7/pod.wall)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mfg_drawings.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K13",
+   "title": "[K] gen_specs/gen_package の固定文言・同期漏れ",
+   "description": "[K] gen_specs/gen_package の固定文言・同期漏れ",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_specs.py",
+    "tools/gen_package.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K14",
+   "title": "[K] 廃止CP-15の残留",
+   "description": "[K] 廃止CP-15の残留",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "drawings/parts/CP-15.svg"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "drawings/parts/README.md の『CP-15.svg残す』記述が実体と不一致→欠番に修正。stale_checkがCP-15復活を検出"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "drawings/parts/README.md の『CP-15.svg残す』記述が実体と不一致→欠番に修正。stale_checkがCP-15復活を検出"
+   ],
+   "verification": "ls drawings/parts にCP-15.svg無し/grep",
+   "decision": "CONFIRMED(軽微)→修正",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K15",
+   "title": "[K] CP-07 薄板の磁石ポケット深さ/ガスケット溝の成立性",
+   "description": "[K] CP-07 薄板の磁石ポケット深さ/ガスケット溝の成立性",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K16",
+   "title": "[K] ヒンジ重力トルクの符号・文書間整合(hinge-design/joint-analysis)",
+   "description": "[K] ヒンジ重力トルクの符号・文書間整合(hinge-design/joint-analysis)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/hinge-design.md",
+    "docs/joint-analysis.md"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K17",
+   "title": "[K] 6GHz RF窓と金属格子のOTA影響(CP-12)",
+   "description": "[K] 6GHz RF窓と金属格子のOTA影響(CP-12)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K18",
+   "title": "[K] 冷却・騒音・寿命の未実証(再循環/38dBA)",
+   "description": "[K] 冷却・騒音・寿命の未実証(再循環/38dBA)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/thermal_calc.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K19",
+   "title": "[K] 要求/U台帳/FMEA件数の相違",
+   "description": "[K] 要求/U台帳/FMEA件数の相違",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/spec/system-spec.md",
+    "docs/unverified-tracker.md"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K20",
+   "title": "[K] ビューアの固定表示値(温度/電力)とGLB差",
+   "description": "[K] ビューアの固定表示値(温度/電力)とGLB差",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "viewer/index.html"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K21",
+   "title": "[K] カメラ/マイク/スピーカー未選定",
+   "description": "[K] カメラ/マイク/スピーカー未選定",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/parts.json"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K22",
+   "title": "[K] 質量・重心・締結力の推定依存",
+   "description": "[K] 質量・重心・締結力の推定依存",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/massmodel.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K23",
+   "title": "[K] fitcheck の固定True(PCIe補助電源/パネル電源)",
+   "description": "[K] fitcheck の固定True(PCIe補助電源/パネル電源)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/fitcheck.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ],
+    [
+     "2026-11-06 23:08",
+     "done",
+     "fitcheck.py に chk(...,True,...) 固定真は現存せず(grep)。UNVERIFIED項目はGPU電源/パネル給電を別集計"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [
+    "fitcheck.py に chk(...,True,...) 固定真は現存せず(grep)。UNVERIFIED項目はGPU電源/パネル給電を別集計"
+   ],
+   "verification": "grep 'chk(.*True' = 0件",
+   "decision": "SUPERSEDED(旧版の指摘。解消済)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K24",
+   "title": "[K] SVG/DXFが正式製造データとして不足(GD&T/STEP/穴表)",
+   "description": "[K] SVG/DXFが正式製造データとして不足(GD&T/STEP/穴表)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "drawings",
+    "handoff"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K25",
+   "title": "[K] 外部比較・価格・規格の時点違い",
+   "description": "[K] 外部比較・価格・規格の時点違い",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A01",
+   "title": "[A] 冷却時の液晶熱経路",
+   "description": "[A] 冷却時の液晶熱経路",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A02",
+   "title": "[A] ファン/ポンプ停止のフェイルセーフ",
+   "description": "[A] ファン/ポンプ停止のフェイルセーフ",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A03",
+   "title": "[A] 音響と電磁/熱のトレードオフ",
+   "description": "[A] 音響と電磁/熱のトレードオフ",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A04",
+   "title": "[A] 表示品質(60Hz/反射/HDR/VRR)",
+   "description": "[A] 表示品質(60Hz/反射/HDR/VRR)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A05",
+   "title": "[A] ガラスの構造・修理性",
+   "description": "[A] ガラスの構造・修理性",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A06",
+   "title": "[A] I/O人間工学(下向きI/O)",
+   "description": "[A] I/O人間工学(下向きI/O)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A07",
+   "title": "[A] 組立順序の成立",
+   "description": "[A] 組立順序の成立",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A08",
+   "title": "[A] ドーム脱着時のPE再接続",
+   "description": "[A] ドーム脱着時のPE再接続",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A09",
+   "title": "[A] 衝撃・輸送・耐久",
+   "description": "[A] 衝撃・輸送・耐久",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A10",
+   "title": "[A] コスト・供給・小ロット",
+   "description": "[A] コスト・供給・小ロット",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A11",
+   "title": "[A] 安全規格と知財の適用範囲",
+   "description": "[A] 安全規格と知財の適用範囲",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A12",
+   "title": "[A] データ品質(ハッシュ≠正当性)",
+   "description": "[A] データ品質(ハッシュ≠正当性)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A13",
+   "title": "[A] ロールバックと互換性",
+   "description": "[A] ロールバックと互換性",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A14",
+   "title": "[A] セキュリティ/ソフト保守(CDN/ライセンス)",
+   "description": "[A] セキュリティ/ソフト保守(CDN/ライセンス)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "A15",
+   "title": "[A] スコープ優先順位(高性能・薄型・静音・安価・修理性)",
+   "description": "[A] スコープ優先順位(高性能・薄型・静音・安価・修理性)",
+   "type": "verify",
+   "origin": "previous_audit_hypothesis",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "M-ART",
+   "title": "マスター指示の成果物(18〜25: 機能保全マトリクス/追加改修/回帰結果/K-A証拠表/改善案決定表/ChatGPT監査訂正/決定ログ/レビューチェック)を audit_control/ または audit_output/ に整備",
+   "description": "マスター指示の成果物(18〜25: 機能保全マトリクス/追加改修/回帰結果/K-A証拠表/改善案決定表/ChatGPT監査訂正/決定ログ/レビューチェック)を audit_control/ または audit_output/ に整備",
+   "type": "doc",
+   "origin": "master_prompt",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "L",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "triaged",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "M-VAL",
+   "title": "audit_control/validate_state.py(台帳整合の機械検査)を run_gates に組込む",
+   "description": "audit_control/validate_state.py(台帳整合の機械検査)を run_gates に組込む",
+   "type": "tool",
+   "origin": "master_prompt",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "M-CLAUDEMD",
+   "title": "CLAUDE.md(恒常規則+台帳参照)を作成",
+   "description": "CLAUDE.md(恒常規則+台帳参照)を作成",
+   "type": "doc",
+   "origin": "master_prompt",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "XS",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "D05",
+   "title": "首振り(クロスローラ軸受+摩擦リング+波ばね+ストッパ)の断面図 D05(ハッチ+部品表+注記)",
+   "description": "首振り(クロスローラ軸受+摩擦リング+波ばね+ストッパ)の断面図 D05(ハッチ+部品表+注記)",
+   "type": "drawing",
+   "origin": "user_request",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mech_sections.py"
+   ],
+   "severity": "P2",
+   "size": "L",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "bearing 高さ13・ステータ凹部・摩擦リング+波ばねの断面を作図"
+  },
+  {
+   "id": "D06",
+   "title": "ストッパ(ゴムパッド/ポスト)・ドームラッチ/フック・キーホール吊りの断面図 D06",
+   "description": "ストッパ(ゴムパッド/ポスト)・ドームラッチ/フック・キーホール吊りの断面図 D06",
+   "type": "drawing",
+   "origin": "user_request",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "L",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "POLY",
+   "title": "Blenderモデルのポリゴン細分化(ユーザー許可): 曲面セグメント数・ベベル・円筒分割数を増やし、再生成→GLB→ビューア更新(GLB容量上限に注意)",
+   "description": "Blenderモデルのポリゴン細分化(ユーザー許可): 曲面セグメント数・ベベル・円筒分割数を増やし、再生成→GLB→ビューア更新(GLB容量上限に注意)",
+   "type": "quality",
+   "origin": "user_request",
+   "requirement_ids": [],
+   "file_paths": [
+    "blender/build_imac_pc_v8.py",
+    "blender/hardware_v8.py"
+   ],
+   "severity": "P3",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "BAL-HW",
+   "title": "バランサ端金物長(balance_end_hw_mm=16)を balance_calc/D04/Blender/docs へ反映済みの確認+ばね座屈細長比ゲート追加(done候補)",
+   "description": "バランサ端金物長(balance_end_hw_mm=16)を balance_calc/D04/Blender/docs へ反映済みの確認+ばね座屈細長比ゲート追加(done候補)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/balance_calc.py",
+    "model/spec.json",
+    "blender/hardware_v8.py"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "in_review",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "PIN-8",
+   "title": "レバー先端横ピンØ6→Ø8 SUS630(曲げ145MPa)へ変更、strength_check追加(done候補)",
+   "description": "レバー先端横ピンØ6→Ø8 SUS630(曲げ145MPa)へ変更、strength_check追加(done候補)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/strength_check.py",
+    "model/spec.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "in_review",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "SHIM",
+   "title": "荷重調整方式を M8調整ねじ→ピールシム(±27N/本)へ変更した文書同期(custom_parts.json CP-23/hardware_list)と、調整範囲±10%要求(F±10%→3%)との整合確認",
+   "description": "荷重調整方式を M8調整ねじ→ピールシム(±27N/本)へ変更した文書同期(custom_parts.json CP-23/hardware_list)と、調整範囲±10%要求(F±10%→3%)との整合確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "±27N/本=±7%<±10%(未調整公差)なので工場選別ばねorシム範囲拡大が必要か判定"
+  },
+  {
+   "id": "ANCHOR-6",
+   "title": "アンカーピン中心が基台上面から6mm(s≦76)の強度/造形成立性と s 上限の再検討(基台座ぐり or 基台高さ変更の代替)",
+   "description": "アンカーピン中心が基台上面から6mm(s≦76)の強度/造形成立性と s 上限の再検討(基台座ぐり or 基台高さ変更の代替)",
+   "type": "verify",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/balance_calc.py"
+   ],
+   "severity": "P2",
+   "size": "M",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "HINGE-D22",
+   "title": "摩擦ヒンジØ22が軸y=10で底面y=-1に1mm突出(ブーツ内空間)を motion_check へ明示検査",
+   "description": "摩擦ヒンジØ22が軸y=10で底面y=-1に1mm突出(ブーツ内空間)を motion_check へ明示検査",
+   "type": "verify",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/motion_check.py"
+   ],
+   "severity": "P3",
+   "size": "XS",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "XCHK",
+   "title": "consistency_check の対象事実を拡張(ばね/ヒンジ/軸径/部品個数/件数ベタ書き)し、HIST以外の WARN を整理",
+   "description": "consistency_check の対象事実を拡張(ばね/ヒンジ/軸径/部品個数/件数ベタ書き)し、HIST以外の WARN を整理",
+   "type": "tool",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/consistency_check.py"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "ready",
+   "history": [
+    [
+     "2026-11-06 23:07",
+     "ready",
+     "seeded"
+    ]
+   ],
+   "acceptance_criteria": "原典/コードで再検証し CONFIRMED/PARTIAL/FALSE_POSITIVE/SUPERSEDED/UNVERIFIED を判定、必要なら修正+テスト+台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "K10b",
+   "title": "追加配線の定義: ラジエーターファン/ポンプ/電源ボタン+LED/カメラUSB/Wi-Fiアンテナ同軸(cables.json W8〜)と BOM/Blender 反映",
+   "description": "追加配線の定義: ラジエーターファン/ポンプ/電源ボタン+LED/カメラUSB/Wi-Fiアンテナ同軸(cables.json W8〜)と BOM/Blender 反映",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/cables.json",
+    "tools/cablemodel.py"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:09",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "W4LEN",
+   "title": "W4 長さ168/59mmの資料間不一致をcables.json(生成値)に統一し文書の手書き長を除去",
+   "description": "W4 長さ168/59mmの資料間不一致をcables.json(生成値)に統一し文書の手書き長を除去",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-06 23:09",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  }
+ ]
+}

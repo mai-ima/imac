@@ -26,7 +26,7 @@ row('キーホール溝-吊りピン肩の隙間(4点の位置公差±%.1f積み
 # 3) 位置決めピンØ4(g6) と ピン穴Ø4 H7
 d_lo = F['dowel_d'] + F['dowel_hole_tol'][0] - (F['dowel_d'] + F['dowel_shaft_tol'][1]); d_hi = F['dowel_d'] + F['dowel_hole_tol'][1] - (F['dowel_d'] + F['dowel_shaft_tol'][0])
 row('位置決めピン Ø4 g6/H7 の隙間', d_lo, d_hi, 0.0, 0.03, 'mm', F['dowel_note'], 0)
-# 4) ヒンジ軸Ø10 h7相当 と軸ボス穴 H7相当
+# 4) ヒンジ軸Ø12 h7相当 と軸ボス穴 H7相当
 a_lo = F['axle_bore_tol'][0] - F['axle_tol'][1]; a_hi = F['axle_bore_tol'][1] - F['axle_tol'][0]
 row('ヒンジ軸Ø12-ボス穴の隙間', a_lo, a_hi, 0.0, 0.02, 'mm', '緩い=軸ガタ→画面のカタつき(上端で隙間×0.41/0.02倍に拡大)', 0)
 # 5) 首振り摩擦: T=μ·F·r (μ, 予圧の公差) と 操作力/保持

@@ -262,6 +262,15 @@
    "file": "hardware_v8/hardware_v8.v008__2026-11-06_85af1a8.py"
   },
   {
+   "src": "blender/hardware_v8.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "ba838f6937d1d43dc83a667859c02d904dad0fb885388edf214975d8ae871b56",
+   "file": "hardware_v8/hardware_v8.v009__2026-11-06_88f99b7.py"
+  },
+  {
    "src": "blender/imac_pc.blend",
    "version": 1,
    "gen": "current",

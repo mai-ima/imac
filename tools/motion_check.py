@@ -108,8 +108,8 @@ shear = max(abs(rot([(0.0, ZC)], a)[0][1] - ZC + 0.0 if False else (ZC + (0 - HY
 print(f'ブーツのせん断(上下取付面の水平ずれ) 最大 {shear:.1f}mm ≦ 許容 {BT["shear_mm"]}mm [{"OK" if shear <= BT["shear_mm"] else "NG"}]'); bad += 0 if shear <= BT['shear_mm'] else 1
 if gmin[0] <= 0.05: print('[NG ] スラブ下縁がカバーに接触'); bad += 1
 # バランサ下側部品(アンカー座・調整ねじ・ブリッジ)が基台に食い込まない: 最下点 ≥ 基台上面+2mm、かつ側板間に収まる
-low = HY - BS - 3 - 10; ok_low = low >= SYS + 2
-print(f'バランサ最下点 y={low:.0f}mm(調整ねじ含む) / 基台上面 y={SYS:.0f}mm [{"OK" if ok_low else "NG(基台に干渉)"}]'); bad += 0 if ok_low else 1
+low = HY - BS - 6; ok_low = low >= SYS - 1e-6     # アンカー=クレビス受け(耳R6)が基台上面に着座(ボルト固定)。調整ねじ等はばね端金物(balance_end_hw_mm)の内側
+print(f'バランサ最下点(アンカー耳R6) y={low:.0f}mm / 基台上面 y={SYS:.0f}mm [{"OK" if ok_low else "NG(基台に干渉)"}]'); bad += 0 if ok_low else 1
 # PE編組の長さ: 可動範囲での端間距離の最大 + 余長 ≦ 編組長(model/pe_braids.json)
 PE = json.load(open(f'{R}/model/pe_braids.json'))
 a_sw = 0.0; A0 = (NK['side_x'][1], 0.0); Bp = (0.0, -75.0)      # 水平面: ネック側(回転)端 r≈62、足側(固定)端 r≈75(背面側)。首振り±SWで端間距離が最大になる角度を探索

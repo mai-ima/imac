@@ -15,6 +15,7 @@
 | custom-parts.md | v009 | current | 2026-11-06 | ef5ecbc | custom-parts/custom-parts.v009__2026-11-06_ef5ecbc.md |
 | custom-parts.md | v010 | current | 2026-11-06 | d97f07e | custom-parts/custom-parts.v010__2026-11-06_d97f07e.md |
 | custom-parts.md | v011 | current | 2026-11-06 | 02c4c72 | custom-parts/custom-parts.v011__2026-11-06_02c4c72.md |
+| custom-parts.md | v012 | current | 2026-11-06 | 88f99b7 | custom-parts/custom-parts.v012__2026-11-06_88f99b7.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |
@@ -22,11 +23,14 @@
 | hardware-list.md | v002 | current | 2026-11-06 | 432b08c | hardware-list/hardware-list.v002__2026-11-06_432b08c.md |
 | hardware-list.md | v003 | current | 2026-11-06 | d97f07e | hardware-list/hardware-list.v003__2026-11-06_d97f07e.md |
 | hardware-list.md | v004 | current | 2026-11-06 | 02c4c72 | hardware-list/hardware-list.v004__2026-11-06_02c4c72.md |
+| hardware-list.md | v005 | current | 2026-11-06 | 853f219 | hardware-list/hardware-list.v005__2026-11-06_853f219.md |
 | hole-table.md | v001 | current | 2026-11-06 | 514e2e0 | hole-table/hole-table.v001__2026-11-06_514e2e0.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
 | joint-matrix.md | v002 | current | 2026-11-05 | fcba5fe | joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md |
+| joint-matrix.md | v003 | current | 2026-11-06 | 302823c | joint-matrix/joint-matrix.v003__2026-11-06_302823c.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |
 | performance-benchmark.md | v001 | current | 2026-11-05 | 853c2f5 | performance-benchmark/performance-benchmark.v001__2026-11-05_853c2f5.md |
+| standard-parts.md | v001 | current | 2026-11-05 | e1880f0 | standard-parts/standard-parts.v001__2026-11-05_e1880f0.md |
 | system-spec.md | v001 | current | 2026-11-05 | b97eaae | system-spec/system-spec.v001__2026-11-05_b97eaae.md |
 | system-spec.md | v002 | current | 2026-11-05 | 15a1bce | system-spec/system-spec.v002__2026-11-05_15a1bce.md |
 | system-spec.md | v003 | current | 2026-11-05 | 853c2f5 | system-spec/system-spec.v003__2026-11-05_853c2f5.md |
@@ -42,3 +46,4 @@
 | wiring-spec.md | v004 | current | 2026-11-06 | 9ff6031 | wiring-spec/wiring-spec.v004__2026-11-06_9ff6031.md |
 | wiring-spec.md | v005 | current | 2026-11-06 | 514e2e0 | wiring-spec/wiring-spec.v005__2026-11-06_514e2e0.md |
 | wiring-spec.md | v006 | current | 2026-11-06 | 853f219 | wiring-spec/wiring-spec.v006__2026-11-06_853f219.md |
+| wiring-spec.md | v007 | current | 2026-11-06 | 88f99b7 | wiring-spec/wiring-spec.v007__2026-11-06_88f99b7.md |

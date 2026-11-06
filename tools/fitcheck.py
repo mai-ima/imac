@@ -59,6 +59,7 @@ for a, b in itertools.combinations(boxes, 2):
     A, B = boxes[a], boxes[b]
     ov = all(A[i] < B[i+3] and B[i] < A[i+3] for i in range(3))
     if ov and frozenset((a, b)) not in allow: chk(f"干渉 {a}-{b}", False, 'AABBが重なる')
+    if ov and frozenset((a, b)) in allow: print(f'[EXPECTED_OVERLAP] {a}-{b}: AABB重なりを許容(基板上取付/重なりは実形状未確認=UNVERIFIED。例外許可リスト allow の項目)')
 chk('干渉なし(許容組合せを除く)', ok, '全組合せ確認済')
 # 最小クリアランス(ふた側)
 pass

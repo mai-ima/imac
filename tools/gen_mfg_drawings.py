@@ -108,7 +108,7 @@ e_, s_ = BALv['e'], BALv['s']
 b.append(f'<line x1="{zc6}" y1="{Y(HYv)}" x2="{zc6}" y2="{Y(HYv-e_)}" stroke="#a00" stroke-width="1.4"/><line x1="{zc6}" y1="{Y(HYv-e_)}" x2="{zc6}" y2="{Y(HYv-s_)}" stroke="#06a" stroke-width="2.2"/>')
 b.append(f'<text x="{zc6+10}" y="{Y(HYv-e_)+1}" font-size="2.4" fill="#a00">尾部レバー e={e_}</text><text x="{zc6+10}" y="{Y(HYv-(e_+s_)/2)+1}" font-size="2.4" fill="#06a">ダイスプリング(取付長{BALv["lmin"]:.0f}〜{BALv["lmax"]:.0f}) アンカー s={s_}</text>')
 b += dim_v(zc6 + 45, Y(-DROP), Y(HYv), f'足上面〜ヒンジ軸 {DROP+HYv}', 8) + dim_v(zc6 - 40, Y(-DROP + SWv['stack_h']), Y(-DROP), f'首振りユニット {SWv["stack_h"]:g}', 8)
-b.append(f'<text x="{sx0-60}" y="{sy0-125}" font-size="4">側面断面(奥行は0.5倍に圧縮)</text><text x="{sx0-60}" y="{sy0-119}" font-size="2.8">足t12+ballast / 首振り積層25 / ネック側板 / ヒンジ軸Ø10+摩擦ヒンジ / バランサ</text>')
+b.append(f'<text x="{sx0-60}" y="{sy0-125}" font-size="4">側面断面(奥行は0.5倍に圧縮)</text><text x="{sx0-60}" y="{sy0-119}" font-size="2.8">足t12+ballast / 首振り積層25 / ネック側板 / ヒンジ軸Ø12+摩擦ヒンジ / バランサ</text>')
 b.append(f'<text x="40" y="{oy+fd5*s5+40}" font-size="3">注記: チルト {S["hinge"]["tilt_min_deg"]:+g}°〜{S["hinge"]["tilt_max_deg"]:+g}°(ゴムストッパ)、首振り ±{SWv["range_deg"]:g}°(ゴムポスト)。ballast鋼板 {STv["ballast_kg"]}kg。部品: CP-10/20/21/22/23。型番は U26/U50/U51。図面はPRELIMINARY(設計値)。</text>')
 sheet('05_stand', 'スタンド(足・首振り・ネック・バランサ)', 'MFG-05', b)
 

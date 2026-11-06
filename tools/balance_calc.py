@@ -13,6 +13,7 @@ S = MM.S; g = 9.81
 mh, cz, cy, _ = MM.head_cg(); hz, hy = S['hinge']['axis_z_from_glass'], S['hinge']['axis_y']
 dz, dy = cz - hz, cy - hy
 T0, T1 = S['hinge']['tilt_min_deg'], S['hinge']['tilt_max_deg']; H_ = S['hinge']; FR = H_['friction_hold_Nm']; FTOL = H_['friction_tol_pct'] / 100; FPCT = H_['balance_force_tol_pct'] / 100; CGMM = H_['balance_cg_tol_mm']
+HW = H_['balance_end_hw_mm'] if 'balance_end_hw_mm' in H_ else 0.0     # ばね両端の金物長(上:ロッドエンド/下:ばね座+調整ねじ)。ばね自体の長さ=ピン間距離-HW
 angles = [T0 + i * (T1 - T0) / 22 for i in range(23)]
 def tg(a, ddy=0.0): a = math.radians(a); return mh * g * (dz * math.cos(a) + (dy + ddy) * math.sin(a)) / 1000
 def geom(a, s, e):
@@ -23,13 +24,13 @@ def spring_tau(a, s, e, F0, p, lmax, stroke, fscale=1.0):
 def resid(s, e, F0, p, sign, lmax, stroke, fscale=1.0, ddy=0.0):
     return [tg(a, ddy) + sign * spring_tau(a, s, e, F0, p, lmax, stroke, fscale) for a in angles]
 best = None
-for s in range(50, 68, 2):
-    for e in range(20, 56, 5):
-        if e > s - 15: continue
+for s in range(50, 78, 2):          # s≦76: アンカーピン中心がネック基台上面(y=-72)から6mm以上上(クレビス受け)
+    for e in range(20, 30, 1):
+        if e > s - 15 or e > S['neck']['lever_len'] - 6: continue
         L = [geom(a, s, e)[4] for a in angles]; lmin, lmax = min(L), max(L); stroke = lmax - lmin
         if stroke < 8 or stroke > 30: continue
         for p in (0.4, 0.5, 0.6, 0.7, 0.8, 1.0, 1.2, 1.5):
-            free = lmax + stroke / p; ratio = stroke * (1 + 1 / p) / free
+            free = lmax - HW + stroke / p; ratio = stroke * (1 + 1 / p) / free
             if ratio > 0.40: continue
             for F0 in range(200, 2001, 10):
                 for sign in (1, -1):
@@ -57,6 +58,9 @@ if ratio > 0.40: fails.append('ばねたわみ率>40%')
 fr_aged = fr_min * (1 - H_['friction_aging_loss'])
 if worst > fr_aged: fails.append(f'最悪残差{worst:.2f} > 経年後の最小摩擦保持{fr_aged:.2f}')
 if op_force > H_['op_target_N']: fails.append(f"操作力{op_force:.1f}N > {H_['op_target_N']:g}N")
+slen = (lmax - HW) / 13.0            # ばね取付長/平均径(JIS金型ばねOD16, 線径3 → 平均径13)。<4 なら案内なしで座屈しにくい目安
+print(f'座屈の目安: 最長取付長 {lmax-HW:.0f}mm / 平均径13mm = {slen:.1f}(<4で案内不要の目安)')
+if slen >= 4.0: fails.append(f'ばね細長比{slen:.1f}≧4(案内が必要)')
 print('総合:', 'OK(ばね型番・実特性・重心はUNVERIFIED)' if not fails else 'NG ' + ' / '.join(fails))
 if '--write' in sys.argv:
     json.dump(dict(s=s, p_offset=0, e=e, F0_longest_total=F0, p=p, stroke=stroke, lmin=lmin, lmax=lmax, free_length_min=free, resid_nominal=rr, resid_worst=worst, sign=sign), open(f'{R}/model/balance.json', 'w'), ensure_ascii=False, indent=1)

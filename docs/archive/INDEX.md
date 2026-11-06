@@ -3,6 +3,7 @@
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
 | PROJECT-SUMMARY.md | v001 | current | 2026-11-06 | ce41db1 | PROJECT-SUMMARY/PROJECT-SUMMARY.v001__2026-11-06_ce41db1.md |
+| PROJECT-SUMMARY.md | v002 | current | 2026-11-06 | 877835f | PROJECT-SUMMARY/PROJECT-SUMMARY.v002__2026-11-06_877835f.md |
 | README.md | v001 | current | 2026-11-06 | d97f07e | README/README.v001__2026-11-06_d97f07e.md |
 | README.md | v002 | current | 2026-11-06 | 02c4c72 | README/README.v002__2026-11-06_02c4c72.md |
 | README.md | v003 | current | 2026-11-06 | ce41db1 | README/README.v003__2026-11-06_ce41db1.md |

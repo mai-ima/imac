@@ -118,6 +118,15 @@
    "file": "custom-parts/custom-parts.v011__2026-11-06_02c4c72.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "2314b2e6870d291cb7f772d1afb6011a51353d71cf7088d577f4d74cbb9981f2",
+   "file": "custom-parts/custom-parts.v012__2026-11-06_88f99b7.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -181,6 +190,15 @@
    "file": "hardware-list/hardware-list.v004__2026-11-06_02c4c72.md"
   },
   {
+   "src": "docs/spec/hardware-list.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "b790232498039b189e4fa58bb071312c0f7a8bfd2bb8ad2ddf7ac855e69734ca",
+   "file": "hardware-list/hardware-list.v005__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/spec/hole-table.md",
    "version": 1,
    "gen": "current",
@@ -208,6 +226,15 @@
    "file": "joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md"
   },
   {
+   "src": "docs/spec/joint-matrix.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "00376430615829dba3c19d11a207db74a0d7b6530057962b8f6720745c2c7084",
+   "file": "joint-matrix/joint-matrix.v003__2026-11-06_302823c.md"
+  },
+  {
    "src": "docs/spec/panel-thermal.md",
    "version": 1,
    "gen": "current",
@@ -224,6 +251,15 @@
    "commit": "853c2f5",
    "sha256": "f883d7b8c84751a90df1d83a9fa2ffb39e14f299bddd0e31f1f05fd9936c4fb2",
    "file": "performance-benchmark/performance-benchmark.v001__2026-11-05_853c2f5.md"
+  },
+  {
+   "src": "docs/spec/standard-parts.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "e1880f0",
+   "sha256": "1c72afc5423ba87a997b214a3a765ecea21df623ecfc7daf14f792315513dac3",
+   "file": "standard-parts/standard-parts.v001__2026-11-05_e1880f0.md"
   },
   {
    "src": "docs/spec/system-spec.md",
@@ -359,6 +395,15 @@
    "commit": "853f219",
    "sha256": "7075260c5f72019c9ac7e55d88f73111385fa3d169405eb20cc9524352c4618e",
    "file": "wiring-spec/wiring-spec.v006__2026-11-06_853f219.md"
+  },
+  {
+   "src": "docs/spec/wiring-spec.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "c71d962dccf8e7c16257d1fbedcb9f711bee5a099735dc57b1fe4baffaa1d8fb",
+   "file": "wiring-spec/wiring-spec.v007__2026-11-06_88f99b7.md"
   }
  ]
 }

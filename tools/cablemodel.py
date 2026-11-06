@@ -22,6 +22,8 @@ CAB = [
       pts=[(cx + 28, cy + 95, cz + 22), (cx + 28, cy + 105, cz + 26), (cx + 5, 340, 21), (150, 347, 16), (40, 349, 13), (14, 349, 10)]),
  dict(id='W6', name='AC電源(C14インレット→PSU C13)', kind='cable', od=7.2, awg=16, mbr=14, frm='C14インレット', to='SF1000 AC入力', conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, mat='rubber',
       pts=[(ax + 14, ay + 28, az + 8), (36, 62, 22), (36, 300, 24), (56, 336, 22), (100, 348, 22), (125, 340, 22), (px + 62, py + 102, pz + 14)]),
+ dict(id='W7', name='内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加)', kind='cable', od=4.5, awg=30, mbr=16, frm='GPU DP出力(ブラケット側)', to='ctrl_board 映像入力(DP/HDMI, 型番未確定 U51)', conn='DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4)', ref_mm=450, mat='rubber',
+      pts=[(gx + 12, gy - 34, 17), (gx - 14, gy - 34, 17), (gx - 14, gy + 14, 27), (gx - 14, cy - 18, 27), (gx - 14, cy + 14, 28)]),
  dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口A(上面スタブ)', to='ラジエーター口A', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
       pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (330, pcy + SYA, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
  dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',

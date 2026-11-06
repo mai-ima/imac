@@ -37,6 +37,15 @@
    "file": "balance/balance.v004__2026-11-06_28dc82b.json"
   },
   {
+   "src": "model/balance.json",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "2955a92afd0c4e284f2ca43ce164d42853c566aa5686e5fe3fd481dd3826224d",
+   "file": "balance/balance.v005__2026-11-06_88f99b7.json"
+  },
+  {
    "src": "model/cables.json",
    "version": 1,
    "gen": "current",
@@ -107,6 +116,15 @@
    "commit": "853f219",
    "sha256": "760f22e7c813913d8672396714950ba988b130df6d6187474804aaaf2c9a190c",
    "file": "cables/cables.v008__2026-11-06_853f219.json"
+  },
+  {
+   "src": "model/cables.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "05799280dae9e652b693982beca9793a306e07c4c7fbec52214862082a417bc6",
+   "file": "cables/cables.v009__2026-11-06_88f99b7.json"
   },
   {
    "src": "model/custom_parts.json",
@@ -244,6 +262,15 @@
    "file": "custom_parts/custom_parts.v015__2026-11-06_02c4c72.json"
   },
   {
+   "src": "model/custom_parts.json",
+   "version": 16,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "a6a3faebfa62dff382525ed5175f51130283e9de59daa4fa34fa5b65a45e8b94",
+   "file": "custom_parts/custom_parts.v016__2026-11-06_88f99b7.json"
+  },
+  {
    "src": "model/hardware_list.json",
    "version": 1,
    "gen": "current",
@@ -305,6 +332,15 @@
    "commit": "02c4c72",
    "sha256": "c498e2ff7139f6727235f176f90695b5aee3a7ecad207cbba159b3e731523f3b",
    "file": "hardware_list/hardware_list.v007__2026-11-06_02c4c72.json"
+  },
+  {
+   "src": "model/hardware_list.json",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "85af1a8",
+   "sha256": "9b0a891bb9bdcc556eb3f7bce335dcc411b1d0482919a459ff4d6ce39867c044",
+   "file": "hardware_list/hardware_list.v008__2026-11-06_85af1a8.json"
   },
   {
    "src": "model/layout.json",
@@ -692,6 +728,15 @@
    "commit": "88f99b7",
    "sha256": "1dd1f1631e94da85f487e07a757fc8389f25aa5f18c6d784b5ddd04cf71b5fe3",
    "file": "spec/spec.v021__2026-11-06_88f99b7.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 22,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "b3df9d75501136e2e6f186e1e361c5209762dcda6ac75f81a0da53f65a50d070",
+   "file": "spec/spec.v022__2026-11-06_877835f.json"
   },
   {
    "src": "model/x870i_layout.json",

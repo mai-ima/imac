@@ -10,6 +10,15 @@
    "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v001__2026-11-06_ce41db1.md"
   },
   {
+   "src": "docs/PROJECT-SUMMARY.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "8a96bfbb36371b2f79b1706d32e0c323c7d56ae12a462656579e48a7f1803a81",
+   "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v002__2026-11-06_877835f.md"
+  },
+  {
    "src": "docs/README.md",
    "version": 1,
    "gen": "current",

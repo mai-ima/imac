@@ -5,7 +5,7 @@ import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, f'{R}/tools')
 import massmodel as MM
 S = MM.S; N = S['neck']; sw = S['swivel']; BAL = json.load(open(f'{R}/model/balance.json')); g = 9.81
-SF = 1.5; Y = {'SUS304': 205.0, 'A6063-T5': 145.0, 'A5052-H32': 193.0, 'SUS(ボルトA2-70)': 450.0}
+SF = 1.5; Y = {'SUS630-H1025': 1000, 'SUS304': 205.0, 'A6063-T5': 145.0, 'A5052-H32': 193.0, 'SUS(ボルトA2-70)': 450.0}
 mh = MM.head_cg()[0]; W_head = mh * g
 F_spring_max = BAL['F0_longest_total'] * (1 + BAL['p']) / 2        # 1本あたり最大 [N]
 push = 50.0; h_top = 0.41; M_push = push * h_top               # 画面上端を押す [N·m]
@@ -17,9 +17,13 @@ def chk(name, sigma, mat, note=''):
 e = BAL['e']; Mlev = F_spring_max * e / 1000.0 * 1.0                # N·m(ばね力が軸直角成分でほぼ全部かかる保守側)
 t, w = N['lever_t'], N['lever_w']; Z = t * w * w / 6.0
 chk(f'尾部レバー曲げ(t{t:g}×幅{w:g})', Mlev * 1000 / Z, 'SUS304', f'M={Mlev:.1f}N·m/本')
-# 2) 尾部レバー+軸: キー溝/軸Ø10の曲げ(レバー位置x=26から摩擦ヒンジx=45までの19mm)
+# 2) 尾部レバー+軸: キー溝/軸Ø12の曲げ(レバー位置x=26から摩擦ヒンジx=45までの19mm)
 d = 12.0; Zax = math.pi * d ** 3 / 32; Max = F_spring_max * 0.019
 chk('ヒンジ軸Ø12 曲げ', Max * 1000 / Zax, 'SUS304', f'M={Max:.1f}N·m(ばね最大{F_spring_max:.0f}N/本)')
+# 2b) レバー先端の横ピン(ばね上端の支点): 両レバー(x=±26.5)で単純支持、ばね荷重は x=±14。重ね合わせの最大曲げ
+dpb = N['lever_pin_d']; Lsp = 53.0; a_, b_ = 26.5 + 14, 26.5 - 14
+Mpin = F_spring_max * a_ * b_ / Lsp / 1000 + (F_spring_max * b_ / Lsp) * b_ / 1000
+chk(f'レバー先端の横ピン Ø{dpb:g} 曲げ', Mpin * 1000 / (math.pi * dpb ** 3 / 32), 'SUS630-H1025', f'M={Mpin:.1f}N·m(2本のばね荷重の重ね合わせ。SUS304 Ø{dpb:g}では不足=17-4PH H1025を指定)')
 # 3) ストッパ(レバー先端): 画面上端50N押し → 軸まわりモーメントがレバー長で受けられる。片側のレバーが全部受ける最悪ケース
 Fst = M_push / (N['lever_len'] / 1000.0); chk('レバー先端(ストッパ)曲げ', Fst * (N['lever_len'] / 1000.0) * 1000 / Z / 2.0, 'SUS304', f'50N押し→レバー先端力{Fst:.0f}N(2本で分担)')
 # 4) ストッパ受け: 前カバー(t6, 全幅x±56を側板と基台で支持したプレート)とタイプレート。ピーク荷重(エネルギー法の平均力の2倍)で両端支持梁(L=側板内幅)として評価

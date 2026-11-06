@@ -4,7 +4,7 @@
 import json, re, subprocess, sys, os
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S = json.load(open(f'{R}/model/spec.json'))
-B = json.load(open(f'{R}/model/balance.json')) if os.path.exists(f'{R}/model/balance.json') else {}
+B = json.load(open(f'{R}/model/balance.json'))
 H = S['hinge']; ST = S['stand']
 def n(x): return f'{x:g}'
 # (名前, 正規値, 抽出パターン(group1=数値), 説明)
@@ -16,6 +16,10 @@ FACTS = [
  ('チルト上限', H['tilt_max_deg'], r'チルト\s*[-−]?\d+\s*[°゜]?\s*[〜~]\s*\+?(\d+)'),
  ('摩擦保持', H['friction_hold_Nm'], r'摩擦(?:ヒンジ)?(?:合計|保持)?\s*(\d+(?:\.\d+)?)\s*N[·・⋅.]?m'),
  ('操作力目標', H.get('op_target_N', 25), r'操作力(?:目標)?[^。\n]{0,12}[≦<=＜]\s*(\d+)\s*N'),
+ ('ばね s', B['s'], r'(?<![A-Za-z_])s\s*=\s*(\d{2})\s*mm?\b'),
+ ('ばね F0(2本)', B['F0_longest_total'], r'F0\s*=\s*(\d{3,4})\s*N'),
+ ('ばね最長側(1本)', B['F0_longest_total'] / 2, r'最長側(?:荷重)?\s*(\d{3})\s*N'),
+ ('ばね最大(1本)', round(B['F0_longest_total'] * (1 + B['p']) / 2), r'最大\s*(\d{3})\s*N\s*/\s*本'),
  ('足の幅', ST['foot_w'], r'足(?:の)?(?:幅|寸法)?\s*(\d{3})\s*[×x]\s*\d{3}'),
  ('足の奥行', ST['foot_depth'], r'足(?:の)?(?:幅|寸法)?\s*\d{3}\s*[×x]\s*(\d{3})'),
 ]

@@ -1,0 +1,10 @@
+# CLAUDE.md — iMac風PC設計プロジェクト 恒常規則(短縮版。詳細は台帳)
+- **必ず日本語**で応答・サブエージェント指示。作業ブランチ `claude/imac-pc-design`。PRは頼まれた時のみ。
+- 起動/再開時の読込順: `docs/PRINCIPLES.md` → `audit_control/SESSION_STATE.md` → `audit_control/tasks.json` → `git status/log` → `docs/audit-log.md` 末尾。推測で続きを始めない。
+- 設計思想は不変(docs/PRINCIPLES.md): Apple哲学オマージュ(ロゴ無し)、修理性/耐久、性能を制限しない、内部は市販品・外装のみ特注、実物に忠実、公式一次資料優先(非公式は5件以上一致)、未確認は UNVERIFIED。
+- 旧ファイルは削除せず archive へ(削除はpre-commitで拒否。スタブを残す)。
+- 正規ソース: `model/*.json`。生成物(docs/mechanisms, drawings/v10, handoff等)は手で直さず生成器を直す。
+- 品質ゲート: `bash tools/run_gates.sh`(exit 2=UNVERIFIED は合格ではない)、`python3 tools/consistency_check.py`、`python3 audit_control/validate_state.py`。
+- 台帳: `audit_control/tasks.json`(唯一の正規タスク台帳)。発見・着手・完了ごとに更新。`done` は証拠+検証が必要。軽微な問題も必ず登録。
+- 図面: `/tmp/bl/.venv/bin/python tools/gen_*.py`(cadquery)。SVG確認は Playwright(node)。
+- 偽PASS禁止。実機/専門試験が必要な事項は UNVERIFIED/BLOCKED のまま。

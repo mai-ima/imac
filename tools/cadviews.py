@@ -44,3 +44,48 @@ def place(P, ox, oy, s, hidden=True, vis_w=.35, hid_w=.18):
     if hidden and P['hid']: o.append(f'<g stroke="#000" stroke-width="{hid_w}" stroke-dasharray="2.2 1.2">' + ''.join('<polyline points="' + ' '.join(f(p) for p in pl) + '"/>' for pl in P['hid']) + '</g>')
     o.append(f'<g stroke="#000" stroke-width="{vis_w}">' + ''.join('<polyline points="' + ' '.join(f(p) for p in pl) + '"/>' for pl in P['vis']) + '</g></g>')
     return '\n'.join(o)
+
+# ---------------- 断面(ハッチング付き): 機構の内部図用 ----------------
+from OCP.BRepTools import BRepTools_WireExplorer
+from OCP.TopAbs import TopAbs_REVERSED
+
+def _wire_pts(wire, defl=0.03):
+    """ワイヤを向き付きで順に標本化(点列)。"""
+    pts = []; ex = BRepTools_WireExplorer(wire.wrapped)
+    while ex.More():
+        e = ex.Current(); c = BRepAdaptor_Curve(e); q = GCPnts_QuasiUniformDeflection(c, defl, c.FirstParameter(), c.LastParameter())
+        seg = [(q.Value(i + 1).X(), q.Value(i + 1).Y(), q.Value(i + 1).Z()) for i in range(q.NbPoints())] if q.IsDone() else []
+        if e.Orientation() == TopAbs_REVERSED: seg.reverse()
+        pts += seg if not pts else seg[1:]
+        ex.Next()
+    return pts
+
+def cut_half(shape, origin, normal, xdir):
+    """面(origin,normal)で切り、normal 側(手前)を除去した半割り形状と、切断面の多角形リスト [(外周, [内周...])](投影面座標 u=p·xdir, v=p·(normal×xdir))を返す。"""
+    sh = shape.val() if hasattr(shape, 'val') else shape
+    n = cq.Vector(*normal).normalized(); xd = cq.Vector(*xdir).normalized(); yd = n.cross(xd)
+    pl = cq.Plane(origin=origin, xDir=tuple(xd), normal=tuple(n))
+    cutter = cq.Workplane(pl).rect(4000, 4000).extrude(2000).val()
+    half = sh.cut(cutter)
+    polys = []
+    for f in half.Faces():
+        if f.geomType() != 'PLANE': continue
+        if abs((f.Center() - cq.Vector(*origin)).dot(n)) > 1e-3 or abs(f.normalAt().dot(n)) < 0.999: continue
+        P = lambda pts: [(cq.Vector(*p).dot(xd), cq.Vector(*p).dot(yd)) for p in pts]
+        polys.append((P(_wire_pts(f.outerWire())), [P(_wire_pts(w)) for w in f.innerWires()]))
+    return half, polys, (xd, yd)
+
+def hatch_defs(specs):
+    """specs: {id: (角度deg, 間隔mm, 線幅)} → <defs>。ISO 128-50: 隣接部品は角度/間隔を変える。"""
+    o = ['<defs>']
+    for k, (ang, sp, w) in specs.items():
+        o.append(f'<pattern id="{k}" patternUnits="userSpaceOnUse" width="{sp}" height="{sp}" patternTransform="rotate({ang})"><line x1="0" y1="0" x2="0" y2="{sp}" stroke="#000" stroke-width="{w}"/></pattern>')
+    o.append('</defs>'); return '\n'.join(o)
+
+def place_section(polys, ox, oy, s, hid, sw=.5):
+    """切断面を塗りハッチで描画(外周・内周とも evenodd)。hid=パターンid。"""
+    f = lambda p: f"{ox + s * p[0]:.2f},{oy - s * p[1]:.2f}"
+    d = ''
+    for outer, inners in polys:
+        for loop in [outer] + inners: d += 'M' + ' L'.join(f(p) for p in loop) + ' Z '
+    return f'<path d="{d}" fill="url(#{hid})" fill-rule="evenodd" stroke="#000" stroke-width="{sw}" stroke-linejoin="round"/>'
