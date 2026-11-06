@@ -79,7 +79,7 @@ body.clean .app{grid-template-columns:minmax(0,1fr)}
       <div style="display:grid;gap:8px;margin-top:12px">
         <label class="sl" for="sTilt"><span>チルト</span><input id="sTilt" type="range" min="-15" max="40" value="0"><b id="vTilt">0°</b></label>
         <label class="sl" for="sSwivel"><span>首振り</span><input id="sSwivel" type="range" min="-60" max="60" value="0"><b id="vSwivel">0°</b></label>
-        <label class="sl" for="sExp"><span>分解</span><input id="sExp" type="range" min="0" max="100" value="0"><b id="vExp">0%</b></label>
+        <label class="sl" for="sExp"><span>分解</span><input id="sExp" type="range" min="0" max="200" value="0"><b id="vExp">0%</b></label>
       </div>
     </section>
     <section><h2>動作(シミュレーション)</h2>
@@ -139,7 +139,7 @@ function drawScreen(t){ const [b,,c]=PALETTE[color]; const w=sc2.width,h=sc2.hei
 /* ---- GLB 読み込み ---- */
 const S={cover:true,labels:false,air:false,screen:true,load:0,explode:0,speed:0};
 let model, pivot, swivel, coverNode; const displayMeshes=[], rotors=[], byName={}, matBy={}, explodeGroups=[]; let ready=false;
-const EXPLODE=[[['cover_','gasket'],240],[['pump','hose','txt_ihs','rad_','fan_rad'],110],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],70],[['psu','fan_psu','cable_atx24','cable_eps','cable_ac','txt_'],45],[['fan_exhaust'],85],[['ctrl_','cable_ctrl','cable_umb','ac_inlet'],30]];
+const EXPLODE=[[['display','front_glass','chin_print','camera','mic','power_button'],-300],[['cover_','gasket'],620],[['fan_exhaust'],440],[['pump','hose','txt_ihs','rad_','fan_rad','txt_arctic'],330],[['ac_inlet','cable_ac'],260],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],210],[['psu','fan_psu','cable_atx24','cable_eps','txt_sf','txt_plat'],140],[['ssd_','txt_samsung','m2_screw'],110],[['ctrl_','cable_ctrl','cable_umb'],80]];   // 分解量[mm]@100%。スライダは最大200%(=2倍)
 /* GLBは base64 テキスト(imac_pc.glb.txt)から読む(公開環境が .glb を配信しないため)。ローカルでは .glb にフォールバック */
 function loadGLB(onload,_p,onerr){
   const L=new GLTFLoader();

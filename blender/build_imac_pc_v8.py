@@ -609,8 +609,10 @@ def shift_group(prefix_list, dz_):
         if any(ob.name.startswith(p) for p in prefix_list): ob.location += Vector((0, dz_, 0))
 if A.explode > 0:
     e = A.explode
-    shift_group(['cover_back', 'cover_filter', 'gasket'], 230 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic'], 110 * e)
-    shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu'], 70 * e); shift_group(['psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 45 * e); shift_group(['fan_exhaust'], 85 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 30 * e)
+    shift_group(['cover_back', 'cover_filter', 'gasket'], 620 * e); shift_group(['fan_exhaust'], 440 * e); shift_group(['pump', 'hose', 'rad', 'fan_rad', 'txt_arctic'], 330 * e)
+    shift_group(['ac_inlet', 'cable_ac'], 260 * e); shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu', 'riser'], 210 * e); shift_group(['psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 140 * e)
+    shift_group(['ssd', 'txt_samsung', 'm2_screw'], 110 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 80 * e)
+    shift_group(['slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button'], -300 * e)      # 前面(ディスプレイ)は前方へ
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
         if ob.name.startswith(('cover_back', 'cover_filter', 'gasket')): ob.hide_render = True
@@ -662,7 +664,7 @@ tt = cam.constraints.new('TRACK_TO'); tt.target = TGT; tt.track_axis = 'TRACK_NE
 k = 1.0 if A.panel == 24 else 1.18
 VIEWS = {'front': ((560, 330, 1900), (0, 205, -30)), 'back': ((-700, 330, -1950), (0, 200, -45)), 'side': ((1900, 270, -80), (0, 190, -45)),
          'inside': ((40, 215, -1380), (0, 205, -45)), 'top': ((0, 1600, -60), (0, 100, -45)), 'closeup': ((-330, 200, -560), (-205, 120, -40)), 'io': ((-820, 120, -430), (-250, 70, -40)),
-         'detail_front': ((250, 250, 700), (0, 140, 0)), 'explode': ((-1000, 460, -2050), (0, 130, -120))}
+         'detail_front': ((250, 250, 700), (0, 140, 0)), 'explode': ((-3300, 650, -1500), (0, 150, -330))}
 if A.view in ('closeup', 'io'): k = 1.0
 vp, vt = VIEWS[A.view]; cam.location = V(vp[0] * k, vp[1] * k, vp[2] * k); TGT.location = V(*vt)
 if A.focus:   # 内部座標(x,y,z)を注視し、背面側から az/el で周回(az=0: 真後ろ)
