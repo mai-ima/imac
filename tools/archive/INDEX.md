@@ -25,6 +25,7 @@
 | gen_fmea.py | v001 | current | 2026-11-05 | 017b7d9 | gen_fmea/gen_fmea.v001__2026-11-05_017b7d9.py |
 | gen_fmea.py | v002 | current | 2026-11-05 | 15a1bce | gen_fmea/gen_fmea.v002__2026-11-05_15a1bce.py |
 | gen_mechanisms.py | v001 | current | 2026-11-06 | d97f07e | gen_mechanisms/gen_mechanisms.v001__2026-11-06_d97f07e.py |
+| gen_mechanisms.py | v002 | current | 2026-11-06 | 02c4c72 | gen_mechanisms/gen_mechanisms.v002__2026-11-06_02c4c72.py |
 | gen_mfg_drawings.py | v001 | current | 2026-11-03 | b096d9e | gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py |
 | gen_mfg_drawings.py | v002 | current | 2026-11-05 | b97eaae | gen_mfg_drawings/gen_mfg_drawings.v002__2026-11-05_b97eaae.py |
 | gen_mfg_drawings.py | v003 | current | 2026-11-05 | fcba5fe | gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py |
@@ -58,6 +59,7 @@
 | motion_check.py | v002 | current | 2026-11-06 | 4482281 | motion_check/motion_check.v002__2026-11-06_4482281.py |
 | motion_check.py | v003 | current | 2026-11-06 | 432b08c | motion_check/motion_check.v003__2026-11-06_432b08c.py |
 | motion_check.py | v004 | current | 2026-11-06 | d97f07e | motion_check/motion_check.v004__2026-11-06_d97f07e.py |
+| motion_check.py | v005 | current | 2026-11-06 | 02c4c72 | motion_check/motion_check.v005__2026-11-06_02c4c72.py |
 | run_gates.sh | v001 | current | 2026-11-06 | c271477 | run_gates/run_gates.v001__2026-11-06_c271477.sh |
 | run_gates.sh | v002 | current | 2026-11-06 | 7ed5c4c | run_gates/run_gates.v002__2026-11-06_7ed5c4c.sh |
 | run_gates.sh | v003 | current | 2026-11-06 | bfa86c4 | run_gates/run_gates.v003__2026-11-06_bfa86c4.sh |
@@ -71,6 +73,7 @@
 | stale_check.py | v001 | current | 2026-11-06 | c271477 | stale_check/stale_check.v001__2026-11-06_c271477.py |
 | stale_check.py | v002 | current | 2026-11-06 | 4482281 | stale_check/stale_check.v002__2026-11-06_4482281.py |
 | stale_check.py | v003 | current | 2026-11-06 | 432b08c | stale_check/stale_check.v003__2026-11-06_432b08c.py |
+| strength_check.py | v001 | current | 2026-11-06 | 432b08c | strength_check/strength_check.v001__2026-11-06_432b08c.py |
 | swivel_calc.py | v001 | current | 2026-11-06 | bfa86c4 | swivel_calc/swivel_calc.v001__2026-11-06_bfa86c4.py |
 | thermal_calc.py | v001 | current | 2026-11-05 | 3c794e1 | thermal_calc/thermal_calc.v001__2026-11-05_3c794e1.py |
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |

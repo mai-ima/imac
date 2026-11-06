@@ -145,6 +145,15 @@
    "file": "build_imac_pc_v8/build_imac_pc_v8.v008__2026-11-06_432b08c.py"
   },
   {
+   "src": "blender/build_imac_pc_v8.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "3e70d052b88b3239a9c0ba57386b9aa8283319d5df655a5eabe80da93c30fb96",
+   "file": "build_imac_pc_v8/build_imac_pc_v8.v009__2026-11-06_d97f07e.py"
+  },
+  {
    "src": "blender/hardware_v8.py",
    "version": 1,
    "gen": "current",
@@ -197,6 +206,15 @@
    "commit": "432b08c",
    "sha256": "6a8938f31726cfba9f44c1d8e091c92d014c98e144510665d6cba01f042d71ad",
    "file": "hardware_v8/hardware_v8.v006__2026-11-06_432b08c.py"
+  },
+  {
+   "src": "blender/hardware_v8.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "d97f07e",
+   "sha256": "8f22068bef2c1daa019c905a374f6cbe2132639661cc8594820ef72e90b27479",
+   "file": "hardware_v8/hardware_v8.v007__2026-11-06_d97f07e.py"
   },
   {
    "src": "blender/imac_pc.blend",

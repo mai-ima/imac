@@ -28,12 +28,12 @@ w('01_tilt_balancer.md', f'''# 01 チルトバランサ(ダイスプリング+�
 ## 3. 寸法・部品(単一源: model/spec.json / model/balance.json)
 | 部品 | 仕様 | 数量 |
 |---|---|---|
-| 尾部レバー | SUS304 t{nk['lever_t']:g}×幅{nk['lever_w']:g}×長{nk['lever_len']:g}、軸Ø10(キー止め)と先端横ピンØ6(e={BAL['e']}mm) | 2 |
+| 尾部レバー | SUS304 t{nk['lever_t']:g}×幅{nk['lever_w']:g}×長{nk['lever_len']:g}、軸Ø12(キー止め)と先端横ピンØ6(e={BAL['e']}mm) | 2 |
 | ダイスプリング | JIS金型用コイルばね Ø16、取付長{BAL['lmin']:.0f}〜{BAL['lmax']:.0f}mm(行程{BAL['stroke']:.1f}mm)、最長側{BAL['F0_longest_total']/2:.0f}N/最大{BAL['F0_longest_total']*(1+BAL['p'])/2:.0f}N、p={BAL['p']}、自由長≧{BAL['free_length_min']:.0f}mm、ガイドロッドØ6.5 | 2 |
 | ばね座・荷重調整ねじ | M8(ロックナット)。組立時に頭部の実測重量へ合わせる | 2 |
 | スタンド側アンカー | 軸から下へ s={BAL['s']}mm、アンカーブリッジ(横ピンØ6) | 1 |
 | 摩擦ヒンジ | Reell PHL/PHC級(最大3.4N·m×2を想定, U27)、x=±45 | 2 |
-| ヒンジ軸 | Ø10 SUS304×150 + Eクリップ×4 | 1 |
+| ヒンジ軸 | Ø12 SUS304×150 + Eクリップ×4 | 1 |
 | ストッパ | レバー側縁が当たるゴムパッド(−15°: タイプレート、+40°: 前カバー) | 4 |
 
 ## 4. 計算結果(`tools/balance_calc.py`)

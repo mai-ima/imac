@@ -216,25 +216,40 @@ M['red'] = principled('cable_red', '#b82a1e', 0.0, 0.6)
 M['led_blue'] = principled('led_blue', '#101010', 0.0, 0.3, emit='#9fd0ff', estr=4.0)
 
 # ---------------- 本体 ----------------
-box('slab', W, H, SLAB - 1.1, -W / 2, 0, -SLAB, M['body'], bevel=1.0)                 # スラブ(背板一体の枠): 前面1.1mmはガラス
-box('front_glass', W, H, 1.1, -W / 2, 0, -1.1, M['glass'], bevel=1.0)                # 化学強化ガラス t1.1 (前面z=0 でスラブ縁と面一)
+def rbox(name, w, h, d, x, y, z, mat, r, seg=8):
+    """平面の角を R=r に丸めた板(前面スラブ/ガラス用)。(x,y,z)=最小角、厚み d は -z 方向(box と同じ向き)。"""
+    cx, cy = x + w / 2, y + h / 2; pts = []
+    for (sx, sy, a0) in ((1, 1, 0), (-1, 1, 90), (-1, -1, 180), (1, -1, 270)):
+        for k in range(seg + 1):
+            t = math.radians(a0 + 90 * k / seg); pts.append(((w / 2 - r) * sx + r * math.cos(t), (h / 2 - r) * sy + r * math.sin(t)))
+    me = bpy.data.meshes.new(name); bm = bmesh.new()
+    top = [bm.verts.new((cx + px, -(z) if False else 0, 0)) for (px, py) in pts] if False else None
+    top = [bm.verts.new(V(cx + px, cy + py, z + d)) for (px, py) in pts]; bot = [bm.verts.new(V(cx + px, cy + py, z)) for (px, py) in pts]
+    bm.faces.new(top); bm.faces.new(list(reversed(bot)))
+    for i in range(len(pts)): j = (i + 1) % len(pts); bm.faces.new((top[i], top[j], bot[j], bot[i]))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:]); bm.to_mesh(me); bm.free(); ob = bpy.data.objects.new(name, me); me.materials.append(mat)
+    bv = ob.modifiers.new('bevel', 'BEVEL'); bv.width = 0.6; bv.segments = 2; bv.limit_method = 'ANGLE'
+    return link(ob)
+CR_ = S.get('corner', 10)      # 前面の平面角R(spec.json corner)
+rbox('slab', W, H, SLAB - 1.1, -W / 2, 0, -SLAB, M['body'], CR_)                 # スラブ(背板一体の枠): 前面1.1mmはガラス
+rbox('front_glass', W, H, 1.1, -W / 2, 0, -1.1, M['glass'], CR_)                # 化学強化ガラス t1.1 (前面z=0 でスラブ縁と面一)
 box('display', PW, PH, 0.02, -PW / 2, CHIN, 0.0, M['screen'], uv=True)               # ガラス裏の表示を面上で簡略表現
 box('chin_print', W - 5, CHIN - 4, 0.02, -W / 2 + 2.5, 2, 0.0, M['chin'])             # ガラス裏面印刷(塗装ではない)
 cyl('camera', 2.0, 0.04, 'z', 0, H - 5, 0.02, M['black'], 24)                       # カメラ窓 Ø4.0
-for sx in (-1, 1): cyl('mic', 0.5, 0.04, 'z', sx * 70, H - 5, 0.02, M['black'], 12)  # マイク穴 Ø1.0
+for sx in (-1, 0, 1): cyl(f'mic{sx}', 0.5, 0.04, 'z', sx * 60 + (35 if sx == 0 else 0), H - 5, 0.02, M['black'], 12)  # マイク穴 Ø1.0 ×3(実物は3マイク。位置はApple非公表=仮置き)
 
 # ---------------- 内部部品 ----------------
 rotors = []
-def make_fan(name, size, depth, n, frame_mat, blade_mat, hub_mat, cx, cy, czl):
+def make_fan(name, size, depth, n, frame_mat, blade_mat, hub_mat, cx, cy, czl, hub_k=.19, open_k=.46):
     """内部座標 (cx,cy,czl)=ファン底面中心。軸=背面方向(+z local)。"""
     wc = Vector((X0 + cx, Y0 + cy, Z0 - czl - depth / 2))     # 設計図座標での体積中心
     fr = box(name + '_frame', size, size, depth, wc.x - size / 2, wc.y - size / 2, wc.z - depth / 2, frame_mat, bevel=1.2)
-    cut = cyl(name + '_hole', size * .46, depth + 2, 'z', wc.x, wc.y, wc.z, None, 64, body=False); cut.hide_render = True; BODY_OBJS.append(cut)
+    cut = cyl(name + '_hole', size * open_k, depth + 2, 'z', wc.x, wc.y, wc.z, None, 64, body=False); cut.hide_render = True; BODY_OBJS.append(cut)
     bm = fr.modifiers.new('hole', 'BOOLEAN'); bm.object = cut; bm.operation = 'DIFFERENCE'; bm.solver = 'EXACT'
     rotor = bpy.data.objects.new(name + '_rotor', None); rotor.location = V(wc.x, wc.y, wc.z); link(rotor)
-    hub = cyl(name + '_hub', size * .19, depth * .7, 'z', wc.x, wc.y, wc.z, hub_mat, 48); hub.parent = rotor; hub.location = (0, 0, 0)
+    hub = cyl(name + '_hub', size * hub_k, depth * .7, 'z', wc.x, wc.y, wc.z, hub_mat, 48); hub.parent = rotor; hub.location = (0, 0, 0)
     hub.rotation_euler = (math.pi / 2, 0, 0)
-    L = size * .46 - size * .17 - 1; R0 = size * .17
+    L = size * open_k - size * (hub_k - .02) - 1; R0 = size * (hub_k - .02)
     pts = []
     def qb(p0, c, p1, n_=8): return [((1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * c[0] + t * t * p1[0], (1 - t) ** 2 * p0[1] + 2 * (1 - t) * t * c[1] + t * t * p1[1]) for t in [i / n_ for i in range(n_ + 1)]]
     pts = qb((0, -size * .065), (L * .55, -size * .11), (L, -size * .05)) + qb((L, size * .04), (L * .5, size * .15), (0, size * .08))
@@ -472,14 +487,14 @@ label('AMD', 4, bx + sx_ - 8, by + sy_ + 5, Z1 + 6.6, M['print_w'], name='txt_ih
 ibox('chipset_sink', 21, 19, 9, bx + 129, by + 47, Z1, M['alublack'], .6)
 ibox('pcie_x16', 8.6, 89, 11, bx + 157.4, by + 43, Z1, M['dark'], .3); ibox('pcie_gold', 2, 60, .4, bx + 160.7, by + 57, Z1 + 11.0, M['gold'])
 ibox('atx24', 50.1, 10, 15, bx + 13.4, by + 159, Z1, M['white'], .4); ibox('eps8', 11.8, 18.1, 11, bx + 1.6, by + 2.4, Z1, M['dark'], .3)
-ibox('m2_daughter', 25, 80.15, 1.6, bx + 131, by + 60.5, Z1 + 8, M['pcb_black'])      # M.2ドーターカード(高さ未確認の仮置き: 基板上面+8mm)
-ibox('m2_btob_conn', 25, 6, 8, bx + 131, by + 52, Z1, M['dark'], .3)             # 基板対基板コネクタ(カードを支持)
-for k_, yy_ in enumerate((8, 70)): icyl(f'm2_card_post{k_}', 2.6, 8, 'z', bx + 143.5, by + 60.5 + yy_, Z1 + 4, M['alu'], 6)   # 固定ポスト
-for i in range(2): ibox(f'dimm_slot{i}', 155, BL['dimm_slots']['y'][i][1] - BL['dimm_slots']['y'][i][0], 8, bx + BL['dimm_slots']['x'][0], by + BL['dimm_slots']['y'][i][0], Z1, M['plastic'], .3)
+ibox('m2_daughter', 25, 61, 1.6, bx + 131, by + 77, Z1 + 8, M['pcb_black'])      # M.2ドーターカード: 公式p.14の点線枠 y78.5〜136.8(x131〜156)。高さ+8mm・延びる向きは未確認(U56)
+ibox('m2_btob_conn', 21, 4.5, 8, bx + 134, by + 104, Z1, M['dark'], .3)             # BTOBコネクタ: 公式p.14実測 y≈104〜108, x134〜155(従来 y52〜58 は誤り)
+for k_, yy_ in enumerate((2, 56)): icyl(f'm2_card_post{k_}', 2.6, 8, 'z', bx + 143.5, by + 78 + yy_, Z1 + 4, M['alu'], 6)   # 固定ポスト(位置は未確認の仮置き)
+for i in range(2): ibox(f'dimm_slot{i}', BL['dimm_slots']['x'][1] - BL['dimm_slots']['x'][0], BL['dimm_slots']['y'][i][1] - BL['dimm_slots']['y'][i][0], 8, bx + BL['dimm_slots']['x'][0], by + BL['dimm_slots']['y'][i][0], Z1, M['plastic'], .3)
 # DDR5 DIMM x2 (大手品・型番未定: ブランドロゴは入れず仕様ステッカーのみ)
 for i in range(2):
     y0_, y1_ = BL['dimm_slots']['y'][i]
-    ibox(f'dimm{i}_body', 133.35, y1_ - y0_ - 0.6, 36, bx + 8, by + y0_ + .3, Z1 + 8, principled('dimm_spreader', '#1b1c20', .8, .35), .6)
+    ibox(f'dimm{i}_body', 133.35, y1_ - y0_ - 0.6, 36, bx + 9.8, by + y0_ + .3, Z1 + 8, principled('dimm_spreader', '#1b1c20', .8, .35), .6)
     ibox(f'dimm{i}_sticker', 60, .2, 10, bx + 40, by + y1_ - .6 if i == 0 else by + y0_ + .1, Z1 + 24, M['sf_label'])
 # ===== M.2 SSD: Samsung 990 PRO with Heatsink (80.15x25x8.88, 黒ヒートシンク+赤スリット)。ドーターカード(基板+8mm, 厚1.6)の上に載り、端のM.2ネジで固定 =====
 sd = lp('ssd'); sd_z = Z1 + 8 + 1.6          # カード上面
@@ -499,7 +514,7 @@ make_fan('fan_pump_vrm', 55, 12, 7, M['dark'], principled('vrm_blade', '#1b1c20'
 for sgn, nm in ((1, 'a'), (-1, 'b')):
     ibox(f'pump_port_{nm}', 20, 14, 14, pcx + 38, pcy + sgn * 14 - 7, cl[2] + 9, pump_mat, 2)    # ホース出口(右側面, ポンプ右縁から外向き)
     icyl(f'pump_fitting_{nm}', 6.2, 8, 'x', pcx + 52, pcy + sgn * 14, cl[2] + 16, M['alublack'], 24)
-for k_, (dx_, dy_) in enumerate(((-34, -34), (34, -34), (-34, 34), (34, 34))):            # AM5バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
+for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):            # AM5取付穴 54×90mm(AM4互換パターン, Noctua等の公開資料)。長辺(90)はポンプのホース出口方向と直交(ARCTIC 2D図面 Bottom View)。バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
     z_top_, z_bot_ = cl[2] + 14, bz - 1
     icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)
     icyl(f'pump_spring{k_}', 4.4, 8, 'z', pcx + dx_, pcy + dy_, cl[2] + 4 + 4, M['alu'], 16)
@@ -508,7 +523,7 @@ rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
 for k in range(2):
-    make_fan(f'fan_rad{k}', 120, 25, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38)
+    make_fan(f'fan_rad{k}', 120, 25, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%
 def cable(name, pts, r, mat):
     cu = bpy.data.curves.new(name, 'CURVE'); cu.dimensions = '3D'; cu.bevel_depth = r; cu.bevel_resolution = 6; cu.fill_mode = 'FULL'; cu.use_fill_caps = True
     sp = cu.splines.new('POLY'); sp.points.add(len(pts) - 1)       # cablemodelのfillet済み折れ線をそのまま使う(曲げ半径はtools/cable_check.pyで検査済)
@@ -595,13 +610,13 @@ exec(open(os.path.join(HERE, 'hardware_v8.py'), encoding='utf-8').read())      #
 # ---------------- アセンブリ(部品群)ごとにグルーピング: 各ファン/ポンプ/ラジエーター/GPU/PSU/基板/SSD/ctrl/AC/ケーブル/ヒンジ/スタンド/ドーム/トレイ/表示部を独立した親にする ----------------
 ASM = [('ASM_stand_neck', ('stand_arm', 'stand_neck', 'stand_swivel_rotor', 'stand_swivel_bearing_inner', 'stand_swivel_friction', 'stand_swivel_bolt0', 'stand_swivel_bolt1', 'stand_swivel_bolt2', 'stand_swivel_bolt3', 'stand_swivel_bolt4', 'stand_swivel_bolt5', 'stand_swivel_stop_tab', 'pe_braid_swivel', 'hinge_friction', 'spring_die', 'spring_guide', 'spring_seat_bot', 'stand_anchor', 'hinge_stopper_dn', 'hinge_stopper_up')),
        ('ASM_fan_gpu0', ('fan_gpu0',)), ('ASM_fan_gpu1', ('fan_gpu1',)), ('ASM_fan_rad0', ('fan_rad0',)), ('ASM_fan_rad1', ('fan_rad1',)), ('ASM_fan_psu', ('fan_psu',)), ('ASM_fan_pump_vrm', ('fan_pump_vrm',)),
-       ('ASM_dome', ('cover_', 'gasket', 'latch_', 'hook_', 'magnet', 'dowel_', 'rf_window', 'antenna')),
+       ('ASM_dome', ('power_button', 'cover_', 'gasket', 'latch_', 'hook_', 'magnet', 'dowel_', 'rf_window', 'antenna')),
        ('ASM_tray', ('tray_', 'hang_', 'standoff_', 'screw_', 'pe_stud', 'pe_nut', 'pe_braid_tray', 'clip_', 'gpu_cradle')),
        ('ASM_gpu', ('gpu_', 'riser')), ('ASM_aio_pump', ('pump_',)), ('ASM_aio_rad', ('rad_',)), ('ASM_psu', ('psu_',)),
        ('ASM_ssd', ('ssd_', 'txt_samsung', 'm2_screw')), ('ASM_ctrl', ('ctrl_',)), ('ASM_ac_inlet', ('ac_inlet',)), ('ASM_cables', ('cable_',)),
        ('ASM_hinge', ('hinge_axle', 'hinge_eclip', 'hinge_block', 'hinge_cheek', 'hinge_cover', 'hinge_backing', 'hinge_doubler', 'hinge_bolt', 'hinge_friction', 'hinge_cam', 'hinge_stopper', 'spring_', 'pe_braid_hinge')),
        ('ASM_stand_fixed', ('stand_', 'hinge_axle', 'hinge_eclip')),
-       ('ASM_display', ('slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button')),
+       ('ASM_display', ('slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic')),
        ('ASM_board', ('board_', 'io_', 'vrm_', 'choke', 'cap', 'socket', 'cpu_', 'txt_', 'dimm', 'atx24', 'eps8', 'pcie_', 'chipset', 'm2_', 'am5_'))]
 FIXED = ('ASM_stand_fixed', 'ASM_stand_neck')      # ネックは頭部とチルトしないが、首振りでは回る
 _asm = {}

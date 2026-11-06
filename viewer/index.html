@@ -140,7 +140,7 @@ function drawScreen(t){ const w=sc2.width,h=sc2.height;      // 壁紙: 深い�
 /* ---- GLB 読み込み ---- */
 const S={cover:true,labels:false,air:false,screen:true,load:0,explode:0,speed:0};
 let model, pivot, swivel, coverNode; const displayMeshes=[], rotors=[], byName={}, matBy={}, explodeGroups=[]; let ready=false;
-const EXPLODE=[[['display','front_glass','chin_print','camera','mic','power_button'],-300],[['cover_','gasket'],620],[['fan_exhaust'],440],[['pump','hose','txt_ihs','rad_','fan_rad','txt_arctic'],330],[['ac_inlet','cable_ac'],260],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],210],[['psu','fan_psu','cable_atx24','cable_eps','txt_sf','txt_plat'],140],[['ssd_','txt_samsung','m2_screw'],110],[['ctrl_','cable_ctrl','cable_umb'],80]];   // 分解量[mm]@100%。スライダは最大200%(=2倍)
+const EXPLODE=[[['display','front_glass','chin_print','camera','mic','power_button'],-300],[['cover_','gasket','hook_','dowel_','antenna','rf_window'],620],[['fan_exhaust'],440],[['pump','hose','txt_ihs','rad_','fan_rad','fan_pump','txt_arctic'],330],[['ac_inlet','cable_ac'],260],[['gpu','fan_gpu','cable_pcie8','txt_gpu','riser'],210],[['psu','fan_psu','cable_atx24','cable_eps','txt_sf','txt_plat'],140],[['ssd_','txt_samsung','m2_screw'],110],[['ctrl_','cable_'],80]];   // 分解量[mm]@100%。スライダは最大200%(=2倍)
 /* GLBは base64 テキスト(imac_pc.glb.txt)から読む(公開環境が .glb を配信しないため)。ローカルでは .glb にフォールバック */
 function loadGLB(onload,_p,onerr){
   const L=new GLTFLoader();
@@ -154,13 +154,13 @@ loadGLB(gltf=>{
   pivot=byName['tilt_pivot']; swivel=byName['swivel_pivot']; coverNode=byName['cover_back'];
   const RPM={fan_gpu0_rotor:[0,1800],fan_gpu1_rotor:[0,1800],fan_rad0_rotor:[600,2400],fan_rad1_rotor:[600,2400],fan_exhaust_rotor:[500,1700],fan_psu_rotor:[0,1200],fan_pump_vrm_rotor:[800,2500]};   // アイドル/負荷(設計上の想定, 実測ではない)
   for(const n in RPM) if(byName[n]) rotors.push({o:byName[n],idle:RPM[n][0],load:RPM[n][1]});
+  for(const n of ['display','chin_print','camera']){ const o=byName[n]; if(o) o.position.z+=(n==='display'?0.35:0.2); }   // ガラス前面(z=0)から物理的に離して z-fighting を根絶(画面ON/OFFどちらでも)
   for(const [prefixes,amt] of EXPLODE){ const nodes=[]; model.traverse(o=>{ if(o.name&&prefixes.some(p=>o.name.startsWith(p))) nodes.push(o); });
     const set=new Set(nodes); const top=nodes.filter(o=>{ let p=o.parent; while(p){ if(set.has(p)) return false; p=p.parent;} return true; });
     explodeGroups.push({nodes:top,amt,base:top.map(o=>o.position.clone())}); }
   displayMeshes.forEach(m=>{ m.material=screenMat; });
   for(const n of ['painted_chin','black_glass']) if(matBy[n]){ matBy[n].polygonOffset=true; matBy[n].polygonOffsetFactor=-4; matBy[n].polygonOffsetUnits=-4; }   // ガラス面との重なり(z-fighting)対策
   screenMat.polygonOffset=true; screenMat.polygonOffsetFactor=-6; screenMat.polygonOffsetUnits=-6;
-  for(const n of ['display','chin_print','camera']){ const o=byName[n]; if(o) o.position.z+=(n==='display'?0.35:0.2); }   // ガラス前面(z=0)から物理的に離して z-fighting を根絶(画面ON/OFFどちらでも)
   setColor(color); $('loading').remove(); ready=true; initStruts(); goView(Q.get('view')||'back',true); applyExplode();
   if(Q.get('cut')==='1') setCover(false);
   if(Q.has('tilt')){ $('sTilt').value=Q.get('tilt'); $('sTilt').oninput({target:$('sTilt')}); }
@@ -197,7 +197,7 @@ function applyExplode(){ if(!ready) return; const e=S.explode;
 const chips=$('chips'); for(const k of Object.keys(PALETTE)){ const b=document.createElement('button'); b.className='chip'; b.dataset.c=k; b.title=NAMES[k]; b.setAttribute('aria-label',NAMES[k]); b.style.background=PALETTE[k][0]; b.onclick=()=>setColor(k); chips.appendChild(b); }
 const VIEWS={front:{p:[560,330,1900],t:[0,205,-30],name:'正面'},back:{p:[-700,330,-1950],t:[0,200,-45],name:'背面'},side:{p:[1900,270,-80],t:[0,190,-45],name:'側面'},inside:{p:[40,215,-1380],t:[0,205,-45],name:'内部(ドームなし)'}};
 let tween=null;
-function goView(n,instant){ const v=VIEWS[n]; if(!v) return; $('hudView').textContent=v.name; if(n==='inside') setCover(false);
+function goView(n,instant){ if(!VIEWS[n]) n='back'; const v=VIEWS[n]; $('hudView').textContent=v.name; if(n==='inside') setCover(false);
   if(instant){ camera.position.set(...v.p); controls.target.set(...v.t); controls.update(); return; }
   tween={t:0,p0:camera.position.clone(),t0:controls.target.clone(),p1:new THREE.Vector3(...v.p),t1:new THREE.Vector3(...v.t)}; }
 document.querySelectorAll('#views button').forEach(b=>b.onclick=()=>goView(b.dataset.v));

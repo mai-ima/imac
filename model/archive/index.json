@@ -253,6 +253,15 @@
    "file": "hardware_list/hardware_list.v006__2026-11-06_d97f07e.json"
   },
   {
+   "src": "model/hardware_list.json",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "c498e2ff7139f6727235f176f90695b5aee3a7ecad207cbba159b3e731523f3b",
+   "file": "hardware_list/hardware_list.v007__2026-11-06_02c4c72.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",
@@ -343,6 +352,15 @@
    "file": "layout/layout.v010__2026-11-06_cca8bc2.json"
   },
   {
+   "src": "model/layout.json",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "6ac8a239f223f45990f76b1653de79f4967b2a67139d5cbfaddf592e0ec8d5a6",
+   "file": "layout/layout.v011__2026-11-06_514e2e0.json"
+  },
+  {
    "src": "model/parts.json",
    "version": 1,
    "gen": "gen-001",
@@ -422,6 +440,15 @@
    "commit": "fc36218",
    "sha256": "e71d171d746f65d3a973d88cdd3e91d037c40df796f24caccd06bfa9af331ea4",
    "file": "parts/parts.v009__2026-11-06_fc36218.json"
+  },
+  {
+   "src": "model/parts.json",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "514e2e0",
+   "sha256": "bf7505456474f188af32d494287848bd15c0d07a7eb2e970ed61edb1b7043dc3",
+   "file": "parts/parts.v010__2026-11-06_514e2e0.json"
   },
   {
    "src": "model/spec.json",
@@ -557,6 +584,24 @@
    "commit": "d97f07e",
    "sha256": "ed3ba7b4eadbb4115b94252dd2c9759539b1194f8157abf29b15d0d85b05960f",
    "file": "spec/spec.v015__2026-11-06_d97f07e.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 16,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "02c4c72",
+   "sha256": "c1b4df7a3266916721676eea1889a7574c83a70cad83f01f68076521e7e886c1",
+   "file": "spec/spec.v016__2026-11-06_02c4c72.json"
+  },
+  {
+   "src": "model/x870i_layout.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-03",
+   "commit": "fd22dea",
+   "sha256": "1905e295028c108cda84c76114832c560aba861bf23ee6e7b2bbb3101c9a339c",
+   "file": "x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json"
   }
  ]
 }

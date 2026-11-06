@@ -89,6 +89,7 @@
 | unverified-tracker.md | v010 | current | 2026-11-06 | cca8bc2 | unverified-tracker/unverified-tracker.v010__2026-11-06_cca8bc2.md |
 | unverified-tracker.md | v011 | current | 2026-11-06 | 7ed5c4c | unverified-tracker/unverified-tracker.v011__2026-11-06_7ed5c4c.md |
 | unverified-tracker.md | v012 | current | 2026-11-06 | 4482281 | unverified-tracker/unverified-tracker.v012__2026-11-06_4482281.md |
+| unverified-tracker.md | v013 | current | 2026-11-06 | d97f07e | unverified-tracker/unverified-tracker.v013__2026-11-06_d97f07e.md |
 | wiring.md | v001 | current | 2026-11-05 | 27ca8ce | wiring/wiring.v001__2026-11-05_27ca8ce.md |
 | wiring.md | v002 | current | 2026-11-05 | 2f8c0ac | wiring/wiring.v002__2026-11-05_2f8c0ac.md |
 | wiring.md | v003 | current | 2026-11-05 | fcba5fe | wiring/wiring.v003__2026-11-05_fcba5fe.md |

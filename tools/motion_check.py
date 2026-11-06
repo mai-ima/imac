@@ -49,12 +49,13 @@ NECK = {'ネック基台': rect(-NK['base_half_x'], NK['base_half_x'], SY, SYS, 
         '左側板(本体)': rect(-NK['side_x'][1], -NK['side_x'][0], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]), '右側板(本体)': rect(NK['side_x'][0], NK['side_x'][1], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]),
         '左ストリップ': rect(-NK['side_x'][1], -NK['side_x'][0], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2), '右ストリップ': rect(NK['side_x'][0], NK['side_x'][1], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2),
         '左軸ボス': circ(-NK['side_x'][1], -NK['side_x'][0], NK['boss_r']), '右軸ボス': circ(NK['side_x'][0], NK['side_x'][1], NK['boss_r']),
+        '前ストッパ受けタブ左': rect(-NK['tab_x'][1], -NK['tab_x'][0], NK['cover_top'], NK['tab_y_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]), '前ストッパ受けタブ右': rect(NK['tab_x'][0], NK['tab_x'][1], NK['cover_top'], NK['tab_y_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]),
         'タイプレート': rect(-NK['side_x'][0], NK['side_x'][0], NK['tie_y'][0], NK['tie_y'][1], ZC + NK['tie_z'][0], ZC + NK['tie_z'][1]),
         '前カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['front_cover_z'][0], ZC + NK['front_cover_z'][1]), '後カバー': rect(-60, 60, SYS, NK['cover_top'], ZC + NK['back_cover_z'][0], ZC + NK['back_cover_z'][1]),
-        'ゴムパッド(+40°側)左': rect(-px1, -px0, HY - NK['lever_len'] * cosd(40) - 5, HY - NK['lever_len'] * cosd(40) + 5, ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
-        'ゴムパッド(+40°側)右': rect(px0, px1, HY - NK['lever_len'] * cosd(40) - 5, HY - NK['lever_len'] * cosd(40) + 5, ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
-        'ゴムパッド(-15°側)左': rect(-px1, -px0, HY - NK['lever_len'] * cosd(-15) - 5, HY - NK['lever_len'] * cosd(-15) + 5, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1]),
-        'ゴムパッド(-15°側)右': rect(px0, px1, HY - NK['lever_len'] * cosd(-15) - 5, HY - NK['lever_len'] * cosd(-15) + 5, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1])}
+        'ゴムパッド(+40°側)左': rect(-px1, -px0, NK['tab_y_top'] - 6, NK['tab_y_top'], ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
+        'ゴムパッド(+40°側)右': rect(px0, px1, NK['tab_y_top'] - 6, NK['tab_y_top'], ZC + NK['pad_up_z'][0], ZC + NK['pad_up_z'][1]),
+        'ゴムパッド(-15°側)左': rect(-px1, -px0, HY - NK['lever_len'] * cosd(-15) - 3, HY - NK['lever_len'] * cosd(-15) + 3, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1]),
+        'ゴムパッド(-15°側)右': rect(px0, px1, HY - NK['lever_len'] * cosd(-15) - 3, HY - NK['lever_len'] * cosd(-15) + 3, ZC + NK['pad_dn_z'][0], ZC + NK['pad_dn_z'][1])}
 def rot(poly, a):
     c, s_ = math.cos(math.radians(a)), math.sin(math.radians(a)); out = []
     for (y, z) in poly:
@@ -86,12 +87,12 @@ for hn, (hx0, hx1, hp) in HEAD.items():
         for a in tilts:
             d = pen(rot(hp, a), np_)
             stop_pair = hn.startswith(STOP_HEAD) and nn.startswith(STOP_NECK)
-            lim = 1.2 if stop_pair and (a <= T0 + 2.5 or a >= T1 - 2.5) else 0.05      # ストッパはゴムの圧縮代1.2mmまで(端のみ)
+            lim = (NK['pad_thick'] * 0.5 + 0.3) if stop_pair and (a <= T0 + 2.5 or a >= T1 - 2.5) else 0.05      # ストッパはゴムの圧縮代1.2mmまで(端のみ)
             if d > lim: worst[(hn, nn)] = max(worst.get((hn, nn), 0), d)
 for (hn, nn), d in sorted(worst.items(), key=lambda kv: -kv[1])[:14]: print(f'[NG ] 掃引干渉 {hn} × {nn}: 最大貫入 {d:.1f}mm'); bad += 1
-# ストッパが両端で必ず当たること(辺-点距離): 端(T0/T1)で貫入0〜1.2mm または 距離≦0.3mm でなければ NG(ストッパが効かない)
+# ストッパが両端で必ず当たること(辺-点距離): 端(T0/T1)で貫入0〜パッド厚の50% または 距離≦0.3mm でなければ NG(ストッパが効かない)
 for lab, a, nm in (('-15°端', T0, 'ゴムパッド(-15°側)右'), ('+40°端', T1, 'ゴムパッド(+40°側)右')):
-    pin = rot(HEAD['尾部レバー右'][2], a); q = NECK[nm][2]; d = pen(pin, q); g_ = gap(pin, q); eff = (0 < d <= 1.2) or g_ <= 0.3
+    pin = rot(HEAD['尾部レバー右'][2], a); q = NECK[nm][2]; d = pen(pin, q); g_ = gap(pin, q); eff = (0 < d <= NK['pad_thick'] * 0.5) or g_ <= 0.3
     print(f'ストッパ{lab}: 貫入 {d:.2f}mm / 最小距離 {g_:.2f}mm [{"OK(当たる)" if eff else "NG(当たらない/食い込み過大)"}]'); bad += 0 if eff else 1
 # 動的な挟み込み域: 頭部スラブ下縁と前後カバー上端の距離を全角度で計算(4〜25mmは指が挟まる危険域 EN 349 → 蛇腹ブーツ等の保護が必要。未設計=U53)
 pinch = []
