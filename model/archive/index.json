@@ -19,6 +19,15 @@
    "file": "cables/cables.v002__2026-11-05_2f8c0ac.json"
   },
   {
+   "src": "model/cables.json",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "5766f370727d15ec90e60424c83b8e968c0a87d3d636689fa927adfe213788bd",
+   "file": "cables/cables.v003__2026-11-05_fcba5fe.json"
+  },
+  {
    "src": "model/custom_parts.json",
    "version": 1,
    "gen": "current",
@@ -100,6 +109,24 @@
    "file": "layout/layout.v006__2026-11-05_fcba5fe.json"
   },
   {
+   "src": "model/layout.json",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "71b7afb",
+   "sha256": "1d644d9613c300afe9be5a1c5fcec8c11f9623bdb3dcfea5f9072241c326b65d",
+   "file": "layout/layout.v007__2026-11-06_71b7afb.json"
+  },
+  {
+   "src": "model/layout.json",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "e7abf87bfa7ec73d75e461f83e905ed25d7628240de83756e9923088d0cdc864",
+   "file": "layout/layout.v008__2026-11-05_71b7afb.json"
+  },
+  {
    "src": "model/parts.json",
    "version": 1,
    "gen": "gen-001",
@@ -163,6 +190,15 @@
    "file": "parts/parts.v007__2026-11-05_fcba5fe.json"
   },
   {
+   "src": "model/parts.json",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "71b7afb",
+   "sha256": "15856e99911f899792e9b4b6becb9b6a48e47c8cc2e2465f4969dd2dc5f8c330",
+   "file": "parts/parts.v008__2026-11-06_71b7afb.json"
+  },
+  {
    "src": "model/spec.json",
    "version": 1,
    "gen": "gen-001",
@@ -215,6 +251,24 @@
    "commit": "fcba5fe",
    "sha256": "a4a56bd0a74a535cdbaecaed5d97c394853709b96499fc1c2eb0d440863bd79f",
    "file": "spec/spec.v006__2026-11-05_fcba5fe.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "71b7afb",
+   "sha256": "009d10435d906c268629f8945093950049c64fbaa8d510b3108a2343670ddcb0",
+   "file": "spec/spec.v007__2026-11-06_71b7afb.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "09f87aaa18da5fae74b095167ea52358085ba15d65c7d98007af5bb4669c6908",
+   "file": "spec/spec.v008__2026-11-05_71b7afb.json"
   }
  ]
 }

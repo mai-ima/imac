@@ -48,3 +48,7 @@
 | U42 | ctrl_board ゲート(docs/spec/panel-driver.md): 型番/外形/コネクタ位置/保証、背板アンビリカル開口との整合 | 実現性 | **未確定(最大リスク)** | Data-Modul/代替キット | 11/05 |
 | U43 | 現行iMac(M6)の日本円価格・発売後の実機ベンチ(Notebookcheck/Tom's等) | 比較基準 | 発売前(11/6発売)で未確認 | Apple Store日本/発売後レビュー | 11/05 |
 | U44 | CPU再選定: Ryzen 9 9950X3D等(TDP/PPT/ベンチ/BIOS対応/240mm AIOの冷却能力)とM6との比 | 性能要件 | 調査中 | docs/spec/performance-benchmark.md | 11/05 |
+| U45 | ケーブル曲げ半径/剛性(ATX/EPS/PCIe/ライザー/AIOホース/eDP/FFC)の公式値(docs/research-cables.md) | 配線 | 大半UNVERIFIED(暫定値で設計) | メーカー問合せ/実物測定 | 11/06 |
+| U46 | GPU: 小型RTX 5070 Ti(290×150×40)の具体型番・日本での入手性・価格・端子位置 | 部品/配置 | 未確定 | PNY/Zotac/Gigabyte小型版 | 11/06 |
+| U47 | Corsair SF1000(1000W SFX)の公式寸法/コネクタ/ケーブル長/価格 | 電源 | 未確認 | Corsair公式 | 11/06 |
+| U48 | パネル熱: データシート本文(LED仕様/湿度/LCM表面温度脚注)、背板温度の実測(docs/spec/panel-thermal.md) | 信頼性 | 未確認 | Data-Modul PDF/実機試験 | 11/06 |

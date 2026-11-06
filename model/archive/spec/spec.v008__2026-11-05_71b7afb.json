@@ -1,0 +1,107 @@
+{
+ "_doc": "外形・ドーム・色の共通仕様(単位mm)。部品は parts.json、配置は layout.json。",
+ "panel_size": 27,
+ "panels": {
+  "24": {
+   "w": 527.0,
+   "h": 296.5
+  },
+  "27": {
+   "w": 596.7,
+   "h": 335.7
+  }
+ },
+ "bezel": 11.6,
+ "chin": 68,
+ "slab_t": 19.0,
+ "corner": 10,
+ "pod": {
+  "total_t": 116,
+  "h": 256,
+  "side_margin": 27,
+  "wall": 3
+ },
+ "stand": {
+  "w": 150,
+  "drop": 85,
+  "foot_depth": 215,
+  "foot_w": 220,
+  "foot_front": 90,
+  "foot_back": 125,
+  "ballast_kg": 2.0
+ },
+ "palette": {
+  "silver": [
+   "#D2D3D5",
+   "#BBBCBE",
+   "#D7D8DA"
+  ],
+  "blue": [
+   "#5882B2",
+   "#9EB2CD",
+   "#BACEE9"
+  ],
+  "purple": [
+   "#8581B4",
+   "#ACA3C0",
+   "#C9C5E6"
+  ],
+  "pink": [
+   "#E16280",
+   "#E7A9B6",
+   "#FFCFDB"
+  ],
+  "orange": [
+   "#E5734E",
+   "#F0B498",
+   "#FFCCAF"
+  ],
+  "yellow": [
+   "#EFD344",
+   "#DCCB97",
+   "#FDEEB7"
+  ],
+  "green": [
+   "#41965F",
+   "#A2BFAD",
+   "#B9D8C6"
+  ]
+ },
+ "palette_doc": "[背面, スタンド, チン] Apple公式画像から実測",
+ "body_w": 620.0,
+ "panel_module": {
+  "name": "BOE MV270QUM-N50 (包絡線。LG LM270WR3-SSC1 608.8x355.3x12.8 も内包)",
+  "outline": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "active": [
+   596.736,
+   335.664
+  ],
+  "aa_to_outline_LRUD": [
+   6.032,
+   6.032,
+   5.968,
+   13.668
+  ]
+ },
+ "dome": {
+  "_doc": "iMac Pro/2012風の背面ドーム: 縁は薄く(slab+数mm)、中央に向かって傾斜して最大厚に達する。base=ドームの外形(スラブ背面上の矩形)。run=縁から最大厚に達するまでの水平距離。d0=縁での内部有効奥行。",
+  "inset_left_right": 12,
+  "inset_bottom": 24,
+  "inset_top": 14,
+  "corner_r": 50,
+  "run": 70,
+  "edge_inner_depth": 6,
+  "total_t": 116,
+  "sheet_t": 2.0
+ },
+ "hinge": {
+  "axis_y": 10.0,
+  "axis_z_from_glass": 43.0,
+  "doc": "v7: 軸を重心(約z26)の背面側43mmに置き、-5°〜+25°でトルクがほぼ正(後方へ倒れる向き)になるようにする(tools/joint_calc.py)。ヒンジブロックは背板に貫通ボルト+裏当て板で固定。"
+ },
+ "v7_notes": "slab_t 19(OCA無し構造: ガラス1.1+エアギャップ0.9+パネル13.3+隙間1.0+背板2.0=18.3, 余裕0.7)。dome total_t 113 = slab19 + 内奥行91 + 壁3(2.0板+1.0クリアランス)。tray上面z=2(板厚2.0, 背板に接して吊る)+スタンドオフ(基板6.35/その他3.0)。 | v7.1: ドーム縁の内奥行12→6mm、傾斜run60→70(側面の薄い縁, Apple監査P6)。スタンド足220×215+ballast2kg(鋼板, 足内)で転倒余裕を維持。 | total_t 115(内奥行93)"
+}

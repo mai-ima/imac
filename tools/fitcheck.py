@@ -41,7 +41,7 @@ for it in L['items']:
     x, y, z = it['pos']; sx, sy, sz = it['size']; boxes[it['id']] = (x, y, z, x+sx, y+sy, z+sz)
     cont = x >= 0 and y >= 0 and z >= 0 and x+sx <= IN[0] and y+sy <= IN[1] and z+sz <= IN[2]
     extra = ''
-    if dome_depth:
+    if dome_depth and it['id']!='ac_inlet':      # ac_inletはドーム下辺の開口を貫通するため傾斜壁の判定対象外
         dmin = rr_dist(x, y, x+sx, y+sy); allow_z = dome_depth(max(dmin, 0)); cont = cont and (z+sz+3.0 <= allow_z)
         extra = f' 縁距離{dmin:.0f}→許容奥行{allow_z:.0f}(要{z+sz+3:.0f})'
     chk(f"収まり {it['id']}", cont, f"{P[it['id']]['name'][:34]}  上端z={z+sz:.1f}/{IN[2]:.0f}{extra}")
@@ -69,7 +69,7 @@ chk('パネル電源', True, 'コントローラ基板 12V <- SF750 のSATA/Mole
 # ---- 冷却 ----
 heat = cpu + gpu + misc + (500*0 + load*0.1)   # 電源損失10%
 nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
-air = (nfan * P['fan']['facts']['airflow_m3h'] + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
+air = (nfan * (P['fan']['facts']['airflow_m3h'] if 'fan' in P else 0) + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)
 chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ケースファン{nfan}基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
 print(f"[注意] CPU冷却: {P['cpu']['name']} PPT {cpu}W(制限なし)に対し240mm AIO(AMD推奨は240/280mm級, 実測はUNVERIFIED)。実機での温度確認が必須")

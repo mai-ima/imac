@@ -28,6 +28,15 @@
    "file": "fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py"
   },
   {
+   "src": "tools/fitcheck.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "bab7e85ad1ced577e9efd715fbea245487955fd357b8fb554f151afab80d866b",
+   "file": "fitcheck/fitcheck.v004__2026-11-05_71b7afb.py"
+  },
+  {
    "src": "tools/gen_anatomy.py",
    "version": 1,
    "gen": "current",

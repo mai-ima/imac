@@ -128,29 +128,31 @@
  },
  "gpu": {
   "id": "gpu",
-  "name": "ASUS Dual GeForce RTX 5060 Ti 16GB OC (DUAL-RTX5060TI-O16G)",
+  "name": "RTX 5070 Ti 16GB 小型2スロット(寸法基準: PNY RTX 5070 Ti Slim 290×150×40, 具体型番は購入前に確定 U46)",
   "maker": "ASUS",
   "dims": [
-   229,
-   120,
-   50
+   290,
+   150,
+   40
   ],
-  "status": "official",
+  "status": "assumed",
   "facts": {
-   "slot": "2.5",
-   "power": "1x 8-pin",
-   "psu_rec_w": 550,
-   "outputs": "HDMI 2.1b x1 + DP 2.1b x3",
+   "slot": "2",
+   "power": "12V-2x6 ×1(想定)",
+   "psu_rec_w": 750,
+   "outputs": "HDMI 2.1b + DP 2.1b×3(想定)",
    "cuda": 4608,
    "mem": "16GB GDDR7 28Gbps 128bit",
-   "tgp_w": 180,
-   "pcie": "5.0(レーン数は未確認、物理x8の可能性)"
+   "tgp_w": 300,
+   "pcie": "5.0(レーン数は未確認、物理x8の可能性)",
+   "note": "ゲーム要件(Cyberpunk/CoD/Cities SK2 4K快適)で5070 Tiを最小構成と判断(docs/spec/gaming-requirements.md)。ASUS Dual 5060 Ti 16GBは不採用"
   },
   "sources": [
-   "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060ti-o16g/techspec/"
+   "https://hothardware.com/news/pny-slim-2-slot-rtx-5080-5070-ti-5070-gpus-sff-gaming-pcs",
+   "https://www.gamesradar.com/hardware/desktop-pc/pnys-latest-nvidia-rtx-50-gpus-appeal-to-my-kind-of-pc-building"
   ],
   "note": "終息報道あり(非公式)。代替: NVIDIA RTX 5070 FE 242x112",
-  "status_note": "official / 必要電源: ASUS 550W, NVIDIA参考表 600W(SF750は両方満たす) / ファン数・PCIeレーン・重量は公式ページ記載なし(U)"
+  "status_note": "PNY Slim 5070 Ti: 290×150×40mm(HotHardware/GamesRadar報道)。日本での取扱い/価格は未確認。NVIDIA SFF-Ready上限: 304×151×50。"
  },
  "riser": {
   "id": "riser",
@@ -173,51 +175,30 @@
  },
  "psu": {
   "id": "psu",
-  "name": "Corsair SF750 (2024, SFX 750W, ATX 3.1/12V-2x6)",
+  "name": "Corsair SF1000 (SFX 1000W 80+ Platinum, ATX 3.x/12V-2x6) — 5070 Ti(300W)+9950X3D(230W)用",
   "maker": "Corsair",
   "dims": [
    125,
    100,
    63.5
   ],
-  "status": "retail",
+  "status": "assumed",
   "facts": {
-   "watts": 750,
+   "watts": 1000,
    "eff": "80PLUS Platinum",
    "form": "SFX 125(W)x63.5(H)x100(L)",
    "conn": "24pin / EPS 4+4 x2 / PCIe 6+2 x2 / 12V-2x6 x1(小売記載)",
    "cable_mm": "24pin 300, EPS 400, PCIe 400, 12V-2x6 400(小売記載、公式未確認)",
    "warranty": "7年",
    "fan": "92mm FDB(ゼロRPM)",
-   "provisional_w": 750
+   "provisional_w": 1000
   },
   "sources": [
    "https://www.corsair.com/us/en/p/psu/cp-9020284-na/sf-series-sf750-fully-modular-80-plus-platinum-sfx-power-supply-cp-9020284-na",
    "https://assets.corsair.com/image/upload/corsairmedia/sys_master/productcontent/SF_PLATINUM_User_Manual.pdf"
   ],
   "note": "Corsair公式は403(UA付きでも不可)で公式値は未取得。第二候補: Seasonic FOCUS GX-750 ATX3.1(150x85x140, 保証10年。ドーム最大深さ87mmに入らないため不採用)。ケーブルが短い(300〜400mm)のでPSUは基板の近くに置く必要がある",
-  "status_note": "小売記載(Caseking: EPS400/24p300/12V-2x6 400/PCIe400)。コネクタ数は小売間で不一致(購入前に確認 U34)。公式(Corsair 403)は未取得"
- },
- "fan": {
-  "id": "fan",
-  "name": "Noctua NF-A12x25 PWM x1 (ケース排気, 1基)",
-  "maker": "Noctua",
-  "dims": [
-   120,
-   120,
-   25
-  ],
-  "status": "official",
-  "facts": {
-   "airflow_m3h": 102,
-   "static_mmH2O": 2.34,
-   "rpm_max": 2000,
-   "noise_dba": 22.6
-  },
-  "sources": [
-   "https://noctua.at/en/products/nf-a12x25-pwm/specifications"
-  ],
-  "status_note": "寸法/風量/軸受(SSO2)はNoctua公式ページ(noctua.at/en/products/nf-a12x25-pwm/specifications)で確認可能(旧URLは429)"
+  "status_note": "SF750(750W)では電源余裕30%を満たさなくなったため1000Wへ(寸法は同じSFX 125×100×63.5想定)。SF1000の公式仕様/ケーブル/コネクタ/価格は未確認(U34/U47)。"
  },
  "ssd": {
   "id": "ssd",
