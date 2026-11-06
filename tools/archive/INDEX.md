@@ -2,6 +2,8 @@
 
 | 元ファイル | 版 | 世代 | 日付 | commit | 保存先 |
 |---|---|---|---|---|---|
+| cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
+| cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
 | fitcheck.py | v001 | current | 2026-11-03 | ee3a42e | fitcheck/fitcheck.v001__2026-11-03_ee3a42e.py |
 | fitcheck.py | v002 | current | 2026-11-05 | 2f8c0ac | fitcheck/fitcheck.v002__2026-11-05_2f8c0ac.py |
 | fitcheck.py | v003 | current | 2026-11-05 | fcba5fe | fitcheck/fitcheck.v003__2026-11-05_fcba5fe.py |

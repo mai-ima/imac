@@ -28,6 +28,15 @@
    "file": "cables/cables.v003__2026-11-05_fcba5fe.json"
   },
   {
+   "src": "model/cables.json",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "114fab7f19fd7509f48405ed300b179dd3a425abffa1d517ff3efa2e7629cf08",
+   "file": "cables/cables.v004__2026-11-06_fc36218.json"
+  },
+  {
    "src": "model/custom_parts.json",
    "version": 1,
    "gen": "current",
@@ -125,6 +134,15 @@
    "commit": "71b7afb",
    "sha256": "e7abf87bfa7ec73d75e461f83e905ed25d7628240de83756e9923088d0cdc864",
    "file": "layout/layout.v008__2026-11-05_71b7afb.json"
+  },
+  {
+   "src": "model/layout.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "c2883b7abe6e30d86628ec829fe1801c6d3e267d49a3b1f85da6d56162f92c25",
+   "file": "layout/layout.v009__2026-11-06_fc36218.json"
   },
   {
    "src": "model/parts.json",

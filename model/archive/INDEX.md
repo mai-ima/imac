@@ -5,6 +5,7 @@
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
+| cables.json | v004 | current | 2026-11-06 | fc36218 | cables/cables.v004__2026-11-06_fc36218.json |
 | custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | custom_parts.json | v002 | current | 2026-11-05 | 3c794e1 | custom_parts/custom_parts.v002__2026-11-05_3c794e1.json |
 | custom_parts.json | v003 | current | 2026-11-05 | fcba5fe | custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json |
@@ -16,6 +17,7 @@
 | layout.json | v006 | current | 2026-11-05 | fcba5fe | layout/layout.v006__2026-11-05_fcba5fe.json |
 | layout.json | v007 | current | 2026-11-06 | 71b7afb | layout/layout.v007__2026-11-06_71b7afb.json |
 | layout.json | v008 | current | 2026-11-05 | 71b7afb | layout/layout.v008__2026-11-05_71b7afb.json |
+| layout.json | v009 | current | 2026-11-06 | fc36218 | layout/layout.v009__2026-11-06_fc36218.json |
 | parts.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/parts/parts.v001__2026-11-03_165c355.json |
 | parts.json | v002 | gen-001 | 2026-11-03 | fd22dea | gen-001/parts/parts.v002__2026-11-03_fd22dea.json |
 | parts.json | v003 | current | 2026-11-03 | fdfd200 | parts/parts.v003__2026-11-03_fdfd200.json |

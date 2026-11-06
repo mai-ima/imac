@@ -1,6 +1,24 @@
 {
  "entries": [
   {
+   "src": "tools/cable_check.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "65ad0897f4aae0ef6da43c6a7ce1328f39d35db908e2e5ae4fe503c3af87653a",
+   "file": "cable_check/cable_check.v001__2026-11-06_fc36218.py"
+  },
+  {
+   "src": "tools/cablemodel.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "85b6081c94d35be5b9d0d63c53d0c71adb3b7cb7ea4fc8eda9923cd9f0f64d20",
+   "file": "cablemodel/cablemodel.v001__2026-11-06_fc36218.py"
+  },
+  {
    "src": "tools/fitcheck.py",
    "version": 1,
    "gen": "current",
