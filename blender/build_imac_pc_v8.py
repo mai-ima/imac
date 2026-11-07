@@ -593,8 +593,8 @@ ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])      # �
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
-for i in range(8): ibox(f'choke{i}', 7, 7, 4.5, bx + 14 + i * 9.6, by + 62, Z1, M['cap'], .5)
-for i in range(6): icyl(f'cap{i}', 3.2, 9, 'z', bx + 22 + i * 9.6, by + 74, Z1 + 4.5, M['cap'], 20)
+for i in range(4): ibox(f'choke{i}', 7, 7, 4.5, bx + 10 + i * 8.4, by + 62, Z1, M['cap'], .5)      # チョーク4個(個数・位置は公式に無い=UNVERIFIED。CPUソケット(x41〜101)の外=x10〜40へ配置)
+for i in range(3): icyl(f'cap{i}', 3.2, 9, 'z', bx + 13 + i * 10.0, by + 74, Z1 + 4.5, M['cap'], 20)      # コンデンサ3個(同上)
 def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     """基板上の小型チップ部品(抵抗/MLCC)の雲: 実物同様の密度で散布(個数は典型値, 実物と一致する保証はない)。"""
     rr_ = random.Random(seed); me = bpy.data.meshes.new(name); bmm = bmesh.new(); k = 0

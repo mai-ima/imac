@@ -74,6 +74,7 @@
 | interference-report.md | v003 | current | 2026-11-07 | c1704cf | interference-report/interference-report.v003__2026-11-07_c1704cf.md |
 | interference-report.md | v004 | current | 2026-11-07 | 10001ec | interference-report/interference-report.v004__2026-11-07_10001ec.md |
 | interference-report.md | v005 | current | 2026-11-07 | 48f7baa | interference-report/interference-report.v005__2026-11-07_48f7baa.md |
+| interference-report.md | v006 | current | 2026-11-07 | b5f5bb3 | interference-report/interference-report.v006__2026-11-07_b5f5bb3.md |
 | joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
 | joint-analysis.md | v002 | current | 2026-11-05 | fcba5fe | joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md |
 | joint-analysis.md | v003 | current | 2026-11-05 | 71b7afb | joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md |

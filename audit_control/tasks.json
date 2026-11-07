@@ -17862,20 +17862,28 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:00Z",
      "triaged",
      "実メッシュ干渉検査(INTF-01)の結果から登録"
+    ],
+    [
+     "2026-11-07T14:45:21Z",
+     "in_review",
+     "ガスケット/メッシュフィルタに、ラッチ6・フック6・磁石12の位置の切欠き(外形+1mm)を追加(hardware_v8.py _pocket)。干渉検査 295→215件"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
     "docs/interference-report.md",
-    "model/interference_report.json"
+    "model/interference_report.json",
+    "ガスケット/メッシュフィルタに、ラッチ6・フック6・磁石12の位置の切欠き(外形+1mm)を追加(hardware_v8.py _pocket)。干渉検査 295→215件"
    ],
-   "verification": [],
+   "verification": [
+    "実形状干渉検査 要対処 295→215(2026-11-08 JST)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
@@ -20036,19 +20044,27 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:04:47Z",
      "triaged",
      "R12取込(R12_model_A_board.md)"
+    ],
+    [
+     "2026-11-07T14:45:21Z",
+     "in_review",
+     "チョーク4個/キャップ3個をソケット外(x10〜40)へ再配置(個数・位置は公式に無い=UNVERIFIED)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_A_board.md"
+    "audit_control/reports/R12_model_A_board.md",
+    "チョーク4個/キャップ3個をソケット外(x10〜40)へ再配置(個数・位置は公式に無い=UNVERIFIED)"
    ],
-   "verification": [],
+   "verification": [
+    "実形状干渉検査 要対処 295→215(2026-11-08 JST)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",

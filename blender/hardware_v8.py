@@ -55,6 +55,19 @@ mag_pos += [(DOME_X0 + 6, DOME_Y0 + DOME_H * f) for f in (.25, .5, .75)] + [(DOM
 for k, (mx, my) in enumerate(mag_pos):
     cyl(f'magnet{k}', 4.0, 3, 'z', mx, my, dz(4.5), M['magnet'], 20); cyl(f'magnet_disc{k}', 4.5, 1.0, 'z', mx, my, dz(.5), M['sus'], 20)
 hw('ドーム固定', 'ネオジム磁石 N52 φ8×3(ドーム側)', 12, '位置決め補助, 吸着力 U29'); hw('ドーム固定', '磁石相手 SUSディスク φ9×1.0(背板側)', 12, '')
+# --- ガスケット/メッシュフィルタの切欠き(INTF-04): ラッチ・フック・磁石が通る位置に外形+1mmのポケットを開ける(実物のガスケットは連続した帯でなく部品位置で切り欠く) ---
+def _pocket(nm, x0, y0, z0, w, h, d):
+    c_ = box(nm, w, h, d, x0, y0, z0, None, body=False); c_.hide_render = True; BODY_OBJS.append(c_); return c_
+_pk = []
+for k_, xx_ in enumerate((-250, -150, -50, 50, 150, 250)):
+    _pk.append(_pocket(f'pocket_latch{k_}', xx_ - 10.0, bot_y + 2.0, dz(8.0), 20, 11, 9.0))      # ラッチ(Ø8×7)+ストライク(18×6)
+    _pk.append(_pocket(f'pocket_hook{k_}', xx_ - 9.0, top_y - 11.0, dz(8.0), 18, 11, 9.0))      # フック(14×7)+ストライク(16×8)
+for k_, (mx_, my_) in enumerate(mag_pos): _pk.append(_pocket(f'pocket_mag{k_}', mx_ - 5.5, my_ - 5.5, dz(6.0), 11, 11, 7.0))      # 磁石Ø8+ディスクØ9
+for _tn in ('gasket', 'cover_filter'):
+    _to = bpy.data.objects.get(_tn)
+    if _to is None: continue
+    for _p in _pk:
+        _m = _to.modifiers.new(_p.name, 'BOOLEAN'); _m.object = _p; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 for k, (dxp, dyp) in enumerate(((-180, top_y - 6), (140, top_y - 6))): cyl(f'dowel_pin{k}', 2.0, 8, 'z', dxp, dyp, dz(4.0), M['sus'], 16)
 hw('ドーム固定', '位置決めピン Ø4 H7×8(非対称)', 2, '')
 # ---------- ケーブルクリップ(トレイ上、ケーブル高さz≤30の区間のみ。それ以外は部品へ結束) ----------
