@@ -4,6 +4,7 @@
 |---|---|---|---|---|---|
 | audit_control_init.py | v001 | current | 2026-11-06 | cf90ba1 | audit_control_init/audit_control_init.v001__2026-11-06_cf90ba1.py |
 | audit_manifest.py | v001 | current | 2026-11-06 | c271477 | audit_manifest/audit_manifest.v001__2026-11-06_c271477.py |
+| audit_manifest.py | v002 | current | 2026-11-06 | 432b08c | audit_manifest/audit_manifest.v002__2026-11-06_432b08c.py |
 | balance_calc.py | v001 | current | 2026-11-06 | 7ed5c4c | balance_calc/balance_calc.v001__2026-11-06_7ed5c4c.py |
 | balance_calc.py | v002 | current | 2026-11-06 | 4482281 | balance_calc/balance_calc.v002__2026-11-06_4482281.py |
 | balance_calc.py | v003 | current | 2026-11-06 | 432b08c | balance_calc/balance_calc.v003__2026-11-06_432b08c.py |

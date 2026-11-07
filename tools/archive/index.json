@@ -19,6 +19,15 @@
    "file": "audit_manifest/audit_manifest.v001__2026-11-06_c271477.py"
   },
   {
+   "src": "tools/audit_manifest.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "432b08c",
+   "sha256": "731fda5c3e0b1b5710b68c6a281d644f3000e229c66b9d400caf323654076b07",
+   "file": "audit_manifest/audit_manifest.v002__2026-11-06_432b08c.py"
+  },
+  {
    "src": "tools/balance_calc.py",
    "version": 1,
    "gen": "current",
