@@ -22407,17 +22407,27 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:26:22Z",
      "triaged",
      "公開ビューアのスクリーンショットで確認"
+    ],
+    [
+     "2026-11-07T13:59:15Z",
+     "in_review",
+     "天板を追加"
     ]
    ],
    "acceptance_criteria": "",
-   "evidence": [],
-   "verification": [],
+   "evidence": [
+    "blender/build_imac_pc_v8.py: stand_neck_collar_cap(環状天板)",
+    "描画 scratchpad/r/cap.png で上面が閉じたドラムになることを確認"
+   ],
+   "verification": [
+    "描画目視(2026-11-08 JST)。GLBへの反映と公開版更新は未了"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
@@ -22480,6 +22490,40 @@
    "acceptance_criteria": "",
    "evidence": [],
    "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "stand_neck_collar の上端に肉厚2mmの環状天板を追加(ばね座より下)→GLB再書き出し"
+  },
+  {
+   "id": "PREV-02",
+   "title": "再発防止: 生成物(file_coverage.csv / manifest)の相互ハッシュ・サイズ参照による無限差分を根絶",
+   "description": "file_coverage.csv と 01_FULL_FILE_MANIFEST.csv が互いのハッシュ/サイズを記録して実行のたびに差分が出ていた。両ツールでこの2ファイルのハッシュ/サイズを固定値にして、反復実行で出力が変わらない(STABLE)ことを確認。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T13:59:15Z",
+     "in_review",
+     "実装・安定性確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "tools/audit_control_init.py",
+    "tools/audit_manifest.py"
+   ],
+   "verification": [
+    "audit_control_init+audit_manifest を2回連続実行し出力が一致(cmp)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",

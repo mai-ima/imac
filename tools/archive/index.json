@@ -19,6 +19,15 @@
    "file": "audit_control_init/audit_control_init.v002__2026-11-06_f2e5a87.py"
   },
   {
+   "src": "tools/audit_control_init.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "19cbc6b",
+   "sha256": "169f578eb61e15afe4b9653b11d81aab77e61eb18ea47f72aa547c4ec6e77447",
+   "file": "audit_control_init/audit_control_init.v003__2026-11-07_19cbc6b.py"
+  },
+  {
    "src": "tools/audit_manifest.py",
    "version": 1,
    "gen": "current",

@@ -498,6 +498,11 @@ def tube(name, r, length, cx, cy, cz, mat, seg=96):      # 両端開口の円管
 hollow(tube('stand_skirt', SH['skirt_r_mm'], _sl, 0, -DROP + _sl / 2, ZC, M['stand']))
 _cl = 11.0      # ネックと一緒に回る円筒カラー(ロータ上面・PE編組の取り回しを隠す。スカートとの隙間0.5mm)
 hollow(tube('stand_neck_collar', SH['skirt_r_mm'], _cl, 0, SY_NECK + _cl / 2, ZC, M['stand']))
+# SHAPE-06: ネックカラー上面の環状天板(肉厚2mm)。ばね座(y=HY-s)より下に置き、薄肉化で開いた上面を閉じる。ネック外皮の開口部は残す(機構が通る)
+_cap_y = SY_NECK + _cl - 2.0
+_cap = cyl('stand_neck_collar_cap', SH['skirt_r_mm'], 2.0, 'y', 0, _cap_y + 1.0, ZC, M['stand'], 96, bevel=1.0, body=False)
+_hole = box('stand_neck_collar_cap_hole', 2 * (NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), 6.0, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * (SH['neck_margin_mm'] - 2.0), -(NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), _cap_y - 2.0, ZC + NK['back_cover_z'][0] - (SH['neck_margin_mm'] - 2.0), None, body=False); _hole.hide_render = True
+_mb = _cap.modifiers.new('hole', 'BOOLEAN'); _mb.object = _hole; _mb.operation = 'DIFFERENCE'; _mb.solver = 'EXACT'
 _m = SH['neck_margin_mm']
 _sh = box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
 _bm = bmesh.new(); _bm.from_mesh(_sh.data); bmesh.ops.delete(_bm, geom=[f_ for f_ in _bm.faces if abs(f_.normal.z) > 0.9], context='FACES_ONLY'); _bm.to_mesh(_sh.data); _bm.free(); hollow(_sh)      # 上下を開いた薄肉の4面壁(上端は頭部のヒンジ機構が出入りする。首振りに合わせて回転)
@@ -780,7 +785,7 @@ if A.only:
         if ob.type in ('MESH', 'CURVE', 'FONT') and not ob.name.startswith(_pf): ob.hide_render = True
 if A.open_stand:
     for ob in COLL.objects:
-        if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover', 'hinge_boot')): ob.hide_render = True
+        if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover', 'hinge_boot')) and not ob.name.endswith('_hole'): ob.hide_render = True
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
         if ob.name.startswith(('cover_back', 'cover_filter', 'gasket')): ob.hide_render = True
