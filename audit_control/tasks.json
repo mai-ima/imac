@@ -12662,12 +12662,18 @@
      "2026-11-07 11:12",
      "in_progress",
      "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察"
+    ],
+    [
+     "2026-11-07T11:24:18Z",
+     "observed",
+     "ScheduleWakeup(予約11:22 UTC=20:22 JST)がこのセッションへ到着: 実到着 2026-11-07 20:24:18 JST(11:24:18 UTC)。到着はワーカー再起動を挟まない状況での1例のみで、再起動後に届くかは未検証。毎時トリガー(xx:55 UTC)は未観測"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
     "trigger情報: persistent_session_id=本セッション(確認済み)。発火は未検証",
-    "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察"
+    "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察",
+    "ScheduleWakeup到着を観測: 20:24:18 JST(予約20:22 JST、遅延約2分)"
    ],
    "verification": "ReadNotifications 受信ログ",
    "decision": "耐久トリガーは本セッションに届くと確認(1/3)。ScheduleWakeupの到達は次回観察",
