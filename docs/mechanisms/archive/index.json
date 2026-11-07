@@ -172,6 +172,15 @@
    "file": "04_dome_latch_gasket/04_dome_latch_gasket.v002__2026-11-06_02c4c72.md"
   },
   {
+   "src": "docs/mechanisms/04_dome_latch_gasket.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "498b798155d9fb53d30840c3b3964eca60a3bf6583aaefd00fa0fde7ba9f1953",
+   "file": "04_dome_latch_gasket/04_dome_latch_gasket.v003__2026-11-06_28dc82b.md"
+  },
+  {
    "src": "docs/mechanisms/05_tray_hanging_service.md",
    "version": 1,
    "gen": "current",

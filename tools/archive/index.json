@@ -235,6 +235,15 @@
    "file": "consistency_check/consistency_check.v003__2026-11-06_4050ed9.py"
   },
   {
+   "src": "tools/consistency_check.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "5a2e3a9d479f67ab7e9ad5242c884376a3fc3ef1a75d24da465d89cc0b98650b",
+   "file": "consistency_check/consistency_check.v004__2026-11-06_93238a3.py"
+  },
+  {
    "src": "tools/drawlib.py",
    "version": 1,
    "gen": "current",
@@ -404,6 +413,15 @@
    "commit": "e7a16e1",
    "sha256": "b6ef7043707feea0bbd80a314ae4fa3fcc83f6b086f9f5579652369aed8e322c",
    "file": "fitcheck/fitcheck.v012__2026-11-06_e7a16e1.py"
+  },
+  {
+   "src": "tools/fitcheck.py",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "90aea578ecc4669030cab9fcaf7a8a89c1ee6ad55fdff914ebce157eeb19e3e6",
+   "file": "fitcheck/fitcheck.v013__2026-11-06_f2e5a87.py"
   },
   {
    "src": "tools/gen_anatomy.py",
@@ -602,6 +620,15 @@
    "commit": "36dff8c",
    "sha256": "6dd71501112b4a9c164093745c8937f190593950016f260566b07ed8de637a7b",
    "file": "gen_mechanisms/gen_mechanisms.v008__2026-11-06_36dff8c.py"
+  },
+  {
+   "src": "tools/gen_mechanisms.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "49cbb1e4bd255b883f59c0bfac0436ecc74f5583b4e33d2c959e18d1cef4a239",
+   "file": "gen_mechanisms/gen_mechanisms.v009__2026-11-06_f2e5a87.py"
   },
   {
    "src": "tools/gen_mfg_drawings.py",
@@ -1180,6 +1207,15 @@
    "file": "run_gates/run_gates.v007__2026-11-06_877835f.sh"
   },
   {
+   "src": "tools/run_gates.sh",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "5c654e47948f5af0e2afbfbc39c6e931644c6ced90d630974e0839cf628ff8c5",
+   "file": "run_gates/run_gates.v008__2026-11-06_36dff8c.sh"
+  },
+  {
    "src": "tools/stability.py",
    "version": 1,
    "gen": "current",
@@ -1286,6 +1322,15 @@
    "commit": "e7a16e1",
    "sha256": "7804be254156f8da2aabdff5b7b1a2e395a414fbd657179b4e36e30b4d6516d3",
    "file": "stale_check/stale_check.v006__2026-11-06_e7a16e1.py"
+  },
+  {
+   "src": "tools/stale_check.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "c7fa6571ed66e8feb48588e90165617bc129529e67101b66e44013b12527f946",
+   "file": "stale_check/stale_check.v007__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/strength_check.py",

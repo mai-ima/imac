@@ -28,6 +28,7 @@
 | consistency_check.py | v001 | current | 2026-11-06 | 877835f | consistency_check/consistency_check.v001__2026-11-06_877835f.py |
 | consistency_check.py | v002 | current | 2026-11-06 | cf90ba1 | consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py |
 | consistency_check.py | v003 | current | 2026-11-06 | 4050ed9 | consistency_check/consistency_check.v003__2026-11-06_4050ed9.py |
+| consistency_check.py | v004 | current | 2026-11-06 | 93238a3 | consistency_check/consistency_check.v004__2026-11-06_93238a3.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
 | fit_tolerance.py | v001 | current | 2026-11-06 | 02c4c72 | fit_tolerance/fit_tolerance.v001__2026-11-06_02c4c72.py |
@@ -47,6 +48,7 @@
 | fitcheck.py | v010 | current | 2026-11-06 | cf90ba1 | fitcheck/fitcheck.v010__2026-11-06_cf90ba1.py |
 | fitcheck.py | v011 | current | 2026-11-06 | 4050ed9 | fitcheck/fitcheck.v011__2026-11-06_4050ed9.py |
 | fitcheck.py | v012 | current | 2026-11-06 | e7a16e1 | fitcheck/fitcheck.v012__2026-11-06_e7a16e1.py |
+| fitcheck.py | v013 | current | 2026-11-06 | f2e5a87 | fitcheck/fitcheck.v013__2026-11-06_f2e5a87.py |
 | gen_anatomy.py | v001 | current | 2026-11-03 | 78fc708 | gen_anatomy/gen_anatomy.v001__2026-11-03_78fc708.py |
 | gen_cad_drawings.py | v001 | current | 2026-11-06 | 88f99b7 | gen_cad_drawings/gen_cad_drawings.v001__2026-11-06_88f99b7.py |
 | gen_cad_drawings.py | v002 | current | 2026-11-06 | ce41db1 | gen_cad_drawings/gen_cad_drawings.v002__2026-11-06_ce41db1.py |
@@ -69,6 +71,7 @@
 | gen_mechanisms.py | v006 | current | 2026-11-06 | cf90ba1 | gen_mechanisms/gen_mechanisms.v006__2026-11-06_cf90ba1.py |
 | gen_mechanisms.py | v007 | current | 2026-11-06 | 93238a3 | gen_mechanisms/gen_mechanisms.v007__2026-11-06_93238a3.py |
 | gen_mechanisms.py | v008 | current | 2026-11-06 | 36dff8c | gen_mechanisms/gen_mechanisms.v008__2026-11-06_36dff8c.py |
+| gen_mechanisms.py | v009 | current | 2026-11-06 | f2e5a87 | gen_mechanisms/gen_mechanisms.v009__2026-11-06_f2e5a87.py |
 | gen_mfg_drawings.py | v001 | current | 2026-11-03 | b096d9e | gen_mfg_drawings/gen_mfg_drawings.v001__2026-11-03_b096d9e.py |
 | gen_mfg_drawings.py | v002 | current | 2026-11-05 | b97eaae | gen_mfg_drawings/gen_mfg_drawings.v002__2026-11-05_b97eaae.py |
 | gen_mfg_drawings.py | v003 | current | 2026-11-05 | fcba5fe | gen_mfg_drawings/gen_mfg_drawings.v003__2026-11-05_fcba5fe.py |
@@ -133,6 +136,7 @@
 | run_gates.sh | v005 | current | 2026-11-06 | 432b08c | run_gates/run_gates.v005__2026-11-06_432b08c.sh |
 | run_gates.sh | v006 | current | 2026-11-06 | 02c4c72 | run_gates/run_gates.v006__2026-11-06_02c4c72.sh |
 | run_gates.sh | v007 | current | 2026-11-06 | 877835f | run_gates/run_gates.v007__2026-11-06_877835f.sh |
+| run_gates.sh | v008 | current | 2026-11-06 | 36dff8c | run_gates/run_gates.v008__2026-11-06_36dff8c.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |
@@ -145,6 +149,7 @@
 | stale_check.py | v004 | current | 2026-11-06 | d97f07e | stale_check/stale_check.v004__2026-11-06_d97f07e.py |
 | stale_check.py | v005 | current | 2026-11-06 | 4050ed9 | stale_check/stale_check.v005__2026-11-06_4050ed9.py |
 | stale_check.py | v006 | current | 2026-11-06 | e7a16e1 | stale_check/stale_check.v006__2026-11-06_e7a16e1.py |
+| stale_check.py | v007 | current | 2026-11-06 | 36dff8c | stale_check/stale_check.v007__2026-11-06_36dff8c.py |
 | strength_check.py | v001 | current | 2026-11-06 | 432b08c | strength_check/strength_check.v001__2026-11-06_432b08c.py |
 | strength_check.py | v002 | current | 2026-11-06 | 85af1a8 | strength_check/strength_check.v002__2026-11-06_85af1a8.py |
 | strength_check.py | v003 | current | 2026-11-06 | 88f99b7 | strength_check/strength_check.v003__2026-11-06_88f99b7.py |

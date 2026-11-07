@@ -1,0 +1,28 @@
+{
+ "entries": [
+  {
+   "original": "handoff_v9.zip",
+   "archived": "archive/release/handoff_v9/handoff_v9.zip",
+   "sha256": "a0f00bfe83190a4c06d054654a70dce9db2d9a00060ce9ed1028f35fb1864339",
+   "date": "2026-11-07",
+   "reason": "v9配布物。現行は handoff/(v10)。誤発注防止のため現行位置から退避(GA-28)",
+   "restore": "git mv archive/release/handoff_v9/handoff_v9.zip handoff_v9.zip"
+  },
+  {
+   "original": "blender/imac_pc.glb",
+   "archived": "archive/blender/imac_pc_glb/imac_pc.v-2026-11-03.glb",
+   "sha256": "11e50eff0b5b2a8d9e52d80ae80942e32b703b1f10a069d97c4af44b8ee4708a",
+   "date": "2026-11-07",
+   "reason": "2026-11-03版の古いGLB。現行表示用は viewer/imac_pc.glb(K20b)",
+   "restore": "git mv archive/blender/imac_pc_glb/imac_pc.v-2026-11-03.glb blender/imac_pc.glb"
+  },
+  {
+   "original": "blender/imac_pc.blend1",
+   "archived": "archive/blender/imac_pc_blend1/imac_pc.v-backup.blend1",
+   "sha256": "3957a2764fd32b1fcc8774783015f4aab7de6dc952bc91932c9e02b261626b66",
+   "date": "2026-11-07",
+   "reason": "Blender自動バックアップ。現行は imac_pc.blend",
+   "restore": "git mv archive/blender/imac_pc_blend1/imac_pc.v-backup.blend1 blender/imac_pc.blend1"
+  }
+ ]
+}

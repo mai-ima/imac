@@ -123,7 +123,7 @@
 <circle cx="140.4" cy="96.4" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="23.1" cy="41.2" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="140.4" cy="41.2" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>
-<text x="156" y="30" font-size="2.6">加工: レーザー+曲げ(角R18, 縁折り5mm補強)+PEM TSOA圧入(部品ごと)</text>
+<text x="156" y="30" font-size="2.6">加工: レーザー+曲げ(角R38(ドーム内角に合わせる), 縁折り5mm補強)+PEM TSOA圧入(部品ごと)</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: 導電化成処理(MIL-DTL-5541 Class 3相当)で全面接地</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: 外形±0.2, 取付穴±0.1(基板/PSU/GPU)</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: ITXスタンドオフ4点(Mini-ITX規格値 U17)</text>

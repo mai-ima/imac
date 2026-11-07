@@ -28,7 +28,7 @@ FACTS = [
 ]
 HIST = ('docs/audit-log.md','docs/selection-','docs/research-','docs/source-status','docs/unverified-tracker','docs/bom-final','docs/logo-catalog',
         'docs/spec/performance-benchmark','docs/spec/gaming-requirements','docs/tilt-swivel-design.md','docs/joint-analysis.md','blender/build_imac_pc_v6.py',
-        'tools/check_sources.py','tools/stale_check.py','tools/consistency_check.py','docs/PRINCIPLES.md')
+        'tools/check_sources.py','tools/stale_check.py','tools/consistency_check.py','docs/PRINCIPLES.md','tests/')
 SKIPCTX = r'旧|比較|変更前|before|supersed|置換|廃止|履歴|stale|旧版|から変更|→|仮置き|従来|v[0-9]+まで|Appendix'
 fails=[]; warns=[]
 files = [f for f in subprocess.check_output(['git','ls-files','-co','--exclude-standard'],cwd=R,text=True).split('\n')

@@ -29,7 +29,7 @@
   "maker": "未定",
   "dims": [
    55,
-   150,
+   110,
    15
   ],
   "status": "assumed",
@@ -141,8 +141,8 @@
    "power": "12V-2x6 ×1(想定)",
    "psu_rec_w": 750,
    "outputs": "HDMI 2.1b + DP 2.1b×3(想定)",
-   "cuda": 4608,
-   "mem": "16GB GDDR7 28Gbps 128bit",
+   "cuda": 8960,
+   "mem": "16GB GDDR7 28Gbps 256bit",
    "tgp_w": 300,
    "pcie": "5.0(レーン数は未確認、物理x8の可能性)",
    "note": "ゲーム要件(Cyberpunk/CoD/Cities SK2 4K快適)で5070 Tiを最小構成と判断(docs/spec/gaming-requirements.md)。ASUS Dual 5060 Ti 16GBは不採用"

@@ -21,6 +21,7 @@
 | 03_neck_and_load_path.md | v007 | current | 2026-11-06 | 93238a3 | 03_neck_and_load_path/03_neck_and_load_path.v007__2026-11-06_93238a3.md |
 | 04_dome_latch_gasket.md | v001 | current | 2026-11-06 | d97f07e | 04_dome_latch_gasket/04_dome_latch_gasket.v001__2026-11-06_d97f07e.md |
 | 04_dome_latch_gasket.md | v002 | current | 2026-11-06 | 02c4c72 | 04_dome_latch_gasket/04_dome_latch_gasket.v002__2026-11-06_02c4c72.md |
+| 04_dome_latch_gasket.md | v003 | current | 2026-11-06 | 28dc82b | 04_dome_latch_gasket/04_dome_latch_gasket.v003__2026-11-06_28dc82b.md |
 | 05_tray_hanging_service.md | v001 | current | 2026-11-06 | d97f07e | 05_tray_hanging_service/05_tray_hanging_service.v001__2026-11-06_d97f07e.md |
 | 05_tray_hanging_service.md | v002 | current | 2026-11-06 | 28dc82b | 05_tray_hanging_service/05_tray_hanging_service.v002__2026-11-06_28dc82b.md |
 | 05_tray_hanging_service.md | v003 | current | 2026-11-06 | 93238a3 | 05_tray_hanging_service/05_tray_hanging_service.v003__2026-11-06_93238a3.md |

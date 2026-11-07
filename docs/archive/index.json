@@ -82,6 +82,15 @@
    "file": "README/README.v003__2026-11-06_ce41db1.md"
   },
   {
+   "src": "docs/README.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "ccb3f37309e6ed345aa4312171ce16789839f2bafa58359de33db79d1778c257",
+   "file": "README/README.v004__2026-11-06_877835f.md"
+  },
+  {
    "src": "docs/anatomy.md",
    "version": 1,
    "gen": "current",

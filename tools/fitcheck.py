@@ -97,6 +97,7 @@ _pk = _PB.budget('最大(CPU PPT+GPU TGP同時)'); heat = _pk['heat']      # 筐
 nfan = sum(1 for it in L['items'] if it['id'].startswith('fan'))
 air = (nfan * (P['fan']['facts']['airflow_m3h'] if 'fan' in P else 0) + (2 * 131 if any(it['id']=='radiator' for it in L['items']) else 0)) * 0.55     # 通風抵抗で55%と仮定
 dT = heat / (1.2*1005*air/3600)
+print(f'[WARN] 排気温度上昇 {dT:.1f}K は設計目標≦10K(docs/thermal-analysis.md)を超過。必須上限≦20Kは満たす(GA-09: 目標と上限を分離)') if dT > 10 else None
 chk('排気温度上昇', dT <= 20, f"発熱{heat:.0f}W / 風量{air:.0f} m3/h(ケースファン{nfan}基+ラジエーターファン2基(P12 Pro 131m3/h/基)、自由流の55%仮定) → ΔT={dT:.1f}K (<=20K目標)")
 print(f"[注意] CPU冷却: {P['cpu']['name']} PPT {cpu}W(制限なし)に対し240mm AIO(AMD推奨は240/280mm級, 実測はUNVERIFIED)。実機での温度確認が必須")
 print(f'\nUNVERIFIED {len(unverified)} 件: ' + ', '.join(unverified))

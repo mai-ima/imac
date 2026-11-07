@@ -20,6 +20,7 @@
 | custom-parts.md | v014 | current | 2026-11-06 | 93238a3 | custom-parts/custom-parts.v014__2026-11-06_93238a3.md |
 | custom-parts.md | v015 | current | 2026-11-06 | e7a16e1 | custom-parts/custom-parts.v015__2026-11-06_e7a16e1.md |
 | custom-parts.md | v016 | current | 2026-11-06 | 36dff8c | custom-parts/custom-parts.v016__2026-11-06_36dff8c.md |
+| custom-parts.md | v017 | current | 2026-11-06 | f2e5a87 | custom-parts/custom-parts.v017__2026-11-06_f2e5a87.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |

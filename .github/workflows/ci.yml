@@ -1,0 +1,14 @@
+name: gates
+on: [push, pull_request]
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: unit/negative tests
+        run: python3 -m unittest discover -s tests -v
+      - name: data gates (exit 2 = UNVERIFIED は許容、1 は失敗)
+        run: |
+          set +e; bash tools/run_gates.sh; rc=$?; echo "run_gates rc=$rc"; [ $rc -le 2 ] && [ $rc -ne 1 ]

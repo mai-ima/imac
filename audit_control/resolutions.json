@@ -1,0 +1,344 @@
+{
+ "R9T-001": {
+  "status": "done",
+  "evidence": "カム方式へ再設計(balance_calc, spec.balance_cam, D04, Blender, docs)",
+  "verification": "tests/test_invariants Physics + run_gates",
+  "decision": "REPLACE"
+ },
+ "R9T-002": {
+  "status": "done",
+  "evidence": "cable_check が sys.exit(1 if bad else 0)",
+  "verification": "python3 tools/cable_check.py; echo $?",
+  "decision": "FIXED"
+ },
+ "R9T-003": {
+  "status": "done",
+  "evidence": "run_gates.sh: ゲート欠落をFAIL、UNVERIFIED残りは最終exit2",
+  "verification": "bash tools/run_gates.sh; echo $?",
+  "decision": "FIXED"
+ },
+ "R9T-004": {
+  "status": "done",
+  "evidence": "stability/strength/balance/fitcheck: 推定値前提=UNVERIFIEDはexit2",
+  "verification": "run_gates exit code確認",
+  "decision": "FIXED"
+ },
+ "R9T-005": {
+  "status": "done",
+  "evidence": "stability/strength/balance/fitcheck: 推定値前提=UNVERIFIEDはexit2",
+  "verification": "run_gates exit code確認",
+  "decision": "FIXED"
+ },
+ "R9T-007": {
+  "status": "done",
+  "evidence": "fit_tolerance 最大側にも位置公差、keyhole_slot_w 6.3",
+  "verification": "fit_tolerance出力 0.1〜0.568mm",
+  "decision": "FIXED"
+ },
+ "R9T-009": {
+  "status": "done",
+  "evidence": "gen_mechanisms失敗伝播/台帳破損時中断/MBR単一源/荷重調整方式統一",
+  "verification": "各ツール実行・consistency_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9T-011": {
+  "status": "done",
+  "evidence": "gen_mechanisms失敗伝播/台帳破損時中断/MBR単一源/荷重調整方式統一",
+  "verification": "各ツール実行・consistency_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9T-013": {
+  "status": "done",
+  "evidence": "gen_mechanisms失敗伝播/台帳破損時中断/MBR単一源/荷重調整方式統一",
+  "verification": "各ツール実行・consistency_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9T-014": {
+  "status": "done",
+  "evidence": "gen_mechanisms失敗伝播/台帳破損時中断/MBR単一源/荷重調整方式統一",
+  "verification": "各ツール実行・consistency_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-001": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-002": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-003": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-004": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-021": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-022": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-023": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-025": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-026": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-029": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-033": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-034": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-035": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-067": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-068": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-069": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-070": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-071": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-074": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-094": {
+  "status": "done",
+  "evidence": "docs/custom_parts/hardware/生成器の旧値を現行値へ(R9 docs修正コミット)",
+  "verification": "consistency_check FAIL0 / stale_check FAIL0",
+  "decision": "FIXED"
+ },
+ "R9D-061": {
+  "status": "done",
+  "evidence": "電力表記をpower_budgetへ統一・GPU名・冷却記述・anatomy厚み",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "R9D-060": {
+  "status": "done",
+  "evidence": "電力表記をpower_budgetへ統一・GPU名・冷却記述・anatomy厚み",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "R9D-059": {
+  "status": "done",
+  "evidence": "電力表記をpower_budgetへ統一・GPU名・冷却記述・anatomy厚み",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "R9D-109": {
+  "status": "done",
+  "evidence": "電力表記をpower_budgetへ統一・GPU名・冷却記述・anatomy厚み",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "R9G-001": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-002": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-004": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-012": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-013": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-014": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-020": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-023": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "R9G-034": {
+  "status": "done",
+  "evidence": "DXFキーホール/トレイ外形/背板穴、handoff_build.sh(PDF/SHA/BOM)、D04再作図、05_stand、15_bom",
+  "verification": "tools/handoff_build.sh 実行",
+  "decision": "FIXED"
+ },
+ "GA-01": {
+  "status": "done",
+  "evidence": "parts.json gpu cuda 8960/256bit(tests)",
+  "verification": "tests.test_gpu_official_specs",
+  "decision": "FIXED(公式URL再確認は外部ネット要)"
+ },
+ "GA-03": {
+  "status": "done",
+  "evidence": "parts.json ctrl_board dims を layout と一致(55×110×15, 型番は未選定=UNVERIFIED維持)",
+  "verification": "tests.test_ctrl_board_size_single_source",
+  "decision": "PARTIAL"
+ },
+ "GA-05": {
+  "status": "done",
+  "evidence": "custom_parts/gen_mechanisms の ≦0.08/30% を 0.098N/mm・33% へ",
+  "verification": "tests.test_gasket_values_consistent",
+  "decision": "FIXED"
+ },
+ "GA-07": {
+  "status": "done",
+  "evidence": "CP-04 頭t3に統一",
+  "verification": "tests.test_cp04_head_thickness_unique",
+  "decision": "FIXED"
+ },
+ "GA-08": {
+  "status": "done",
+  "evidence": "CP-06 角R38へ統一",
+  "verification": "grep R18=0",
+  "decision": "FIXED"
+ },
+ "GA-10": {
+  "status": "done",
+  "evidence": "tilt-swivel-design旧節撤去/mechanisms 01 をカム方式で全面再生成",
+  "verification": "consistency/stale",
+  "decision": "FIXED"
+ },
+ "GA-11": {
+  "status": "done",
+  "evidence": "spec.neck.doc Ø152",
+  "verification": "tests.test_rotor_diameter_text",
+  "decision": "FIXED"
+ },
+ "GA-15": {
+  "status": "done",
+  "evidence": "run_gates に validate_state を追加",
+  "verification": "run_gates",
+  "decision": "FIXED"
+ },
+ "GA-18": {
+  "status": "done",
+  "evidence": "tests/test_invariants.py + .github/workflows/ci.yml",
+  "verification": "python3 -m unittest discover -s tests",
+  "decision": "FIXED(PR CIは未実行)"
+ },
+ "GA-22": {
+  "status": "deferred",
+  "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
+  "verification": "",
+  "decision": "BLOCKED/UNVERIFIED維持"
+ },
+ "GA-23": {
+  "status": "deferred",
+  "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
+  "verification": "",
+  "decision": "BLOCKED/UNVERIFIED維持"
+ },
+ "GA-24": {
+  "status": "deferred",
+  "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
+  "verification": "",
+  "decision": "BLOCKED/UNVERIFIED維持"
+ },
+ "GA-25": {
+  "status": "deferred",
+  "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
+  "verification": "",
+  "decision": "BLOCKED/UNVERIFIED維持"
+ },
+ "GA-26": {
+  "status": "deferred",
+  "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
+  "verification": "",
+  "decision": "BLOCKED/UNVERIFIED維持"
+ }
+}
