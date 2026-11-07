@@ -71,6 +71,7 @@
 | joint-analysis.md | v008 | current | 2026-11-06 | d97f07e | joint-analysis/joint-analysis.v008__2026-11-06_d97f07e.md |
 | joint-analysis.md | v009 | current | 2026-11-06 | 853f219 | joint-analysis/joint-analysis.v009__2026-11-06_853f219.md |
 | joint-analysis.md | v010 | current | 2026-11-06 | 88f99b7 | joint-analysis/joint-analysis.v010__2026-11-06_88f99b7.md |
+| joint-analysis.md | v011 | current | 2026-11-06 | e7a16e1 | joint-analysis/joint-analysis.v011__2026-11-06_e7a16e1.md |
 | model-pipeline.md | v001 | current | 2026-11-03 | 44f2d2a | model-pipeline/model-pipeline.v001__2026-11-03_44f2d2a.md |
 | model-pipeline.md | v002 | current | 2026-11-03 | 165c355 | model-pipeline/model-pipeline.v002__2026-11-03_165c355.md |
 | research-cables.md | v001 | current | 2026-11-06 | fc36218 | research-cables/research-cables.v001__2026-11-06_fc36218.md |
@@ -84,12 +85,14 @@
 | selection-v5.md | v004 | current | 2026-11-03 | 2cd7df3 | selection-v5/selection-v5.v004__2026-11-03_2cd7df3.md |
 | selection-v5.md | v005 | current | 2026-11-06 | 3c794e1 | selection-v5/selection-v5.v005__2026-11-06_3c794e1.md |
 | service-manual.md | v001 | current | 2026-11-03 | 307c9ea | service-manual/service-manual.v001__2026-11-03_307c9ea.md |
+| service-manual.md | v002 | current | 2026-11-05 | fcba5fe | service-manual/service-manual.v002__2026-11-05_fcba5fe.md |
 | service-mechanisms.md | v001 | current | 2026-11-03 | 307c9ea | service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md |
 | service-mechanisms.md | v002 | current | 2026-11-05 | 434b29d | service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md |
 | service-mechanisms.md | v003 | current | 2026-11-05 | fcba5fe | service-mechanisms/service-mechanisms.v003__2026-11-05_fcba5fe.md |
 | service-mechanisms.md | v004 | current | 2026-11-06 | 9ff6031 | service-mechanisms/service-mechanisms.v004__2026-11-06_9ff6031.md |
 | service-mechanisms.md | v005 | current | 2026-11-06 | d97f07e | service-mechanisms/service-mechanisms.v005__2026-11-06_d97f07e.md |
 | service-mechanisms.md | v006 | current | 2026-11-06 | 93238a3 | service-mechanisms/service-mechanisms.v006__2026-11-06_93238a3.md |
+| service-mechanisms.md | v007 | current | 2026-11-06 | e7a16e1 | service-mechanisms/service-mechanisms.v007__2026-11-06_e7a16e1.md |
 | source-status.md | v001 | current | 2026-11-03 | fdfd200 | source-status/source-status.v001__2026-11-03_fdfd200.md |
 | thermal-analysis.md | v001 | current | 2026-11-05 | 3c794e1 | thermal-analysis/thermal-analysis.v001__2026-11-05_3c794e1.md |
 | thermal-analysis.md | v002 | current | 2026-11-05 | 15a1bce | thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md |

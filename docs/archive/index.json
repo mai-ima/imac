@@ -622,6 +622,15 @@
    "file": "joint-analysis/joint-analysis.v010__2026-11-06_88f99b7.md"
   },
   {
+   "src": "docs/joint-analysis.md",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "f68093549b164b01d8c13c8bc6b708c2218a33aec5d479a69cd6d889bc272cee",
+   "file": "joint-analysis/joint-analysis.v011__2026-11-06_e7a16e1.md"
+  },
+  {
    "src": "docs/model-pipeline.md",
    "version": 1,
    "gen": "current",
@@ -739,6 +748,15 @@
    "file": "service-manual/service-manual.v001__2026-11-03_307c9ea.md"
   },
   {
+   "src": "docs/service-manual.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "fcba5fe",
+   "sha256": "f8ab98093152349be7fc2cdecd3a83cb8f18b68dd5325d15b9a77a094f330cdc",
+   "file": "service-manual/service-manual.v002__2026-11-05_fcba5fe.md"
+  },
+  {
    "src": "docs/service-mechanisms.md",
    "version": 1,
    "gen": "current",
@@ -791,6 +809,15 @@
    "commit": "93238a3",
    "sha256": "09b99ff55a05f4e0f59c1822337dd24952ba9d99a822a09c4c3fb13147a67ab5",
    "file": "service-mechanisms/service-mechanisms.v006__2026-11-06_93238a3.md"
+  },
+  {
+   "src": "docs/service-mechanisms.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "352bb816fcb170cd88e8d0ddf60674993fcd4692d0f9a941ca5ce45f191577e4",
+   "file": "service-mechanisms/service-mechanisms.v007__2026-11-06_e7a16e1.md"
   },
   {
    "src": "docs/source-status.md",

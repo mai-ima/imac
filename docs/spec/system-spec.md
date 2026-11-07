@@ -12,7 +12,7 @@ iMac(27型相当)の外観・体験を再現しつつ、内部をすべて市販
 | メモリ | DDR5-6000 CL30 EXPO 32GB(2×16GB) | 型番未定(U12) |
 | ストレージ | Samsung 990 PRO Heatsink 1TB(PCIe4.0 x4)+M.2_1(Gen5)空き | Samsung公式 |
 | マザーボード | ASUS ROG STRIX X870-I GAMING WIFI(AM5, Mini-ITX, USB4×2, 2.5GbE, Wi-Fi 7) | ASUS公式 |
-| 冷却 | ARCTIC Liquid Freezer III Pro 240(ラジエーターP12 Pro×2は外気直吸気)。ケースファン無し: 正圧のプレナムを全面格子とPSU/GPUファンで排気 | 公式2D図面 |
+| 冷却 | ARCTIC Liquid Freezer III Pro 240(ラジエーターP12 Pro×2は外気直吸気)。ケースファン無し: ラジエーターファン2基が外気を吸い、全面格子・PSU・GPUファンから排気(再循環・正圧はU18=未実測) | 公式2D図面 |
 | 電源 | Corsair SF1000(SFX 1000W, 80+Platinum) | 未確認(U47) |
 | ディスプレイ | 27型4K(LG LM270WR3-SSC1 / BOE MV270QUM-N50)+保証付き制御基板 | 制御基板未確定(U13) |
 | 消費電力 | ピーク DC約636W(CPU230+GPU300+基板等45+ファン16+パネル/制御45), AC入力約688W(PSU損失52W), PSU使用率64%(1000W): tools/power_budget.py が単一源 | fitcheck |
