@@ -730,6 +730,6 @@
 <text x="323.60" y="175.00" font-size="2.1" text-anchor="middle" font-weight="bold" fill="#900" >10</text>
 <text x="328.40" y="175.00" font-size="2.6" text-anchor="start" font-weight="bold" fill="#000" >ACインレット (ac_inlet)</text>
 <text x="328.40" y="179.20" font-size="2.2" text-anchor="start" font-weight="normal" fill="#c0392b" >[22.0, 8.0, 8.0]  28x26x20  頂28.0  許容13  要確認</text>
-<text x="321.40" y="187.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#222" >黒太線=AIOホース(H1/H2) / 赤細線=電源・信号ケーブル(経路は cables.json, 平面投影)</text>
+<text x="321.40" y="187.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#222" >黒太線=AIOホース / 赤細線=電源・信号ケーブル(cables.json)</text>
 <text x="321.40" y="192.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#222" >ドーム内面の許容z = 6 + 156×smoothstep(d/64) (d=縁までの最短距離)。最大162.0。</text>
 <text x="321.40" y="197.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#900" >ファン羽根・GPU/PSU内部は概形(UNVERIFIED)。寸法正=layout.json</text></svg>

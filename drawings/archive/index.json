@@ -37,6 +37,15 @@
    "file": "01_front_glass/01_front_glass.v004__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/01_front_glass.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "cb1f3280feec6694429f9d7c6ef8d697547a5aa15148250f68921630b95d6ee2",
+   "file": "01_front_glass/01_front_glass.v005__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/02_back_plate_layout.svg",
    "version": 1,
    "gen": "current",
@@ -80,6 +89,15 @@
    "commit": "514e2e0",
    "sha256": "26239cffff67ace597c0bed2935939504856b8effb072a7072af955ff7b2612c",
    "file": "02_back_plate_layout/02_back_plate_layout.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/02_back_plate_layout.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "ba0316b8c32d75d47a8799c1d2523c1da043f68dcbe7bd375c9c51a0038f8916",
+   "file": "02_back_plate_layout/02_back_plate_layout.v006__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/03_pod_cover.svg",
@@ -163,6 +181,15 @@
    "file": "03_pod_cover/03_pod_cover.v009__2026-11-06_853f219.svg"
   },
   {
+   "src": "drawings/03_pod_cover.svg",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "322a6c1bb222638008829184e181360317846503c6ca9c3ef792815d2520a4e5",
+   "file": "03_pod_cover/03_pod_cover.v010__2026-11-06_88f99b7.svg"
+  },
+  {
    "src": "drawings/04_section_stack.svg",
    "version": 1,
    "gen": "current",
@@ -233,6 +260,15 @@
    "commit": "853f219",
    "sha256": "cf0444cc37d57c86bb416a7c44e31b7a6c8e77ef85bc99c7b2771df7a915e2d3",
    "file": "04_section_stack/04_section_stack.v008__2026-11-06_853f219.svg"
+  },
+  {
+   "src": "drawings/04_section_stack.svg",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "2c160388b8642d6c2acab1a6f4235b28b724e9fdf1058078372a3200bed95d10",
+   "file": "04_section_stack/04_section_stack.v009__2026-11-06_88f99b7.svg"
   },
   {
    "src": "drawings/05_stand.svg",
@@ -341,6 +377,15 @@
    "commit": "fc73c3b",
    "sha256": "41e4b09b2716b9e4285b6f9a21f9d470a8f65d71a23b2bbaa5fcd10415e9fa46",
    "file": "05_stand/05_stand.v012__2026-11-07_fc73c3b.svg"
+  },
+  {
+   "src": "drawings/05_stand.svg",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "eb39392",
+   "sha256": "06b0008f97f88dfe59cf5c4cbec2c2c34c665cd6546eb60d2dc2fddb9b3fbbe6",
+   "file": "05_stand/05_stand.v013__2026-11-07_eb39392.svg"
   },
   {
    "src": "drawings/06_service_tray_plan.svg",
@@ -674,6 +719,15 @@
    "commit": "300696c",
    "sha256": "a9b6b3d1258bb35efd17800254c0a807e37e987150e28798205fe3e0d7866fbe",
    "file": "10_placement_dimensioned/10_placement_dimensioned.v010__2026-11-07_300696c.svg"
+  },
+  {
+   "src": "drawings/10_placement_dimensioned.svg",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "b99d02c",
+   "sha256": "58118d84e24052db7bfa13f38dc88b151e311314dc76c1c82b2d6a110ccdf787",
+   "file": "10_placement_dimensioned/10_placement_dimensioned.v011__2026-11-07_b99d02c.svg"
   },
   {
    "src": "drawings/11a_section_AA.svg",
@@ -1376,6 +1430,15 @@
    "commit": "fc73c3b",
    "sha256": "29065c3c1225557f5bfc89026f5cce3e25f4fd3fee9f273dbd00f39adb83415d",
    "file": "outlines/outlines.v020__2026-11-07_fc73c3b.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 21,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "eb39392",
+   "sha256": "978856a9a0715a435e26c4097e0d9796f1ba613125ae91963e523d1adc67f2d7",
+   "file": "outlines/outlines.v021__2026-11-07_eb39392.dxf"
   }
  ]
 }

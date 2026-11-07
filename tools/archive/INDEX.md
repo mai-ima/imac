@@ -67,6 +67,7 @@
 | gen_handoff.py | v002 | current | 2026-11-06 | ce41db1 | gen_handoff/gen_handoff.v002__2026-11-06_ce41db1.py |
 | gen_handoff.py | v003 | current | 2026-11-06 | 877835f | gen_handoff/gen_handoff.v003__2026-11-06_877835f.py |
 | gen_layout_drawings.py | v001 | current | 2026-11-07 | 300696c | gen_layout_drawings/gen_layout_drawings.v001__2026-11-07_300696c.py |
+| gen_layout_drawings.py | v002 | current | 2026-11-07 | b99d02c | gen_layout_drawings/gen_layout_drawings.v002__2026-11-07_b99d02c.py |
 | gen_mech_sections.py | v001 | current | 2026-11-06 | cf90ba1 | gen_mech_sections/gen_mech_sections.v001__2026-11-06_cf90ba1.py |
 | gen_mech_sections.py | v002 | current | 2026-11-06 | 4050ed9 | gen_mech_sections/gen_mech_sections.v002__2026-11-06_4050ed9.py |
 | gen_mech_sections.py | v003 | current | 2026-11-06 | 93238a3 | gen_mech_sections/gen_mech_sections.v003__2026-11-06_93238a3.py |

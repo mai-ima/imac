@@ -586,6 +586,15 @@
    "file": "gen_layout_drawings/gen_layout_drawings.v001__2026-11-07_300696c.py"
   },
   {
+   "src": "tools/gen_layout_drawings.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "b99d02c",
+   "sha256": "08e00e71aa4d94c7515a62fb7a1d380a181501c47eac1716c86ca70c9e01d4a5",
+   "file": "gen_layout_drawings/gen_layout_drawings.v002__2026-11-07_b99d02c.py"
+  },
+  {
    "src": "tools/gen_mech_sections.py",
    "version": 1,
    "gen": "current",

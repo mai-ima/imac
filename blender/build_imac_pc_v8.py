@@ -17,7 +17,7 @@ ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
-ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
+ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--only', default='', help='カンマ区切りの名前接頭辞に一致するオブジェクトだけを描画(部分確認用)'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='boolean'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
@@ -694,6 +694,10 @@ if A.explode > 0:
     shift_group(['ac_inlet', 'cable_ac'], 260 * e); shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu', 'riser'], 210 * e); shift_group(['psu', 'fan_psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 140 * e)
     shift_group(['ssd', 'txt_samsung', 'm2_screw'], 110 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 80 * e)
     shift_group(['slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button'], -300 * e)      # 前面(ディスプレイ)は前方へ
+if A.only:
+    _pf = tuple(s_ for s_ in A.only.split(',') if s_)
+    for ob in COLL.objects:
+        if ob.type in ('MESH', 'CURVE', 'FONT') and not ob.name.startswith(_pf): ob.hide_render = True
 if A.open_stand:
     for ob in COLL.objects:
         if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover', 'hinge_boot')): ob.hide_render = True

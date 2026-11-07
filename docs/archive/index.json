@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "docs/INDEX.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "f15b172c7af96c9a3d24fe55b0af374463f42f087fafd3b744b36a00c112b442",
+   "file": "INDEX/INDEX.v001__2026-11-07_64a1afa.md"
+  },
+  {
    "src": "docs/PROJECT-SUMMARY.md",
    "version": 1,
    "gen": "current",
@@ -107,6 +116,15 @@
    "commit": "877835f",
    "sha256": "ccb3f37309e6ed345aa4312171ce16789839f2bafa58359de33db79d1778c257",
    "file": "README/README.v004__2026-11-06_877835f.md"
+  },
+  {
+   "src": "docs/README.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "fc441ebca6e8be0f8cad3fa07ea3ad04097bb29adf7764a18e81dd319af42723",
+   "file": "README/README.v005__2026-11-07_64a1afa.md"
   },
   {
    "src": "docs/anatomy.md",
@@ -332,6 +350,15 @@
    "commit": "4925658",
    "sha256": "4dd1f76d88c28c0d8f45e8bcf3d88aa5e4a2004865f1d5f4935d2b099dc4e865",
    "file": "build-guide/build-guide.v004__2026-11-05_4925658.md"
+  },
+  {
+   "src": "docs/build-guide.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "93238a3",
+   "sha256": "42757b23cd032aa071f8067821cb3c675ec4f41bf32ec82081a778c0ebda1dfe",
+   "file": "build-guide/build-guide.v005__2026-11-07_93238a3.md"
   },
   {
    "src": "docs/design-package-index.md",
@@ -784,6 +811,15 @@
    "file": "service-manual/service-manual.v002__2026-11-05_fcba5fe.md"
   },
   {
+   "src": "docs/service-manual.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "88ef5e5",
+   "sha256": "72dbb2a1b1a3b9bc667b30e87163e09e8e419d68c7c1c096f6f9edc8a9617f38",
+   "file": "service-manual/service-manual.v003__2026-11-07_88ef5e5.md"
+  },
+  {
    "src": "docs/service-mechanisms.md",
    "version": 1,
    "gen": "current",
@@ -845,6 +881,15 @@
    "commit": "e7a16e1",
    "sha256": "352bb816fcb170cd88e8d0ddf60674993fcd4692d0f9a941ca5ce45f191577e4",
    "file": "service-mechanisms/service-mechanisms.v007__2026-11-06_e7a16e1.md"
+  },
+  {
+   "src": "docs/service-mechanisms.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "88ef5e5",
+   "sha256": "16997f32824aa4a3dccc81509afb7815bd5b49bcb1e31474946caef803aa0e3a",
+   "file": "service-mechanisms/service-mechanisms.v008__2026-11-07_88ef5e5.md"
   },
   {
    "src": "docs/source-status.md",

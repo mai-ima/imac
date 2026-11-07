@@ -6,11 +6,13 @@
 | 01_front_glass.svg | v002 | current | 2026-11-05 | 184ad21 | 01_front_glass/01_front_glass.v002__2026-11-05_184ad21.svg |
 | 01_front_glass.svg | v003 | current | 2026-11-06 | 80d7407 | 01_front_glass/01_front_glass.v003__2026-11-06_80d7407.svg |
 | 01_front_glass.svg | v004 | current | 2026-11-06 | 514e2e0 | 01_front_glass/01_front_glass.v004__2026-11-06_514e2e0.svg |
+| 01_front_glass.svg | v005 | current | 2026-11-06 | 302823c | 01_front_glass/01_front_glass.v005__2026-11-06_302823c.svg |
 | 02_back_plate_layout.svg | v001 | current | 2026-11-03 | fd22dea | 02_back_plate_layout/02_back_plate_layout.v001__2026-11-03_fd22dea.svg |
 | 02_back_plate_layout.svg | v002 | current | 2026-11-05 | b97eaae | 02_back_plate_layout/02_back_plate_layout.v002__2026-11-05_b97eaae.svg |
 | 02_back_plate_layout.svg | v003 | current | 2026-11-05 | fcba5fe | 02_back_plate_layout/02_back_plate_layout.v003__2026-11-05_fcba5fe.svg |
 | 02_back_plate_layout.svg | v004 | current | 2026-11-06 | 80d7407 | 02_back_plate_layout/02_back_plate_layout.v004__2026-11-06_80d7407.svg |
 | 02_back_plate_layout.svg | v005 | current | 2026-11-06 | 514e2e0 | 02_back_plate_layout/02_back_plate_layout.v005__2026-11-06_514e2e0.svg |
+| 02_back_plate_layout.svg | v006 | current | 2026-11-06 | 302823c | 02_back_plate_layout/02_back_plate_layout.v006__2026-11-06_302823c.svg |
 | 03_pod_cover.svg | v001 | current | 2026-11-03 | fd22dea | 03_pod_cover/03_pod_cover.v001__2026-11-03_fd22dea.svg |
 | 03_pod_cover.svg | v002 | current | 2026-11-05 | b97eaae | 03_pod_cover/03_pod_cover.v002__2026-11-05_b97eaae.svg |
 | 03_pod_cover.svg | v003 | current | 2026-11-05 | fcba5fe | 03_pod_cover/03_pod_cover.v003__2026-11-05_fcba5fe.svg |
@@ -20,6 +22,7 @@
 | 03_pod_cover.svg | v007 | current | 2026-11-06 | 514e2e0 | 03_pod_cover/03_pod_cover.v007__2026-11-06_514e2e0.svg |
 | 03_pod_cover.svg | v008 | current | 2026-11-06 | 302823c | 03_pod_cover/03_pod_cover.v008__2026-11-06_302823c.svg |
 | 03_pod_cover.svg | v009 | current | 2026-11-06 | 853f219 | 03_pod_cover/03_pod_cover.v009__2026-11-06_853f219.svg |
+| 03_pod_cover.svg | v010 | current | 2026-11-06 | 88f99b7 | 03_pod_cover/03_pod_cover.v010__2026-11-06_88f99b7.svg |
 | 04_section_stack.svg | v001 | current | 2026-11-03 | fd22dea | 04_section_stack/04_section_stack.v001__2026-11-03_fd22dea.svg |
 | 04_section_stack.svg | v002 | current | 2026-11-05 | b97eaae | 04_section_stack/04_section_stack.v002__2026-11-05_b97eaae.svg |
 | 04_section_stack.svg | v003 | current | 2026-11-05 | fcba5fe | 04_section_stack/04_section_stack.v003__2026-11-05_fcba5fe.svg |
@@ -28,6 +31,7 @@
 | 04_section_stack.svg | v006 | current | 2026-11-06 | 514e2e0 | 04_section_stack/04_section_stack.v006__2026-11-06_514e2e0.svg |
 | 04_section_stack.svg | v007 | current | 2026-11-06 | 302823c | 04_section_stack/04_section_stack.v007__2026-11-06_302823c.svg |
 | 04_section_stack.svg | v008 | current | 2026-11-06 | 853f219 | 04_section_stack/04_section_stack.v008__2026-11-06_853f219.svg |
+| 04_section_stack.svg | v009 | current | 2026-11-06 | 88f99b7 | 04_section_stack/04_section_stack.v009__2026-11-06_88f99b7.svg |
 | 05_stand.svg | v001 | current | 2026-11-03 | b096d9e | 05_stand/05_stand.v001__2026-11-03_b096d9e.svg |
 | 05_stand.svg | v002 | current | 2026-11-05 | fcba5fe | 05_stand/05_stand.v002__2026-11-05_fcba5fe.svg |
 | 05_stand.svg | v003 | current | 2026-11-05 | 71b7afb | 05_stand/05_stand.v003__2026-11-05_71b7afb.svg |
@@ -40,6 +44,7 @@
 | 05_stand.svg | v010 | current | 2026-11-06 | cf90ba1 | 05_stand/05_stand.v010__2026-11-06_cf90ba1.svg |
 | 05_stand.svg | v011 | current | 2026-11-06 | 36dff8c | 05_stand/05_stand.v011__2026-11-06_36dff8c.svg |
 | 05_stand.svg | v012 | current | 2026-11-07 | fc73c3b | 05_stand/05_stand.v012__2026-11-07_fc73c3b.svg |
+| 05_stand.svg | v013 | current | 2026-11-07 | eb39392 | 05_stand/05_stand.v013__2026-11-07_eb39392.svg |
 | 06_service_tray_plan.svg | v001 | current | 2026-11-03 | 307c9ea | 06_service_tray_plan/06_service_tray_plan.v001__2026-11-03_307c9ea.svg |
 | 06_service_tray_plan.svg | v002 | current | 2026-11-05 | b97eaae | 06_service_tray_plan/06_service_tray_plan.v002__2026-11-05_b97eaae.svg |
 | 06_service_tray_plan.svg | v003 | current | 2026-11-05 | fcba5fe | 06_service_tray_plan/06_service_tray_plan.v003__2026-11-05_fcba5fe.svg |
@@ -77,6 +82,7 @@
 | 10_placement_dimensioned.svg | v008 | current | 2026-11-06 | 853f219 | 10_placement_dimensioned/10_placement_dimensioned.v008__2026-11-06_853f219.svg |
 | 10_placement_dimensioned.svg | v009 | current | 2026-11-06 | 88f99b7 | 10_placement_dimensioned/10_placement_dimensioned.v009__2026-11-06_88f99b7.svg |
 | 10_placement_dimensioned.svg | v010 | current | 2026-11-07 | 300696c | 10_placement_dimensioned/10_placement_dimensioned.v010__2026-11-07_300696c.svg |
+| 10_placement_dimensioned.svg | v011 | current | 2026-11-07 | b99d02c | 10_placement_dimensioned/10_placement_dimensioned.v011__2026-11-07_b99d02c.svg |
 | 11a_section_AA.svg | v001 | current | 2026-11-05 | 27ca8ce | 11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg |
 | 11a_section_AA.svg | v002 | current | 2026-11-05 | 2f8c0ac | 11a_section_AA/11a_section_AA.v002__2026-11-05_2f8c0ac.svg |
 | 11a_section_AA.svg | v003 | current | 2026-11-05 | fcba5fe | 11a_section_AA/11a_section_AA.v003__2026-11-05_fcba5fe.svg |
@@ -155,3 +161,4 @@
 | outlines.dxf | v018 | current | 2026-11-06 | 36dff8c | outlines/outlines.v018__2026-11-06_36dff8c.dxf |
 | outlines.dxf | v019 | current | 2026-11-06 | f2e5a87 | outlines/outlines.v019__2026-11-06_f2e5a87.dxf |
 | outlines.dxf | v020 | current | 2026-11-07 | fc73c3b | outlines/outlines.v020__2026-11-07_fc73c3b.dxf |
+| outlines.dxf | v021 | current | 2026-11-07 | eb39392 | outlines/outlines.v021__2026-11-07_eb39392.dxf |

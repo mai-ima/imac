@@ -171,7 +171,7 @@ def gen_10():
         x, y, z = it['pos']; w_, h_, d_ = it['size']; dm = max(min(x, IW - (x + w_), y, IH - (y + h_)), 0); lim = dome_in(dm); ok = (z + d_ + 3) <= lim
         b += [circ(tx + 2.2, 50 + n * 12.5 - 1.0, 2.1, '#fff', '#900', .3), T(tx + 2.2, 50 + n * 12.5, str(n), 2.1, 'middle', '#900', 'bold'), T(tx + 7, 50 + n * 12.5, f'{lab.get(it["id"], it["id"])} ({it["id"]})', 2.6, 'start', '#000', 'bold'),
               T(tx + 7, 50 + n * 12.5 + 4.2, f'[{x:.1f}, {y:.1f}, {z:.1f}]  {w_:.0f}x{h_:.0f}x{d_:.0f}  頂{z+d_:.1f}  許容{lim:.0f}  {"OK" if ok else "要確認"}', 2.2, 'start', '#222' if ok else '#c0392b')]
-    b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5, '黒太線=AIOホース(H1/H2) / 赤細線=電源・信号ケーブル(経路は cables.json, 平面投影)', 2.3))
+    b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5, '黒太線=AIOホース / 赤細線=電源・信号ケーブル(cables.json)', 2.3))
     b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5 + 5, f'ドーム内面の許容z = {D["edge_inner_depth"]} + {DEPTH-D["edge_inner_depth"]:.0f}×smoothstep(d/{D["run"]}) (d=縁までの最短距離)。最大{DEPTH}。', 2.3))
     b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5 + 10, 'ファン羽根・GPU/PSU内部は概形(UNVERIFIED)。寸法正=layout.json', 2.3, 'start', '#900'))
     save('10_placement_dimensioned.svg', b)
