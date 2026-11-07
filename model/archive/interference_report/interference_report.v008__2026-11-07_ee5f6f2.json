@@ -1,0 +1,1892 @@
+{
+ "generated": "2026-11-07T14:47Z",
+ "objects": 642,
+ "pairs_total": 595,
+ "touch_only": 319,
+ "allowed": {
+  "グリルのリングとスポークは一体品": 10,
+  "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
+  "ローラはピンに回転嵌合(ボア未モデル=INTF-03)": 2,
+  "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)": 3,
+  "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
+  "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
+  "側板のストリップとボスは一体品を別基本形で表現": 2,
+  "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
+  "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
+  "モジュラーソケットは筐体前面の開口に嵌合": 4
+ },
+ "remaining": 187,
+ "remaining_pairs": [
+  {
+   "a": "cover_filter",
+   "b": "ac_inlet_body",
+   "tri_pairs": 62,
+   "aabb_overlap_mm": [
+    28.0,
+    20.0,
+    26.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "ac_inlet_body",
+   "tri_pairs": 33,
+   "aabb_overlap_mm": [
+    28.0,
+    20.0,
+    26.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_bolt0",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    6.0,
+    5.0,
+    6.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_bolt1",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    6.0,
+    5.0,
+    6.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_bolt2",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    6.0,
+    5.0,
+    6.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_bolt3",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    6.0,
+    5.0,
+    6.0
+   ]
+  },
+  {
+   "a": "riser0",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "riser1",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "riser2",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "riser3",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "riser4",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "riser5",
+   "b": "riser_gpu_conn",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    5.89,
+    4.724,
+    12.0
+   ]
+  },
+  {
+   "a": "cam_carrier0",
+   "b": "cam_guide_rod0_-1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "cam_carrier0",
+   "b": "cam_guide_rod0_1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "cam_carrier1",
+   "b": "cam_guide_rod1_-1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "cam_carrier1",
+   "b": "cam_guide_rod1_1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "dowel_pin0",
+   "tri_pairs": 36,
+   "aabb_overlap_mm": [
+    4.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "dowel_pin1",
+   "tri_pairs": 28,
+   "aabb_overlap_mm": [
+    4.0,
+    8.0,
+    4.0
+   ]
+  },
+  {
+   "a": "stand_arm0",
+   "b": "stand_neck_cover1",
+   "tri_pairs": 27,
+   "aabb_overlap_mm": [
+    4.0,
+    6.0,
+    38.0
+   ]
+  },
+  {
+   "a": "stand_neck_cover1",
+   "b": "stand_arm1",
+   "tri_pairs": 27,
+   "aabb_overlap_mm": [
+    4.0,
+    6.0,
+    38.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_doubler",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    144.0,
+    4.0,
+    22.0
+   ]
+  },
+  {
+   "a": "pump_housing_body",
+   "b": "pump_cage_rib1",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    4.0,
+    34.8,
+    4.0
+   ]
+  },
+  {
+   "a": "pump_housing_body",
+   "b": "pump_cage_rib11",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    4.0,
+    34.8,
+    4.0
+   ]
+  },
+  {
+   "a": "gasket",
+   "b": "cover_filter",
+   "tri_pairs": 567,
+   "aabb_overlap_mm": [
+    589.599,
+    3.0,
+    370.899
+   ]
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction0_cap",
+   "tri_pairs": 96,
+   "aabb_overlap_mm": [
+    3.0,
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction1_cap",
+   "tri_pairs": 96,
+   "aabb_overlap_mm": [
+    3.0,
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "ac_inlet_flange",
+   "tri_pairs": 53,
+   "aabb_overlap_mm": [
+    36.0,
+    28.0,
+    3.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "ac_inlet_flange",
+   "tri_pairs": 38,
+   "aabb_overlap_mm": [
+    36.0,
+    28.0,
+    3.0
+   ]
+  },
+  {
+   "a": "hinge_backing_plate",
+   "b": "hinge_bolt0",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_backing_plate",
+   "b": "hinge_bolt1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_backing_plate",
+   "b": "hinge_bolt2",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_backing_plate",
+   "b": "hinge_bolt3",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_bolt_head0",
+   "b": "hinge_bolt0",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_bolt_head1",
+   "b": "hinge_bolt1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_bolt_head2",
+   "b": "hinge_bolt2",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_bolt_head3",
+   "b": "hinge_bolt3",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    3.0,
+    6.0
+   ]
+  },
+  {
+   "a": "io_shield",
+   "b": "board_m2_wifi_module",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    7.9,
+    3.0,
+    23.6
+   ]
+  },
+  {
+   "a": "ssd_body",
+   "b": "m2_screw",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    3.2,
+    3.0,
+    3.2
+   ]
+  },
+  {
+   "a": "am5_backplate",
+   "b": "standoff_board0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.543,
+    3.0,
+    6.4
+   ]
+  },
+  {
+   "a": "gasket",
+   "b": "dowel_pin0",
+   "tri_pairs": 10,
+   "aabb_overlap_mm": [
+    4.0,
+    3.0,
+    4.0
+   ]
+  },
+  {
+   "a": "gasket",
+   "b": "dowel_pin1",
+   "tri_pairs": 10,
+   "aabb_overlap_mm": [
+    4.0,
+    3.0,
+    4.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_backing_plate",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    140.0,
+    3.0,
+    22.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet0",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet3",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet1",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet4",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet2",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet5",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    8.0,
+    3.0,
+    6.799
+   ]
+  },
+  {
+   "a": "magnet6",
+   "b": "cover_filter",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "magnet7",
+   "b": "cover_filter",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "magnet8",
+   "b": "cover_filter",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet9",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet10",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "magnet11",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    6.799,
+    3.0,
+    8.0
+   ]
+  },
+  {
+   "a": "spring_seat_bot0",
+   "b": "cam_guide_rod0_-1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    2.7
+   ]
+  },
+  {
+   "a": "spring_seat_bot0",
+   "b": "cam_guide_rod0_1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    2.7
+   ]
+  },
+  {
+   "a": "spring_seat_bot1",
+   "b": "cam_guide_rod1_-1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    2.7
+   ]
+  },
+  {
+   "a": "spring_seat_bot1",
+   "b": "cam_guide_rod1_1",
+   "tri_pairs": 56,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    2.7
+   ]
+  },
+  {
+   "a": "board_hdr_vrm_hs_fan",
+   "b": "vrm_shroud",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    3.1,
+    4.0,
+    2.5
+   ]
+  },
+  {
+   "a": "stand_arm_boss0",
+   "b": "hinge_friction0_cap",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    2.5,
+    16.0,
+    16.0
+   ]
+  },
+  {
+   "a": "hinge_friction1_cap",
+   "b": "stand_arm_boss1",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    2.5,
+    16.0,
+    16.0
+   ]
+  },
+  {
+   "a": "stand_arm_strip0",
+   "b": "hinge_friction0_cap",
+   "tri_pairs": 19,
+   "aabb_overlap_mm": [
+    2.5,
+    8.0,
+    8.0
+   ]
+  },
+  {
+   "a": "hinge_friction1_cap",
+   "b": "stand_arm_strip1",
+   "tri_pairs": 19,
+   "aabb_overlap_mm": [
+    2.5,
+    8.0,
+    8.0
+   ]
+  },
+  {
+   "a": "eps8",
+   "b": "screw_board0_head",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    5.6,
+    2.4,
+    5.6
+   ]
+  },
+  {
+   "a": "am5_backplate",
+   "b": "power_button",
+   "tri_pairs": 19,
+   "aabb_overlap_mm": [
+    6.0,
+    2.35,
+    2.35
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_bolt0",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_bolt1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_bolt2",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_bolt3",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_cheek_l",
+   "tri_pairs": 29,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    22.0
+   ]
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_cheek_r",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    6.0,
+    2.0,
+    22.0
+   ]
+  },
+  {
+   "a": "stand_neck_cover0",
+   "b": "stand_neck_tie",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    112.0,
+    2.0,
+    20.0
+   ]
+  },
+  {
+   "a": "stand_arm0",
+   "b": "stand_neck_cover0",
+   "tri_pairs": 22,
+   "aabb_overlap_mm": [
+    4.0,
+    2.0,
+    38.0
+   ]
+  },
+  {
+   "a": "stand_neck_cover0",
+   "b": "stand_arm1",
+   "tri_pairs": 22,
+   "aabb_overlap_mm": [
+    4.0,
+    2.0,
+    38.0
+   ]
+  },
+  {
+   "a": "cable_plug_F3_vrm",
+   "b": "vrm_shroud",
+   "tri_pairs": 19,
+   "aabb_overlap_mm": [
+    3.1,
+    2.0,
+    2.5
+   ]
+  },
+  {
+   "a": "gpu_cradle_wall_l",
+   "b": "gpu_cradle_base",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    2.0,
+    3.0,
+    10.0
+   ]
+  },
+  {
+   "a": "gpu_cradle_base",
+   "b": "gpu_cradle_wall_r",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    2.0,
+    3.0,
+    10.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "rf_window_plate",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    60.0,
+    2.0,
+    30.0
+   ]
+  },
+  {
+   "a": "board_pcb",
+   "b": "pump_screw0",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    4.0,
+    1.6,
+    4.0
+   ]
+  },
+  {
+   "a": "board_pcb",
+   "b": "pump_screw2",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    4.0,
+    1.6,
+    4.0
+   ]
+  },
+  {
+   "a": "board_pcb",
+   "b": "pump_screw1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    4.0,
+    1.6,
+    4.0
+   ]
+  },
+  {
+   "a": "board_pcb",
+   "b": "pump_screw3",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    4.0,
+    1.6,
+    4.0
+   ]
+  },
+  {
+   "a": "gpu_shroud_body",
+   "b": "gpu_trim",
+   "tri_pairs": 22,
+   "aabb_overlap_mm": [
+    150.0,
+    13.0,
+    1.6
+   ]
+  },
+  {
+   "a": "stand_swivel_bearing",
+   "b": "stand_swivel_friction_ring",
+   "tri_pairs": 48,
+   "aabb_overlap_mm": [
+    70.0,
+    70.0,
+    1.5
+   ]
+  },
+  {
+   "a": "gpu_bracket",
+   "b": "gpu_port0",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    15.0,
+    6.5,
+    1.5
+   ]
+  },
+  {
+   "a": "gpu_bracket",
+   "b": "gpu_port1",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    16.0,
+    6.5,
+    1.5
+   ]
+  },
+  {
+   "a": "gpu_bracket",
+   "b": "gpu_port2",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    16.0,
+    6.5,
+    1.5
+   ]
+  },
+  {
+   "a": "gpu_bracket",
+   "b": "gpu_port3",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    16.0,
+    6.5,
+    1.5
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab0",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab5",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab1",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab2",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab3",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab4",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    14.0,
+    1.5,
+    7.0
+   ]
+  },
+  {
+   "a": "vrm_shroud",
+   "b": "vrm_trim",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    98.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "board_hdr_vrm_hs_fan",
+   "b": "vrm_trim",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    3.1,
+    4.0,
+    1.2
+   ]
+  },
+  {
+   "a": "cable_plug_F3_vrm",
+   "b": "vrm_trim",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    3.1,
+    6.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o3",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o2",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o4",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o1",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o5",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "stand_foot",
+   "b": "stand_swivel_bolt_o0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    1.2
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_strike0",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    16.0,
+    1.2,
+    8.0
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_strike5",
+   "tri_pairs": 5,
+   "aabb_overlap_mm": [
+    16.0,
+    1.2,
+    8.0
+   ]
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_eclip0",
+   "tri_pairs": 96,
+   "aabb_overlap_mm": [
+    1.0,
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_eclip1",
+   "tri_pairs": 96,
+   "aabb_overlap_mm": [
+    1.0,
+    12.0,
+    12.0
+   ]
+  },
+  {
+   "a": "vrm_fan_ring",
+   "b": "pump_screw_head1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    7.0,
+    1.0,
+    7.0
+   ]
+  },
+  {
+   "a": "hang_bushing0b",
+   "b": "hang_pin0_shoulder",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hang_bushing2b",
+   "b": "hang_pin2_shoulder",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usb4_c1_tongue",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    1.0,
+    1.0,
+    9.0
+   ]
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usb4_c2_tongue",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    1.0,
+    1.0,
+    9.0
+   ]
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usbc_10g_tongue",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    1.0,
+    1.0,
+    9.0
+   ]
+  },
+  {
+   "a": "hang_bushing1b",
+   "b": "hang_pin1_shoulder",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hang_bushing3b",
+   "b": "hang_pin3_shoulder",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "cable_plug_F3_vrm",
+   "b": "vrm_fin0",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    1.1,
+    4.0,
+    1.0
+   ]
+  },
+  {
+   "a": "am5_backplate",
+   "b": "pump_screw0",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    4.0,
+    1.0,
+    4.0
+   ]
+  },
+  {
+   "a": "vrm_fan_ring",
+   "b": "pump_cage_rib10",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    4.0,
+    1.0,
+    3.273
+   ]
+  },
+  {
+   "a": "ac_inlet_flange",
+   "b": "ac_inlet_body",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    28.0,
+    20.0,
+    1.0
+   ]
+  },
+  {
+   "a": "pe_nut_tray",
+   "b": "pe_stud_tray",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    4.0,
+    1.0,
+    4.0
+   ]
+  },
+  {
+   "a": "vrm_shroud",
+   "b": "socket",
+   "tri_pairs": 10,
+   "aabb_overlap_mm": [
+    60.0,
+    4.0,
+    0.9
+   ]
+  },
+  {
+   "a": "choke3",
+   "b": "socket",
+   "tri_pairs": 25,
+   "aabb_overlap_mm": [
+    0.8,
+    4.0,
+    7.0
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o3",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o2",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o4",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o1",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o5",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_bolt_o0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.8
+   ]
+  },
+  {
+   "a": "latch_strike0",
+   "b": "latch_cam0",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "latch_strike1",
+   "b": "latch_cam1",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "latch_strike2",
+   "b": "latch_cam2",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "latch_strike3",
+   "b": "latch_cam3",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "latch_strike4",
+   "b": "latch_cam4",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "latch_strike5",
+   "b": "latch_cam5",
+   "tri_pairs": 7,
+   "aabb_overlap_mm": [
+    8.0,
+    0.7,
+    5.0
+   ]
+  },
+  {
+   "a": "stand_neck_shroud",
+   "b": "stand_swivel_bolt4",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    5.0,
+    2.5,
+    0.6
+   ]
+  },
+  {
+   "a": "stand_neck_base",
+   "b": "stand_swivel_bolt1",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.6
+   ]
+  },
+  {
+   "a": "stand_neck_base",
+   "b": "stand_swivel_bolt2",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.6
+   ]
+  },
+  {
+   "a": "stand_neck_base",
+   "b": "stand_swivel_bolt3",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.6
+   ]
+  },
+  {
+   "a": "stand_neck_base",
+   "b": "stand_swivel_bolt0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.6
+   ]
+  },
+  {
+   "a": "stand_neck_base",
+   "b": "stand_swivel_bolt5",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    5.0,
+    5.0,
+    0.6
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "socket",
+   "tri_pairs": 78,
+   "aabb_overlap_mm": [
+    60.0,
+    0.5,
+    60.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "choke0",
+   "tri_pairs": 50,
+   "aabb_overlap_mm": [
+    7.0,
+    0.5,
+    7.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "choke1",
+   "tri_pairs": 46,
+   "aabb_overlap_mm": [
+    7.0,
+    0.5,
+    7.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_f_panel",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    22.1,
+    0.5,
+    5.481
+   ]
+  },
+  {
+   "a": "board_hdr_aio_pump",
+   "b": "board_smd",
+   "tri_pairs": 31,
+   "aabb_overlap_mm": [
+    4.904,
+    0.5,
+    10.9
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "dimm_slot0",
+   "tri_pairs": 30,
+   "aabb_overlap_mm": [
+    143.9,
+    0.5,
+    7.2
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "screw_board2_head",
+   "tri_pairs": 30,
+   "aabb_overlap_mm": [
+    5.6,
+    0.5,
+    5.6
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "pump_screw2",
+   "tri_pairs": 30,
+   "aabb_overlap_mm": [
+    4.0,
+    0.5,
+    4.0
+   ]
+  },
+  {
+   "a": "board_hdr_cpu_fan",
+   "b": "board_smd",
+   "tri_pairs": 29,
+   "aabb_overlap_mm": [
+    4.904,
+    0.5,
+    10.7
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "choke2",
+   "tri_pairs": 29,
+   "aabb_overlap_mm": [
+    7.0,
+    0.5,
+    7.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_conn_u10g_c10",
+   "tri_pairs": 28,
+   "aabb_overlap_mm": [
+    12.0,
+    0.5,
+    6.781
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_right2",
+   "tri_pairs": 28,
+   "aabb_overlap_mm": [
+    13.4,
+    0.5,
+    8.181
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "cap1",
+   "tri_pairs": 27,
+   "aabb_overlap_mm": [
+    6.4,
+    0.5,
+    6.4
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "screw_board3_head",
+   "tri_pairs": 27,
+   "aabb_overlap_mm": [
+    5.6,
+    0.5,
+    5.6
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_misc_clip_screw",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    14.4,
+    0.5,
+    10.5
+   ]
+  },
+  {
+   "a": "hinge_friction0_cap",
+   "b": "hinge_friction0",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    0.5,
+    16.0,
+    16.0
+   ]
+  },
+  {
+   "a": "hinge_friction1",
+   "b": "hinge_friction1_cap",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    0.5,
+    16.0,
+    16.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "cap2",
+   "tri_pairs": 23,
+   "aabb_overlap_mm": [
+    6.4,
+    0.5,
+    6.4
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "choke3",
+   "tri_pairs": 23,
+   "aabb_overlap_mm": [
+    7.0,
+    0.5,
+    7.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_t_sensor",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    4.4,
+    0.5,
+    3.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "vrm_shroud",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    98.0,
+    0.5,
+    36.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_chipset_fan",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    9.2,
+    0.5,
+    3.7
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "screw_board1_head",
+   "tri_pairs": 17,
+   "aabb_overlap_mm": [
+    5.6,
+    0.5,
+    5.6
+   ]
+  },
+  {
+   "a": "fan_pump_vrm_frame",
+   "b": "pump_housing_body",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    0.5,
+    12.0,
+    46.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_batt_con",
+   "tri_pairs": 10,
+   "aabb_overlap_mm": [
+    9.0,
+    0.5,
+    3.9
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "m2_card_post0",
+   "tri_pairs": 9,
+   "aabb_overlap_mm": [
+    4.503,
+    0.5,
+    5.2
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_vrm_hs_fan",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    9.5,
+    0.5,
+    3.5
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_hdr_right3",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    14.6,
+    0.5,
+    8.181
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_m2_wifi_module",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    7.9,
+    0.5,
+    30.873
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "board_conn_u2_card_down",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    9.5,
+    0.5,
+    5.5
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "chipset_sink",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    21.0,
+    0.5,
+    19.0
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "pump_screw3",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    4.0,
+    0.5,
+    4.0
+   ]
+  },
+  {
+   "a": "ac_inlet_flange",
+   "b": "ac_inlet_socket",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    22.0,
+    15.0,
+    0.5
+   ]
+  },
+  {
+   "a": "eps8",
+   "b": "io_shield",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    0.4,
+    11.0,
+    18.1
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "pcie_gold",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    2.0,
+    0.4,
+    60.0
+   ]
+  },
+  {
+   "a": "psu_label",
+   "b": "psu_grille_spokes",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    12.0,
+    0.3,
+    70.0
+   ]
+  },
+  {
+   "a": "psu_label",
+   "b": "psu_grille_ring4",
+   "tri_pairs": 22,
+   "aabb_overlap_mm": [
+    6.0,
+    0.3,
+    70.0
+   ]
+  },
+  {
+   "a": "vrm_trim",
+   "b": "board_hdr_vrm_hs_fan_pin2",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    0.6,
+    0.3,
+    1.2
+   ]
+  },
+  {
+   "a": "vrm_shroud",
+   "b": "board_hdr_vrm_hs_fan_pin2",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    0.6,
+    0.3,
+    1.625
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hinge_bolt_head1",
+   "tri_pairs": 3,
+   "aabb_overlap_mm": [
+    9.007,
+    3.0,
+    0.169
+   ]
+  },
+  {
+   "a": "cover_back",
+   "b": "hinge_bolt_head3",
+   "tri_pairs": 3,
+   "aabb_overlap_mm": [
+    9.007,
+    3.0,
+    0.169
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser0",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser1",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser2",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser3",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser4",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser5",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    0.161,
+    10.819,
+    12.0
+   ]
+  }
+ ],
+ "note": "深さ=2物体のAABB重なりの最小軸(近似)。三角形交差のある対のみ。実際の貫入量ではなく上限の目安。"
+}

@@ -75,6 +75,7 @@
 | interference_report.json | v005 | current | 2026-11-07 | 48f7baa | interference_report/interference_report.v005__2026-11-07_48f7baa.json |
 | interference_report.json | v006 | current | 2026-11-07 | b5f5bb3 | interference_report/interference_report.v006__2026-11-07_b5f5bb3.json |
 | interference_report.json | v007 | current | 2026-11-07 | 1122f40 | interference_report/interference_report.v007__2026-11-07_1122f40.json |
+| interference_report.json | v008 | current | 2026-11-07 | ee5f6f2 | interference_report/interference_report.v008__2026-11-07_ee5f6f2.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |

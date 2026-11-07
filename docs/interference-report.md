@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、642物体、交差対 595。
-- 接触のみ(深さ<0.15mm): 319 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 187**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、642物体、交差対 578。
+- 接触のみ(深さ<0.15mm): 319 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 170**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対

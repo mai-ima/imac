@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-07T14:47Z",
+ "generated": "2026-11-07T14:48Z",
  "objects": 642,
- "pairs_total": 595,
+ "pairs_total": 578,
  "touch_only": 319,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -15,7 +15,7 @@
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "モジュラーソケットは筐体前面の開口に嵌合": 4
  },
- "remaining": 187,
+ "remaining": 170,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -988,66 +988,6 @@
    ]
   },
   {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o3",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o2",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o4",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o1",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o5",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
-   "a": "stand_foot",
-   "b": "stand_swivel_bolt_o0",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    1.2
-   ]
-  },
-  {
    "a": "cover_back",
    "b": "hook_strike0",
    "tri_pairs": 5,
@@ -1238,66 +1178,6 @@
    ]
   },
   {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o3",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o2",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o4",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o1",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o5",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_bolt_o0",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.8
-   ]
-  },
-  {
    "a": "latch_strike0",
    "b": "latch_cam0",
    "tri_pairs": 7,
@@ -1364,56 +1244,6 @@
    "aabb_overlap_mm": [
     5.0,
     2.5,
-    0.6
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "stand_swivel_bolt1",
-   "tri_pairs": 14,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.6
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "stand_swivel_bolt2",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.6
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "stand_swivel_bolt3",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.6
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "stand_swivel_bolt0",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.6
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "stand_swivel_bolt5",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
     0.6
    ]
   },

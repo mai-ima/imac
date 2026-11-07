@@ -162,9 +162,17 @@ cyl('stand_swivel_friction_ring', 35, 1.5, 'y', SX, SY0 + 6.75, SZ, M['rubber'],
 for k in range(6):
     ang = math.radians(k * 60 + 30); bx_, bz_ = SX + SWV['pcd_inner'] / 2 * math.cos(ang), SZ + SWV['pcd_inner'] / 2 * math.sin(ang)
     cyl(f'stand_swivel_bolt{k}', 2.5, 0.6, 'y', bx_, SY0 + 25.3, bz_, M['sus'], 12)                                    # 内輪側 M5×6本(PCD70)の頭
+    _cb = cyl(f'stand_swivel_cbore{k}_hole', 3.0, 1.2, 'y', bx_, SY0 + 25.6, bz_, None, 16, body=False); _cb.hide_render = True; BODY_OBJS.append(_cb)      # ネック基台の座ぐり(頭Ø5+逃げ, 深さ0.6)
+    for _tn in ('stand_neck_base', 'stand_neck_collar'):
+        _to = bpy.data.objects.get(_tn)
+        if _to is not None: _m = _to.modifiers.new(f'cbore{k}', 'BOOLEAN'); _m.object = _cb; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 for k in range(6):
     ang = math.radians(k * 60); bx_, bz_ = SX + SWV['pcd_outer'] / 2 * math.cos(ang), SZ + SWV['pcd_outer'] / 2 * math.sin(ang)
     cyl(f'stand_swivel_bolt_o{k}', 2.5, 2, 'y', bx_, SY0 - 0.2, bz_, M['sus'], 12)                                   # 外輪側 M5×6本(PCD90)はステータ下面から(頭は足内)
+    _cb2 = cyl(f'stand_swivel_cbore_o{k}_hole', 3.0, 3.0, 'y', bx_, SY0 - 0.2, bz_, None, 16, body=False); _cb2.hide_render = True; BODY_OBJS.append(_cb2)      # 足・スカート・ステータの座ぐり(頭の逃げ)
+    for _tn in ('stand_foot', 'stand_skirt', 'stand_swivel_stator'):
+        _to = bpy.data.objects.get(_tn)
+        if _to is not None: _m = _to.modifiers.new(f'cbore_o{k}', 'BOOLEAN'); _m.object = _cb2; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 _SA = math.degrees(math.asin((5.0 + 5.0) / SWV['stop_r']))       # 接触角の補正: ポスト半径4+タブ半幅5 を半径60で見た角度
 for sgn, nm in ((-1, 'l'), (1, 'r')):    # 角度ストッパ: ステータ上のゴムポスト(r=60, ±(60+補正)°)と、ロータ側タブ(同じ高さ y19〜25)
     ang = math.radians(90 + sgn * (SWV['range_deg'] + _SA)); cyl(f'stand_swivel_stop_{nm}', 5.0, 25, 'y', SX + SWV['stop_r'] * math.cos(ang), SY0 + 12.5, SZ + SWV['stop_r'] * math.sin(ang), M['rubber'], 16)
