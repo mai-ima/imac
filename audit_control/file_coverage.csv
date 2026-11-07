@@ -57,19 +57,19 @@ archive/release/handoff_v9/handoff_v9.zip,archive,4254012,a0f00bfe83190a4c,NOT_R
 archive/tools/gen_anatomy__2026-11-03_78fc708.py,archive,7521,34afbb70da6e8c59,NOT_REVIEWED,,
 archive/tools/gen_drawing__2026-11-03_0f4d0d7.py,archive,4405,38e0e65929a9a8f3,NOT_REVIEWED,,
 archive/tools/gen_drawing__2026-11-03_a2b24f4.py,archive,4356,fe054ca2c11f9099,NOT_REVIEWED,,
-audit_control/ARCHIVE_INDEX.json,current,1231,7be06cc3debd8d19,NOT_REVIEWED,,
+audit_control/ARCHIVE_INDEX.json,current,1749,9b66260d97c2821d,NOT_REVIEWED,,
 audit_control/BASELINE.md,current,574,60ff090e7666b1c8,NOT_REVIEWED,,
 audit_control/SESSION_STATE.md,current,2594,8b29311212b11d6a,NOT_REVIEWED,,
-audit_control/file_coverage.csv,current,135711,4e11a6eddb3c13b1,CHANGED_RECHECK,,
+audit_control/file_coverage.csv,current,134667,36c75bc0dea7f2c1,CHANGED_RECHECK,,
 audit_control/reports/GA_2026-11-07_table.md,current,6564,43a77534b2a4211f,NOT_REVIEWED,,
 audit_control/reports/R9_docs.md,current,56382,c78e688f5ba9d2b2,NOT_REVIEWED,,
 audit_control/reports/R9_drawings.md,current,34847,214b80926e1aef0a,NOT_REVIEWED,,
 audit_control/reports/R9_tools.md,current,38462,1038d5edf91d2b16,NOT_REVIEWED,,
-audit_control/resolutions.json,current,12304,40cc47a1f9fe852a,NOT_REVIEWED,,
-audit_control/tasks.json,current,339544,a5644c77cc03ef9c,CHANGED_RECHECK,,
+audit_control/resolutions.json,current,29859,dede669e0ebc5a5f,NOT_REVIEWED,,
+audit_control/tasks.json,current,356392,3b3f6ffbdfe80a5e,CHANGED_RECHECK,,
 audit_control/validate_state.py,current,2431,e415fdebd65f33ac,NOT_REVIEWED,,
 audit_output/00_README_JA.md,generated,1438,30fc7ac5be093460,NOT_REVIEWED,,
-audit_output/01_FULL_FILE_MANIFEST.csv,generated,208646,bb153e310a60d553,CHANGED_RECHECK,,
+audit_output/01_FULL_FILE_MANIFEST.csv,generated,206676,2e3d33c6c4179bf0,CHANGED_RECHECK,,
 audit_output/03_FINDINGS_REGISTER.md,generated,3938,0a3ccfa9c5dad189,NOT_REVIEWED,,
 audit_output/12_TEST_RESULTS.txt,generated,3457,1a62d57d0297af8a,NOT_REVIEWED,,
 audit_output/14_ARCHITECTURE_DECISIONS.md,generated,930,e62e77e83def347a,NOT_REVIEWED,,
@@ -262,6 +262,7 @@ docs/archive/thermal-analysis/thermal-analysis.v002__2026-11-05_15a1bce.md,archi
 docs/archive/thermal-analysis/thermal-analysis.v003__2026-11-05_71b7afb.md,archive,3346,5f4cd7613ae8699d,NOT_REVIEWED,,
 docs/archive/thermal-analysis/thermal-analysis.v004__2026-11-06_9ff6031.md,archive,3354,0bad27cdda42cdee,NOT_REVIEWED,,
 docs/archive/thermal-analysis/thermal-analysis.v005__2026-11-06_2bb8cf1.md,archive,3376,b9c146f76fd35896,NOT_REVIEWED,,
+docs/archive/tilt-swivel-design/tilt-swivel-design.v-final__2026-11-07.md,archive,11028,ec75efb5d8eed573,NOT_REVIEWED,,
 docs/archive/tilt-swivel-design/tilt-swivel-design.v001__2026-11-06_7ed5c4c.md,archive,6349,95ab61d965d57289,NOT_REVIEWED,,
 docs/archive/tilt-swivel-design/tilt-swivel-design.v002__2026-11-06_4482281.md,archive,7394,dd379cc2c6c986f4,NOT_REVIEWED,,
 docs/archive/tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md,archive,8253,90d9b33b216b4dc5,NOT_REVIEWED,,
@@ -423,7 +424,7 @@ docs/spec/archive/wiring-spec/wiring-spec.v006__2026-11-06_853f219.md,archive,44
 docs/spec/archive/wiring-spec/wiring-spec.v007__2026-11-06_88f99b7.md,archive,4492,c71d962dccf8e7c1,NOT_REVIEWED,,
 docs/spec/archive/wiring-spec/wiring-spec.v008__2026-11-06_cf90ba1.md,archive,4988,e7062e329d88ae94,NOT_REVIEWED,,
 docs/spec/cost-estimate.md,current,1830,e886f54062cc5969,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/custom-parts.md,current,27231,8abaeb76762f8261,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
+docs/spec/custom-parts.md,current,27269,b019fac332a4d413,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/design-philosophy.md,current,7234,5a711d33387ffbc0,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/gaming-requirements.md,current,2407,cc6366d1244e13ec,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/grounding-spec.md,current,2112,3ac0a6e937773faf,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
@@ -434,10 +435,10 @@ docs/spec/panel-driver.md,current,2125,a4770bd45f12d060,REVIEWED,R9-DOCS,"R9_doc
 docs/spec/panel-thermal.md,current,3719,1026b0294b1f91ff,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/performance-benchmark.md,current,3594,0f1d8f00568004ec,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/standard-parts.md,current,2260,60e9a355c6998240,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/system-spec.md,current,4477,17567a81de97748c,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
+docs/spec/system-spec.md,current,4495,b412735e12a5c1e9,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/wiring-spec.md,current,4825,a372d3795a3bde5d,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/thermal-analysis.md,current,3395,957a72e23635187e,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/tilt-swivel-design.md,current,11028,ec75efb5d8eed573,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
+docs/tilt-swivel-design.md,current,349,f494c4510ac353f8,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/unverified-tracker.md,current,12149,576be6a6f1b80297,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/wiring.md,current,2322,7640effcc1e1b03f,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 drawings/01_front_glass.svg,generated,13316,cb1f3280feec6694,NOT_REVIEWED,,
@@ -615,7 +616,7 @@ drawings/parts/CP-07.svg,generated,15283,15c66f65f3a5b815,NOT_REVIEWED,,
 drawings/parts/CP-08.svg,generated,13110,64df9e58f176195f,NOT_REVIEWED,,
 drawings/parts/CP-09.svg,generated,12451,dafee35616cabbf6,NOT_REVIEWED,,
 drawings/parts/CP-10.svg,generated,13552,95b60617251456bc,NOT_REVIEWED,,
-drawings/parts/CP-11.svg,generated,12827,936d3630399ca396,NOT_REVIEWED,,
+drawings/parts/CP-11.svg,generated,12896,4f546b94fd7629a7,NOT_REVIEWED,,
 drawings/parts/CP-12.svg,generated,12977,ffc10f7cca636eb9,NOT_REVIEWED,,
 drawings/parts/CP-13.svg,generated,12927,14c45dfbc81f68a3,CHANGED_RECHECK,,
 drawings/parts/CP-14.svg,generated,13062,0f215fe5d63a566f,NOT_REVIEWED,,
@@ -931,7 +932,7 @@ model/archive/x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json,archive,15
 model/b650iax_layout.json,current,2197,7a092faed1b45f3d,NOT_REVIEWED,,
 model/balance.json,current,1994,4d3fc51bd221cdb1,NOT_REVIEWED,,
 model/cables.json,current,15038,9074ea1a3119cba5,CHANGED_RECHECK,,
-model/custom_parts.json,current,26310,b9dd2bf386726a92,CHANGED_RECHECK,,
+model/custom_parts.json,current,26348,1fdf4b1e6cc97c7b,CHANGED_RECHECK,,
 model/hardware_list.json,current,5292,3d189824b0aee75e,CHANGED_RECHECK,,
 model/layout.json,current,2260,d5decead4e062b07,NOT_REVIEWED,,
 model/layout_dome.json,current,634,3055e9bc9cf98b63,NOT_REVIEWED,,
@@ -1186,7 +1187,7 @@ tools/gen_service_drawings.py,current,7928,f36874d9e53d2dee,NOT_REVIEWED,,
 tools/gen_specs.py,current,12736,b2abe5600e81d247,NOT_REVIEWED,,
 tools/guard_no_delete.sh,current,818,782337461842015b,NOT_REVIEWED,,
 tools/handoff_build.sh,current,809,35e3ffb954470a82,NOT_REVIEWED,,
-tools/joint_calc.py,current,8971,642905a2d805ff39,NOT_REVIEWED,,
+tools/joint_calc.py,current,8980,857bcb9a42e347cd,NOT_REVIEWED,,
 tools/layout_search.py,current,4385,cc3884a1003e2b67,NOT_REVIEWED,,
 tools/ledger_import.py,current,2654,2f0bd7733a5d930e,NOT_REVIEWED,,
 tools/massmodel.py,current,3544,dd729900a79368dd,NOT_REVIEWED,,
@@ -1194,6 +1195,7 @@ tools/motion_check.py,current,13365,d47fbacf10c9a356,NOT_REVIEWED,,
 tools/neckgeom.py,current,2069,1d2417f85189f467,NOT_REVIEWED,,
 tools/power_budget.py,current,2551,ab6d2ecc7efe48c9,NOT_REVIEWED,,
 tools/pre-commit.hook,current,126,339ab8b38ccd3dbb,NOT_REVIEWED,,
+tools/r9_autocheck.py,current,2298,37168c45c6db6eb2,NOT_REVIEWED,,
 tools/run_gates.sh,current,1219,7df797ebee601492,NOT_REVIEWED,,
 tools/stability.py,current,4416,f3c8f792b99c5bdd,NOT_REVIEWED,,
 tools/stale_check.py,current,3520,6520264ddcb9b6e0,NOT_REVIEWED,,

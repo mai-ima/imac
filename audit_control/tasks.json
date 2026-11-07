@@ -3540,18 +3540,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3571,18 +3578,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3602,18 +3616,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3633,18 +3654,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3664,18 +3692,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3695,18 +3730,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3726,18 +3768,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3757,18 +3806,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "done",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導"
+   ],
+   "verification": "sha256一致assert+参照置換grep",
+   "decision": "MOVE_TO_ARCHIVE",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3788,18 +3844,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3819,18 +3882,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3850,18 +3920,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3881,18 +3958,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -3974,18 +4058,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4005,18 +4096,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4150,18 +4248,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4257,18 +4362,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4288,18 +4400,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4388,18 +4507,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4564,18 +4690,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4626,18 +4759,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4657,18 +4797,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4781,18 +4928,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4843,18 +4997,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5091,18 +5252,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5122,18 +5290,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5453,18 +5628,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5484,18 +5666,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5515,18 +5704,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5867,18 +6063,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用4件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -5898,18 +6101,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6022,18 +6232,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6177,18 +6394,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6239,18 +6463,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6270,18 +6501,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6332,18 +6570,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6394,18 +6639,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6680,18 +6932,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6773,18 +7032,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7121,18 +7387,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7214,18 +7487,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7338,18 +7618,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7583,18 +7870,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7652,18 +7946,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7721,18 +8022,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7897,18 +8205,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -7990,18 +8305,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8021,18 +8343,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8052,18 +8381,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8145,18 +8481,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8207,18 +8550,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8269,18 +8619,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8331,18 +8688,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8362,18 +8726,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8703,18 +9074,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -8858,18 +9236,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -9375,18 +9760,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -9437,18 +9829,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -9737,18 +10136,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10030,18 +10436,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10061,18 +10474,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10123,18 +10543,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10254,18 +10681,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10285,18 +10719,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用4件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10316,18 +10757,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10471,18 +10919,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10843,18 +11298,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -10874,18 +11336,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -11587,18 +12056,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -11618,18 +12094,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 08:59",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)"
+   ],
+   "verification": "tools/r9_autocheck.py",
+   "decision": "要再監査で確認",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -11742,18 +12225,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -11773,18 +12263,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -11804,18 +12301,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 09:00",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認"
+   ],
+   "verification": "gen_specs再生成+consistency_check",
+   "decision": "FIXED(要再確認)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""

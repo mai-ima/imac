@@ -172,6 +172,15 @@
    "file": "custom-parts/custom-parts.v017__2026-11-06_f2e5a87.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 18,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "8abaeb76762f8261153b59f88559f77416ef318bd900129b00dec029c056ef11",
+   "file": "custom-parts/custom-parts.v018__2026-11-07_64a1afa.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -503,6 +512,15 @@
    "commit": "e7a16e1",
    "sha256": "dfb10020c20a6570d746a1a0daff5fbdf554dccb0fc2d67f4cc2af4a94446460",
    "file": "system-spec/system-spec.v012__2026-11-06_e7a16e1.md"
+  },
+  {
+   "src": "docs/spec/system-spec.md",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "88ef5e5",
+   "sha256": "17567a81de97748c07fb8892213e09394dcc25220eebbcec5be3061a36e3c7af",
+   "file": "system-spec/system-spec.v013__2026-11-07_88ef5e5.md"
   },
   {
    "src": "docs/spec/wiring-spec.md",

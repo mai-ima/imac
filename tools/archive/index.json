@@ -1018,6 +1018,15 @@
    "file": "joint_calc/joint_calc.v006__2026-11-06_93238a3.py"
   },
   {
+   "src": "tools/joint_calc.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "642905a2d805ff39ea16f7f5f40c76581a284630b11a5d66a47204f55558c969",
+   "file": "joint_calc/joint_calc.v007__2026-11-06_e7a16e1.py"
+  },
+  {
    "src": "tools/layout_search.py",
    "version": 1,
    "gen": "current",

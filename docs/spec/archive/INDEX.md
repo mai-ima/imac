@@ -21,6 +21,7 @@
 | custom-parts.md | v015 | current | 2026-11-06 | e7a16e1 | custom-parts/custom-parts.v015__2026-11-06_e7a16e1.md |
 | custom-parts.md | v016 | current | 2026-11-06 | 36dff8c | custom-parts/custom-parts.v016__2026-11-06_36dff8c.md |
 | custom-parts.md | v017 | current | 2026-11-06 | f2e5a87 | custom-parts/custom-parts.v017__2026-11-06_f2e5a87.md |
+| custom-parts.md | v018 | current | 2026-11-07 | 64a1afa | custom-parts/custom-parts.v018__2026-11-07_64a1afa.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |
@@ -58,6 +59,7 @@
 | system-spec.md | v010 | current | 2026-11-06 | 877835f | system-spec/system-spec.v010__2026-11-06_877835f.md |
 | system-spec.md | v011 | current | 2026-11-06 | 93238a3 | system-spec/system-spec.v011__2026-11-06_93238a3.md |
 | system-spec.md | v012 | current | 2026-11-06 | e7a16e1 | system-spec/system-spec.v012__2026-11-06_e7a16e1.md |
+| system-spec.md | v013 | current | 2026-11-07 | 88ef5e5 | system-spec/system-spec.v013__2026-11-07_88ef5e5.md |
 | wiring-spec.md | v001 | current | 2026-11-05 | b97eaae | wiring-spec/wiring-spec.v001__2026-11-05_b97eaae.md |
 | wiring-spec.md | v002 | current | 2026-11-05 | fcba5fe | wiring-spec/wiring-spec.v002__2026-11-05_fcba5fe.md |
 | wiring-spec.md | v003 | current | 2026-11-06 | 80d7407 | wiring-spec/wiring-spec.v003__2026-11-06_80d7407.md |

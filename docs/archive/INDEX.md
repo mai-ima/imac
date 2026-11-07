@@ -105,6 +105,7 @@
 | tilt-swivel-design.md | v003 | current | 2026-11-06 | bfa86c4 | tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md |
 | tilt-swivel-design.md | v004 | current | 2026-11-06 | 432b08c | tilt-swivel-design/tilt-swivel-design.v004__2026-11-06_432b08c.md |
 | tilt-swivel-design.md | v005 | current | 2026-11-06 | d97f07e | tilt-swivel-design/tilt-swivel-design.v005__2026-11-06_d97f07e.md |
+| tilt-swivel-design.md | v006 | current | 2026-11-06 | e7a16e1 | tilt-swivel-design/tilt-swivel-design.v006__2026-11-06_e7a16e1.md |
 | unverified-tracker.md | v001 | current | 2026-11-03 | 307c9ea | unverified-tracker/unverified-tracker.v001__2026-11-03_307c9ea.md |
 | unverified-tracker.md | v002 | current | 2026-11-05 | 27ca8ce | unverified-tracker/unverified-tracker.v002__2026-11-05_27ca8ce.md |
 | unverified-tracker.md | v003 | current | 2026-11-05 | 2f8c0ac | unverified-tracker/unverified-tracker.v003__2026-11-05_2f8c0ac.md |

@@ -340,5 +340,437 @@
   "evidence": "実物/公式型番/実測が必要(ctrl基板・GPU SKU・ライザー・ばね・軸受・風量)",
   "verification": "",
   "decision": "BLOCKED/UNVERIFIED維持"
+ },
+ "R9D-006": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-009": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-014": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-015": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-016": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-019": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-020": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-031": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-036": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-038": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-039": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-043": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-045": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-053": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-054": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-064": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-065": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-066": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-076": {
+  "status": "in_review",
+  "evidence": "報告の原文引用4件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-077": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-081": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-086": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-088": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-089": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-091": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-093": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-102": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-105": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-116": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-119": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-123": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-006": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-008": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-010": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-015": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-018": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-019": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-020": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-023": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-025": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-027": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-029": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-030": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-041": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9T-046": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-006": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-008": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-017": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-028": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-029": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-031": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-035": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-036": {
+  "status": "in_review",
+  "evidence": "報告の原文引用4件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-037": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-042": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-054": {
+  "status": "in_review",
+  "evidence": "報告の原文引用3件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-055": {
+  "status": "in_review",
+  "evidence": "報告の原文引用2件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-093": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9G-094": {
+  "status": "in_review",
+  "evidence": "報告の原文引用1件が現行の指摘ファイルに存在しない(自動grep: r9_autocheck)",
+  "verification": "tools/r9_autocheck.py",
+  "decision": "要再監査で確認"
+ },
+ "R9D-005": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-007": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-008": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-010": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-011": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-012": {
+  "status": "done",
+  "evidence": "docs/tilt-swivel-design.md を archive へ移行(MOVE_TO_ARCHIVE, SHA一致)し現行は mechanisms/01〜03 へ誘導",
+  "verification": "sha256一致assert+参照置換grep",
+  "decision": "MOVE_TO_ARCHIVE"
+ },
+ "R9D-024": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9D-013": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9D-027": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9D-028": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9G-F01": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9G-F02": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
+ },
+ "R9G-F03": {
+  "status": "in_review",
+  "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
+  "verification": "gen_specs再生成+consistency_check",
+  "decision": "FIXED(要再確認)"
  }
 }

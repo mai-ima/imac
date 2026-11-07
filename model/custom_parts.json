@@ -405,14 +405,14 @@
     "ヒンジブロック(150×22×24, A6063)+カバー",
     "摩擦ヒンジ(Reell PHL/PHC級)×2、カム式バランサ(CP-23)",
     "機械ストッパ×2、E止め輪×2、軸Ø12 SUS、貫通ボルトM6×4+SPCC裏当て+A5052補強板",
-    "設計トルク曲線: docs/tilt-swivel-design.md(質量実測 U25 後に確定)"
+    "設計トルク曲線: docs/mechanisms/01_tilt_balancer.md(質量実測 U25 後に確定)"
    ],
    "mates": [
     "CP-10",
     "CP-03"
    ],
    "mass_kg": 0.5,
-   "loads": "docs/tilt-swivel-design.md",
+   "loads": "docs/mechanisms/01_tilt_balancer.md",
    "life": "25,000回",
    "tests": [
     "トルク曲線",
@@ -780,7 +780,7 @@
    ],
    "mass_kg": 0.35,
    "loads": "ばね最大670N/本(0°で500N)。カム板・レバー根元曲げ78MPa(SUS304許容137MPa)。ばねは案内ロッドで拘束(揺動なし)。圧力角最大20.7°",
-   "life": "25,000回(行程8.6mm)",
+   "life": "25,000回(ばね行程5.7mm, balance.json)",
    "tests": [
     "荷重-行程特性・疲労・高温クリープ"
    ],

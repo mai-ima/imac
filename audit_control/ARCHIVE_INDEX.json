@@ -23,6 +23,14 @@
    "date": "2026-11-07",
    "reason": "Blender自動バックアップ。現行は imac_pc.blend",
    "restore": "git mv archive/blender/imac_pc_blend1/imac_pc.v-backup.blend1 blender/imac_pc.blend1"
+  },
+  {
+   "original": "docs/tilt-swivel-design.md",
+   "archived": "docs/archive/tilt-swivel-design/tilt-swivel-design.v-final__2026-11-07.md",
+   "sha256": "ec75efb5d8eed5734c7455eca361f92af2684e6fd9ba16a934f4e585b3737e7e",
+   "date": "2026-11-07",
+   "reason": "旧方式(レバー+圧縮ばね)・旧寸法を含む経緯文書。現行は docs/mechanisms/01〜03 (R9D-005〜012, GA-10)",
+   "restore": "git mv docs/archive/tilt-swivel-design/tilt-swivel-design.v-final__2026-11-07.md docs/tilt-swivel-design.md"
   }
  ]
 }
