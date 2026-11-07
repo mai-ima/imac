@@ -12,7 +12,10 @@ for t in T:
         if d not in ids: bad.append(f"{t['id']}: 依存 {d} が存在しない")
 files = {x for x in subprocess.check_output(['git', 'ls-files', '-co', '--exclude-standard'], cwd=R, text=True).split('\n') if x and os.path.isfile(f'{R}/{x}')}
 cov = {r['path'] for r in csv.DictReader(open(f'{AC}/file_coverage.csv', encoding='utf-8'))}
-miss = files - cov
+miss_all = files - cov
+miss_arch = {f for f in miss_all if '/archive/' in f or f.startswith('archive/')}      # 旧版自動退避(pre-commit)は新規発生のため警告のみ(台帳へは次回 init で登録)
+miss = miss_all - miss_arch
+if miss_arch: print(f'[WARN] file_coverage に未登録の archive ファイル {len(miss_arch)} 件(init で登録)')
 if miss: bad.append(f'file_coverage に未登録 {len(miss)} 件(例 {sorted(miss)[:3]}) → tools/audit_control_init.py を実行')
 import re, glob
 rep_ids = set()
