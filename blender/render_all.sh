@@ -12,5 +12,5 @@ $R --view closeup --color silver --cut --res 1920x1080 --samples 160 --out $OUT/
 $R --view io      --color silver --res 1920x1080 --samples 128 --out $OUT/io_panel.png
 $R --view explode --color purple --explode 1 --res 1920x1080 --samples 128 --out $OUT/exploded.png
 for c in silver blue purple pink orange yellow green; do $R --view front --color $c --res 1280x720 --samples 64 --out $OUT/lineup_$c.png; done
-base64 -w0 viewer/imac_pc.glb > viewer/imac_pc.glb.txt
+gzip -9 -c viewer/imac_pc.glb | base64 -w0 > viewer/imac_pc.glb.txt      # gzip+base64(実穴で容量が増えるため。ビューアが DecompressionStream で展開)
 echo ALLDONE
