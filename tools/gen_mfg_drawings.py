@@ -86,7 +86,7 @@ ox, oy = 40, 50; fw5, fd5 = STv['foot_w'], STv['foot_depth']; cx5, cy5 = ox + fw
 b.append(rrect(ox, oy, fw5 * s5, fd5 * s5, 3, fill='#e3e5e8', stroke='#000', stroke_width=.5))
 b.append(f'<circle cx="{cx5}" cy="{cy5}" r="{SWv["bearing_od"]/2*s5}" fill="#c8cbd0" stroke="#000" stroke-width=".4"/><circle cx="{cx5}" cy="{cy5}" r="{SWv["bearing_id"]/2*s5}" fill="#fff" stroke="#000" stroke-width=".3"/><circle cx="{cx5}" cy="{cy5}" r="{55*s5}" fill="none" stroke="#000" stroke-width=".3" stroke-dasharray="2 1"/>')
 for sg_ in (-1, 1):
-    ang = math.radians(90 + sg_ * (SWv['range_deg'] + 8.6)); b.append(f'<circle cx="{cx5 + 60*s5*math.cos(ang):.1f}" cy="{cy5 + 60*s5*math.sin(ang):.1f}" r="{4*s5}" fill="#333"/>')
+    ang = math.radians(90 + sg_ * (SWv['range_deg'] + 6.7)); b.append(f'<circle cx="{cx5 + SWv["stop_r"]*s5*math.cos(ang):.1f}" cy="{cy5 + SWv["stop_r"]*s5*math.sin(ang):.1f}" r="{5*s5}" fill="#333"/>')
 for k_ in range(6):
     for (r_, lab) in ((SWv['pcd_inner']/2, 'i'), (SWv['pcd_outer']/2, 'o')):
         an = math.radians(k_ * 60 + (30 if lab == 'i' else 0)); b.append(f'<circle cx="{cx5 + r_*s5*math.cos(an):.1f}" cy="{cy5 + r_*s5*math.sin(an):.1f}" r="1.2" fill="none" stroke="#000" stroke-width=".25"/>')
@@ -94,7 +94,7 @@ for sx_ in (-1, 1):
     for sy_ in (-1, 1): b.append(f'<circle cx="{ox + fw5*s5/2 + sx_*(fw5/2-24)*s5}" cy="{oy + fd5*s5/2 + sy_*(fd5/2-24)*s5}" r="{10*s5}" fill="#444"/>')
 b += dim_h(ox, ox + fw5 * s5, oy + fd5 * s5 + 6, f'幅 {fw5}', 8) + dim_v(ox + fw5 * s5 + 6, oy, oy + fd5 * s5, f'奥行 {fd5} (軸から前{STv["foot_front"]}/後{STv["foot_back"]})', 8)
 b += dim_v(ox - 6, oy, cy5, f'後 {STv["foot_back"]}', 6) + dim_v(ox - 14, cy5, oy + fd5 * s5, f'前 {STv["foot_front"]}', 6)
-b.append(f'<text x="{ox}" y="{oy-8}" font-size="4">平面図(上=背面) 首振りユニット Ø{SWv["bearing_od"]:g}軸受 / ストッパポスト r60 ±{SWv["range_deg"]+8.6:.1f}° / 軸受ボルト 内輪PCD{SWv["pcd_inner"]:g}×6・外輪PCD{SWv["pcd_outer"]:g}×6 / ゴム足Ø20×4</text>')
+b.append(f'<text x="{ox}" y="{oy-8}" font-size="4">平面図(上=背面) 首振りユニット Ø{SWv["bearing_od"]:g}軸受 / ストッパポスト r{SWv["stop_r"]:g} ±{SWv["range_deg"]+6.7:.1f}° / 軸受ボルト 内輪PCD{SWv["pcd_inner"]:g}×6・外輪PCD{SWv["pcd_outer"]:g}×6 / ゴム足Ø20×4</text>')
 # 側面断面(右へ): 縦は y=0 を地面。横=z(前面が左)
 sx0, sy0 = 250, 150; s6 = 0.9
 def Y(y): return sy0 - (y + DROP + 12) * s6         # y(設計)→図の縦(上が+)

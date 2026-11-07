@@ -325,6 +325,15 @@
    "file": "05_stand/05_stand.v010__2026-11-06_cf90ba1.svg"
   },
   {
+   "src": "drawings/05_stand.svg",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "86d9cbe91b54929832cf2d47a3725b80b212df57fe537a32e0f63c0079725b66",
+   "file": "05_stand/05_stand.v011__2026-11-06_36dff8c.svg"
+  },
+  {
    "src": "drawings/06_service_tray_plan.svg",
    "version": 1,
    "gen": "current",
@@ -1045,6 +1054,15 @@
    "file": "15_bom_sheet/15_bom_sheet.v010__2026-11-06_853f219.svg"
   },
   {
+   "src": "drawings/15_bom_sheet.svg",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "2a67592430adc508341cc140e49c07b3966dcf9288d1874c1488f7395d144b6a",
+   "file": "15_bom_sheet/15_bom_sheet.v011__2026-11-06_88f99b7.svg"
+  },
+  {
    "src": "drawings/16_cable_clips.svg",
    "version": 1,
    "gen": "current",
@@ -1277,6 +1295,15 @@
    "commit": "36dff8c",
    "sha256": "7c17e488e255121d2f5b9550a42a8eeff8d32defd53c3c52710d6cc07c170a96",
    "file": "outlines/outlines.v018__2026-11-06_36dff8c.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 19,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "1e429ec94d9ecd5a34c7d3e20a29a6dfc835fb076cdd16ecb0afbd83c8109bee",
+   "file": "outlines/outlines.v019__2026-11-06_f2e5a87.dxf"
   }
  ]
 }

@@ -216,8 +216,8 @@
 <text x="262.0" y="127.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-04.svg</text>
 <text x="10.0" y="132.8" font-size="2.6" text-anchor="start" fill="#222" >CP-05</text>
 <text x="28.0" y="132.8" font-size="2.4" text-anchor="start" fill="#222" >キーホール補強ブッシュ</text>
-<text x="150.0" y="132.8" font-size="2.2" text-anchor="start" fill="#222" >SUS304 t1.0 プレート(Ø16)</text>
-<text x="210.0" y="132.8" font-size="2.4" text-anchor="start" fill="#222" >16x16</text>
+<text x="150.0" y="132.8" font-size="2.2" text-anchor="start" fill="#222" >SUS304 t1.0 プレート(16×28 長丸)</text>
+<text x="210.0" y="132.8" font-size="2.4" text-anchor="start" fill="#222" >16x28</text>
 <text x="250.0" y="132.8" font-size="2.6" text-anchor="start" fill="#222" >4</text>
 <text x="262.0" y="132.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-05.svg</text>
 <text x="10.0" y="138.0" font-size="2.6" text-anchor="start" fill="#222" >CP-06</text>
@@ -229,7 +229,7 @@
 <text x="10.0" y="143.2" font-size="2.6" text-anchor="start" fill="#222" >CP-07</text>
 <text x="28.0" y="143.2" font-size="2.4" text-anchor="start" fill="#222" >背面ドーム(カバー)</text>
 <text x="150.0" y="143.2" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 または A5052-O絞り</text>
-<text x="210.0" y="143.2" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x104</text>
+<text x="210.0" y="143.2" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x165</text>
 <text x="250.0" y="143.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="143.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-07.svg</text>
 <text x="10.0" y="148.4" font-size="2.6" text-anchor="start" fill="#222" >CP-08</text>
@@ -252,7 +252,7 @@
 <text x="262.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-10.svg</text>
 <text x="10.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >CP-11</text>
 <text x="28.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >チルト機構(ヒンジ+カウンターバランス)</text>
-<text x="150.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持6N·m</text>
+<text x="150.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持3.0N</text>
 <text x="210.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >-</text>
 <text x="250.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-11.svg</text>
@@ -301,13 +301,13 @@
 <text x="10.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >CP-20</text>
 <text x="28.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >首振りステータ板</text>
 <text x="150.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >150x150</text>
+<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >190x190</text>
 <text x="250.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-20.svg</text>
 <text x="10.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >CP-21</text>
 <text x="28.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板</text>
 <text x="150.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >144x144</text>
+<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >152x152</text>
 <text x="250.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-21.svg</text>
 <text x="10.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >CP-22</text>
@@ -317,9 +317,9 @@
 <text x="250.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-22.svg</text>
 <text x="10.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >CP-23</text>
-<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(尾部レバー+ダイスプリング2本+荷重調整ねじ)</text>
-<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >レバー SUS304 t5×幅14×長50 / ダイスプリング(JI</text>
-<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >50x14</text>
+<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(カム板+ローラ従動子+ダイスプリング2本+ストッパ用尾部レバー)</text>
+<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >カム板 SUS304 t6 / ローラ Ø12×8 焼入れ+ニードル</text>
+<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >60x14</text>
 <text x="250.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-23.svg</text>
 <text x="10.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >CP-24</text>

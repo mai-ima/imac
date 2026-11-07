@@ -57,6 +57,7 @@
 | gen_fmea.py | v003 | current | 2026-11-06 | 9ff6031 | gen_fmea/gen_fmea.v003__2026-11-06_9ff6031.py |
 | gen_handoff.py | v001 | current | 2026-11-06 | ef5ecbc | gen_handoff/gen_handoff.v001__2026-11-06_ef5ecbc.py |
 | gen_handoff.py | v002 | current | 2026-11-06 | ce41db1 | gen_handoff/gen_handoff.v002__2026-11-06_ce41db1.py |
+| gen_handoff.py | v003 | current | 2026-11-06 | 877835f | gen_handoff/gen_handoff.v003__2026-11-06_877835f.py |
 | gen_mech_sections.py | v001 | current | 2026-11-06 | cf90ba1 | gen_mech_sections/gen_mech_sections.v001__2026-11-06_cf90ba1.py |
 | gen_mech_sections.py | v002 | current | 2026-11-06 | 4050ed9 | gen_mech_sections/gen_mech_sections.v002__2026-11-06_4050ed9.py |
 | gen_mech_sections.py | v003 | current | 2026-11-06 | 93238a3 | gen_mech_sections/gen_mech_sections.v003__2026-11-06_93238a3.py |
@@ -81,6 +82,7 @@
 | gen_mfg_drawings.py | v011 | current | 2026-11-06 | 4050ed9 | gen_mfg_drawings/gen_mfg_drawings.v011__2026-11-06_4050ed9.py |
 | gen_mfg_drawings.py | v012 | current | 2026-11-06 | 93238a3 | gen_mfg_drawings/gen_mfg_drawings.v012__2026-11-06_93238a3.py |
 | gen_mfg_drawings.py | v013 | current | 2026-11-06 | 36dff8c | gen_mfg_drawings/gen_mfg_drawings.v013__2026-11-06_36dff8c.py |
+| gen_mfg_drawings.py | v014 | current | 2026-11-06 | f2e5a87 | gen_mfg_drawings/gen_mfg_drawings.v014__2026-11-06_f2e5a87.py |
 | gen_package.py | v001 | current | 2026-11-05 | 27ca8ce | gen_package/gen_package.v001__2026-11-05_27ca8ce.py |
 | gen_package.py | v002 | current | 2026-11-05 | 2f8c0ac | gen_package/gen_package.v002__2026-11-05_2f8c0ac.py |
 | gen_package.py | v003 | current | 2026-11-05 | fcba5fe | gen_package/gen_package.v003__2026-11-05_fcba5fe.py |

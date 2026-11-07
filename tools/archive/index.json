@@ -496,6 +496,15 @@
    "file": "gen_handoff/gen_handoff.v002__2026-11-06_ce41db1.py"
   },
   {
+   "src": "tools/gen_handoff.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "877835f",
+   "sha256": "2a8264a7d2b1c5790532d6d1644208eda169eb7c8a85884170890017b3a4e3ff",
+   "file": "gen_handoff/gen_handoff.v003__2026-11-06_877835f.py"
+  },
+  {
    "src": "tools/gen_mech_sections.py",
    "version": 1,
    "gen": "current",
@@ -710,6 +719,15 @@
    "commit": "36dff8c",
    "sha256": "a8f7ff28d643159b39d318130015156d203aaa7cb5d35d9458e266f2b0bf4392",
    "file": "gen_mfg_drawings/gen_mfg_drawings.v013__2026-11-06_36dff8c.py"
+  },
+  {
+   "src": "tools/gen_mfg_drawings.py",
+   "version": 14,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "197f7e705e080e3275c4037ccb68214f96f3f7b6ba1e9a837370bdc353e87a41",
+   "file": "gen_mfg_drawings/gen_mfg_drawings.v014__2026-11-06_f2e5a87.py"
   },
   {
    "src": "tools/gen_package.py",
