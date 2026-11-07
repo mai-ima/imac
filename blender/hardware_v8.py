@@ -137,6 +137,8 @@ for k, sx_ in enumerate((-1, 1)):
     cyl(f'spring_spigot_top{k}', 5.7, 3.0, 'y', xc_, ysb + LS - 1.5, ZC, M['sus'], 32, body=False)      # キャリア側スピゴット
     hb(f'spring_seat_bot{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['seat_t_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), HY - BS, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)
     for zz_ in (-1, 1): cyl(f'cam_guide_rod{k}_{zz_}', BCm['guide_rod_d_mm'] / 2, yct + BCm['carrier_h_mm'] - (HY - BS), 'y', xc_, (yct + BCm['carrier_h_mm'] + HY - BS) / 2, ZC + zz_ * BCm['guide_rod_z_mm'], M['steel'], 24, body=False)   # 案内ロッド(基台に固定, キャリアが摺動)
+    for zz_ in (-1, 1): thru_hole([f'cam_carrier{k}'], f'cam_carrier{k}_bore{zz_}', xc_, (yct + BCm['carrier_h_mm'] + HY - BS) / 2, ZC + zz_ * BCm['guide_rod_z_mm'], 'y', BCm['guide_rod_d_mm'] + 0.2, yct + BCm['carrier_h_mm'] - (HY - BS) + 10)      # キャリアのブッシュ孔(摺動はめあい+0.1/側)
+    for zz_ in (-1, 1): thru_hole([f'spring_seat_bot{k}'], f'spring_seat_bot{k}_bore{zz_}', xc_, HY - BS + BCm['seat_t_mm'] / 2, ZC + zz_ * BCm['guide_rod_z_mm'], 'y', BCm['guide_rod_d_mm'] + 0.4, BCm['seat_t_mm'] + 2)      # ロッド固定穴(接着/ロックタイト用の0.2/側すき間。16角形近似の内接差を吸収)
 hw('ヒンジ', f"コイルばね OD{BCm['spring_od_mm']:g}×線径{BCm['spring_wire_mm']:g}(SWOSC-V想定, 1本 {BAL['F0_total']/2:.0f}N(0°)〜{BAL['F_spring_max']:.0f}N, k={BAL['k_spring']:g}N/mm, 自由長≧{BAL['free_length_min']:.0f}mm)+案内ロッドØ{BCm['guide_rod_d_mm']:g}×2+ローラ従動子", 2, 'U26/U51: 型番未確定 / D04')
 hw('ヒンジ', f"カム板(SUS440C HRC58 t{CT_:g}, 軸半径約{BAL['rho0']-BAL['roller_r']:.0f}〜{BAL['e']:.0f}mm)", 2, 'balance_calc.py / D04')
 hw('ヒンジ', f"尾部レバー(ストッパ用, 耳板一体) SUS304 t5×幅14×長{S['neck']['lever_len']:g}", 2, 'D03')

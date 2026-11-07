@@ -1,0 +1,100 @@
+# 実形状 干渉・埋め込み検査(INTF-01)
+
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 568。
+- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 121**
+
+## ALLOW(理由つき)
+- グリルのリングとスポークは一体品: 10対
+- 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される: 8対
+- ローラはピンに回転嵌合(ボア未モデル=INTF-03): 2対
+- ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留): 3対
+- ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形): 2対
+- ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03): 3対
+- 側板のストリップとボスは一体品を別基本形で表現: 2対
+- プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される): 3対
+- ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 52対
+- モジュラーソケットは筐体前面の開口に嵌合: 4対
+
+## 要対処(深さ順・上位80)
+| 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
+|---|---|---|---|---|
+| cover_filter | ac_inlet_body | 62 | [28.0, 20.0, 26.0] | 20.00 |
+| cover_back | ac_inlet_body | 33 | [28.0, 20.0, 26.0] | 20.00 |
+| riser0 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser1 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser2 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser3 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser4 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| cam_carrier0 | cam_guide_rod0_-1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
+| cam_carrier0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
+| cam_carrier1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
+| cam_carrier1 | cam_guide_rod1_1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
+| cover_filter | dowel_pin0 | 36 | [4.0, 8.0, 4.0] | 4.00 |
+| cover_filter | dowel_pin1 | 28 | [4.0, 8.0, 4.0] | 4.00 |
+| stand_arm0 | stand_neck_cover1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
+| stand_neck_cover1 | stand_arm1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
+| slab | hinge_doubler | 13 | [144.0, 4.0, 22.0] | 4.00 |
+| pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
+| pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
+| gasket | cover_filter | 567 | [589.599, 3.0, 370.899] | 3.00 |
+| hinge_axle | hinge_friction0_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
+| hinge_axle | hinge_friction1_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
+| cover_back | ac_inlet_flange | 53 | [36.0, 28.0, 3.0] | 3.00 |
+| hinge_bolt_head0 | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head1 | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head2 | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head3 | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| cover_filter | ac_inlet_flange | 26 | [36.0, 28.0, 3.0] | 3.00 |
+| slab | hinge_backing_plate | 24 | [140.0, 3.0, 22.0] | 3.00 |
+| io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
+| ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
+| am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
+| gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| spring_seat_bot0 | cam_guide_rod0_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot1 | cam_guide_rod1_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| board_hdr_vrm_hs_fan | vrm_shroud | 26 | [3.1, 4.0, 2.5] | 2.50 |
+| stand_arm_boss0 | hinge_friction0_cap | 24 | [2.5, 16.0, 16.0] | 2.50 |
+| hinge_friction1_cap | stand_arm_boss1 | 24 | [2.5, 16.0, 16.0] | 2.50 |
+| stand_arm_strip0 | hinge_friction0_cap | 19 | [2.5, 8.0, 8.0] | 2.50 |
+| hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
+| eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
+| am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
+| hinge_block_base | hinge_cheek_l | 31 | [6.0, 2.0, 22.0] | 2.00 |
+| hinge_block_base | hinge_cheek_r | 27 | [6.0, 2.0, 22.0] | 2.00 |
+| stand_neck_cover0 | stand_neck_tie | 24 | [112.0, 2.0, 20.0] | 2.00 |
+| stand_arm0 | stand_neck_cover0 | 22 | [4.0, 2.0, 38.0] | 2.00 |
+| stand_neck_cover0 | stand_arm1 | 22 | [4.0, 2.0, 38.0] | 2.00 |
+| cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
+| gpu_cradle_wall_l | gpu_cradle_base | 18 | [2.0, 3.0, 10.0] | 2.00 |
+| gpu_cradle_base | gpu_cradle_wall_r | 16 | [2.0, 3.0, 10.0] | 2.00 |
+| cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
+| board_pcb | pump_screw0 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw2 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw1 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw3 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| gpu_shroud_body | gpu_trim | 22 | [150.0, 13.0, 1.6] | 1.60 |
+| stand_swivel_bearing | stand_swivel_friction_ring | 48 | [70.0, 70.0, 1.5] | 1.50 |
+| gpu_bracket | gpu_port0 | 20 | [15.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port1 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port2 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port3 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| cover_back | hook_tab0 | 8 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab5 | 8 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab1 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab2 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab3 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab4 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| vrm_shroud | vrm_trim | 20 | [98.0, 5.0, 1.2] | 1.20 |
+| board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
+| cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
+| cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| hinge_axle | hinge_eclip0 | 96 | [1.0, 12.0, 12.0] | 1.00 |
+| hinge_axle | hinge_eclip1 | 96 | [1.0, 12.0, 12.0] | 1.00 |
+| hang_bushing0b | hang_pin0_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing2b | hang_pin2_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing1b | hang_pin1_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |

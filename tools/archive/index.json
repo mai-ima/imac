@@ -1198,6 +1198,15 @@
    "file": "interference_report/interference_report.v003__2026-11-07_c1704cf.py"
   },
   {
+   "src": "tools/interference_report.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "48f7baa",
+   "sha256": "d3447e3eceb912200935124b887eacfe59bf85d37590613b42fecfb5fc17e317",
+   "file": "interference_report/interference_report.v004__2026-11-07_48f7baa.py"
+  },
+  {
    "src": "tools/joint_calc.py",
    "version": 1,
    "gen": "current",

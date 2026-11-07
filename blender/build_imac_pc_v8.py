@@ -455,9 +455,10 @@ def port_tunnels(name, rects, y0, y1, r=2.0):
 _mg = 1.0      # 開口のすき間(外形+1.0mm)
 _io_cols = [(15.0, 34.0, -0.5, 27.0), (40.0, 55.0, 1.0, 22.0), (58.5, 73.5, 5.0, 20.5), (76.0, 91.0, 0.5, 15.5), (93.0, 110.0, 0.5, 30.0), (113.0, 122.0, 3.0, 32.0)]      # 列A〜E+SMA: ポート外形の包絡(p.26読み取り)
 c_io = port_tunnels('cover_io_cutter', [(bx + x0_ - _mg, bx + x1_ + _mg, bz + 1.6 + z0_ - _mg, bz + 1.6 + z1_ + _mg) for (x0_, x1_, z0_, z1_) in _io_cols], WIN['io_y0'] - 2, by - 1.0)
-c_ac = port_tunnels('cover_ac_cutter', [(ax_ - 2, ax_ + 30, az_ - 2, az_ + 22)], WIN['io_y0'] - 2, ay_ + 2)      # C13プラグ(30x22)の挿抜
+c_ac = port_tunnels('cover_ac_cutter', [(ax_ - 2, ax_ + 30, az_ - 2, az_ + 22)], WIN['io_y0'] - 2, ay_ + 30)      # C13プラグ(30x22)の挿抜
 c_gpu = port_tunnels('cover_gpu_cutter', [(gx + 20 + k * 28 - _mg, gx + 20 + k * 28 + w_ + _mg, gz + 7 - _mg, gz + 13.5 + _mg) for k, w_ in enumerate((15, 16, 16, 16))], WIN['gpu_y0'] - 2, gy - 1.0)      # HDMI+DP×3: 1ポートずつ
-mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
+c_acf = port_tunnels('cover_acflange_cutter', [(ax_ - 4.5, ax_ + 32.5, az_ - 4.5, az_ + 24.5)], ay_ - 6.0, ay_ + 3.0, r=3.0)      # ACインレットのフランジ(36x28 t3)の座ぐり(ポケット)
+mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac), ('acf', c_acf)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
     for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
         m_ = tgt.modifiers.new(nm, 'BOOLEAN'); m_.object = c; m_.operation = 'DIFFERENCE'; m_.solver = 'MANIFOLD'
