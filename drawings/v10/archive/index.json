@@ -55,6 +55,15 @@
    "file": "D03_tilt_hinge_section/D03_tilt_hinge_section.v001__2026-11-06_cf90ba1.svg"
   },
   {
+   "src": "drawings/v10/D03_tilt_hinge_section.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "87aabf7e5d7a6b18cf8f2257972b3cb9f0778f9ba8e73d024a266614136360dd",
+   "file": "D03_tilt_hinge_section/D03_tilt_hinge_section.v002__2026-11-06_36dff8c.svg"
+  },
+  {
    "src": "drawings/v10/D04_balancer_section.svg",
    "version": 1,
    "gen": "current",
@@ -82,6 +91,33 @@
    "file": "D04_balancer_section/D04_balancer_section.v003__2026-11-07_3089847.svg"
   },
   {
+   "src": "drawings/v10/D04_balancer_section.svg",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "eb39392",
+   "sha256": "9ae83c116334a9c4c43edf82ab61f40621c7ed4b24494d35b6443db46f51ee97",
+   "file": "D04_balancer_section/D04_balancer_section.v004__2026-11-07_eb39392.svg"
+  },
+  {
+   "src": "drawings/v10/D05_swivel_section.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "634634e762ac2de8955bf68ef185dce35ac1ac8edc193224386aa5d79a2968a8",
+   "file": "D05_swivel_section/D05_swivel_section.v001__2026-11-06_4050ed9.svg"
+  },
+  {
+   "src": "drawings/v10/D06_dome_latch_detail.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "4050ed9",
+   "sha256": "b86633fec275eb1adf57032ca16090a7770eae0201258d38d7d4fe3355c676e8",
+   "file": "D06_dome_latch_detail/D06_dome_latch_detail.v001__2026-11-06_4050ed9.svg"
+  },
+  {
    "src": "drawings/v10/D07_stopper_keyhole_detail.svg",
    "version": 1,
    "gen": "current",
@@ -89,6 +125,15 @@
    "commit": "93238a3",
    "sha256": "effe99da8213922d98af895b75641ebc0e66b2fcef9a6139b86fa2ee4b34a8a0",
    "file": "D07_stopper_keyhole_detail/D07_stopper_keyhole_detail.v001__2026-11-06_93238a3.svg"
+  },
+  {
+   "src": "drawings/v10/D07_stopper_keyhole_detail.svg",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "bcdfeb883d83e35ba1d9eeabb434e8364fbf09b046c28ef3892457000db45cdd",
+   "file": "D07_stopper_keyhole_detail/D07_stopper_keyhole_detail.v002__2026-11-06_f2e5a87.svg"
   }
  ]
 }

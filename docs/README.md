@@ -1,4 +1,4 @@
-# docs/ 索引(現行: v9)
+# docs/ 索引(現行: v10 モデル)
 
 読み順: ①`spec/system-spec.md`(仕様の正本) → ②`mechanisms/`(特殊機構の専用設計書) → ③部品/BOM → ④解析 → ⑤監査/未確認。**[生成]**は `tools/` が出力する生成物で、手で直さず元データ(`model/*.json`)かスクリプトを直す。
 
@@ -9,7 +9,15 @@
 
 ## 2. 特殊機構(専用設計書)[生成+手書き]
 - [mechanisms/README.md](mechanisms/README.md): 01 チルトバランサ / 02 左右首振り / 03 ネック・ストッパ・荷重経路 / 04 ドーム着脱 / 05 トレイ吊り / 06 指挟み保護 / 07 はめあい・操作感
-- 旧: [tilt-swivel-design.md](tilt-swivel-design.md)(チルト・首振りの設計経緯と付録A=旧ヒンジ設計) / [service-mechanisms.md](service-mechanisms.md) / [service-manual.md](service-manual.md) / [build-guide.md](build-guide.md)
+- 設計経緯(現行ではない): [tilt-swivel-design.md](tilt-swivel-design.md)(チルト・首振りの設計経緯と付録A=旧ヒンジ設計。数値は旧版を含むため引用しない)
+
+## 2A. 組立・整備の手順書(現行・生成物)
+`tools/gen_manuals.py` が `model/*.json` から生成する(手で直さない)。公式マニュアル体裁: 番号付き手順・工具/トルク/部品番号(CP・F・W)・警告・図番・チェックリスト・トラブルシュート・UNVERIFIED明記。
+- [build-guide.md](build-guide.md) 組立ガイド(特注部品・組立S1〜S6・工場調整・受入試験)
+- [service-manual.md](service-manual.md) 整備マニュアル(手順A〜K、レベルL1〜L3、安全、整備記録)
+- [service-mechanisms.md](service-mechanisms.md) 取り外し・整備機構の設計(締結部品F一覧)
+- 機構別の整備上の注意: [mechanisms/05_tray_hanging_service.md](mechanisms/05_tray_hanging_service.md)、[mechanisms/04_dome_latch_gasket.md](mechanisms/04_dome_latch_gasket.md)
+- 業者提出用の機構設計書は `../handoff/05_機構設計書/`(mechanisms/ の複製)
 
 ## 3. 部品・BOM
 - [PROJECT-SUMMARY.md](PROJECT-SUMMARY.md)(全ファイル要約・自動生成)

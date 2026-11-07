@@ -451,6 +451,15 @@
    "file": "06_service_tray_plan/06_service_tray_plan.v007__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/06_service_tray_plan.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "84cb25e3a46ccbd61d926c1ab0f01dd5af4c6ae6aa057732eaf14b65ce0c4625",
+   "file": "06_service_tray_plan/06_service_tray_plan.v008__2026-11-06_93238a3.svg"
+  },
+  {
    "src": "drawings/07_dome_latch_section.svg",
    "version": 1,
    "gen": "current",
@@ -514,6 +523,15 @@
    "file": "07_dome_latch_section/07_dome_latch_section.v007__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/07_dome_latch_section.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "7216d52849710d726f816f89e9a7e89043816cf5e36f06dfb2b5d805712f4d60",
+   "file": "07_dome_latch_section/07_dome_latch_section.v008__2026-11-06_93238a3.svg"
+  },
+  {
    "src": "drawings/08_service_sequence.svg",
    "version": 1,
    "gen": "current",
@@ -557,6 +575,15 @@
    "commit": "514e2e0",
    "sha256": "4e50b7b3b170c2ef69084a74577d95dd2aea51117bdf9319c7378c00eb035e67",
    "file": "08_service_sequence/08_service_sequence.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/08_service_sequence.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "7bc2af85f5e287fe02367b9a00eaee212e37800315011a766ad2ede05b1606d0",
+   "file": "08_service_sequence/08_service_sequence.v006__2026-11-06_93238a3.svg"
   },
   {
    "src": "drawings/09_board_layout.svg",

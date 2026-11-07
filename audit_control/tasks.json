@@ -15713,6 +15713,122 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "INTF-01",
+   "title": "部品の干渉・埋め込み(めり込み)・コネクタ嵌合/端子挿抜空間・ケーブル端末まで細部を全数検査(実形状メッシュ基準)",
+   "description": "3Dモデルの実メッシュ同士の交差(boolean/BVH)と最小クリアランス、コネクタ挿抜に必要な前方空間(ポート/24pin/EPS/12V-2x6/SATA/ヘッダ/ファン4pin)、ケーブル端末の曲げ・ブーツ干渉、ばね・カム・ロッドの掃引干渉を数値化してゲート化する。偽PASS禁止。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:41:07Z",
+     "triaged",
+     "ユーザー指示(2026-11-07 20:5x JST)。現行fitcheckは包絡箱ベースのため実形状での干渉は未検査"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "blender側にBVH交差検査(--check-interference)を実装→tools/fitcheck.pyと統合→違反を台帳化して修正"
+  },
+  {
+   "id": "AUD-STRICT",
+   "title": "サブエージェント監査は毎回「超厳格」(根本・前提を疑う/軽微も全件/偽PASS禁止/根拠必須/日本語)を指示に必ず含める(恒常規則)",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T11:41:07Z",
+     "in_progress",
+     "CLAUDE.md に恒常規則として追記。以後の全サブエージェント指示へ適用"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "UNV-01",
+   "title": "未確認(U/UNVERIFIED)項目の調査(docs/unverified-tracker.md の全件)。公式一次資料の取得→確認できたものだけ反映、できないものはUNVERIFIEDのまま",
+   "description": "U03/U17/U56/U58/U45 ほか全件。実機/専門試験が必要なものはBLOCKEDのまま。調査結果は model/*.json→生成物の順で反映。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:41:07Z",
+     "triaged",
+     "ユーザー指示: 後ほど実施。仮説で決定しない"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "docs/unverified-tracker.md を読み、取得可能な一次情報から順に調査(サブエージェントは超厳格指示)"
+  },
+  {
+   "id": "DOC-STATE-01",
+   "title": "コンテキスト圧縮に備え SESSION_STATE.md・CLAUDE.md を最新化(進行中作業・未完了・次の具体的操作・実行中サブエージェント・予約)",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-07T11:41:07Z",
+     "done",
+     "2026-11-07 20:5x JST 更新済み"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }

@@ -52,6 +52,7 @@
 | 06_service_tray_plan.svg | v005 | current | 2026-11-06 | 80d7407 | 06_service_tray_plan/06_service_tray_plan.v005__2026-11-06_80d7407.svg |
 | 06_service_tray_plan.svg | v006 | current | 2026-11-06 | 9ff6031 | 06_service_tray_plan/06_service_tray_plan.v006__2026-11-06_9ff6031.svg |
 | 06_service_tray_plan.svg | v007 | current | 2026-11-06 | 514e2e0 | 06_service_tray_plan/06_service_tray_plan.v007__2026-11-06_514e2e0.svg |
+| 06_service_tray_plan.svg | v008 | current | 2026-11-06 | 93238a3 | 06_service_tray_plan/06_service_tray_plan.v008__2026-11-06_93238a3.svg |
 | 07_dome_latch_section.svg | v001 | current | 2026-11-03 | 307c9ea | 07_dome_latch_section/07_dome_latch_section.v001__2026-11-03_307c9ea.svg |
 | 07_dome_latch_section.svg | v002 | current | 2026-11-05 | fcba5fe | 07_dome_latch_section/07_dome_latch_section.v002__2026-11-05_fcba5fe.svg |
 | 07_dome_latch_section.svg | v003 | current | 2026-11-05 | 4925658 | 07_dome_latch_section/07_dome_latch_section.v003__2026-11-05_4925658.svg |
@@ -59,11 +60,13 @@
 | 07_dome_latch_section.svg | v005 | current | 2026-11-06 | 80d7407 | 07_dome_latch_section/07_dome_latch_section.v005__2026-11-06_80d7407.svg |
 | 07_dome_latch_section.svg | v006 | current | 2026-11-06 | 9ff6031 | 07_dome_latch_section/07_dome_latch_section.v006__2026-11-06_9ff6031.svg |
 | 07_dome_latch_section.svg | v007 | current | 2026-11-06 | 514e2e0 | 07_dome_latch_section/07_dome_latch_section.v007__2026-11-06_514e2e0.svg |
+| 07_dome_latch_section.svg | v008 | current | 2026-11-06 | 93238a3 | 07_dome_latch_section/07_dome_latch_section.v008__2026-11-06_93238a3.svg |
 | 08_service_sequence.svg | v001 | current | 2026-11-03 | 307c9ea | 08_service_sequence/08_service_sequence.v001__2026-11-03_307c9ea.svg |
 | 08_service_sequence.svg | v002 | current | 2026-11-05 | fcba5fe | 08_service_sequence/08_service_sequence.v002__2026-11-05_fcba5fe.svg |
 | 08_service_sequence.svg | v003 | current | 2026-11-06 | 80d7407 | 08_service_sequence/08_service_sequence.v003__2026-11-06_80d7407.svg |
 | 08_service_sequence.svg | v004 | current | 2026-11-06 | 9ff6031 | 08_service_sequence/08_service_sequence.v004__2026-11-06_9ff6031.svg |
 | 08_service_sequence.svg | v005 | current | 2026-11-06 | 514e2e0 | 08_service_sequence/08_service_sequence.v005__2026-11-06_514e2e0.svg |
+| 08_service_sequence.svg | v006 | current | 2026-11-06 | 93238a3 | 08_service_sequence/08_service_sequence.v006__2026-11-06_93238a3.svg |
 | 09_board_layout.svg | v001 | current | 2026-11-05 | 27ca8ce | 09_board_layout/09_board_layout.v001__2026-11-05_27ca8ce.svg |
 | 09_board_layout.svg | v002 | current | 2026-11-06 | 80d7407 | 09_board_layout/09_board_layout.v002__2026-11-06_80d7407.svg |
 | 09_board_layout.svg | v003 | current | 2026-11-06 | 9ff6031 | 09_board_layout/09_board_layout.v003__2026-11-06_9ff6031.svg |

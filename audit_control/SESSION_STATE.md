@@ -1,20 +1,35 @@
-# SESSION_STATE(再開の起点) — 更新: 2026-11-06
+# SESSION_STATE(再開の起点) — 更新: 2026-11-07 21:00 JST(コンテキスト圧縮直前)
 ## 目的
-iMac風27型4K一体型ゲーミングPC設計の全面監査・改修(完全統合マスタープロンプト適用中)。ユーザーが止めるまで継続。
-## 直近の確定結果
-- 台帳整備: audit_control/{tasks.json,file_coverage.csv,validate_state.py}、CLAUDE.md、tools/{audit_control_init,task}.py。
-- 矛盾検出 tools/consistency_check.py をゲート化(FAIL0)。旧値(総厚129/z=40/足300x290/操作力20N)修正。
-- バランサ再設計: 端金物長 balance_end_hw_mm=16、s=76/e=25、F0=730N(365N/本,最大584N/本)、ばね細長比ゲート、レバー先端ピンØ8 SUS630。D03(摩擦ヒンジ)/D04(バランサ)断面図を drawings/v10 に追加。
-- K04/K05/K06/K11/K14/K23 判定済み、K10 は W7(GPU→ctrl映像)追加で in_review。
-## 進行中/次の具体的操作(更新)
-- 完了: D03〜D07 機構断面図、POLY(2.2, GLB 10.9MB, viewer v20公開)、K01/02/04/05/06/11/12/13/14/15/19/23 判定、KEY-UNI/KEY-BUSH、docs P0修正。
-- 実行中サブエージェント(読取専用): R9 tools(a2fec6fb0b402042d)→audit_control/reports/R9_tools.md、R9 drawings(a6a5c771c26c37d93)→R9_drawings.md。完了通知後、指摘を台帳(R9-TOOLS/R9-DRAW)へ登録し修正。
-- R9 docs(125件)は P0全件+P1の一部修正済。残りは audit_control/reports/R9_docs.md の P1(R9D-005〜015,024,027,028,041,053,059,064,069〜071,075,076,078,079,088,094,107,109)とP2/P3。
-- 残K/A: K03,K07,K08(in_review),K09/K21(blocked),K10(in_review),K16〜K18,K20(in_review),K22,K24,K25,A01〜A15。
-- 他: D08(上辺掛け爪/側辺フック), MECH-IDX, SHIM(調整幅±7%と未調整±10%の整合), ANCHOR-6, XCHK。
-- 再開手順: python3 tools/audit_control_init.py; python3 audit_control/validate_state.py; bash tools/run_gates.sh; python3 tools/consistency_check.py。
+iMac風27型4K一体型ゲーミングPC設計の全面監査・改修。ユーザーが止めるまで継続。必ず日本語、時刻はJST。仮説で決定しない(実証→決定)。
 
-## 更新(2026-11-07 最新版再監査バッチ1)
-- BASELINE.md、ledger_import.py(GA32+R9 273件を登録、resolutions.jsonで状態判定)、tests/+CI、validate_stateをrun_gatesへ、ARCHIVE_INDEX.json(GLB古版/blend1/handoff_v9.zip退避)。
-- 未実施: R10監査エージェント2件(機構/熱電気)はAPIレート制限で中断(4am UTC後に SendMessage で再開: a8efeb6562c8df456, af7ec4bce5d091813)。file_coverage は 1185件 NOT_REVIEWED。
-- 次: (1)resolutions.json未判定のR9指摘(triaged 約270件)を順に判定/修正、(2) file_lifecycle.csv(全パス状態)作成、(3) 重複archive整理、(4) check_references.py、(5) ctrl基板/GPU SKU等 BLOCKED の公式資料整理。
+## ユーザーの恒常指示(忘れない。詳細は CLAUDE.md / docs/PRINCIPLES.md)
+- 設計思想不変(Apple哲学オマージュ・ロゴ無し/修理性/内部は市販品・外装のみ特注/実物に忠実/公式一次資料優先/未確認はUNVERIFIED)。旧ファイルは削除せず archive、PRは頼まれた時のみ、claude/imac-pc-design へ commit&push。
+- 全タスクを台帳(audit_control/tasks.json)に登録・更新。軽微な問題も全件。完了しても止めない。
+- **サブエージェント監査は毎回超厳格**(AUD-STRICT)。**部品の干渉・埋め込み・コネクタ・端子挿抜空間・ケーブル端末まで細部**(INTF-01)。**U(未確認)項目は後ほど調査**(UNV-01)。
+- 最近の指示: 「穴が実際に空いていない」→実穴化 / 「バネが描写されていない」→コイル化 / 「基板上の部品配置も完全制作」 / 「設計図・配置図は具体的な形まで・実物配置・再計算再設計」 / 「公式マニュアルを参考に設計図を一部改修、全低品質部分(マニュアル・設計図・配置図・見積書・部品/全体3D)を改修」 / 「形がiMac思想に基づいていない点を修正」。
+
+## 今回(2026-11-07 午後)の到達点
+- thermal_calc.py 構文修復、ダクトは未採用候補(実証前に決定しない)。SCHED-01: ScheduleWakeup は 20:24:18 JST に到達(予約20:22)を台帳記録。再起動またぎは未検証。毎時トリガー trig_01N4GcNVUWWQLF41Pg8BYUVw(55分UTC)は生存・到達は未観測。
+- 形状(SHAPE-01): スタンド外皮(足固定スカート+回転カラー+ネック外皮)で首振り軸受/ネックを隠した。SHAPE-02(PE編組がドラム外)/03(蛇腹の襞が見える)/04(ドームの稜線が硬い=CRT状)/05(ドーム下縁のフック/ラッチ可視)は未修正。
+- 実穴(MODEL-HOLE-01): blender の --vent-mode 既定を boolean に。GLBは27.7MB→gzip+base64 7.9MB。viewer/index.html は gzip(DecompressionStream)対応済み。**ビューアでの実機読込検証(Playwright)と Artifact 再公開は未了**。現在の viewer/imac_pc.glb は実穴版だが、バネ(コイル)・基板追加部品・スタンド外皮の最新分を含まない可能性あり → **GLB再書き出しが必要**(`--view front --samples 1 --export viewer/imac_pc.glb` のあと `gzip -9 -c | base64 -w0 > viewer/imac_pc.glb.txt`、約5〜7分)。
+- バネ: coil() を追加(ダイスプリング2本・ポンプ取付ばね4本)。`--open-stand`(外皮を外す)と `--only 接頭辞,...`(部分描画)を追加。確認画像は scratchpad/r/spring_view3.png(未確認→次に目視)。
+- 基板(#35): model/x870i_layout.json に components 19点、tests/test_board.py、tools/gen_board_doc.py→docs/board-components.md。位置=マニュアルp.14読取(±2mm)、高さ=典型値UNVERIFIED。
+- 図面(QUAL-03): tools/gen_layout_drawings.py が 09/10 を実形状で生成(gen_package.pyの09/10は廃止)。tools/drawing_lint.js(文字重なり/題名欄侵入/図枠外)を追加。drawlib: 題名の文字サイズ自動調整と data-frame。gen_mfg/cad/mech/service は再生成済み(regen完了、lint未実行)。
+
+## 実行中/保留(次の具体的操作)
+1. **サブエージェント2本(超厳格・日本語・読取+改修・commitしない)**: マニュアル a40e02e872b6ae5cc → audit_control/reports/R11_manuals.md、見積/BOM/RFQ abbbb1a01ee97e96a → R11_estimate.md。完了通知後: 報告を読み、表のID(MAN-/EST-)を tasks.json へ登録→ gates → commit/push。止まっていたら SendMessage で再開。
+2. `NODE_PATH=$(npm root -g) node tools/drawing_lint.js drawings/*.svg drawings/v10/*.svg` を実行し、欠陥(特に 12_wiring/02_back_plate/15_bom_sheet の文字重なり・旧記述)を直す。gen_package.py(11〜16)は docs/bom-final.md を上書きするため、見積エージェント完了後に実行。
+3. spring_view3.png を目視→バネが見えない/干渉があれば修正(cam/ロッド/シートとの位置、案内ロッドがばね外周より外=Ø20でz±15)。
+4. GLB再書き出し→ビューアをPlaywrightで開き gzip読込とバネ・基板を確認→Artifact再公開(URL https://claude.ai/artifact/V6WRDYNxaZ3ZFB7UYPe6d4、overwrite_unread)。
+5. INTF-01(実メッシュ干渉・埋め込み・コネクタ挿抜空間・端末): blenderでBVH交差検査を実装→fitcheckへ統合。
+6. SHAPE-02〜05、QUAL-04(全図面棚卸し)、QUAL-05(GPU/PSU/ラジエーター/ポンプの実形状化)、UNV-01(Uの調査)、R9/R10残(triaged約265+in_review約80)、R10E熱前提(風量係数0.55・ファン曲線・35℃)、ダクト A/B実証(物理試験が無いためUNVERIFIED)。
+7. 再開手順: python3 tools/audit_control_init.py; python3 audit_control/validate_state.py; bash tools/run_gates.sh; python3 tools/consistency_check.py; python3 -m unittest discover -s tests。list_triggers で毎時トリガー生存確認。
+
+## 予約
+- ScheduleWakeup: 20:50 JST(11:50 UTC)に /loop を再投入する設定済み(到達したかを SCHED-01 に追記すること)。毎時トリガー: 毎時55分UTC(=毎時55分JST)。両方併用し到達を記録・比較。
+- 一回限り: trig_019AF76FZdAhi4pdi7CBgys1(2026-11-11 22:53 JST 定期再調査の停止)。
+
+## 重要な技術メモ
+- 座標: 設計 x右・y上・z=0が前面ガラス(背面は負)。Blender=(x,-z,y)、1BU=1mm。ヒンジ軸 z=45,y=10。--focus は「内部座標」x,y,z(X0/Y0/Z0基準; ばね付近は 295,-74,20)。
+- numpy警告(ImportError numpy.core)は bpy 起動時の既知ノイズで描画は成功する。
+- ゲート: run_gates exit 2=UNVERIFIED(合格でない)。CIは rc≤2 を許容、1で失敗。
