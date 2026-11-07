@@ -22,6 +22,7 @@
 | custom-parts.md | v016 | current | 2026-11-06 | 36dff8c | custom-parts/custom-parts.v016__2026-11-06_36dff8c.md |
 | custom-parts.md | v017 | current | 2026-11-06 | f2e5a87 | custom-parts/custom-parts.v017__2026-11-06_f2e5a87.md |
 | custom-parts.md | v018 | current | 2026-11-07 | 64a1afa | custom-parts/custom-parts.v018__2026-11-07_64a1afa.md |
+| custom-parts.md | v019 | current | 2026-11-07 | 15af08b | custom-parts/custom-parts.v019__2026-11-07_15af08b.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |
@@ -41,6 +42,7 @@
 | joint-matrix.md | v003 | current | 2026-11-06 | 302823c | joint-matrix/joint-matrix.v003__2026-11-06_302823c.md |
 | joint-matrix.md | v004 | current | 2026-11-06 | cf90ba1 | joint-matrix/joint-matrix.v004__2026-11-06_cf90ba1.md |
 | joint-matrix.md | v005 | current | 2026-11-06 | 93238a3 | joint-matrix/joint-matrix.v005__2026-11-06_93238a3.md |
+| panel-driver.md | v001 | current | 2026-11-05 | a404097 | panel-driver/panel-driver.v001__2026-11-05_a404097.md |
 | panel-thermal.md | v001 | current | 2026-11-06 | fc36218 | panel-thermal/panel-thermal.v001__2026-11-06_fc36218.md |
 | panel-thermal.md | v002 | current | 2026-11-06 | 9ff6031 | panel-thermal/panel-thermal.v002__2026-11-06_9ff6031.md |
 | performance-benchmark.md | v001 | current | 2026-11-05 | 853c2f5 | performance-benchmark/performance-benchmark.v001__2026-11-05_853c2f5.md |

@@ -2424,18 +2424,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 10:56",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "CP-07 に側辺フック×4(各40N)を明記。形状・位置は未設計=UNVERIFIED"
+   ],
+   "verification": "gen_specs再生成",
+   "decision": "PARTIAL",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -4866,18 +4873,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 10:56",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "CP-07 に側辺フック×4(各40N)を明記。形状・位置は未設計=UNVERIFIED"
+   ],
+   "verification": "gen_specs再生成",
+   "decision": "PARTIAL",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6139,18 +6153,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 10:55",
+     "done",
+     "panel-driver.md: W5 380mm/W4 24mm へ(cables.json準拠)"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "panel-driver.md: W5 380mm/W4 24mm へ(cables.json準拠)"
+   ],
+   "verification": "grep",
+   "decision": "FIXED",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -6170,18 +6191,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "done",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 10:55",
+     "done",
+     "W6必要長456mmと市販600mm級の区別を明記"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "W6必要長456mmと市販600mm級の区別を明記"
+   ],
+   "verification": "grep",
+   "decision": "FIXED",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""

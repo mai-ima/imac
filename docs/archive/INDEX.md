@@ -127,3 +127,4 @@
 | wiring.md | v006 | current | 2026-11-06 | 514e2e0 | wiring/wiring.v006__2026-11-06_514e2e0.md |
 | wiring.md | v007 | current | 2026-11-06 | 853f219 | wiring/wiring.v007__2026-11-06_853f219.md |
 | wiring.md | v008 | current | 2026-11-06 | 88f99b7 | wiring/wiring.v008__2026-11-06_88f99b7.md |
+| wiring.md | v009 | current | 2026-11-06 | 93238a3 | wiring/wiring.v009__2026-11-06_93238a3.md |

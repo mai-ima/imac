@@ -772,5 +772,29 @@
   "evidence": "custom_parts.json/生成docの該当記述を更新(CP-23行程、参照先)。再監査で確認",
   "verification": "gen_specs再生成+consistency_check",
   "decision": "FIXED(要再確認)"
+ },
+ "R9D-078": {
+  "status": "done",
+  "evidence": "panel-driver.md修正",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "R9D-079": {
+  "status": "done",
+  "evidence": "W6記述修正",
+  "verification": "grep",
+  "decision": "FIXED"
+ },
+ "GA-06": {
+  "status": "in_review",
+  "evidence": "CP-07 に側辺フック×4(各40N)を明記。形状・位置は未設計=UNVERIFIED",
+  "verification": "gen_specs再生成",
+  "decision": "PARTIAL"
+ },
+ "R9D-041": {
+  "status": "in_review",
+  "evidence": "CP-07 に側辺フック×4(各40N)を明記。形状・位置は未設計=UNVERIFIED",
+  "verification": "gen_specs再生成",
+  "decision": "PARTIAL"
  }
 }
