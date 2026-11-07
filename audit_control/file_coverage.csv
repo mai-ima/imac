@@ -81,7 +81,7 @@ audit_output/01_FULL_FILE_MANIFEST.csv,generated,-,(generated),CHANGED_RECHECK,,
 audit_output/03_FINDINGS_REGISTER.md,generated,3938,0a3ccfa9c5dad189,NOT_REVIEWED,,
 audit_output/12_TEST_RESULTS.txt,generated,3457,1a62d57d0297af8a,NOT_REVIEWED,,
 audit_output/14_ARCHITECTURE_DECISIONS.md,generated,930,e62e77e83def347a,NOT_REVIEWED,,
-blender/archive/INDEX.md,archive,7781,97da3aa0ce303d20,NOT_REVIEWED,,
+blender/archive/INDEX.md,archive,7909,2756ad5e80ae918b,NOT_REVIEWED,,
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v001__2026-11-05_7f1eac8.py,archive,44453,5d8c03c6bf5c38ab,NOT_REVIEWED,,
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v002__2026-11-05_5564531.py,archive,45024,b759f58627cbf0a8,NOT_REVIEWED,,
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v003__2026-11-05_2f8c0ac.py,archive,44946,141471ef4c61f1b6,NOT_REVIEWED,,
@@ -125,6 +125,7 @@ blender/archive/build_imac_pc_v8/build_imac_pc_v8.v032__2026-11-07_36195c8.py,ar
 blender/archive/build_imac_pc_v8/build_imac_pc_v8.v033__2026-11-07_1f5afc2.py,archive,84407,a2693e29a7f75fcb,NOT_REVIEWED,,
 blender/archive/build_imac_pc_v8/build_imac_pc_v8.v034__2026-11-07_c0a8b0d.py,archive,86173,cc7327e74f553609,NOT_REVIEWED,,
 blender/archive/build_imac_pc_v8/build_imac_pc_v8.v035__2026-11-07_48f7baa.py,archive,88050,fce9ba8a59d25c1a,NOT_REVIEWED,,
+blender/archive/build_imac_pc_v8/build_imac_pc_v8.v036__2026-11-07_b5f5bb3.py,archive,88535,594da4e1d710408a,NOT_REVIEWED,,
 blender/archive/hardware_v8/hardware_v8.v001__2026-11-06_09ad133.py,archive,11819,6d408c5f38a6dd93,NOT_REVIEWED,,
 blender/archive/hardware_v8/hardware_v8.v002__2026-11-06_9ff6031.py,archive,11815,98ad1261332963ee,NOT_REVIEWED,,
 blender/archive/hardware_v8/hardware_v8.v003__2026-11-06_514e2e0.py,archive,12314,b65ec44a67f17a70,NOT_REVIEWED,,
@@ -141,14 +142,14 @@ blender/archive/hardware_v8/hardware_v8.v013__2026-11-06_36dff8c.py,archive,2083
 blender/archive/hardware_v8/hardware_v8.v014__2026-11-07_3089847.py,archive,21372,4ac9d03c6a9be10c,NOT_REVIEWED,,
 blender/archive/hardware_v8/hardware_v8.v015__2026-11-07_896b4ad.py,archive,21642,676b37ee5ee4ecfc,NOT_REVIEWED,,
 blender/archive/imac_pc/imac_pc.v001__2026-11-05_165c355.blend,archive,407816,7c330117b929af59,NOT_REVIEWED,,
-blender/archive/index.json,archive,17917,bb94035a26c82923,NOT_REVIEWED,,
+blender/archive/index.json,archive,18211,ca72a9b1a12af837,NOT_REVIEWED,,
 blender/archive/render_all/render_all.v001__2026-11-03_165c355.sh,archive,1344,0f1ac5747c20205f,NOT_REVIEWED,,
 blender/archive/render_all/render_all.v002__2026-11-05_7f1eac8.sh,archive,1347,cdaaa6c2dcb0a9e0,NOT_REVIEWED,,
 blender/archive/render_all/render_all.v003__2026-11-06_09ad133.sh,archive,1347,d63aee2f6f6000ef,NOT_REVIEWED,,
 blender/audit_renders.sh,current,1008,688ba72b76095338,NOT_REVIEWED,,
 blender/build_imac_pc.py,current,39517,a16fa8c00583a04d,NOT_REVIEWED,,
 blender/build_imac_pc_v6.py,current,49140,432e10b999bd3e28,NOT_REVIEWED,,
-blender/build_imac_pc_v8.py,current,88535,594da4e1d710408a,NOT_REVIEWED,,
+blender/build_imac_pc_v8.py,current,88714,053361f962a72cb9,NOT_REVIEWED,,
 blender/hardware_v8.py,current,21951,bda6dbef1d8978d0,NOT_REVIEWED,,
 blender/imac_pc.blend,current,407816,7c330117b929af59,NOT_REVIEWED,,
 blender/render_all.sh,current,1462,61de011d09bbf6c6,NOT_REVIEWED,,
@@ -420,7 +421,7 @@ docs/service-manual.md,current,26734,dafd296ba370852c,CHANGED_RECHECK,R9-DOCS,"R
 docs/service-mechanisms.md,current,8238,6cd99d3c9482852c,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/source-status.md,current,2184,c93707c1303080b3,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/README.md,current,1481,f6b65229ac8badc7,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/archive/INDEX.md,archive,9232,b29d143b49e25480,NOT_REVIEWED,,
+docs/spec/archive/INDEX.md,archive,9351,54291880c4549818,NOT_REVIEWED,,
 docs/spec/archive/README/README.v001__2026-11-05_b97eaae.md,archive,802,68497f801ea7d712,NOT_REVIEWED,,
 docs/spec/archive/README/README.v002__2026-11-06_a77badc.md,archive,1476,41c0450c983e5804,NOT_REVIEWED,,
 docs/spec/archive/cost-estimate/cost-estimate.v001__2026-11-06_fc36218.md,archive,1830,e886f54062cc5969,NOT_REVIEWED,,
@@ -462,9 +463,10 @@ docs/spec/archive/hardware-list/hardware-list.v007__2026-11-06_93238a3.md,archiv
 docs/spec/archive/hardware-list/hardware-list.v008__2026-11-06_e7a16e1.md,archive,4288,d274ea73339ffd46,NOT_REVIEWED,,
 docs/spec/archive/hardware-list/hardware-list.v009__2026-11-06_36dff8c.md,archive,4225,dd92c9a3aa87a053,NOT_REVIEWED,,
 docs/spec/archive/hardware-list/hardware-list.v010__2026-11-07_a50f58a.md,archive,4241,5d505ee2910b3a5b,NOT_REVIEWED,,
+docs/spec/archive/hardware-list/hardware-list.v011__2026-11-07_d54a87f.md,archive,4241,13dc775b08f1886d,NOT_REVIEWED,,
 docs/spec/archive/hole-table/hole-table.v001__2026-11-06_514e2e0.md,archive,2140,a29b0a34f0d093d2,NOT_REVIEWED,,
 docs/spec/archive/hole-table/hole-table.v002__2026-11-06_853f219.md,archive,2140,00311157ed3227ff,NOT_REVIEWED,,
-docs/spec/archive/index.json,archive,22151,05b979f345963b10,NOT_REVIEWED,,
+docs/spec/archive/index.json,archive,22438,60e7de7523b7fb9c,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md,archive,2261,c7b4965ca832ad25,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md,archive,2985,21c1b02e965f49b5,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v003__2026-11-06_302823c.md,archive,3004,00376430615829db,NOT_REVIEWED,,
@@ -505,7 +507,7 @@ docs/spec/custom-parts.md,current,34418,4bfb54cb9ccfff43,CHANGED_RECHECK,R9-DOCS
 docs/spec/design-philosophy.md,current,7234,5a711d33387ffbc0,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/gaming-requirements.md,current,2407,cc6366d1244e13ec,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/grounding-spec.md,current,2112,3ac0a6e937773faf,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/hardware-list.md,current,4241,13dc775b08f1886d,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
+docs/spec/hardware-list.md,current,4241,5d505ee2910b3a5b,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/hole-table.md,current,2142,adc6261d57f5b581,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/joint-matrix.md,current,3069,8816e6c8e116b4c1,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/panel-driver.md,current,2167,7ba2981fbed87eaf,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
@@ -1418,7 +1420,7 @@ tools/gen_package.py,current,21950,0266e3d8cfba7909,NOT_REVIEWED,,
 tools/gen_project_summary.py,current,3961,40b757071359e395,NOT_REVIEWED,,
 tools/gen_service_drawings.py,current,7928,f36874d9e53d2dee,NOT_REVIEWED,,
 tools/gen_specs.py,current,12736,b2abe5600e81d247,NOT_REVIEWED,,
-tools/githooks/pre-commit,current,984,b909a8b5e7f9636d,NOT_REVIEWED,,
+tools/githooks/pre-commit,current,1165,9bba7e7d108c8dcb,NOT_REVIEWED,,
 tools/githooks/pre-push,current,549,68196cae13e453d2,NOT_REVIEWED,,
 tools/guard_no_delete.sh,current,818,782337461842015b,NOT_REVIEWED,,
 tools/handoff_build.sh,current,809,35e3ffb954470a82,NOT_REVIEWED,,

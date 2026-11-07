@@ -3,6 +3,7 @@
 cd "$(git rev-parse --show-toplevel)"
 python3 tools/archive.py auto || true
 bash tools/guard_no_delete.sh || exit 1
+python3 tools/gen_hardware_list.py >/dev/null 2>&1 && git add docs/spec/hardware-list.md 2>/dev/null      # 生成物の再生成漏れ(hardware_list.json→docs)を自動で直す
 python3 tools/audit_control_init.py >/dev/null 2>&1 && git add audit_control/file_coverage.csv audit_control/ARCHIVE_INDEX.json 2>/dev/null
 python3 tools/stale_check.py >/tmp/.stale_out.txt 2>&1 || { echo '[pre-commit] stale_check FAIL(旧値/廃止語が現行ファイルに残っています):'; grep '^\[FAIL\]' /tmp/.stale_out.txt | head -10 | cut -c1-240; echo '  → 履歴的言及なら文中に「旧」「比較」「置換」等を入れるか、本文を現行値へ直してください。'; exit 1; }
 python3 audit_control/validate_state.py >/tmp/.vs_out.txt 2>&1 || { echo '[pre-commit] validate_state FAIL:'; grep '^\[FAIL\]' /tmp/.vs_out.txt | head -10 | cut -c1-240; exit 1; }

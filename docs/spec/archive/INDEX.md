@@ -43,6 +43,7 @@
 | hardware-list.md | v008 | current | 2026-11-06 | e7a16e1 | hardware-list/hardware-list.v008__2026-11-06_e7a16e1.md |
 | hardware-list.md | v009 | current | 2026-11-06 | 36dff8c | hardware-list/hardware-list.v009__2026-11-06_36dff8c.md |
 | hardware-list.md | v010 | current | 2026-11-07 | a50f58a | hardware-list/hardware-list.v010__2026-11-07_a50f58a.md |
+| hardware-list.md | v011 | current | 2026-11-07 | d54a87f | hardware-list/hardware-list.v011__2026-11-07_d54a87f.md |
 | hole-table.md | v001 | current | 2026-11-06 | 514e2e0 | hole-table/hole-table.v001__2026-11-06_514e2e0.md |
 | hole-table.md | v002 | current | 2026-11-06 | 853f219 | hole-table/hole-table.v002__2026-11-06_853f219.md |
 | joint-matrix.md | v001 | current | 2026-11-05 | b97eaae | joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md |
