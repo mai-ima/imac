@@ -17,7 +17,7 @@ ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
-ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--only', default='', help='カンマ区切りの名前接頭辞に一致するオブジェクトだけを描画(部分確認用)'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
+ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--only', default='', help='カンマ区切りの名前接頭辞に一致するオブジェクトだけを描画(部分確認用)'); ap.add_argument('--check-interference', default='', help='実メッシュ同士の交差(BVH)を検査しJSONへ書き出して終了(INTF-01)'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='boolean'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
@@ -723,6 +723,28 @@ for k, r in enumerate(rotors):
         for f, ang in ((1, A.phase * 2), (A.frames + 1, A.phase * 2 + (math.pi * 2) * (1 if 'cpu' in r.name else 1.4))):
             r.rotation_euler[1] = ang + k * .6; r.keyframe_insert('rotation_euler', index=1, frame=f)
 
+# ---------------- 実形状の干渉検査(INTF-01): 評価済みメッシュ(モディファイア適用後)のBVH交差 ----------------
+if A.check_interference:
+    from mathutils.bvhtree import BVHTree
+    dg = bpy.context.evaluated_depsgraph_get(); recs = []
+    for ob in COLL.objects:
+        if ob.type != 'MESH' or ob.hide_render or ob.name.startswith(('floor', 'target')): continue
+        ev = ob.evaluated_get(dg); me_ = ev.to_mesh(); me_.transform(ob.matrix_world)
+        vs = [v.co.copy() for v in me_.vertices]; ps = [tuple(p.vertices) for p in me_.polygons]
+        if len(vs) < 3 or not ps: ev.to_mesh_clear(); continue
+        xs = [v.x for v in vs]; ys = [v.y for v in vs]; zs = [v.z for v in vs]
+        recs.append((ob.name, (min(xs), min(ys), min(zs), max(xs), max(ys), max(zs)), BVHTree.FromPolygons(vs, ps, epsilon=1e-4))); ev.to_mesh_clear()
+    recs.sort(key=lambda r: r[1][0]); out = []; n_ = len(recs)
+    for i in range(n_):
+        ni, bi, ti = recs[i]
+        for j in range(i + 1, n_):
+            nj, bj, tj = recs[j]
+            if bj[0] > bi[3]: break
+            if bj[1] > bi[4] or bi[1] > bj[4] or bj[2] > bi[5] or bi[2] > bj[5]: continue
+            ov = ti.overlap(tj)
+            if ov: out.append({'a': ni, 'b': nj, 'tri_pairs': len(ov), 'aabb_overlap_mm': [round(min(bi[3], bj[3]) - max(bi[0], bj[0]), 3), round(min(bi[4], bj[4]) - max(bi[1], bj[1]), 3), round(min(bi[5], bj[5]) - max(bi[2], bj[2]), 3)]})
+    json.dump({'objects': n_, 'pairs': sorted(out, key=lambda r: -r['tri_pairs'])}, open(A.check_interference, 'w'), ensure_ascii=False, indent=1)
+    print('INTERFERENCE objects', n_, 'overlapping pairs', len(out)); sys.exit(0)
 # ---------------- GLB書き出し(床・照明・カメラを足す前。非表示のブール用カッターは除外) ----------------
 if A.export:
     bpy.ops.export_scene.gltf(filepath=A.export, export_format='GLB', export_apply=True, use_renderable=True, export_animations=False)

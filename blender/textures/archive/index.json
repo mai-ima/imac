@@ -1,6 +1,15 @@
 {
  "entries": [
   {
+   "src": "blender/textures/dome_perf.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-05",
+   "commit": "71b7afb",
+   "sha256": "db8a11e105f4d8f18e952ec6a34de313f9deecaf1a718c3a6f2e1f457fa07a79",
+   "file": "dome_perf/dome_perf.v001__2026-11-05_71b7afb.png"
+  },
+  {
    "src": "blender/textures/wallpaper_blue.png",
    "version": 1,
    "gen": "current",

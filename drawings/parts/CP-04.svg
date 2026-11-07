@@ -64,7 +64,7 @@
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
 <text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">SUS304 肩ねじ(Misumi/McMaster相当) M4ねじ, 肩径Ø6 h8×6.0(支圧部=トレイ+ブッ</text>
 <text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
-<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">なし(規格品の標準仕上げ)</text>
 <text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
 <text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-CP-04</text>
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
@@ -109,7 +109,7 @@
 <text x="2" y="8" font-size="5" font-weight="bold">CP-04 キーホール吊りピン(肩ねじ)</text>
 <text x="2" y="14" font-size="3">数量 4 / 板厚 - / 質量 0.01kg / 公差 肩径0/-0.025</text>
 <text x="156" y="30" font-size="2.6">加工: 規格品</text>
-<text x="156" y="35.2" font-size="2.6">表面処理: -</text>
+<text x="156" y="35.2" font-size="2.6">表面処理: なし(規格品の標準仕上げ)</text>
 <text x="156" y="40.400000000000006" font-size="2.6">公差: 肩径0/-0.025</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: M4ねじ込み 1.7N·m+ネジロック</text>
 <text x="156" y="50.80000000000001" font-size="2.6">要素: 肩径Ø6 h8×肩長6.0(支圧部3.0)、頭Ø10×t3(頭高さを3に統一)、六角穴</text>

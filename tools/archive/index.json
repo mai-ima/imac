@@ -1369,6 +1369,15 @@
    "file": "run_gates/run_gates.v008__2026-11-06_36dff8c.sh"
   },
   {
+   "src": "tools/run_gates.sh",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "7df797ebee6014927b30af7cfa8e4cdbb1c89002eafff1d55c32fad3cbb617da",
+   "file": "run_gates/run_gates.v009__2026-11-07_64a1afa.sh"
+  },
+  {
    "src": "tools/stability.py",
    "version": 1,
    "gen": "current",

@@ -37,6 +37,15 @@
    "file": "cost-estimate/cost-estimate.v002__2026-11-07_51490df.md"
   },
   {
+   "src": "docs/spec/cost-estimate.md",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "df8ec56",
+   "sha256": "5d7ff8c57d7de226dca746d37da92815823d319345a903be218864ea29a02422",
+   "file": "cost-estimate/cost-estimate.v003__2026-11-07_df8ec56.md"
+  },
+  {
    "src": "docs/spec/custom-parts.md",
    "version": 1,
    "gen": "current",
@@ -226,6 +235,15 @@
    "file": "custom-parts/custom-parts.v021__2026-11-07_3089847.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 22,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "df8ec56",
+   "sha256": "31a310dbc9d012dc8331d5c737575e2c87726ba0516a5da145b1b6d1aa459aa4",
+   "file": "custom-parts/custom-parts.v022__2026-11-07_df8ec56.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",
@@ -332,6 +350,15 @@
    "commit": "e7a16e1",
    "sha256": "d274ea73339ffd460d79fe22e34c743e7cd1188fa08637642e7bdc968082fb52",
    "file": "hardware-list/hardware-list.v008__2026-11-06_e7a16e1.md"
+  },
+  {
+   "src": "docs/spec/hardware-list.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "dd92c9a3aa87a0530e8ed53c845bea0f8e6347263293c4fe2adcbe4cd757a313",
+   "file": "hardware-list/hardware-list.v009__2026-11-06_36dff8c.md"
   },
   {
    "src": "docs/spec/hole-table.md",

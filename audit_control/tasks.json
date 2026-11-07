@@ -12667,13 +12667,19 @@
      "2026-11-07T11:24:18Z",
      "observed",
      "ScheduleWakeup(予約11:22 UTC=20:22 JST)がこのセッションへ到着: 実到着 2026-11-07 20:24:18 JST(11:24:18 UTC)。到着はワーカー再起動を挟まない状況での1例のみで、再起動後に届くかは未検証。毎時トリガー(xx:55 UTC)は未観測"
+    ],
+    [
+     "2026-11-07T12:57:00Z",
+     "observed",
+     "観測(JST): 毎時トリガー trig_01N4G… の 20:55 JST(11:55:27Z)発火分は、ワーカー再起動までセッションに届かず 21:56 JST(12:56:48Z)に配信(約1時間遅延)。続く 21:56 JST(12:56:32Z)発火分は即時到達。20:50 JST予約の ScheduleWakeup は観測できず(再起動で消えた可能性=仮説、未検証)。耐久トリガーは再起動後に未配信分が届く=少なくとも消えない。"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
     "trigger情報: persistent_session_id=本セッション(確認済み)。発火は未検証",
     "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察",
-    "ScheduleWakeup到着を観測: 20:24:18 JST(予約20:22 JST、遅延約2分)"
+    "ScheduleWakeup到着を観測: 20:24:18 JST(予約20:22 JST、遅延約2分)",
+    "2026-11-07 21:56 JST ReadNotifications: 2件(11:55:27Z発火/12:56:32Z発火)。ScheduleWakeup(11:50Z)は未着"
    ],
    "verification": "ReadNotifications 受信ログ",
    "decision": "耐久トリガーは本セッションに届くと確認(1/3)。ScheduleWakeupの到達は次回観察",
@@ -16836,6 +16842,35 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "未修正(報告のみ)"
+  },
+  {
+   "id": "QUAL-06",
+   "title": "3D部品モデルを実物クオリティにするまで「超厳格監査→修正→描画→再監査」を繰り返す(終了条件=ユーザーが止める)",
+   "description": "ユーザー指示(2026-11-07 21:5x JST): 3Dモデル部品も品質が低い。監査R12(基板/GPU・PSU/水冷・SSD・制御/特注機構)の指摘を MDA/MDB/MDC/MDD として台帳化し、修正→Blender描画で目視→再監査を繰り返す。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T12:58:07Z",
+     "in_progress",
+     "監査4本(R12_model_A〜D)を並列起動"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "R12報告回収→tools/import_r12.py(取込)→P0/P1から修正→描画→再監査"
   }
  ]
 }

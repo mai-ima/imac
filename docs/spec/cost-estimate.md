@@ -13,7 +13,7 @@
 | board | ROG STRIX X870-I GAMING WIFI | ASUS | 1 | 71,478 | REFERENCE | モノタロウ掲載値(URL未記録)。発売時予想価格69,980円 | 2026-11-06 | モノタロウは通常のPC小売ではないため参考値扱い。価格.com等で要再確認(cost-estimate旧版) |
 | cpu | Ryzen 9 9950X3D(BOX, クーラー無し) | AMD | 1 | 108,380 | REFERENCE | gaming-st.com(国内最安。2位108,680円)。ページURL未記録 | 2026-10-25 | 調査日が2週間前。国内最安表記の再確認が必要 |
 | cooler | Liquid Freezer III Pro 240 (ACFRE00178A, 非RGB) | ARCTIC | 1 | **UNVERIFIED** | UNVERIFIED | - | - | ポンプ+ラジエーター+ファン2個の一体製品(1式)。国内円建て価格を取得できず。海外価格の円換算は不採用 |
-| gpu | RTX 5070 Ti 16GB 小型2スロット(PNY Slim 290x150x40 を寸法基準。具体型番は未確定 U46) | PNY(寸法基準) | 1 | **UNVERIFIED** | UNVERIFIED | - | 2026-11-06 | 発売時目安148,800円〜/値下がり報道129,800円〜はあるが出典未記録の第三者情報で、小型品の国内価格は未確認。RTX50減産報道あり(非公式) |
+| gpu | RTX 5070 Ti 16GB 小型2スロット(PNY Slim 290x150x40 を寸法基準。具体型番は未確定 U46) | PNY(寸法基準) | 1 | **UNVERIFIED** | UNVERIFIED | - | - | (2026-11-06に報道値のみ確認)発売時目安148,800円〜/値下がり報道129,800円〜はあるが出典未記録の第三者情報で、小型品の国内価格は未確認。RTX50減産報道あり(非公式) |
 | riser | AVA5 PCIe 5.0 x16 ライザー AG-P5-33SS-020BK-v2(直線)または右角(SR)品 | LINKUP | 1 | **UNVERIFIED** | UNVERIFIED | https://preisvergleich.heise.de/linkup-ava5-v2-riser-kabel-ag-p5-33ss-020bk-v2-a3400918.html | - | 欧州の価格比較ページ(型番確認のみ)。国内価格未取得 |
 | psu | SF1000 (SFX 1000W 80+ Platinum) | Corsair | 1 | **UNVERIFIED** | UNVERIFIED | - | - | SF1000の公式仕様/ケーブル/価格は未確認(U34/U47/U59)。parts.json の出典URLは旧候補SF750のページで、SF1000の出典ではない(寸法は同一SFX想定) |
 | ssd | 990 PRO with Heatsink 1TB (MZ-V9P1T0CW) | Samsung | 1 | **UNVERIFIED** | UNVERIFIED | https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_with_Heatsink_Datasheet_Rev_2.0_10129695053410.pdf | - | 出典はデータシート(価格なし)。国内価格未取得 |

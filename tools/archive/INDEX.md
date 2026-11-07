@@ -154,6 +154,7 @@
 | run_gates.sh | v006 | current | 2026-11-06 | 02c4c72 | run_gates/run_gates.v006__2026-11-06_02c4c72.sh |
 | run_gates.sh | v007 | current | 2026-11-06 | 877835f | run_gates/run_gates.v007__2026-11-06_877835f.sh |
 | run_gates.sh | v008 | current | 2026-11-06 | 36dff8c | run_gates/run_gates.v008__2026-11-06_36dff8c.sh |
+| run_gates.sh | v009 | current | 2026-11-07 | 64a1afa | run_gates/run_gates.v009__2026-11-07_64a1afa.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |

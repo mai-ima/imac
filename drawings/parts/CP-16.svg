@@ -107,10 +107,10 @@
 </g>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-16 ケーブルクリップ/コーム</text>
-<text x="2" y="14" font-size="3">数量 24 / 板厚 - / 質量 0.1kg / 公差 -</text>
+<text x="2" y="14" font-size="3">数量 24 / 板厚 - / 質量 0.1kg / 公差 規格品のメーカー規格公差(受入は型番と成績書で確認)</text>
 <text x="156" y="30" font-size="2.6">加工: 規格品(Heyco/Essentra)またはPEM付き結束台</text>
 <text x="156" y="35.2" font-size="2.6">表面処理: 黒</text>
-<text x="156" y="40.400000000000006" font-size="2.6">公差: -</text>
+<text x="156" y="40.400000000000006" font-size="2.6">公差: 規格品のメーカー規格公差(受入は型番と成績書で確認)</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: 座標は docs/spec/wiring-spec.md と drawings/16_cable_cli</text>
 <text x="156" y="49.80000000000001" font-size="2.6">ps.svg</text>
 <text x="156" y="55.000000000000014" font-size="2.6">接合: CP-06トレイ</text>

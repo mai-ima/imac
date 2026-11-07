@@ -45,6 +45,7 @@
 | custom_parts.json | v023 | current | 2026-11-07 | 15af08b | custom_parts/custom_parts.v023__2026-11-07_15af08b.json |
 | custom_parts.json | v024 | current | 2026-11-07 | 01950c5 | custom_parts/custom_parts.v024__2026-11-07_01950c5.json |
 | custom_parts.json | v025 | current | 2026-11-07 | 3089847 | custom_parts/custom_parts.v025__2026-11-07_3089847.json |
+| custom_parts.json | v026 | current | 2026-11-07 | 9449d80 | custom_parts/custom_parts.v026__2026-11-07_9449d80.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
 | hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
@@ -86,6 +87,7 @@
 | parts.json | v012 | current | 2026-11-07 | 64a1afa | parts/parts.v012__2026-11-07_64a1afa.json |
 | parts.json | v013 | current | 2026-11-07 | 17954ec | parts/parts.v013__2026-11-07_17954ec.json |
 | procurement.json | v001 | current | 2026-11-07 | 9a67913 | procurement/procurement.v001__2026-11-07_9a67913.json |
+| procurement.json | v002 | current | 2026-11-07 | df8ec56 | procurement/procurement.v002__2026-11-07_df8ec56.json |
 | spec.json | v001 | gen-001 | 2026-11-03 | 44f2d2a | gen-001/spec/spec.v001__2026-11-03_44f2d2a.json |
 | spec.json | v002 | gen-001 | 2026-11-03 | 165c355 | gen-001/spec/spec.v002__2026-11-03_165c355.json |
 | spec.json | v003 | current | 2026-11-03 | fd22dea | spec/spec.v003__2026-11-03_fd22dea.json |

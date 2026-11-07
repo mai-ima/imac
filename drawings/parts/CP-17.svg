@@ -64,7 +64,7 @@
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
 <text x="232.00" y="277.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">市販ケーブル+ロックコネクタ(型番U19)</text>
 <text x="232.00" y="281.50" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">表面処理 / Finish</text>
-<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">-</text>
+<text x="232.00" y="285.00" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">なし(規格品の標準仕上げ)</text>
 <text x="332.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">図面番号 / Drawing No.</text>
 <text x="332.00" y="267.00" font-size="4.0" text-anchor="start" font-weight="bold" fill="#000">IMAC-PC-CP-17</text>
 <text x="332.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">普通公差 / General tol.</text>
@@ -107,10 +107,10 @@
 </g>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-17 アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
-<text x="2" y="14" font-size="3">数量 1 / 板厚 - / 質量 0.05kg / 公差 -</text>
+<text x="2" y="14" font-size="3">数量 1 / 板厚 - / 質量 0.05kg / 公差 規格品のメーカー規格公差(受入は型番と成績書で確認)</text>
 <text x="156" y="30" font-size="2.6">加工: 規格品</text>
-<text x="156" y="35.2" font-size="2.6">表面処理: -</text>
-<text x="156" y="40.400000000000006" font-size="2.6">公差: -</text>
+<text x="156" y="35.2" font-size="2.6">表面処理: なし(規格品の標準仕上げ)</text>
+<text x="156" y="40.400000000000006" font-size="2.6">公差: 規格品のメーカー規格公差(受入は型番と成績書で確認)</text>
 <text x="156" y="45.60000000000001" font-size="2.6">要素: 番号タグ、ストレインリリーフ、保護キャップ</text>
 <text x="156" y="50.80000000000001" font-size="2.6">要素: 最小曲げ半径5×外径</text>
 <text x="156" y="56.000000000000014" font-size="2.6">接合: ctrl基板</text>
