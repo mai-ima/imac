@@ -60,7 +60,7 @@ archive/tools/gen_drawing__2026-11-03_a2b24f4.py,archive,4356,fe054ca2c11f9099,N
 audit_control/ARCHIVE_INDEX.json,current,1749,9b66260d97c2821d,NOT_REVIEWED,,
 audit_control/BASELINE.md,current,574,60ff090e7666b1c8,NOT_REVIEWED,,
 audit_control/SESSION_STATE.md,current,6101,e4ab00337f86c703,NOT_REVIEWED,,
-audit_control/file_coverage.csv,current,157303,4e24ef41d57b3ff4,CHANGED_RECHECK,,
+audit_control/file_coverage.csv,current,158251,1eb0f67c47c0d214,CHANGED_RECHECK,,
 audit_control/reports/GA_2026-11-07_table.md,current,6564,43a77534b2a4211f,NOT_REVIEWED,,
 audit_control/reports/R10_mech.md,current,18131,9ea9c0d90e400e1b,NOT_REVIEWED,,
 audit_control/reports/R10_thermal_elec.md,current,28661,46fad3c2fff29b82,NOT_REVIEWED,,
@@ -76,7 +76,7 @@ audit_control/resolutions.json,current,33173,eb19a60dd420a999,NOT_REVIEWED,,
 audit_control/tasks.json,current,703773,b947720c7ec48fa4,CHANGED_RECHECK,,
 audit_control/validate_state.py,current,2469,7820474abd803faa,NOT_REVIEWED,,
 audit_output/00_README_JA.md,generated,1438,30fc7ac5be093460,NOT_REVIEWED,,
-audit_output/01_FULL_FILE_MANIFEST.csv,generated,241137,9c2a91d36b702bcb,CHANGED_RECHECK,,
+audit_output/01_FULL_FILE_MANIFEST.csv,generated,242807,5777b1b6f7e45f6b,CHANGED_RECHECK,,
 audit_output/03_FINDINGS_REGISTER.md,generated,3938,0a3ccfa9c5dad189,NOT_REVIEWED,,
 audit_output/12_TEST_RESULTS.txt,generated,3457,1a62d57d0297af8a,NOT_REVIEWED,,
 audit_output/14_ARCHITECTURE_DECISIONS.md,generated,930,e62e77e83def347a,NOT_REVIEWED,,
@@ -406,7 +406,7 @@ docs/service-manual.md,current,26734,dafd296ba370852c,CHANGED_RECHECK,R9-DOCS,"R
 docs/service-mechanisms.md,current,8238,6cd99d3c9482852c,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/source-status.md,current,2184,c93707c1303080b3,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/README.md,current,1481,f6b65229ac8badc7,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/archive/INDEX.md,archive,9113,32625f8adb4898a0,NOT_REVIEWED,,
+docs/spec/archive/INDEX.md,archive,9232,b29d143b49e25480,NOT_REVIEWED,,
 docs/spec/archive/README/README.v001__2026-11-05_b97eaae.md,archive,802,68497f801ea7d712,NOT_REVIEWED,,
 docs/spec/archive/README/README.v002__2026-11-06_a77badc.md,archive,1476,41c0450c983e5804,NOT_REVIEWED,,
 docs/spec/archive/cost-estimate/cost-estimate.v001__2026-11-06_fc36218.md,archive,1830,e886f54062cc5969,NOT_REVIEWED,,
@@ -447,9 +447,10 @@ docs/spec/archive/hardware-list/hardware-list.v006__2026-11-06_cf90ba1.md,archiv
 docs/spec/archive/hardware-list/hardware-list.v007__2026-11-06_93238a3.md,archive,4247,32f4abba2d0b43ba,NOT_REVIEWED,,
 docs/spec/archive/hardware-list/hardware-list.v008__2026-11-06_e7a16e1.md,archive,4288,d274ea73339ffd46,NOT_REVIEWED,,
 docs/spec/archive/hardware-list/hardware-list.v009__2026-11-06_36dff8c.md,archive,4225,dd92c9a3aa87a053,NOT_REVIEWED,,
+docs/spec/archive/hardware-list/hardware-list.v010__2026-11-07_a50f58a.md,archive,4241,5d505ee2910b3a5b,NOT_REVIEWED,,
 docs/spec/archive/hole-table/hole-table.v001__2026-11-06_514e2e0.md,archive,2140,a29b0a34f0d093d2,NOT_REVIEWED,,
 docs/spec/archive/hole-table/hole-table.v002__2026-11-06_853f219.md,archive,2140,00311157ed3227ff,NOT_REVIEWED,,
-docs/spec/archive/index.json,archive,21864,865bf583f3708dd8,NOT_REVIEWED,,
+docs/spec/archive/index.json,archive,22151,05b979f345963b10,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v001__2026-11-05_b97eaae.md,archive,2261,c7b4965ca832ad25,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v002__2026-11-05_fcba5fe.md,archive,2985,21c1b02e965f49b5,NOT_REVIEWED,,
 docs/spec/archive/joint-matrix/joint-matrix.v003__2026-11-06_302823c.md,archive,3004,00376430615829db,NOT_REVIEWED,,
@@ -490,7 +491,7 @@ docs/spec/custom-parts.md,current,34418,4bfb54cb9ccfff43,CHANGED_RECHECK,R9-DOCS
 docs/spec/design-philosophy.md,current,7234,5a711d33387ffbc0,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/gaming-requirements.md,current,2407,cc6366d1244e13ec,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/grounding-spec.md,current,2112,3ac0a6e937773faf,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
-docs/spec/hardware-list.md,current,4241,5d505ee2910b3a5b,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
+docs/spec/hardware-list.md,current,4241,13dc775b08f1886d,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/hole-table.md,current,2142,adc6261d57f5b581,REVIEWED,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/joint-matrix.md,current,3069,8816e6c8e116b4c1,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"
 docs/spec/panel-driver.md,current,2167,7ba2981fbed87eaf,CHANGED_RECHECK,R9-DOCS,"R9_docs(サブエージェント全文通読, 125件) + 一部修正"

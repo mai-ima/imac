@@ -361,6 +361,15 @@
    "file": "hardware-list/hardware-list.v009__2026-11-06_36dff8c.md"
   },
   {
+   "src": "docs/spec/hardware-list.md",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "a50f58a",
+   "sha256": "5d505ee2910b3a5b2b21e4ccdbbfba949c37ad8571b15902deca0d2469affe9c",
+   "file": "hardware-list/hardware-list.v010__2026-11-07_a50f58a.md"
+  },
+  {
    "src": "docs/spec/hole-table.md",
    "version": 1,
    "gen": "current",
