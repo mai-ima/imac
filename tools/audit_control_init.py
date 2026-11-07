@@ -64,7 +64,7 @@ except Exception: pass
 files = subprocess.check_output(['git', 'ls-files', '-co', '--exclude-standard'], cwd=R, text=True).split('\n')
 rows = []
 for f in sorted(x for x in files if x and os.path.isfile(f'{R}/{x}')):
-    h = hashlib.sha256(open(f'{R}/{f}', 'rb').read()).hexdigest()[:16]
+    h = '(generated)' if f in ('audit_control/file_coverage.csv', 'audit_output/01_FULL_FILE_MANIFEST.csv') else hashlib.sha256(open(f'{R}/{f}', 'rb').read()).hexdigest()[:16]      # 相互参照するこの2つの生成物はハッシュしない(実行のたびの差分ループの原因)
     cls = 'archive' if '/archive/' in f or f.startswith('archive/') else 'generated' if f.startswith(('handoff/', 'render/', 'drawings/', 'audit_output/')) or f.endswith(('.glb', '.glb.txt', '.png')) else 'current'
     o = old.get(f, {})
     rows.append(dict(path=f, class_=cls, size=os.path.getsize(f'{R}/{f}'), sha256_16=h, status=(o.get('status', 'NOT_REVIEWED') if (o.get('sha256_16') == h or o.get('status', 'NOT_REVIEWED') == 'NOT_REVIEWED') else 'CHANGED_RECHECK'), task_ids=o.get('task_ids', ''), evidence=o.get('evidence', '')))

@@ -60,7 +60,6 @@ archive/tools/gen_drawing__2026-11-03_a2b24f4.py,ARCHIVE(旧版),4356,fe054ca2c1
 audit_control/ARCHIVE_INDEX.json,OTHER,1749,9b66260d97c2821dac05d3ab487affcd48e3d019beb6ca4a7b5edacec4a414cf,syntax_ok,NO
 audit_control/BASELINE.md,OTHER,574,60ff090e7666b1c843711447ccdf3227fa9280ae562ef218d16cb4004bfc74e9,binary_or_text_not_parsed,NO
 audit_control/SESSION_STATE.md,OTHER,6101,e4ab00337f86c703ba2eea11820f9b632c099652420e2b414bc5068bba71fc15,binary_or_text_not_parsed,NO
-audit_control/file_coverage.csv,OTHER,160752,8c556d18959b18096474c26fdecf16579ab608e83041aed46f4d7650f2eb9d84,binary_or_text_not_parsed,NO
 audit_control/reports/GA_2026-11-07_table.md,OTHER,6564,43a77534b2a4211f90ed12091ae58c6d9b68f63d65a2869832617c08b2bdc5a0,binary_or_text_not_parsed,NO
 audit_control/reports/R10_mech.md,OTHER,18131,9ea9c0d90e400e1bf5e70cecf67b695c9d5dfba1536b816dcb336634f9e237b3,binary_or_text_not_parsed,NO
 audit_control/reports/R10_thermal_elec.md,OTHER,28661,46fad3c2fff29b82a0eef47bc63b1ed498b353208781d19ed817be62a29f5ccb,binary_or_text_not_parsed,NO
@@ -1369,8 +1368,8 @@ tools/archive/thermal_calc/thermal_calc.v005__2026-11-06_2bb8cf1.py,ARCHIVE(旧�
 tools/archive/thermal_calc/thermal_calc.v006__2026-11-07_bba640c.py,ARCHIVE(旧版),5385,c94a24eceff867e088be1cf1bba0ac1e140dcd0cb69e67af684429a108956a59,syntax_ok,NO
 tools/archive/thermal_calc/thermal_calc.v007__2026-11-07_17954ec.py,ARCHIVE(旧版),5501,5c66c4a5a40a6dc00a1734ef2aa030e0789beb2209ba3d17068fa62b359ac2e3,syntax_ok,NO
 tools/archive/thermal_calc/thermal_calc.v008__2026-11-07_5601a7c.py,ARCHIVE(旧版),6229,d8c8822a18bc904b72de24566b7875d43335fbeb21d6a7dc2f0fdffb4130c2b0,SYNTAX_FAIL:unterminated string literal (detected at line 27) (<unknown>,NO
-tools/audit_control_init.py,TOOL(生成/検証),9613,c2fa8316555844ff4bcef8798ae5e728b6fbb8be880e0ede2b2d501f27b10eca,syntax_ok,NO
-tools/audit_manifest.py,TOOL(生成/検証),3170,fc3339b50b68d0d6a0c32b1f9f42bac820517b1e85d72bfa6c4d92b81993cfd7,syntax_ok,NO
+tools/audit_control_init.py,TOOL(生成/検証),9834,169f578eb61e15afe4b9653b11d81aab77e61eb18ea47f72aa547c4ec6e77447,syntax_ok,NO
+tools/audit_manifest.py,TOOL(生成/検証),3207,ac7bff070429d4f000238b38c9fb5ca58e12401fade50f8f8c9573739bef541a,syntax_ok,NO
 tools/balance_calc.py,TOOL(生成/検証),10994,6909c33119de67076f8b777e7bcb911e8f4587e064ebca021991e85f104df332,syntax_ok,NO
 tools/cable_check.py,TOOL(生成/検証),5852,6d98a922dcafa0b97361f5e2c3c1346905fece5fc39e8db3c3dd0cb2e9ced123,syntax_ok,NO
 tools/cablemodel.py,TOOL(生成/検証),8100,3b1e30ac7844373ad85a524de402686e80ea3bf3ac41827a0df0bc746869979d,syntax_ok,NO

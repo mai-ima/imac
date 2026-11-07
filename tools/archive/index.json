@@ -10,6 +10,15 @@
    "file": "audit_control_init/audit_control_init.v001__2026-11-06_cf90ba1.py"
   },
   {
+   "src": "tools/audit_control_init.py",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "c2fa8316555844ff4bcef8798ae5e728b6fbb8be880e0ede2b2d501f27b10eca",
+   "file": "audit_control_init/audit_control_init.v002__2026-11-06_f2e5a87.py"
+  },
+  {
    "src": "tools/audit_manifest.py",
    "version": 1,
    "gen": "current",
@@ -26,6 +35,15 @@
    "commit": "432b08c",
    "sha256": "731fda5c3e0b1b5710b68c6a281d644f3000e229c66b9d400caf323654076b07",
    "file": "audit_manifest/audit_manifest.v002__2026-11-06_432b08c.py"
+  },
+  {
+   "src": "tools/audit_manifest.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "508decc",
+   "sha256": "fc3339b50b68d0d6a0c32b1f9f42bac820517b1e85d72bfa6c4d92b81993cfd7",
+   "file": "audit_manifest/audit_manifest.v003__2026-11-07_508decc.py"
   },
   {
    "src": "tools/balance_calc.py",

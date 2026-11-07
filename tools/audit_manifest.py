@@ -32,7 +32,7 @@ for e in type_errs: print('[TYPE]', e)
 rows = []
 for p in files:
     if not p or not os.path.isfile(os.path.join(R, p)): continue
-    if p == 'audit_output/01_FULL_FILE_MANIFEST.csv': continue      # 自己参照(自分のハッシュ)は除外=実行のたびに差分が出る無限ループの原因
+    if p in ('audit_output/01_FULL_FILE_MANIFEST.csv', 'audit_control/file_coverage.csv'): continue      # 自己参照(自分のハッシュ)は除外=実行のたびに差分が出る無限ループの原因
     b = open(os.path.join(R, p), 'rb').read()
     rows.append(dict(path=p, kind=kind(p), size=len(b), sha256=hashlib.sha256(b).hexdigest(), automated_check=syntax(p),
                      content_reviewed_by_human_or_agent='NO'))
