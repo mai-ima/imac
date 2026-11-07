@@ -1,223 +1,28 @@
 {
- "generated": "2026-11-07T13:00Z",
- "objects": 562,
- "pairs_total": 762,
- "touch_only": 338,
+ "generated": "2026-11-07T13:01Z",
+ "objects": 566,
+ "pairs_total": 746,
+ "touch_only": 341,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
+  "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
+  "ローラはピンに回転嵌合(ボア未モデル=INTF-03)": 2,
+  "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
+  "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
+  "側板のストリップとボスは一体品を別基本形で表現": 2,
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 60,
   "モジュラーソケットは筐体前面の開口に嵌合": 10
  },
- "remaining": 344,
+ "remaining": 308,
  "remaining_pairs": [
   {
    "a": "stand_neck_shroud",
-   "b": "spring_die0",
-   "tri_pairs": 122,
-   "aabb_overlap_mm": [
-    20.0,
-    20.0,
-    35.196
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "spring_die1",
-   "tri_pairs": 122,
-   "aabb_overlap_mm": [
-    20.0,
-    20.0,
-    35.196
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "ac_inlet_body",
-   "tri_pairs": 27,
-   "aabb_overlap_mm": [
-    28.0,
-    20.0,
-    26.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "ac_inlet_body",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    28.0,
-    20.0,
-    26.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "hinge_friction0",
-   "tri_pairs": 96,
-   "aabb_overlap_mm": [
-    22.0,
-    12.0,
-    12.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "hinge_friction1",
-   "tri_pairs": 96,
-   "aabb_overlap_mm": [
-    22.0,
-    12.0,
-    12.0
-   ]
-  },
-  {
-   "a": "rad_core",
-   "b": "rad_tank_b",
-   "tri_pairs": 40,
-   "aabb_overlap_mm": [
-    120.0,
-    38.0,
-    12.0
-   ]
-  },
-  {
-   "a": "rad_core",
-   "b": "rad_tank_a",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    120.0,
-    38.0,
-    12.0
-   ]
-  },
-  {
-   "a": "pump_cap_lip",
-   "b": "pump_housing_body",
-   "tri_pairs": 35,
-   "aabb_overlap_mm": [
-    18.5,
-    9.2,
-    46.0
-   ]
-  },
-  {
-   "a": "gpu_shroud_body",
-   "b": "gpu_12v2x6",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    22.0,
-    10.0,
-    9.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
    "b": "stand_neck_base",
-   "tri_pairs": 103,
+   "tri_pairs": 18,
    "aabb_overlap_mm": [
     124.0,
-    65.717,
+    66.278,
     8.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "cam_guide_rod0_-1",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    8.0,
-    8.0,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "cam_guide_rod0_1",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    8.0,
-    8.0,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "cam_guide_rod1_-1",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    8.0,
-    8.0,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "cam_guide_rod1_1",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    8.0,
-    8.0,
-    38.0
-   ]
-  },
-  {
-   "a": "pump_spring0",
-   "b": "pump_screw0",
-   "tri_pairs": 324,
-   "aabb_overlap_mm": [
-    6.4,
-    7.851,
-    6.4
-   ]
-  },
-  {
-   "a": "pump_spring2",
-   "b": "pump_screw2",
-   "tri_pairs": 324,
-   "aabb_overlap_mm": [
-    6.4,
-    7.851,
-    6.4
-   ]
-  },
-  {
-   "a": "pump_spring1",
-   "b": "pump_screw1",
-   "tri_pairs": 324,
-   "aabb_overlap_mm": [
-    6.4,
-    7.851,
-    6.4
-   ]
-  },
-  {
-   "a": "pump_spring3",
-   "b": "pump_screw3",
-   "tri_pairs": 324,
-   "aabb_overlap_mm": [
-    6.4,
-    7.851,
-    6.4
-   ]
-  },
-  {
-   "a": "vrm_shroud",
-   "b": "pump_screw0",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.4,
-    14.0,
-    6.4
-   ]
-  },
-  {
-   "a": "vrm_shroud",
-   "b": "pump_screw1",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.4,
-    14.0,
-    6.4
    ]
   },
   {
@@ -231,69 +36,19 @@
    ]
   },
   {
-   "a": "hinge_axle",
-   "b": "stand_arm_boss0",
-   "tri_pairs": 96,
-   "aabb_overlap_mm": [
-    6.0,
-    12.0,
-    12.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "stand_arm_boss1",
-   "tri_pairs": 96,
-   "aabb_overlap_mm": [
-    6.0,
-    12.0,
-    12.0
-   ]
-  },
-  {
    "a": "stand_neck_shroud",
    "b": "stand_arm0",
-   "tri_pairs": 57,
+   "tri_pairs": 10,
    "aabb_overlap_mm": [
     6.0,
     65.278,
     38.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "stand_arm1",
-   "tri_pairs": 57,
-   "aabb_overlap_mm": [
-    6.0,
-    65.278,
-    38.0
-   ]
-  },
-  {
-   "a": "cam_roller_pin0",
-   "b": "cam_roller0",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    12.0,
-    6.0,
-    6.0
-   ]
-  },
-  {
-   "a": "cam_roller_pin1",
-   "b": "cam_roller1",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    12.0,
-    6.0,
-    6.0
    ]
   },
   {
    "a": "stand_neck_shroud",
    "b": "stand_neck_tie",
-   "tri_pairs": 44,
+   "tri_pairs": 10,
    "aabb_overlap_mm": [
     112.0,
     6.0,
@@ -302,82 +57,12 @@
   },
   {
    "a": "stand_neck_shroud",
-   "b": "stand_neck_cover1",
-   "tri_pairs": 36,
+   "b": "stand_arm1",
+   "tri_pairs": 10,
    "aabb_overlap_mm": [
-    120.0,
     6.0,
+    65.278,
     38.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "stand_arm_strip0",
-   "tri_pairs": 34,
-   "aabb_overlap_mm": [
-    6.0,
-    8.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "stand_arm_strip1",
-   "tri_pairs": 34,
-   "aabb_overlap_mm": [
-    6.0,
-    8.0,
-    6.0
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_stop_r",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    10.0,
-    10.0,
-    6.0
-   ]
-  },
-  {
-   "a": "stand_swivel_stator",
-   "b": "stand_swivel_stop_l",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    10.0,
-    10.0,
-    6.0
-   ]
-  },
-  {
-   "a": "stand_arm_strip0",
-   "b": "stand_arm_boss0",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    8.0,
-    11.0
-   ]
-  },
-  {
-   "a": "stand_arm_strip1",
-   "b": "stand_arm_boss1",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    8.0,
-    11.0
-   ]
-  },
-  {
-   "a": "stand_swivel_rotor",
-   "b": "stand_swivel_stop_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    10.0,
-    8.0,
-    6.0
    ]
   },
   {
@@ -438,26 +123,6 @@
     8.0,
     8.0,
     5.799
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "hinge_tail_lever1",
-   "tri_pairs": 60,
-   "aabb_overlap_mm": [
-    5.0,
-    12.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "hinge_tail_lever0",
-   "tri_pairs": 58,
-   "aabb_overlap_mm": [
-    5.0,
-    12.0,
-    6.0
    ]
   },
   {
@@ -748,26 +413,6 @@
     4.0,
     34.8,
     4.0
-   ]
-  },
-  {
-   "a": "vrm_shroud",
-   "b": "pump_spring0",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    7.7,
-    3.326,
-    7.7
-   ]
-  },
-  {
-   "a": "vrm_shroud",
-   "b": "pump_spring1",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    7.7,
-    3.326,
-    7.7
    ]
   },
   {
@@ -1281,16 +926,6 @@
    ]
   },
   {
-   "a": "stand_neck_shroud",
-   "b": "stand_neck_cover0",
-   "tri_pairs": 36,
-   "aabb_overlap_mm": [
-    120.0,
-    2.0,
-    38.0
-   ]
-  },
-  {
    "a": "hinge_block_base",
    "b": "hinge_bolt0",
    "tri_pairs": 32,
@@ -1515,9 +1150,9 @@
    "b": "pump_screw0",
    "tri_pairs": 32,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     1.6,
-    6.4
+    4.0
    ]
   },
   {
@@ -1525,9 +1160,9 @@
    "b": "pump_screw2",
    "tri_pairs": 32,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     1.6,
-    6.4
+    4.0
    ]
   },
   {
@@ -1535,9 +1170,9 @@
    "b": "pump_screw1",
    "tri_pairs": 32,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     1.6,
-    6.4
+    4.0
    ]
   },
   {
@@ -1545,9 +1180,9 @@
    "b": "pump_screw3",
    "tri_pairs": 32,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     1.6,
-    6.4
+    4.0
    ]
   },
   {
@@ -2435,9 +2070,9 @@
    "b": "pump_screw0",
    "tri_pairs": 16,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     1.0,
-    6.4
+    4.0
    ]
   },
   {
@@ -2618,16 +2253,6 @@
     1.0,
     1.6,
     1.7
-   ]
-  },
-  {
-   "a": "pump_cap_lip",
-   "b": "pump_swivel_0",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    1.0,
-    7.2,
-    20.4
    ]
   },
   {
@@ -2901,6 +2526,16 @@
    ]
   },
   {
+   "a": "vrm_fan_ring",
+   "b": "pump_screw_head1",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    7.0,
+    0.6,
+    7.0
+   ]
+  },
+  {
    "a": "stand_neck_base",
    "b": "stand_swivel_bolt1",
    "tri_pairs": 14,
@@ -3078,6 +2713,16 @@
     5.6,
     0.5,
     5.6
+   ]
+  },
+  {
+   "a": "board_smd",
+   "b": "pump_screw2",
+   "tri_pairs": 30,
+   "aabb_overlap_mm": [
+    4.0,
+    0.5,
+    4.0
    ]
   },
   {
@@ -3282,12 +2927,12 @@
   },
   {
    "a": "board_smd",
-   "b": "pump_screw2",
+   "b": "pump_screw3",
    "tri_pairs": 6,
    "aabb_overlap_mm": [
-    6.4,
+    4.0,
     0.5,
-    6.4
+    4.0
    ]
   },
   {
@@ -3353,7 +2998,7 @@
   {
    "a": "gpu_shroud_body",
    "b": "gpu_heatsink",
-   "tri_pairs": 145,
+   "tri_pairs": 152,
    "aabb_overlap_mm": [
     138.0,
     0.2,

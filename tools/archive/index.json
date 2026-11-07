@@ -1099,6 +1099,15 @@
    "file": "import_r11/import_r11.v001__2026-11-07_df8ec56.py"
   },
   {
+   "src": "tools/interference_report.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "44044f0",
+   "sha256": "3962c32d3015d7d08a72d3aa68322121f4e284b5bd7612e5e5e60e4ece060942",
+   "file": "interference_report/interference_report.v001__2026-11-07_44044f0.py"
+  },
+  {
    "src": "tools/joint_calc.py",
    "version": 1,
    "gen": "current",

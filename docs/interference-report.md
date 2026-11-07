@@ -1,61 +1,32 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、562物体、交差対 762。
-- 接触のみ(深さ<0.15mm): 338 / 意図した一体・嵌合(ALLOW): 80 / **要対処: 344**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、566物体、交差対 746。
+- 接触のみ(深さ<0.15mm): 341 / 意図した一体・嵌合(ALLOW): 97 / **要対処: 308**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
+- 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される: 8対
+- ローラはピンに回転嵌合(ボア未モデル=INTF-03): 2対
+- ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形): 2対
+- ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03): 3対
+- 側板のストリップとボスは一体品を別基本形で表現: 2対
 - ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 60対
 - モジュラーソケットは筐体前面の開口に嵌合: 10対
 
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
-| stand_neck_shroud | spring_die0 | 122 | [20.0, 20.0, 35.196] | 20.00 |
-| stand_neck_shroud | spring_die1 | 122 | [20.0, 20.0, 35.196] | 20.00 |
-| cover_filter | ac_inlet_body | 27 | [28.0, 20.0, 26.0] | 20.00 |
-| cover_back | ac_inlet_body | 8 | [28.0, 20.0, 26.0] | 20.00 |
-| hinge_axle | hinge_friction0 | 96 | [22.0, 12.0, 12.0] | 12.00 |
-| hinge_axle | hinge_friction1 | 96 | [22.0, 12.0, 12.0] | 12.00 |
-| rad_core | rad_tank_b | 40 | [120.0, 38.0, 12.0] | 12.00 |
-| rad_core | rad_tank_a | 32 | [120.0, 38.0, 12.0] | 12.00 |
-| pump_cap_lip | pump_housing_body | 35 | [18.5, 9.2, 46.0] | 9.20 |
-| gpu_shroud_body | gpu_12v2x6 | 8 | [22.0, 10.0, 9.0] | 9.00 |
-| stand_neck_shroud | stand_neck_base | 103 | [124.0, 65.717, 8.0] | 8.00 |
-| stand_neck_shroud | cam_guide_rod0_-1 | 48 | [8.0, 8.0, 38.0] | 8.00 |
-| stand_neck_shroud | cam_guide_rod0_1 | 48 | [8.0, 8.0, 38.0] | 8.00 |
-| stand_neck_shroud | cam_guide_rod1_-1 | 48 | [8.0, 8.0, 38.0] | 8.00 |
-| stand_neck_shroud | cam_guide_rod1_1 | 48 | [8.0, 8.0, 38.0] | 8.00 |
-| pump_spring0 | pump_screw0 | 324 | [6.4, 7.851, 6.4] | 6.40 |
-| pump_spring2 | pump_screw2 | 324 | [6.4, 7.851, 6.4] | 6.40 |
-| pump_spring1 | pump_screw1 | 324 | [6.4, 7.851, 6.4] | 6.40 |
-| pump_spring3 | pump_screw3 | 324 | [6.4, 7.851, 6.4] | 6.40 |
-| vrm_shroud | pump_screw0 | 32 | [6.4, 14.0, 6.4] | 6.40 |
-| vrm_shroud | pump_screw1 | 32 | [6.4, 14.0, 6.4] | 6.40 |
+| stand_neck_shroud | stand_neck_base | 18 | [124.0, 66.278, 8.0] | 8.00 |
 | stand_skirt | stand_swivel_stator | 391 | [190.0, 190.0, 6.0] | 6.00 |
-| hinge_axle | stand_arm_boss0 | 96 | [6.0, 12.0, 12.0] | 6.00 |
-| hinge_axle | stand_arm_boss1 | 96 | [6.0, 12.0, 12.0] | 6.00 |
-| stand_neck_shroud | stand_arm0 | 57 | [6.0, 65.278, 38.0] | 6.00 |
-| stand_neck_shroud | stand_arm1 | 57 | [6.0, 65.278, 38.0] | 6.00 |
-| cam_roller_pin0 | cam_roller0 | 48 | [12.0, 6.0, 6.0] | 6.00 |
-| cam_roller_pin1 | cam_roller1 | 48 | [12.0, 6.0, 6.0] | 6.00 |
-| stand_neck_shroud | stand_neck_tie | 44 | [112.0, 6.0, 20.0] | 6.00 |
-| stand_neck_shroud | stand_neck_cover1 | 36 | [120.0, 6.0, 38.0] | 6.00 |
-| hinge_axle | stand_arm_strip0 | 34 | [6.0, 8.0, 6.0] | 6.00 |
-| hinge_axle | stand_arm_strip1 | 34 | [6.0, 8.0, 6.0] | 6.00 |
-| stand_swivel_stator | stand_swivel_stop_r | 32 | [10.0, 10.0, 6.0] | 6.00 |
-| stand_swivel_stator | stand_swivel_stop_l | 32 | [10.0, 10.0, 6.0] | 6.00 |
-| stand_arm_strip0 | stand_arm_boss0 | 32 | [6.0, 8.0, 11.0] | 6.00 |
-| stand_arm_strip1 | stand_arm_boss1 | 32 | [6.0, 8.0, 11.0] | 6.00 |
-| stand_swivel_rotor | stand_swivel_stop_tab | 24 | [10.0, 8.0, 6.0] | 6.00 |
+| stand_neck_shroud | stand_arm0 | 10 | [6.0, 65.278, 38.0] | 6.00 |
+| stand_neck_shroud | stand_neck_tie | 10 | [112.0, 6.0, 20.0] | 6.00 |
+| stand_neck_shroud | stand_arm1 | 10 | [6.0, 65.278, 38.0] | 6.00 |
 | cover_filter | latch_cam5 | 40 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam2 | 38 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam4 | 38 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam0 | 16 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam1 | 14 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam3 | 14 | [8.0, 8.0, 5.799] | 5.80 |
-| hinge_axle | hinge_tail_lever1 | 60 | [5.0, 12.0, 6.0] | 5.00 |
-| hinge_axle | hinge_tail_lever0 | 58 | [5.0, 12.0, 6.0] | 5.00 |
 | slab | hinge_bolt0 | 16 | [6.0, 5.0, 6.0] | 5.00 |
 | slab | hinge_bolt1 | 16 | [6.0, 5.0, 6.0] | 5.00 |
 | slab | hinge_bolt2 | 16 | [6.0, 5.0, 6.0] | 5.00 |
@@ -85,9 +56,43 @@
 | slab | hinge_doubler | 8 | [144.0, 4.0, 22.0] | 4.00 |
 | pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
-| vrm_shroud | pump_spring0 | 26 | [7.7, 3.326, 7.7] | 3.33 |
-| vrm_shroud | pump_spring1 | 26 | [7.7, 3.326, 7.7] | 3.33 |
 | gasket | cover_filter | 338 | [589.599, 3.0, 370.899] | 3.00 |
 | hinge_axle | hinge_friction0_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | hinge_axle | hinge_friction1_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | cover_back | ac_inlet_flange | 46 | [36.0, 28.0, 3.0] | 3.00 |
+| hinge_backing_plate | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_backing_plate | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_backing_plate | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_backing_plate | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head0 | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head1 | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head2 | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| hinge_bolt_head3 | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| magnet6 | cover_filter | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| magnet7 | cover_filter | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| magnet8 | cover_filter | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| cover_filter | magnet0 | 25 | [8.0, 3.0, 6.799] | 3.00 |
+| cover_filter | magnet1 | 25 | [8.0, 3.0, 6.799] | 3.00 |
+| cover_filter | magnet2 | 25 | [8.0, 3.0, 6.799] | 3.00 |
+| cover_filter | magnet5 | 25 | [8.0, 3.0, 6.799] | 3.00 |
+| cover_filter | magnet9 | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| cover_filter | magnet10 | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| cover_filter | magnet11 | 25 | [6.799, 3.0, 8.0] | 3.00 |
+| cap2 | socket | 22 | [3.0, 4.0, 6.4] | 3.00 |
+| cover_filter | ac_inlet_flange | 17 | [36.0, 28.0, 3.0] | 3.00 |
+| io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
+| ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
+| am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
+| gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| slab | hinge_backing_plate | 8 | [140.0, 3.0, 22.0] | 3.00 |
+| spring_seat_bot0 | cam_guide_rod0_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| spring_seat_bot1 | cam_guide_rod1_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
+| cpu_ihs | cap4 | 40 | [6.4, 2.6, 6.4] | 2.60 |
+| cpu_ihs | cap5 | 40 | [6.4, 2.6, 6.4] | 2.60 |
+| cap3 | cpu_ihs | 30 | [2.6, 2.6, 6.4] | 2.60 |
+| gasket | latch_cam0 | 20 | [8.0, 2.6, 6.8] | 2.60 |
+| gasket | latch_cam5 | 20 | [8.0, 2.6, 6.8] | 2.60 |
+| gasket | latch_cam1 | 18 | [8.0, 2.6, 6.8] | 2.60 |

@@ -17768,6 +17768,102 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "未修正(親が EST-001〜027 を登録)"
+  },
+  {
+   "id": "INTF-02",
+   "title": "実形状干渉の要対処(2026-11-07時点 308対)を解消: ケーブル端末/コネクタ嵌合・外皮・ラッチ×フィルタ・ポンプねじ×VRM等",
+   "description": "tools/interference_report.py の remaining を0にする。深さ順に修正し、意図した一体/嵌合はALLOWに理由つきで移す(理由が弱いものは台帳化)。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:00Z",
+     "triaged",
+     "実メッシュ干渉検査(INTF-01)の結果から登録"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "docs/interference-report.md",
+    "model/interference_report.json"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "docs/interference-report.md の上位から順に build_imac_pc_v8.py/hardware_v8.py を修正→--check-interference→再生成"
+  },
+  {
+   "id": "INTF-03",
+   "title": "ボア(穴)・軸受座など嵌合部の未モデル化(ヒンジ軸Ø12/ローラピン/ストッパ爪座面 等)を実形状化",
+   "description": "現在は軸が相手部品の中実部と重なって表現されている。穴(ボア)をブーリアンで開け、軸との嵌合クリアランス(fits.json)を反映する。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:00Z",
+     "triaged",
+     "実メッシュ干渉検査(INTF-01)の結果から登録"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "docs/interference-report.md",
+    "model/interference_report.json"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "hardware_v8.py の各部品にボア/座面を追加→ALLOW削除→再検査"
+  },
+  {
+   "id": "INTF-04",
+   "title": "ラッチ(latch_cam)/フック(hook)がドーム内側メッシュフィルタ(cover_filter)とガスケットを貫通: ポケット/逃げの設計",
+   "description": "フィルタ・ガスケットとラッチ/フック/磁石の重なり(深さ約6mm)。実物ではフィルタとガスケットに切欠きが要る。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:00Z",
+     "triaged",
+     "実メッシュ干渉検査(INTF-01)の結果から登録"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "docs/interference-report.md",
+    "model/interference_report.json"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "フィルタ/ガスケットに切欠きを入れる、またはラッチ位置を内側へ移す(設計判断→spec)"
   }
  ]
 }

@@ -33,9 +33,9 @@
   "base_kg": 2.2,
   "shroud": {
    "_doc": "v11(思想適合): 隠された機構(P4)/一つの塊(P2)のため、首振り軸受・PE編組・ネック機構を覆う同色アルマイトの外皮。skirt=足に固定の円筒(首振り軸受を隠す), neck=ネックと一緒に回る角丸の外皮(隙間0.5mm)。形状のみ(CAD未登録=台帳 SHAPE-01)",
-   "skirt_r_mm": 97.0,
+   "skirt_r_mm": 99.0,
    "skirt_gap_mm": 0.5,
-   "neck_margin_mm": 1.5,
+   "neck_margin_mm": 4.5,
    "edge_r_mm": 9.0,
    "foot_edge_r_mm": 5.0
   }

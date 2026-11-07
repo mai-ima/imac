@@ -69,6 +69,7 @@
 | hinge-design.md | v003 | current | 2026-11-06 | 9ff6031 | hinge-design/hinge-design.v003__2026-11-06_9ff6031.md |
 | hinge-design.md | v004 | current | 2026-11-06 | 7ed5c4c | hinge-design/hinge-design.v004__2026-11-06_7ed5c4c.md |
 | hinge-design.md | v005 | current | 2026-11-06 | 4482281 | hinge-design/hinge-design.v005__2026-11-06_4482281.md |
+| interference-report.md | v001 | current | 2026-11-07 | 44044f0 | interference-report/interference-report.v001__2026-11-07_44044f0.md |
 | joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
 | joint-analysis.md | v002 | current | 2026-11-05 | fcba5fe | joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md |
 | joint-analysis.md | v003 | current | 2026-11-05 | 71b7afb | joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md |

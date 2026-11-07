@@ -604,6 +604,15 @@
    "file": "hinge-design/hinge-design.v005__2026-11-06_4482281.md"
   },
   {
+   "src": "docs/interference-report.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "44044f0",
+   "sha256": "6f651174051e342b68307039b9597dc41d81ad371c9526702e358700297f885c",
+   "file": "interference-report/interference-report.v001__2026-11-07_44044f0.md"
+  },
+  {
    "src": "docs/joint-analysis.md",
    "version": 1,
    "gen": "current",

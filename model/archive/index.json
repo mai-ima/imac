@@ -514,6 +514,15 @@
    "file": "hardware_list/hardware_list.v013__2026-11-06_36dff8c.json"
   },
   {
+   "src": "model/interference_report.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "44044f0",
+   "sha256": "6e14ca565dde801b448ea13ef077f45236ec988b840d6455a7bc803bdc4dbc1b",
+   "file": "interference_report/interference_report.v001__2026-11-07_44044f0.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",
@@ -1034,6 +1043,15 @@
    "commit": "3089847",
    "sha256": "c048ea2f6514eceebe96183edb8bbf6439d620ca49fc44d490ed8bb36b541cb7",
    "file": "spec/spec.v029__2026-11-07_3089847.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 30,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "dec2e5c",
+   "sha256": "3a259b4eb3c8b6d9cec0625f8bf6a5ac6f30664d261b7d28f7ba7e61d6bc6397",
+   "file": "spec/spec.v030__2026-11-07_dec2e5c.json"
   },
   {
    "src": "model/x870i_layout.json",

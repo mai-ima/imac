@@ -10,6 +10,11 @@ ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^psu_grille_ring\d+$', r'^psu_grille_(ring\d+|spokes)$', 'グリルのリングとスポークは一体品'),
  (r'^ssd_body$', r'^ssd_slit\d+$', 'スリット印刷(厚み0.08mmの面)'),
  (r'^psu_body$', r'^psu_socket\d+$', 'モジュラーソケットは筐体前面の開口に嵌合'),
+ (r'^pump_(cap_lip|cap_top|housing_body|elbow|swivel_\d|fitting_\d)$', r'^pump_(cap_lip|cap_top|housing_body|elbow|swivel_\d|fitting_\d)$', 'ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)'),
+ (r'^hinge_axle$', r'^(hinge_friction\d|stand_arm_boss\d|stand_arm_strip\d|hinge_tail_lever\d)$', '【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される'),
+ (r'^cam_roller_pin\d$', r'^cam_roller\d$', 'ローラはピンに回転嵌合(ボア未モデル=INTF-03)'),
+ (r'^stand_arm_strip\d$', r'^stand_arm_boss\d$', '側板のストリップとボスは一体品を別基本形で表現'),
+ (r'^stand_swivel_(stator|rotor)$', r'^stand_swivel_stop_(l|r|tab)$', 'ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)'),
  (r'^clip_pad\d+$', r'^clip_post\d+$', 'クリップのパッドとポストは一体品'),
 ]
 def depth(p): return min(p['aabb_overlap_mm'])

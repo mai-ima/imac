@@ -390,7 +390,7 @@ def cutbox(name, x0, y0, z0, w, h, d):
     c = ibox(name, w, h, d, x0, y0, z0, None); c.hide_render = True; BODY_OBJS.append(c); return c
 ax_, ay_, az_ = lp('ac_inlet')
 WIN = S['windows']; c_io = cutbox('cover_io_cutter', bx + 12, WIN['io_y0'], 2, 120, (by - 18 + 22) - WIN['io_y0'], 94)      # I/O窓は縁(y<0)まで連続した切り欠き
-c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 26, 94)
+c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 46, 94)      # 本体(高さ26)+フランジを越える高さまで開口
 c_gpu = cutbox('cover_gpu_cutter', gx + 2, WIN['gpu_y0'], 2, 124, (gy - 4) - WIN['gpu_y0'], 94)      # GPU出力(HDMI+DP×3)のプラグ空間まで縁から連続して開ける
 mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
@@ -440,7 +440,7 @@ _cl = 11.0      # ネックと一緒に回る円筒カラー(ロータ上面・P
 hollow(tube('stand_neck_collar', SH['skirt_r_mm'], _cl, 0, SY_NECK + _cl / 2, ZC, M['stand']))
 _m = SH['neck_margin_mm']
 _sh = box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
-_bm = bmesh.new(); _bm.from_mesh(_sh.data); bmesh.ops.delete(_bm, geom=[f_ for f_ in _bm.faces if f_.normal.z < -0.9], context='FACES_ONLY'); _bm.to_mesh(_sh.data); _bm.free(); hollow(_sh)      # 下面を開いた薄肉箱(首振りに合わせて回転)
+_bm = bmesh.new(); _bm.from_mesh(_sh.data); bmesh.ops.delete(_bm, geom=[f_ for f_ in _bm.faces if abs(f_.normal.z) > 0.9], context='FACES_ONLY'); _bm.to_mesh(_sh.data); _bm.free(); hollow(_sh)      # 上下を開いた薄肉の4面壁(上端は頭部のヒンジ機構が出入りする。首振りに合わせて回転)
 for _n in ('stand_neck_shroud', 'stand_foot'): bpy.data.objects[_n].modifiers['bevel'].segments = max(6, int(round(6 * POLY)))      # 大きな面取りは滑らかな曲面に
 ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); [BODY_OBJS.remove(bpy.data.objects[n_]) for n_ in ('stand_arm1', 'stand_arm_strip0', 'stand_arm_strip1', 'stand_arm_boss0', 'stand_arm_boss1') if bpy.data.objects[n_] in BODY_OBJS]
 
@@ -506,7 +506,7 @@ port('io_usb2_3', 83.5, 11.6, 14.5, 7, usb2_in); port('io_usb4_c2', 83.5, 2.7, 9
 port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 14.5, 7, usb_red); port('io_usbc_10g', 101.5, 3.0, 9, 3.6)
 for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
-ibox('vrm_shroud', 98, 36, 14, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
+_vs = ibox('vrm_shroud', 98, 36, 14, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
 ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
@@ -578,11 +578,15 @@ for k_, sy_ in enumerate(PJ['stub_y']):      # ホース口: 上面から垂直�
     pcyl(f'pump_swivel_{k_}', PJ['nut']['d'], PJ['nut']['z'], M['alublack'], PJ['stub_x'], sy_, 24); pcyl(f'pump_fitting_{k_}', PJ['stub']['d'], PJ['stub']['z'], M['alublack'], PJ['stub_x'], sy_, 24)
 for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):            # AM5取付穴 54×90mm(AM4互換パターン, Noctua等の公開資料)。長辺(90)はポンプのホース出口方向と直交(ARCTIC 2D図面 Bottom View)。バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
     z_top_, z_bot_ = cl[2] + 14, bz - 1
-    icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)
+    icyl(f'pump_screw{k_}', 2.0, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)      # M4軸Ø4(ばねの内径Ø5.5の内側を通る)
+    icyl(f'pump_screw_head{k_}', 3.5, 2.0, 'z', pcx + dx_, pcy + dy_, z_top_ + 1.0, M['steel'], 16)      # 頭Ø7
     coil(f'pump_spring{k_}', 3.3, 1.1, 8, 4, (X0 + pcx + dx_, Y0 + pcy + dy_), Z0 - (cl[2] + 4) - 8, M['steel'], axis='z', ends=.5, per_turn=16, seg=6)      # 取付ばね(線径1.1×平均径6.6×有効4巻=典型値, ARCTIC寸法はUNVERIFIED)
+for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):      # VRMヒートシンクのポンプ取付ねじ逃げ(Ø9)
+    _c = cyl(f'vrm_notch{k_}', 4.5, 40, 'z', X0 + pcx + dx_, Y0 + pcy + dy_, Z0 - (Z1 + 7), None, 24, body=False); _c.hide_render = True; BODY_OBJS.append(_c)
+    _m = _vs.modifiers.new(f'screw_notch{k_}', 'BOOLEAN'); _m.object = _c; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
-ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
+ibox('rad_core', 120, 253, 38, rx_, ry_ + 12, rz_, M['rad_black'], .8)      # フィン部=全長277-タンク12×2
 _cd = [c for c in json.load(open(os.path.join(ROOT, 'model', 'layout.json'))).get('candidates', []) if c['id'] == 'rad_duct'][0]; dx_, dy_, dz_ = _cd['pos']; DW_, DL_, DH_ = _cd['size']           # R10E-001: 吸気分離ダクト(板金t1.0 四方壁)。上端はドーム内面へ(ガスケット未設計)
 for nm_, (bx, by, bw, bl) in ({} if not A.with_duct else {'a': (dx_, dy_, 1.0, DL_), 'b': (dx_ + DW_ - 1.0, dy_, 1.0, DL_), 'c': (dx_, dy_, DW_, 1.0), 'd': (dx_, dy_ + DL_ - 1.0, DW_, 1.0)}).items(): ibox('rad_duct_' + nm_, bw, bl, DH_, bx, by, dz_, M['alublack'], .3)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
@@ -636,6 +640,7 @@ ibox('gpu_trim', GW, 1.6, 13.1, gx, gy + GL / 2, gz + 27, M['silver_trim'])     
 # GPU刻印: PNY品の刻印は未確認(U46)のため描画しない(推測の作り込みを避ける)
 ibox('gpu_bracket', GW, 1.5, GT + 2, gx, gy - 1.5, gz - 1, M['steel'], .3)              # 出力ブラケット(下端)
 for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))): ibox(f'gpu_port{k}', w_, 3, 6.5, gx + 20 + k * 28, gy - 3, gz + 7, M['dark'], .3)
+_cn = cutbox('gpu_conn_notch', gx + GW - 41, gy + GL - 23, gz + 26, 24, 11, 16); _mn = shr.modifiers.new('conn_notch', 'BOOLEAN'); _mn.object = _cn; _mn.operation = 'DIFFERENCE'; _mn.solver = 'EXACT'      # 12V-2x6がシュラウドの切欠きから出る
 ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4)       # 12V-2x6コネクタ(カード上面の端, 位置は想定)
 
 # ===== 電源: Corsair SF1000 (SFX 125x63.5x100)。ファン面を上(ドーム側)、モジュラー端子面を基板側 =====
