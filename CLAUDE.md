@@ -19,3 +19,4 @@
 - **commit/push は回数を減らす**(まとまった作業単位ごとに1回。WIP・途中経過の細かいコミットはしない)。新規ファイルを追加したら**コミット前に** `python3 tools/audit_control_init.py` を実行して file_coverage に登録する(未登録だと CI の validate_state が FAIL する)。
 - **再発防止(CI失敗の事前検出)**: 作業環境では最初に `bash tools/install_hooks.sh`(tools/githooks の pre-commit/pre-push を有効化)。pre-commit が file_coverage 自動登録・旧値検査(stale_check)・台帳検査(validate_state)を、pre-push が CI と同じ run_gates+unittest を実行し、FAIL なら止める。サブエージェント成果物も同じ検査を通る。
 - **URLの書き方**: ユーザー向けの返答では URL を必ず**単独の行**に書き、直後に日本語・記号(**や括弧)を続けない(続けると後続の文字までリンクに含まれる)。
+- **形状は「引き伸ばさず専用に設計」**: 背面パネル(ドーム)の形・穴・開口を変えるときは、既存メッシュの拡大縮小・平面投影で伸ばさない。穴は面の法線方向に、面に沿った等間隔で配置する(perf_cutter)。ポート開口はコネクタごとの角丸トンネル(port_tunnels)。断面を変える場合は専用に再設計し、`dome_in` を使う全ツール(fitcheck/配置図/質量)を同時に整合させる(台帳 SHAPE-07/08)。

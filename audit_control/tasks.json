@@ -21826,19 +21826,28 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:16:19Z",
      "triaged",
      "R12取込(R12_model_D_custom.md)"
+    ],
+    [
+     "2026-11-07T13:44:11Z",
+     "in_review",
+     "専用設計で修正"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_D_custom.md"
+    "audit_control/reports/R12_model_D_custom.md",
+    "blender/build_imac_pc_v8.py: perf_cutter(法線方向・弧長等間隔)/ドーム断面32分割",
+    "描画確認 scratchpad/r/perf_new.png"
    ],
-   "verification": [],
+   "verification": [
+    "傾斜部も均一な丸穴であることを描画で目視(傾斜部6,950穴+平坦部8,272穴)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
@@ -21857,19 +21866,28 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:16:19Z",
      "triaged",
      "R12取込(R12_model_D_custom.md)"
+    ],
+    [
+     "2026-11-07T13:44:11Z",
+     "in_review",
+     "専用設計で修正"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_D_custom.md"
+    "audit_control/reports/R12_model_D_custom.md",
+    "blender/build_imac_pc_v8.py: perf_cutter(法線方向・弧長等間隔)/ドーム断面32分割",
+    "描画確認 scratchpad/r/perf_new.png"
    ],
-   "verification": [],
+   "verification": [
+    "傾斜部も均一な丸穴であることを描画で目視(傾斜部6,950穴+平坦部8,272穴)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
@@ -22390,6 +22408,68 @@
      "2026-11-07T13:26:22Z",
      "triaged",
      "公開ビューアのスクリーンショットで確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "stand_neck_collar の上端に肉厚2mmの環状天板を追加(ばね座より下)→GLB再書き出し"
+  },
+  {
+   "id": "SHAPE-07",
+   "title": "形状は「引き伸ばさず専用に設計」(背面ドームの穿孔・ポート開口): 穴は法線方向・面に沿った等間隔、ポート開口はコネクタ別の角丸トンネル",
+   "description": "ユーザー指示: 背面パネルの形などは引き伸ばさない。変えるなら専用に再設計。アダプタ用の穴が引き伸ばされている。実装: perf_cutter(傾斜部=弧長等間隔リング+法線向き)、port_tunnels(I/O列・AC・GPU4ポートを個別の角丸トンネル)。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T13:44:11Z",
+     "in_review",
+     "ユーザー指示(2026-11-07 23時台 JST)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "blender/build_imac_pc_v8.py",
+    "scratchpad/r/perf_new.png",
+    "scratchpad/r/bottom2.png"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "stand_neck_collar の上端に肉厚2mmの環状天板を追加(ばね座より下)→GLB再書き出し"
+  },
+  {
+   "id": "SHAPE-08",
+   "title": "ドーム背面の稜線・縁の形状そのもの(CRT状)を専用に再設計(引き伸ばしでなく断面プロファイルの設計): 中央の厚み190mm前提での形",
+   "description": "SHAPE-04の再定義。縁の傾斜が最大約65°と急で、箱状に見える。断面を専用に設計(曲率連続・縁の丸み)し、内寸(fitcheck/dome_in)を全ツールで単一関数化して整合させる。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:44:11Z",
+     "triaged",
+     "ユーザー指示(2026-11-07 23時台 JST)"
     ]
    ],
    "acceptance_criteria": "",

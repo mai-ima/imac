@@ -309,7 +309,7 @@ def dome_shell(name='cover_back', mat=None, dshift=0.0, ushift=0.0, solid=True):
     cx, cy = DOME_X0 + DOME_W / 2, DOME_Y0 + DOME_H / 2
     a0, b0, r0 = DOME_W / 2 - ushift, DOME_H / 2 - ushift, DM['corner_r'] - ushift
     me = bpy.data.meshes.new(name); bm = bmesh.new(); rings = []; uvd = {}
-    insets = [0, 0] + [DM['run'] * (k / 12) for k in range(1, 13)]
+    insets = [0, 0] + [DM['run'] * (k / 32) for k in range(1, 33)]      # 断面を32分割(旧12: 折れ線が粗い=MDD-024)
     for i, ins in enumerate(insets):
         dep = 0 if i == 0 else max(d_inner(ins) + WALL + dshift, 0.5)
         rr = max(r0 - ins, 6)      # 内側へオフセットした角丸矩形(角R=R0-inset)
@@ -378,20 +378,80 @@ def vent_cutter(name, zones, step=7.0, hr=2.1, margin=22):
             y_ += step * .87; row += 1
     me = bpy.data.meshes.new(name); bmc.to_mesh(me); bmc.free()
     ob = bpy.data.objects.new(name, me); ob.hide_render = True; link(ob); return ob
+def perf_cutter(name, hr=1.2, pitch=4.0, ins_start=None, L=7.0):
+    """背面ドームの穿孔カッター(専用設計): 穴は曲面の**法線方向**に開け、面に沿った**等間隔**(ピッチ4.0)で配置する。
+    平面へ投影して垂直に開ける方式(穴が傾斜で長穴に伸びる)は採らない。傾斜部=リング状に面の弧長で等間隔、平坦部=千鳥格子。"""
+    ins_start = ins_start if ins_start is not None else 36 + WALL; run = DM['run']; K = DOME_DEPTH - WALL - DM['edge_inner_depth']
+    bmc = bmesh.new(); cx, cy = DOME_X0 + DOME_W / 2, DOME_Y0 + DOME_H / 2; a0, b0, r0 = DOME_W / 2, DOME_H / 2, DM['corner_r']; n_holes = [0, 0]
+    def wprime(ins): tt = max(0.0, min(1.0, ins / run)); return K * 6 * tt * (1 - tt) / run      # d(深さ)/d(縁からの距離)
+    def wdepth(ins): return d_inner(ins) + WALL
+    def ring(a, b, r, step, phase):      # 角丸矩形の周を弧長で等間隔に標本化: [(x,y,外向き単位法線ux,uy)]
+        sx, sy = a - r, b - r; per = 2 * (2 * sx) + 2 * (2 * sy) + 2 * math.pi * r; n = max(8, int(per / step)); ds = per / n
+        segs = [(2 * sx, 'b'), (math.pi * r / 2, 'a'), (2 * sy, 'r'), (math.pi * r / 2, 'a'), (2 * sx, 't'), (math.pi * r / 2, 'a'), (2 * sy, 'l'), (math.pi * r / 2, 'a')]
+        # 弧は「角の中心+半径×(cos,sin)」で扱う(直線と交互に並ぶ順序: 下辺→右下弧→右辺→右上弧→上辺→左上弧→左辺→左下弧)
+        out = []; accs = []; acc = 0.0
+        for ln, kind in segs: accs.append((acc, ln, kind)); acc += ln
+        centers = {1: (sx, -sy, -math.pi / 2), 3: (sx, sy, 0.0), 5: (-sx, sy, math.pi / 2), 7: (-sx, -sy, math.pi)}
+        for i in range(n):
+            s = (i + phase) * ds % per
+            for idx, (a_, ln, kind) in enumerate(accs):
+                if s < a_ + ln or idx == len(accs) - 1:
+                    u = (s - a_) / max(ln, 1e-9)
+                    if kind == 'b': out.append((-sx + 2 * sx * u, -b, 0.0, -1.0))
+                    elif kind == 'r': out.append((a, -sy + 2 * sy * u, 1.0, 0.0))
+                    elif kind == 't': out.append((sx - 2 * sx * u, b, 0.0, 1.0))
+                    elif kind == 'l': out.append((-a, sy - 2 * sy * u, -1.0, 0.0))
+                    else:
+                        ccx, ccy, ang0 = centers[idx]; ang = ang0 + u * math.pi / 2; out.append((ccx + r * math.cos(ang), ccy + r * math.sin(ang), math.cos(ang), math.sin(ang)))
+                    break
+        return out
+    def add(px, py, w, nx, ny, nz):
+        ax = Vector((nx, -nz, ny)); ax.normalize(); rot = Vector((0, 0, 1)).rotation_difference(ax).to_matrix().to_4x4()
+        bmesh.ops.create_cone(bmc, cap_ends=True, segments=8, radius1=hr, radius2=hr, depth=L, matrix=Matrix.Translation(V(cx + px, cy + py, -SLAB - w)) @ rot)
+    # (1) 傾斜部: 弧長で等間隔のリング(法線方向に開口)
+    ins = ins_start; k = 0; step_ring = pitch * 0.866
+    while ins < run - 0.8:
+        wp = wprime(ins); r = max(r0 - ins, 6.0)
+        for (x, y, ux, uy) in ring(a0 - ins, b0 - ins, r, pitch, 0.5 * (k % 2)):
+            nrm = math.sqrt(wp * wp + 1.0); add(x, y, wdepth(ins), wp * ux / nrm, wp * uy / nrm, -1.0 / nrm); n_holes[0] += 1
+        ins += step_ring / math.sqrt(1.0 + wp * wp); k += 1
+    # (2) 平坦部: 千鳥格子(面は水平=法線は背面方向)
+    x0 = run - WALL + pitch / 2; x1 = IW_ - x0; y0 = x0; y1 = IH_ - x0
+    row = 0; yy = y0
+    while yy <= y1:
+        xx = x0 + (pitch / 2 if row % 2 else 0)
+        while xx <= x1:
+            bmesh.ops.create_cone(bmc, cap_ends=True, segments=8, radius1=hr, radius2=hr, depth=L, matrix=Matrix.Translation(V(X0 + xx, Y0 + yy, -SLAB - wdepth(run))) @ Matrix.Rotation(math.pi / 2, 4, 'X')); n_holes[1] += 1; xx += pitch
+        yy += step_ring; row += 1
+    me = bpy.data.meshes.new(name); bmc.to_mesh(me); bmc.free(); ob = bpy.data.objects.new(name, me); ob.hide_render = True; link(ob); print('perf holes: slope', n_holes[0], 'flat', n_holes[1]); return ob
 LAY = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'model', 'layout.json')))['items']}
 def lp(k): return LAY[k]['pos']
 def ls(k): return LAY[k]['size']
 rx, ry, _ = lp('radiator'); gx, gy, gz = lp('gpu')
 if A.vent_mode == 'boolean':
-    vc = vent_cutter('cover_vents', [(36, 36, IW_ - 36, IH_ - 36)], step=A.vent_step, hr=A.vent_r, margin=36)
+    vc = perf_cutter('cover_vents', hr=A.vent_r, pitch=A.vent_step)
 # 下辺の傾斜面に開口(ポート引き込み): I/O / GPU出力 / ACインレット。各ポート高さに合わせた細いスロット(v7.1)
 bx, by, bz = lp('board')
 def cutbox(name, x0, y0, z0, w, h, d):
     c = ibox(name, w, h, d, x0, y0, z0, None); c.hide_render = True; BODY_OBJS.append(c); return c
 ax_, ay_, az_ = lp('ac_inlet')
-WIN = S['windows']; c_io = cutbox('cover_io_cutter', bx + 12, WIN['io_y0'], 2, 120, (by - 18 + 22) - WIN['io_y0'], 94)      # I/O窓は縁(y<0)まで連続した切り欠き
-c_ac = cutbox('cover_ac_cutter', ax_ - 2, ay_ - 16, 2, 32, 46, 94)      # 本体(高さ26)+フランジを越える高さまで開口
-c_gpu = cutbox('cover_gpu_cutter', gx + 2, WIN['gpu_y0'], 2, 124, (gy - 4) - WIN['gpu_y0'], 94)      # GPU出力(HDMI+DP×3)のプラグ空間まで縁から連続して開ける
+WIN = S['windows']
+def port_tunnels(name, rects, y0, y1, r=2.0):
+    """ポート開口の専用設計: コネクタ1つ(列)ごとに、外形+すき間の**角丸長方形**を、プラグの挿抜方向(設計y: 縁から基板側)へ押し出した「トンネル」を切り出す。
+    巨大な箱で切り欠いて面を引き伸ばさない。rects=[(x0,x1,z0,z1)](内部座標, zはスラブ背面から)。互いに重ならない前提(ブーリアンの多様体性)。"""
+    bmt = bmesh.new()
+    for (xa, xb, za, zb) in rects:
+        rr = min(r, (xb - xa) / 2 - .01, (zb - za) / 2 - .01); pts = rrect((xb - xa) / 2, (zb - za) / 2, rr, 6); xm, zm = (xa + xb) / 2, (za + zb) / 2
+        lo = [bmt.verts.new(V(X0 + xm + px, Y0 + y0, Z0 - (zm + pz))) for (px, pz) in pts]; hi = [bmt.verts.new(V(X0 + xm + px, Y0 + y1, Z0 - (zm + pz))) for (px, pz) in pts]
+        bmt.faces.new(lo[::-1]); bmt.faces.new(hi)
+        for q in range(len(pts)): q2 = (q + 1) % len(pts); bmt.faces.new((lo[q], lo[q2], hi[q2], hi[q]))
+    bmesh.ops.recalc_face_normals(bmt, faces=bmt.faces[:]); me = bpy.data.meshes.new(name); bmt.to_mesh(me); bmt.free()
+    ob = bpy.data.objects.new(name, me); ob.hide_render = True; link(ob); BODY_OBJS.append(ob); return ob
+_mg = 1.0      # 開口のすき間(外形+1.0mm)
+_io_cols = [(15.0, 34.0, -0.5, 27.0), (40.0, 55.0, 1.0, 22.0), (58.5, 73.5, 5.0, 20.5), (76.0, 91.0, 0.5, 15.5), (93.0, 110.0, 0.5, 30.0), (113.0, 122.0, 3.0, 32.0)]      # 列A〜E+SMA: ポート外形の包絡(p.26読み取り)
+c_io = port_tunnels('cover_io_cutter', [(bx + x0_ - _mg, bx + x1_ + _mg, bz + 1.6 + z0_ - _mg, bz + 1.6 + z1_ + _mg) for (x0_, x1_, z0_, z1_) in _io_cols], WIN['io_y0'] - 2, by - 1.0)
+c_ac = port_tunnels('cover_ac_cutter', [(ax_ - 2, ax_ + 30, az_ - 2, az_ + 22)], WIN['io_y0'] - 2, ay_ + 2)      # C13プラグ(30x22)の挿抜
+c_gpu = port_tunnels('cover_gpu_cutter', [(gx + 20 + k * 28 - _mg, gx + 20 + k * 28 + w_ + _mg, gz + 7 - _mg, gz + 13.5 + _mg) for k, w_ in enumerate((15, 16, 16, 16))], WIN['gpu_y0'] - 2, gy - 1.0)      # HDMI+DP×3: 1ポートずつ
 mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
     for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
