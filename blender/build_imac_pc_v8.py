@@ -17,7 +17,7 @@ ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
-ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
+ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='boolean'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
@@ -90,6 +90,29 @@ def cyl(name, r, length, axis, cx, cy, cz, mat, seg=48, bevel=0.0, body=True):
 
 # 内部座標(Three.js版と同じ: z は背面方向が正)
 def ibox(name, w, h, d, x, y, zl, mat, bevel=0.0, uv=False): return box(name, w, h, d, X0 + x, Y0 + y, Z0 - zl - d, mat, bevel, uv=uv)
+def coil(name, rm, d, L, n, c, y0, mat, axis='y', ends=1.0, per_turn=28, seg=8, body=True, hand=1):
+    """実形状のコイルばね(圧縮ばね)。rm=平均コイル半径, d=線径, L=全長, n=有効巻数, c=軸の中心(設計座標の他2軸), y0=下端(軸方向)。
+    両端は座巻き(ピッチ=線径, 研削端面) ends 巻 + 有効巻 n。axis: 'y'(上下)|'z'(奥行)|'x'。"""
+    nt = n + 2 * ends; pa = max((L - (2 * ends + 1) * d) / n, d)      # 有効部ピッチ
+    def h_of(u):      # u=0..nt 巻 -> 軸方向高さ
+        e0 = min(u, ends); mid = max(0.0, min(u - ends, n)); e1 = max(0.0, u - ends - n)
+        return d / 2 + e0 * d + mid * pa + e1 * d
+    N = int(nt * per_turn); me = bpy.data.meshes.new(name); bm = bmesh.new(); rings = []
+    def loc(a, h):
+        ca, sa = math.cos(a), math.sin(a)
+        return {'y': (c[0] + rm * ca, y0 + h, c[1] + rm * sa), 'z': (c[0] + rm * ca, c[1] + rm * sa, y0 + h), 'x': (y0 + h, c[0] + rm * ca, c[1] + rm * sa)}[axis]
+    pts = [loc(hand * 2 * math.pi * (i / per_turn), h_of(i / per_turn)) for i in range(N + 1)]
+    for i, p in enumerate(pts):
+        pa_, pb_ = pts[max(i - 1, 0)], pts[min(i + 1, N)]; T = Vector(pb_) - Vector(pa_); T.normalize()
+        ctr = {'y': (c[0], p[1], c[1]), 'z': (c[0], c[1], p[2]), 'x': (p[0], c[0], c[1])}[axis]
+        R = Vector(p) - Vector(ctr); R.normalize(); B = T.cross(R); B.normalize()
+        rings.append([bm.verts.new(V(*(Vector(p) + (d / 2) * (math.cos(2 * math.pi * k / seg) * R + math.sin(2 * math.pi * k / seg) * B)))) for k in range(seg)])
+    for i in range(N):
+        for k in range(seg): bm.faces.new((rings[i][k], rings[i][(k + 1) % seg], rings[i + 1][(k + 1) % seg], rings[i + 1][k]))
+    bm.faces.new(rings[0][::-1]); bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:]); bm.to_mesh(me); bm.free()
+    for p_ in me.polygons: p_.use_smooth = True
+    ob = bpy.data.objects.new(name, me); me.materials.append(mat); return link(ob, body)
 def icyl(name, r, length, axis, cx, cy, czl, mat, seg=48): return cyl(name, r, length, axis, X0 + cx, Y0 + cy, Z0 - czl, mat, seg)
 
 # ---------------- マテリアル ----------------
@@ -546,7 +569,7 @@ for k_, sy_ in enumerate(PJ['stub_y']):      # ホース口: 上面から垂直�
 for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):            # AM5取付穴 54×90mm(AM4互換パターン, Noctua等の公開資料)。長辺(90)はポンプのホース出口方向と直交(ARCTIC 2D図面 Bottom View)。バックプレート固定: ばね付きM4 x4(基板を貫通してバックプレートへ)
     z_top_, z_bot_ = cl[2] + 14, bz - 1
     icyl(f'pump_screw{k_}', 3.2, z_top_ - z_bot_, 'z', pcx + dx_, pcy + dy_, (z_top_ + z_bot_) / 2, M['steel'], 16)
-    icyl(f'pump_spring{k_}', 4.4, 8, 'z', pcx + dx_, pcy + dy_, cl[2] + 4 + 4, M['alu'], 16)
+    coil(f'pump_spring{k_}', 3.3, 1.1, 8, 4, (X0 + pcx + dx_, Y0 + pcy + dy_), Z0 - (cl[2] + 4) - 8, M['steel'], axis='z', ends=.5, per_turn=16, seg=6)      # 取付ばね(線径1.1×平均径6.6×有効4巻=典型値, ARCTIC寸法はUNVERIFIED)
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
@@ -671,6 +694,9 @@ if A.explode > 0:
     shift_group(['ac_inlet', 'cable_ac'], 260 * e); shift_group(['gpu', 'fan_gpu', 'cable_pcie8', 'txt_gpu', 'riser'], 210 * e); shift_group(['psu', 'fan_psu', 'cable_atx24', 'cable_eps', 'txt_sf', 'txt_plat'], 140 * e)
     shift_group(['ssd', 'txt_samsung', 'm2_screw'], 110 * e); shift_group(['ctrl_', 'cable_ctrl', 'cable_umb'], 80 * e)
     shift_group(['slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button'], -300 * e)      # 前面(ディスプレイ)は前方へ
+if A.open_stand:
+    for ob in COLL.objects:
+        if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover')): ob.hide_render = True
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
         if ob.name.startswith(('cover_back', 'cover_filter', 'gasket')): ob.hide_render = True

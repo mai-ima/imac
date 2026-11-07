@@ -110,7 +110,8 @@ for k, sx_ in enumerate((-1, 1)):
     yct = HY - RHO0 - RR - BCm['carrier_h_mm']
     hb(f'cam_carrier{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['carrier_h_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), yct, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)   # キャリア(ばね上座+ブッシュ)
     LS = BAL['lmax']; ysb = HY - BS + BCm['seat_t_mm']
-    cyl(f'spring_die{k}', BCm['spring_od_mm'] / 2, LS, 'y', xc_, ysb + LS / 2, ZC, M['spring'], 64, body=False)       # ダイスプリング(0°の取付長)
+    _n = 79000.0 * BCm['spring_wire_mm'] ** 4 / (8 * (BCm['spring_od_mm'] - BCm['spring_wire_mm']) ** 3 * BAL['k_spring'])      # 有効巻数 n = G d^4/(8 D^3 k)
+    coil(f'spring_die{k}', (BCm['spring_od_mm'] - BCm['spring_wire_mm']) / 2, BCm['spring_wire_mm'], LS, _n, (xc_, ZC), ysb, M['spring'], axis='y', ends=1.0, per_turn=28, seg=10, body=False)       # ダイスプリング実形状(0°の取付長)。座巻き各1巻
     hb(f'spring_seat_bot{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['seat_t_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), HY - BS, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)
     for zz_ in (-1, 1): cyl(f'cam_guide_rod{k}_{zz_}', BCm['guide_rod_d_mm'] / 2, yct + BCm['carrier_h_mm'] - (HY - BS), 'y', xc_, (yct + BCm['carrier_h_mm'] + HY - BS) / 2, ZC + zz_ * BCm['guide_rod_z_mm'], M['steel'], 24, body=False)   # 案内ロッド(基台に固定, キャリアが摺動)
 hw('ヒンジ', f"コイルばね OD{BCm['spring_od_mm']:g}×線径{BCm['spring_wire_mm']:g}(SWOSC-V想定, 1本 {BAL['F0_total']/2:.0f}N(0°)〜{BAL['F_spring_max']:.0f}N, k={BAL['k_spring']:g}N/mm, 自由長≧{BAL['free_length_min']:.0f}mm)+案内ロッドØ{BCm['guide_rod_d_mm']:g}×2+ローラ従動子", 2, 'U26/U51: 型番未確定 / D04')
