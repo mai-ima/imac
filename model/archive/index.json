@@ -991,6 +991,15 @@
    "file": "spec/spec.v028__2026-11-07_64a1afa.json"
   },
   {
+   "src": "model/spec.json",
+   "version": 29,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "c048ea2f6514eceebe96183edb8bbf6439d620ca49fc44d490ed8bb36b541cb7",
+   "file": "spec/spec.v029__2026-11-07_3089847.json"
+  },
+  {
    "src": "model/x870i_layout.json",
    "version": 1,
    "gen": "current",

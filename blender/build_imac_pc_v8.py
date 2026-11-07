@@ -385,7 +385,7 @@ def gasket():
 gasket()
 # スタンド(足+腕)。ヒンジ機構(ばね/摩擦ヒンジ/ブロック等)は後段の hardware で全部品を描画
 FT = 12.0; fw = S['stand']['foot_w']; HY = S['hinge']['axis_y']
-box('stand_foot', fw, FT, FOOT, -fw / 2, -DROP - FT, ZC - S['stand']['foot_back'], M['stand'], bevel=2.2, body=False)
+box('stand_foot', fw, FT, FOOT, -fw / 2, -DROP - FT, ZC - S['stand']['foot_back'], M['stand'], bevel=S['stand']['shroud']['foot_edge_r_mm'], body=False)
 BT = S['stand']['ballast_kg'] / (7.85e-6 * (fw - 24) * (FOOT - 24))      # 鋼板ballastの厚さ[mm]=質量から算出(spec.jsonが単一源)
 box('stand_ballast', fw - 24, BT, FOOT - 24, -(fw - 24) / 2, -DROP - FT + 3, ZC - S['stand']['foot_back'] + 12, M['steel'], body=False)   # 足内の鋼板ballast
 for sx_ in (-1, 1):
@@ -401,6 +401,11 @@ box('stand_neck_tie', 2 * NK['side_x'][0], NK['tie_y'][1] - NK['tie_y'][0], NK['
 for _k, (_zz0, _zz1) in enumerate((NK['back_cover_z'], NK['front_cover_z'])):      # 前後カバー(前は t6 の構造板: +40°ストッパの受け。後ろは指の進入防止の t2)
     _zc0, _zc1 = (ZC + _zz0, ZC + _zz1) if _zz1 > _zz0 else (ZC + _zz1, ZC + _zz0)
     box(f'stand_neck_cover{_k}', 120, NK['cover_top'] - SY_SIDE, _zz1 - _zz0, -60, SY_SIDE, ZC + _zz0, M['stand'], bevel=.6)
+SH = S['stand']['shroud']      # 思想適合(P2/P4): 首振り軸受・ネック機構を同色の外皮で隠す(機構は内部に残す)
+box('stand_skirt', 2 * SH['skirt_r_mm'], SY_NECK - SH['skirt_gap_mm'] + DROP, 2 * SH['skirt_r_mm'], -SH['skirt_r_mm'], -DROP, ZC - SH['skirt_r_mm'], M['stand'], bevel=SH['edge_r_mm'], body=False)
+_m = SH['neck_margin_mm']
+box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
+for _n in ('stand_skirt', 'stand_neck_shroud', 'stand_foot'): bpy.data.objects[_n].modifiers['bevel'].segments = max(6, int(round(6 * POLY)))      # 大きな面取りは滑らかな曲面に
 ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); [BODY_OBJS.remove(bpy.data.objects[n_]) for n_ in ('stand_arm1', 'stand_arm_strip0', 'stand_arm_strip1', 'stand_arm_boss0', 'stand_arm_boss1') if bpy.data.objects[n_] in BODY_OBJS]
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----
