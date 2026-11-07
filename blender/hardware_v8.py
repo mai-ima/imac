@@ -92,11 +92,19 @@ for k, xx in enumerate((IW_ / 2 - 20, IW_ / 2 + 20)): ibox(f'antenna{k}', 30, 1.
 ibox('am5_backplate', 70, 70, 3, bx + sx_ - 35, by + sy_ - 35, bz - 3, M['alublack'], .8); hw('冷却', 'AM5バックプレート+ばね付きM4×4(ポンプ固定)', 1, 'ARCTIC付属')
 # ---------- ヒンジ機構(全部品): ヒンジブロック/摩擦ヒンジ/ばね/カム/ストッパ/軸/Eクリップ/貫通ボルト+裏当て ----------
 hb = lambda name, w, h, d, x, y, z, mat, body=True, bev=.6: box(name, w, h, d, x, y, z, mat, bevel=bev, body=body)
+def thru_hole(target_names, tag, cx, cy, cz, axis, dia, length):
+    """貫通穴(クリアランス穴): 相手板にボルト/軸が通る穴を開ける(INTF-03)。穴径=ボルト径+クリアランス。カッターは非表示。"""
+    c_ = cyl(f'{tag}_hole', dia / 2, length, axis, cx, cy, cz, None, 16, body=False); c_.hide_render = True; BODY_OBJS.append(c_)
+    for _tn in target_names:
+        _to = bpy.data.objects.get(_tn)
+        if _to is None: continue
+        _m = _to.modifiers.new(f'{tag}_{_tn}', 'BOOLEAN'); _m.object = c_; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 hb('hinge_block_base', 150, 22, 2, -75, 0, -SLAB - 2, M['stand']); hb('hinge_cheek_l', 6, 22, 34, -75, 0, -SLAB - 34, M['stand']); hb('hinge_cheek_r', 6, 22, 34, 69, 0, -SLAB - 34, M['stand'])
 hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 36, M['stand'])
 hb('hinge_backing_plate', 140, 22, 3, -70, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 144, 22, 4, -72, 0, -SLAB + 5, M['alu'])     # 背板の前(チン空洞側): 裏当て鋼板140幅+補強板144幅(ボルト±62を覆う)
 for k, (bxx, byy) in enumerate(((-62, 5), (-62, 17), (62, 5), (62, 17))):
-    cyl(f'hinge_bolt{k}', 3.0, 14, 'z', bxx, byy, -SLAB - 2, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 3.5, M['sus'], 6)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通
+    cyl(f'hinge_bolt{k}', 3.0, 14, 'z', bxx, byy, -SLAB - 2, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 3.5, M['sus'], 6)
+    thru_hole(('hinge_block_base', 'hinge_backing_plate', 'hinge_doubler', 'slab'), f'hinge_bolt{k}', bxx, byy, -SLAB - 2, 'z', 6.6, 16)      # M6貫通ボルトのクリアランス穴Ø6.6(ブロック底板/裏当て/補強板/背板)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通
 hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼板)', 4, '6N·m+ネジロック'); hw('ヒンジ', 'SPCC裏当て板 t3 140×22 / A5052補強板 t4 144×22', 2, 'U29')
 cyl('hinge_axle', 6.0, 132, 'x', 0, HY, ZC, M['steel'], 48, body=False)
 for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)

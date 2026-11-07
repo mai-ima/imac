@@ -667,6 +667,15 @@
    "file": "interference_report/interference_report.v008__2026-11-07_ee5f6f2.json"
   },
   {
+   "src": "model/interference_report.json",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9b05d28",
+   "sha256": "7f306cbbf8ee204aa1f25991bced1718886bc04d5c34aadac5ddc7426d295e7b",
+   "file": "interference_report/interference_report.v009__2026-11-07_9b05d28.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",

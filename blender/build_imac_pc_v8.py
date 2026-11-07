@@ -17,7 +17,7 @@ ap.add_argument('--out', default=os.path.join(ROOT, 'render', 'blender_test.png'
 ap.add_argument('--res', default='1600x900'); ap.add_argument('--samples', type=int, default=64)
 ap.add_argument('--cut', action='store_true'); ap.add_argument('--tilt', type=float, default=0); ap.add_argument('--swivel', type=float, default=0)
 ap.add_argument('--flat', action='store_true', help='写実化パス(ベベル/粗さのムラ/ソフトボックス/床反射/被写界深度/AgX)を無効にする'); ap.add_argument('--explode', type=float, default=0); ap.add_argument('--phase', type=float, default=0.3)
-ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--only', default='', help='カンマ区切りの名前接頭辞に一致するオブジェクトだけを描画(部分確認用)'); ap.add_argument('--check-interference', default='', help='実メッシュ同士の交差(BVH)を検査しJSONへ書き出して終了(INTF-01)'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
+ap.add_argument('--open-stand', action='store_true', help='スタンド外皮(スカート/カラー/ネック外皮/カバー)を外して内部機構(ばね・カム等)を見せる'); ap.add_argument('--only', default='', help='カンマ区切りの名前接頭辞に一致するオブジェクトだけを描画(部分確認用)'); ap.add_argument('--check-interference', default='', help='実メッシュ同士の交差(BVH)を検査しJSONへ書き出して終了(INTF-01)'); ap.add_argument('--debug-keyhole', action='store_true', help='キーホール位置でトレイ板に穴が開いているかを数値で確認して終了'); ap.add_argument('--with-duct', action='store_true', help='未採用候補: 吸気分離ダクトを描画'); ap.add_argument('--poly', type=float, default=1.0, help='ポリゴン密度係数(円筒分割数・面取り分割を倍率で増やす。GLB容量に注意)'); ap.add_argument('--panel', type=int, default=S['panel_size']); ap.add_argument('--save-blend', default='')
 ap.add_argument('--vent-mode', default='boolean'); ap.add_argument('--vent-step', type=float, default=4.0); ap.add_argument('--vent-r', type=float, default=1.2); ap.add_argument('--export', default=''); ap.add_argument('--focus', default=''); ap.add_argument('--dist', type=float, default=500); ap.add_argument('--az', type=float, default=0); ap.add_argument('--el', type=float, default=20); ap.add_argument('--lens', type=float, default=70); ap.add_argument('--frames', type=int, default=0)
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
 A = ap.parse_args(argv)
@@ -547,9 +547,10 @@ _bm = bmesh.new()
 for (kx, ky) in KH:      # キーホール: 頭が通る丸穴 Ø10.2 + 上方向 12mm の細溝 W6.3(spec.fits.keyhole_slot_w。トレイを12mm下げて掛ける)
     bmesh.ops.create_cone(_bm, cap_ends=True, segments=48, radius1=5.1, radius2=5.1, depth=12, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky, Z0 - 4.0)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky + 6, Z0 - 4.0)) @ Matrix.Diagonal((S['fits']['keyhole_slot_w'], 12, 12, 1)))
+    bmesh.ops.create_cone(_bm, cap_ends=True, segments=32, radius1=S['fits']['keyhole_slot_w'] / 2, radius2=S['fits']['keyhole_slot_w'] / 2, depth=12, matrix=Matrix.Translation(V(X0 + kx, Y0 + ky + 12, Z0 - 4.0)) @ Matrix.Rotation(math.pi / 2, 4, 'X'))      # 溝の終端は半円(R=溝幅/2): 肩ねじ(R3.0)を受ける
 _me = bpy.data.meshes.new('tray_keyhole_cutter'); _bm.to_mesh(_me); _bm.free(); kh_cut = bpy.data.objects.new('tray_keyhole_cutter', _me); kh_cut.hide_render = True; link(kh_cut)
 for _o in (tray_obj, insul_obj):
-    _m = _o.modifiers.new('keyholes', 'BOOLEAN'); _m.object = kh_cut; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
+    _m = _o.modifiers.new('keyholes', 'BOOLEAN'); _m.object = kh_cut; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'; _m.use_self = True
 
 # ===== Mini-ITX 基板: ASUS ROG STRIX X870-I GAMING WIFI (170x170、レイアウトは公式マニュアル図の実測) =====
 BL = json.load(open(os.path.join(ROOT, 'model', 'x870i_layout.json')))
@@ -830,6 +831,19 @@ for k, r in enumerate(rotors):
         for f, ang in ((1, A.phase * 2), (A.frames + 1, A.phase * 2 + (math.pi * 2) * (1 if 'cpu' in r.name else 1.4))):
             r.rotation_euler[1] = ang + k * .6; r.keyframe_insert('rotation_euler', index=1, frame=f)
 
+if A.debug_keyhole:
+    from mathutils.bvhtree import BVHTree
+    dg_ = bpy.context.evaluated_depsgraph_get()
+    for nm_ in ('tray_plate', 'tray_insulation'):
+        ob_ = bpy.data.objects[nm_]; ev_ = ob_.evaluated_get(dg_); me_ = ev_.to_mesh(); me_.transform(ob_.matrix_world)
+        tr_ = BVHTree.FromPolygons([v.co.copy() for v in me_.vertices], [tuple(p.vertices) for p in me_.polygons], epsilon=1e-4)
+        for (kx_, ky_) in KH:
+            for lab_, dy_ in (('頭穴中心', 0.0), ('溝中央', 6.0), ('ピン位置', 12.0), ('溝の外(+20)', 20.0)):
+                px_, pz_ = X0 + kx_, Y0 + ky_ + dy_
+                hit_ = tr_.ray_cast(Vector((px_, 100.0, pz_)), Vector((0, -1, 0)))      # 設計+z(背面)側から前面方向へ
+                print('KHDBG', nm_, (kx_, ky_), lab_, 'hit_y=', None if hit_[0] is None else round(hit_[0].y, 2))
+        ev_.to_mesh_clear()
+    sys.exit(0)
 # ---------------- 実形状の干渉検査(INTF-01): 評価済みメッシュ(モディファイア適用後)のBVH交差 ----------------
 if A.check_interference:
     from mathutils.bvhtree import BVHTree

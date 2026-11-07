@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T14:48Z",
- "objects": 642,
- "pairs_total": 578,
- "touch_only": 319,
+ "generated": "2026-11-07T18:01Z",
+ "objects": 648,
+ "pairs_total": 609,
+ "touch_only": 358,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
@@ -15,7 +15,7 @@
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "モジュラーソケットは筐体前面の開口に嵌合": 4
  },
- "remaining": 170,
+ "remaining": 162,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -35,46 +35,6 @@
     28.0,
     20.0,
     26.0
-   ]
-  },
-  {
-   "a": "slab",
-   "b": "hinge_bolt0",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    6.0,
-    5.0,
-    6.0
-   ]
-  },
-  {
-   "a": "slab",
-   "b": "hinge_bolt1",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    6.0,
-    5.0,
-    6.0
-   ]
-  },
-  {
-   "a": "slab",
-   "b": "hinge_bolt2",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    6.0,
-    5.0,
-    6.0
-   ]
-  },
-  {
-   "a": "slab",
-   "b": "hinge_bolt3",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    6.0,
-    5.0,
-    6.0
    ]
   },
   {
@@ -220,7 +180,7 @@
   {
    "a": "slab",
    "b": "hinge_doubler",
-   "tri_pairs": 8,
+   "tri_pairs": 13,
    "aabb_overlap_mm": [
     144.0,
     4.0,
@@ -298,46 +258,6 @@
    ]
   },
   {
-   "a": "hinge_backing_plate",
-   "b": "hinge_bolt0",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    3.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_backing_plate",
-   "b": "hinge_bolt1",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    3.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_backing_plate",
-   "b": "hinge_bolt2",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    3.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_backing_plate",
-   "b": "hinge_bolt3",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    3.0,
-    6.0
-   ]
-  },
-  {
    "a": "hinge_bolt_head0",
    "b": "hinge_bolt0",
    "tri_pairs": 32,
@@ -375,6 +295,16 @@
     6.0,
     3.0,
     6.0
+   ]
+  },
+  {
+   "a": "slab",
+   "b": "hinge_backing_plate",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    140.0,
+    3.0,
+    22.0
    ]
   },
   {
@@ -425,16 +355,6 @@
     4.0,
     3.0,
     4.0
-   ]
-  },
-  {
-   "a": "slab",
-   "b": "hinge_backing_plate",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    140.0,
-    3.0,
-    22.0
    ]
   },
   {
@@ -669,48 +589,8 @@
   },
   {
    "a": "hinge_block_base",
-   "b": "hinge_bolt0",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_block_base",
-   "b": "hinge_bolt1",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_block_base",
-   "b": "hinge_bolt2",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_block_base",
-   "b": "hinge_bolt3",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hinge_block_base",
    "b": "hinge_cheek_l",
-   "tri_pairs": 29,
+   "tri_pairs": 31,
    "aabb_overlap_mm": [
     6.0,
     2.0,
@@ -720,7 +600,7 @@
   {
    "a": "hinge_block_base",
    "b": "hinge_cheek_r",
-   "tri_pairs": 26,
+   "tri_pairs": 27,
    "aabb_overlap_mm": [
     6.0,
     2.0,
@@ -1028,6 +908,46 @@
    ]
   },
   {
+   "a": "hang_bushing0b",
+   "b": "hang_pin0_shoulder",
+   "tri_pairs": 48,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hang_bushing2b",
+   "b": "hang_pin2_shoulder",
+   "tri_pairs": 48,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hang_bushing1b",
+   "b": "hang_pin1_shoulder",
+   "tri_pairs": 48,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
+   "a": "hang_bushing3b",
+   "b": "hang_pin3_shoulder",
+   "tri_pairs": 48,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    6.0
+   ]
+  },
+  {
    "a": "vrm_fan_ring",
    "b": "pump_screw_head1",
    "tri_pairs": 32,
@@ -1038,23 +958,43 @@
    ]
   },
   {
-   "a": "hang_bushing0b",
+   "a": "hang_bushing0c",
    "b": "hang_pin0_shoulder",
-   "tri_pairs": 24,
+   "tri_pairs": 26,
    "aabb_overlap_mm": [
     6.0,
     1.0,
-    6.0
+    3.0
    ]
   },
   {
-   "a": "hang_bushing2b",
+   "a": "hang_bushing2c",
    "b": "hang_pin2_shoulder",
-   "tri_pairs": 24,
+   "tri_pairs": 26,
    "aabb_overlap_mm": [
     6.0,
     1.0,
-    6.0
+    3.0
+   ]
+  },
+  {
+   "a": "hang_bushing1c",
+   "b": "hang_pin1_shoulder",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    3.0
+   ]
+  },
+  {
+   "a": "hang_bushing3c",
+   "b": "hang_pin3_shoulder",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    6.0,
+    1.0,
+    3.0
    ]
   },
   {
@@ -1085,26 +1025,6 @@
     1.0,
     1.0,
     9.0
-   ]
-  },
-  {
-   "a": "hang_bushing1b",
-   "b": "hang_pin1_shoulder",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hang_bushing3b",
-   "b": "hang_pin3_shoulder",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
    ]
   },
   {

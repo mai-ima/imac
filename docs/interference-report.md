@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、642物体、交差対 578。
-- 接触のみ(深さ<0.15mm): 319 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 170**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 609。
+- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 162**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -20,10 +20,6 @@
 |---|---|---|---|---|
 | cover_filter | ac_inlet_body | 62 | [28.0, 20.0, 26.0] | 20.00 |
 | cover_back | ac_inlet_body | 33 | [28.0, 20.0, 26.0] | 20.00 |
-| slab | hinge_bolt0 | 16 | [6.0, 5.0, 6.0] | 5.00 |
-| slab | hinge_bolt1 | 16 | [6.0, 5.0, 6.0] | 5.00 |
-| slab | hinge_bolt2 | 16 | [6.0, 5.0, 6.0] | 5.00 |
-| slab | hinge_bolt3 | 16 | [6.0, 5.0, 6.0] | 5.00 |
 | riser0 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | riser1 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | riser2 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
@@ -38,7 +34,7 @@
 | cover_filter | dowel_pin1 | 28 | [4.0, 8.0, 4.0] | 4.00 |
 | stand_arm0 | stand_neck_cover1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
 | stand_neck_cover1 | stand_arm1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
-| slab | hinge_doubler | 8 | [144.0, 4.0, 22.0] | 4.00 |
+| slab | hinge_doubler | 13 | [144.0, 4.0, 22.0] | 4.00 |
 | pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | gasket | cover_filter | 567 | [589.599, 3.0, 370.899] | 3.00 |
@@ -46,20 +42,16 @@
 | hinge_axle | hinge_friction1_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | cover_back | ac_inlet_flange | 53 | [36.0, 28.0, 3.0] | 3.00 |
 | cover_filter | ac_inlet_flange | 38 | [36.0, 28.0, 3.0] | 3.00 |
-| hinge_backing_plate | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
-| hinge_backing_plate | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
-| hinge_backing_plate | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
-| hinge_backing_plate | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head0 | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head1 | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head2 | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head3 | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| slab | hinge_backing_plate | 24 | [140.0, 3.0, 22.0] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
 | ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
 | am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
 | gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
 | gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
-| slab | hinge_backing_plate | 8 | [140.0, 3.0, 22.0] | 3.00 |
 | cover_filter | magnet0 | 5 | [8.0, 3.0, 6.799] | 3.00 |
 | cover_filter | magnet3 | 5 | [8.0, 3.0, 6.799] | 3.00 |
 | cover_filter | magnet1 | 5 | [8.0, 3.0, 6.799] | 3.00 |
@@ -83,12 +75,8 @@
 | hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
-| hinge_block_base | hinge_bolt0 | 32 | [6.0, 2.0, 6.0] | 2.00 |
-| hinge_block_base | hinge_bolt1 | 32 | [6.0, 2.0, 6.0] | 2.00 |
-| hinge_block_base | hinge_bolt2 | 32 | [6.0, 2.0, 6.0] | 2.00 |
-| hinge_block_base | hinge_bolt3 | 32 | [6.0, 2.0, 6.0] | 2.00 |
-| hinge_block_base | hinge_cheek_l | 29 | [6.0, 2.0, 22.0] | 2.00 |
-| hinge_block_base | hinge_cheek_r | 26 | [6.0, 2.0, 22.0] | 2.00 |
+| hinge_block_base | hinge_cheek_l | 31 | [6.0, 2.0, 22.0] | 2.00 |
+| hinge_block_base | hinge_cheek_r | 27 | [6.0, 2.0, 22.0] | 2.00 |
 | stand_neck_cover0 | stand_neck_tie | 24 | [112.0, 2.0, 20.0] | 2.00 |
 | stand_arm0 | stand_neck_cover0 | 22 | [4.0, 2.0, 38.0] | 2.00 |
 | stand_neck_cover0 | stand_arm1 | 22 | [4.0, 2.0, 38.0] | 2.00 |
@@ -98,3 +86,15 @@
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
 | board_pcb | pump_screw0 | 32 | [4.0, 1.6, 4.0] | 1.60 |
 | board_pcb | pump_screw2 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw1 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw3 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| gpu_shroud_body | gpu_trim | 22 | [150.0, 13.0, 1.6] | 1.60 |
+| stand_swivel_bearing | stand_swivel_friction_ring | 48 | [70.0, 70.0, 1.5] | 1.50 |
+| gpu_bracket | gpu_port0 | 20 | [15.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port1 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port2 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| gpu_bracket | gpu_port3 | 20 | [16.0, 6.5, 1.5] | 1.50 |
+| cover_back | hook_tab0 | 8 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab5 | 8 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab1 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab2 | 4 | [14.0, 1.5, 7.0] | 1.50 |
