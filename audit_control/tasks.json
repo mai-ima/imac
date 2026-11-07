@@ -15373,6 +15373,166 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "SHAPE-01",
+   "title": "スタンドに外皮(首振りドラム=足固定スカート+回転カラー、ネック外皮)を追加し軸受/機構を隠す(P2/P4)",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T11:23:34Z",
+     "in_review",
+     "Blender描画で背面/側面を目視確認(2026-11-07 20:3x JST)。CAD/図面/CP登録は未了"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "SHAPE-02",
+   "title": "PE編組(緑)がドラム外へ出て露出(P4違反)。ドラム内へ再配線 or 径拡大",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:23:34Z",
+     "triaged",
+     "描画で確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "SHAPE-03",
+   "title": "ネック上部の黒い蛇腹ブーツの襞が露出。同色カバーで隠す(指挟み保護は維持)",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:23:34Z",
+     "triaged",
+     "描画で確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "SHAPE-04",
+   "title": "背面ドームの稜線が硬くCRT状(P6連続曲率に未達)。run拡大(熱/内寸に影響)とのトレードオフ要検討",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:23:34Z",
+     "triaged",
+     "描画で確認。内寸ゲート再検証が必要"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "SHAPE-05",
+   "title": "ドーム下縁にフック/ラッチが見える(P1/P4)。下縁の意匠・開口(io_y0)を再検討",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:23:34Z",
+     "triaged",
+     "描画で確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }
