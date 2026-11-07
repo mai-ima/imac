@@ -1429,6 +1429,48 @@
  ],
  "plugs": [
   {
+   "id": "F1_aio",
+   "cable": "-",
+   "box": [
+    60.2,
+    118.8,
+    17.95,
+    6.0,
+    10.9,
+    8
+   ],
+   "color": "plug_black",
+   "note": "AIO_PUMP ヘッダのプラグ(基板側のみ。ポンプ側とケーブル本体は未モデル=台帳MDC-FANCABLE, UNVERIFIED)"
+  },
+  {
+   "id": "F2_cha",
+   "cable": "-",
+   "box": [
+    60.2,
+    129.7,
+    17.95,
+    6.0,
+    10.8,
+    8
+   ],
+   "color": "plug_black",
+   "note": "CHA_FAN ヘッダのプラグ(基板側のみ。ファン分岐とケーブル本体は未モデル=台帳MDC-FANCABLE)"
+  },
+  {
+   "id": "F3_vrm",
+   "cable": "-",
+   "box": [
+    61.6,
+    53.0,
+    15.95,
+    9.5,
+    3.5,
+    6
+   ],
+   "color": "plug_black",
+   "note": "VRM_HS_FAN ヘッダのプラグ(基板側のみ。ファン側とケーブル本体は未モデル)"
+  },
+  {
    "id": "W1_board",
    "cable": "W1",
    "box": [

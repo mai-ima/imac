@@ -34,6 +34,7 @@
 | cablemodel.py | v007 | current | 2026-11-06 | cf90ba1 | cablemodel/cablemodel.v007__2026-11-06_cf90ba1.py |
 | cablemodel.py | v008 | current | 2026-11-07 | bba640c | cablemodel/cablemodel.v008__2026-11-07_bba640c.py |
 | cablemodel.py | v009 | current | 2026-11-07 | 17954ec | cablemodel/cablemodel.v009__2026-11-07_17954ec.py |
+| cablemodel.py | v010 | current | 2026-11-07 | c1704cf | cablemodel/cablemodel.v010__2026-11-07_c1704cf.py |
 | cadviews.py | v001 | current | 2026-11-06 | 88f99b7 | cadviews/cadviews.v001__2026-11-06_88f99b7.py |
 | consistency_check.py | v001 | current | 2026-11-06 | 877835f | consistency_check/consistency_check.v001__2026-11-06_877835f.py |
 | consistency_check.py | v002 | current | 2026-11-06 | cf90ba1 | consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py |
@@ -132,6 +133,7 @@
 | import_r11.py | v001 | current | 2026-11-07 | df8ec56 | import_r11/import_r11.v001__2026-11-07_df8ec56.py |
 | interference_report.py | v001 | current | 2026-11-07 | 44044f0 | interference_report/interference_report.v001__2026-11-07_44044f0.py |
 | interference_report.py | v002 | current | 2026-11-07 | d60442d | interference_report/interference_report.v002__2026-11-07_d60442d.py |
+| interference_report.py | v003 | current | 2026-11-07 | c1704cf | interference_report/interference_report.v003__2026-11-07_c1704cf.py |
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |
 | joint_calc.py | v002 | current | 2026-11-05 | fcba5fe | joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py |
 | joint_calc.py | v003 | current | 2026-11-06 | 4482281 | joint_calc/joint_calc.v003__2026-11-06_4482281.py |

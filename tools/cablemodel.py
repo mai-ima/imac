@@ -10,6 +10,7 @@ PJ = json.load(open(f'{R}/model/pump.json')); SX, SYA, SYB, STIP = PJ['stub_x'],
 HZ2 = 124.0      # H2は H1(HZ)の13mm下を通し、平面で交差しても干渉しない
 HZ = 143.0      # ホース水平部の中心高さ(曲げ半径40mm仮置き+出口スタブ先端z81)
 Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤中心(筐体は+x側)
+# 実ホースは450mm固定(ARCTIC公式)だが、最短経路はH1≈382/H2≈417mm。余長(H1≈68/H2≈33mm)を曲げ半径40mm(仮置きU45)と天井(許容z155〜162, ホース上端≈149)の制約内で置けないことを検証済み(横ふくらみ: 最小半径≈12mm<40mm)。台帳 MDC-HOSE。
 CAB = [
  dict(id='W1', name='ATX 24ピン(短尺カスタム長)', kind='cable', od=9.6, awg=18, mbr=12, frm='PSU modular(24p)', to='基板 ATX24', conn='24p (20+4)', ref_mm=0, mat='rubber',
       pts=[(px + 33, py - 2, 38), (px + 33, py - 12, 41), (bx + 13.4 + 25.05, by + 159 + 5, Z1 + 15 + 9)]),
@@ -25,12 +26,16 @@ CAB = [
       pts=[(ax + 14, ay + 28, az + 8), (36, 62, 22), (36, 300, 24), (56, 336, 22), (100, 348, 22), (125, 340, 22), (px + 62, py + 102, pz + 14)]),
  dict(id='W7', name='内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加)', kind='cable', od=4.5, awg=30, mbr=16, frm='GPU DP出力(ブラケット側)', to='ctrl_board 映像入力(DP/HDMI, 型番未確定 U51)', conn='DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4)', ref_mm=450, mat='rubber',
       pts=[(gx + 12, gy - 34, 17), (gx - 14, gy - 34, 17), (gx - 14, gy + 14, 27), (gx - 14, cy - 18, 27), (gx - 14, cy + 14, 28)]),
+
  dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口A(上面スタブ)', to='ラジエーター口A', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
       pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (300, pcy + SYA, HZ), (390, ry + 9, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
  dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
       pts=[(pcx + SX, pcy + SYB, cl[2] + STIP), (pcx + SX, pcy + SYB, HZ), (340, pcy + SYB, HZ), (405, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9, rz + 50)]),
 ]
 PLUGS = [
+ dict(id='F1_aio', cable='-', box=(bx + 0.2, by + 88.8, Z1 + 6 - 1, 6.0, 10.9, 8), color='plug_black', note='AIO_PUMP ヘッダのプラグ(基板側のみ。ポンプ側とケーブル本体は未モデル=台帳MDC-FANCABLE, UNVERIFIED)'),
+ dict(id='F2_cha', cable='-', box=(bx + 0.2, by + 99.7, Z1 + 6 - 1, 6.0, 10.8, 8), color='plug_black', note='CHA_FAN ヘッダのプラグ(基板側のみ。ファン分岐とケーブル本体は未モデル=台帳MDC-FANCABLE)'),
+ dict(id='F3_vrm', cable='-', box=(bx + 1.6, by + 23.0, Z1 + 4 - 1, 9.5, 3.5, 6), color='plug_black', note='VRM_HS_FAN ヘッダのプラグ(基板側のみ。ファン側とケーブル本体は未モデル)'),
  dict(id='W1_board', cable='W1', box=(bx + 13.4 + .3, by + 159 + .3, Z1 + 15 - 2, 49.5, 9.4, 12), color='plug_white', note='ATX24プラグ(基板側, 上から嵌合。外形は典型値=UNVERIFIED。ソケット上端に2mm嵌入)'),
  dict(id='W2_board', cable='W2', box=(bx + 1.6 + .3, by + 2.4 + .3, Z1 + 11 - 2, 11.2, 17.5, 12), color='plug_black', note='EPS8プラグ(基板側。典型値=UNVERIFIED)'),
  dict(id='W3_gpu', cable='W3', box=(gx + 110 + .5, gy + 268, gz + 40 - 2, 21, 9.5, 14), color='plug_black', note='12V-2x6プラグ(GPU天面の受口へ上から嵌合。向きと位置はUNVERIFIED: 公式に無い)'),

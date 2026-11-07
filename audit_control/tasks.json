@@ -22558,6 +22558,69 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "stand_neck_collar の上端に肉厚2mmの環状天板を追加(ばね座より下)→GLB再書き出し"
+  },
+  {
+   "id": "MDC-HOSE",
+   "title": "AIOホース実長450mmに対し最短経路がH1≈382/H2≈417mm: 余長(≈68/33mm)を曲げ半径40mm・天井制約内で置けない",
+   "description": "検証: 水平区間への横ふくらみ(半正弦)で長さ450に合わせると最小曲げ半径≈12mm<40mm。上方向は天井許容z155〜162に対しホース上端≈149mmで余地≈6mm。経路を最短のままにして偽PASSを避けた(cable_checkは長さ<実長を許容するが、実ホースは余らせられない)。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "blocked",
+   "history": [
+    [
+     "2026-11-07T14:37:51Z",
+     "blocked",
+     "反復計算と天井検算で物理制約を確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "tools/cablemodel.py のコメント",
+    "本セッションの反復計算(半正弦ふくらみ: H1 74→450.1mm でも最小半径12mm)"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "ホース最小曲げ半径(U45)が未確認(40mmは仮置き)。確認できれば再計算。または配置変更(ポンプ・ラジエーターを遠ざける)の設計判断が必要。",
+   "defer_reason": "",
+   "next_action": "U45(ARCTIC公式のホース最小曲げ半径)を調査→半径が小さければ余長を入れた経路で再検査。なければポンプ-ラジエーター間距離を450mmへ合わせる配置案を検討。"
+  },
+  {
+   "id": "MDC-FANCABLE",
+   "title": "ファン・ポンプ・VRMファンの配線(F1〜F3)の本体経路が未モデル: ポンプ/ファン側コネクタ位置が公式未確認で、経路が検査(干渉・曲げ半径6mm・長さ)を満たす形に収束しなかった",
+   "description": "試行(2026-11-08 JST): F1=ポンプ→AIO_PUMP は最小曲げ半径3mm<6mm、F2=ラジエーターファン→CHA_FAN は経路810mm超(基板・PSU・GPU・RAM・ポンプの間を縫う)で基板と干渉。基板ヘッダ側のプラグだけをモデルへ(位置は公式図p.14で確定)。ケーブル本体は偽PASSを避けるため描かない。",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "blocked",
+   "history": [
+    [
+     "2026-11-07T14:39:32Z",
+     "blocked",
+     "反復して収束せず保留"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "tools/cablemodel.py(PLUGSにF1/F2/F3の基板側プラグ)"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "ポンプ(ARCTIC)・ファン(P12 Pro)の電源コネクタ位置と付属ケーブル長が未確認(UNVERIFIED)。確認できれば経路を再設計。レイアウト上ラジエーターが基板の対角にあることも制約。",
+   "defer_reason": "",
+   "next_action": "ARCTIC公式のポンプ/ファンのコネクタ位置・分岐ケーブル長(U33系)を調査→経路を再設計。必要なら延長ケーブルの導入・ヘッダ変更(基板上の別ヘッダ)を検討。"
   }
  ]
 }

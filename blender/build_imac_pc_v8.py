@@ -290,6 +290,11 @@ def make_fan(name, size, depth, n, frame_mat, blade_mat, hub_mat, cx, cy, czl, h
     for i in range(n):
         b = bpy.data.objects.new(f'{name}_blade{i}', me); b.parent = rotor; b.rotation_euler = (0, i * 2 * math.pi / n, 0); link(b)
         b.location = (0, 0, 0)
+    # ステーター支柱(MDC): 静止側。ハブのモーター座をフレームへ固定する3本の細い支柱(回転しない)。本数・幅は典型値=UNVERIFIED。ファンの底面側(軸方向の下端)に置く
+    for si in range(3):
+        a_ = si * 2 * math.pi / 3 + math.pi / 6; ln = size * open_k - size * (hub_k - .02) + 1.5; mid = size * (hub_k - .02) + ln / 2 - 0.75
+        sp = box(f'{name}_stator{si}', ln, 1.6, 2.4, 0, 0, 0, frame_mat, bevel=.2)
+        sp.rotation_euler = (0, 0, a_); sp.location = Vector((wc.x + mid * math.cos(a_), wc.y + mid * math.sin(a_), wc.z - depth * .5 + 1.4))
     rotors.append(rotor); return rotor
 
 # ==================== v6: ドーム背面シェル + サービストレイ + 内部部品(model/layout.json 駆動) ====================
@@ -499,7 +504,7 @@ hollow(tube('stand_skirt', SH['skirt_r_mm'], _sl, 0, -DROP + _sl / 2, ZC, M['sta
 _cl = 11.0      # ネックと一緒に回る円筒カラー(ロータ上面・PE編組の取り回しを隠す。スカートとの隙間0.5mm)
 hollow(tube('stand_neck_collar', SH['skirt_r_mm'], _cl, 0, SY_NECK + _cl / 2, ZC, M['stand']))
 # SHAPE-06: ネックカラー上面の環状天板(肉厚2mm)。ばね座(y=HY-s)より下に置き、薄肉化で開いた上面を閉じる。ネック外皮の開口部は残す(機構が通る)
-_cap_y = SY_NECK + _cl - 2.0
+_cap_y = SY_NECK + _cl - 4.2
 _cap = cyl('stand_neck_collar_cap', SH['skirt_r_mm'], 2.0, 'y', 0, _cap_y + 1.0, ZC, M['stand'], 96, bevel=1.0, body=False)
 _hole = box('stand_neck_collar_cap_hole', 2 * (NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), 6.0, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * (SH['neck_margin_mm'] - 2.0), -(NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), _cap_y - 2.0, ZC + NK['back_cover_z'][0] - (SH['neck_margin_mm'] - 2.0), None, body=False); _hole.hide_render = True
 _mb = _cap.modifiers.new('hole', 'BOOLEAN'); _mb.object = _hole; _mb.operation = 'DIFFERENCE'; _mb.solver = 'EXACT'
@@ -564,7 +569,7 @@ def port(name, xc, zc, w, h, inner=None):
     for tgt in (fl, _ios):
         m_ = tgt.modifiers.new(name, 'BOOLEAN'); m_.object = ct; m_.operation = 'DIFFERENCE'; m_.solver = 'EXACT'
     if w >= 9:       # 舌片(コネクタ内の基板): Type-Cは薄い板、Type-A/RJ45/HDMIは空洞の中央に1枚
-        ibox(name + '_tongue', w - 6, 9.0, 1.2 if h < 5 else 1.6, bx + xc - (w - 6) / 2, by - 1.0, Z1 + zc - 0.6, inner or M['dark'], .1)
+        ibox(name + '_tongue', w - 7, 9.0, 1.0 if h < 5 else 1.4, bx + xc - (w - 7) / 2, by - 1.0, Z1 + zc - 0.5, inner or M['dark'], .1)
 mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
 # リアI/O配置: ASUS公式マニュアル p.26 の図(外側から見た並び)を読み取り。左→右:
 #  列A(x15〜34): USB 10G赤(Type-A)×2 縦積み / HDMI    列B(x40〜55): ボタン(CLR_CMOS/BIOS FlashBack) / USB 10G赤 / USB4 40G Type-C
@@ -579,7 +584,11 @@ port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 1
 for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
 _vs = ibox('vrm_shroud', 98, 36, 5, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
-for _k in range(21): ibox(f'vrm_fin{_k}', 1.2, 33, 9, bx + 10 + _k * 4.55, by + 25.5, Z1 + 5, M['shroud'], .2)      # フィン21枚(厚1.2×高9, ピッチ4.55): 高さ14=ベース5+フィン9。形状・枚数は公式に無い=UNVERIFIED      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
+_pcx, _pcy = lp('cooler')[0] + 45.5, lp('cooler')[1] + ls('cooler')[1] / 2      # ポンプ円盤中心(後段の pcx/pcy と同じ式)
+for _k in range(21):
+    _fx = bx + 10 + _k * 4.55
+    if any(abs((_fx + 0.6) - (_pcx + _dx)) < 6.0 and (by + 25.5) - 6.0 < (_pcy + _dy) < (by + 25.5 + 33) + 6.0 for (_dx, _dy) in ((-27, -45), (27, -45), (-27, 45), (27, 45))): continue      # フィン(x幅1.2, y範囲 by+25.5〜+58.5)がねじ(Ø9逃げ+ばね)に当たるものだけ除く      # ねじ逃げ(Ø9+ばね)の位置にはフィンを立てない
+    ibox(f'vrm_fin{_k}', 1.2, 33, 9, _fx, by + 25.5, Z1 + 5, M['shroud'], .2)      # フィン21枚(厚1.2×高9, ピッチ4.55): 高さ14=ベース5+フィン9。形状・枚数は公式に無い=UNVERIFIED      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
 ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])      # 前縁トリム
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
@@ -697,11 +706,13 @@ bpc_ = ibox('gpu_bp_cutter', 90, 8, 4, gx + 30, gy + 24, gz - 1, None); bpc_.hid
 ar_ = bpc_.modifiers.new('arr', 'ARRAY'); ar_.count = 16; ar_.use_relative_offset = False; ar_.use_constant_offset = True; ar_.constant_offset_displace = (0, 16, 0)
 m_ = bpy.data.objects['gpu_backplate'].modifiers.new('slots', 'BOOLEAN'); m_.object = bpc_; m_.operation = 'DIFFERENCE'; m_.solver = 'MANIFOLD'
 gp = os.path.join(TEXDIR, 'pcb_gpu8.png'); pcb_tex(gp, GW - 10, GL - 20, 23, '#0f1114', '#2d3239')
-ibox('gpu_pcb', GW - 10, GL - 20, 1.6, gx + 5, gy + 12, gz + 1.6, img_material('pcb_gpu8', gp, rough=.5), uv=True)
+ibox('gpu_pcb', GW - 10, 170, 1.6, gx + 5, gy + 12, gz + 1.6, img_material('pcb_gpu8', gp, rough=.5), uv=True)      # PCB: 約140×170(実機は約170×112程度=Akiba 1件のみ=UNVERIFIED。長辺はブラケット側に寄せ、残りはヒートシンクのみ)
 ry0, rh_ = lp('riser')[1], ls('riser')[1]
 ibox('gpu_edge', 3, 89, 1.8, gx - 1.2, gy + 16.8, gz + 3.4, M['gold'])                  # PCIeエッジ(金メッキ)
-ibox('gpu_heatsink', GW - 12, GL - 40, 24, gx + 6, gy + 20, gz + 3.2, principled('gpu_fins', '#bfc3c9', 1.0, .38), .5)
-for k in range(5): icyl(f'gpu_hpipe{k}', 3, GL - 90, 'y', gx + 22 + k * 25, gy + GL / 2 + 8, gz + 11, M['copper'], 20)
+_gfm = principled('gpu_fins', '#bfc3c9', 1.0, .38)
+ibox('gpu_heatsink_base', GW - 12, GL - 40, 3, gx + 6, gy + 20, gz + 3.2, _gfm, .5)      # ベース板
+for _k in range(52): ibox(f'gpu_fin{_k}', GW - 14, 0.5, 14, gx + 7, gy + 21 + _k * 5.0, gz + 12.5, _gfm, .1)      # フィンはヒートパイプ(Ø6, z6.2〜12.2)の上に載せる(貫通穴の簡略化。穴は未モデル=INTF-03で実形状化)      # フィン52枚(厚0.5・ピッチ5.0・高20)。枚数・形状は公式に無い=UNVERIFIED
+for k in range(5): icyl(f'gpu_hpipe{k}', 3, GL - 60, 'y', gx + 22 + k * 25, gy + GL / 2 + 8, gz + 9.3, M['copper'], 20)      # ヒートパイプ(Ø6)をベース上面に接して通す(フィン内に埋めず、フィン高さ内で見える)
 shr = ibox('gpu_shroud_body', GW, GL, 13, gx, gy, gz + 27, gcol, 2.0)
 fy_list = (gy + GL / 2 - 70, gy + GL / 2 + 70, )
 for k, fy_ in enumerate(fy_list):
@@ -720,7 +731,7 @@ ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4
 px_, py_, pz_ = lp('psu')
 # PSU本体(MDB-020/021/022): 中実の箱でなく、ファン面(上)に径88の開口を持つ殻+内部の詰め物(電源基板の代用)。ファンは開口内に収め、グリルは上面に接する。
 _pb = ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
-_pc = cyl('psu_fan_opening', 44, 4.0, 'z', X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.5), None, 64, body=False); _pc.hide_render = True; BODY_OBJS.append(_pc)
+_pc = cyl('psu_fan_opening', 44, 14.0, 'z', X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.5 - 5.0), None, 64, body=False)      # 開口+ファン収容空間(深さ14: 上面から内へ12mm); _pc.hide_render = True; BODY_OBJS.append(_pc)
 _pm = _pb.modifiers.new('fan_opening', 'BOOLEAN'); _pm.object = _pc; _pm.operation = 'DIFFERENCE'; _pm.solver = 'EXACT'
 wire = principled('psu_wire', '#2a2c31', .9, .4)
 make_fan('fan_psu', 92, 8, 9, M['dark'], principled('psu_blade', '#202226', .2, .45), principled('psu_hub', '#2a2c31', .3, .4), px_ + 62, py_ + 50, pz_ + 55.0)      # ファン(厚8)を開口内に収める(上面63.5まで)
