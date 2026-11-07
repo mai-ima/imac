@@ -15704,17 +15704,28 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_review",
+   "status": "done",
    "history": [
     [
      "2026-11-07T11:36:39Z",
      "in_review",
      "実穴GLB 27.7MB→gzip+b64 7.9MB を生成・push。ビューアの実機読み込み検証は未了"
+    ],
+    [
+     "2026-11-07T13:26:22Z",
+     "done",
+     "実穴GLBをビューアで読込確認し新規アーティファクトとして公開"
     ]
    ],
    "acceptance_criteria": "",
-   "evidence": [],
-   "verification": "",
+   "evidence": [
+    "viewer/imac_pc.glb.txt(gzip+base64 8.0MB, 実穴)",
+    "Playwrightでビューア読込を確認(エラー0, scratchpad/viewer_test.png)",
+    "公開: https://claude.ai/artifact/G4ChbrBdfPzYxDdAMH2agP"
+   ],
+   "verification": [
+    "ビューアで gzip GLB を展開して表示できることを自動ブラウザで確認(2026-11-07 22:5x JST)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
@@ -22359,6 +22370,35 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "台帳(tasks.json)に項目別に登録し、本表の MDD-0xx で実装順を決める。CP-24 は `ac_clamp` (40×28×2.5 PA66 板+M3×2) を ac_inlet 背面に追加"
+  },
+  {
+   "id": "SHAPE-06",
+   "title": "外皮の薄肉化でネックカラー上面が開口し、上から見ると輪に見える: カラー上面に天板(環状の蓋)を付ける",
+   "description": "CP-01〜CP-28 のうち3D未反映 | **未モデル/未反映の特注要素**: CP-24 ACコード引張逃がしクランプ(Blenderに無し)、CP-03 の PEM/アース端子/アンビリカル開口、CP-07 の磁石ボス/ガスケット溝/側辺フック×4、CP-06 縁折り、CP-11 の摩擦ヒンジ取付、CP-10 の底カバー・皿ねじ・ballastポケット、CP-20/21 の中心穴Ø52、CP-26/27/28 の薄肉殻。ネック基台の M5×4(`stand_neck_bolt` は `if False` で無効)も未描画 | grep: `ac_clamp` 等がスクリプトに無い。hardware_v8.py L134-135(`... if False else None`)。custom_parts.json status欄「設計(未実装:Blender/図面未反映)」(CP-12) | 台帳(tasks.json)に項目別に登録し、本表の MDD-0xx で実装順を決める。CP-24 は `ac_clamp` (40×28×2.5 PA66 板+M3×2) を ac_inlet 背面に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:26:22Z",
+     "triaged",
+     "公開ビューアのスクリーンショットで確認"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "stand_neck_collar の上端に肉厚2mmの環状天板を追加(ばね座より下)→GLB再書き出し"
   }
  ]
 }
