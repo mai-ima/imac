@@ -12602,6 +12602,44 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "SCHED-01",
+   "title": "予約(ScheduleWakeup)が起動しない問題: 原因=セッション内メモリの予約がワーカー再起動で消失(09:21UTC予約が10:55UTCでも未起動)。対策=耐久トリガー(trig_01N4GcNV… 毎時55分, send_later)へ移行",
+   "description": "予約(ScheduleWakeup)が起動しない問題: 原因=セッション内メモリの予約がワーカー再起動で消失(09:21UTC予約が10:55UTCでも未起動)。対策=耐久トリガー(trig_01N4GcNV… 毎時55分, send_later)へ移行",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "CLAUDE.md"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-07 10:55",
+     "discovered",
+     ""
+    ],
+    [
+     "2026-11-07 10:55",
+     "done",
+     "create_trigger(毎時55分,persist_session)とsend_laterを作成、CLAUDE.mdに運用規則追記"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "create_trigger(毎時55分,persist_session)とsend_laterを作成、CLAUDE.mdに運用規則追記"
+   ],
+   "verification": "list_triggersで生存確認。実際の起動は11:11/11:55 UTCの到達で確認予定",
+   "decision": "REPLACE",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }

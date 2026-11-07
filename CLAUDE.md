@@ -9,3 +9,4 @@
 - 図面: `/tmp/bl/.venv/bin/python tools/gen_*.py`(cadquery)。SVG確認は Playwright(node)。
 - 偽PASS禁止。実機/専門試験が必要な事項は UNVERIFIED/BLOCKED のまま。
 - 時刻はユーザー向けには日本時間(JST=UTC+9)で表記する。ScheduleWakeup/サーバー表示はUTC。
+- **定期実行は ScheduleWakeup に頼らない**(ワーカー再起動で消え、予約時刻を過ぎても起動しなかった事実あり=2026-11-07調査)。耐久手段は mcp__claude-code-remote の create_trigger(毎時・セッション束縛)と send_later。再開時は list_triggers で生存確認。
