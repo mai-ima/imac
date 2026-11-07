@@ -294,13 +294,13 @@
    120,
    43
   ],
-  "status": "PROPOSED",
+  "status": "CANDIDATE",
   "facts": {
    "purpose": "外気のみをラジエーターファンへ導く(R10E-001)",
    "assumption": "ファン位置 y66〜306 / z61〜86 は仮定(UNVERIFIED)",
    "seal": "上端はドーム内面へEMI/導電ガスケットで密着(未設計)"
   },
   "sources": [],
-  "status_note": "PROPOSED: 設計提案。熱効果(再循環低減)は未検証"
+  "status_note": "CANDIDATE: 未採用。熱効果は未実証"
  }
 }

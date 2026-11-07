@@ -1,0 +1,306 @@
+{
+ "_doc": "市販部品DB v5(大手・最新規格・高性能)。status: official=メーカー公式資料で確認, retail=小売/報道の一致のみ, assumed=未確認。寸法mm。",
+ "panel": {
+  "id": "panel",
+  "name": "LG Display LM270WR3-SSC1(第一候補) / BOE MV270QUM-N50(公式データシート確認済の代替)",
+  "maker": "LG Display / BOE",
+  "dims": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "status": "official",
+  "facts": {
+   "active": "596.74x335.66",
+   "LG_SSC1": "608.8x355.3x12.8 (Data-Modul掲載)",
+   "BOE_N50": "609.4x355.6x13.3, 2.45kg, eDP4lane 30pin, VDD10V",
+   "refresh": "60Hz級(未確認)"
+  },
+  "sources": [
+   "https://www.panelook.com/upload/202310/MV270QUM-N50_Ver.0_20210111_202310319200.pdf",
+   "https://data-modul.com/en/products/product-finder/find-your-tft-display/lm270wr3-ssc1"
+  ],
+  "note": "包絡線はN50で設計。保証付き制御基板の公式キットは未確認→Data-Modulに要問合せ",
+  "status_note": "official(N50)/retail(LG)"
+ },
+ "ctrl_board": {
+  "id": "ctrl_board",
+  "name": "4K eDPコントローラ基板(型番未確定)",
+  "maker": "未定",
+  "dims": [
+   55,
+   110,
+   15
+  ],
+  "status": "assumed",
+  "facts": {},
+  "sources": [],
+  "status_note": "assumed"
+ },
+ "board": {
+  "id": "board",
+  "name": "ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-ITX)",
+  "maker": "ASUS",
+  "dims": [
+   170,
+   170,
+   1.6
+  ],
+  "status": "official",
+  "facts": {
+   "form": "17x17cm(公式spec)",
+   "usb4": "USB4 40Gbps x2",
+   "usb10g": "USB 10Gbps x5",
+   "lan": "2.5GbE",
+   "wifi": "Wi-Fi 7 / BT5.4",
+   "pcie": "PCIe 5.0 x16",
+   "m2": "M.2_1 PCIe5.0x4 / M.2_2 PCIe4.0x4 (ドーターカード方式)",
+   "ram": "DDR5 x2 EXPO",
+   "bios": "Ryzen 9000は要BIOS確認(FlashBack有)",
+   "io_official": "USB4 40Gbps x2(Type-C) / USB 10Gbps x5(Type-A x4 + Type-C x1) / USB2.0 x3(うちType-A x2) / HDMI x1 / Intel 2.5GbE / Wi-Fi 7モジュール / ROG STRIX HIVE II(オーディオ: ESS SABRE9260Q DAC)",
+   "bios_buttons": "BIOS FlashBack / Clear CMOS",
+   "m2_official": "M.2_1: 2280 PCIe5.0x4 / M.2_2: 2242/2260/2280 PCIe4.0x4",
+   "mem_official": "DDR5 x2 最大128GB 8400+MT/s(OC, Ryzen 9000)",
+   "cpu_support": "Ryzen 9000/8000/7000"
+  },
+  "sources": [
+   "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
+   "https://www.trovaprezzi.it/manuali/asus_rog_strix_x870_i_gaming_wifi.pdf"
+  ],
+  "note": "マニュアルp.14のレイアウト図を実測(model/x870i_layout.json)。ドーターカード/VRMファンの高さは未確認",
+  "status_note": "official(寸法/I/O/レイアウト図) / M.2ドーターカード方式はマニュアル図由来(公式spec文面に記載なし)/ USB2.0 Type-A数は公式ページ内で2と3が不整合(U35)"
+ },
+ "cpu": {
+  "id": "cpu",
+  "name": "AMD Ryzen 9 9950X3D",
+  "maker": "AMD",
+  "dims": [
+   40,
+   40,
+   5
+  ],
+  "status": "retail",
+  "facts": {
+   "tdp_w": 170,
+   "ppt_w": 230,
+   "tjmax_c": 95,
+   "cores": "16C/32T",
+   "l3": "128MB(V-Cache片CCD)+L2 16MB",
+   "chipsets": "A620/X670E/X670/B650E/B650/X870E/X870/B840/B850",
+   "pcie": "PCIe 5.0 native",
+   "amd_cooler_note": "AMD公式は『Liquid cooler recommended for optimal performance』と記載(ボックス版にクーラー非同梱)",
+   "boost": "5.7GHz",
+   "vs_m6": "GB6 multi 約1.05倍/CB24 multi 約1.7倍、単発は0.6〜0.77倍(M6に及ばない)"
+  },
+  "sources": [
+   "https://www.notebookcheck.net/AMD-Ryzen-9-9950X3D-Review-Ryzen-7-9800X3D-levels-of-gaming-performance-and-power-efficiency-for-50-markup-over-the-Ryzen-9-9950X.976049.0.html",
+   "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html"
+  ],
+  "note": "Ryzen 9 9950X3D: TDP170W(PBP170/MTP230)/L3 128MB+L2 16MB/PPT230W想定(公式PPTは未取得 U44)",
+  "status_note": "v7.1: M6 iMacのCPU(マルチ)を上回るため9800X3Dから変更(docs/spec/performance-benchmark.md)。TDP170W(PBP170/MTP230)はレビュー引用値、公式PPT/Tjmaxは取得不可でUNVERIFIED(U44)。AMDの冷却推奨240/280mm(Club386経由)。"
+ },
+ "cooler": {
+  "id": "cooler",
+  "name": "ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A, 非RGB) — ポンプ一体型ブロック",
+  "maker": "ARCTIC",
+  "dims": [
+   108.47,
+   91.0,
+   68.5
+  ],
+  "status": "official",
+  "facts": {
+   "pump": "108.47 x Ø91.0 x 68.5mm (VRMファン込み)",
+   "tube": "450mm, OD12.4/ID6.0",
+   "weight_g": 1665,
+   "warranty": "6年",
+   "am5": "AM5/AM4/LGA1851/1700対応",
+   "pump_rpm": "800-2800",
+   "pump_current": "0.35A 12V",
+   "vrm_fan": "径は未確認(ARCTIC仕様書は400-2500rpm, 0.05Aのみ)"
+  },
+  "sources": [
+   "https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf",
+   "https://support.arctic.de/products/liquid-freezer-iii-pro-240-argb/techdocs/LF3%20Pro%20240%20ARGB%202D%20Drawing.pdf"
+  ],
+  "note": "ポンプ高さの基準面(基板面かCPU上面か)は図面に無く未確認 → 安全側に基板面+CPU上面9mm+68.5で判定 / ホース出口はポンプ上面から垂直(+z)に立つ(ARCTIC 2D図面 Side/Front View: ナット上端z≈68.5, スタブ先端z≈81)。従来モデルの水平出口は誤り",
+  "status_note": "寸法は2D図面(P/Nに178A=非RGBを含む)で一致。ファン型番/LED/ケーブル構成は非RGB版シートで追確認(現出典はA-RGB版 ACFRE00182A, U33)"
+ },
+ "gpu": {
+  "id": "gpu",
+  "name": "RTX 5070 Ti 16GB 小型2スロット(寸法基準: PNY RTX 5070 Ti Slim 290×150×40, 具体型番は購入前に確定 U46)",
+  "maker": "PNY(寸法基準)",
+  "dims": [
+   290,
+   150,
+   40
+  ],
+  "status": "assumed",
+  "facts": {
+   "slot": "2",
+   "power": "12V-2x6 ×1(想定)",
+   "psu_rec_w": 750,
+   "outputs": "HDMI 2.1b + DP 2.1b×3(想定)",
+   "cuda": 8960,
+   "mem": "16GB GDDR7 28Gbps 256bit",
+   "tgp_w": 300,
+   "pcie": "5.0(レーン数は未確認、物理x8の可能性)",
+   "note": "ゲーム要件(Cyberpunk/CoD/Cities SK2 4K快適)で5070 Tiを最小構成と判断(docs/spec/gaming-requirements.md)。ASUS Dual 5060 Ti 16GBは不採用"
+  },
+  "sources": [
+   "https://hothardware.com/news/pny-slim-2-slot-rtx-5080-5070-ti-5070-gpus-sff-gaming-pcs",
+   "https://www.gamesradar.com/hardware/desktop-pc/pnys-latest-nvidia-rtx-50-gpus-appeal-to-my-kind-of-pc-building"
+  ],
+  "note": "終息報道あり(非公式)。代替: NVIDIA RTX 5070 FE 242x112",
+  "status_note": "PNY Slim 5070 Ti: 290×150×40mm(HotHardware/GamesRadar報道)。日本での取扱い/価格は未確認。NVIDIA SFF-Ready上限: 304×151×50。 / makerをASUSからPNY基準へ訂正(寸法290×150×40は報道値、公式2D図は未取得 U46)"
+ },
+ "riser": {
+  "id": "riser",
+  "name": "LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確認)",
+  "maker": "LINKUP",
+  "dims": [
+   200,
+   89,
+   6
+  ],
+  "status": "assumed",
+  "facts": {
+   "length_cm": 20
+  },
+  "sources": [
+   "https://preisvergleich.heise.de/linkup-ava5-v2-riser-kabel-ag-p5-33ss-020bk-v2-a3400918.html"
+  ],
+  "note": "幅・厚み・曲げ半径は未確認。GPUが物理x8の場合の互換も要確認",
+  "status_note": "dims=ケーブル長200×幅89×厚6(assumed)。layout.jsonのsizeは接続ブロック占有域[24,89,12]。型番は直線(AG-P5-33SS-020BK-v2)か右角(SR)かを購入前に確定。GPUはパートナー表記でx8(MSI: x16(use x8), GIGABYTE: x8)"
+ },
+ "psu": {
+  "id": "psu",
+  "name": "Corsair SF1000 (SFX 1000W 80+ Platinum, ATX 3.x/12V-2x6) — 5070 Ti(300W)+9950X3D(230W)用",
+  "maker": "Corsair",
+  "dims": [
+   125,
+   100,
+   63.5
+  ],
+  "status": "assumed",
+  "facts": {
+   "watts": 1000,
+   "eff": "80PLUS Platinum",
+   "form": "SFX 125(W)x63.5(H)x100(L)",
+   "conn": "24pin / EPS 4+4 x2 / PCIe 6+2 / 12V-2x6 x1(モジュラーソケット10個。小売/レビュー記載、Corsair公式は取得不可 U34)",
+   "cable_mm": "24pin 310, EPS 410, PCIe 400, 12V-2x6 410(レビュー記載。公式未確認)",
+   "warranty": "7年",
+   "fan": "92mm FDB(ゼロRPM)",
+   "provisional_w": 1000
+  },
+  "sources": [
+   "https://www.corsair.com/us/en/p/psu/cp-9020284-na/sf-series-sf750-fully-modular-80-plus-platinum-sfx-power-supply-cp-9020284-na",
+   "https://assets.corsair.com/image/upload/corsairmedia/sys_master/productcontent/SF_PLATINUM_User_Manual.pdf"
+  ],
+  "note": "Corsair公式は403(UA付きでも不可)で公式値は未取得。第二候補: Seasonic FOCUS GX-750 ATX3.1(150x85x140, 保証10年。ドーム最大深さ87mmに入らないため不採用)。ケーブルが短い(300〜400mm)のでPSUは基板の近くに置く必要がある",
+  "status_note": "SF750(750W)では電源余裕30%を満たさなくなったため1000Wへ(寸法は同じSFX 125×100×63.5想定)。SF1000の公式仕様/ケーブル/コネクタ/価格は未確認(U34/U47)。"
+ },
+ "ssd": {
+  "id": "ssd",
+  "name": "Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW)",
+  "maker": "Samsung",
+  "dims": [
+   80.15,
+   25,
+   8.88
+  ],
+  "status": "official",
+  "facts": {
+   "if": "PCIe 4.0 x4 / NVMe 2.0",
+   "ctrl": "Samsung in-house",
+   "dram": "1GB LPDDR4(1TB)"
+  },
+  "sources": [
+   "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_with_Heatsink_Datasheet_Rev_2.0_10129695053410.pdf"
+  ],
+  "note": "X870-Iのドーターカードに装着する場合の最大厚み適合は未確認",
+  "status_note": "official"
+ },
+ "ram": {
+  "id": "ram",
+  "name": "DDR5-6000 CL30 EXPO 32GB (2x16GB) 大手品(型番未定)",
+  "maker": "Corsair/G.Skill/Kingston 等",
+  "dims": [
+   133.35,
+   8,
+   44
+  ],
+  "status": "assumed",
+  "facts": {
+   "note": "ヒートスプレッダ込み高さ約34〜44mm(記憶ベース・未確認)"
+  },
+  "sources": [],
+  "status_note": "assumed"
+ },
+ "camera_audio": {
+  "id": "camera_audio",
+  "name": "Webカメラ/マイク/スピーカー",
+  "maker": "未選定",
+  "dims": [
+   0,
+   0,
+   0
+  ],
+  "status": "assumed",
+  "facts": {},
+  "sources": [],
+  "status_note": "assumed"
+ },
+ "radiator": {
+  "id": "radiator",
+  "name": "ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12 Pro x2",
+  "maker": "ARCTIC",
+  "dims": [
+   277,
+   120,
+   63
+  ],
+  "status": "official",
+  "facts": {
+   "radiator": "277 x 120 x 38",
+   "fan": "P12 Pro x2, 25mm厚, 600-3000rpm, 131m3/h, 6.9mmH2O",
+   "total_thickness": 63
+  },
+  "sources": [
+   "https://www.arctic.de/media/8d/19/d2/1744191002/Spec_Sheet_Liquid_Freezer_III_Pro_240_A-RGB_EN.pdf"
+  ],
+  "status_note": "official"
+ },
+ "ac_inlet": {
+  "id": "ac_inlet",
+  "name": "IEC C14 AC インレット(内部延長C13ケーブルでPSUへ) 型番未選定",
+  "maker": "Schurter/Qualtek等",
+  "dims": [
+   28,
+   26,
+   20
+  ],
+  "status": "assumed",
+  "status_note": "下辺中央右に固定、保護接地(PE)をM4リング端子でトレイ接地スタッドへ。型番U40",
+  "facts": {},
+  "sources": []
+ },
+ "rad_duct": {
+  "id": "rad_duct",
+  "name": "ラジエーター吸気ダクト(特注板金 t1.0, 四方壁)",
+  "maker": "特注(CP-25予定)",
+  "dims": [
+   228,
+   120,
+   43
+  ],
+  "status": "PROPOSED",
+  "facts": {
+   "purpose": "外気のみをラジエーターファンへ導く(R10E-001)",
+   "assumption": "ファン位置 y66〜306 / z61〜86 は仮定(UNVERIFIED)",
+   "seal": "上端はドーム内面へEMI/導電ガスケットで密着(未設計)"
+  },
+  "sources": [],
+  "status_note": "PROPOSED: 設計提案。熱効果(再循環低減)は未検証"
+ }
+}

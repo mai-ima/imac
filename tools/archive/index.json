@@ -1520,6 +1520,15 @@
    "commit": "bba640c",
    "sha256": "c94a24eceff867e088be1cf1bba0ac1e140dcd0cb69e67af684429a108956a59",
    "file": "thermal_calc/thermal_calc.v006__2026-11-07_bba640c.py"
+  },
+  {
+   "src": "tools/thermal_calc.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "17954ec",
+   "sha256": "5c66c4a5a40a6dc00a1734ef2aa030e0789beb2209ba3d17068fa62b359ac2e3",
+   "file": "thermal_calc/thermal_calc.v007__2026-11-07_17954ec.py"
   }
  ]
 }

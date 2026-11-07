@@ -13676,7 +13676,7 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_review",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07 10:58",
@@ -13692,11 +13692,17 @@
      "2026-11-07 11:14",
      "in_review",
      "resolution"
+    ],
+    [
+     "2026-11-07 11:15",
+     "in_progress",
+     "ダクトは未採用候補。熱の合格は宣言しない"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
    "evidence": [
-    "ダクトを提案としてモデル化(効果未検証)。熱の合格は宣言しない旨を文書化"
+    "ダクトを提案としてモデル化(効果未検証)。熱の合格は宣言しない旨を文書化",
+    "ダクトは未採用候補。熱の合格は宣言しない"
    ],
    "verification": "fitcheck/cable_check",
    "decision": "PARTIAL",
@@ -15339,7 +15345,7 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_review",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07 11:04",
@@ -15350,11 +15356,17 @@
      "2026-11-07 11:14",
      "in_review",
      "layout.json rad_duct(120×228×42, 提案)+parts.json(PROPOSED)+Blender表示、ホース2本を duct の外側(y<78)へ再経路。fitcheck/cable_check OK。熱効果・気密・ファン位置は未検証"
+    ],
+    [
+     "2026-11-07 11:15",
+     "in_progress",
+     "実証前の採用を取り消し: layout.json candidates へ移動(CANDIDATE・未採用)、Blenderは --with-duct のみ描画、fitcheck/cable_check対象外。A/B比較実証(煙・熱電対)を試験計画に追加。実証手段(実機/検証済みCFD)が無い間は採否保留(deferred相当)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "layout.json rad_duct(120×228×42, 提案)+parts.json(PROPOSED)+Blender表示、ホース2本を duct の外側(y<78)へ再経路。fitcheck/cable_check OK。熱効果・気密・ファン位置は未検証"
+    "layout.json rad_duct(120×228×42, 提案)+parts.json(PROPOSED)+Blender表示、ホース2本を duct の外側(y<78)へ再経路。fitcheck/cable_check OK。熱効果・気密・ファン位置は未検証",
+    "実証前の採用を取り消し: layout.json candidates へ移動(CANDIDATE・未採用)、Blenderは --with-duct のみ描画、fitcheck/cable_check対象外。A/B比較実証(煙・熱電対)を試験計画に追加。実証手段(実機/検証済みCFD)が無い間は採否保留(deferred相当)"
    ],
    "verification": "fitcheck, cable_check, Blender build",
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",

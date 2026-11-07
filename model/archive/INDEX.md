@@ -70,6 +70,7 @@
 | layout.json | v011 | current | 2026-11-06 | 514e2e0 | layout/layout.v011__2026-11-06_514e2e0.json |
 | layout.json | v012 | current | 2026-11-06 | 85af1a8 | layout/layout.v012__2026-11-06_85af1a8.json |
 | layout.json | v013 | current | 2026-11-06 | 853f219 | layout/layout.v013__2026-11-06_853f219.json |
+| layout.json | v014 | current | 2026-11-07 | 17954ec | layout/layout.v014__2026-11-07_17954ec.json |
 | parts.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/parts/parts.v001__2026-11-03_165c355.json |
 | parts.json | v002 | gen-001 | 2026-11-03 | fd22dea | gen-001/parts/parts.v002__2026-11-03_fd22dea.json |
 | parts.json | v003 | current | 2026-11-03 | fdfd200 | parts/parts.v003__2026-11-03_fdfd200.json |
@@ -82,6 +83,7 @@
 | parts.json | v010 | current | 2026-11-06 | 514e2e0 | parts/parts.v010__2026-11-06_514e2e0.json |
 | parts.json | v011 | current | 2026-11-06 | 85af1a8 | parts/parts.v011__2026-11-06_85af1a8.json |
 | parts.json | v012 | current | 2026-11-07 | 64a1afa | parts/parts.v012__2026-11-07_64a1afa.json |
+| parts.json | v013 | current | 2026-11-07 | 17954ec | parts/parts.v013__2026-11-07_17954ec.json |
 | spec.json | v001 | gen-001 | 2026-11-03 | 44f2d2a | gen-001/spec/spec.v001__2026-11-03_44f2d2a.json |
 | spec.json | v002 | gen-001 | 2026-11-03 | 165c355 | gen-001/spec/spec.v002__2026-11-03_165c355.json |
 | spec.json | v003 | current | 2026-11-03 | fd22dea | spec/spec.v003__2026-11-03_fd22dea.json |
