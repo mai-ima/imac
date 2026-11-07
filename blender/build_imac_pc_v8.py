@@ -554,10 +554,17 @@ Z1 = bz + 1.6          # 基板上面
 IOX = BL['io_x_ranges']
 # 後部I/O(下向き): 公式図でx範囲確定、ブロック内の並びは未確認(代表的な構成で配置)
 io_x0, io_x1 = IOX['HDMI_U10G34'][0] - 2, IOX['M2_WIFI'][1] + 2
-ibox('io_shield', io_x1 - io_x0, 26, 30, bx + io_x0, by - 2, Z1, M['steel'])      # I/Oブロック実高≈28〜30mm(ASUS p.26実測)。シャーシ開口規格44.45とは別
+_ios = ibox('io_shield', io_x1 - io_x0, 26, 30, bx + io_x0, by - 2, Z1, M['steel'])      # I/Oブロック実高≈28〜30mm(ASUS p.26実測)。シャーシ開口規格44.45とは別
 def port(name, xc, zc, w, h, inner=None):
-    ibox(name + '_shell', w, 1.4, h, bx + xc - w / 2, by - 3.4, Z1 + zc - h / 2, M['steel'], .2)
-    ibox(name + '_hole', w - 3, 1.5, h - 3, bx + xc - (w - 3) / 2, by - 3.5, Z1 + zc - (h - 3) / 2, inner or M['dark'])
+    """背面I/Oポート(MDA-009): シールド(中実ブロック)にコネクタ形の**空洞**を開け、内部に色つきの舌片(USB-A=赤/黒、Type-C=薄板)を置く。
+    外形 w×h は面板(フランジ)、空洞は (w-3)×(h-3)×深さ12。寸法の根拠: USB-A開口12.5×5.12 / Type-C 8.34×2.56(USB-IF)。ポートごとの舌片・接点の細部はUNVERIFIED。"""
+    x0, z0 = bx + xc - w / 2, Z1 + zc - h / 2
+    fl = ibox(name + '_shell', w, 0.8, h, x0, by - 3.4, z0, M['steel'], .2)
+    ct = cutbox(name + '_cavity', bx + xc - (w - 3) / 2, by - 3.6, Z1 + zc - (h - 3) / 2, w - 3, 12.6, h - 3)
+    for tgt in (fl, _ios):
+        m_ = tgt.modifiers.new(name, 'BOOLEAN'); m_.object = ct; m_.operation = 'DIFFERENCE'; m_.solver = 'EXACT'
+    if w >= 9:       # 舌片(コネクタ内の基板): Type-Cは薄い板、Type-A/RJ45/HDMIは空洞の中央に1枚
+        ibox(name + '_tongue', w - 6, 9.0, 1.2 if h < 5 else 1.6, bx + xc - (w - 6) / 2, by - 1.0, Z1 + zc - 0.6, inner or M['dark'], .1)
 mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
 # リアI/O配置: ASUS公式マニュアル p.26 の図(外側から見た並び)を読み取り。左→右:
 #  列A(x15〜34): USB 10G赤(Type-A)×2 縦積み / HDMI    列B(x40〜55): ボタン(CLR_CMOS/BIOS FlashBack) / USB 10G赤 / USB4 40G Type-C
@@ -571,8 +578,9 @@ port('io_usb2_3', 83.5, 11.6, 14.5, 7, usb2_in); port('io_usb4_c2', 83.5, 2.7, 9
 port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 14.5, 7, usb_red); port('io_usbc_10g', 101.5, 3.0, 9, 3.6)
 for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
-_vs = ibox('vrm_shroud', 98, 36, 14, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
-ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])
+_vs = ibox('vrm_shroud', 98, 36, 5, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
+for _k in range(21): ibox(f'vrm_fin{_k}', 1.2, 33, 9, bx + 10 + _k * 4.55, by + 25.5, Z1 + 5, M['shroud'], .2)      # フィン21枚(厚1.2×高9, ピッチ4.55): 高さ14=ベース5+フィン9。形状・枚数は公式に無い=UNVERIFIED      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
+ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])      # 前縁トリム
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
@@ -710,16 +718,19 @@ ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4
 
 # ===== 電源: Corsair SF1000 (SFX 125x63.5x100)。ファン面を上(ドーム側)、モジュラー端子面を基板側 =====
 px_, py_, pz_ = lp('psu')
-ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
+# PSU本体(MDB-020/021/022): 中実の箱でなく、ファン面(上)に径88の開口を持つ殻+内部の詰め物(電源基板の代用)。ファンは開口内に収め、グリルは上面に接する。
+_pb = ibox('psu_body', 125, 100, 63.5, px_, py_, pz_, M['sf_body'], 1.5)
+_pc = cyl('psu_fan_opening', 44, 4.0, 'z', X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.5), None, 64, body=False); _pc.hide_render = True; BODY_OBJS.append(_pc)
+_pm = _pb.modifiers.new('fan_opening', 'BOOLEAN'); _pm.object = _pc; _pm.operation = 'DIFFERENCE'; _pm.solver = 'EXACT'
 wire = principled('psu_wire', '#2a2c31', .9, .4)
-make_fan('fan_psu', 92, 8, 9, M['dark'], principled('psu_blade', '#202226', .2, .45), principled('psu_hub', '#2a2c31', .3, .4), px_ + 62, py_ + 50, pz_ + 54)
+make_fan('fan_psu', 92, 8, 9, M['dark'], principled('psu_blade', '#202226', .2, .45), principled('psu_hub', '#2a2c31', .3, .4), px_ + 62, py_ + 50, pz_ + 55.0)      # ファン(厚8)を開口内に収める(上面63.5まで)
 bpy.data.objects['fan_psu_frame'].hide_render = True
-for k in range(1, 5): icyl(f'psu_grille_ring{k}', 9.5 * k, .5, 'z', px_ + 62, py_ + 50, pz_ + 64.2, wire, 48)
+for k in range(1, 5): icyl(f'psu_grille_ring{k}', 9.5 * k, .5, 'z', px_ + 62, py_ + 50, pz_ + 63.75, wire, 48)      # グリル=上面に接する(面上0.5mm)
 _bm = bmesh.new()
 for k in range(6):
-    bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 64.2))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((92, .5, .5, 1)))
+    bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.75))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((88, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
-ibox('psu_label', 70, 38, .3, px_ + 28, py_ + 30, pz_ + 63.5, M['sf_label'])     # 仕様ラベル(内容は未確認のため無地)
+ibox('psu_label', 28, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
 # モジュラーソケット10個(レビュー/小売の記載。公式図は未取得 U59): 2段×5列(上段5=大, 下段5=小)の想定配置
 for i in range(5):
     ibox(f'psu_socket{i}', 17, 5, 11, px_ + 6 + i * 23, py_ - 4, pz_ + 36, M['rubber'], .4); ibox(f'psu_socket{i + 5}', 11, 5, 9, px_ + 9 + i * 23, py_ - 4, pz_ + 20, M['rubber'], .4)

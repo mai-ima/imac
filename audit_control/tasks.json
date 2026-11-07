@@ -18483,17 +18483,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:35:00Z",
+     "in_review",
+     "PSUをファン開口つきの殻へ(描画 scratchpad/r/psu.png)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "PSUをファン開口つきの殻へ(描画 scratchpad/r/psu.png)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18514,17 +18520,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:35:00Z",
+     "in_review",
+     "グリルを上面に接する位置へ(同上)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "グリルを上面に接する位置へ(同上)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18545,17 +18557,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:35:00Z",
+     "in_review",
+     "ラベルをグリル外(左端の帯)へ移動(同上)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "ラベルをグリル外(左端の帯)へ移動(同上)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -19878,17 +19896,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:04:47Z",
      "triaged",
      "R12取込(R12_model_A_board.md)"
+    ],
+    [
+     "2026-11-07T14:35:00Z",
+     "in_review",
+     "VRMヒートシンクをベース+フィン21枚へ(コード。描画での確認は未了)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_A_board.md"
+    "audit_control/reports/R12_model_A_board.md",
+    "VRMヒートシンクをベース+フィン21枚へ(コード。描画での確認は未了)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -20126,17 +20150,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:04:47Z",
      "triaged",
      "R12取込(R12_model_A_board.md)"
+    ],
+    [
+     "2026-11-07T14:35:00Z",
+     "in_review",
+     "I/Oポートを空洞+舌片へ(コード。下方からの描画確認は未了=床に遮られ黒画像)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_A_board.md"
+    "audit_control/reports/R12_model_A_board.md",
+    "I/Oポートを空洞+舌片へ(コード。下方からの描画確認は未了=床に遮られ黒画像)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
