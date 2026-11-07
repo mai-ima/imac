@@ -13,3 +13,8 @@ iMac風27型4K一体型ゲーミングPC設計の全面監査・改修(完全統
 - 残K/A: K03,K07,K08(in_review),K09/K21(blocked),K10(in_review),K16〜K18,K20(in_review),K22,K24,K25,A01〜A15。
 - 他: D08(上辺掛け爪/側辺フック), MECH-IDX, SHIM(調整幅±7%と未調整±10%の整合), ANCHOR-6, XCHK。
 - 再開手順: python3 tools/audit_control_init.py; python3 audit_control/validate_state.py; bash tools/run_gates.sh; python3 tools/consistency_check.py。
+
+## 更新(2026-11-07 最新版再監査バッチ1)
+- BASELINE.md、ledger_import.py(GA32+R9 273件を登録、resolutions.jsonで状態判定)、tests/+CI、validate_stateをrun_gatesへ、ARCHIVE_INDEX.json(GLB古版/blend1/handoff_v9.zip退避)。
+- 未実施: R10監査エージェント2件(機構/熱電気)はAPIレート制限で中断(4am UTC後に SendMessage で再開: a8efeb6562c8df456, af7ec4bce5d091813)。file_coverage は 1185件 NOT_REVIEWED。
+- 次: (1)resolutions.json未判定のR9指摘(triaged 約270件)を順に判定/修正、(2) file_lifecycle.csv(全パス状態)作成、(3) 重複archive整理、(4) check_references.py、(5) ctrl基板/GPU SKU等 BLOCKED の公式資料整理。
