@@ -19,6 +19,15 @@
    "file": "D02_stand_assembly/D02_stand_assembly.v002__2026-11-06_cf90ba1.svg"
   },
   {
+   "src": "drawings/v10/D02_stand_assembly.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "88a5c9eb39b1a4531ea1baa8773026584fb9948b365ac79eeda134f8963b882a",
+   "file": "D02_stand_assembly/D02_stand_assembly.v003__2026-11-06_36dff8c.svg"
+  },
+  {
    "src": "drawings/v10/D03_tilt_hinge_section.svg",
    "version": 1,
    "gen": "current",
@@ -44,6 +53,15 @@
    "commit": "36dff8c",
    "sha256": "d801b54d36ea3cebdf1dd8bec141849a680fb5d3c61ea03f4d8949147047f76b",
    "file": "D04_balancer_section/D04_balancer_section.v002__2026-11-06_36dff8c.svg"
+  },
+  {
+   "src": "drawings/v10/D04_balancer_section.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "b0acdea9b8b4897c278ce939801e421f05f078b843986c1dd66d6704a23c5542",
+   "file": "D04_balancer_section/D04_balancer_section.v003__2026-11-07_3089847.svg"
   },
   {
    "src": "drawings/v10/D07_stopper_keyhole_detail.svg",

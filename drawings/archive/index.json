@@ -334,6 +334,15 @@
    "file": "05_stand/05_stand.v011__2026-11-06_36dff8c.svg"
   },
   {
+   "src": "drawings/05_stand.svg",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "fc73c3b",
+   "sha256": "41e4b09b2716b9e4285b6f9a21f9d470a8f65d71a23b2bbaa5fcd10415e9fa46",
+   "file": "05_stand/05_stand.v012__2026-11-07_fc73c3b.svg"
+  },
+  {
    "src": "drawings/06_service_tray_plan.svg",
    "version": 1,
    "gen": "current",
@@ -1313,6 +1322,15 @@
    "commit": "f2e5a87",
    "sha256": "1e429ec94d9ecd5a34c7d3e20a29a6dfc835fb076cdd16ecb0afbd83c8109bee",
    "file": "outlines/outlines.v019__2026-11-06_f2e5a87.dxf"
+  },
+  {
+   "src": "drawings/outlines.dxf",
+   "version": 20,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "fc73c3b",
+   "sha256": "29065c3c1225557f5bfc89026f5cce3e25f4fd3fee9f273dbd00f39adb83415d",
+   "file": "outlines/outlines.v020__2026-11-07_fc73c3b.dxf"
   }
  ]
 }

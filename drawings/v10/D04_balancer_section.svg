@@ -207,7 +207,7 @@
 <text x="228.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">3</text>
 <text x="236.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">カム板 SUS440C HRC58 t10(ヒンジブロック底面にM4×2で固定, 左右)</text>
 <text x="296.00" y="46.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">2</text>
-<text x="310.00" y="46.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS304 t6</text>
+<text x="310.00" y="46.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS440C HRC58</text>
 <text x="341.00" y="46.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-23(新)</text>
 <line x1="226" y1="52.4" x2="410" y2="52.4" stroke="#000" stroke-width="0.12"/>
 <text x="228.00" y="51.10" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">4</text>
@@ -231,7 +231,7 @@
 <text x="228.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">7</text>
 <text x="236.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">案内ロッド Ø8×2本(基台に圧入, z=±15)</text>
 <text x="296.00" y="64.90" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">2</text>
-<text x="310.00" y="64.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS303</text>
+<text x="310.00" y="64.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">SUS630 H1025</text>
 <text x="341.00" y="64.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">CP-23</text>
 <line x1="226" y1="70.8" x2="410" y2="70.8" stroke="#000" stroke-width="0.12"/>
 <text x="228.00" y="69.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#000">8</text>
@@ -257,9 +257,9 @@
 <text x="229.00" y="116.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">22→最大27.3mm、圧力角最大19.3°。</text>
 <text x="226.00" y="121.20" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">旧方式(尾部レバー先端と下のアンカー間の圧縮ばね)は、ピン間距離が|a|で伸びてばねが緩み、エネルギーが減るため転倒方向のトルクになる。エネルギー法で確認し廃止(R9T</text>
 <text x="229.00" y="124.90" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">-001)。</text>
-<text x="226.00" y="129.80" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">案内ロッド(7)がばね内を貫通して基台の止まり穴に入る。ばね折損時も破片はロッド周りに留まり、ローラは落下しない。ばね座(9)のシムで荷重を±約8%調整(0.25mm刻</text>
-<text x="229.00" y="133.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">み)。</text>
+<text x="226.00" y="129.80" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">キャリア(6)は基台に圧入した案内ロッド(7)2本(Ø8, z=±15)をリニアブッシュで摺動し、カムの横力(約350N/本)を受ける。ばね座(9)のシムで荷重を調整(</text>
+<text x="229.00" y="133.50" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">0.25mm刻み)。実カム面はピッチ曲線の法線オフセットで、ストッパ手前に±8°の余長を持たせる。</text>
 <text x="226.00" y="138.40" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ばね1本折損時は復元トルクが半減し、残りの1本+摩擦ヒンジ(D03)+ゴムストッパで減速・保持(tools/strength_check.py)。</text>
-<text x="226.00" y="143.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">尾部レバー(1)はストッパ専用(D07)。カム板は頭部の運動に追従し、motion_check で掃引干渉を検査。カム面の加工精度・ローラ摩擦・ばね型番は未確定(U26</text>
-<text x="229.00" y="147.00" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">/U51)でUNVERIFIED。</text>
+<text x="226.00" y="143.30" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">ヘルツ接触応力は約1400MPa(焼入れ鋼の目安≦1600)。尾部レバー(1)はストッパ専用(D07)。カム板は頭部の運動に追従し、motion_check で掃引干渉</text>
+<text x="229.00" y="147.00" font-size="2.1" text-anchor="start" font-weight="normal" fill="#000">を検査。カム面の加工精度・ローラ摩擦・ばね型番は未確定(U26/U51)でUNVERIFIED。</text>
 </svg>
