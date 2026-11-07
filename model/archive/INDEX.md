@@ -8,6 +8,7 @@
 | balance.json | v004 | current | 2026-11-06 | 28dc82b | balance/balance.v004__2026-11-06_28dc82b.json |
 | balance.json | v005 | current | 2026-11-06 | 88f99b7 | balance/balance.v005__2026-11-06_88f99b7.json |
 | balance.json | v006 | current | 2026-11-06 | cf90ba1 | balance/balance.v006__2026-11-06_cf90ba1.json |
+| balance.json | v007 | current | 2026-11-06 | 36dff8c | balance/balance.v007__2026-11-06_36dff8c.json |
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
@@ -40,6 +41,7 @@
 | custom_parts.json | v021 | current | 2026-11-06 | f2e5a87 | custom_parts/custom_parts.v021__2026-11-06_f2e5a87.json |
 | custom_parts.json | v022 | current | 2026-11-07 | 64a1afa | custom_parts/custom_parts.v022__2026-11-07_64a1afa.json |
 | custom_parts.json | v023 | current | 2026-11-07 | 15af08b | custom_parts/custom_parts.v023__2026-11-07_15af08b.json |
+| custom_parts.json | v024 | current | 2026-11-07 | 01950c5 | custom_parts/custom_parts.v024__2026-11-07_01950c5.json |
 | hardware_list.json | v001 | current | 2026-11-06 | 09ad133 | hardware_list/hardware_list.v001__2026-11-06_09ad133.json |
 | hardware_list.json | v002 | current | 2026-11-06 | 514e2e0 | hardware_list/hardware_list.v002__2026-11-06_514e2e0.json |
 | hardware_list.json | v003 | current | 2026-11-06 | 7ed5c4c | hardware_list/hardware_list.v003__2026-11-06_7ed5c4c.json |
@@ -52,6 +54,7 @@
 | hardware_list.json | v010 | current | 2026-11-06 | 4050ed9 | hardware_list/hardware_list.v010__2026-11-06_4050ed9.json |
 | hardware_list.json | v011 | current | 2026-11-06 | 93238a3 | hardware_list/hardware_list.v011__2026-11-06_93238a3.json |
 | hardware_list.json | v012 | current | 2026-11-06 | e7a16e1 | hardware_list/hardware_list.v012__2026-11-06_e7a16e1.json |
+| hardware_list.json | v013 | current | 2026-11-06 | 36dff8c | hardware_list/hardware_list.v013__2026-11-06_36dff8c.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -102,5 +105,6 @@
 | spec.json | v025 | current | 2026-11-06 | 93238a3 | spec/spec.v025__2026-11-06_93238a3.json |
 | spec.json | v026 | current | 2026-11-06 | 36dff8c | spec/spec.v026__2026-11-06_36dff8c.json |
 | spec.json | v027 | current | 2026-11-06 | f2e5a87 | spec/spec.v027__2026-11-06_f2e5a87.json |
+| spec.json | v028 | current | 2026-11-07 | 64a1afa | spec/spec.v028__2026-11-07_64a1afa.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |
 | x870i_layout.json | v002 | current | 2026-11-06 | 85af1a8 | x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json |

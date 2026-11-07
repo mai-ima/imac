@@ -190,6 +190,15 @@
    "file": "custom-parts/custom-parts.v019__2026-11-07_15af08b.md"
   },
   {
+   "src": "docs/spec/custom-parts.md",
+   "version": 20,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "01950c5",
+   "sha256": "00ed5f0a10db8942e8ff019f774ef2c7d01dddb3fdbdac085f2da31a849d8e6e",
+   "file": "custom-parts/custom-parts.v020__2026-11-07_01950c5.md"
+  },
+  {
    "src": "docs/spec/design-philosophy.md",
    "version": 1,
    "gen": "current",

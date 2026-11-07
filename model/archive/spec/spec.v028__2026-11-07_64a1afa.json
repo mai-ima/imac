@@ -1,0 +1,330 @@
+{
+ "_doc": "外形・ドーム・色の共通仕様(単位mm)。部品は parts.json、配置は layout.json。",
+ "panel_size": 27,
+ "panels": {
+  "24": {
+   "w": 527.0,
+   "h": 296.5
+  },
+  "27": {
+   "w": 596.7,
+   "h": 335.7
+  }
+ },
+ "bezel": 11.6,
+ "chin": 68,
+ "slab_t": 25.0,
+ "corner": 10,
+ "pod": {
+  "total_t": 190,
+  "h": 256,
+  "side_margin": 27,
+  "wall": 3,
+  "_legacy": "v6ポッド由来のレガシー値。現行ツールは dome.inner_wall_offset_mm を使う(K01で一本化)"
+ },
+ "stand": {
+  "w": 150,
+  "drop": 105,
+  "foot_depth": 310,
+  "foot_w": 360,
+  "foot_front": 110,
+  "foot_back": 200,
+  "ballast_kg": 3.5,
+  "base_kg": 2.2
+ },
+ "palette": {
+  "silver": [
+   "#D2D3D5",
+   "#BBBCBE",
+   "#D7D8DA"
+  ],
+  "blue": [
+   "#5882B2",
+   "#9EB2CD",
+   "#BACEE9"
+  ],
+  "purple": [
+   "#8581B4",
+   "#ACA3C0",
+   "#C9C5E6"
+  ],
+  "pink": [
+   "#E16280",
+   "#E7A9B6",
+   "#FFCFDB"
+  ],
+  "orange": [
+   "#E5734E",
+   "#F0B498",
+   "#FFCCAF"
+  ],
+  "yellow": [
+   "#EFD344",
+   "#DCCB97",
+   "#FDEEB7"
+  ],
+  "green": [
+   "#41965F",
+   "#A2BFAD",
+   "#B9D8C6"
+  ]
+ },
+ "palette_doc": "[背面, スタンド, チン] Apple公式画像から実測",
+ "body_w": 620.0,
+ "panel_module": {
+  "name": "BOE MV270QUM-N50 (包絡線。LG LM270WR3-SSC1 608.8x355.3x12.8 も内包)",
+  "outline": [
+   609.4,
+   355.6,
+   13.3
+  ],
+  "active": [
+   596.736,
+   335.664
+  ],
+  "aa_to_outline_LRUD": [
+   6.032,
+   6.032,
+   5.968,
+   13.668
+  ]
+ },
+ "dome": {
+  "_doc": "iMac Pro/2012風の背面ドーム: 縁は薄く(slab+数mm)、中央に向かって傾斜して最大厚に達する。base=ドームの外形(スラブ背面上の矩形)。run=縁から最大厚に達するまでの水平距離。d0=縁での内部有効奥行。",
+  "inset_left_right": 12,
+  "inset_bottom": 24,
+  "inset_top": 14,
+  "corner_r": 50,
+  "inner_wall_offset_mm": 3.0,
+  "_inner_wall_offset_doc": "ドーム内面(トレイ側)から有効空間までの控え。板厚sheet_t(2.0)+組立クリアランス1.0。fitcheck/massmodel/図面生成はこの値を使う。旧pod.wallは同値のレガシー名(v6ポッド)で参照禁止。",
+  "run": 64,
+  "edge_inner_depth": 6,
+  "total_t": 190,
+  "sheet_t": 2.0,
+  "_note_v10": "v10: ARCTIC LF III Pro のホース出口は上面から垂直(公式2D図)。スタブ先端z≈81+ホース曲げ(R40仮置き, U45)のため、内奥行を101→162mm(総厚129→190mm)に拡大。ホース最小曲げ半径(U45)次第で再調整"
+ },
+ "hinge": {
+  "axis_y": 10.0,
+  "axis_z_from_glass": 45.0,
+  "doc": "v10: ヒンジ軸 z=45/y=10。チルト-15〜+40°。バランサ=カム板+ローラ+ダイスプリング2本(R9T-001で旧レバー方式から変更)。保持=調整式の摩擦ヒンジ合計3.0N·m±8%(経年-30%を見込んでも最悪残差0.83N·mを保持)。操作力目標は上端で≦20N(カム方式で最悪残差が小さくなったためユーザー原要求の20Nへ復帰)。",
+  "tilt_min_deg": -15.0,
+  "tilt_max_deg": 40.0,
+  "balance_cam": {"rho0_mm": 30.0, "F0_total_N": 1000.0, "k_spring_N_mm": 30.0, "roller_r_mm": 6.0, "spring_x_mm": 26.5, "base_seat_depth_mm": 82.0, "guide_rod": true, "_doc": "R9T-001: 旧レバー+圧縮ばね(転倒方向)を廃止し、カム+ローラ従動子+圧縮ダイスプリング2本へ。ρ0=軸からローラ中心までの最小距離。F0=0°での2本合計荷重。"},
+  "balance_end_hw_mm": 16,
+  "friction_hold_Nm": 3.0,
+  "friction_tol_pct": 8.0,
+  "balance_force_tol_pct": 3.0,
+  "balance_cg_tol_mm": 3.0,
+  "balance_note": "ばね座のシム(0.25mm刻み)で荷重を調整し、組立時に頭部重量(実測)へ合わせて調整後の公差(荷重±3%, 重心±3mm)を前提とする。未調整の公差(荷重±10%, 重心±10mm)では保持/操作が両立しない(balance_calc.py参照)",
+  "friction_aging_loss": 0.3,
+  "op_target_N": 20
+ },
+ "v7_notes": "v8(2026-11-06)確定値: slab_t 25(ガラス1.1+エアギャップ0.9+パネル13.3+空気層4.0+断熱3.0+背板2.0=24.3, 余裕0.7)。総厚はdome.total_t 129に一本化(内奥行101=総厚-slab-壁3, 縁の内奥行6, run 64)。トレイ板z3〜5(断熱3mmを介して背板に吊る)、基板6.35mm/他3.0mmスタンドオフ。ヒンジ軸 z=45/y=10(背板後面から20mm後方: Ø22ヒンジ(z-56〜-34)がブロック底板(z-27〜-25)と干渉しない最小位置。トルクのゼロ交差≈0°)。足360×310+鋼板ballast3.5kg(厚さは質量から算出)(足内6mm≈1.8kg)。",
+ "swivel": {
+  "range_deg": 60.0,
+  "axis_x": 0.0,
+  "axis_z_from_glass": 45.0,
+  "stack_h": 25.0,
+  "bearing_od": 100.0,
+  "bearing_id": 60.0,
+  "holding_torque_Nm": 1.8,
+  "mass_stator_kg": 0.9,
+  "mass_rotor_kg": 0.5,
+  "doc": "v9: 左右首振り±60°。クロスローラ(スリューリング)軸受+摩擦リング+アーク溝ストッパ。内部配線は通さない(ACコードは外付け)。",
+  "pcd_inner": 70.0,
+  "pcd_outer": 90.0,
+  "rotor_r": 76.0,
+  "stator_r": 95.0,
+  "stop_r": 86.0
+ },
+ "neck": {
+  "base_t": 8.0,
+  "base_half_x": 62.0,
+  "base_z": [
+   -28.061328317509183,
+   38.21708983117518
+  ],
+  "side_x": [
+   56.0,
+   62.0
+  ],
+  "side_z": [
+   -27.061328317509183,
+   38.21708983117518
+  ],
+  "strip_w": 8.0,
+  "body_top": -16.0,
+  "boss_r": 11.0,
+  "cover_top": -34.0,
+  "front_cover_z": [
+   32.21708983117518,
+   38.21708983117518
+  ],
+  "back_cover_z": [
+   -26.0,
+   -24.0
+  ],
+  "tie_z": [
+   -27.061328317509183,
+   -21.061328317509183
+  ],
+  "tie_y": [
+   -54.0,
+   -12.0
+  ],
+  "pad_x": [
+   24.0,
+   29.0
+  ],
+  "pad_up_z": [
+   26.21708983117518,
+   32.21708983117518
+  ],
+  "pad_dn_z": [
+   -21.061328317509183,
+   -15.061328317509183
+  ],
+  "doc": "ZC(ヒンジ軸z)基準の相対z[mm]。ネック基台(t8)はロータ板(Ø152)にM5×4で固定。ストッパは尾部レバー(長さ34)の側縁が当たる: -15°側=側板間タイプレート(t6)のゴムパッド、+40°側=前カバー(t6, z36〜42)内面のゴムパッド。",
+  "lever_len": 34.0,
+  "lever_pin_d": 8.0,
+  "lever_w": 14.0,
+  "lever_t": 5.0,
+  "boot": {
+   "kind": "ゴム蛇腹ブーツ(シリコーン, UL94 V-0)",
+   "length_range_mm": [
+    22,
+    70
+   ],
+   "convolutions": 10,
+   "shear_mm": 8,
+   "note": "ヒンジブロック下面(頭部側)とネックカバー上端(y=-34)を囲む。伸縮比≈3.2:1(山10)。実特性・耐久は未確認(U53)"
+  },
+  "pad_thick": 6.0,
+  "pad_comp_mm": {
+   "dn": 0.5,
+   "up": 1.0
+  },
+  "tab_y_top": -11.0,
+  "tab_x": [
+   -56.0,
+   56.0
+  ]
+ },
+ "dome_seal": {
+  "line_force_N_per_mm": 0.098,
+  "perimeter_mm": 1947,
+  "thickness_mm": 3.0,
+  "comp_nom": 0.33,
+  "comp_tol": 0.083,
+  "latch_n": 6,
+  "latch_hold_N": 90,
+  "latch_turn_lead_mm": 3.0,
+  "latch_eff": 0.4,
+  "safety": 1.5,
+  "doc": "EMIガスケットは溝規制の圧縮(溝深さ公差±0.1)+ドーム縁の平面度0.1(CP-07のガスケット座を0.3→0.1へ強化)。最小圧縮=公称-積層-平面度-永久歪み(15%)。下限線荷重0.04N/mm(EMI接触)の根拠はメーカー確認が必要(U61)。左右辺は掛け爪(側辺フック×4, 各40N)で反力を受ける",
+  "comp_tol_stack": 0.067,
+  "comp_flat": 0.033,
+  "comp_set": 0.045,
+  "min_line_N_per_mm": 0.04,
+  "side_hooks": 4,
+  "side_hook_hold_N": 40
+ },
+ "fits": {
+  "keyhole_slot_w": 6.3,
+  "keyhole_slot_tol": [
+   0.0,
+   0.05
+  ],
+  "pin_shoulder_d": 6.0,
+  "pin_tol": [
+   -0.018,
+   0.0
+  ],
+  "dowel_d": 4.0,
+  "dowel_shaft_tol": [
+   -0.012,
+   -0.004
+  ],
+  "dowel_hole_tol": [
+   0.0,
+   0.012
+  ],
+  "axle_d": 12.0,
+  "axle_tol": [
+   -0.011,
+   0.0
+  ],
+  "axle_bore_tol": [
+   0.0,
+   0.008
+  ],
+  "swivel_preload_N": 400.0,
+  "swivel_preload_tol": 0.15,
+  "swivel_mu": [
+   0.1,
+   0.18
+  ],
+  "swivel_r_mm": 35.0,
+  "swivel_hold_window_Nm": [
+   1.0,
+   3.0
+  ],
+  "keyhole_pos_stack": 0.2,
+  "keyhole_rattle_max": 0.6,
+  "dowel_note": "2本のうち1本は丸穴、もう1本は長穴(ダイヤモンドピン)で過拘束を避ける。位置公差はピン間距離±0.1を長穴で吸収",
+  "pin_tray_mass_kg": 6.6,
+  "pin_arm_mm": 2.5,
+  "pin_g": 30,
+  "pin_count_loaded": 2
+ },
+ "wallpaper": {
+  "_doc": "本体色ごとの壁紙グラデーション(暗→明の4停止点)。Blender(build_imac_pc_v8.py)とビューア(viewer/index.html)の単一源。tools/sync_wallpaper.py でビューアへ埋め込み",
+  "silver": [
+   "#10131f",
+   "#3a4570",
+   "#8b93b8",
+   "#e6e8f2"
+  ],
+  "blue": [
+   "#04163f",
+   "#0a4aa8",
+   "#2e9bff",
+   "#a8e0ff"
+  ],
+  "purple": [
+   "#1a0a45",
+   "#5a2fc2",
+   "#b25cf0",
+   "#f2c2ff"
+  ],
+  "pink": [
+   "#3b0a2a",
+   "#b0225e",
+   "#ff5f93",
+   "#ffc1c9"
+  ],
+  "orange": [
+   "#3a0e05",
+   "#c7380f",
+   "#ff8a2a",
+   "#ffd79a"
+  ],
+  "yellow": [
+   "#2b2305",
+   "#a07d00",
+   "#ffd21f",
+   "#fff3a3"
+  ],
+  "green": [
+   "#031f12",
+   "#0b6b3a",
+   "#2fbf71",
+   "#c6f5b5"
+  ]
+ },
+ "windows": {
+  "io_y0": -8.0,
+  "gpu_y0": -8.0,
+  "_doc": "ドーム下辺の開口は縁(y<0)まで連続した切り欠きにする(プラグを外から挿せる)。build_imac_pc_v8.py と tools/fitcheck.py が参照"
+ }
+}

@@ -1,29 +1,31 @@
-# プロジェクト要約(自動生成 2026-11-06)
+# プロジェクト要約(自動生成 2026-11-07)
 
 `tools/gen_project_summary.py` が全ファイルを走査して生成。手で直さない。
 
 ## 1. 現行の主要数値(model/spec.json)
 - 本体: 幅620.0mm×スラブ厚25.0mm、ドーム総厚190mm(内奥行162.0mm。ポンプ垂直出口ホース用)
 - スタンド: 足360×310mm、ballast 3.5kg、チルト-15〜+40°、首振り±60°、ヒンジ軸 z=45.0
-- バランサ: カム式(ρ0=30mm、ばね0°500N/本・最大670N)、摩擦保持3.0N·m±8%、操作力目標≦20N
+- バランサ: カム式(ρ0=22mm、ばね0°675N/本・最大992N)、摩擦保持3.0N·m±8%、操作力目標≦20N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1186件 = 現行 324 + 履歴archive 862)
+## 2. ファイル構成(git追跡 1280件 = 現行 326 + 履歴archive 954)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
 | (root) | 2 |  |
-| audit_control | 5 |  |
+| .github | 1 |  |
+| audit_control | 11 |  |
 | audit_output | 5 | 監査台帳・指摘一覧 |
-| blender | 24 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
+| blender | 22 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
 | concept | 3 | コンセプト画像 |
-| docs | 54 | 仕様・設計書・調査・監査記録 |
+| docs | 56 | 仕様・設計書・調査・監査記録 |
 | drawings | 49 | 図面(SVG/DXF/PDF入力) |
-| handoff | 74 | 業者提出パッケージ |
+| handoff | 75 | 業者提出パッケージ |
 | model | 14 | 単一源データ(spec/layout/parts/custom_parts/balance/pump/cables…) |
 | render | 37 | レンダリング画像 |
-| tools | 53 | 生成器・計算・検査ゲート |
+| tests | 1 |  |
+| tools | 46 | 生成器・計算・検査ゲート |
 | viewer | 3 | Three.jsビューア+GLB |
 
 ## 3. 主要ファイル(一行要約)
@@ -57,12 +59,15 @@
 - `gen_service_drawings.py` — 整備機構の図面(SVG)を model/spec.json と model/layout.json から生成する。
 - `gen_specs.py` — 仕様書一式の生成: docs/spec/*.md, drawings/parts/CP-*.svg, drawings/16_cable_clips.svg。
 - `guard_no_delete.sh` — 過去の仕様書・設計図・図面・モデルの削除を禁止するガード(pre-commitフックから呼ぶ)。
+- `handoff_build.sh` — 業者提出パッケージを正規順で再生成: JSON → 図面/DXF(gen_mfg_drawings, gen_cad_drawings, gen_mech_sections, gen_service_drawings) 
 - `joint_calc.py` — 接合部・ヒンジ・熱膨張などの強度/トルク概算(v6質量見積り)。出力: docs/joint-analysis.md
 - `layout_search.py` — ドーム傾斜制約付きの配置探索。部品の長方形(x,y)を乱択+局所探索で配置し、制約を満たす案を出力する。
+- `ledger_import.py` — GA-01〜32 と R9 の全指摘(reports/R9_*.md)を tasks.json へID単位で登録/更新する(GA-14)。
 - `massmodel.py` — 質量・重心モデル(単一情報源)。layout.json の位置から重心を導出する。質量は部品カタログ/推定(未実測, U25)。
 - `motion_check.py` — 可動範囲の干渉検査: チルト(ヒンジ軸まわり)×首振り(垂直軸まわり)の全格子で、頭部の包絡(スラブ+ドーム、安全側の直方体)と
 - `neckgeom.py` — ネックのストッパ幾何を導出して model/spec.json の neck に書き戻す(--write)。入力: lever_len/lever_w/lever_t/pad_thick と チルト端、出力: パッド・タ
 - `power_budget.py` — 電力収支(単一源): シナリオ別に DC負荷 → PSU損失 → AC入力 を同じ式で求め、筐体内で熱になる総量=AC入力(保存則)を検査する。
+- `r9_autocheck.py` — R9指摘の自動再判定: 報告の『原文』(「…」引用)が、指摘された現行ファイルにまだ存在するかをgrepする。
 - `run_gates.sh` — 品質ゲート一括実行(失敗を隠さない)。順序: 正規データ→計算→独立検証→台帳
 - `stability.py` — 転倒安定性(v9: チルト×首振りの全格子)。質量/重心は tools/massmodel.py(layout由来, 推定)。
 - `stale_check.py` — 品質ゲート: 現行ファイル(archive除く)に旧値/廃止物が残っていないか、正規データ間の不変条件が成り立つかを検査。
@@ -91,6 +96,7 @@
 
 ### docs/
 
+- `INDEX.md` — 文書索引(今読むべき正本)
 - `PRINCIPLES.md` — 基本思想・制作思想(不変条件) — 各周で必ず確認する
 - `PROJECT-SUMMARY.md` — プロジェクト要約(自動生成 2026-11-06)
 - `README.md` — docs/ 索引(現行: v9)
@@ -118,7 +124,7 @@
 - `service-mechanisms.md` — 取り外し・整備機構の設計 (v7, 2026-11-05 全面改訂)
 - `source-status.md` — 一次情報の取得可否 (2026-11-03 13:46)
 - `thermal-analysis.md` — 熱解析(部品別・再循環モデル) (自動生成: tools/thermal_calc.py)
-- `tilt-swivel-design.md` — チルト拡大・左右首振り(v9)設計 — 自動生成物を含む
+- `tilt-swivel-design.md` — (移転)チルト・首振り設計
 - `unverified-tracker.md` — 未確認項目の台帳 (定期的に再調査して更新する)
 - `wiring.md` — 配線表(自動生成: tools/gen_package.py)
 

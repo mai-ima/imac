@@ -44,12 +44,13 @@ HEAD = {'スラブ(前面ガラス+パネル+チン)': rect(-W / 2, W / 2, 0, H,
         'ヒンジカバー': rect(-69, 69, 0, 22, -61, -59), '裏当て板': rect(-70, 70, 0, 22, -23, -20), '補強板': rect(-72, 72, 0, 22, -20, -16),
         '尾部レバー左': rect(-29, -24, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2), '尾部レバー右': rect(24, 29, HY - NK['lever_len'], HY, ZC - NK['lever_w'] / 2, ZC + NK['lever_w'] / 2),
         }
+BAL_CAMT = S['hinge']['balance_cam']['cam_t_mm']
 # カム板(R9T-001: ヒンジブロック底面 yl=-10 に取付、x=±14, t6)。カム面=ローラ接触点軌跡(頭部座標 zl=-r sinψ, yl=-r cosψ, r=ρ(ψ)-ローラ半径)
-CAMP = [(math.radians(a), r - BAL['roller_r']) for a, r in BAL['cam_profile_pitch_radius']]
+CS = BAL['cam_surface_head_frame']      # 実カム面(頭部座標 zl,yl。ストッパ範囲±余長を含む)
 for sx, nm in ((-14, '左'), (14, '右')):
-    for i in range(len(CAMP) - 1):
-        (p0, r0), (p1, r1) = CAMP[i], CAMP[i + 1]; z0, y0 = -r0 * math.sin(p0), -r0 * math.cos(p0); z1, y1 = -r1 * math.sin(p1), -r1 * math.cos(p1)
-        HEAD[f'カム板{nm}{i}'] = rect(sx - 3, sx + 3, HY + min(y0, y1), HY - 10, ZC + min(z0, z1), ZC + max(z0, z1))
+    for i in range(len(CS) - 1):
+        (_, z0, y0), (_, z1, y1) = CS[i], CS[i + 1]
+        HEAD[f'カム板{nm}{i}'] = rect(sx - BAL_CAMT / 2, sx + BAL_CAMT / 2, HY + min(y0, y1), HY - 10, ZC + min(z0, z1), ZC + max(z0, z1))
 NECK = {'ネック基台': rect(-NK['base_half_x'], NK['base_half_x'], SY, SYS, ZC + NK['base_z'][0], ZC + NK['base_z'][1]),
         '左側板(本体)': rect(-NK['side_x'][1], -NK['side_x'][0], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]), '右側板(本体)': rect(NK['side_x'][0], NK['side_x'][1], SYS, NK['body_top'], ZC + NK['side_z'][0], ZC + NK['side_z'][1]),
         '左ストリップ': rect(-NK['side_x'][1], -NK['side_x'][0], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2), '右ストリップ': rect(NK['side_x'][0], NK['side_x'][1], NK['body_top'], HY, ZC - NK['strip_w'] / 2, ZC + NK['strip_w'] / 2),

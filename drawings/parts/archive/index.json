@@ -1054,6 +1054,15 @@
    "file": "CP-23/CP-23.v004__2026-11-06_e7a16e1.svg"
   },
   {
+   "src": "drawings/parts/CP-23.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "02bae027aec26f2f429a1af4f335ccd0dec47758ae5f2c6c0c202d13b5ce62b3",
+   "file": "CP-23/CP-23.v005__2026-11-06_36dff8c.svg"
+  },
+  {
    "src": "drawings/parts/README.md",
    "version": 1,
    "gen": "current",

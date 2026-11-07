@@ -19,9 +19,9 @@ n = {}
 for line in open(f'{AC}/reports/GA_2026-11-07_table.md', encoding='utf-8'):
     c = [x.strip() for x in line.strip().strip('|').split('|')]
     if len(c) >= 5 and c[0].startswith('GA-'): upsert(c[0], c[4], c[1], [x.strip('` ') for x in c[3].split(';')], 'GA_2026-11-07'); n['GA'] = n.get('GA', 0) + 1
-for rep in ('R9_docs', 'R9_tools', 'R9_drawings'):
+for rep in ('R9_docs', 'R9_tools', 'R9_drawings', 'R10_mech', 'R10_thermal_elec'):
     for line in open(f'{AC}/reports/{rep}.md', encoding='utf-8'):
-        m = re.match(r'\|\s*(R9[DTG]-F?\d+)\s*\|\s*(P\d|確認OK)\s*\|\s*([^|]*)\|?\s*([^|]*)', line)
+        m = re.match(r'\|\s*(R9[DTG]-F?\d+|R10[ME]-\d+)\s*\|\s*(P\d|確認OK)\s*\|\s*([^|]*)\|?\s*([^|]*)', line)
         if m: upsert(m.group(1), (m.group(4).strip()[:140] or m.group(3).strip()[:140]), 'P3' if m.group(2) == '確認OK' else m.group(2), [m.group(3).strip()[:120]], rep); n[rep] = n.get(rep, 0) + 1
 json.dump(T, open(f'{AC}/tasks.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 from collections import Counter

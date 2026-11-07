@@ -796,5 +796,53 @@
   "evidence": "CP-07 に側辺フック×4(各40N)を明記。形状・位置は未設計=UNVERIFIED",
   "verification": "gen_specs再生成",
   "decision": "PARTIAL"
+ },
+ "R10M-001": {
+  "status": "in_review",
+  "evidence": "案内ロッドを基台圧入の直動ガイドへ変更し、収まり(空間≧ばね取付長)をbalance_calcのゲート化(ρ0=22)",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-002": {
+  "status": "in_review",
+  "evidence": "案内ロッドØ8×2本+リニアブッシュのキャリア。横力348N/本→ロッド曲げ145MPa(balance_calc)",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-003": {
+  "status": "in_review",
+  "evidence": "カム面をピッチ曲線の法線オフセットで生成。実接触シミュレーションで残差を再計算(最大0.20N·m)",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-004": {
+  "status": "in_review",
+  "evidence": "ストッパ手前に±8°の余長カムを追加",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-005": {
+  "status": "in_review",
+  "evidence": "カム板をSUS440C HRC58 t10、ローラ幅12、ヘルツ約1380MPaをゲート化",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-009": {
+  "status": "in_review",
+  "evidence": "ばね仕様をOD20×線径4(k=80)に改め、巻数/密着高さ/せん断応力をゲート化。市販実在は未確認",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-010": {
+  "status": "in_review",
+  "evidence": "ばねx位置を±14に統一(spec.balance_cam)",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
+ },
+ "R10M-016": {
+  "status": "in_review",
+  "evidence": "残差を実カム接触から算出(ピッチ曲線式と独立)",
+  "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+  "decision": "FIXED(要再監査)"
  }
 }

@@ -12668,6 +12668,2635 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "R10M-001",
+   "title": "キャリア下面 y=-41、ロッド長48 → 先端 y=-89(a=0)。基台上面-82・止まり穴深さ7 → 穴底-89。ロッドはa=0で既に穴底に接触し、ローラは+40°までさらに5.65mm下がる必要がある(先端-94.65 は基台下面-90を超える)",
+   "description": "キャリア下面 y=-41、ロッド長48 → 先端 y=-89(a=0)。基台上面-82・止まり穴深さ7 → 穴底-89。ロッドはa=0で既に穴底に接触し、ローラは+40°までさらに5.65mm下がる必要がある(先端-94.65 は基台下面-90を超える)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mech_sections.py balancer_parts(`rod`=extrude(48)、基台止まり穴 offset=s+7)、model/balance.json s=82"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "案内ロッドを基台圧入の直動ガイドへ変更し、収まり(空間≧ばね取付長)をbalance_calcのゲート化(ρ0=22)"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-002",
+   "title": "圧力角φから横力 F·tanφ:+40°で253N/本(+20°153N、-15°-116N)。作用点(ローラ中心 y≈-35.7)から案内部(座 y=-79.3、噛合9.7mm)まで約44mm → 曲げ M≈11.1N·m",
+   "description": "圧力角φから横力 F·tanφ:+40°で253N/本(+20°153N、-15°-116N)。作用点(ローラ中心 y≈-35.7)から案内部(座 y=-79.3、噛合9.7mm)まで約44mm → 曲げ M≈11.1N·m",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py balancer_parts(キャリア=下面板のみ、案内はロッド1本) / docs/mechanisms/01 §3"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "案内ロッドØ8×2本+リニアブッシュのキャリア。横力348N/本→ロッド曲げ145MPa(balance_calc)"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-003",
+   "title": "カム面を「ピッチ曲線を半径方向に-Rr」で作成。真のオフセット曲線(法線方向Rr)ではない。この面にローラ(Rr=6)を載せて再計算するとローラ中心は設計より最大+0.4mm(15〜35°)ずれ、残差トルク -0.8〜-1.35N·m(15°付近-1.27)が全域に発生",
+   "description": "カム面を「ピッチ曲線を半径方向に-Rr」で作成。真のオフセット曲線(法線方向Rr)ではない。この面にローラ(Rr=6)を載せて再計算するとローラ中心は設計より最大+0.4mm(15〜35°)ずれ、残差トルク -0.8〜-1.35N·m(15°付近-1.27)が全域に発生",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_mech_sections.py L130-131、tools/motion_check.py(CAMP)、balance.json cam_profile_pitch_radius"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "カム面をピッチ曲線の法線オフセットで生成。実接触シミュレーションで残差を再計算(最大0.20N·m)"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-004",
+   "title": "接触点はローラ中心の下ではなく Rr·tanφ だけ前方へずれる(+40°:φ=20.7° → 約2.3mm≒4.9°、-15°:-12.4°→約1.3mm≒3°)。カム板は±端で打切り → 端付近でローラがカム端から外れる(再計算で-14.5°:残差-5.8、+39.5°:+1",
+   "description": "接触点はローラ中心の下ではなく Rr·tanφ だけ前方へずれる(+40°:φ=20.7° → 約2.3mm≒4.9°、-15°:-12.4°→約1.3mm≒3°)。カム板は±端で打切り → 端付近でローラがカム端から外れる(再計算で-14.5°:残差-5.8、+39.5°:+1",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "balance.json プロファイル範囲(-15〜+40°)、gen_mech_sections カム板形状、motion_check CAMP"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "ストッパ手前に±8°の余長カムを追加"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-005",
+   "title": "ヘルツ線接触:N=F/cosφ=716N、接触長6mm、R*=4.9mm、E*=110GPa → p0≈920MPa(未クラウニング、エッジ負荷なし)",
+   "description": "ヘルツ線接触:N=F/cosφ=716N、接触長6mm、R*=4.9mm、E*=110GPa → p0≈920MPa(未クラウニング、エッジ負荷なし)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py balancer_parts(カム=SUS304 t6、ローラSUJ2 Ø12×8)、docs/01 §3,§6「SUS304(表面硬化)」"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "カム板をSUS440C HRC58 t10、ローラ幅12、ヘルツ約1380MPaをゲート化"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-006",
+   "title": "輪郭誤差が振幅Aで波長λ(角度)なら傾き誤差=A·2π/λ、トルク誤差≈傾き誤差×1340N:A=0.05mm,λ=10°→2.4N·m、λ=30°→0.8N·m。A=0.01,λ=10°→0.48",
+   "description": "輪郭誤差が振幅Aで波長λ(角度)なら傾き誤差=A·2π/λ、トルク誤差≈傾き誤差×1340N:A=0.05mm,λ=10°→2.4N·m、λ=30°→0.8N·m。A=0.01,λ=10°→0.48",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §9「プロファイル公差±0.05mm未評価」、balance_calc.py(公差はF±3%/CG±3mmのみ)"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-007",
+   "title": "半径隙間0.25mm → 傾きガタ0.5/9.7=0.052rad。ローラ線のずれ ≈0.05×(79.3-30)=±2.5mm",
+   "description": "半径隙間0.25mm → 傾きガタ0.5/9.7=0.052rad。ローラ線のずれ ≈0.05×(79.3-30)=±2.5mm",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py(ロッドØ6.5/基台穴Ø7/座穴Ø7、噛合9.7mm)"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-008",
+   "title": "保持ゲートの最悪残差0.83は「F±3%・CG±3mm」のみ。未計上:輪郭誤差(0.5〜2.4)、ローラ線ずれ(0.9〜2.2)、ばね定数公差(±10%で+40°に0.46)、クリープ、R10M-003のずれ(1.3)、ばね質量/ヒンジ編組等",
+   "description": "保持ゲートの最悪残差0.83は「F±3%・CG±3mm」のみ。未計上:輪郭誤差(0.5〜2.4)、ローラ線ずれ(0.9〜2.2)、ばね定数公差(±10%で+40°に0.46)、クリープ、R10M-003のずれ(1.3)、ばね質量/ヒンジ編組等",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/balance_calc.py L58-62、fit_tolerance.py 6)、spring_x 等"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-009",
+   "title": "丸線d=3,D=13,k=30 → 有効巻数12.06、密着長(n+2)d=42mm。自由長55.8・取付長33.5(最小) → 取付長 < 密着長。許容たわみは14mmしかなく必要22.3mmを満たさない。図の巻数10→k≒36。せん断応力(Wahl)≈840MPa(500N)",
+   "description": "丸線d=3,D=13,k=30 → 有効巻数12.06、密着長(n+2)d=42mm。自由長55.8・取付長33.5(最小) → 取付長 < 密着長。許容たわみは14mmしかなく必要22.3mmを満たさない。図の巻数10→k≒36。せん断応力(Wahl)≈840MPa(500N)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py L136: spring_solid(wire=3.0 丸線, n=10, od=16) / balance.json / docs/01 §3 / balance_calc.py D_MEAN=1"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "ばね仕様をOD20×線径4(k=80)に改め、巻数/密着高さ/せん断応力をゲート化。市販実在は未確認"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-010",
+   "title": "文書/計算は「ばね x=±26.5」、図面・motion_check は x=±14(strength_check 2bは14と26.5の混在)",
+   "description": "文書/計算は「ばね x=±26.5」、図面・motion_check は x=±14(strength_check 2bは14と26.5の混在)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/mechanisms/01、balance_calc print、spec.json spring_x_mm=26.5 vs gen_mech_sections XS=14.0"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "ばねx位置を±14に統一(spec.balance_cam)"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-011",
+   "title": "尾部レバー曲げ・横ピン Ø8(SUS630)・ヒンジ軸曲げ(腕19mm)は旧方式の荷重経路。現行ではレバーはストッパ専用でばね力を受けない。逆に未評価:カム板固定M4×2(せん断253N+接触モーメント)、キャリア、ローラ軸Ø6、ロッド、ばね座、基台曲げ(670N×42mm=28",
+   "description": "尾部レバー曲げ・横ピン Ø8(SUS630)・ヒンジ軸曲げ(腕19mm)は旧方式の荷重経路。現行ではレバーはストッパ専用でばね力を受けない。逆に未評価:カム板固定M4×2(せん断253N+接触モーメント)、キャリア、ローラ軸Ø6、ロッド、ばね座、基台曲げ(670N×42mm=28",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/strength_check.py 1),2),2b)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-012",
+   "title": "`(Mtot/(2*zspan))/(2*A_s)`:2列ボルト群の列力=M/0.046=839N、1本420N → 30MPa。実装は15MPa(1/2過小)。Mtot の 0.12m は直書き(`if False else 0.12`)で押し力のモーメントも向き混在",
+   "description": "`(Mtot/(2*zspan))/(2*A_s)`:2列ボルト群の列力=M/0.046=839N、1本420N → 30MPa。実装は15MPa(1/2過小)。Mtot の 0.12m は直書き(`if False else 0.12`)で押し力のモーメントも向き混在",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "strength_check.py 5)(M5×4)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-013",
+   "title": "落下エネルギー概算 1.3〜1.6J。パッドは5×6mm(30mm²)×厚6の小面積(形状係数≈0.23)。50%圧縮での吸収は片側2個で≲0.4J(概算) → 吸収しきれず底付き(金属衝突)。「平均力=E/3mm」の仮定が成立しない。片側のばね折損は頭部へねじりモーメント(67",
+   "description": "落下エネルギー概算 1.3〜1.6J。パッドは5×6mm(30mm²)×厚6の小面積(形状係数≈0.23)。50%圧縮での吸収は片側2個で≲0.4J(概算) → 吸収しきれず底付き(金属衝突)。「平均力=E/3mm」の仮定が成立しない。片側のばね折損は頭部へねじりモーメント(67",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "strength_check.py 8)(ばね1本折損)、docs/01 §1"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-014",
+   "title": "HEADにカム板・レバー・ブロックのみ、NECKにローラ・キャリア・ロッド・ばね・ばね座・調整シム・軸ボス内ヒンジ本体が無い。可動体(ローラ線上を動く)との干渉は未検査。R10M-001を見逃した原因",
+   "description": "HEADにカム板・レバー・ブロックのみ、NECKにローラ・キャリア・ロッド・ばね・ばね座・調整シム・軸ボス内ヒンジ本体が無い。可動体(ローラ線上を動く)との干渉は未検査。R10M-001を見逃した原因",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "motion_check.py(HEAD/NECK 定義)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-015",
+   "title": "各1°区間の外接矩形(安全側)で検査。ただしカム-タイプレート(z -21.06〜-27.06、y上端-12)の隙間: a=0でカム後端 z=-19.06 → 2mm、a=-15°でも約5mm。実形状・加工公差で余裕が小",
+   "description": "各1°区間の外接矩形(安全側)で検査。ただしカム-タイプレート(z -21.06〜-27.06、y上端-12)の隙間: a=0でカム後端 z=-19.06 → 2mm、a=-15°でも約5mm。実形状・加工公差で余裕が小",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "motion_check.py カム板=矩形近似"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-016",
+   "title": "「残差(エネルギー法)」はρ(a)の生成と同じU関数から作るため恒真。独立検算と称するが検算になっていない(力×dρ/da・製作輪郭での検算なし)。丸め(3桁)の影響も未評価",
+   "description": "「残差(エネルギー法)」はρ(a)の生成と同じU関数から作るため恒真。独立検算と称するが検算になっていない(力×dρ/da・製作輪郭での検算なし)。丸め(3桁)の影響も未評価",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "balance_calc.py L35-38, 判定L65 `rnom>0.3`"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "resolution"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [
+    "残差を実カム接触から算出(ピッチ曲線式と独立)"
+   ],
+   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
+   "decision": "FIXED(要再監査)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-017",
+   "title": "摩擦ヒンジ(Reell PHL/PHC級)に1.0〜1.3kN(ばね力2本+頭部重量)の半径荷重がかかる想定が無い。市販摩擦ヒンジの許容半径荷重は通常数十〜数百N。軸受(焼結含油青銅)の面圧・PV・摩擦への寄与(μPr≈0.45N·m/側)も未評価。トルクがばね力に比例して角度依",
+   "description": "摩擦ヒンジ(Reell PHL/PHC級)に1.0〜1.3kN(ばね力2本+頭部重量)の半径荷重がかかる想定が無い。市販摩擦ヒンジの許容半径荷重は通常数十〜数百N。軸受(焼結含油青銅)の面圧・PV・摩擦への寄与(μPr≈0.45N·m/側)も未評価。トルクがばね力に比例して角度依",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "spec.json hinge.friction_*、docs/01 §1"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-018",
+   "title": "操作力9.9Nは(最大摩擦+最悪残差)/0.41。ガイド摩擦(横力253N×μ0.15≈38N/本 → 約1N·m 追加=+2.4N)、ローラ転がり、蛇腹ブーツの弾性、半径荷重による軸受摩擦が未計上。ガイド摩擦は保持に有利だが角度依存でヒステリシス",
+   "description": "操作力9.9Nは(最大摩擦+最悪残差)/0.41。ガイド摩擦(横力253N×μ0.15≈38N/本 → 約1N·m 追加=+2.4N)、ローラ転がり、蛇腹ブーツの弾性、半径荷重による軸受摩擦が未計上。ガイド摩擦は保持に有利だが角度依存でヒステリシス",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §2、balance_calc.py 操作力"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-019",
+   "title": "自由長を「最大たわみ率40%ちょうど」で逆算:最大たわみ22.3mm=自由長の40%(余裕0)。初期たわみ29.8%。ダイスプリングのたわみ率は荷重区分で異なり、繰返し寿命は最大たわみ率に強く依存。公差(自由長±、ばね座シム±1.3mm)で40%超え",
+   "description": "自由長を「最大たわみ率40%ちょうど」で逆算:最大たわみ22.3mm=自由長の40%(余裕0)。初期たわみ29.8%。ダイスプリングのたわみ率は荷重区分で異なり、繰返し寿命は最大たわみ率に強く依存。公差(自由長±、ばね座シム±1.3mm)で40%超え",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "balance_calc.py L33(Fmax・free=dmax/0.40)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-020",
+   "title": "ばね下端 y=-80.13 が座上面 -79.3 に0.83mm食い込む(lmax 39.13、座 s=82)。座穴・基台穴のcutのworkplane位置が誤り(座に穴が開かず基台側を切削)。ロッド穴Ø6.8に対しロッドØ6.5は「圧入」と記載するが隙間はめあい",
+   "description": "ばね下端 y=-80.13 が座上面 -79.3 に0.83mm食い込む(lmax 39.13、座 s=82)。座穴・基台穴のcutのworkplane位置が誤り(座に穴が開かず基台側を切削)。ロッド穴Ø6.8に対しロッドØ6.5は「圧入」と記載するが隙間はめあい",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py キャリア/座"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-021",
+   "title": "キャリア上面がローラ下端(y=-36)に接し隙間0。ローラ軸Ø6を保持する両側クレビスが図示されない(軸はキャリアに固定されていない)",
+   "description": "キャリア上面がローラ下端(y=-36)に接し隙間0。ローラ軸Ø6を保持する両側クレビスが図示されない(軸はキャリアに固定されていない)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py キャリア上面 y=-36"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-022",
+   "title": "厚さ6mmの板に上面からM4(下穴3.3)を立てるとコバが1.3mm。ねじ噛合・強度が不足。板と固定の詳細無し",
+   "description": "厚さ6mmの板に上面からM4(下穴3.3)を立てるとコバが1.3mm。ねじ噛合・強度が不足。板と固定の詳細無し",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_mech_sections.py カム板(t6、高さ約12〜20mm)、M4×2"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-023",
+   "title": "文書のばね「Ø16×Ø8」「線径3.0」:図のばねは内径10(線径3の丸線)。ばね内径とロッドØ6.5は実在規格(内径8)では隙間0.75mm。座屈判定 `slen=Lmax/D_MEAN=3.0<4` は取付長で評価しているが、判定基準は自由長/平均径(=4.3>4)で、案内必",
+   "description": "文書のばね「Ø16×Ø8」「線径3.0」:図のばねは内径10(線径3の丸線)。ばね内径とロッドØ6.5は実在規格(内径8)では隙間0.75mm。座屈判定 `slen=Lmax/D_MEAN=3.0<4` は取付長で評価しているが、判定基準は自由長/平均径(=4.3>4)で、案内必",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §3、図"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-024",
+   "title": "頭部質量に「ヒンジブロック一式(ばね/ヒンジ/ブロック)1.2kg」を含む(ばね・ローラ・座・キャリアはネック側固定で頭部のCGに入らない)。dz=0.8mm(CGがほぼ軸直上)でdzの符号/誤差がトルク曲線の定数項(mg·dz)に直接影響(±3mmで±0.45N·m)",
+   "description": "頭部質量に「ヒンジブロック一式(ばね/ヒンジ/ブロック)1.2kg」を含む(ばね・ローラ・座・キャリアはネック側固定で頭部のCGに入らない)。dz=0.8mm(CGがほぼ軸直上)でdzの符号/誤差がトルク曲線の定数項(mg·dz)に直接影響(±3mmで±0.45N·m)",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/massmodel.py head()"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-025",
+   "title": "転倒力の目標(前25/後20/横30N)は自社設定。IEC 62368-1 の静的安定(10°傾斜)は評価済みだが、押し力判定の根拠が無い。最悪の前方転倒は-15°で28N(余裕3N)。CG±10mm見込みは入れてあるが質量比(足バラスト3.5kg)は推定。ACコード引張り(U5",
+   "description": "転倒力の目標(前25/後20/横30N)は自社設定。IEC 62368-1 の静的安定(10°傾斜)は評価済みだが、押し力判定の根拠が無い。最悪の前方転倒は-15°で28N(余裕3N)。CG±10mm見込みは入れてあるが質量比(足バラスト3.5kg)は推定。ACコード引張り(U5",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/stability.py、swivel_calc.py"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-026",
+   "title": "ストッパ衝突エネルギーを0.25rad/sで評価(17mJ)。人が勢いよく回す場合 ω=2〜3rad/s → 0.5〜1.2J(約60〜150倍)。摩擦リング1.8N·m×120°=3.8Jで吸収されるが、ポスト(Ø10、ゴム厚)の評価は無い",
+   "description": "ストッパ衝突エネルギーを0.25rad/sで評価(17mJ)。人が勢いよく回す場合 ω=2〜3rad/s → 0.5〜1.2J(約60〜150倍)。摩擦リング1.8N·m×120°=3.8Jで吸収されるが、ポスト(Ø10、ゴム厚)の評価は無い",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/swivel_calc.py L30 `w=0.25rad/s`"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-027",
+   "title": "首振り摩擦窓 1〜3N·m(文書は保持1.8N·m・操作5.8N)。ゲート結果は 1.19〜2.9で下限余裕0.19(経年-30%で下限割れ見込み。経年は未計上)。チルトは経年を見込むのに首振りは見込まない",
+   "description": "首振り摩擦窓 1〜3N·m(文書は保持1.8N·m・操作5.8N)。ゲート結果は 1.19〜2.9で下限余裕0.19(経年-30%で下限割れ見込み。経年は未計上)。チルトは経年を見込むのに首振りは見込まない",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/mechanisms/02 §3 vs fit_tolerance.py 5)"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-028",
+   "title": "SUS304降伏205MPaは焼なまし材の代表値(U29)。SUS303(ロッド/軸)は同等以下。曲げのみの静的評価で疲労(25,000回、ヒンジ軸のキー溝)未評価",
+   "description": "SUS304降伏205MPaは焼なまし材の代表値(U29)。SUS303(ロッド/軸)は同等以下。曲げのみの静的評価で疲労(25,000回、ヒンジ軸のキー溝)未評価",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §7表「許容137MPa」、strength_check"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-029",
+   "title": "シム0.25mm刻み=1本あたり7.5N(F0の1.5%)。調整は荷重の一定オフセットのみで、傾きに比例するトルク誤差(質量誤差)は角度で15%程度残るが小さい。一方、組立手順に「ローラ線位置/カム位相の調整」が無く、R10M-006/007の誤差を取れない",
+   "description": "シム0.25mm刻み=1本あたり7.5N(F0の1.5%)。調整は荷重の一定オフセットのみで、傾きに比例するトルク誤差(質量誤差)は角度で15%程度残るが小さい。一方、組立手順に「ローラ線位置/カム位相の調整」が無く、R10M-006/007の誤差を取れない",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §5 調整手順"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10M-030",
+   "title": "Ø12ローラにØ6軸+ニードル軸受入り:軸受外径≈10なら外輪肉厚1mm。716N荷重で肉厚が不足するおそれ。実在品(スタッド形カムフォロア等)の確認が無い。軸Ø6の曲げ(≈84MPa)は問題なし",
+   "description": "Ø12ローラにØ6軸+ニードル軸受入り:軸受外径≈10なら外輪肉厚1mm。716N荷重で肉厚が不足するおそれ。実在品(スタッド形カムフォロア等)の確認が無い。軸Ø6の曲げ(≈84MPa)は問題なし",
+   "type": "finding",
+   "origin": "R10_mech",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/01 §3 ローラ"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-001",
+   "title": "grep で 仕切り/ダクト/シュラウド の部品定義なし。thermal_calc.py:24-25 は CPU行で「外気直吸気」とし室温+0K",
+   "description": "grep で 仕切り/ダクト/シュラウド の部品定義なし。thermal_calc.py:24-25 は CPU行で「外気直吸気」とし室温+0K",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:19,30; system-spec.md:15; model/custom_parts.json, layout.json(ダクト/仕切り部品なし)"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-002",
+   "title": "本文は B を「本構成の実態に近い」と述べるが、結論行(system-spec/gaming-requirements「CPU83℃」)は A を採用",
+   "description": "本文は B を「本構成の実態に近い」と述べるが、結論行(system-spec/gaming-requirements「CPU83℃」)は A を採用",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:19 と :30-31; thermal_calc.py:14,24"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-003",
+   "title": "B の内部上昇: 係数0.7→11.2K, 0.55→14.3K, 0.4→19.6K。自身の合格基準「内部上昇≦10K」を全係数で未達。fitcheck は ≦20K で PASS、gaming-requirements は「約13K・目標≦20K」",
+   "description": "B の内部上昇: 係数0.7→11.2K, 0.55→14.3K, 0.4→19.6K。自身の合格基準「内部上昇≦10K」を全係数で未達。fitcheck は ≦20K で PASS、gaming-requirements は「約13K・目標≦20K」",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:23-26,37,43; gaming-requirements.md:12; fitcheck.py:100"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-004",
+   "title": "風量144m3/hは「ファン最大回転(3000rpm)で系圧損後に55%」の値。回転数を下げると比例して減少(2000rpm→96m3/h→ΔT 21K)",
+   "description": "風量144m3/hは「ファン最大回転(3000rpm)で系圧損後に55%」の値。回転数を下げると比例して減少(2000rpm→96m3/h→ΔT 21K)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:12-13,16; thermal-analysis.md:21-26"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-005",
+   "title": "圧損の積み上げ(ラジエーターコア, 排気経路, フィルタ, 格子)が無い。格子0.4Paのみ私が計算、ラジエーター排気はトレイ面〜ラジエーター下の約18mm隙間を通る(layout: radiator z=23, トレイ板z3〜5)。周長約670〜794mmで流速約3m/s、片側",
+   "description": "圧損の積み上げ(ラジエーターコア, 排気経路, フィルタ, 格子)が無い。格子0.4Paのみ私が計算、ラジエーター排気はトレイ面〜ラジエーター下の約18mm隙間を通る(layout: radiator z=23, トレイ板z3〜5)。周長約670〜794mmで流速約3m/s、片側",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:16(0.7/0.55/0.4); thermal-analysis.md:21"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-006",
+   "title": "GPU固有上昇42Kは「2.5スロット2ファン180W」の外挿(thermal_calc.py:22)。対象は300W・2スロット40mm厚のSlim。180W→42Kを比例させると300Wで約70K",
+   "description": "GPU固有上昇42Kは「2.5スロット2ファン180W」の外挿(thermal_calc.py:22)。対象は300W・2スロット40mm厚のSlim。180W→42Kを比例させると300Wで約70K",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:21-22,24; thermal-analysis.md:30-32"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-007",
+   "title": "評価は室温25℃のみ。panel-thermal は「35℃環境でも48℃以下」を要求。35℃なら CPU(A)93℃, CPU(B)107℃, GPU(42K)91℃",
+   "description": "評価は室温25℃のみ。panel-thermal は「35℃環境でも48℃以下」を要求。35℃なら CPU(A)93℃, CPU(B)107℃, GPU(42K)91℃",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:3; panel-thermal.md:130; system-spec.md:172"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-008",
+   "title": "cpu_dT=58Kは「Neowin最大83.4℃(冷却器不明)」の外挿。ラジエーター風量は2×約73m3/hで、液温-空気温差は230W/(ε×48W/K)≒8〜10K程度が妥当、残りをダイ-冷却液で負担",
+   "description": "cpu_dT=58Kは「Neowin最大83.4℃(冷却器不明)」の外挿。ラジエーター風量は2×約73m3/hで、液温-空気温差は230W/(ε×48W/K)≒8〜10K程度が妥当、残りをダイ-冷却液で負担",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:21; thermal-analysis.md:35"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-009",
+   "title": "CPU PPTを変えると :17 は追従するが :20 は追従しない",
+   "description": "CPU PPTを変えると :17 は追従するが :20 は追従しない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:20(`P_tot - 230` ハードコード) vs :17(Q['CPU...'])"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-010",
+   "title": "行ラベル文字列 'v7' の有無で外気/再循環を分岐",
+   "description": "行ラベル文字列 'v7' の有無で外気/再循環を分岐",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py:24-25"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-011",
+   "title": "scratchpad で再生成すると 16行目のみ差分(生成器は「≈630W・63%」, 文書は「636W・64%・AC688W」)",
+   "description": "scratchpad で再生成すると 16行目のみ差分(生成器は「≈630W・63%」, 文書は「636W・64%・AC688W」)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md:16 vs tools/thermal_calc.py:14"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-012",
+   "title": "51.603603603603574 と 688.048048048048 が未整形",
+   "description": "51.603603603603574 と 688.048048048048 が未整形",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:12,14"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-013",
+   "title": "ゲート一覧に thermal_calc.py がなく、温度判定の合否がゲート化されていない",
+   "description": "ゲート一覧に thermal_calc.py がなく、温度判定の合否がゲート化されていない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/run_gates.sh:5(thermal_calc 無し)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-014",
+   "title": "完全混合1点モデルのみ。垂直ディスプレイ背面ではプレナム上部(y大)が高温。PSU は最上部(y 218〜318)、GPUコネクタも上部",
+   "description": "完全混合1点モデルのみ。垂直ディスプレイ背面ではプレナム上部(y大)が高温。PSU は最上部(y 218〜318)、GPUコネクタも上部",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal_calc.py(全体); layout.json: psu(70,218), ssd(191,88)"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-015",
+   "title": "FMEAにAIO冷却液漏れ/結露はない(あるのは接地部ガルバニック腐食のみ)。ホースは y=114〜139 でGPU/配線上を横断し、重力方向はトレイ -y。最下部に AC インレット(22..50, 8..34)とI/Oがある",
+   "description": "FMEAにAIO冷却液漏れ/結露はない(あるのは接地部ガルバニック腐食のみ)。ホースは y=114〜139 でGPU/配線上を横断し、重力方向はトレイ -y。最下部に AC インレット(22..50, 8..34)とI/Oがある",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_fmea.py:25,32,52; failure-analysis.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-016",
+   "title": "ケースファンは v8 で廃止されたが、system-spec・thermal-analysis(19,44)に残存",
+   "description": "ケースファンは v8 で廃止されたが、system-spec・thermal-analysis(19,44)に残存",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "system-spec.md:28 「ラジエーター排気/GPU吸気/ケース排気の3経路」; thermal-analysis.md:19,44; layout.json `_doc`(ケースファン廃止)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-017",
+   "title": "メッシュフィルタ(磁石保持)の圧損、目詰まり時の風量低下(例: 20〜30%減)がモデルにない",
+   "description": "メッシュフィルタ(磁石保持)の圧損、目詰まり時の風量低下(例: 20〜30%減)がモデルにない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "design-philosophy.md:39(開口54,000mm2・フィルタ); thermal_calc.py(フィルタ圧損なし)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-018",
+   "title": "ラジエーターファン(P12 Pro)の電流値、ポンプ2800rpm時の騒音がデータにない(ポンプ0.35Aのみ記載)。power_budget の「ファン16W」の内訳が追跡できない",
+   "description": "ラジエーターファン(P12 Pro)の電流値、ポンプ2800rpm時の騒音がデータにない(ポンプ0.35Aのみ記載)。power_budget の「ファン16W」の内訳が追跡できない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "parts.json:119-120, radiator \"fan\"(:266)"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-019",
+   "title": "SF1000の出典URLが SF750 の製品ページ。「寸法はSF750と同じ想定」。1000W級SFXは奥行100mmで成立するか(SFX-L 130mmの可能性)UNVERIFIED",
+   "description": "SF1000の出典URLが SF750 の製品ページ。「寸法はSF750と同じ想定」。1000W級SFXは奥行100mmで成立するか(SFX-L 130mmの可能性)UNVERIFIED",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "parts.json:185-202(psu); bom-final.md:13"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-020",
+   "title": "効率カーブのコメントが 230V 前提。成果物は AC100V 表記。評価は100V固有値で未実施",
+   "description": "効率カーブのコメントが 230V 前提。成果物は AC100V 表記。評価は100V固有値で未実施",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "power_budget.py:11; gen_package.py:120(AC100V)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-021",
+   "title": "「EPS: 230W(約19A)」はソケット電力を12Vで割っただけ",
+   "description": "「EPS: 230W(約19A)」はソケット電力を12Vで割っただけ",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "wiring-spec.md:70"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-022",
+   "title": "基板/VRM損失+RAM+SSD で45W。外付けUSBバスパワー(USB4 2口+USB 10G 5口), カメラ, スピーカー, チップセット, Wi-Fiが内訳なし",
+   "description": "基板/VRM損失+RAM+SSD で45W。外付けUSBバスパワー(USB4 2口+USB 10G 5口), カメラ, スピーカー, チップセット, Wi-Fiが内訳なし",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "power_budget.py:14(基板等 45W); wiring-spec.md:73"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-023",
+   "title": "パネル最大37.3Wを輝度比で単純に比例。論理部分(輝度に依らない)が比例扱い。アイドル(0.35)が過小になり得る。iMac水準500nitsとBOE N50の定格輝度の整合は UNVERIFIED",
+   "description": "パネル最大37.3Wを輝度比で単純に比例。論理部分(輝度に依らない)が比例扱い。アイドル(0.35)が過小になり得る。iMac水準500nitsとBOE N50の定格輝度の整合は UNVERIFIED",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "power_budget.py:9,17"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-024",
+   "title": "ctrl_board+パネルは約45W/12V=3.8Aを W4(SATA 20AWG)で供給",
+   "description": "ctrl_board+パネルは約45W/12V=3.8Aを W4(SATA 20AWG)で供給",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W4(awg 20, od 4.4); panel-driver.md:6,19"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-025",
+   "title": "上限(ref_mm)のみ検査し最短長は検査しない。ref_mm=0なら常にOK。ATX24ピンプラグ2端と曲げR12mmには約70mm以上が必要",
+   "description": "上限(ref_mm)のみ検査し最短長は検査しない。ref_mm=0なら常にOK。ATX24ピンプラグ2端と曲げR12mmには約70mm以上が必要",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W1 len_mm=28, W4 len_mm=24; cable_check.py:53"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-026",
+   "title": "W3の最終直線長: 経路の最終セグメント生値24.1mm、フィレット後の実直線10.6mm(要求35mm)。始端直線3.5mm",
+   "description": "W3の最終直線長: 経路の最終セグメント生値24.1mm、フィレット後の実直線10.6mm(要求35mm)。始端直線3.5mm",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W3 conn/mbr, cablemodel.py:17; scratchpad 計算"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-027",
+   "title": "W5(eDP+12V+USB)とW6(ACコード)の中心距離7.4mm=表面間隔0.8mm(点(103,348,z15)と(102,347,z22))。cable_checkの閾値は半径和+0.5mm、端部[7:-7]除外",
+   "description": "W5(eDP+12V+USB)とW6(ACコード)の中心距離7.4mm=表面間隔0.8mm(点(103,348,z15)と(102,347,z22))。cable_checkの閾値は半径和+0.5mm、端部[7:-7]除外",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cable_check.py:60; wiring-spec.md:77; cables.json W5, W6"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-028",
+   "title": "文書「24p/EPS/PCIeは線外径の6倍(約30mm)」。W1は od9.6→57mm, W2 od5.6→34mm, W3 od9.0→54mm 必要だがモデルは12/12/20",
+   "description": "文書「24p/EPS/PCIeは線外径の6倍(約30mm)」。W1は od9.6→57mm, W2 od5.6→34mm, W3 od9.0→54mm 必要だがモデルは12/12/20",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "wiring.md:62 vs cables.json W1(mbr12), W2(12), W3(20)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-029",
+   "title": "アンビリカルのAWG未定義(awg=0)。パネルバックライト(約23.5W)を含む電流経路か、12VがW5に含まれるか不明(panel-driver:12はW4供給、cables.json W5名称は「12V」を含む)。さらに parts.json の「VDD10V」と矛盾",
+   "description": "アンビリカルのAWG未定義(awg=0)。パネルバックライト(約23.5W)を含む電流経路か、12VがW5に含まれるか不明(panel-driver:12はW4供給、cables.json W5名称は「12V」を含む)。さらに parts.json の「VDD10V」と矛盾",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cablemodel.py:21; cables.json W5 awg=0; wiring-spec.md:12"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-030",
+   "title": "欠落配線: (1)ファン/ポンプ/VRMファンPWM配線, (2)電源ボタン→PWR_SW(F_PANEL), (3)カメラ/マイクのUSB2.0内部ヘッダ→アンビリカル, (4)スピーカー(アンプ/DAC含む), (5)Wi-Fi 2系統の同軸(SMA→RF窓), (6)PE配",
+   "description": "欠落配線: (1)ファン/ポンプ/VRMファンPWM配線, (2)電源ボタン→PWR_SW(F_PANEL), (3)カメラ/マイクのUSB2.0内部ヘッダ→アンビリカル, (4)スピーカー(アンプ/DAC含む), (5)Wi-Fi 2系統の同軸(SMA→RF窓), (6)PE配",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json(W1〜W7, H1, H2 のみ)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-031",
+   "title": "温度連動(45℃でファン連動)の制御主体が「制御基板(ctrl_board)」だが、ファンはマザーボードのPWM。ctrl_board〜基板間に制御ケーブルがない",
+   "description": "温度連動(45℃でファン連動)の制御主体が「制御基板(ctrl_board)」だが、ファンはマザーボードのPWM。ctrl_board〜基板間に制御ケーブルがない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "wiring-spec.md:73,78; panel-thermal.md:126"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-032",
+   "title": "「PCIe 6+2: GPU TGP 180W」が旧GPU(180W)のまま。現GPUは300W/12V-2x6。W3の電流は約25A(6対で約4.2A/ピン、降下0.034V)",
+   "description": "「PCIe 6+2: GPU TGP 180W」が旧GPU(180W)のまま。現GPUは300W/12V-2x6。W3の電流は約25A(6対で約4.2A/ピン、降下0.034V)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "wiring-spec.md:71"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-033",
+   "title": "長さとタグ範囲が文書ごとに不一致",
+   "description": "長さとタグ範囲が文書ごとに不一致",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "panel-driver.md:19(W4 59mm), :13(アンビリカル250mm), joint-matrix.md:22(250mm), wiring-spec.md:81(W1〜W5) vs cables.json(W4 24m"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-034",
+   "title": "U51 はチルトバランサのばね。W7の映像ケーブル未確認の参照先が衝突",
+   "description": "U51 はチルトバランサのばね。W7の映像ケーブル未確認の参照先が衝突",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W7 conn「U51」; unverified-tracker.md:58"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-035",
+   "title": "寸法が不一致(150 対 110)",
+   "description": "寸法が不一致(150 対 110)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "parts.json ctrl_board dims 55x150x15 / layout.json 55x110x15 / panel-driver.md:15"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-036",
+   "title": "熱収支がパネル自己発熱を含まない。パネル+バックライトは最大37.3W(U38)。簡易計算(前面h=9W/m2K, A=0.257m2, 背板→パネル1.2K/W)で、室温35℃・背板45〜50℃のパネル温度は約47〜50℃。LCM上限48℃を超え得る",
+   "description": "熱収支がパネル自己発熱を含まない。パネル+バックライトは最大37.3W(U38)。簡易計算(前面h=9W/m2K, A=0.257m2, 背板→パネル1.2K/W)で、室温35℃・背板45〜50℃のパネル温度は約47〜50℃。LCM上限48℃を超え得る",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "panel-thermal.md:117-129,130"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-037",
+   "title": "トレイ〜背板の3mm断熱を介した伝熱を未評価。断熱が充填された場合 Q=0.2m2×ΔT20K/0.0857 ≒ 47W(空気層のみで約35W)。トレイは電源/GPU/基板の熱で昇温。さらに吊りピン/キーホールの金属接触が断熱をバイパス",
+   "description": "トレイ〜背板の3mm断熱を介した伝熱を未評価。断熱が充填された場合 Q=0.2m2×ΔT20K/0.0857 ≒ 47W(空気層のみで約35W)。トレイは電源/GPU/基板の熱で昇温。さらに吊りピン/キーホールの金属接触が断熱をバイパス",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "panel-thermal.md:127-128; custom-parts.md:24, 338(CP-19); keyholes(layout.json:137-153)"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-038",
+   "title": "パネル背面温度の合格基準が 45℃/40℃/48℃ で混在",
+   "description": "パネル背面温度の合格基準が 45℃/40℃/48℃ で混在",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "thermal-analysis.md:38,43 (45℃) vs panel-thermal.md:130,132 (40℃) vs :110 (LCM 48℃)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-039",
+   "title": "スラブ厚検査が `1.1+0.9+out[2]+1.0+2.0`(隙間1.0mm)。v7.2の4.0mm空気層+3.0mm断熱(合計24.3mm)を反映していない",
+   "description": "スラブ厚検査が `1.1+0.9+out[2]+1.0+2.0`(隙間1.0mm)。v7.2の4.0mm空気層+3.0mm断熱(合計24.3mm)を反映していない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "fitcheck.py:24"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-040",
+   "title": "eDP 4レーン4K60: 8bit 12.8〜14.3Gbps, 10bit 16〜17.8Gbps。必要帯域はHBR2×4(実効17.28Gbps)以上、HBR×4(8.64Gbps)では不可。パネルのeDP版/レート/ビット深度は未確認。GPU→DP1.4(HBR3)→制御",
+   "description": "eDP 4レーン4K60: 8bit 12.8〜14.3Gbps, 10bit 16〜17.8Gbps。必要帯域はHBR2×4(実効17.28Gbps)以上、HBR×4(8.64Gbps)では不可。パネルのeDP版/レート/ビット深度は未確認。GPU→DP1.4(HBR3)→制御",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "panel-driver.md:6-7, parts.json:12 (\"60Hz級\"), 29 (\"VDD10V\")"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-041",
+   "title": "DP HBR3 の内部ケーブル。認証品/インピーダンス/シールドが不明。パッシブ300〜400mmでは通常成立するが規格適合の確認がない",
+   "description": "DP HBR3 の内部ケーブル。認証品/インピーダンス/シールドが不明。パッシブ300〜400mmでは通常成立するが規格適合の確認がない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W7(awg 30, od 4.5, 261mm); wiring.md W7"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-042",
+   "title": "同一の格子(Ø2.4×ピッチ4.0)を、EMCでは「約15dB遮蔽」、RFでは「Wi-Fi透過窓」として扱う。可逆性により遮蔽15dBはWi-Fiも約15dB減衰させる。単穴近似でも6.5GHzで約20dB",
+   "description": "同一の格子(Ø2.4×ピッチ4.0)を、EMCでは「約15dB遮蔽」、RFでは「Wi-Fi透過窓」として扱う。可逆性により遮蔽15dBはWi-Fiも約15dB減衰させる。単穴近似でも6.5GHzで約20dB",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "grounding-spec.md:20 vs design-philosophy.md:41, hardware-list.md:36"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-043",
+   "title": "格子の遮蔽は高周波ほど低下: 10GHz約16dB, 16GHz(PCIe5.0 Nyquist)約12dB, 20GHz約10dB(単穴近似, 配列補正前)",
+   "description": "格子の遮蔽は高周波ほど低下: 10GHz約16dB, 16GHz(PCIe5.0 Nyquist)約12dB, 20GHz約10dB(単穴近似, 配列補正前)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "grounding-spec.md:20; 計算"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-044",
+   "title": "Wi-Fiモジュールのアンテナ端子は基板I/O(下辺側, y≈30)、RF窓はドーム上辺(y≈351)。距離約320mm以上で同軸2本が必要だがモデルにない。細径同軸の損失は6GHzで数dB/30cm級になり得る(データシート UNVERIFIED)",
+   "description": "Wi-Fiモジュールのアンテナ端子は基板I/O(下辺側, y≈30)、RF窓はドーム上辺(y≈351)。距離約320mm以上で同軸2本が必要だがモデルにない。細径同軸の損失は6GHzで数dB/30cm級になり得る(データシート UNVERIFIED)",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json(同軸なし); parts.json board facts(\"wifi\"); hardware-list.md:36"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-045",
+   "title": "PEは取り外し可能な編組(トレイ/ドーム/ヒンジ)で構成され、「ドーム縁の導電ガスケットは副経路」とするが、ドームは陽極酸化で絶縁。ガスケット接触面のマスク指定がない。編組の復旧忘れ時、ドーム/ヒンジ等の接触可能金属が非接地のまま通電可能",
+   "description": "PEは取り外し可能な編組(トレイ/ドーム/ヒンジ)で構成され、「ドーム縁の導電ガスケットは副経路」とするが、ドームは陽極酸化で絶縁。ガスケット接触面のマスク指定がない。編組の復旧忘れ時、ドーム/ヒンジ等の接触可能金属が非接地のまま通電可能",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "grounding-spec.md:9-12,17,20; failure-analysis.md#39"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-046",
+   "title": "PE導体AWG16(1.31mm2)の断面と過電流試験条件は未評価(U41)。接地スタッド(22,116)付近とACインレット(22..50,8..34)は近いが、PE経路はcables.jsonにない",
+   "description": "PE導体AWG16(1.31mm2)の断面と過電流試験条件は未評価(U41)。接地スタッド(22,116)付近とACインレット(22..50,8..34)は近いが、PE経路はcables.jsonにない",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "grounding-spec.md:6 (AWG16, M4, ≦200mm); parts.json ac_inlet:285"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-047",
+   "title": "インレット位置が「下辺中央右」と記述されるが座標 x=22(トレイ幅570の左端側, 中心285)。W6経路は456mm、service-mechanismsは約576mm",
+   "description": "インレット位置が「下辺中央右」と記述されるが座標 x=22(トレイ幅570の左端側, 中心285)。W6経路は456mm、service-mechanismsは約576mm",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "parts.json:285 「下辺中央右」; service-mechanisms.md:34; layout.json:123-134 (x=22)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-048",
+   "title": "断熱シート(エアロゲル/フェノールフォーム)、メッシュフィルタ、導電ガスケットの難燃等級(UL94等)が未指定(RF窓のみV-0)。内部は約688Wで、発火源(PSU/12V-2x6/無名基板)に近接",
+   "description": "断熱シート(エアロゲル/フェノールフォーム)、メッシュフィルタ、導電ガスケットの難燃等級(UL94等)が未指定(RF窓のみV-0)。内部は約688Wで、発火源(PSU/12V-2x6/無名基板)に近接",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "custom-parts.md:338 (CP-19); parts.json(フィルタ, ガスケット); custom_parts.json:462"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-049",
+   "title": "内部ACコード(約0.4〜0.6m)の固定・保護はクリップのみ。基本/強化絶縁の隔離規定(AC対SELV, 鋭利なアルミ端)が文書にない。ドーム着脱時に露出する",
+   "description": "内部ACコード(約0.4〜0.6m)の固定・保護はクリップのみ。基本/強化絶縁の隔離規定(AC対SELV, 鋭利なアルミ端)が文書にない。ドーム着脱時に露出する",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "cables.json W6 (AWG16, 600mm級); wiring-spec.md:77"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-050",
+   "title": "PSE/VCCI/電波法を「販売しない/外注」で未評価のまま",
+   "description": "PSE/VCCI/電波法を「販売しない/外注」で未評価のまま",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "gen_fmea.py:48; failure-analysis.md#1"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-051",
+   "title": "音源7個(ラジエーターファン2, GPUファン約2, PSU, ポンプ, VRMファン)を等しいとして合成: 各音源≦29.5dBAでないと38dBA不可(各30dBAなら38.5dBA)。熱計算が前提とする風量144m3/hは最大回転",
+   "description": "音源7個(ラジエーターファン2, GPUファン約2, PSU, ポンプ, VRMファン)を等しいとして合成: 各音源≦29.5dBAでないと38dBA不可(各30dBAなら38.5dBA)。熱計算が前提とする風量144m3/hは最大回転",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "system-spec.md:39, PRINCIPLES.md A-5(≦38dBA); thermal_calc.py:12"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-052",
+   "title": "ポンプ・ファンの振動が薄板アルミ(ドーム2.0mm, 背板)に伝わる構造伝搬音を評価していない。防振ゴム/ブッシュの指定なし",
+   "description": "ポンプ・ファンの振動が薄板アルミ(ドーム2.0mm, 背板)に伝わる構造伝搬音を評価していない。防振ゴム/ブッシュの指定なし",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "custom-parts.md(トレイ吊り), hinge/tilt docs; parts.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R10E-053",
+   "title": "スピーカーの出力・アンプ・筐体容積・電源が未定(ROG HIVE IIは基板のオーディオ回路でありスピーカー駆動用アンプではない可能性, UNVERIFIED)。ドームのファン騒音との干渉も未検討",
+   "description": "スピーカーの出力・アンプ・筐体容積・電源が未定(ROG HIVE IIは基板のオーディオ回路でありスピーカー駆動用アンプではない可能性, UNVERIFIED)。ドームのファン騒音との干渉も未検討",
+   "type": "finding",
+   "origin": "R10_thermal_elec",
+   "requirement_ids": [],
+   "file_paths": [
+    "standard-parts.md:9; system-spec.md:31"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07 10:58",
+     "triaged",
+     "import"
+    ]
+   ],
+   "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }

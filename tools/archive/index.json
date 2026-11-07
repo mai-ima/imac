@@ -100,6 +100,15 @@
    "file": "balance_calc/balance_calc.v009__2026-11-06_36dff8c.py"
   },
   {
+   "src": "tools/balance_calc.py",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "ae0311f759baf87901bd8a6e4bee8dfa67c7204180c23f055d79d66bf0ffacf4",
+   "file": "balance_calc/balance_calc.v010__2026-11-06_f2e5a87.py"
+  },
+  {
    "src": "tools/cable_check.py",
    "version": 1,
    "gen": "current",
@@ -550,6 +559,15 @@
    "file": "gen_mech_sections/gen_mech_sections.v003__2026-11-06_93238a3.py"
   },
   {
+   "src": "tools/gen_mech_sections.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "e280941ae281ace26df757c4fea23dc29e73db41e3d690a9c501ea5b9ca24b06",
+   "file": "gen_mech_sections/gen_mech_sections.v004__2026-11-06_36dff8c.py"
+  },
+  {
    "src": "tools/gen_mechanisms.py",
    "version": 1,
    "gen": "current",
@@ -629,6 +647,15 @@
    "commit": "f2e5a87",
    "sha256": "49cbb1e4bd255b883f59c0bfac0436ecc74f5583b4e33d2c959e18d1cef4a239",
    "file": "gen_mechanisms/gen_mechanisms.v009__2026-11-06_f2e5a87.py"
+  },
+  {
+   "src": "tools/gen_mechanisms.py",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "8b9285ddf53e912af3ccc856055801971ddf4f2f9a6e2be4dcea66496f5a4652",
+   "file": "gen_mechanisms/gen_mechanisms.v010__2026-11-07_64a1afa.py"
   },
   {
    "src": "tools/gen_mfg_drawings.py",
@@ -1036,6 +1063,15 @@
    "file": "layout_search/layout_search.v001__2026-11-03_2cd7df3.py"
   },
   {
+   "src": "tools/ledger_import.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "2f0bd7733a5d930ef6a2331c8f538067d95a44c16796004a83bd62fbbc926b93",
+   "file": "ledger_import/ledger_import.v001__2026-11-07_64a1afa.py"
+  },
+  {
    "src": "tools/massmodel.py",
    "version": 1,
    "gen": "current",
@@ -1151,6 +1187,15 @@
    "commit": "cf90ba1",
    "sha256": "2e89c095df18c66a9547ed11f1428a6cc97f61076279f6bf013423b2f30746e9",
    "file": "motion_check/motion_check.v008__2026-11-06_cf90ba1.py"
+  },
+  {
+   "src": "tools/motion_check.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "d47fbacf10c9a356b0d1e0dbfd956760624488ec665f14227098e599cf92dfa5",
+   "file": "motion_check/motion_check.v009__2026-11-06_36dff8c.py"
   },
   {
    "src": "tools/run_gates.sh",

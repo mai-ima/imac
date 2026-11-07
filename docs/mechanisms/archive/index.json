@@ -64,6 +64,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v007__2026-11-06_cf90ba1.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "cc0f32a82ab245e68b958f8f24e6a227449f93b923b2b5b4084da97d9446e904",
+   "file": "01_tilt_balancer/01_tilt_balancer.v008__2026-11-06_36dff8c.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -152,6 +161,15 @@
    "commit": "93238a3",
    "sha256": "d23626c7f736e1620c8830269f6c0b8b6ac5128c661132cfe05c2ccda1db5d63",
    "file": "03_neck_and_load_path/03_neck_and_load_path.v007__2026-11-06_93238a3.md"
+  },
+  {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "c1745d4e534b5406bfa2f408fdea2cc975365fff5f53d8919df9f1e641958daf",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v008__2026-11-06_36dff8c.md"
   },
   {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",
@@ -244,6 +262,15 @@
    "file": "06_pinch_guard/06_pinch_guard.v004__2026-11-06_cf90ba1.md"
   },
   {
+   "src": "docs/mechanisms/06_pinch_guard.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "60fe1ba7b3ee97faff5da61926d2b8d9b76eeeff14f7e673730735ae974b6fd3",
+   "file": "06_pinch_guard/06_pinch_guard.v005__2026-11-06_36dff8c.md"
+  },
+  {
    "src": "docs/mechanisms/07_fits_and_feel.md",
    "version": 1,
    "gen": "current",
@@ -296,6 +323,15 @@
    "commit": "36dff8c",
    "sha256": "b96bd04d5ef8b9417cf8b060d6dbd10db67c8e3ec3455567134ffae0fbc89d3d",
    "file": "07_fits_and_feel/07_fits_and_feel.v006__2026-11-06_36dff8c.md"
+  },
+  {
+   "src": "docs/mechanisms/07_fits_and_feel.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "427ef3a9b1fba0bf25736294b23d6000348db32c1b16be06ec5031cd1cf72b46",
+   "file": "07_fits_and_feel/07_fits_and_feel.v007__2026-11-06_f2e5a87.md"
   },
   {
    "src": "docs/mechanisms/README.md",

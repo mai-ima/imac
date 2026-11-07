@@ -119,4 +119,5 @@
 | CP-23.svg | v002 | current | 2026-11-06 | 432b08c | CP-23/CP-23.v002__2026-11-06_432b08c.svg |
 | CP-23.svg | v003 | current | 2026-11-06 | cf90ba1 | CP-23/CP-23.v003__2026-11-06_cf90ba1.svg |
 | CP-23.svg | v004 | current | 2026-11-06 | e7a16e1 | CP-23/CP-23.v004__2026-11-06_e7a16e1.svg |
+| CP-23.svg | v005 | current | 2026-11-06 | 36dff8c | CP-23/CP-23.v005__2026-11-06_36dff8c.svg |
 | README.md | v001 | current | 2026-11-06 | 514e2e0 | README/README.v001__2026-11-06_514e2e0.md |

@@ -19,7 +19,7 @@ if miss_arch: print(f'[WARN] file_coverage に未登録の archive ファイル 
 if miss: bad.append(f'file_coverage に未登録 {len(miss)} 件(例 {sorted(miss)[:3]}) → tools/audit_control_init.py を実行')
 import re, glob
 rep_ids = set()
-for f in glob.glob(f'{AC}/reports/R9_*.md'):
+for f in glob.glob(f'{AC}/reports/R9_*.md') + glob.glob(f'{AC}/reports/R10_*.md'):
     rep_ids |= set(re.findall(r'^\|\s*(R9[DTG]-F?\d+)\s*\|', open(f, encoding='utf-8').read(), re.M))
 miss_r = sorted(rep_ids - set(ids))
 if miss_r: bad.append(f'監査指摘 {len(miss_r)} 件が tasks.json に未登録(例 {miss_r[:3]}) → python3 tools/ledger_import.py')

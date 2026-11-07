@@ -90,7 +90,7 @@ for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
 # ---- チルト・バランサ(R9T-001で再設計): ヒンジブロック底面のカム板(x=±14) + ローラ従動子 + 案内ロッド付き圧縮ダイスプリング2本。tools/balance_calc.py / model/balance.json ----
 BAL = json.load(open(os.path.join(ROOT, 'model', 'balance.json'))); BCm = S['hinge']['balance_cam']
-RHO0, RR, XS_ = BCm['rho0_mm'], BCm['roller_r_mm'], 14.0; BS = BAL['s']
+RHO0, RR, XS_ = BCm['rho0_mm'], BCm['roller_r_mm'], BCm['spring_x_mm']; BS = BAL['s']; CT_ = BCm['cam_t_mm']
 def prism_x(name, pts_zy, x0, x1, mat, body=True):
     """(z,y)多角形(設計座標)を x0〜x1 へ押し出したメッシュ。"""
     me = bpy.data.meshes.new(name); bm = bmesh.new()
@@ -99,22 +99,22 @@ def prism_x(name, pts_zy, x0, x1, mat, body=True):
     for i in range(len(pts_zy)): j = (i + 1) % len(pts_zy); bm.faces.new((lo[i], lo[j], hi[j], hi[i]))
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:]); bm.to_mesh(me); bm.free()
     ob = bpy.data.objects.new(name, me); me.materials.append(mat); return link(ob, body)
-camc = [(math.radians(a_), r_ - RR) for a_, r_ in BAL['cam_profile_pitch_radius']]
-cam_pts = [(ZC + camc[0][1] * -math.sin(camc[0][0]) + 0.0, HY - 10)] + [(ZC - r_ * math.sin(a_), HY - r_ * math.cos(a_)) for a_, r_ in camc] + [(ZC - camc[-1][1] * math.sin(camc[-1][0]), HY - 10)]
+cs_ = BAL['cam_surface_head_frame']                                                                        # 実カム面(頭部座標。ストッパ余長込み)
+cam_pts = [(ZC + cs_[0][1], HY - 10)] + [(ZC + zl_, HY + yl_) for _, zl_, yl_ in cs_] + [(ZC + cs_[-1][1], HY - 10)]
 for k, sx_ in enumerate((-1, 1)):
     xc_ = sx_ * XS_
     hb(f'hinge_tail_lever{k}', S['neck']['lever_t'], S['neck']['lever_len'], S['neck']['lever_w'], sx_ * 26.5 - S['neck']['lever_t'] / 2, HY - S['neck']['lever_len'], ZC - S['neck']['lever_w'] / 2, M['sus'])        # ストッパ用の尾部レバー(耳板一体)
-    prism_x(f'hinge_cam_plate{k}', cam_pts, xc_ - 3, xc_ + 3, M['sus'])                                           # カム板(頭部側, ヒンジブロック底面に固定)
-    cyl(f'cam_roller{k}', RR, 8, 'x', xc_, HY - RHO0, ZC, M['steel'], 48, body=False)                                       # ローラ(0°位置)
-    cyl(f'cam_roller_pin{k}', 3.0, 14, 'x', xc_, HY - RHO0, ZC, M['steel'], 24, body=False)
-    hb(f'cam_carrier{k}', 16, 5, 16, xc_ - 8, HY - RHO0 - RR - 5, ZC - 8, M['sus'], body=False)                               # 従動子キャリア(ばね上座)
-    cyl(f'cam_rod{k}', 3.25, 48, 'y', xc_, HY - RHO0 - RR - 5 - 24, ZC, M['steel'], 24, body=False)                            # 案内ロッドØ6.5(ばね内を貫通し基台の穴へ)
-    LS = BAL['lmax']; ytop = HY - RHO0 - RR - 5
-    cyl(f'spring_die{k}', 8.0, LS, 'y', xc_, ytop - LS / 2, ZC, M['spring'], 48, body=False)                                   # ダイスプリング(0°の取付長)
-    hb(f'spring_seat_bot{k}', 16, 2.7, 16, xc_ - 8, HY - BS, ZC - 8, M['sus'], body=False)  # 基台上のばね座(t2.7, Ø7穴)
-HW_ = 0
-hw('ヒンジ', f"ダイスプリング(JIS金型用 Ø16, 1本 {BAL['F0_total']/2:.0f}N(0°)〜{BAL['F_spring_max']:.0f}N, k={BAL['k_spring']:g}N/mm, 自由長≧{BAL['free_length_min']:.0f}mm)+案内ロッドØ6.5+ローラ従動子", 2, 'U26/U51: 型番未確定 / D04')
-hw('ヒンジ', f"カム板(SUS304 t6, 軸半径{BAL['rho0']-BAL['roller_r']:.0f}〜{BAL['e']:.0f}mm)", 2, 'balance_calc.py / D04')
+    prism_x(f'hinge_cam_plate{k}', cam_pts, xc_ - CT_ / 2, xc_ + CT_ / 2, M['sus'])                              # カム板(頭部側, SUS440C焼入れ)
+    cyl(f'cam_roller{k}', RR, BCm['roller_w_mm'], 'x', xc_, HY - RHO0, ZC, M['steel'], 48, body=False)         # ローラ(0°位置)
+    cyl(f'cam_roller_pin{k}', 3.0, BCm['roller_w_mm'] + 6, 'x', xc_, HY - RHO0, ZC, M['steel'], 24, body=False)
+    yct = HY - RHO0 - RR - BCm['carrier_h_mm']
+    hb(f'cam_carrier{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['carrier_h_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), yct, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)   # キャリア(ばね上座+ブッシュ)
+    LS = BAL['lmax']; ysb = HY - BS + BCm['seat_t_mm']
+    cyl(f'spring_die{k}', BCm['spring_od_mm'] / 2, LS, 'y', xc_, ysb + LS / 2, ZC, M['spring'], 64, body=False)       # ダイスプリング(0°の取付長)
+    hb(f'spring_seat_bot{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['seat_t_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), HY - BS, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)
+    for zz_ in (-1, 1): cyl(f'cam_guide_rod{k}_{zz_}', BCm['guide_rod_d_mm'] / 2, yct + BCm['carrier_h_mm'] - (HY - BS), 'y', xc_, (yct + BCm['carrier_h_mm'] + HY - BS) / 2, ZC + zz_ * BCm['guide_rod_z_mm'], M['steel'], 24, body=False)   # 案内ロッド(基台に固定, キャリアが摺動)
+hw('ヒンジ', f"コイルばね OD{BCm['spring_od_mm']:g}×線径{BCm['spring_wire_mm']:g}(SWOSC-V想定, 1本 {BAL['F0_total']/2:.0f}N(0°)〜{BAL['F_spring_max']:.0f}N, k={BAL['k_spring']:g}N/mm, 自由長≧{BAL['free_length_min']:.0f}mm)+案内ロッドØ{BCm['guide_rod_d_mm']:g}×2+ローラ従動子", 2, 'U26/U51: 型番未確定 / D04')
+hw('ヒンジ', f"カム板(SUS440C HRC58 t{CT_:g}, 軸半径約{BAL['rho0']-BAL['roller_r']:.0f}〜{BAL['e']:.0f}mm)", 2, 'balance_calc.py / D04')
 hw('ヒンジ', f"尾部レバー(ストッパ用, 耳板一体) SUS304 t5×幅14×長{S['neck']['lever_len']:g}", 2, 'D03')
 NKh = S['neck']; LL = NKh['lever_len']
 for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー(長さ34, spec.neck.lever_len)の側縁が、-15°側は側板間タイプレート(t6)のゴムパッド、+40°側は前カバー(t6)内面のゴムパッドに当たる

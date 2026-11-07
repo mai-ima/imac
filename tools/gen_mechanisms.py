@@ -36,10 +36,10 @@ w('01_tilt_balancer.md', f'''# 01 チルトバランサ(カム+ローラ従動�
 ## 3. 寸法・部品(単一源: model/spec.json hinge.balance_cam / model/balance.json)
 | 部品 | 仕様 | 数量 |
 |---|---|---|
-| カム板 | SUS304 t6、ヒンジブロック底面にM4×2で固定。カム面=ローラ中心軌跡からローラ半径{BC['roller_r_mm']:g}mmだけ内側(軸から {BAL['rho0']-BAL['roller_r']:.1f}〜{BAL['e']:.1f}mm)。プロファイルは balance.json | 2(x=±14) |
-| ローラ従動子 | Ø{2*BC['roller_r_mm']:g}×8 焼入れローラ(ニードル軸受入りØ6軸)。軸の真下の鉛直線上を移動 | 2 |
-| ダイスプリング | JIS金型用 Ø16、k={BAL['k_spring']:g}N/mm、0°で{BAL['F0_total']/2:.0f}N・最大{BAL['F_spring_max']:.0f}N、自由長≧{BAL['free_length_min']:.0f}mm、取付長{BAL['lmin']:.1f}〜{BAL['lmax']:.1f}mm | 2 |
-| 案内ロッド | Ø6.5、キャリアに圧入し、ばね内を貫通して基台の止まり穴(Ø7)へ。ばね折損時も破片を保持 | 2 |
+| カム板 | SUS440C HRC58 t{BC['cam_t_mm']:g}、ヒンジブロック底面にM4×2で固定。カム面=ローラ中心軌跡(ピッチ曲線)の**法線方向**へローラ半径{BC['roller_r_mm']:g}mmオフセットした曲線(軸から約{BAL['rho0']-BAL['roller_r']:.0f}〜{BAL['e']:.0f}mm)。ストッパ手前に±{BC['cam_ext_deg']:g}°の余長。プロファイルは balance.json | 2(x=±{BC['spring_x_mm']:g}) |
+| ローラ従動子 | Ø{2*BC['roller_r_mm']:g}×{BC['roller_w_mm']:g} SUJ2焼入れ(ニードル軸受入りØ6軸)。軸の真下の鉛直線上を移動 | 2 |
+| コイルばね | OD{BC['spring_od_mm']:g}×線径{BC['spring_wire_mm']:g}(SWOSC-V想定。JISダイスプリングで実在するかは**未確認=UNVERIFIED**)、k={BAL['k_spring']:g}N/mm、0°で{BAL['F0_total']/2:.0f}N・最大{BAL['F_spring_max']:.0f}N、せん断応力{BAL['spring_shear_MPa']}MPa、密着高さ{BAL['spring_solid_mm']}mm、自由長≧{BAL['free_length_min']:.0f}mm、取付長{BAL['lmin']:.1f}〜{BAL['lmax']:.1f}mm | 2 |
+| 案内ロッド+リニアブッシュ | Ø{BC['guide_rod_d_mm']:g}×2本(SUS630 H1025, 基台に圧入, z=±{BC['guide_rod_z_mm']:g})。キャリアが摺動し、カム横力(約350N/本)を受ける | 4 |
 | ばね座+シム | SUS304 t2.7、ばね下端の厚さ(0.25mm刻みのシム)で荷重を調整 | 2 |
 | 尾部レバー(ストッパ専用) | SUS304 t{nk['lever_t']:g}×幅{nk['lever_w']:g}×長{nk['lever_len']:g}(ヒンジ耳板一体)。側縁がゴムパッドに当たる | 2 |
 | 摩擦ヒンジ | Reell PHL/PHC級(合計{H['friction_hold_Nm']:g}N·m ±{H['friction_tol_pct']:g}%, U27)、x=±45 | 2 |
@@ -78,7 +78,7 @@ w('01_tilt_balancer.md', f'''# 01 チルトバランサ(カム+ローラ従動�
 トルク曲線(−15〜+40°を5°刻み、往復)、25,000回サイクル、温度(−10/25/50℃)でのばね荷重変化、落下(梱包76cm)、単一故障(ばね1本外し)での挙動、カム面の接触応力/摩耗。合否は実機試験で確定する(未実施)。
 
 ## 9. 未確認
-U26(ダイスプリング型番・実荷重特性)、U27(摩擦ヒンジ型番・トルク)、U51(ばね疲労)、U25(頭部質量・重心の実測)、カム加工精度(プロファイル公差±0.05mmの影響は未評価)。
+U26(コイルばね型番・実荷重特性。OD{BC['spring_od_mm']:g}×線径{BC['spring_wire_mm']:g}・k={BAL['k_spring']:g}N/mmが市販品にあるか)、U27(摩擦ヒンジ型番・トルク)、U51(ばね疲労)、U25(頭部質量・重心の実測)、カム加工精度(公差±0.05mm)・案内ロッド隙間(±2.5mm)の残差への影響、ヘルツ接触応力約{BAL['hertz_MPa']}MPa(接触疲労)は未評価。
 ''')
 # ---------------- 02 首振り ----------------
 w('02_swivel.md', f'''# 02 左右首振り機構(クロスローラ軸受+摩擦リング+角度ストッパ)
