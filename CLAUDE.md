@@ -10,3 +10,5 @@
 - 偽PASS禁止。実機/専門試験が必要な事項は UNVERIFIED/BLOCKED のまま。
 - 時刻はユーザー向けには日本時間(JST=UTC+9)で表記する。ScheduleWakeup/サーバー表示はUTC。
 - **定期実行は ScheduleWakeup に頼らない**(ワーカー再起動で消え、予約時刻を過ぎても起動しなかった事実あり=2026-11-07調査)。耐久手段は mcp__claude-code-remote の create_trigger(毎時・セッション束縛)と send_later。再開時は list_triggers で生存確認。
+- **仮説で決定しない**: 原因・仕様・数値は、検証(実行/再現/一次資料)するまで「仮説」と明記し、確定扱いで台帳・設計へ反映しない。検証できないものは UNVERIFIED のまま。
+- 再開手段は耐久トリガーと ScheduleWakeup を**併用**する(どちらが届くかを記録して比較)。

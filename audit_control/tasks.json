@@ -12633,7 +12633,7 @@
   },
   {
    "id": "SCHED-01",
-   "title": "予約(ScheduleWakeup)が起動しない問題: 原因=セッション内メモリの予約がワーカー再起動で消失(09:21UTC予約が10:55UTCでも未起動)。対策=耐久トリガー(trig_01N4GcNV… 毎時55分, send_later)へ移行",
+   "title": "予約(ScheduleWakeup)が起動しなかった事象: 原因は未確定(仮説=ワーカー再起動で予約消失)。耐久トリガーを併用し、発火実績で検証する",
    "description": "予約(ScheduleWakeup)が起動しない問題: 原因=セッション内メモリの予約がワーカー再起動で消失(09:21UTC予約が10:55UTCでも未起動)。対策=耐久トリガー(trig_01N4GcNV… 毎時55分, send_later)へ移行",
    "type": "fix",
    "origin": "self",
@@ -12646,7 +12646,7 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "done",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07 10:55",
@@ -12661,13 +12661,13 @@
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "create_trigger(毎時55分,persist_session)とsend_laterを作成、CLAUDE.mdに運用規則追記"
+    "trigger情報: persistent_session_id=本セッション(確認済み)。発火は未検証"
    ],
-   "verification": "list_triggersで生存確認。実際の起動は11:11/11:55 UTCの到達で確認予定",
+   "verification": "",
    "decision": "REPLACE",
    "blocker_reason": "",
    "defer_reason": "",
-   "next_action": ""
+   "next_action": "11:11 UTC(20:11 JST)の単発と毎時55分の発火が同一セッションに届くか確認→届けば仮説を支持する間接証拠。ScheduleWakeupも併用して差を観察"
   },
   {
    "id": "R10M-001",
