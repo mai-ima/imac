@@ -591,7 +591,7 @@ _cd = [c for c in json.load(open(os.path.join(ROOT, 'model', 'layout.json'))).ge
 for nm_, (bx, by, bw, bl) in ({} if not A.with_duct else {'a': (dx_, dy_, 1.0, DL_), 'b': (dx_ + DW_ - 1.0, dy_, 1.0, DL_), 'c': (dx_, dy_, DW_, 1.0), 'd': (dx_, dy_ + DL_ - 1.0, DW_, 1.0)}).items(): ibox('rad_duct_' + nm_, bw, bl, DH_, bx, by, dz_, M['alublack'], .3)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
 for k in range(2):
-    make_fan(f'fan_rad{k}', 120, 28, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%
+    make_fan(f'fan_rad{k}', 120, 28, 7, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%
 def cable(name, pts, r, mat):
     cu = bpy.data.curves.new(name, 'CURVE'); cu.dimensions = '3D'; cu.bevel_depth = r; cu.bevel_resolution = 6; cu.fill_mode = 'FULL'; cu.use_fill_caps = True
     sp = cu.splines.new('POLY'); sp.points.add(len(pts) - 1)       # cablemodelのfillet済み折れ線をそのまま使う(曲げ半径はtools/cable_check.pyで検査済)
@@ -662,11 +662,11 @@ for i in range(5):
 # ===== パネル用コントローラ基板(4K eDP, 150x55 横置き。型番未確定) =====
 cx_, cy_, cz_ = lp('ctrl_board')
 cp = os.path.join(TEXDIR, 'pcb_ctrl.png'); pcb_tex(cp, 55, 150, 41, '#16222b', '#2a3d4c', '4K eDP ctrl')
-ibox('ctrl_pcb', 55, 150, 1.6, cx_, cy_, cz_, img_material('pcb_ctrl', cp, rough=.5), uv=True)
+ibox('ctrl_pcb', ls('ctrl_board')[0], ls('ctrl_board')[1], 1.6, cx_, cy_, cz_, img_material('pcb_ctrl', cp, rough=.5), uv=True)
 ibox('ctrl_hdmi', 15, 6.5, 6, cx_ + 8, cy_ + 1, cz_ + 1.6, M['steel']); ibox('ctrl_dp', 17, 6.5, 6, cx_ + 28, cy_ + 1, cz_ + 1.6, M['steel'])
-ibox('ctrl_soc', 14, 14, 1.4, cx_ + 20, cy_ + 70, cz_ + 1.6, M['chip']); ibox('ctrl_edp_conn', 20, 4, 4, cx_ + 18, cy_ + 142, cz_ + 1.6, M['dark'])
-for k in range(3): icyl(f'ctrl_cap{k}', 4, 9, 'z', cx_ + 12 + k * 14, cy_ + 110, cz_ + 1.6 + 4.5, M['cap'], 20)
-for k in range(2): ibox(f'ctrl_coil{k}', 9, 9, 7, cx_ + 10 + k * 18, cy_ + 40, cz_ + 1.6, M['alublack'], .5)
+ibox('ctrl_soc', 14, 14, 1.4, cx_ + 20, cy_ + 50, cz_ + 1.6, M['chip']); ibox('ctrl_edp_conn', 20, 4, 4, cx_ + 18, cy_ + ls('ctrl_board')[1] - 8, cz_ + 1.6, M['dark'])
+for k in range(3): icyl(f'ctrl_cap{k}', 4, 9, 'z', cx_ + 12 + k * 14, cy_ + 80, cz_ + 1.6 + 4.5, M['cap'], 20)
+for k in range(2): ibox(f'ctrl_coil{k}', 9, 9, 7, cx_ + 10 + k * 18, cy_ + 28, cz_ + 1.6, M['alublack'], .5)
 
 # ===== ACインレット(C14, 下辺左。ソケットは下向き=ドーム下辺の開口へ) =====
 ibox('ac_inlet_body', 28, 26, 20, ax_, ay_, az_, principled('c14', '#1b1c20', 0, .5), .6); ibox('ac_inlet_flange', 36, 3, 28, ax_ - 4, ay_ - 2, az_ - 4, M['steel'], .3)

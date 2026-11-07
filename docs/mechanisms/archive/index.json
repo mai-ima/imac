@@ -73,6 +73,15 @@
    "file": "01_tilt_balancer/01_tilt_balancer.v008__2026-11-06_36dff8c.md"
   },
   {
+   "src": "docs/mechanisms/01_tilt_balancer.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "cc40bb12b8dab0cdbb47ded2420dd121b141ab8b82b80f2033d24e720b636597",
+   "file": "01_tilt_balancer/01_tilt_balancer.v009__2026-11-07_3089847.md"
+  },
+  {
    "src": "docs/mechanisms/02_swivel.md",
    "version": 1,
    "gen": "current",
@@ -98,6 +107,15 @@
    "commit": "853f219",
    "sha256": "5d2ea4fd0273d60966a5f82ecae8c1ea247b7d8a31e58c1cdf27615028d93f77",
    "file": "02_swivel/02_swivel.v003__2026-11-06_853f219.md"
+  },
+  {
+   "src": "docs/mechanisms/02_swivel.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "d9afdbdf1798103b6b3f1b03f33bcfd855b2ea10308206701fc2c4e6901b090f",
+   "file": "02_swivel/02_swivel.v004__2026-11-06_88f99b7.md"
   },
   {
    "src": "docs/mechanisms/03_neck_and_load_path.md",
@@ -170,6 +188,15 @@
    "commit": "36dff8c",
    "sha256": "c1745d4e534b5406bfa2f408fdea2cc975365fff5f53d8919df9f1e641958daf",
    "file": "03_neck_and_load_path/03_neck_and_load_path.v008__2026-11-06_36dff8c.md"
+  },
+  {
+   "src": "docs/mechanisms/03_neck_and_load_path.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "f4041ba8c20ed74c5eb2b47c4ec6da0f3bb95036a1cff6e062020781489de982",
+   "file": "03_neck_and_load_path/03_neck_and_load_path.v009__2026-11-07_3089847.md"
   },
   {
    "src": "docs/mechanisms/04_dome_latch_gasket.md",

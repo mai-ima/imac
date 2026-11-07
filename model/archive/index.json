@@ -64,6 +64,15 @@
    "file": "balance/balance.v007__2026-11-06_36dff8c.json"
   },
   {
+   "src": "model/balance.json",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "a2ea2115afba2f015e9c993c2cfc8a2d60cfc5934f593518e8ce402b92ac012f",
+   "file": "balance/balance.v008__2026-11-07_3089847.json"
+  },
+  {
    "src": "model/cables.json",
    "version": 1,
    "gen": "current",
@@ -566,6 +575,15 @@
    "commit": "d60442d",
    "sha256": "b99a6a7b3c170e8c67c97a82d21b1af29d5382c022d477f5cb302a901fc15f34",
    "file": "interference_report/interference_report.v002__2026-11-07_d60442d.json"
+  },
+  {
+   "src": "model/interference_report.json",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "c1704cf",
+   "sha256": "5c26c21d4f0eaba853c55743627792a688a237282d2c8f6981b82645332502ab",
+   "file": "interference_report/interference_report.v003__2026-11-07_c1704cf.json"
   },
   {
    "src": "model/layout.json",
@@ -1106,6 +1124,15 @@
    "commit": "dec2e5c",
    "sha256": "3a259b4eb3c8b6d9cec0625f8bf6a5ac6f30664d261b7d28f7ba7e61d6bc6397",
    "file": "spec/spec.v030__2026-11-07_dec2e5c.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 31,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "d60442d",
+   "sha256": "7151cacdbf255e1c85fa15d92bd13fd7f7d4b1472700e2f739ffc241bed6a720",
+   "file": "spec/spec.v031__2026-11-07_d60442d.json"
   },
   {
    "src": "model/x870i_layout.json",

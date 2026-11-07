@@ -46,6 +46,15 @@
    "file": "D02_stand_assembly/D02_stand_assembly.v004__2026-11-07_eb39392.svg"
   },
   {
+   "src": "drawings/v10/D02_stand_assembly.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9449d80",
+   "sha256": "24fa22d26c4fd21f3ff3bc8cbb3f89f5c4037276f3a019f86d48edea8b77f982",
+   "file": "D02_stand_assembly/D02_stand_assembly.v005__2026-11-07_9449d80.svg"
+  },
+  {
    "src": "drawings/v10/D03_tilt_hinge_section.svg",
    "version": 1,
    "gen": "current",
@@ -98,6 +107,15 @@
    "commit": "eb39392",
    "sha256": "9ae83c116334a9c4c43edf82ab61f40621c7ed4b24494d35b6443db46f51ee97",
    "file": "D04_balancer_section/D04_balancer_section.v004__2026-11-07_eb39392.svg"
+  },
+  {
+   "src": "drawings/v10/D04_balancer_section.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9a67913",
+   "sha256": "066b40a9500c16c72eb6040b685c50c7cf04743bb630da3ef5dbcfd527729d86",
+   "file": "D04_balancer_section/D04_balancer_section.v005__2026-11-07_9a67913.svg"
   },
   {
    "src": "drawings/v10/D05_swivel_section.svg",

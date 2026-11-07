@@ -9,6 +9,7 @@
 | balance.json | v005 | current | 2026-11-06 | 88f99b7 | balance/balance.v005__2026-11-06_88f99b7.json |
 | balance.json | v006 | current | 2026-11-06 | cf90ba1 | balance/balance.v006__2026-11-06_cf90ba1.json |
 | balance.json | v007 | current | 2026-11-06 | 36dff8c | balance/balance.v007__2026-11-06_36dff8c.json |
+| balance.json | v008 | current | 2026-11-07 | 3089847 | balance/balance.v008__2026-11-07_3089847.json |
 | cables.json | v001 | current | 2026-11-05 | 27ca8ce | cables/cables.v001__2026-11-05_27ca8ce.json |
 | cables.json | v002 | current | 2026-11-05 | 2f8c0ac | cables/cables.v002__2026-11-05_2f8c0ac.json |
 | cables.json | v003 | current | 2026-11-05 | fcba5fe | cables/cables.v003__2026-11-05_fcba5fe.json |
@@ -65,6 +66,7 @@
 | hardware_list.json | v014 | current | 2026-11-07 | 3089847 | hardware_list/hardware_list.v014__2026-11-07_3089847.json |
 | interference_report.json | v001 | current | 2026-11-07 | 44044f0 | interference_report/interference_report.v001__2026-11-07_44044f0.json |
 | interference_report.json | v002 | current | 2026-11-07 | d60442d | interference_report/interference_report.v002__2026-11-07_d60442d.json |
+| interference_report.json | v003 | current | 2026-11-07 | c1704cf | interference_report/interference_report.v003__2026-11-07_c1704cf.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -125,6 +127,7 @@
 | spec.json | v028 | current | 2026-11-07 | 64a1afa | spec/spec.v028__2026-11-07_64a1afa.json |
 | spec.json | v029 | current | 2026-11-07 | 3089847 | spec/spec.v029__2026-11-07_3089847.json |
 | spec.json | v030 | current | 2026-11-07 | dec2e5c | spec/spec.v030__2026-11-07_dec2e5c.json |
+| spec.json | v031 | current | 2026-11-07 | d60442d | spec/spec.v031__2026-11-07_d60442d.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |
 | x870i_layout.json | v002 | current | 2026-11-06 | 85af1a8 | x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json |
 | x870i_layout.json | v003 | current | 2026-11-06 | 28dc82b | x870i_layout/x870i_layout.v003__2026-11-06_28dc82b.json |

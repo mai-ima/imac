@@ -109,6 +109,15 @@
    "file": "balance_calc/balance_calc.v010__2026-11-06_f2e5a87.py"
   },
   {
+   "src": "tools/balance_calc.py",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "f408a07cfdddd66b75e466ffef0ab50b148f024f66bb100b8541e768085ed0c7",
+   "file": "balance_calc/balance_calc.v011__2026-11-07_3089847.py"
+  },
+  {
    "src": "tools/cable_check.py",
    "version": 1,
    "gen": "current",

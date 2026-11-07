@@ -72,7 +72,7 @@ hw('配線', 'ケーブルクリップ(POM, 粘着/PEM)', nclip, 'トレイ上 z
 ibox('gpu_cradle_base', GW, 10, 3, gx, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_l', 4, 10, 9, gx - 2, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_r', 4, 10, 9, gx + GW - 2, gy - 14, TZ, M['alublack'], .6)
 for k_, xx_ in enumerate((gx + 18, gx + GW - 18)): icyl(f'gpu_bracket_screw{k_}', 2.6, 5, 'y', xx_, gy - 3, gz + 38, M['steel'], 12) if False else None
 hw('支持', 'GPU低背ステー(A5052 t2.0, z5〜14: ホース/ポート挿抜空間を避ける)+ブラケットねじ', 1, 'CP-14 / ホース(z16〜)との干渉無し')
-cyl('power_button', 3.0, 4, 'y', X0 + bx + 40 - X0 + 0, DOME_Y0 + 18, dz(12), M['alu'], 20); hw('操作', '電源ボタン(モーメンタリ, 背面左下の凹み内)', 1, '型番未選定')
+cyl('power_button', 3.0, 4, 'y', X0 + bx + 40, DOME_Y0 + 18, dz(12), M['alu'], 20); hw('操作', '電源ボタン(モーメンタリ, 背面左下の凹み内)', 1, '型番未選定')
 rf_zl = d_inner(30) - 8          # 平板をドーム内面(上辺から30mmの最も浅い所)より下に置く(傾斜に突き出さない)
 ibox('rf_window_plate', 60, 30, 2, IW_ / 2 - 30, IH_ - 60, rf_zl, principled('pc_rf', '#202226', 0, .5)); hw('無線', 'RF窓 PC樹脂t2.0(格子裏, Wi-Fi 7アンテナ×2)', 1, 'CP-12 / U31: 平板をドーム上辺の浅い位置に取付(形状要検討)')
 for k, xx in enumerate((IW_ / 2 - 20, IW_ / 2 + 20)): ibox(f'antenna{k}', 30, 1.5, 1.5, xx - 15, IH_ - 45, rf_zl - 2, M['rubber'], .2)
@@ -112,6 +112,8 @@ for k, sx_ in enumerate((-1, 1)):
     LS = BAL['lmax']; ysb = HY - BS + BCm['seat_t_mm']
     _n = 79000.0 * BCm['spring_wire_mm'] ** 4 / (8 * (BCm['spring_od_mm'] - BCm['spring_wire_mm']) ** 3 * BAL['k_spring'])      # 有効巻数 n = G d^4/(8 D^3 k)
     coil(f'spring_die{k}', (BCm['spring_od_mm'] - BCm['spring_wire_mm']) / 2, BCm['spring_wire_mm'], LS, _n, (xc_, ZC), ysb, M['spring'], axis='y', ends=1.0, per_turn=28, seg=10, body=False)       # ダイスプリング実形状(0°の取付長)。座巻き各1巻
+    cyl(f'spring_spigot_bot{k}', 5.7, 3.0, 'y', xc_, ysb + 1.5, ZC, M['sus'], 32, body=False)      # 座側スピゴットØ11.4(ばね内径Ø12へ嵌まる=位置決め, MDD-002)
+    cyl(f'spring_spigot_top{k}', 5.7, 3.0, 'y', xc_, ysb + LS - 1.5, ZC, M['sus'], 32, body=False)      # キャリア側スピゴット
     hb(f'spring_seat_bot{k}', 2 * (BCm['spring_od_mm'] / 2 + 1), BCm['seat_t_mm'], 2 * (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), xc_ - (BCm['spring_od_mm'] / 2 + 1), HY - BS, ZC - (BCm['guide_rod_z_mm'] + BCm['guide_rod_d_mm'] / 2), M['sus'], body=False)
     for zz_ in (-1, 1): cyl(f'cam_guide_rod{k}_{zz_}', BCm['guide_rod_d_mm'] / 2, yct + BCm['carrier_h_mm'] - (HY - BS), 'y', xc_, (yct + BCm['carrier_h_mm'] + HY - BS) / 2, ZC + zz_ * BCm['guide_rod_z_mm'], M['steel'], 24, body=False)   # 案内ロッド(基台に固定, キャリアが摺動)
 hw('ヒンジ', f"コイルばね OD{BCm['spring_od_mm']:g}×線径{BCm['spring_wire_mm']:g}(SWOSC-V想定, 1本 {BAL['F0_total']/2:.0f}N(0°)〜{BAL['F_spring_max']:.0f}N, k={BAL['k_spring']:g}N/mm, 自由長≧{BAL['free_length_min']:.0f}mm)+案内ロッドØ{BCm['guide_rod_d_mm']:g}×2+ローラ従動子", 2, 'U26/U51: 型番未確定 / D04')

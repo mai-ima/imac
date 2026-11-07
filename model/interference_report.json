@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T13:04Z",
- "objects": 569,
- "pairs_total": 749,
- "touch_only": 344,
+ "generated": "2026-11-07T13:17Z",
+ "objects": 565,
+ "pairs_total": 740,
+ "touch_only": 349,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
@@ -11,21 +11,11 @@
   "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
   "側板のストリップとボスは一体品を別基本形で表現": 2,
   "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
-  "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 60,
+  "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "モジュラーソケットは筐体前面の開口に嵌合": 10
  },
- "remaining": 305,
+ "remaining": 299,
  "remaining_pairs": [
-  {
-   "a": "fan_rad0_frame",
-   "b": "rad_port_RAD_PORT_B",
-   "tri_pairs": 21,
-   "aabb_overlap_mm": [
-    13.0,
-    12.0,
-    11.0
-   ]
-  },
   {
    "a": "cover_filter",
    "b": "latch_cam5",
@@ -377,6 +367,26 @@
    ]
   },
   {
+   "a": "cpu_ihs",
+   "b": "cap4",
+   "tri_pairs": 40,
+   "aabb_overlap_mm": [
+    6.4,
+    3.98,
+    6.4
+   ]
+  },
+  {
+   "a": "cpu_ihs",
+   "b": "cap5",
+   "tri_pairs": 40,
+   "aabb_overlap_mm": [
+    6.4,
+    3.98,
+    6.4
+   ]
+  },
+  {
    "a": "gasket",
    "b": "cover_filter",
    "tri_pairs": 338,
@@ -717,32 +727,12 @@
    ]
   },
   {
-   "a": "cpu_ihs",
-   "b": "cap4",
-   "tri_pairs": 40,
-   "aabb_overlap_mm": [
-    6.4,
-    2.6,
-    6.4
-   ]
-  },
-  {
-   "a": "cpu_ihs",
-   "b": "cap5",
-   "tri_pairs": 40,
-   "aabb_overlap_mm": [
-    6.4,
-    2.6,
-    6.4
-   ]
-  },
-  {
    "a": "cap3",
    "b": "cpu_ihs",
    "tri_pairs": 30,
    "aabb_overlap_mm": [
     2.6,
-    2.6,
+    3.98,
     6.4
    ]
   },
@@ -857,36 +847,6 @@
    ]
   },
   {
-   "a": "fan_rad0_blade0",
-   "b": "rad_port_RAD_PORT_B",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    13.0,
-    2.459,
-    6.298
-   ]
-  },
-  {
-   "a": "pump_coldplate_sq",
-   "b": "cap4",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.4,
-    2.4,
-    6.4
-   ]
-  },
-  {
-   "a": "pump_coldplate_sq",
-   "b": "cap5",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.4,
-    2.4,
-    6.4
-   ]
-  },
-  {
    "a": "eps8",
    "b": "screw_board0_head",
    "tri_pairs": 16,
@@ -894,6 +854,16 @@
     5.6,
     2.4,
     5.6
+   ]
+  },
+  {
+   "a": "am5_backplate",
+   "b": "power_button",
+   "tri_pairs": 19,
+   "aabb_overlap_mm": [
+    6.0,
+    2.35,
+    2.35
    ]
   },
   {
@@ -1867,6 +1837,26 @@
    ]
   },
   {
+   "a": "pump_coldplate_sq",
+   "b": "cap4",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    6.4,
+    1.02,
+    6.4
+   ]
+  },
+  {
+   "a": "pump_coldplate_sq",
+   "b": "cap5",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    6.4,
+    1.02,
+    6.4
+   ]
+  },
+  {
    "a": "hinge_axle",
    "b": "hinge_eclip0",
    "tri_pairs": 96,
@@ -1884,6 +1874,16 @@
     1.0,
     12.0,
     12.0
+   ]
+  },
+  {
+   "a": "vrm_fan_ring",
+   "b": "pump_screw_head1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    7.0,
+    1.0,
+    7.0
    ]
   },
   {
@@ -1934,26 +1934,6 @@
     112.0,
     1.0,
     3.06
-   ]
-  },
-  {
-   "a": "hinge_tail_lever0",
-   "b": "cam_carrier0",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    1.0,
-    14.0,
-    4.0
-   ]
-  },
-  {
-   "a": "cam_carrier1",
-   "b": "hinge_tail_lever1",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    1.0,
-    14.0,
-    4.0
    ]
   },
   {
@@ -2014,26 +1994,6 @@
     6.0,
     1.0,
     3.06
-   ]
-  },
-  {
-   "a": "hinge_stopper_dn0",
-   "b": "cam_carrier0",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    1.0,
-    3.939,
-    2.159
-   ]
-  },
-  {
-   "a": "cam_carrier1",
-   "b": "hinge_stopper_dn1",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    1.0,
-    3.939,
-    2.159
    ]
   },
   {
@@ -2214,16 +2174,6 @@
     7.299,
     1.0,
     9.0
-   ]
-  },
-  {
-   "a": "ctrl_pcb",
-   "b": "tray_handle_post0",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    1.0,
-    1.6,
-    1.7
    ]
   },
   {
@@ -2497,16 +2447,6 @@
    ]
   },
   {
-   "a": "vrm_fan_ring",
-   "b": "pump_screw_head1",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    7.0,
-    0.6,
-    7.0
-   ]
-  },
-  {
    "a": "stand_neck_base",
    "b": "stand_swivel_bolt1",
    "tri_pairs": 14,
@@ -2562,7 +2502,7 @@
    "tri_pairs": 11,
    "aabb_overlap_mm": [
     0.6,
-    2.4,
+    1.02,
     6.4
    ]
   },

@@ -45,6 +45,7 @@
 | 05_stand.svg | v011 | current | 2026-11-06 | 36dff8c | 05_stand/05_stand.v011__2026-11-06_36dff8c.svg |
 | 05_stand.svg | v012 | current | 2026-11-07 | fc73c3b | 05_stand/05_stand.v012__2026-11-07_fc73c3b.svg |
 | 05_stand.svg | v013 | current | 2026-11-07 | eb39392 | 05_stand/05_stand.v013__2026-11-07_eb39392.svg |
+| 05_stand.svg | v014 | current | 2026-11-07 | 9449d80 | 05_stand/05_stand.v014__2026-11-07_9449d80.svg |
 | 06_service_tray_plan.svg | v001 | current | 2026-11-03 | 307c9ea | 06_service_tray_plan/06_service_tray_plan.v001__2026-11-03_307c9ea.svg |
 | 06_service_tray_plan.svg | v002 | current | 2026-11-05 | b97eaae | 06_service_tray_plan/06_service_tray_plan.v002__2026-11-05_b97eaae.svg |
 | 06_service_tray_plan.svg | v003 | current | 2026-11-05 | fcba5fe | 06_service_tray_plan/06_service_tray_plan.v003__2026-11-05_fcba5fe.svg |
@@ -167,3 +168,4 @@
 | outlines.dxf | v019 | current | 2026-11-06 | f2e5a87 | outlines/outlines.v019__2026-11-06_f2e5a87.dxf |
 | outlines.dxf | v020 | current | 2026-11-07 | fc73c3b | outlines/outlines.v020__2026-11-07_fc73c3b.dxf |
 | outlines.dxf | v021 | current | 2026-11-07 | eb39392 | outlines/outlines.v021__2026-11-07_eb39392.dxf |
+| outlines.dxf | v022 | current | 2026-11-07 | 9449d80 | outlines/outlines.v022__2026-11-07_9449d80.dxf |

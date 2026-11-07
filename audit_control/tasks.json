@@ -21088,6 +21088,1277 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "`riser_plug` を `ASM_board` 側へ。接頭辞を `board_` に統一してリネーム(choke→board_choke…)"
+  },
+  {
+   "id": "MDD-001",
+   "title": "spring_die0/1, spring_seat_bot0/1, cam_carrier0/1: **ばねの取付長が設計(balance.json)と3mm食い違い、予圧が約35%不足する形状**。描画のばねは上端 y=-24.98 で",
+   "description": "spring_die0/1, spring_seat_bot0/1, cam_carrier0/1 | **ばねの取付長が設計(balance.json)と3mm食い違い、予圧が約35%不足する形状**。描画のばねは上端 y=-24.98 で止まり、キャリア下面 y=-22 との間に2.98mmの空隙(浮き)。幾何どおりに組むとばね長は47.3mm、自由長52.8での荷重は 80×(52.8-47.3)=440N/本で、設計の F0=675N/本(0°)に届かない。+40°側も 43.3mm→760N/本(設計992N)。balance_calc の「収まり」検査は不等式(空間47.3 ≧ Lmax 44.3)なので、この不一致を検出できない | hardware_v8.py L110(`yct=HY-RHO0-RR-carrier_h = 10-22-6-4 = -22`), L112(`ysb=HY-BS+seat_t = 10-82+2.7 = -69.3`), L114(`coil(...LS=BAL['lmax']=44.32...)` → 上端 -24.98)。balance.json: s=82, lmax=44.32, lmin=40.36, free_length_min=52.8。tools/balance_calc.py 収まり行 `space0=82-2.7-(22+6+4)=47.3`, `space1=43.3`(実行出力で確認)。F0=1350N の根拠は L0-Lmax=8.48mm×80=678N | ①座の高さを再定義: ばね座上面 y=yct-LS=-22-44.32=**-66.32**(座の下面 -69.02)。座の下に高さ **2.98mm** のペデスタル `spring_seat_pedestal{k}` を追加(x=xc±11, y -72〜-69.02, z=ZC±19。ネック基台上面 y=-72 に載せる)。コードでは `ysb = yct - LS`、座は `HY-BS` ではなく `ysb-seat_t`。②spec.json `balance_cam.base_seat_depth_mm` を 82→**79.02** に変更し balance.json を再生成、③tools/balance_calc.py の収まり検査を `abs(space0-Lmax)<=0.3 かつ abs(space1-Lmin)<=0.3`(等式検査)に変更、tools/motion_check.py の「バランサ最下点」も更新",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "①座の高さを再定義: ばね座上面 y=yct-LS=-22-44.32=**-66.32**(座の下面 -69.02)。座の下に高さ **2.98mm** のペデスタル `spring_seat_pedestal{k}` を追加(x=xc±11, y -72〜-69.02, z=ZC±19。ネック基台上面 y=-72 に載せる)。コードでは `ysb = yct - LS`、座は `HY-BS` ではなく `ysb-seat_t`。②spec.json `balance_cam.base_seat_depth_mm` を 82→**79.02** に変更し balance.json を再生成、"
+  },
+  {
+   "id": "MDD-002",
+   "title": "cam_guide_rod0_±1, cam_guide_rod1_±1, spring_die0/1: **案内ロッドがばね外周の外側にあり、ばねを案内していない**(設計矛盾)。ばね中心 (x=±14, z=ZC)・平均半径8・外半径1",
+   "description": "cam_guide_rod0_±1, cam_guide_rod1_±1, spring_die0/1 | **案内ロッドがばね外周の外側にあり、ばねを案内していない**(設計矛盾)。ばね中心 (x=±14, z=ZC)・平均半径8・外半径10に対し、ロッドは z=ZC±15・Ø8(半径4)で内縁が z=ZC±11。ばね外周(半径10)から1.0mm外側で、ばねの内側にもロッドが無い。座・キャリアは平板でばねの位置決め段(スピゴット)も無いため、ばねは横方向に拘束されない。balance_calc の「取付長÷平均径=2.8(案内ロッドで拘束)」の前提が3Dで成立していない | hardware_v8.py L116(`ZC + zz_*guide_rod_z_mm`, z=±15, 半径 guide_rod_d/2=4), L111/L115(座・キャリアは 22×h×38 の平板)。spec.json balance_cam: spring_od_mm=20, wire=4, guide_rod_z_mm=15, guide_rod_d_mm=8。ばね内径=20-8=12 | **案A(推奨)**: ロッドを1本・ばね軸上 (xc, ZC) の Ø8 に変更し、ばね内径12mm の内側を通す。キャリアにフランジ付ブッシュ(ID8 H7 / 外径Ø11 / 全長12、PTFE系)を入れ、ブッシュ下端12mmがばね内に入る(外径11<ID12でばねも案内)。座に Ø8 の止まり穴、ロッド曲げは 348N×42mm/(π8³/32=50.3mm³)=291MPa < 667MPa(SUS630 H1025)で成立(balance_calc の `sig_rod` を1本分担に直して再検算)。**案B**: 2本維持なら座とキャリアに高さ2mm・外径Ø16の位置決めリング(スピゴット)を追加してばねを拘束し、ロッド間隔 z=±16(外縁 ZC-20=-65 がタイプレート z=-66.06 まで1.06mm)にし、balance_calc の注記を「ばねは座リングで位置決め、ロッドはキャリア直動案内のみ」へ修正",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "**案A(推奨)**: ロッドを1本・ばね軸上 (xc, ZC) の Ø8 に変更し、ばね内径12mm の内側を通す。キャリアにフランジ付ブッシュ(ID8 H7 / 外径Ø11 / 全長12、PTFE系)を入れ、ブッシュ下端12mmがばね内に入る(外径11<ID12でばねも案内)。座に Ø8 の止まり穴、ロッド曲げは 348N×42mm/(π8³/32=50.3mm³)=291MPa < 667MPa(SUS630 H1025)で成立(balance_calc の `sig_rod` を1本分担に直して再検算)。**案B**: 2本維持なら座とキャリアに高さ2mm・外径Ø16の位置決めリング("
+  },
+  {
+   "id": "MDD-003",
+   "title": "hinge_tail_lever0/1, hinge_stopper_dn0/1, cam_carrier0/1: **尾部レバーとキャリアが全チルト角で干渉**(x方向に1.0mm重なる)。キャリア x=xc±11 → k=0 で -25",
+   "description": "hinge_tail_lever0/1, hinge_stopper_dn0/1, cam_carrier0/1 | **尾部レバーとキャリアが全チルト角で干渉**(x方向に1.0mm重なる)。キャリア x=xc±11 → k=0 で -25〜-3、レバー x=sx×26.5±2.5 → -29〜-24 で x -25〜-24 が重複。レバー y -24〜10 と キャリア y -22〜-18、z(レバー ZC±7 ⊂ キャリア ZC±19)も重なる。自前掃引: 56/56角度(-15〜+40°)で貫入 4.0mm(キャリア厚)。下側ストッパパッド(x 24〜29, y -25.8〜-19.8, z ZC-21.06〜-15.06)もキャリアに x1.0×y3.94×z2.16 食い込む | hardware_v8.py L106(`sx_*26.5 - lever_t/2`, lever_t=5), L111(キャリア x幅 2×(OD/2+1)=22), L121-123(`pad_x [24,29]`)。model/interference_report.json: `hinge_tail_lever0 | cam_carrier0 aabb [1.0,14.0,4.0]`, `hinge_stopper_dn0 | cam_carrier0 [1.0,3.939,2.159]`。掃引: `lever0 x carrier0 n=56 max_pen 4.0 range -15..40` | レバー中心 x を ±26.5→**±28.5**(x 26〜31)、spec.neck.pad_x を [24,29]→**[26,31]**、コード L106 の `26.5`→`28.5`、L122 は spec 値に追従。キャリア外縁(x=25)とのすき間 1.0mm。側板内面(x=56)・摩擦ヒンジ(x 34〜56)・ストッパ強度(strength_check のレバー曲げ)を再実行。motion_check.py の HEAD/NECK 定義(`26.5` 固定値)も spec 参照へ",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "レバー中心 x を ±26.5→**±28.5**(x 26〜31)、spec.neck.pad_x を [24,29]→**[26,31]**、コード L106 の `26.5`→`28.5`、L122 は spec 値に追従。キャリア外縁(x=25)とのすき間 1.0mm。側板内面(x=56)・摩擦ヒンジ(x 34〜56)・ストッパ強度(strength_check のレバー曲げ)を再実行。motion_check.py の HEAD/NECK 定義(`26.5` 固定値)も spec 参照へ"
+  },
+  {
+   "id": "MDD-004",
+   "title": "cam_roller0/1, cam_roller_pin0/1, cam_carrier0/1: **ローラ軸ピンを保持する部品が無く、ローラとピンが宙に浮いている**。ローラ(Ø12×12)は y -18〜-6、ピン(Ø6×18)は y",
+   "description": "cam_roller0/1, cam_roller_pin0/1, cam_carrier0/1 | **ローラ軸ピンを保持する部品が無く、ローラとピンが宙に浮いている**。ローラ(Ø12×12)は y -18〜-6、ピン(Ø6×18)は y -15〜-9、x xc±9。キャリアは y -22〜-18 の平板で、ピンは天面から3mm上に浮く。キャリア上面とローラ下端が接線で触れるだけで、実物の「フォーク形キャリア+ピン」になっていない | hardware_v8.py L108-109(ローラ・ピン、`body=False`), L110-111(`yct=-22`, `carrier_h=4`)。CP-23「ローラ SUJ2 Ø12×12+ニードル軸受」 | キャリア上に耳板2枚 `cam_roller_lug{k}_{a/b}` を追加: x=xc-9〜xc-6 と xc+6〜xc+9(厚3)、y=-18〜-7.5(ピン中心 y=-12 から上 +4.5 まで、上端は R4.5 の丸め)、z=ZC±4.5(幅9)、ピン穴 Ø6。耳板はキャリア天面と一体(1部品)。ピン端は耳板内へ(ピン長18=耳板外面 x±9 に一致)。ローラ幅12=耳板内面間 12 に一致(x xc-6〜xc+6)。ローラ内にニードル軸受(Ø6/Ø12 の2面)を薄板で表現",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "キャリア上に耳板2枚 `cam_roller_lug{k}_{a/b}` を追加: x=xc-9〜xc-6 と xc+6〜xc+9(厚3)、y=-18〜-7.5(ピン中心 y=-12 から上 +4.5 まで、上端は R4.5 の丸め)、z=ZC±4.5(幅9)、ピン穴 Ø6。耳板はキャリア天面と一体(1部品)。ピン端は耳板内へ(ピン長18=耳板外面 x±9 に一致)。ローラ幅12=耳板内面間 12 に一致(x xc-6〜xc+6)。ローラ内にニードル軸受(Ø6/Ø12 の2面)を薄板で表現"
+  },
+  {
+   "id": "MDD-005",
+   "title": "cam_carrier0/1, cam_guide_rod0/1_*: **キャリアのロッド案内長が4mm(厚み)しか無く固着/こじれの形状**。Ø8のロッドに対し案内長 L/d=0.5。カム横力 348N/本(balance_calc)で",
+   "description": "cam_carrier0/1, cam_guide_rod0/1_* | **キャリアのロッド案内長が4mm(厚み)しか無く固着/こじれの形状**。Ø8のロッドに対し案内長 L/d=0.5。カム横力 348N/本(balance_calc)で偶力が生じ、直動案内として成立しない(通常 L/d≧1.5=12mm以上) | hardware_v8.py L110-116(`carrier_h_mm=4`, ロッドはキャリア天面で終端)。balance_calc 出力「カム横力348N/本」 | MDD-002 案A のフランジ付ブッシュ(全長12、キャリア厚4+下側8)で案内長を12mm確保。ロッド上端は「ブッシュ上端+チルト行程 3.96+余裕2」= 組立長で決め、ロッド長は 54 → ロッド下端を基台へ止まり穴6mm(MDD-011)、上端 y=-18+6=-12 付近。ブッシュ材 CuSn系/PTFE含浸の型番は UNVERIFIED のまま登録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "MDD-002 案A のフランジ付ブッシュ(全長12、キャリア厚4+下側8)で案内長を12mm確保。ロッド上端は「ブッシュ上端+チルト行程 3.96+余裕2」= 組立長で決め、ロッド長は 54 → ロッド下端を基台へ止まり穴6mm(MDD-011)、上端 y=-18+6=-12 付近。ブッシュ材 CuSn系/PTFE含浸の型番は UNVERIFIED のまま登録"
+  },
+  {
+   "id": "MDD-006",
+   "title": "hinge_cam_plate0/1, hinge_tail_lever0/1, hinge_block_*, hinge_cover: **カム板と尾部レバーが頭部側のどの部品にも取り付いていない(底板が無い)**。ヒンジブロックは前板(",
+   "description": "hinge_cam_plate0/1, hinge_tail_lever0/1, hinge_block_*, hinge_cover | **カム板と尾部レバーが頭部側のどの部品にも取り付いていない(底板が無い)**。ヒンジブロックは前板(z -27〜-25)・側板( | x | 69〜75, z -59〜-25)・後カバー(z -61〜-59)のみで、y=0(底)・y=22(上)の板が無い。カム板は y -6〜0 でカバー下縁と z -61〜-59 の2mm幅の線接触しかなく、尾部レバー(x 24〜29, y -24〜10, z -52〜-38)は前板(z≥-27)から11mm、カバー(z≤-59)から7mm離れて完全に浮いている。カム板 z は -62.1〜-36.5 で、後カバー外面(z=-61)より1.1mm背面側へはみ出す。CP-23は「カム板をM4×2でヒンジブロック底面に」と規定 | hardware_v8.py L82-83(ブロック構成), L103-107(`cam_pts` 上辺 y=HY-10=0, `prism_x`)、L106(レバー位置 `HY-lever_len`〜HY)。balance.json `cam_surface_head_frame`: zl -17.127〜8.459, yl -16.003〜-13.119 → カム z=ZC+zl=-62.13〜-36.54。CP-23 features | 底板 `hinge_block_floor` を追加: x -69〜69, y **0〜3**, z -59〜-27(t3 A6063)。カム板ポリゴンの上辺を y=HY-10→**HY-7 (=3)** にしてフロア上面に接合し、M4×2 の頭(Ø7×h3, x xc±4, z=ZC-30 と ZC-8 付近)を y=3〜6 に描く(ブロック内側、非露出)。カム面 z 範囲を後カバー内側(-59)以内に収めるため、ストッパ余長 cam_ext_deg 8→5 に下げるか、後カバーを z -63.5〜-61.5 に1.5mm後退(spec・CP-11 の寸法も更新)。尾部レバーは軸クランプ `hinge_lever_hub{k}`(x=±28.5±2.5, 円筒 軸x, r=8, 中心 (HY,ZC))を追加して軸に固定。レバー上端を y=HY+0 のまま、クランプ一体の1部品として表現",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "底板 `hinge_block_floor` を追加: x -69〜69, y **0〜3**, z -59〜-27(t3 A6063)。カム板ポリゴンの上辺を y=HY-10→**HY-7 (=3)** にしてフロア上面に接合し、M4×2 の頭(Ø7×h3, x xc±4, z=ZC-30 と ZC-8 付近)を y=3〜6 に描く(ブロック内側、非露出)。カム面 z 範囲を後カバー内側(-59)以内に収めるため、ストッパ余長 cam_ext_deg 8→5 に下げるか、後カバーを z -63.5〜-61.5 に1.5mm後退(spec・CP-11 の寸法も更新)。尾部レバーは軸クランプ `"
+  },
+  {
+   "id": "MDD-007",
+   "title": "hinge_axle, hinge_cheek_l/r, hinge_eclip0/1, ASM分類: **ヒンジ軸が頭部ヒンジブロックの側板に届かず、荷重経路が3Dで断絶**。軸は Ø12×132 → x±66。側板内面は x=±69〜7",
+   "description": "hinge_axle, hinge_cheek_l/r, hinge_eclip0/1, ASM分類 | **ヒンジ軸が頭部ヒンジブロックの側板に届かず、荷重経路が3Dで断絶**。軸は Ø12×132 → x±66。側板内面は x=±69〜75 なので両端3mm手前で終わる。側板に軸穴も無い。docs/mechanisms/03 の荷重経路(頭部→ヒンジブロック→軸→摩擦ヒンジ/軸ボス→側板)が成立していない。さらに ASM分類で `hinge_axle` を固定側(ASM_stand_fixed)に入れており、文書上は頭部と回転する部材の扱いと不一致(同軸なので外見は同じだが、チルトのアニメで食い違う) | hardware_v8.py L88(`cyl('hinge_axle',6.0,132,'x',...)`), L82(`hinge_cheek_l x=-75,w=6`, `hinge_cheek_r x=69`)。build L673-674(ASM_hinge と ASM_stand_fixed)。docs/mechanisms/03 §1 | 軸長 132→**150**(x±75)。側板に軸穴(Ø12H7)をブーリアンで開け、軸が貫通。Eクリップを側板外側 x=±75.8(溝位置)へ移動し、現在位置 x=±63.6 (腕外面62との間)は座金 `hinge_washer{k}` (Ø20×t1, x ±62.1〜63.1)に置換。軸は頭部回転側として `ASM_hinge` に分類変更(ネック側は摩擦ヒンジ/ボスの穴で受ける)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "軸長 132→**150**(x±75)。側板に軸穴(Ø12H7)をブーリアンで開け、軸が貫通。Eクリップを側板外側 x=±75.8(溝位置)へ移動し、現在位置 x=±63.6 (腕外面62との間)は座金 `hinge_washer{k}` (Ø20×t1, x ±62.1〜63.1)に置換。軸は頭部回転側として `ASM_hinge` に分類変更(ネック側は摩擦ヒンジ/ボスの穴で受ける)"
+  },
+  {
+   "id": "MDD-008",
+   "title": "hinge_friction0/1, hinge_friction*_cap, stand_arm_boss0/1, stand_arm_strip0/1: **摩擦ヒンジに頭部側の締結要素が無く、キャップが側板ボスに食い込む**。摩擦ヒン",
+   "description": "hinge_friction0/1, hinge_friction*_cap, stand_arm_boss0/1, stand_arm_strip0/1 | **摩擦ヒンジに頭部側の締結要素が無く、キャップが側板ボスに食い込む**。摩擦ヒンジ(Ø22×22 x±34〜56)は軸に通っただけで、頭部(ブロック)へ固定する耳板が無い。キャップ(Ø16×3)は x=±57 中心(55.5〜58.5)で、側板内面 x=56 とボス(r11, x56〜62)に 2.5mm 食い込む(ボスが貫通している扱い) | hardware_v8.py L89(`hinge_friction ... xx±45`, cap `xx±12`), interference_report: `stand_arm_boss0 | hinge_friction0_cap [2.5,16,16]`, `stand_arm_strip0 | hinge_friction0_cap [2.5,8,8]` | 摩擦ヒンジを x=±(30〜52)(中心±41)へ寄せ、キャップは x=±(52〜55)(中心±53.5)にして側板内面56とのすき間1mm。頭部側の取付耳 `hinge_friction_tab{k}`(t3, x ±(30〜52), y=HY+8〜22, z=ZC-11 から後カバー内面 -59 まで)を追加し M3×2 で後カバー/前板に固定。軸との回転側はハウジング、固定側はボス(r11)にキー(幅4)で固定と注記。型番 Reell PHL/PHC は U27 のまま",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "摩擦ヒンジを x=±(30〜52)(中心±41)へ寄せ、キャップは x=±(52〜55)(中心±53.5)にして側板内面56とのすき間1mm。頭部側の取付耳 `hinge_friction_tab{k}`(t3, x ±(30〜52), y=HY+8〜22, z=ZC-11 から後カバー内面 -59 まで)を追加し M3×2 で後カバー/前板に固定。軸との回転側はハウジング、固定側はボス(r11)にキー(幅4)で固定と注記。型番 Reell PHL/PHC は U27 のまま"
+  },
+  {
+   "id": "MDD-009",
+   "title": "cam_roller0/1, cam_carrier0/1, spring_die0/1, hinge_cam_plate0/1: **`--tilt` 指定時、ローラ・キャリア・ばねが0°位置に固定のまま**で、カムがローラに最大3.7m",
+   "description": "cam_roller0/1, cam_carrier0/1, spring_die0/1, hinge_cam_plate0/1 | **`--tilt` 指定時、ローラ・キャリア・ばねが0°位置に固定のまま**で、カムがローラに最大3.7mm食い込む(静止画の斜め姿勢が物理的にあり得ない形状になる)。ローラ固定 (ρ0=22) でカム面を回すと、カム面とローラ外周のすき間は -15°:-0.64, -10°:-0.29, +10°:-0.32, +20°:-1.15, +30°:-2.32, **+40°:-3.71mm**(負=貫入)。本来はローラ/キャリアが ρ(θ)-ρ0 だけ下がり、ばねが縮む | 自前計算 `roller.py`(cam_surface_head_frame をθ回転、ローラ中心 y=-12, z=ZC, r6)。build L711 チルトは PIV のみ、hardware_v8.py L108-116 の `body=False` 群は不動 | hardware_v8.py の冒頭で `th=A.tilt` から ρ(θ) を balance.json `cam_profile_pitch_radius`(角度-ρ表)の線形補間で求め、`dx=ρ(θ)-RHO0`、`LS_eff=BAL['lmax']-dx`。ローラ・ピン・キャリア・耳板の y を `-dx` ずらし(Blender では `ob.location.z -= dx`)、`coil(...L=LS_eff...)` で縮んだばねを生成。座・ロッドは不動。θ=40°で dx=3.96、ばね長 40.36mm",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "hardware_v8.py の冒頭で `th=A.tilt` から ρ(θ) を balance.json `cam_profile_pitch_radius`(角度-ρ表)の線形補間で求め、`dx=ρ(θ)-RHO0`、`LS_eff=BAL['lmax']-dx`。ローラ・ピン・キャリア・耳板の y を `-dx` ずらし(Blender では `ob.location.z -= dx`)、`coil(...L=LS_eff...)` で縮んだばねを生成。座・ロッドは不動。θ=40°で dx=3.96、ばね長 40.36mm"
+  },
+  {
+   "id": "MDD-010",
+   "title": "spring_die0/1 (coil 関数): **コイルの形状式が研削端面(座巻き)と整合しない**。`L=n·pa+(2·ends+1)·d` は座巻き部を3d(=12mm)として扱い、ピッチを実物より0.52mm小さく描く(描画 p",
+   "description": "spring_die0/1 (coil 関数) | **コイルの形状式が研削端面(座巻き)と整合しない**。`L=n·pa+(2·ends+1)·d` は座巻き部を3d(=12mm)として扱い、ピッチを実物より0.52mm小さく描く(描画 pa=4.19mm/素線間0.19mm、ground-end 規約では (44.32-8)/7.71=4.71mm/素線間0.71mm)。この式の密着高は (n+3)d=**42.8mm** で、balance の密着高38.9mm(ground end, (n+2)d)や最小取付長 40.36mm より大きく、40.36mmまで縮めると自己貫入する。端はヘリカルを素線断面で垂直に切っただけの尖端で、研削された平面端(座との接触)が無い。有効巻数 n=7.71 は非整数なのに端の角度位置を揃えていない。左右のばねが同一の巻き方向(hand=1)で、座巻きの終端位置も同じ | build L93-115(`coil`, `pa=max((L-(2*ends+1)*d)/n,d)`, `bm.faces.new(rings[0][::-1])`), hardware_v8.py L113-114(`_n=7.71`, `ends=1.0`)。balance_calc: 密着高 38.9, 取付長 40.4〜44.3 | `pa=(L-2*ends*d)/n` に変更。ヘリカルの端を素線半径ぶん余らせて生成し、最後に全頂点の軸方向座標を [y0, y0+L] にクランプして平面研削端面を作る(`h=min(max(h,0),L)`)。座巻き端は最後の0.75巻を研削(接触角270°)。端の角度位置を全巻の整数倍+0.71巻でそろえ、k=1側は `hand=-1` で巻き方向を逆にして左右対称ペアにする。線径4×ピッチ精度のため `per_turn=28→48`, `seg=10→12`(ばねは小物なので負荷小)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`pa=(L-2*ends*d)/n` に変更。ヘリカルの端を素線半径ぶん余らせて生成し、最後に全頂点の軸方向座標を [y0, y0+L] にクランプして平面研削端面を作る(`h=min(max(h,0),L)`)。座巻き端は最後の0.75巻を研削(接触角270°)。端の角度位置を全巻の整数倍+0.71巻でそろえ、k=1側は `hand=-1` で巻き方向を逆にして左右対称ペアにする。線径4×ピッチ精度のため `per_turn=28→48`, `seg=10→12`(ばねは小物なので負荷小)"
+  },
+  {
+   "id": "MDD-011",
+   "title": "cam_guide_rod0/1_*, spring_seat_bot0/1: **ロッドが基台に刺さっておらず、座を貫通する穴の表現も無い**。ロッド下端 y=HY-BS=-72 は基台上面(-72)と同一面で掛かり代0(CP-23は「基",
+   "description": "cam_guide_rod0/1_*, spring_seat_bot0/1 | **ロッドが基台に刺さっておらず、座を貫通する穴の表現も無い**。ロッド下端 y=HY-BS=-72 は基台上面(-72)と同一面で掛かり代0(CP-23は「基台(止まり穴)」)。座(平板 t2.7)はロッド領域(z±15)を塞いでおりロッドと重なる(interference: `spring_seat_bot0 | cam_guide_rod0_-1 [8,8,2.7]`)。基台厚は8mmのため止まり穴は6mmまで | hardware_v8.py L115-116, interference_report | ロッドの y 範囲を `HY-BS-6 = -78` 〜 `yct+carrier_h`(=-18)へ延長(基台へ6mm圧入、ねじ込みならM6×6)。座にロッド用貫通穴 Ø8.1 をブーリアンで開ける(案A採用時は中央穴)。基台に対応する止まり穴 Ø8 H7 深さ6 を `stand_neck_base` に開ける",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ロッドの y 範囲を `HY-BS-6 = -78` 〜 `yct+carrier_h`(=-18)へ延長(基台へ6mm圧入、ねじ込みならM6×6)。座にロッド用貫通穴 Ø8.1 をブーリアンで開ける(案A採用時は中央穴)。基台に対応する止まり穴 Ø8 H7 深さ6 を `stand_neck_base` に開ける"
+  },
+  {
+   "id": "MDD-012",
+   "title": "hinge_cover, stand_arm_strip0/1: **+38〜+40°でヒンジカバー下縁が側板ストリップに0.3mmまで接近**(ローラ側も0.86mm)。ストリップ z=ZC±4、カバー下縁 (y=0, z=-61〜-59",
+   "description": "hinge_cover, stand_arm_strip0/1 | **+38〜+40°でヒンジカバー下縁が側板ストリップに0.3mmまで接近**(ローラ側も0.86mm)。ストリップ z=ZC±4、カバー下縁 (y=0, z=-61〜-59) が +40°で z=ZC-4.3 に来る。製造公差・アルマイト膜(10〜15µm)・ブロックのたわみを考えると接触しうる | 掃引 `cover x strip_l n=3 max_pen -0.3 range 38..40`, `cover x roller0 -0.86 @40°`。docs/mechanisms/03 「ヒンジブロックの壁が回る半径13mm以内を避ける」は、ストリップ(r≈8付近)ではなくカバー下縁コーナー(中心から r=17.2)で見ているため、コーナー軌跡が反映されていない | カバー下縁の内側角に C2.0 の面取り(または軸中心の半径 17.5 の逃げ円弧)を付ける。あるいは spec.neck.strip_w 8→6 (+40°で すき間 1.3mm)。motion_check の最小すき間ゲートを「接触(0.00)」でなく「≥1.0mm」で判定する項目を追加(貫入判定とは別)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "カバー下縁の内側角に C2.0 の面取り(または軸中心の半径 17.5 の逃げ円弧)を付ける。あるいは spec.neck.strip_w 8→6 (+40°で すき間 1.3mm)。motion_check の最小すき間ゲートを「接触(0.00)」でなく「≥1.0mm」で判定する項目を追加(貫入判定とは別)"
+  },
+  {
+   "id": "MDD-013",
+   "title": "stand_neck_tab, slab, hinge_stopper_up0/1: **-15°でスラブ下面とネックタブ上端のすき間が0.39mm**(指挟み/こすれ/塗装剥がれの懸念)。タブ上端 y=-11、スラブ下面は -15°で z",
+   "description": "stand_neck_tab, slab, hinge_stopper_up0/1 | **-15°でスラブ下面とネックタブ上端のすき間が0.39mm**(指挟み/こすれ/塗装剥がれの懸念)。タブ上端 y=-11、スラブ下面は -15°で z=-6.8 の位置で y=-10.57。motion_check の「スラブ下縁-カバー上端 22.8〜67.2mm」はカバー上端 y=-34 を基準にしており、タブ(y=-11)の方が近い点を拾っていない | 掃引 `slab x tab n=1 max_pen -0.39 @-15°`。motion_check.py 出力「最小: チルト-15° 前カバー 22.8mm」。spec.neck: tab_y_top=-11, front_cover_z [32.217, 38.217] | タブ上面の前縁(z=ZC+32.2側)に **C4.0** の面取りを付ける(頂部 y=-11 は維持するのでストッパ上パッド(y -17〜-11)とレバー角 y=-11.5 の関係は変わらない)。-15°での最小すき間は約1.5mm(z=-10.8 の角)。motion_check に「タブ-スラブ」の最小すき間を追加し 1.0mm 未満を FAIL",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "タブ上面の前縁(z=ZC+32.2側)に **C4.0** の面取りを付ける(頂部 y=-11 は維持するのでストッパ上パッド(y -17〜-11)とレバー角 y=-11.5 の関係は変わらない)。-15°での最小すき間は約1.5mm(z=-10.8 の角)。motion_check に「タブ-スラブ」の最小すき間を追加し 1.0mm 未満を FAIL"
+  },
+  {
+   "id": "MDD-014",
+   "title": "hinge_boot0f〜9f, hinge_boot0b〜9b: **ブーツが頭部に剛体で追従する簡易リングで、全チルト角でネック部品を貫通する**。ブーツ(前/後の細板のみ、側面なし)は頭部群として回るため、0°でも前ブーツが前タブ(z",
+   "description": "hinge_boot0f〜9f, hinge_boot0b〜9b | **ブーツが頭部に剛体で追従する簡易リングで、全チルト角でネック部品を貫通する**。ブーツ(前/後の細板のみ、側面なし)は頭部群として回るため、0°でも前ブーツが前タブ(z ZC+34.2〜36.2 が タブ z ZC+32.2〜38.2 の内側)・側板(x±62±3)に食い込み(`hinge_boot0f | stand_neck_tab [112,2,3.06]` 他多数)、後ブーツは +10°以降 案内ロッド・キャリア・ばねに食い込む(掃引: `bootb5 x spring0 pen 2.0 @36°`, `bootb6 x carrier pen 2.0 @19°` 他)。前ブーツは-15°でも側板・外皮に貫入。ブーツの高さは 34mm 固定(仕様 22〜70mm の伸縮を表現していない)。側面(x=±62)が無く、指挟み保護の絵にならない | hardware_v8.py L125-130(`hinge_boot{k}{f/b}`, `hb(... body=True)` → ASM未分類でPIV追従), spec.neck.boot(convolutions 10, length_range 22〜70)。掃引結果(boot* で70以上の対がチルト範囲のほぼ全域)。interference_report 後半の boot 対 | ブーツを「頭部アンカー(ヒンジブロック底面 y=0)」と「ネックアンカー(カバー上端 y=-34)」の2点を結ぶ生成物にする: 頭部アンカーを tilt 回転後の座標 `P_h(θ)`、ネックアンカーを `P_n` として、リング k の中心を `lerp(P_n, P_h(θ), k/10)`、リング面の傾きを `θ·k/10`、山谷は ±3mm。リングは4辺(前/後/左/右 + R10角)の閉ループ(厚2.0, 幅は外皮内側 124×66)で作る。レンダ用にこの生成を A.tilt から1回だけ行い、PIV には親子付けしない(ネック群)。これで貫通が無くなる。ブーツ材は UL94 V-0 シリコーン(U53 は UNVERIFIED のまま)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ブーツを「頭部アンカー(ヒンジブロック底面 y=0)」と「ネックアンカー(カバー上端 y=-34)」の2点を結ぶ生成物にする: 頭部アンカーを tilt 回転後の座標 `P_h(θ)`、ネックアンカーを `P_n` として、リング k の中心を `lerp(P_n, P_h(θ), k/10)`、リング面の傾きを `θ·k/10`、山谷は ±3mm。リングは4辺(前/後/左/右 + R10角)の閉ループ(厚2.0, 幅は外皮内側 124×66)で作る。レンダ用にこの生成を A.tilt から1回だけ行い、PIV には親子付けしない(ネック群)。これで貫通が無くなる。ブーツ材は UL94 V-0"
+  },
+  {
+   "id": "MDD-015",
+   "title": "pe_braid_hinge: **ヒンジ側PE編組の両端が支持されず、始点が摩擦ヒンジ内に埋まる**。始点 (-45,12,-39) は摩擦ヒンジ軸(y=10,z=-45)から距離 6.3 < r11 で摩擦ヒンジ本体内、終点 (-45,",
+   "description": "pe_braid_hinge | **ヒンジ側PE編組の両端が支持されず、始点が摩擦ヒンジ内に埋まる**。始点 (-45,12,-39) は摩擦ヒンジ軸(y=10,z=-45)から距離 6.3 < r11 で摩擦ヒンジ本体内、終点 (-45,8,-67) は後カバー(z -71〜-69, y≤-34)にも側板(x -62〜-56)にも触れない空中。編組全体が頭部群(PIV)に付き、ネックへ繋がる端も頭部と一緒に動く | hardware_v8.py L164(`pe_braid_hinge` 6点), spec.neck, ASM_hinge に含まれる(build L673)。距離計算 hypot(12-10,-39+45)=6.3 | 編組を頭部端(ヒンジブロック前板 z=-27, 端子 M4リング x=-45, y=14)とネック端(後カバー天面 y=-34, z=-70, x=-45)に端子(リング端子 Ø9×t1)を付け、2端子間の中間点をブーツ内の自由曲線で結ぶ。頭部端のみ頭部群、ネック端はネック群にして2本の曲線+中点共有で表現。ループは摩擦ヒンジ r11 と arm x -56 の外側 (x -50〜-52) へ寄せ、始点を y 14, z -30(前板内側)に移す",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "編組を頭部端(ヒンジブロック前板 z=-27, 端子 M4リング x=-45, y=14)とネック端(後カバー天面 y=-34, z=-70, x=-45)に端子(リング端子 Ø9×t1)を付け、2端子間の中間点をブーツ内の自由曲線で結ぶ。頭部端のみ頭部群、ネック端はネック群にして2本の曲線+中点共有で表現。ループは摩擦ヒンジ r11 と arm x -56 の外側 (x -50〜-52) へ寄せ、始点を y 14, z -30(前板内側)に移す"
+  },
+  {
+   "id": "MDD-016",
+   "title": "pe_braid_swivel, stand_skirt, stand_neck_collar: **スイベルPE編組が外皮の外側に出る(P1/P4違反)**。外皮(スカート/カラー)は半径97mm・y -105〜-69 が隠す前提(CP-",
+   "description": "pe_braid_swivel, stand_skirt, stand_neck_collar | **スイベルPE編組が外皮の外側に出る(P1/P4違反)**。外皮(スカート/カラー)は半径97mm・y -105〜-69 が隠す前提(CP-27「PE編組のスイベル跨ぎ部を隠す」)だが、経路の点3〜5は軸からの半径 118/135/116mm で、y -83〜-95(スカート高さ)に位置するため外皮の外側に垂れる。また編組は ASM_stand_neck(ネック群=首振りで回る側)に分類され、足側端 (70,-106,-100) までネックと一緒に回るため、±60°で足から離れる | hardware_v8.py L163(`din(95,SY0+22,SZ-70)` など、半径=hypot(x, z-ZC): 点3 hypot(95,70)=118, 点4 hypot(85,105)=135, 点5 hypot(60,100)=116), build L429/L431(`skirt_r_mm=97`), build L667(ASM_stand_neck に pe_braid_swivel)。motion_check の「首振り編組 端間距離69mm」は寸法のみで外観を見ていない | 編組を外皮内(半径≤88mm, y -97〜-81)に収める。ロータ下面とステータ上面の間(y -99〜-86 の空間、軸受外輪r50〜ロータr76の間)に螺旋ループを置く: 端A=ロータ下面ラグ (x 66, y -86.5, z=ZC), 端B=ステータ上面ラグ (x 66cos150°, y -98.5, z=ZC+66 sin150°) を、半径66の0.75周+Δy で結ぶ6〜8点の折れ線(±60°=±1.05rad×r66=±69mm の弧長変化を余長で吸収。編組長170mm は model/pe_braids.json)。端Aはネック群、端Bは足群の2本に分け、中点共有",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "編組を外皮内(半径≤88mm, y -97〜-81)に収める。ロータ下面とステータ上面の間(y -99〜-86 の空間、軸受外輪r50〜ロータr76の間)に螺旋ループを置く: 端A=ロータ下面ラグ (x 66, y -86.5, z=ZC), 端B=ステータ上面ラグ (x 66cos150°, y -98.5, z=ZC+66 sin150°) を、半径66の0.75周+Δy で結ぶ6〜8点の折れ線(±60°=±1.05rad×r66=±69mm の弧長変化を余長で吸収。編組長170mm は model/pe_braids.json)。端Aはネック群、端Bは足群の2本に分け、中点共有"
+  },
+  {
+   "id": "MDD-017",
+   "title": "stand_skirt, stand_neck_collar, stand_neck_shroud, stand_foot: **外皮・足が「中身の詰まった立体」で、機構が中に埋まっている**。CP-26/27/28は t2.0 の殻(0.",
+   "description": "stand_skirt, stand_neck_collar, stand_neck_shroud, stand_foot | **外皮・足が「中身の詰まった立体」で、機構が中に埋まっている**。CP-26/27/28は t2.0 の殻(0.11/0.04/0.12kg)だが、コードは中実の円柱/箱。スカート(Ø194×24.5)内にステータ・軸受・ロータ・ゴムポスト・タブ・ボルトが全て内包され(`stand_skirt | stand_swivel_stator [190,190,6]` 他)、外皮(127×67.2×46)内に基台・側板・カバー・タイプレート・ばね・ロッド・キャリアが埋まる(`stand_neck_shroud | spring_die0 [20,20,35.2]`, ` | cam_guide_rod* [8,8,38]`, ` | stand_neck_base [124,65.7,8]` 他)。ロータのタブ(r68〜90)が首振りで中実スカートの中を掃引する(静的には問題でも断面図/分解図で嘘になる)。中実なので質量・断面・--cut表示を誤る | build L429-433(`cyl('stand_skirt'...)`, `cyl('stand_neck_collar'...)`, `box('stand_neck_shroud'...)` に空洞なし。コミット44044f0の「外皮の薄肉化」はスクリプトに反映されていない)。CP-26 mass 0.11kg に対し 中実Al円柱 π×97²×24.5×2.7e-6=1.95kg。CP-28 同 0.12kg に対し 127×67.2×46×2.7e-6=1.06kg | 外皮3種を薄肉にする: スカート/カラーは外径と同じ円筒に SOLIDIFY(厚2.0, offset=-1, 内向き)をかけた「底なし筒」(2枚の円板キャップなし)。ネック外皮は箱から下面と前後カバー上端の面を除いた開口付き箱に SOLIDIFY(t2.0, offset=-1)。足は中実だがballastポケット(MDD-021)。`stand_neck_shroud` は上面を開口(y=-34 でブーツ取付リング)にし、ばね上部が見える現状の食い違いを解消",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "外皮3種を薄肉にする: スカート/カラーは外径と同じ円筒に SOLIDIFY(厚2.0, offset=-1, 内向き)をかけた「底なし筒」(2枚の円板キャップなし)。ネック外皮は箱から下面と前後カバー上端の面を除いた開口付き箱に SOLIDIFY(t2.0, offset=-1)。足は中実だがballastポケット(MDD-021)。`stand_neck_shroud` は上面を開口(y=-34 でブーツ取付リング)にし、ばね上部が見える現状の食い違いを解消"
+  },
+  {
+   "id": "MDD-018",
+   "title": "stand_swivel_stator, stand_swivel_bearing, stand_swivel_rotor, stand_swivel_friction_ring: **軸受・ステータ・ロータが「穴の無い円板」**。CP-2",
+   "description": "stand_swivel_stator, stand_swivel_bearing, stand_swivel_rotor, stand_swivel_friction_ring | **軸受・ステータ・ロータが「穴の無い円板」**。CP-20/21は中心穴 Ø52、軸受は ID60/OD100、摩擦座は r28〜42 の凹み(深さ3)だが、3Dは全て中実円板。摩擦リング(r35の円板)は軸受(中実Ø100、y -99〜-87)の内部(y -99〜-97.5)に埋まる(`stand_swivel_bearing | stand_swivel_friction_ring [70,70,1.5]`)。ボルト頭は内輪側が皿ネジ(CP-21)なのにナベ頭を上面に載せ、ネック基台底面(y=-80)と0.6mm重なる(`stand_neck_base | stand_swivel_bolt* [5,5,0.6]`) | hardware_v8.py L142-146(`cyl(... stator_r,6 ...)`, `cyl(bearing_od/2,12)`, `cyl(35,1.5)`), L147-149(ボルト頭 y=SY0+25.3, 厚0.6), interference_report 上記 | 円板を円環にする(外径r, 内径rin のリング生成 helper `ring(name, ro, ri, h, ...)`)。ステータ rin=26、軸受 ro=50/ri=30(内輪/外輪を別オブジェクト: 外輪 r40〜50、内輪 r30〜40、隙間0.3)、ロータ rin=26、摩擦リング ro=42/ri=28。皿ボルト頭は頭上面をロータ上面(y=-80)と面一にする(z 0.0、円錐座ぐり)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "円板を円環にする(外径r, 内径rin のリング生成 helper `ring(name, ro, ri, h, ...)`)。ステータ rin=26、軸受 ro=50/ri=30(内輪/外輪を別オブジェクト: 外輪 r40〜50、内輪 r30〜40、隙間0.3)、ロータ rin=26、摩擦リング ro=42/ri=28。皿ボルト頭は頭上面をロータ上面(y=-80)と面一にする(z 0.0、円錐座ぐり)"
+  },
+  {
+   "id": "MDD-019",
+   "title": "stand_rubber_foot, stand_foot, floor: **ゴム足が床面より下に埋まり、足底が床に直接接する**。ゴム足 Ø20×2.5 は y=-119.5〜-117 に置かれ、床(floor)は y=-117(足底)",
+   "description": "stand_rubber_foot, stand_foot, floor | **ゴム足が床面より下に埋まり、足底が床に直接接する**。ゴム足 Ø20×2.5 は y=-119.5〜-117 に置かれ、床(floor)は y=-117(足底)。ゴム足は床の下に隠れて見えない。CP-10は「ゴム足Ø20×4」 | build L415(`cyl('stand_rubber_foot',10,2.5,'y',..., -DROP-FT-1.25...)`), L775(`floor.location = V(0,-DROP-12.0,0)`)。CP-10 process | ゴム足を **高さ4.0**、中心 y=-DROP-FT-2.0=-119、位置は現状(足端から24mm内側)。床を **y=-DROP-FT-4.0=-121** に移す。tools の机面基準(motion_check の `floor_y=-drop-FT`, stability など)を -4mm 下に更新(机面から頭部までの余裕は 44.5→48.5mm に増えるので悪化しない)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ゴム足を **高さ4.0**、中心 y=-DROP-FT-2.0=-119、位置は現状(足端から24mm内側)。床を **y=-DROP-FT-4.0=-121** に移す。tools の机面基準(motion_check の `floor_y=-drop-FT`, stability など)を -4mm 下に更新(机面から頭部までの余裕は 44.5→48.5mm に増えるので悪化しない)"
+  },
+  {
+   "id": "MDD-020",
+   "title": "stand_foot, stand_ballast: **足が中実の箱で、ballastポケット/底カバーが無い**。ballast(336×286)は足の内部に完全に重なる。ballast厚は 3.5kg/(7.85e-6×336×286",
+   "description": "stand_foot, stand_ballast | **足が中実の箱で、ballastポケット/底カバーが無い**。ballast(336×286)は足の内部に完全に重なる。ballast厚は 3.5kg/(7.85e-6×336×286)=**4.64mm** で CP-10 の「厚さ≒5.2mm」と不一致(0.56mm)。底カバーt1.5・皿ねじ(CP-10)も無い | build L411-413。CP-10 process 「厚さ≒5.2mm」。計算 `3.5/(7.85e-6*336*286)=4.64` | 足本体にポケット 336×286×5.2(下面側)をブーリアンで抜き、ballast(厚4.64 or 5.2に寸法を合わせて質量3.5kgを維持: 5.2mmなら 7.85e-6×336×286×5.2=3.92kg となるため、ballast平面寸法を 336×286→318×270 に縮めて 3.5kg)、底カバー t1.5 と皿ねじ(M4×6, 間隔 120) を追加。CP-10 の記載を計算値に合わせる(どちらを正とするか台帳で決定)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "足本体にポケット 336×286×5.2(下面側)をブーリアンで抜き、ballast(厚4.64 or 5.2に寸法を合わせて質量3.5kgを維持: 5.2mmなら 7.85e-6×336×286×5.2=3.92kg となるため、ballast平面寸法を 336×286→318×270 に縮めて 3.5kg)、底カバー t1.5 と皿ねじ(M4×6, 間隔 120) を追加。CP-10 の記載を計算値に合わせる(どちらを正とするか台帳で決定)"
+  },
+  {
+   "id": "MDD-021",
+   "title": "stand_skirt, stand_neck_collar, stand_neck_shroud: **CP-26/28 とコード寸法の不一致**。スカート長: CP-26=32.5、コード `_sl=SY_NECK-skirt_gap+",
+   "description": "stand_skirt, stand_neck_collar, stand_neck_shroud | **CP-26/28 とコード寸法の不一致**。スカート長: CP-26=32.5、コード `_sl=SY_NECK-skirt_gap+DROP=-80-0.5+105=24.5`(8mm差)。スカート/カラー面取り: CP-26=R5.0(`foot_edge_r_mm`)、コード bevel=3.0。外皮高さ: CP-28=38、コード cover_top-SY_NECK=-34+80=46。カラー長 11.0 はスクリプト内定数で spec.json 未登録(CP-27 自身が指摘) | build L428-433, custom_parts.json CP-26/27/28 の size/features | どちらかを正として一本化。推奨: spec.json `stand.shroud` に `skirt_len_mm`(=SY_NECK から導出、現行 24.5)、`collar_len_mm: 11.0`、`skirt_edge_r_mm: 3.0`、`neck_h_mm: 46` を追加し、build はそれを読む。CP-26 を 24.5、CP-28 を 46 に直す(または基台を除いた 38 を「外皮高さ」の定義として明記)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "どちらかを正として一本化。推奨: spec.json `stand.shroud` に `skirt_len_mm`(=SY_NECK から導出、現行 24.5)、`collar_len_mm: 11.0`、`skirt_edge_r_mm: 3.0`、`neck_h_mm: 46` を追加し、build はそれを読む。CP-26 を 24.5、CP-28 を 46 に直す(または基台を除いた 38 を「外皮高さ」の定義として明記)"
+  },
+  {
+   "id": "MDD-022",
+   "title": "stand_skirt, stand_neck_collar: **スカートとカラーの継ぎ目が「すき間0.5mm+両側R3の面取り」で幅約6.5mmのV溝になる**。P3(均一なすき間0.5±0.1)の意図は面取りを除いた実すき間だが、見た",
+   "description": "stand_skirt, stand_neck_collar | **スカートとカラーの継ぎ目が「すき間0.5mm+両側R3の面取り」で幅約6.5mmのV溝になる**。P3(均一なすき間0.5±0.1)の意図は面取りを除いた実すき間だが、見た目の溝は面取りで広がる。R5(CP-26規定)にすると約10.5mm | build L429-431(bevel 3.0 ×2, skirt_gap 0.5) | 継ぎ目側の縁(スカート上縁・カラー下縁)の面取りを R0.5 にし、反対側の縁(スカート下縁・カラー上縁)だけ大きなR(3〜5)にして溝を目立たせない。bevel を `limit_method='WEIGHT'` + 縁ごとの bevel_weight で縁別に指定",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "継ぎ目側の縁(スカート上縁・カラー下縁)の面取りを R0.5 にし、反対側の縁(スカート下縁・カラー上縁)だけ大きなR(3〜5)にして溝を目立たせない。bevel を `limit_method='WEIGHT'` + 縁ごとの bevel_weight で縁別に指定"
+  },
+  {
+   "id": "MDD-023",
+   "title": "stand_arm0/1, stand_arm_strip0/1, stand_arm_boss0/1, stand_neck_tie, stand_neck_cover0/1, stand_neck_tab, hinge_block_*,",
+   "description": "stand_arm0/1, stand_arm_strip0/1, stand_arm_boss0/1, stand_neck_tie, stand_neck_cover0/1, stand_neck_tab, hinge_block_*, cam_carrier*, spring_seat_bot* | **箱形の簡略化**。側板は 6×56×65 の直方体+ストリップ 6×26×8 + 円柱ボス の3部品を面取り0.6〜1.2で重ねただけで、板金/押出品の抜き勾配・曲げR・肉抜きが無い。ネック外皮はR9の大面取りだが、側板・ブロックは角が立つ。ヒンジブロックは前板/側板/カバーの別箱で、L字/コの字の1部品(CP-11はA6063 1個)になっていない | build L418-426, hardware_v8.py L82-83, L111/L115。CP-11「ヒンジブロック(150×22×24, A6063)」 | ヒンジブロックを `prism_x` で作った「コの字断面」1ポリゴン(外形 150×22×36 の底なし枠、板厚 t6、外角 R3、内角 R1)に統合する。側板は側面から見た輪郭(下部台形+上部ストリップ+軸ボス r11 への R5 つなぎ)を1つの `prism_x` ポリゴンで作って一体化(3部品→1部品)。CP-11 の寸法(24 or 36)はどちらかに統一(MDD-040)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ヒンジブロックを `prism_x` で作った「コの字断面」1ポリゴン(外形 150×22×36 の底なし枠、板厚 t6、外角 R3、内角 R1)に統合する。側板は側面から見た輪郭(下部台形+上部ストリップ+軸ボス r11 への R5 つなぎ)を1つの `prism_x` ポリゴンで作って一体化(3部品→1部品)。CP-11 の寸法(24 or 36)はどちらかに統一(MDD-040)"
+  },
+  {
+   "id": "MDD-024",
+   "title": "cover_back, cover_filter: **ドームの断面が12リングの粗い折れ線で、縁に90°の段差がある(P6違反)**。リングは `insets=[0,0]+run×k/12` で 2 + 12 本。smoothstep深さ",
+   "description": "cover_back, cover_filter | **ドームの断面が12リングの粗い折れ線で、縁に90°の段差がある(P6違反)**。リングは `insets=[0,0]+run×k/12` で 2 + 12 本。smoothstep深さ(縁6→内162mm)なので、隣接リングの勾配が 30.0°→57.9°→67.4°→71.6°→73.7°→74.6°→…→57.9°→29.9° と変化し、隣り合う面の折れ角が最大約28°(滑らかとは言えず、スムースシェードで誤魔化している)。縁のリング0→1は垂直壁(深さ0→9mm、inset 0)で、その先の勾配ゼロ(smoothstepの端)から立ち上がるので「縁の垂直壁→棚→急勾配」の90°+の折れが縁にできる。さらに角Rは `rr=max(r0-ins,6)` のため inset≥44 で R6 固定となり、プラトーが R6 の矩形に近づく(対角線上にヒップ状の折れ線)。平面角R50→R6 への遷移が C1 でない | build L301(`d_inner`), L312(`insets`), L315(`rr=max(r0-ins,6)`), L331(板厚), L333(bevel は texture モードのみ)。再計算した各リングの勾配(上記)。spec.dome: run=64, edge_inner_depth=6, corner_r=50 | ①リング数を 12→**48**(`insets=[0,0]+[run*(k/48)...]`、POLY連動で最大96)。②縁を連続にするため断面を「縁R3の丸め+smoothstep」に: リング0(dep 0)と1(dep 9)の間に R3 の4分円を3点で挿入し、勾配の初期値を 0 でなく 30°へ(`ease` を 6t(1-t) の積分ではなく `ease'(0)=0.5` を含む正則化関数 `0.5t+0.5·smoothstep(t)` に変更するなど。spec.dome の記述 smoothstep と食い違うので docs/spec/design-philosophy.md に差異を明記)。③角R: `rr = 6 + (r0-6)·(1-ease(ins/run))` に変え、プラトー端まで連続に収束。④常に `bevel(width 0.4, segments 3)` を適用(現行は vent_mode=='texture' の時だけ。boolean 既定ではドーム縁・穴縁に面取り無し)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "①リング数を 12→**48**(`insets=[0,0]+[run*(k/48)...]`、POLY連動で最大96)。②縁を連続にするため断面を「縁R3の丸め+smoothstep」に: リング0(dep 0)と1(dep 9)の間に R3 の4分円を3点で挿入し、勾配の初期値を 0 でなく 30°へ(`ease` を 6t(1-t) の積分ではなく `ease'(0)=0.5` を含む正則化関数 `0.5t+0.5·smoothstep(t)` に変更するなど。spec.dome の記述 smoothstep と食い違うので docs/spec/design-philosophy.md "
+  },
+  {
+   "id": "MDD-025",
+   "title": "cover_vents (cutter), cover_back: **穿孔が傾斜部で長穴(最大約9mm)になり、「全面均一Ø2.4×ピッチ4.0」でなくなる(P7/CP-07違反)**。カッターは z 軸方向の垂直円柱(8角形)で、ドーム",
+   "description": "cover_vents (cutter), cover_back | **穿孔が傾斜部で長穴(最大約9mm)になり、「全面均一Ø2.4×ピッチ4.0」でなくなる(P7/CP-07違反)**。カッターは z 軸方向の垂直円柱(8角形)で、ドーム勾配が最大 3.6〜3.7(約75°)の区間(inset 39〜64 の穿孔域)では板面との交差が楕円になり、長径は inset39で約8.6mm→inset48で7.0mm→inset56で4.5mm→inset60で3.2mm(短径2.4)。縁寄りの穴は細長いスリットとなって見た目が不均一。穴は8角形(`segments=8`)で円でもない。開口率は傾斜部で理論値33%と異なる | build L367-380(`vent_cutter`, `segments=8`, `Matrix.Rotation(pi/2,'X')` 垂直カッター), L386(margin=36)。勾配: 深さ関数の数値微分(inset36:3.6, 40:3.43, 48:2.74, 56:1.6, 60:0.86)。楕円長 = 2.4×√(1+勾配²) | カッターを各穴位置での面法線に向ける: 穴位置のドーム境界からの距離(inset)と最近傍辺の外向き単位ベクトル (nx,ny) を求め、法線 `n=(nx·s, ny·s, 1)/‖‖`(s=勾配)で `Matrix.Rotation` を作って円錐(**segments=24**)を配置する。または穿孔域を勾配≤0.6 の範囲(inset≥61.4=プラトー)に限定し、傾斜部は別途判断。穴数約11,300(CP-07)は MANIFOLD ブーリアン負荷が大きいので、法線向きカッターをまとめた1メッシュを `Boolean` 1回で適用し、`--poly` 連動で segments を 12〜24",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "カッターを各穴位置での面法線に向ける: 穴位置のドーム境界からの距離(inset)と最近傍辺の外向き単位ベクトル (nx,ny) を求め、法線 `n=(nx·s, ny·s, 1)/‖‖`(s=勾配)で `Matrix.Rotation` を作って円錐(**segments=24**)を配置する。または穿孔域を勾配≤0.6 の範囲(inset≥61.4=プラトー)に限定し、傾斜部は別途判断。穴数約11,300(CP-07)は MANIFOLD ブーリアン負荷が大きいので、法線向きカッターをまとめた1メッシュを `Boolean` 1回で適用し、`--poly` 連動で segments を 1"
+  },
+  {
+   "id": "MDD-026",
+   "title": "cover_back (SOLIDIFY): **(UNVERIFIED・仮説)ドームの外形・総厚が+2mmになる可能性**。ドームは面の rings を `depth=d_inner+WALL`(=外面基準 165mm)で作り、SOLID",
+   "description": "cover_back (SOLIDIFY) | **(UNVERIFIED・仮説)ドームの外形・総厚が+2mmになる可能性**。ドームは面の rings を `depth=d_inner+WALL`(=外面基準 165mm)で作り、SOLIDIFY `thickness=2.0, offset=1` で面の法線方向(背面向きに揃えている)へ厚みを足す。このとき外面は 165+2=**167mm**(総厚192mm)、側壁は外向きに+2mm(外形 600×381.3)になり、CP-07(総厚190, 596×377.3)・spec.dome.total_t=190 と不一致になる。法線の向き・オフセットの向きは Blender で評価しないと確定できない | build L308-340(`dep=...d_inner+WALL`, L331 `so.offset=1`, L337-339 の法線向き強制)。spec.dome.total_t=190, CP-07 size [596,377.3,165] | **検証手順**: `blender -b -P` で dome を `evaluated_get` して bbox を取り、max(-z)-25 と x/y の幅を確認(期待: 深さ165.0, 幅596.0, 高さ377.3)。ずれていたら `so.offset=-1`(内向き)にする、または基準面を `-sheet_t`(内面基準)ずらす。確定するまで総厚190の記載は「3D上では未確認」と台帳に注記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "**検証手順**: `blender -b -P` で dome を `evaluated_get` して bbox を取り、max(-z)-25 と x/y の幅を確認(期待: 深さ165.0, 幅596.0, 高さ377.3)。ずれていたら `so.offset=-1`(内向き)にする、または基準面を `-sheet_t`(内面基準)ずらす。確定するまで総厚190の記載は「3D上では未確認」と台帳に注記"
+  },
+  {
+   "id": "MDD-027",
+   "title": "gasket: **EMIガスケットの寸法・位置・本数が仕様と異なり、圧縮状態も表現されていない**。ガスケットは幅2.2mm(外周オフセット2.2〜4.4)×厚3.0の平らな帯で、CP-08/CP-07は溝幅3.0×深さ1.5。長さは C",
+   "description": "gasket | **EMIガスケットの寸法・位置・本数が仕様と異なり、圧縮状態も表現されていない**。ガスケットは幅2.2mm(外周オフセット2.2〜4.4)×厚3.0の平らな帯で、CP-08/CP-07は溝幅3.0×深さ1.5。長さは CP-08 が 1947mm(=596×377.3の角丸なし矩形周長 2×(596+377.3)=1946.6)だが、角R50を含む実周長は **1860.8mm**(−4.4%)で、閉合力156/225N(0.098N/mm×1947)の根拠が約4%過大。ドームの縁壁(深さ0=スラブ背面に接する)がガスケットと並んでおり、ガスケットを挟む縁フランジ(t4.0局所増肉、溝)が3D上に無い。SOLIDIFYの向き(offset=-1)はUNVERIFIED | build L400-408(`DOME_W/2-2.2 … -4.4`, `so.thickness=3.0`), CP-08 features, CP-07 features(溝 3.0×1.5)。周長計算 2(w-2r)+2(h-2r)+2πr=1860.76。interference_report: `gasket | cover_filter [589.6,3.0,370.9]`, `gasket | dowel_pin0 [4,3,4]` 他 | ガスケットを溝形状に合わせて断面 3.0幅×(圧縮後2.1)高さに変更し、中心線を縁から 3.1mm(溝中心)に置く。ドーム縁に内向きフランジ(幅8, t4.0, 内向きのL字)を追加して溝を彫り、縁壁の下端をスラブ背面から 2.1mm 浮かせる(圧縮状態の表現)。CP-08/spec.dome_seal の長さ・荷重を 1861mm 基準で再計算し台帳へ。ダウエル/磁石とのガスケット干渉(下記)はガスケットを局所的に避ける(ダウエル位置で切り欠き)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ガスケットを溝形状に合わせて断面 3.0幅×(圧縮後2.1)高さに変更し、中心線を縁から 3.1mm(溝中心)に置く。ドーム縁に内向きフランジ(幅8, t4.0, 内向きのL字)を追加して溝を彫り、縁壁の下端をスラブ背面から 2.1mm 浮かせる(圧縮状態の表現)。CP-08/spec.dome_seal の長さ・荷重を 1861mm 基準で再計算し台帳へ。ダウエル/磁石とのガスケット干渉(下記)はガスケットを局所的に避ける(ダウエル位置で切り欠き)"
+  },
+  {
+   "id": "MDD-028",
+   "title": "magnet0〜11, magnet_disc0〜11, dowel_pin0/1, hook_tab0〜5: **磁石・ダウエルピンが、ドーム面から離れた空中にある**。磁石(Ø8×3)は深さ3〜6mm、位置は縁から6mm(inset 6",
+   "description": "magnet0〜11, magnet_disc0〜11, dowel_pin0/1, hook_tab0〜5 | **磁石・ダウエルピンが、ドーム面から離れた空中にある**。磁石(Ø8×3)は深さ3〜6mm、位置は縁から6mm(inset 6)。この位置のドーム基準面は深さ **12.9mm**(内面側でも ≧10.9mm)なので、磁石裏面からドーム面まで約5〜7mm浮く。CP-07は磁石をドーム局所ボス(t4.2)裏に収めるが、3Dにボスが無い。ダウエルピン(Ø2.0×8、深さ0〜8)もドーム側の穴/ボスが無く先端8mmでドーム面(12.9mm)に届かない。磁石ディスク(深さ0〜1)と磁石(深さ3〜6)の間は2mm空き(吸着ギャップの意図か不明) | hardware_v8.py L53-58(`magnet z=dz(4.5), length 3`, `magnet_disc dz(0.5)`, `dowel dz(4.0), length 8`)。深さ計算: surf(6)=d_inner(6)+3=12.86(再計算)。CP-07 features(磁石ポケット) | ドーム側に磁石ボス `magnet_boss{k}`(外径Ø12, 高さ = そこでのドーム面深さ − 磁石裏面 = 12.9−6.0 ≈ 6.9mm、厚t4.2の座)を追加し、磁石を深さ 6.0〜9.0(ボス内ポケット)へ。ダウエルは深さ 0〜10 に延ばし、ドーム側に Ø4H7 の円筒ボス(外径Ø9, 高さ 12.9)+穴を設ける(1本は長穴 4.0×4.4 = fits.dowel_note のダイヤモンドピン)。磁石ディスクと磁石の吸着ギャップは 0.5mm 以内(ガスケットで規制される分は MDD-027 の2.1mm圧縮と整合させる)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ドーム側に磁石ボス `magnet_boss{k}`(外径Ø12, 高さ = そこでのドーム面深さ − 磁石裏面 = 12.9−6.0 ≈ 6.9mm、厚t4.2の座)を追加し、磁石を深さ 6.0〜9.0(ボス内ポケット)へ。ダウエルは深さ 0〜10 に延ばし、ドーム側に Ø4H7 の円筒ボス(外径Ø9, 高さ 12.9)+穴を設ける(1本は長穴 4.0×4.4 = fits.dowel_note のダイヤモンドピン)。磁石ディスクと磁石の吸着ギャップは 0.5mm 以内(ガスケットで規制される分は MDD-027 の2.1mm圧縮と整合させる)"
+  },
+  {
+   "id": "MDD-029",
+   "title": "cover_filter: **内側「メッシュ」フィルタが穴の無い黒い殻で、縁のハード全点と干渉する**。実際は無孔の0.8mm黒シェル(`solid=False`, 穴ブーリアンは `dome` のみ)で、通気メッシュ(#100のワイヤ織",
+   "description": "cover_filter | **内側「メッシュ」フィルタが穴の無い黒い殻で、縁のハード全点と干渉する**。実際は無孔の0.8mm黒シェル(`solid=False`, 穴ブーリアンは `dome` のみ)で、通気メッシュ(#100のワイヤ織り)になっていない。ushift=4/dshift=-6 の位置関係により、縁の金具が殻と交差する: latch_cam×6(5.8mm)、latch_strike×6、hook_tab×6、hook_strike×6、dowel×2、magnet×12、magnet_disc×12、rf_window_plate、ac_inlet_body/flange | build L363-365(`dome_shell('cover_filter', ..., dshift=-6.0, ushift=4.0, solid=False)`), L396-398(vents は dome のみ)。interference_report の `cover_filter | latch_cam* [8,8,5.8]`, ` | magnet* [8,3,6.8]`, ` | hook_tab* [14,1.5,3.8]` 他(約 60 対) | ①フィルタ殻の周縁を金具帯の内側まで下げる: 外周を `ushift = 14`(縁から14mm内側。トレイの外周10mm帯+4)にし、縁壁を持たないリング0〜2を削除。②CP-13 の「SUSメッシュ#100」を、透過テクスチャまたはノーマルマップの織り目(線径0.1/目開き0.15 = 0.25mmピッチ)で表現し、`alpha`穴でなく黒つや消し+ノーマルのクロス模様にする(P7「穴越しに内部が見えない」を維持)。③磁石保持用の鋼板片(SUS Ø9)をフィルタ側に追加し、磁石(MDD-028 のボス)に当たるようにする",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "①フィルタ殻の周縁を金具帯の内側まで下げる: 外周を `ushift = 14`(縁から14mm内側。トレイの外周10mm帯+4)にし、縁壁を持たないリング0〜2を削除。②CP-13 の「SUSメッシュ#100」を、透過テクスチャまたはノーマルマップの織り目(線径0.1/目開き0.15 = 0.25mmピッチ)で表現し、`alpha`穴でなく黒つや消し+ノーマルのクロス模様にする(P7「穴越しに内部が見えない」を維持)。③磁石保持用の鋼板片(SUS Ø9)をフィルタ側に追加し、磁石(MDD-028 のボス)に当たるようにする"
+  },
+  {
+   "id": "MDD-030",
+   "title": "rf_window_plate, antenna0/1: **RF窓の平板がドーム面から浮いている**。平板(60×30×2)の深さは 68.7〜70.7mm、位置は上辺から inset 33〜63mm。この範囲のドーム面の深さは 90.7",
+   "description": "rf_window_plate, antenna0/1 | **RF窓の平板がドーム面から浮いている**。平板(60×30×2)の深さは 68.7〜70.7mm、位置は上辺から inset 33〜63mm。この範囲のドーム面の深さは 90.7(inset33)〜164.9(inset63) なので、板とドーム面の間に **20〜94mm** の空間がある。CP-12は「PC板をパーフォレーションの裏に貼付」。しかも inset33〜63 は勾配 74°付近の最も急な傾斜部で、平板が貼れない(コメントも「形状要検討」) | hardware_v8.py L76-78(`rf_zl=d_inner(30)-8`, `ibox('rf_window_plate',60,30,2,IW_/2-30,IH_-60,rf_zl...)`)。深さ計算(再計算: surf(33)=90.7, surf(63)=164.9) | RF窓をプラトー(inset≥64)内に移す: 板の位置を y_inner=IH_-64-40-30〜IH_-64-40(上辺から 104〜134mm内側)、深さ = プラトー内面 (162−2.0) − 板厚2.0 → 板を深さ 158〜160 に置く(穿孔域で透過、勾配0なので貼付可能)。アンテナ(30×1.5×1.5)を板の下側(深さ 156)へ。CP-12 の取付位置(U31)の更新と、上辺フック/磁石との干渉再確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "RF窓をプラトー(inset≥64)内に移す: 板の位置を y_inner=IH_-64-40-30〜IH_-64-40(上辺から 104〜134mm内側)、深さ = プラトー内面 (162−2.0) − 板厚2.0 → 板を深さ 158〜160 に置く(穿孔域で透過、勾配0なので貼付可能)。アンテナ(30×1.5×1.5)を板の下側(深さ 156)へ。CP-12 の取付位置(U31)の更新と、上辺フック/磁石との干渉再確認"
+  },
+  {
+   "id": "MDD-031",
+   "title": "latch_cam0〜5, latch_hex0〜5, latch_strike0〜5, hook_tab0〜5, hook_strike0〜5: **ラッチはドームの下面開口が無く操作できず、形状も単純円柱**。T10の六角穴(latch",
+   "description": "latch_cam0〜5, latch_hex0〜5, latch_strike0〜5, hook_tab0〜5, hook_strike0〜5 | **ラッチはドームの下面開口が無く操作できず、形状も単純円柱**。T10の六角穴(latch_hex)は y=bot_y+1.7(=25.7)でドーム下壁(y 24〜26)の内側に隠れ、工具を入れる開口(P1: 下面の凹み)が無い。ラッチは Ø8×7 の円柱で、1/4回転カムとして strike を掛ける形状(カム腕/フック)が無い(カム z 0.5〜8.5 と strike z 0〜1.2 が 0.7mm重複 `latch_strike0 | latch_cam0 [8,0.7,5]`)。CP-07は「側辺フック×4(各40N)」を要求するが3Dに無い(spec.dome_seal, 位置未設計=UNVERIFIED) | hardware_v8.py L47-52, CP-07 features/mates/loads。interference_report `latch_strike* | latch_cam*` | ドーム下壁(y 24〜26)に Ø14 の凹み(深さ 3, 底に六角穴アクセス Ø10)をブーリアンで6か所開ける(各ラッチ x の下)。ラッチを「Ø8 の軸+偏心カム腕 8×3×h2」に変更し、strike の背面(z 1.2〜)に腕が回り込む位置 (z 1.3〜3.3) に置く。側辺フック×4 は位置が決まるまで `UNVERIFIED` の仮オブジェクトにせず、台帳 GA-06 の設計完了待ち",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ドーム下壁(y 24〜26)に Ø14 の凹み(深さ 3, 底に六角穴アクセス Ø10)をブーリアンで6か所開ける(各ラッチ x の下)。ラッチを「Ø8 の軸+偏心カム腕 8×3×h2」に変更し、strike の背面(z 1.2〜)に腕が回り込む位置 (z 1.3〜3.3) に置く。側辺フック×4 は位置が決まるまで `UNVERIFIED` の仮オブジェクトにせず、台帳 GA-06 の設計完了待ち"
+  },
+  {
+   "id": "MDD-032",
+   "title": "cover_back / slab (接合部): **ドームとスラブの接合が思想P2/P3と異なる**。ドームはスラブ外形より左右12mm、下24mm、上14mm内側に入り(`inset_left_right=12, inset_botto",
+   "description": "cover_back / slab (接合部) | **ドームとスラブの接合が思想P2/P3と異なる**。ドームはスラブ外形より左右12mm、下24mm、上14mm内側に入り(`inset_left_right=12, inset_bottom=24, inset_top=14`)、スラブ背面に幅12〜24mmの平らな段(棚)が露出する。P2「接合線はスラブ側面1本(0.5mm均一)のみ」「ガラス-枠-ドームの面一」と違い、4辺の段幅が不均一(12/12/14/24)。ドーム縁壁の下端はスラブ背面に直接接し(dep=0)すき間0で、0.5±0.1にならない(ガスケットで2.1mm浮く設計とも不一致、MDD-027) | spec.dome(inset 各値), build L296-298(DOME_X0, DOME_Y0), L312-314(rings dep=0)。design-philosophy.md P2/P3 | 設計判断が必要。思想どおりなら `inset_*`→0 (スラブ側面とドーム縁を面一、ドーム角R50をスラブ角R10に G2接続)。難しければ4辺とも同じ値(例 12)にそろえ、P3準拠(段幅均一)にして design-philosophy の適合表に「段あり」を明記。変更時は hinge ブロック(y0〜22, ドーム下端 24)・ラッチ位置・gasket・RF窓・I/O切欠の再配置が必要",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "設計判断が必要。思想どおりなら `inset_*`→0 (スラブ側面とドーム縁を面一、ドーム角R50をスラブ角R10に G2接続)。難しければ4辺とも同じ値(例 12)にそろえ、P3準拠(段幅均一)にして design-philosophy の適合表に「段あり」を明記。変更時は hinge ブロック(y0〜22, ドーム下端 24)・ラッチ位置・gasket・RF窓・I/O切欠の再配置が必要"
+  },
+  {
+   "id": "MDD-033",
+   "title": "power_button: **電源ボタンの x 座標がバグで約395mmずれ、開口も無い**。`X0 + bx + 40 - X0 + 0` は `bx+40`=100 になる(X0=-295 を引いて消している)。意図(背面左下)の位置",
+   "description": "power_button | **電源ボタンの x 座標がバグで約395mmずれ、開口も無い**。`X0 + bx + 40 - X0 + 0` は `bx+40`=100 になる(X0=-295 を引いて消している)。意図(背面左下)の位置は X0+bx+40=-195。y=DOME_Y0+18=42 でドーム下壁(24〜26)の上方16mmの空中に浮き、押下用の開口/凹みが無い。軸方向も y(下向き)で、ボタンがドーム内側を向く | hardware_v8.py L75(`cyl('power_button',3.0,4,'y',X0+bx+40-X0+0,DOME_Y0+18,dz(12),...)`)。bx=60(layout.json board pos), X0=-295 | 座標を `X0+bx+40` に修正(=-195)。ボタンをドーム下壁(y 24〜26)に埋め込む形 `cyl(... 'y', X0+bx+40, DOME_Y0+1, dz(12) ... r=4.5, length 6)` とし、周囲に Ø10 の凹み(深さ2)をブーリアンで開ける(手探りで分かる凹み=P10)。型番未選定のまま",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "座標を `X0+bx+40` に修正(=-195)。ボタンをドーム下壁(y 24〜26)に埋め込む形 `cyl(... 'y', X0+bx+40, DOME_Y0+1, dz(12) ... r=4.5, length 6)` とし、周囲に Ø10 の凹み(深さ2)をブーリアンで開ける(手探りで分かる凹み=P10)。型番未選定のまま"
+  },
+  {
+   "id": "MDD-034",
+   "title": "tray_plate, tray_insulation, hang_pin0〜3, hang_bushing*: **吊りピンの位置がキーホール溝の「端」で、ピンの半分が板に重なる**。ピン中心 `pyk=ky+12` に対し、溝のカット箱",
+   "description": "tray_plate, tray_insulation, hang_pin0〜3, hang_bushing* | **吊りピンの位置がキーホール溝の「端」で、ピンの半分が板に重なる**。ピン中心 `pyk=ky+12` に対し、溝のカット箱は y=ky〜ky+12 で端は平坦(R無し)。ピン肩 r3 の半分が溝端の先(板・ブッシュ側)に3mm食い込む(`hang_bushing*b | hang_pin*_shoulder [6,1.0,6]`)。トレイ側(同カッター)も同様の可能性が高いが interference_report には対が無い(UNVERIFIED) | hardware_v8.py L28(`pyk=ky+12`), build L467-470(溝 `Diagonal((6.3,12,12,1))` 中心 ky+6)。spec.fits.keyhole_slot_w=6.3 | ピン中心を溝端の円弧中心にする: 溝を y=ky〜ky+12 で端を半径3.15の半円にし(円柱カッターを ky+12 に追加)、ピン中心 `pyk = ky+12`(=円弧中心)で隙間 0.15。ブッシュ(長円16×28)の孔も同じカッターで抜かれることを確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ピン中心を溝端の円弧中心にする: 溝を y=ky〜ky+12 で端を半径3.15の半円にし(円柱カッターを ky+12 に追加)、ピン中心 `pyk = ky+12`(=円弧中心)で隙間 0.15。ブッシュ(長円16×28)の孔も同じカッターで抜かれることを確認"
+  },
+  {
+   "id": "MDD-035",
+   "title": "tray_plate, tray_insulation, tray_handle_post*, tray_screw*: トレイが「厚2の平板」で、縁折り5mm補強・PEM圧入・導電処理の表現が無い。ハンドルポスト `tray_handle",
+   "description": "tray_plate, tray_insulation, tray_handle_post*, tray_screw* | トレイが「厚2の平板」で、縁折り5mm補強・PEM圧入・導電処理の表現が無い。ハンドルポスト `tray_handle_post0` が ctrl 基板と1.0×1.6×1.7mm 干渉(`ctrl_pcb | tray_handle_post0`)。拘束ネジが2本だけ。断熱シート(CP-19)の PEEKブッシュ無し | build L457-465(スラブ板), CP-06 features(縁折り5mm), interference_report | `slab_plate` を外周から5mm折り返す縁(L断面、高さ5, t2.0)付きに。ハンドルポストを x±40→±45 へ。拘束ネジ穴(Ø3.4)をトレイに開ける。PEEKブッシュ(Ø8×3)をキーホール/スタンドオフ位置に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`slab_plate` を外周から5mm折り返す縁(L断面、高さ5, t2.0)付きに。ハンドルポストを x±40→±45 へ。拘束ネジ穴(Ø3.4)をトレイに開ける。PEEKブッシュ(Ø8×3)をキーホール/スタンドオフ位置に追加"
+  },
+  {
+   "id": "MDD-036",
+   "title": "slab, front_glass, hinge_backing_plate, hinge_doubler, hinge_bolt*: **スラブが中身の詰まった直方体(z -25〜-1.1)で、背板の曲げ縁・内部空洞が無い**。CP-02",
+   "description": "slab, front_glass, hinge_backing_plate, hinge_doubler, hinge_bolt* | **スラブが中身の詰まった直方体(z -25〜-1.1)で、背板の曲げ縁・内部空洞が無い**。CP-02/03は背板t2.0+縁曲げ深さ約23mm+内部空洞(パネル/エアギャップ/断熱)。3Dは中実なので、ヒンジ裏当て鋼板(z -23〜-20)・補強板(z -20〜-16)・ボルトが中実スラブに埋まる(`slab | hinge_bolt* [6,5,6]`, `slab | hinge_doubler [144,4,22]`, `slab | hinge_backing_plate [140,3,22]`)。背板の PEM TSOA×18、アース端子 M4、アンビリカル貫通開口 30×10(CP-03)も無い。`--cut` / 分解表示で背板が平らな灰色面になる | build L259-260(rbox slab 厚 SLAB-1.1=23.9), hardware_v8.py L84-86, CP-02/03 | スラブを「背板(t2, z -25〜-23)+縁(周囲 t2, 高さ23)の底付き皿」に: rbox の外形で押し出して内側を SOLIDIFY(t2.0)で空洞化、ガラス(z -1.1〜0)とパネルは別オブジェクト(パネル z -3.2〜-2.2、ガラス裏のエアギャップ0.9)。裏当て/補強板/ボルトを背板の前(チン空洞側 z -23〜-16)に収める。PEM(Ø6×h3)を背板裏に18個、アース端子スタッド M4、アンビリカル開口(30×10)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "スラブを「背板(t2, z -25〜-23)+縁(周囲 t2, 高さ23)の底付き皿」に: rbox の外形で押し出して内側を SOLIDIFY(t2.0)で空洞化、ガラス(z -1.1〜0)とパネルは別オブジェクト(パネル z -3.2〜-2.2、ガラス裏のエアギャップ0.9)。裏当て/補強板/ボルトを背板の前(チン空洞側 z -23〜-16)に収める。PEM(Ø6×h3)を背板裏に18個、アース端子スタッド M4、アンビリカル開口(30×10)を追加"
+  },
+  {
+   "id": "MDD-037",
+   "title": "front_glass, slab: **ガラスの寸法・縁処理が CP-01 と不一致、継ぎ目が仕様どおりでない**。ガラスは 620×415.3(スラブと同寸)、CP-01 は 619.4×414.7(片側0.3mm凹む)。面取りは R0",
+   "description": "front_glass, slab | **ガラスの寸法・縁処理が CP-01 と不一致、継ぎ目が仕様どおりでない**。ガラスは 620×415.3(スラブと同寸)、CP-01 は 619.4×414.7(片側0.3mm凹む)。面取りは R0.6×2セグメント(ベベルのみ、角度制限40°)で、厚み1.1mmのガラスに表裏0.6mm×2(合計1.2>1.1)を掛けるためクランプされて丸いエッジになり、CP-01の C0.3 と異なる。スラブ前縁の0.6面取りと合わせ、ガラス/スラブの継ぎ目が約1.2mm幅のV溝(隙間0.5±0.1の均一なすき間ではない) | build L256(bevel 0.6, seg 2), L259-260, CP-01 size/process(C0.3) | ガラスを 619.4×414.7(角R 9.7)、中心合わせ。ガラスは C0.3 の直線面取り(`segments=1`, width 0.3)、スラブ前縁は面取り無しの段差(ガラス受け段 0.5×1.0=CP-02)+ガラスとの実すき間 0.3(=0.5-0.2:ガラス側0.3凹み+接着層)。bevel は `limit_method='ANGLE'` を維持しつつ width/segments をオブジェクト別に",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ガラスを 619.4×414.7(角R 9.7)、中心合わせ。ガラスは C0.3 の直線面取り(`segments=1`, width 0.3)、スラブ前縁は面取り無しの段差(ガラス受け段 0.5×1.0=CP-02)+ガラスとの実すき間 0.3(=0.5-0.2:ガラス側0.3凹み+接着層)。bevel は `limit_method='ANGLE'` を維持しつつ width/segments をオブジェクト別に"
+  },
+  {
+   "id": "MDD-038",
+   "title": "slab, front_glass, tray_plate (rbox, slab_plate): **角R10が8分割・フラットシェードでファセットが見える**。`rbox` は 1コーナー8分割(11.25°/面)で、側面の `use_",
+   "description": "slab, front_glass, tray_plate (rbox, slab_plate) | **角R10が8分割・フラットシェードでファセットが見える**。`rbox` は 1コーナー8分割(11.25°/面)で、側面の `use_smooth` を設定しない(既定flat)ため、R10の隅でハイライトが帯状に割れる(スペック CP-02 角R10、P6 連続曲率)。`rrect`(ドーム/トレイ)は seg=10 | build L244-257(rbox, `seg=8`, smooth 設定なし)、L302-307(rrect seg=10) | `rbox(seg=16)`、`for p in me.polygons: p.use_smooth = abs(p.normal.z) < 0.9`(smooth(curved=True) と同じ規則)を追加し、さらに `bmesh.ops.recalc_face_normals` 後に `me.use_auto_smooth` 相当(Blender 4+ は Weighted Normal 修飾子 + `keep_sharp`)で平面は平らに保つ",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`rbox(seg=16)`、`for p in me.polygons: p.use_smooth = abs(p.normal.z) < 0.9`(smooth(curved=True) と同じ規則)を追加し、さらに `bmesh.ops.recalc_face_normals` 後に `me.use_auto_smooth` 相当(Blender 4+ は Weighted Normal 修飾子 + `keep_sharp`)で平面は平らに保つ"
+  },
+  {
+   "id": "MDD-039",
+   "title": "display, chin_print, camera, mic-1/mic0/mic1: **表示・チン印刷・カメラ・マイクがガラス前面に載っている**(z 0〜+0.02/+0.04)。ガラス前面が z=0 で、`display`/`c",
+   "description": "display, chin_print, camera, mic-1/mic0/mic1 | **表示・チン印刷・カメラ・マイクがガラス前面に載っている**(z 0〜+0.02/+0.04)。ガラス前面が z=0 で、`display`/`chin_print` は z=0〜0.02、`camera`/`mic` は 0〜0.04 の突起。CP-01 は「背面印刷」(ガラス裏面 z -1.1)。チン印刷は左右2.5mm・下2mm・上(パネル下)の縁を残すため、ガラスの地(bezel色)が細い額縁として見える(実物はガラス縁まで印刷)。マイクは3個(x=-60, +35, +60)で CP-01 の「Ø1.0×2」と不一致、配置も左右非対称 | build L261-265(`box('display',...,0.02, ..., 0.0)`, `cyl('camera',2.0,0.04,...,0.02)`, `for sx in (-1,0,1)`)。CP-01 features | 表示/印刷/カメラ/マイクを z=-1.1(ガラス裏面)に移して厚み0.02(内側向き)。chin_print の範囲を x ±310(ガラス端)、y 0〜68 に。マイクを2個(例 x=-60,+60)に。カメラ窓はガラス裏の印刷の抜き(Ø4.0, 黒)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "表示/印刷/カメラ/マイクを z=-1.1(ガラス裏面)に移して厚み0.02(内側向き)。chin_print の範囲を x ±310(ガラス端)、y 0〜68 に。マイクを2個(例 x=-60,+60)に。カメラ窓はガラス裏の印刷の抜き(Ø4.0, 黒)"
+  },
+  {
+   "id": "MDD-040",
+   "title": "hinge_block_*(CP-11), CP-23 の記載値: **ドキュメントと3D/計算値の不一致**: ①CP-11 ヒンジブロック 150×22×**24**、3D は 150×22×**36**(z -61〜-25)。②CP-",
+   "description": "hinge_block_*(CP-11), CP-23 の記載値 | **ドキュメントと3D/計算値の不一致**: ①CP-11 ヒンジブロック 150×22×**24**、3D は 150×22×**36**(z -61〜-25)。②CP-23 「ρ最大25.8mm」、balance_calc は **26.0mm**(balance.json `e`=21.69はカム面半径)。③CP-23 life「ばね行程 5.7mm」、balance.json `stroke`=**3.964mm**。④CP-23 「カム板をM4×2」、3Dに無い(MDD-006)。⑤CP-23 「案内ロッド止まり穴」3Dに無し(MDD-011) | custom_parts.json CP-11/CP-23, hardware_v8.py L82-83, tools/balance_calc.py 出力「ピッチ半径 ρ0=22mm → 最大26.0mm」 | tools/gen_specs.py 側の数値を balance.json から生成(26.0, 3.96)。CP-11 の奥行は 3D 準拠で 36 に、またはブロックを24に詰める判断を台帳に。手書き数値(25.8, 5.7)を禁止",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "tools/gen_specs.py 側の数値を balance.json から生成(26.0, 3.96)。CP-11 の奥行は 3D 準拠で 36 に、またはブロックを24に詰める判断を台帳に。手書き数値(25.8, 5.7)を禁止"
+  },
+  {
+   "id": "MDD-041",
+   "title": "CP-01〜CP-28 のうち3D未反映: **未モデル/未反映の特注要素**: CP-24 ACコード引張逃がしクランプ(Blenderに無し)、CP-03 の PEM/アース端子/アンビリカル開口、CP-07 の磁石ボス/ガスケット溝/",
+   "description": "CP-01〜CP-28 のうち3D未反映 | **未モデル/未反映の特注要素**: CP-24 ACコード引張逃がしクランプ(Blenderに無し)、CP-03 の PEM/アース端子/アンビリカル開口、CP-07 の磁石ボス/ガスケット溝/側辺フック×4、CP-06 縁折り、CP-11 の摩擦ヒンジ取付、CP-10 の底カバー・皿ねじ・ballastポケット、CP-20/21 の中心穴Ø52、CP-26/27/28 の薄肉殻。ネック基台の M5×4(`stand_neck_bolt` は `if False` で無効)も未描画 | grep: `ac_clamp` 等がスクリプトに無い。hardware_v8.py L134-135(`... if False else None`)。custom_parts.json status欄「設計(未実装:Blender/図面未反映)」(CP-12) | 台帳(tasks.json)に項目別に登録し、本表の MDD-0xx で実装順を決める。CP-24 は `ac_clamp` (40×28×2.5 PA66 板+M3×2) を ac_inlet 背面に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:16:19Z",
+     "triaged",
+     "R12取込(R12_model_D_custom.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_D_custom.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "台帳(tasks.json)に項目別に登録し、本表の MDD-0xx で実装順を決める。CP-24 は `ac_clamp` (40×28×2.5 PA66 板+M3×2) を ac_inlet 背面に追加"
   }
  ]
 }

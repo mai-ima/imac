@@ -10,9 +10,11 @@
 | 01_tilt_balancer.md | v006 | current | 2026-11-06 | 877835f | 01_tilt_balancer/01_tilt_balancer.v006__2026-11-06_877835f.md |
 | 01_tilt_balancer.md | v007 | current | 2026-11-06 | cf90ba1 | 01_tilt_balancer/01_tilt_balancer.v007__2026-11-06_cf90ba1.md |
 | 01_tilt_balancer.md | v008 | current | 2026-11-06 | 36dff8c | 01_tilt_balancer/01_tilt_balancer.v008__2026-11-06_36dff8c.md |
+| 01_tilt_balancer.md | v009 | current | 2026-11-07 | 3089847 | 01_tilt_balancer/01_tilt_balancer.v009__2026-11-07_3089847.md |
 | 02_swivel.md | v001 | current | 2026-11-06 | d97f07e | 02_swivel/02_swivel.v001__2026-11-06_d97f07e.md |
 | 02_swivel.md | v002 | current | 2026-11-06 | 02c4c72 | 02_swivel/02_swivel.v002__2026-11-06_02c4c72.md |
 | 02_swivel.md | v003 | current | 2026-11-06 | 853f219 | 02_swivel/02_swivel.v003__2026-11-06_853f219.md |
+| 02_swivel.md | v004 | current | 2026-11-06 | 88f99b7 | 02_swivel/02_swivel.v004__2026-11-06_88f99b7.md |
 | 03_neck_and_load_path.md | v001 | current | 2026-11-06 | d97f07e | 03_neck_and_load_path/03_neck_and_load_path.v001__2026-11-06_d97f07e.md |
 | 03_neck_and_load_path.md | v002 | current | 2026-11-06 | 02c4c72 | 03_neck_and_load_path/03_neck_and_load_path.v002__2026-11-06_02c4c72.md |
 | 03_neck_and_load_path.md | v003 | current | 2026-11-06 | 853f219 | 03_neck_and_load_path/03_neck_and_load_path.v003__2026-11-06_853f219.md |
@@ -21,6 +23,7 @@
 | 03_neck_and_load_path.md | v006 | current | 2026-11-06 | cf90ba1 | 03_neck_and_load_path/03_neck_and_load_path.v006__2026-11-06_cf90ba1.md |
 | 03_neck_and_load_path.md | v007 | current | 2026-11-06 | 93238a3 | 03_neck_and_load_path/03_neck_and_load_path.v007__2026-11-06_93238a3.md |
 | 03_neck_and_load_path.md | v008 | current | 2026-11-06 | 36dff8c | 03_neck_and_load_path/03_neck_and_load_path.v008__2026-11-06_36dff8c.md |
+| 03_neck_and_load_path.md | v009 | current | 2026-11-07 | 3089847 | 03_neck_and_load_path/03_neck_and_load_path.v009__2026-11-07_3089847.md |
 | 04_dome_latch_gasket.md | v001 | current | 2026-11-06 | d97f07e | 04_dome_latch_gasket/04_dome_latch_gasket.v001__2026-11-06_d97f07e.md |
 | 04_dome_latch_gasket.md | v002 | current | 2026-11-06 | 02c4c72 | 04_dome_latch_gasket/04_dome_latch_gasket.v002__2026-11-06_02c4c72.md |
 | 04_dome_latch_gasket.md | v003 | current | 2026-11-06 | 28dc82b | 04_dome_latch_gasket/04_dome_latch_gasket.v003__2026-11-06_28dc82b.md |

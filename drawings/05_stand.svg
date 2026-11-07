@@ -156,8 +156,8 @@
 <text x="330.1" y="120.85" font-size="2.4">ロータ板 t6 (+1内輪ボス)</text>
 <rect x="286.9" y="25.799999999999997" width="25.2" height="90.9" rx="0.5" fill="#d7dadf" stroke="#000" stroke-width="0.4"/>
 <circle cx="299.5" cy="35.7" r="9.9" fill="#bfc3c9" stroke="#000" stroke-width=".4"/><circle cx="299.5" cy="35.7" r="4.5" fill="#555"/>
-<line x1="299.5" y1="35.7" x2="299.5" y2="55.22099999999999" stroke="#a00" stroke-width="1.4"/><line x1="299.5" y1="55.22099999999999" x2="299.5" y2="109.5" stroke="#06a" stroke-width="2.2"/>
-<text x="309.5" y="56.22099999999999" font-size="2.4" fill="#a00">尾部レバー e=21.69</text><text x="309.5" y="83.3605" font-size="2.4" fill="#06a">ダイスプリング(取付長40〜44) アンカー s=82.0</text>
+<line x1="299.5" y1="35.7" x2="299.5" y2="55.22099999999999" stroke="#a00" stroke-width="1.4"/><line x1="299.5" y1="55.22099999999999" x2="299.5" y2="106.827" stroke="#06a" stroke-width="2.2"/>
+<text x="309.5" y="56.22099999999999" font-size="2.4" fill="#a00">尾部レバー e=21.69</text><text x="309.5" y="82.024" font-size="2.4" fill="#06a">ダイスプリング(取付長40〜44) アンカー s=79.03</text>
 <line x1="351.5" y1="139.2" x2="342.5" y2="139.2" stroke="#000" stroke-width="0.18"/>
 <line x1="351.5" y1="35.7" x2="342.5" y2="35.7" stroke="#000" stroke-width="0.18"/>
 <line x1="344.5" y1="139.2" x2="344.5" y2="35.7" stroke="#000" stroke-width="0.25"/>

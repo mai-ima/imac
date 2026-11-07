@@ -75,6 +75,7 @@ space0 = BC['base_seat_depth_mm'] - BC['seat_t_mm'] - (rho0 + Rr + BC['carrier_h
 print(f'収まり: ばね座上面〜キャリア下面 {space0:.1f}mm(0°)/{space1:.1f}mm(最大圧縮) ≧ ばね取付長 {Lmax:.1f}/{Lmin:.1f}mm')
 fails = []
 if space0 < Lmax - 0.01 or space1 < Lmin - 0.01: fails.append(f'ばねが収まらない(空間{space0:.1f}/{space1:.1f} < 取付長{Lmax:.1f}/{Lmin:.1f})')
+if abs(space0 - Lmax) > 0.05: fails.append(f'ばね座の深さ(spec base_seat_depth_mm)が取付長と不一致: 0°の空間{space0:.2f}mm ≠ 取付長{Lmax:.2f}mm → base_seat_depth_mm を {Lmax + BC["seat_t_mm"] + rho0 + Rr + BC["carrier_h_mm"]:.2f} にする(MDD-001: 隙間があると予圧が不足する)')
 if tau > 900: fails.append(f'ばねせん断応力{tau:.0f}>900MPa')
 if free > 62: fails.append(f'ばね自由長{free:.0f}>62mm(収まらない)')
 if p0 > 1600: fails.append(f'ヘルツ応力{p0:.0f}>1600MPa')

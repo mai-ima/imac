@@ -14,6 +14,7 @@
 | balance_calc.py | v008 | current | 2026-11-06 | cf90ba1 | balance_calc/balance_calc.v008__2026-11-06_cf90ba1.py |
 | balance_calc.py | v009 | current | 2026-11-06 | 36dff8c | balance_calc/balance_calc.v009__2026-11-06_36dff8c.py |
 | balance_calc.py | v010 | current | 2026-11-06 | f2e5a87 | balance_calc/balance_calc.v010__2026-11-06_f2e5a87.py |
+| balance_calc.py | v011 | current | 2026-11-07 | 3089847 | balance_calc/balance_calc.v011__2026-11-07_3089847.py |
 | cable_check.py | v001 | current | 2026-11-06 | fc36218 | cable_check/cable_check.v001__2026-11-06_fc36218.py |
 | cable_check.py | v002 | current | 2026-11-06 | cca8bc2 | cable_check/cable_check.v002__2026-11-06_cca8bc2.py |
 | cable_check.py | v003 | current | 2026-11-06 | 514e2e0 | cable_check/cable_check.v003__2026-11-06_514e2e0.py |

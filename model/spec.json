@@ -127,10 +127,10 @@
    "roller_w_mm": 12.0,
    "cam_t_mm": 10.0,
    "cam_ext_deg": 8.0,
-   "spring_x_mm": 14.0,
+   "spring_x_mm": 12.5,
    "spring_od_mm": 20.0,
    "spring_wire_mm": 4.0,
-   "base_seat_depth_mm": 82.0,
+   "base_seat_depth_mm": 79.03,
    "guide_rod_d_mm": 8.0,
    "guide_rod_z_mm": 15.0,
    "_doc": "R9T-001/R10M: カム+ローラ従動子+コイルばね2本(OD20×線径4, SWOSC-V想定)。ばねは2本とも x=±14, 案内ロッドØ8×2本(z=±15)で直動。カム板SUS440C HRC58 t10, ローラSUJ2 Ø12×12。ρ0=軸からローラ中心の最小距離。F0=0°での2本合計荷重。"
