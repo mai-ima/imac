@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 557。
-- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 125 / **要対処: 74**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 548。
+- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 131 / **要対処: 59**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -25,6 +25,7 @@
 - ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現): 2対
 - ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル): 1対
 - モジュラーソケットは筐体前面の開口に嵌合: 4対
+- 掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載): 6対
 - 1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm): 6対
 - ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合: 7対
 
@@ -64,20 +65,6 @@
 | stand_neck_cover0 | stand_arm1 | 22 | [4.0, 2.0, 38.0] | 2.00 |
 | cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
-| board_pcb | pump_screw0 | 32 | [4.0, 1.6, 4.0] | 1.60 |
-| board_pcb | pump_screw2 | 32 | [4.0, 1.6, 4.0] | 1.60 |
-| board_pcb | pump_screw1 | 32 | [4.0, 1.6, 4.0] | 1.60 |
-| board_pcb | pump_screw3 | 32 | [4.0, 1.6, 4.0] | 1.60 |
-| gpu_bracket | gpu_port0 | 20 | [15.0, 6.5, 1.5] | 1.50 |
-| gpu_bracket | gpu_port1 | 20 | [16.0, 6.5, 1.5] | 1.50 |
-| gpu_bracket | gpu_port2 | 20 | [16.0, 6.5, 1.5] | 1.50 |
-| gpu_bracket | gpu_port3 | 20 | [16.0, 6.5, 1.5] | 1.50 |
-| cover_back | hook_tab0 | 8 | [14.0, 1.5, 7.0] | 1.50 |
-| cover_back | hook_tab5 | 8 | [14.0, 1.5, 7.0] | 1.50 |
-| cover_back | hook_tab1 | 4 | [14.0, 1.5, 7.0] | 1.50 |
-| cover_back | hook_tab2 | 4 | [14.0, 1.5, 7.0] | 1.50 |
-| cover_back | hook_tab3 | 4 | [14.0, 1.5, 7.0] | 1.50 |
-| cover_back | hook_tab4 | 4 | [14.0, 1.5, 7.0] | 1.50 |
 | board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
 | cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
 | cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
@@ -92,7 +79,6 @@
 | hang_bushing1c | hang_pin1_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
 | hang_bushing3c | hang_pin3_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
 | cable_plug_F3_vrm | vrm_fin0 | 18 | [1.1, 4.0, 1.0] | 1.00 |
-| am5_backplate | pump_screw0 | 16 | [4.0, 1.0, 4.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
 | vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
 | choke3 | socket | 25 | [0.8, 4.0, 7.0] | 0.80 |

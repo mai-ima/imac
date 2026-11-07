@@ -726,6 +726,9 @@ ibox('gpu_trim', GW, 1.6, 13.1, gx, gy + GL / 2, gz + 27, M['silver_trim'])     
 # GPU刻印: PNY品の刻印は未確認(U46)のため描画しない(推測の作り込みを避ける)
 ibox('gpu_bracket', GW, 1.5, GT + 2, gx, gy - 1.5, gz - 1, M['steel'], .3)              # 出力ブラケット(下端)
 for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))): ibox(f'gpu_port{k}', w_, 3, 6.5, gx + 20 + k * 28, gy - 3, gz + 7, M['dark'], .3)
+for k, (nm, w_) in enumerate((('hdmi', 15), ('dp', 16), ('dp', 16), ('dp', 16))):      # ブラケットのポート開口(コネクタが貫通する穴 +0.3mm/側)
+    _c = cutbox(f'gpu_bracket_port{k}_cutter', gx + 20 + k * 28 - 0.3, gy - 4, gz + 7 - 0.3, w_ + 0.6, 5, 7.1)
+    _m = bpy.data.objects['gpu_bracket'].modifiers.new(f'port{k}', 'BOOLEAN'); _m.object = _c; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 _cn = cutbox('gpu_conn_notch', gx + GW - 41, gy + GL - 23, gz + 26, 24, 11, 16); _mn = shr.modifiers.new('conn_notch', 'BOOLEAN'); _mn.object = _cn; _mn.operation = 'DIFFERENCE'; _mn.solver = 'EXACT'      # 12V-2x6がシュラウドの切欠きから出る
 ibox('gpu_12v2x6', 22, 9, 10, gx + GW - 40, gy + GL - 22, gz + 30, M['dark'], .4)       # 12V-2x6コネクタ(カード上面の端, 位置は想定)
 

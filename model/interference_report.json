@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-07T19:58Z",
+ "generated": "2026-11-07T20:56Z",
  "objects": 648,
- "pairs_total": 557,
+ "pairs_total": 548,
  "touch_only": 358,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -25,10 +25,11 @@
   "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)": 2,
   "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)": 1,
   "モジュラーソケットは筐体前面の開口に嵌合": 4,
+  "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)": 6,
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 74,
+ "remaining": 59,
  "remaining_pairs": [
   {
    "a": "riser0",
@@ -361,146 +362,6 @@
    ]
   },
   {
-   "a": "board_pcb",
-   "b": "pump_screw0",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    4.0,
-    1.6,
-    4.0
-   ]
-  },
-  {
-   "a": "board_pcb",
-   "b": "pump_screw2",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    4.0,
-    1.6,
-    4.0
-   ]
-  },
-  {
-   "a": "board_pcb",
-   "b": "pump_screw1",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    4.0,
-    1.6,
-    4.0
-   ]
-  },
-  {
-   "a": "board_pcb",
-   "b": "pump_screw3",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    4.0,
-    1.6,
-    4.0
-   ]
-  },
-  {
-   "a": "gpu_bracket",
-   "b": "gpu_port0",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    15.0,
-    6.5,
-    1.5
-   ]
-  },
-  {
-   "a": "gpu_bracket",
-   "b": "gpu_port1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    16.0,
-    6.5,
-    1.5
-   ]
-  },
-  {
-   "a": "gpu_bracket",
-   "b": "gpu_port2",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    16.0,
-    6.5,
-    1.5
-   ]
-  },
-  {
-   "a": "gpu_bracket",
-   "b": "gpu_port3",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    16.0,
-    6.5,
-    1.5
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab0",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab5",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab1",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab2",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab3",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_tab4",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    14.0,
-    1.5,
-    7.0
-   ]
-  },
-  {
    "a": "board_hdr_vrm_hs_fan",
    "b": "vrm_trim",
    "tri_pairs": 16,
@@ -638,16 +499,6 @@
     1.1,
     4.0,
     1.0
-   ]
-  },
-  {
-   "a": "am5_backplate",
-   "b": "pump_screw0",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    4.0,
-    1.0,
-    4.0
    ]
   },
   {

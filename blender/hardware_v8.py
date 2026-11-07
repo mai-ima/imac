@@ -99,6 +99,7 @@ def thru_hole(target_names, tag, cx, cy, cz, axis, dia, length):
         _to = bpy.data.objects.get(_tn)
         if _to is None: continue
         _m = _to.modifiers.new(f'{tag}_{_tn}', 'BOOLEAN'); _m.object = c_; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
+for _k, (_dx, _dy) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))): thru_hole(['board_pcb', 'am5_backplate'], f'pumpscrew{_k}', X0 + pcx + _dx, Y0 + pcy + _dy, Z0 - bz, 'z', 4.6, 12)      # ポンプ固定ねじ(M4)の貫通穴(基板・バックプレート)
 hb('hinge_block_base', 150, 22, 2, -75, 0, -SLAB - 2, M['stand']); hb('hinge_cheek_l', 6, 22, 34, -75, 0, -SLAB - 34, M['stand']); hb('hinge_cheek_r', 6, 22, 34, 69, 0, -SLAB - 34, M['stand'])
 hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 36, M['stand'])
 hb('hinge_backing_plate', 140, 22, 3, -70, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 144, 22, 4, -72, 0, -SLAB + 5, M['alu'])     # 背板の前(チン空洞側): 裏当て鋼板140幅+補強板144幅(ボルト±62を覆う)
