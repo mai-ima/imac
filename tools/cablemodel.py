@@ -12,11 +12,11 @@ HZ = 143.0      # ホース水平部の中心高さ(曲げ半径40mm仮置き+�
 Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤中心(筐体は+x側)
 CAB = [
  dict(id='W1', name='ATX 24ピン(短尺カスタム長)', kind='cable', od=9.6, awg=18, mbr=12, frm='PSU modular(24p)', to='基板 ATX24', conn='24p (20+4)', ref_mm=0, mat='rubber',
-      pts=[(px + 33, py - 2, 38), (px + 33, py - 12, 36), (px + 34, py - 24, 29)]),
+      pts=[(px + 33, py - 2, 38), (px + 33, py - 12, 41), (bx + 13.4 + 25.05, by + 159 + 5, Z1 + 15 + 9)]),
  dict(id='W2', name='CPU EPS 8ピン(短尺)', kind='cable', od=5.6, awg=16, mbr=12, frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', conn='EPS 4+4', ref_mm=0, mat='rubber',
-      pts=[(px + 14, py - 2, 38), (px + 14, py - 18, 40), (50, py - 18, 42), (50, 60, 30), (66, 42, 25)]),
+      pts=[(px + 14, py - 2, 38), (px + 14, py - 18, 40), (50, py - 18, 44), (50, 60, 40), (bx + 1.6 + 5.9, by + 2.4 + 9.05, Z1 + 11 + 9)]),
  dict(id='W3', name='GPU 12V-2x6(16AWG)', kind='cable', od=9.0, awg=16, mbr=20, frm='PSU modular(12V-2x6)', to='GPU 12V-2x6', conn='12V-2x6: コネクタ後方35mm直線', ref_mm=400, mat='rubber',
-      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 110, gy + 225, gz + 47), (gx + 110, gy + 288, gz + 47)]),
+      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 121, gy + 205, gz + 40 + 12 + 6), (gx + 121, gy + 268, gz + 40 + 12 + 6)]),
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
       pts=[(px + 112, py - 2, 30), (px + 118, py - 8, 28), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
  dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', kind='cable', od=6.0, awg=0, mbr=16, frm='ctrl_board eDP', to='パネル背面コネクタ', conn='eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み)', ref_mm=380, mat='umb',
@@ -29,6 +29,13 @@ CAB = [
       pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (300, pcy + SYA, HZ), (390, ry + 9, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
  dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
       pts=[(pcx + SX, pcy + SYB, cl[2] + STIP), (pcx + SX, pcy + SYB, HZ), (340, pcy + SYB, HZ), (405, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9, rz + 50)]),
+]
+PLUGS = [
+ dict(id='W1_board', cable='W1', box=(bx + 13.4 + .3, by + 159 + .3, Z1 + 15 - 2, 49.5, 9.4, 12), color='plug_white', note='ATX24プラグ(基板側, 上から嵌合。外形は典型値=UNVERIFIED。ソケット上端に2mm嵌入)'),
+ dict(id='W2_board', cable='W2', box=(bx + 1.6 + .3, by + 2.4 + .3, Z1 + 11 - 2, 11.2, 17.5, 12), color='plug_black', note='EPS8プラグ(基板側。典型値=UNVERIFIED)'),
+ dict(id='W3_gpu', cable='W3', box=(gx + 110 + .5, gy + 268, gz + 40 - 2, 21, 9.5, 14), color='plug_black', note='12V-2x6プラグ(GPU天面の受口へ上から嵌合。向きと位置はUNVERIFIED: 公式に無い)'),
+ dict(id='RAD_PORT_A', cable='H1', box=(rx + 60 - 12 - 6.5, ry + 9 - 6.5, rz + 38, 13, 13, 12), color='alublack', note='ラジエーターのホース口(円形, 径13・高さ12=典型値)', shape='cyl'),
+ dict(id='RAD_PORT_B', cable='H2', box=(rx + 60 + 12 - 6.5, ry + 9 - 6.5, rz + 38, 13, 13, 12), color='alublack', note='同上(位置はUNVERIFIED)', shape='cyl'),
 ]
 def _unit(v): n = math.sqrt(sum(x * x for x in v)); return tuple(x / n for x in v)
 def fillet(pts, r):
@@ -55,4 +62,4 @@ def plen(p): return sum(math.dist(p[i], p[i + 1]) for i in range(len(p) - 1))
 for c in CAB:
     c['len_mm'] = round(plen(c['path']) * (1.0 if c['kind'] == 'hose' else 1.15)); c['verdict'] = 'OK' if (c['ref_mm'] == 0 or c['len_mm'] <= c['ref_mm']) else '不足/長すぎ(要確認)'
 if __name__ == '__main__':
-    json.dump({'_doc': '配線・ホース定義(トレイ内座標)。tools/cablemodel.py が生成。長さ=折れ線長(ケーブルは×1.15の余長)。mbrは暫定最小曲げ半径(mm)', 'cables': CAB}, open(f'{R}/model/cables.json', 'w'), ensure_ascii=False, indent=1); print('cables.json', len(CAB))
+    json.dump({'_doc': '配線・ホース定義(トレイ内座標)。tools/cablemodel.py が生成。長さ=折れ線長(ケーブルは×1.15の余長)。mbrは暫定最小曲げ半径(mm)', 'cables': CAB, 'plugs': [dict(p, box=[round(v, 3) for v in p['box']]) for p in PLUGS]}, open(f'{R}/model/cables.json', 'w'), ensure_ascii=False, indent=1); print('cables.json', len(CAB))

@@ -539,8 +539,8 @@ for _c in BL.get('components', []):
 # AM5ソケット + Ryzen 9 9950X3D (IHS刻印: 'AMD' 'RYZEN' の2行のみ確認済)
 sx_, sy_ = BL['socket_center']
 ibox('socket', 60, 60, 4, bx + sx_ - 30, by + sy_ - 30, Z1, principled('socket', '#2a2c31', 0, .5))
-ibox('cpu_ihs', 40, 40, 2.6, bx + sx_ - 20, by + sy_ - 20, Z1 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)
-label('AMD', 4, bx + sx_ - 8, by + sy_ + 5, Z1 + 6.6, M['print_w'], name='txt_ihs_amd', ext=0.08); label('RYZEN', 3.2, bx + sx_ - 8, by + sy_ - 1, Z1 + 6.6, M['print_w'], name='txt_ihs_ryzen', ext=0.08)   # 公式画像で確認済の2行のみ
+ibox('cpu_ihs', 40, 40, 3.98, bx + sx_ - 20, by + sy_ - 20, Z1 + 4, principled('ihs', '#9da3ab', 1.0, .28), .6)      # AM5 IHS上面=基板上面+7.98mm(MDA-017: 規格値7.98±0.60, 二次情報)
+label('AMD', 4, bx + sx_ - 8, by + sy_ + 5, Z1 + 7.98, M['print_w'], name='txt_ihs_amd', ext=0.08); label('RYZEN', 3.2, bx + sx_ - 8, by + sy_ - 1, Z1 + 7.98, M['print_w'], name='txt_ihs_ryzen', ext=0.08)   # 公式画像で確認済の2行のみ
 # チップセット(ヒートシンク) / PCIe x16 / ATX24 / EPS / M.2 ドーターカード
 ibox('chipset_sink', 21, 19, 9, bx + 129, by + 47, Z1, M['alublack'], .6)
 ibox('pcie_x16', 8.6, 89, 11, bx + 157.4, by + 43, Z1, M['dark'], .3); ibox('pcie_gold', 2, 60, .4, bx + 160.7, by + 57, Z1 + 11.0, M['gold'])
@@ -675,6 +675,11 @@ ibox('ac_inlet_socket', 22, 1, 15, ax_ + 3, ay_ - 2.5, az_ + 2.5, M['dark'])
 CABJ = json.load(open(os.path.join(ROOT, 'model', 'cables.json')))['cables']
 CMAT = {'rubber': M['rubber'], 'hose': M['hose'], 'umb': principled('umb', '#c9ced6', 0, .5)}
 for c_ in CABJ: cable('cable_' + c_['id'], [tuple(q) for q in c_['path']], c_['od'] / 2, CMAT[c_['mat']])
+_PM = {'plug_white': principled('plug_white', '#e9e8e2', 0, .5), 'plug_black': principled('plug_black', '#17181b', 0, .55), 'alublack': M['alublack']}
+for pl_ in json.load(open(os.path.join(ROOT, 'model', 'cables.json'))).get('plugs', []):      # ケーブル端のプラグ/ホース口(INTF/MDC-001対応)
+    x0_, y0_, z0_, w_, d_, h_ = pl_['box']; nm_ = ('rad_port_' if pl_['id'].startswith('RAD_') else 'cable_plug_') + pl_['id']
+    if pl_.get('shape') == 'cyl': icyl(nm_, w_ / 2, h_, 'z', x0_ + w_ / 2, y0_ + d_ / 2, z0_ + h_ / 2, _PM[pl_['color']], 24)
+    else: ibox(nm_, w_, d_, h_, x0_, y0_, z0_, _PM[pl_['color']], .8)
 
 exec(open(os.path.join(HERE, 'hardware_v8.py'), encoding='utf-8').read())      # 小部品(ばね/ネジ/ラッチ/ヒンジ機構等)
 

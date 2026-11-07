@@ -20,6 +20,7 @@
 | cables.json | v009 | current | 2026-11-06 | 88f99b7 | cables/cables.v009__2026-11-06_88f99b7.json |
 | cables.json | v010 | current | 2026-11-06 | cf90ba1 | cables/cables.v010__2026-11-06_cf90ba1.json |
 | cables.json | v011 | current | 2026-11-07 | bba640c | cables/cables.v011__2026-11-07_bba640c.json |
+| cables.json | v012 | current | 2026-11-07 | 17954ec | cables/cables.v012__2026-11-07_17954ec.json |
 | custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | custom_parts.json | v002 | current | 2026-11-05 | 3c794e1 | custom_parts/custom_parts.v002__2026-11-05_3c794e1.json |
 | custom_parts.json | v003 | current | 2026-11-05 | fcba5fe | custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json |
@@ -61,7 +62,9 @@
 | hardware_list.json | v011 | current | 2026-11-06 | 93238a3 | hardware_list/hardware_list.v011__2026-11-06_93238a3.json |
 | hardware_list.json | v012 | current | 2026-11-06 | e7a16e1 | hardware_list/hardware_list.v012__2026-11-06_e7a16e1.json |
 | hardware_list.json | v013 | current | 2026-11-06 | 36dff8c | hardware_list/hardware_list.v013__2026-11-06_36dff8c.json |
+| hardware_list.json | v014 | current | 2026-11-07 | 3089847 | hardware_list/hardware_list.v014__2026-11-07_3089847.json |
 | interference_report.json | v001 | current | 2026-11-07 | 44044f0 | interference_report/interference_report.v001__2026-11-07_44044f0.json |
+| interference_report.json | v002 | current | 2026-11-07 | d60442d | interference_report/interference_report.v002__2026-11-07_d60442d.json |
 | layout.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/layout/layout.v001__2026-11-03_165c355.json |
 | layout.json | v002 | current | 2026-11-03 | fc47286 | layout/layout.v002__2026-11-03_fc47286.json |
 | layout.json | v003 | current | 2026-11-03 | fd22dea | layout/layout.v003__2026-11-03_fd22dea.json |
@@ -76,6 +79,7 @@
 | layout.json | v012 | current | 2026-11-06 | 85af1a8 | layout/layout.v012__2026-11-06_85af1a8.json |
 | layout.json | v013 | current | 2026-11-06 | 853f219 | layout/layout.v013__2026-11-06_853f219.json |
 | layout.json | v014 | current | 2026-11-07 | 17954ec | layout/layout.v014__2026-11-07_17954ec.json |
+| layout.json | v015 | current | 2026-11-07 | 5601a7c | layout/layout.v015__2026-11-07_5601a7c.json |
 | parts.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/parts/parts.v001__2026-11-03_165c355.json |
 | parts.json | v002 | gen-001 | 2026-11-03 | fd22dea | gen-001/parts/parts.v002__2026-11-03_fd22dea.json |
 | parts.json | v003 | current | 2026-11-03 | fdfd200 | parts/parts.v003__2026-11-03_fdfd200.json |

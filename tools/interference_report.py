@@ -15,6 +15,7 @@ ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^cam_roller_pin\d$', r'^cam_roller\d$', 'ローラはピンに回転嵌合(ボア未モデル=INTF-03)'),
  (r'^stand_arm_strip\d$', r'^stand_arm_boss\d$', '側板のストリップとボスは一体品を別基本形で表現'),
  (r'^stand_swivel_(stator|rotor)$', r'^stand_swivel_stop_(l|r|tab)$', 'ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)'),
+ (r'^cable_plug_', r'^(atx24|eps8|gpu_12v2x6)$', 'プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)'),
  (r'^clip_pad\d+$', r'^clip_post\d+$', 'クリップのパッドとポストは一体品'),
 ]
 def depth(p): return min(p['aabb_overlap_mm'])

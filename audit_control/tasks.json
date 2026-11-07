@@ -17864,6 +17864,3230 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "フィルタ/ガスケットに切欠きを入れる、またはラッチ位置を内側へ移す(設計判断→spec)"
+  },
+  {
+   "id": "MDB-001",
+   "title": "cable_W3 / gpu_12v2x6: W3終端 (372,335,55) がコネクタ箱 (x372-394,y315.2-324.2,z38-48) と一致しない。y方向に10.8mm超過、zが7mm上で浮く。しかもケーブルは y2",
+   "description": "cable_W3 / gpu_12v2x6 | W3終端 (372,335,55) がコネクタ箱 (x372-394,y315.2-324.2,z38-48) と一致しない。y方向に10.8mm超過、zが7mm上で浮く。しかもケーブルは y294→335 とカード内側から外へ向かい、プラグが刺さる向きでない。コネクタ嵌合が成立していない | 12V-2x6プラグは受口へ軸方向に挿入し、後方35mm直線が必要(cablemodel.py W3注記)。A1 16-pin | 受口の挿入軸を決め(後述MDB-004)、W3終点=プラグ前面を受口開口面に一致、後方35mm直線を挿入軸上に取る。cablemodel.pyのGPU側端点をgpu_12v2x6の開口中心から自動算出し、cable_check.pyに「端点が受口箱内/面上にあるか」判定を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "受口の挿入軸を決め(後述MDB-004)、W3終点=プラグ前面を受口開口面に一致、後方35mm直線を挿入軸上に取る。cablemodel.pyのGPU側端点をgpu_12v2x6の開口中心から自動算出し、cable_check.pyに「端点が受口箱内/面上にあるか」判定を追加"
+  },
+  {
+   "id": "MDB-002",
+   "title": "riser0-5 / riser_plug / riser_gpu_conn: リボン実長が約44mm(ベジェ4点を数値積分)。実物は全長200mm(heise)。残り約150mmの余長の置き場・折り畳み・曲げ半径が未モデルで、実物のライザ",
+   "description": "riser0-5 / riser_plug / riser_gpu_conn | リボン実長が約44mm(ベジェ4点を数値積分)。実物は全長200mm(heise)。残り約150mmの余長の置き場・折り畳み・曲げ半径が未モデルで、実物のライザーでない(干渉検査もこの形に対して行われており無効) | heise: 200mm直線品。幅・最小曲げ半径は未取得でUNVERIFIED | 200mm相当の経路(スロット→上昇→ループ→GPUエッジ)を作る。幅を実測しUNVERIFIEDを解消するまで、経路長=200mmを満たす制約をtools側に追加。長さ検査(ribbon実長=200±2)をゲート化",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "200mm相当の経路(スロット→上昇→ループ→GPUエッジ)を作る。幅を実測しUNVERIFIEDを解消するまで、経路長=200mmを満たす制約をtools側に追加。長さ検査(ribbon実長=200±2)をゲート化"
+  },
+  {
+   "id": "MDB-003",
+   "title": "gpu_edge / gpu_pcb: PCIeエッジ x gx-1.2〜gx+1.8 に対しPCB開始 gx+5 → 3.2mmの隙間で浮く。z は gz+3.4〜5.2 でPCB(gz+1.6〜3.2)の上に0.2mmずれて板厚外。エッ",
+   "description": "gpu_edge / gpu_pcb | PCIeエッジ x gx-1.2〜gx+1.8 に対しPCB開始 gx+5 → 3.2mmの隙間で浮く。z は gz+3.4〜5.2 でPCB(gz+1.6〜3.2)の上に0.2mmずれて板厚外。エッジはPCBの一部であるべき | PCIe CEM: カードエッジ=PCB板厚1.57±0.1mm。89mm長、金指 | gpu_edge を x gx+5-3(PCBから張り出す)でなくPCBを gx-1.2 まで延長し、エッジ z=gz+1.6 厚1.6、金指は表裏に別メッシュ(幅0.9mm・間隔0.7mm程度、UNVERIFIED)。ブラケット基準位置も合わせる",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "gpu_edge を x gx+5-3(PCBから張り出す)でなくPCBを gx-1.2 まで延長し、エッジ z=gz+1.6 厚1.6、金指は表裏に別メッシュ(幅0.9mm・間隔0.7mm程度、UNVERIFIED)。ブラケット基準位置も合わせる"
+  },
+  {
+   "id": "MDB-004",
+   "title": "riser_gpu_conn: 6x89x8 の黒い箱。GPUエッジがこの中へ挿入されていない(箱 x254.5-260.5、エッジ x260.8〜)。スロット開口・ラッチ・向きが無い。板基板側 pcie_x16(8.6x89x11)と寸法",
+   "description": "riser_gpu_conn | 6x89x8 の黒い箱。GPUエッジがこの中へ挿入されていない(箱 x254.5-260.5、エッジ x260.8〜)。スロット開口・ラッチ・向きが無い。板基板側 pcie_x16(8.6x89x11)と寸法体系が不一致(6 vs 8.6, 8 vs 11) | PCIe x16スロット=高さ約11mm、89mm長、中央にキー(基板側 pcie_x16 の寸法が正) | GPU側コネクタを pcie_x16 と同寸(8.6x89x11)にし、エッジが7mm以上差し込まれる位置にx配置。溝(スロット)を黒箱にBoolean、片側ラッチ爪を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "GPU側コネクタを pcie_x16 と同寸(8.6x89x11)にし、エッジが7mm以上差し込まれる位置にx配置。溝(スロット)を黒箱にBoolean、片側ラッチ爪を追加"
+  },
+  {
+   "id": "MDB-005",
+   "title": "riser_plug: 板側ブロックが z=Z1+11〜+23 で、スロット上面(Z1+11)の「上に載る」だけ。リボン基板端がスロットに入っていない",
+   "description": "riser_plug | 板側ブロックが z=Z1+11〜+23 で、スロット上面(Z1+11)の「上に載る」だけ。リボン基板端がスロットに入っていない | pcie_x16 は z Z1〜Z1+11 | プラグ下端を Z1+11-7 まで埋め込み(エッジ挿入深さ。値はPCIe規格で要確認)。スロット側にキー溝、ラッチ解放ボタンを追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "プラグ下端を Z1+11-7 まで埋め込み(エッジ挿入深さ。値はPCIe規格で要確認)。スロット側にキー溝、ラッチ解放ボタンを追加"
+  },
+  {
+   "id": "MDB-006",
+   "title": "riser0-5: 6本の12mm帯が15mmピッチ、3mm隙間。実物AVA5の形状(単一幅広フラット/複数帯、シールド、端のラミネート)は未確認。素材'rubber'の単色で質感差",
+   "description": "riser0-5 | 6本の12mm帯が15mmピッチ、3mm隙間。実物AVA5の形状(単一幅広フラット/複数帯、シールド、端のラミネート)は未確認。素材'rubber'の単色で質感差 | 公式写真未取得 UNVERIFIED | LINKUP公式画像を取得して帯数・幅を確定。確定まで6本分割を「仮」と台帳に注記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "LINKUP公式画像を取得して帯数・幅を確定。確定まで6本分割を「仮」と台帳に注記"
+  },
+  {
+   "id": "MDB-007",
+   "title": "gpu_pcb: PCBが GW-10 x GL-20 = 140x270、全面を覆う。実物は約170x112(PCIe端子含む)で、片側ファンは基板に被らない非対称構造。内部が全く異なる",
+   "description": "gpu_pcb | PCBが GW-10 x GL-20 = 140x270、全面を覆う。実物は約170x112(PCIe端子含む)で、片側ファンは基板に被らない非対称構造。内部が全く異なる | B1 | PCBを 112(x) x 170(y) 程度に縮小しエッジ側(x=gx)に寄せ、残りの領域はヒートシンクとファンのみの貫通構造。寸法はB1が非公式1件のためUNVERIFIED、複数レビューで裏取りする",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "PCBを 112(x) x 170(y) 程度に縮小しエッジ側(x=gx)に寄せ、残りの領域はヒートシンクとファンのみの貫通構造。寸法はB1が非公式1件のためUNVERIFIED、複数レビューで裏取りする"
+  },
+  {
+   "id": "MDB-008",
+   "title": "gpu_heatsink / gpu_hpipe0-4: ヒートシンクは単なる金属色の直方体(fin無し)、ヒートパイプはその内部に埋まり不可視。バックプレート開口(16個の90x8穴)から見えるのは平らな塊",
+   "description": "gpu_heatsink / gpu_hpipe0-4 | ヒートシンクは単なる金属色の直方体(fin無し)、ヒートパイプはその内部に埋まり不可視。バックプレート開口(16個の90x8穴)から見えるのは平らな塊 | B1: バックプレートに大開口でヒートシンク露出 | ヒートシンクを縦フィン(厚0.3mm・ピッチ1.8mm程度、UNVERIFIED)のArray modifierで生成、開口部から見える範囲だけでよい。ヒートパイプはフィン上端へ貫通させ径6/8mmの扁平管を2〜3本、曲げ付き",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ヒートシンクを縦フィン(厚0.3mm・ピッチ1.8mm程度、UNVERIFIED)のArray modifierで生成、開口部から見える範囲だけでよい。ヒートパイプはフィン上端へ貫通させ径6/8mmの扁平管を2〜3本、曲げ付き"
+  },
+  {
+   "id": "MDB-009",
+   "title": "gpu_backplate: 16本の90x8mm矩形スリットが規則配置。実物は「片側に大開口」(B1)。全体も150x290の素の平板で、実物の外形(縁の段、ネジ位置)と異なる",
+   "description": "gpu_backplate | 16本の90x8mm矩形スリットが規則配置。実物は「片側に大開口」(B1)。全体も150x290の素の平板で、実物の外形(縁の段、ネジ位置)と異なる | B1 | 開口を実写真から輪郭トレース(1〜2個の大開口)、ネジ頭(皿)を4〜6本追加。写真未入手のため形状はUNVERIFIED",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "開口を実写真から輪郭トレース(1〜2個の大開口)、ネジ頭(皿)を4〜6本追加。写真未入手のため形状はUNVERIFIED"
+  },
+  {
+   "id": "MDB-010",
+   "title": "gpu_shroud_body / fan_gpu0,1: シュラウドは150x290x13の箱+円穴2個。実物は基板外へ張り出すファン非対称、面取り、リブ、ロゴ以外全黒(B1)。ファン穴Ø108+ファン110角枠。実物は約120mmファン",
+   "description": "gpu_shroud_body / fan_gpu0,1 | シュラウドは150x290x13の箱+円穴2個。実物は基板外へ張り出すファン非対称、面取り、リブ、ロゴ以外全黒(B1)。ファン穴Ø108+ファン110角枠。実物は約120mmファン(B1,B2) | B1, B2 | ファンを120mmに変更(open_kも再計算)。穴径Ø112程度、中心間隔は実物写真で採寸。シュラウドは縁を斜め面取りし、ファン側の輪郭を段差付きに",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ファンを120mmに変更(open_kも再計算)。穴径Ø112程度、中心間隔は実物写真で採寸。シュラウドは縁を斜め面取りし、ファン側の輪郭を段差付きに"
+  },
+  {
+   "id": "MDB-011",
+   "title": "fan_gpu0,1 (make_fan): ブレード11枚・形状はラジエーター用汎用生成の使い回し。PNY実機の枚数・形状は未確認。枠(frame)はレンダリング非表示で良いが、軸受・ハブのロゴなし/回転方向なども未確認",
+   "description": "fan_gpu0,1 (make_fan) | ブレード11枚・形状はラジエーター用汎用生成の使い回し。PNY実機の枚数・形状は未確認。枠(frame)はレンダリング非表示で良いが、軸受・ハブのロゴなし/回転方向なども未確認 | 枚数はA1/B1に記載なし → UNVERIFIED | 実機写真で枚数確定(ファン上面写真3件以上)。確定までUNVERIFIED表示。ブレードは翼型断面(ねじれ付き)に",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "実機写真で枚数確定(ファン上面写真3件以上)。確定までUNVERIFIED表示。ブレードは翼型断面(ねじれ付き)に"
+  },
+  {
+   "id": "MDB-012",
+   "title": "gpu_12v2x6: 22x9x10の単なる黒箱。位置も「想定」(コメント)。実物は天面で、B1によれば約40mm奥まった位置(解釈未確定)。16ピン受口形状(2段ピン穴、サイドバンド/センスピン、ラッチ窓)が無い。箱上面 z=48 とシ",
+   "description": "gpu_12v2x6 | 22x9x10の単なる黒箱。位置も「想定」(コメント)。実物は天面で、B1によれば約40mm奥まった位置(解釈未確定)。16ピン受口形状(2段ピン穴、サイドバンド/センスピン、ラッチ窓)が無い。箱上面 z=48 とシュラウド上面が同一でケーブルの挿入空間がない | B1(位置はUNVERIFIED)、A1(16-pin) | 受口をPCI-SIG CEM 5.1図面の外形で作る(寸法はUNVERIFIED、取得後に確定)。内部に16ピン穴(4x3.0mm間隔、UNVERIFIED)と4個の小センスピン穴。ケース側面にラッチ用の突起。位置はレビュー写真で確定",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "受口をPCI-SIG CEM 5.1図面の外形で作る(寸法はUNVERIFIED、取得後に確定)。内部に16ピン穴(4x3.0mm間隔、UNVERIFIED)と4個の小センスピン穴。ケース側面にラッチ用の突起。位置はレビュー写真で確定"
+  },
+  {
+   "id": "MDB-013",
+   "title": "gpu_12v2x6 周辺: プラグ挿抜空間: 後方35mm直線 + 曲げの経路が、カード上面 z=48 とドーム内面(DOME_DEPTH 90)の間に収まるか未検査。ケーブルは下からPSUへ引き回す(B1)",
+   "description": "gpu_12v2x6 周辺 | プラグ挿抜空間: 後方35mm直線 + 曲げの経路が、カード上面 z=48 とドーム内面(DOME_DEPTH 90)の間に収まるか未検査。ケーブルは下からPSUへ引き回す(B1) | cablemodel注記: 後方35mm直線 | cable_check.pyにプラグ外形(ハウジング約?mm、UNVERIFIED)をスイープして近傍部品との距離を計算する項目を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "cable_check.pyにプラグ外形(ハウジング約?mm、UNVERIFIED)をスイープして近傍部品との距離を計算する項目を追加"
+  },
+  {
+   "id": "MDB-014",
+   "title": "gpu_bracket / gpu_port0-3: ブラケットは150x1.5x42の素の鋼板色。ポートは3mm厚の黒箱で、ブラケットから1.5mm突出し(ブラケット y-1.5〜0、ポート y-3〜0)、奥のPCB(y+12)まで空洞。",
+   "description": "gpu_bracket / gpu_port0-3 | ブラケットは150x1.5x42の素の鋼板色。ポートは3mm厚の黒箱で、ブラケットから1.5mm突出し(ブラケット y-1.5〜0、ポート y-3〜0)、奥のPCB(y+12)まで空洞。実物は板に開いた穴の奥に金属シェルのレセプタクル。通気孔も無い。ブラケット色は未確認 | HDMI/DPレセプタクル寸法はUNVERIFIED(VESA/HDMI仕様未取得)。出力数はA1で確認(DP x3 + HDMI x1) | ポート部をブラケットにBooleanで台形穴(DP=一角欠けの長方形、HDMI=台形)を開け、奥行き約15〜20mm(UNVERIFIED)の金属シェルを配置。PCB基準で z をPCB上面+に合わせる",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ポート部をブラケットにBooleanで台形穴(DP=一角欠けの長方形、HDMI=台形)を開け、奥行き約15〜20mm(UNVERIFIED)の金属シェルを配置。PCB基準で z をPCB上面+に合わせる"
+  },
+  {
+   "id": "MDB-015",
+   "title": "gpu_port0-3: 並びは HDMI,DP,DP,DP の順・ピッチ28mmで決め打ち。実機の順序・ピッチ(DPとHDMIの間隔は通常20mm未満)の根拠なし。z位置 gz+7(PCB上面 gz+3.2 から3.8mm上で浮く)",
+   "description": "gpu_port0-3 | 並びは HDMI,DP,DP,DP の順・ピッチ28mmで決め打ち。実機の順序・ピッチ(DPとHDMIの間隔は通常20mm未満)の根拠なし。z位置 gz+7(PCB上面 gz+3.2 から3.8mm上で浮く) | 順序/ピッチ: UNVERIFIED(Akiba写真未確認) | 実機写真で順序を確定。ピッチはレセプタクル幅+2〜3mm程度の密配置に。zはPCB上面に載せる",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "実機写真で順序を確定。ピッチはレセプタクル幅+2〜3mm程度の密配置に。zはPCB上面に載せる"
+  },
+  {
+   "id": "MDB-016",
+   "title": "gpu_bracket: 取付フランジ(カード側の折り曲げ、固定ネジ穴)がない。2スロット幅は42mmで妥当(2スロット=約40.6〜41.4)だが長辺150は実際のブラケット高さ(通常約120mm前後+突出約45mm、B1)と整合する確認",
+   "description": "gpu_bracket | 取付フランジ(カード側の折り曲げ、固定ネジ穴)がない。2スロット幅は42mmで妥当(2スロット=約40.6〜41.4)だが長辺150は実際のブラケット高さ(通常約120mm前後+突出約45mm、B1)と整合する確認なし | B1: ブラケット側へ約45mm突出 | ブラケット高さをPCIe端子基準で定義、ネジ穴Ø3.5と折り返し爪を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ブラケット高さをPCIe端子基準で定義、ネジ穴Ø3.5と折り返し爪を追加"
+  },
+  {
+   "id": "MDB-017",
+   "title": "gpu_trim: 2基のファン間の銀アクセント帯 1.6x13.1mm。PNY実機は「一部のロゴを除きオールブラック」(B1)であり、銀の帯は実物と相違の可能性が高い",
+   "description": "gpu_trim | 2基のファン間の銀アクセント帯 1.6x13.1mm。PNY実機は「一部のロゴを除きオールブラック」(B1)であり、銀の帯は実物と相違の可能性が高い | B1 | 実機写真で確認し、無ければ削除して黒のリブに変更",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "実機写真で確認し、無ければ削除して黒のリブに変更"
+  },
+  {
+   "id": "MDB-018",
+   "title": "gpu_shroud(材質): 色#17181b粗さ.15・バンプ。実物の質感(マット/シボ)は未確認",
+   "description": "gpu_shroud(材質) | 色#17181b粗さ.15・バンプ。実物の質感(マット/シボ)は未確認 | UNVERIFIED | 実写真の反射を確認して粗さを決定",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "実写真の反射を確認して粗さを決定"
+  },
+  {
+   "id": "MDB-019",
+   "title": "gpu 全体: LED/ロゴ/刻印: 実物は一部ロゴあり(B1)だがロゴは思想上描かない。レンダリングで判別不能になる点を許容できるか台帳でルール化が必要",
+   "description": "gpu 全体 | LED/ロゴ/刻印: 実物は一部ロゴあり(B1)だがロゴは思想上描かない。レンダリングで判別不能になる点を許容できるか台帳でルール化が必要 | B1 | ロゴ位置にロゴ無しの凹み(段差のみ)を作り、台帳に「ロゴ省略」を明記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ロゴ位置にロゴ無しの凹み(段差のみ)を作り、台帳に「ロゴ省略」を明記"
+  },
+  {
+   "id": "MDB-020",
+   "title": "psu_body: 125x100x63.5の中実箱+bevel 1.5。ファンは箱内部に埋没(fan z54〜62 < 上面63.5)で穴がない。実物のSFXは折り板金で稜線は鋭く、ファン開口と通気孔がある",
+   "description": "psu_body | 125x100x63.5の中実箱+bevel 1.5。ファンは箱内部に埋没(fan z54〜62 < 上面63.5)で穴がない。実物のSFXは折り板金で稜線は鋭く、ファン開口と通気孔がある | A3, B3 | 上面にØ約90の開口をBoolean、板厚0.8mmの薄肉シェルに。bevel 0.3程度に。内部のファンを見せる",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "上面にØ約90の開口をBoolean、板厚0.8mmの薄肉シェルに。bevel 0.3程度に。内部のファンを見せる"
+  },
+  {
+   "id": "MDB-021",
+   "title": "psu_grille_ring1-4 / psu_grille_spokes: グリルが z=64.2 で本体上面63.5から0.7mm浮く。スポーク6本は同一平面の直方体で厚み0.5",
+   "description": "psu_grille_ring1-4 / psu_grille_spokes | グリルが z=64.2 で本体上面63.5から0.7mm浮く。スポーク6本は同一平面の直方体で厚み0.5 | B3(92mmファンのグリル形状は写真未確認) | z=63.5で接地させ、リング半径は9.5k固定(最外38mm)でなく開口Ø90に合わせる。Corsair画像から同心円/ワイヤ形状を確認(UNVERIFIED)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "z=63.5で接地させ、リング半径は9.5k固定(最外38mm)でなく開口Ø90に合わせる。Corsair画像から同心円/ワイヤ形状を確認(UNVERIFIED)"
+  },
+  {
+   "id": "MDB-022",
+   "title": "psu_label: ラベル 70x38 が x98..168/y30..68(局所)に置かれ、ファンØ92(中心 x62,y50)のグリル領域と重なる。実物のラベルはファン面ではなく側面にある可能性が高い(B3: モジュラー面の反対側にス",
+   "description": "psu_label | ラベル 70x38 が x98..168/y30..68(局所)に置かれ、ファンØ92(中心 x62,y50)のグリル領域と重なる。実物のラベルはファン面ではなく側面にある可能性が高い(B3: モジュラー面の反対側にスイッチ類) | B3(ラベル位置: 写真未確認 → UNVERIFIED) | ラベルをファンと重ならない面(側面)へ移動。内容はレール値等が実在(83.3A等)するが、商標/ロゴなし方針と整合を確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ラベルをファンと重ならない面(側面)へ移動。内容はレール値等が実在(83.3A等)するが、商標/ロゴなし方針と整合を確認"
+  },
+  {
+   "id": "MDB-023",
+   "title": "psu_socket0-9: 配置が「2段x5列」の想定(コメントにU59)。B3は「3段・全ラベル付き」。数も10個は根拠不明(Puget: 24pin+EPS2+PCIe4+12V-2x6+SATA/Molex複数)。実物と違う",
+   "description": "psu_socket0-9 | 配置が「2段x5列」の想定(コメントにU59)。B3は「3段・全ラベル付き」。数も10個は根拠不明(Puget: 24pin+EPS2+PCIe4+12V-2x6+SATA/Molex複数)。実物と違う | B3: 3段。総数UNVERIFIED | 公式画像/マニュアル(SF_PLATINUM_User_Manual.pdf はSFシリーズ旧版)で正確なパネル図を取得し、行数・列数・コネクタ種別(24pin=大, 12V-2x6=16pin, EPS/PCIe 8pin=Micro-Fit 4x2)をそれぞれ別形状にする。取得まで台帳UNVERIFIED維持",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "公式画像/マニュアル(SF_PLATINUM_User_Manual.pdf はSFシリーズ旧版)で正確なパネル図を取得し、行数・列数・コネクタ種別(24pin=大, 12V-2x6=16pin, EPS/PCIe 8pin=Micro-Fit 4x2)をそれぞれ別形状にする。取得まで台帳UNVERIFIED維持"
+  },
+  {
+   "id": "MDB-024",
+   "title": "psu_socket(形状): 全てただの角柱(17x5x11 / 11x5x9)でrubber色。実物はパネルの穴(凹み)に差し込むレセプタクル、キー形状・ラベル。突出4mm(y-4..)で逆に出っ張る",
+   "description": "psu_socket(形状) | 全てただの角柱(17x5x11 / 11x5x9)でrubber色。実物はパネルの穴(凹み)に差し込むレセプタクル、キー形状・ラベル。突出4mm(y-4..)で逆に出っ張る | B3 | パネルにBooleanで凹みを開けキー付き穴を作り、周囲に印字(非表示でも可)。ソケット色は黒プラスチック",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "パネルにBooleanで凹みを開けキー付き穴を作り、周囲に印字(非表示でも可)。ソケット色は黒プラスチック"
+  },
+  {
+   "id": "MDB-025",
+   "title": "cable_W1〜W7 の PSU側端: ケーブル端にコネクタ(プラグ)ハウジングが無く、裸の円柱がソケット面から2mm手前で始まる。プラグ長さ(Micro-Fit約15〜20mm、UNVERIFIED)と抜き差し空間(PSU前面y<214",
+   "description": "cable_W1〜W7 の PSU側端 | ケーブル端にコネクタ(プラグ)ハウジングが無く、裸の円柱がソケット面から2mm手前で始まる。プラグ長さ(Micro-Fit約15〜20mm、UNVERIFIED)と抜き差し空間(PSU前面y<214に必要)が未検査。ケーブル曲げは出口から直後 | B4: ケーブル長400mm/445mm | 各ケーブル端にプラグ箱(24pin=約58x15、8pin=約19x16、UNVERIFIED)を追加し、前面から30mm以上の直進を確保。cable_check.pyにプラグ空間検査を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "各ケーブル端にプラグ箱(24pin=約58x15、8pin=約19x16、UNVERIFIED)を追加し、前面から30mm以上の直進を確保。cable_check.pyにプラグ空間検査を追加"
+  },
+  {
+   "id": "MDB-026",
+   "title": "psu_body (後面): ACインレットとスイッチが無い。実物は後面にC14とスイッチ(B3: 反対側にスイッチ)。別部品 ac_inlet(22,8,8)とW1で接続している設計と、PSUに内蔵のC14の関係が曖昧",
+   "description": "psu_body (後面) | ACインレットとスイッチが無い。実物は後面にC14とスイッチ(B3: 反対側にスイッチ)。別部品 ac_inlet(22,8,8)とW1で接続している設計と、PSUに内蔵のC14の関係が曖昧 | B3 | PSU後面にC14受口とスイッチを追加するか、延長ケーブルを使うことを台帳に明記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "PSU後面にC14受口とスイッチを追加するか、延長ケーブルを使うことを台帳に明記"
+  },
+  {
+   "id": "MDB-027",
+   "title": "psu_body(色/文字): 色 sf_body #17181b。実物は黒に銀/白の文字(B3)。印字なし、ネジ・スロット・通気孔なし",
+   "description": "psu_body(色/文字) | 色 sf_body #17181b。実物は黒に銀/白の文字(B3)。印字なし、ネジ・スロット・通気孔なし | B3 | 後面/側面に通気スロット列、側面ネジ4本。印字は商標のため省略を明記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "後面/側面に通気スロット列、側面ネジ4本。印字は商標のため省略を明記"
+  },
+  {
+   "id": "MDB-028",
+   "title": "fan_psu: 92mm、ブレード9枚、Corsair NR092P(B3)の枚数・形状は未確認。make_fanの汎用形状",
+   "description": "fan_psu | 92mm、ブレード9枚、Corsair NR092P(B3)の枚数・形状は未確認。make_fanの汎用形状 | 枚数: UNVERIFIED | 実機写真で枚数確定",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "実機写真で枚数確定"
+  },
+  {
+   "id": "MDB-029",
+   "title": "parts.json gpu/psu: psu.sources が SF750 の URL(cp-9020284)。SF1000(CP-9020257)の一次情報なし。dims[1]/[2] は順序「125,100,63.5」でレイアウトは",
+   "description": "parts.json gpu/psu | psu.sources が SF750 の URL(cp-9020284)。SF1000(CP-9020257)の一次情報なし。dims[1]/[2] は順序「125,100,63.5」でレイアウトは(x125,y100,z63.5)=H/Dの意味づけが曖昧。GPU: 具体SKU VCG5070T16DFSXPB1-O が公式で確認できたのに「購入前に確定」のまま | A1, A3 | sourcesにA1/A3を追加、nameにSKUを記載、dimsに軸の意味(W,D,H)を注記",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "sourcesにA1/A3を追加、nameにSKUを記載、dimsに軸の意味(W,D,H)を注記"
+  },
+  {
+   "id": "MDB-030",
+   "title": "parts.json gpu.facts: 'pcie: 5.0(レーン数未確認、物理x8の可能性)'。PNY公式はPCIe 5.0 x16(A1)。二重の記述が矛盾",
+   "description": "parts.json gpu.facts | 'pcie: 5.0(レーン数未確認、物理x8の可能性)'。PNY公式はPCIe 5.0 x16(A1)。二重の記述が矛盾 | A1 | 'x16'へ更新(ただしMSI等の「x16(use x8)」表記は別メーカーなので注記)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "'x16'へ更新(ただしMSI等の「x16(use x8)」表記は別メーカーなので注記)"
+  },
+  {
+   "id": "MDB-031",
+   "title": "gpu 全体(位置): GPUと基板が同一平面に並び(gz=8, 基板 z11.35)、ライザーでスロットから離す構造が layout の size [24,89,12] と実リボン経路で矛盾(MDB-002)。fitcheckの許可リスト",
+   "description": "gpu 全体(位置) | GPUと基板が同一平面に並び(gz=8, 基板 z11.35)、ライザーでスロットから離す構造が layout の size [24,89,12] と実リボン経路で矛盾(MDB-002)。fitcheckの許可リスト(board-riser, gpu-riser)で干渉を免除しており、実際の嵌合体積を見ていない | fitcheck.py L53 | 許可対象を「嵌合部のみ」に限定し、ライザー実体積と本体の干渉をゲートで見る",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "許可対象を「嵌合部のみ」に限定し、ライザー実体積と本体の干渉をゲートで見る"
+  },
+  {
+   "id": "MDB-032",
+   "title": "fan_gpu*_frame: 枠が非表示(hide_render)でビュー/断面図面で消える可能性。ドーム内を覗く用途では不可視でよいが、隠すことで干渉検査(BODY_OBJS)から漏れていないか未確認",
+   "description": "fan_gpu*_frame | 枠が非表示(hide_render)でビュー/断面図面で消える可能性。ドーム内を覗く用途では不可視でよいが、隠すことで干渉検査(BODY_OBJS)から漏れていないか未確認 | - | 干渉検査の対象に含まれるか確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_B_gpu_psu.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_B_gpu_psu.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "干渉検査の対象に含まれるか確認"
+  },
+  {
+   "id": "MDC-001",
+   "title": "`cable_W1`〜`W7`(全電源/映像ケーブル。build L660-662, cables.json): **ケーブルに端末(コネクタ)が1つも無い**。`cable()` は円形断面の曲線のみ(bevel_depth=od/2)で",
+   "description": "`cable_W1`〜`W7`(全電源/映像ケーブル。build L660-662, cables.json) | **ケーブルに端末(コネクタ)が1つも無い**。`cable()` は円形断面の曲線のみ(bevel_depth=od/2)で、プラグ本体・ラッチ・端子面が全く生成されない。両端が「丸い管の切り口」。INTF-01(コネクタ嵌合/挿抜空間)を包絡箱以下でしか満たしていない | ATX24/EPS8 は Molex Mini-Fit Jr. 4.2mm ピッチ系の角型ハウジング、12V-2x6 は Micro-Fit 3.0mm系 12+4(外形数値は公式図未取得=UNVERIFIED。PCI-SIG/Molex図面を取得して確定すること) | cables.json に `plug_a`/`plug_b`(kind, 外形WxDxH, 挿入軸ベクトル)を追加し、build で各端に `ibox` ではなく挿入軸に沿った角型プラグ(ハウジング+ラッチ爪+ケーブル出口)を置く。挿入軸前方に「挿抜クリアランス = プラグ高+10mm」の禁止体積を cable_check に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "cables.json に `plug_a`/`plug_b`(kind, 外形WxDxH, 挿入軸ベクトル)を追加し、build で各端に `ibox` ではなく挿入軸に沿った角型プラグ(ハウジング+ラッチ爪+ケーブル出口)を置く。挿入軸前方に「挿抜クリアランス = プラグ高+10mm」の禁止体積を cable_check に追加"
+  },
+  {
+   "id": "MDC-002",
+   "title": "`cable_W1`(ATX24)/ `atx24`(基板, L537)/ `psu_socket*`(L644-645): ATX24 が丸管 od9.6mm、長さ28mm。実物の24ピンは幅約50mmの**平たい多芯ケーブル**(面内曲",
+   "description": "`cable_W1`(ATX24)/ `atx24`(基板, L537)/ `psu_socket*`(L644-645) | ATX24 が丸管 od9.6mm、長さ28mm。実物の24ピンは幅約50mmの**平たい多芯ケーブル**(面内曲げ不可)。基板側ヘッダ `atx24` は 50.1x10x15 だが、ケーブル終端は [104,194,29](ヘッダ上面 z=27.95 の約1mm上、斜め進入)でプラグ(幅約50)を嵌める垂直挿入になっていない。PSU側 `psu_socket1`(幅17)は24ピンプラグ(幅約50)を受けられない大きさ(U59 未取得)。PSU端 y=216 と基板ヘッダ y=189-199 の間隔は約19mm しかなく、平型ケーブルを折る空間と挿抜空間の検証が無い | ヘッダ 50.1mm 幅 = 4.2mm x 12列(整合)。プラグ外形・PSU側ソケット形状は UNVERIFIED(Corsair SF1000 マニュアル/Type4 ケーブル図が要る) | ケーブルを「平型リボン」(ribbon() 流用, 幅50, 厚2.5)に置換。基板端: プラグを z=Z1+15(=27.95)の上に垂直下向きで嵌合、PSU端: 実ソケット図に合わせ `psu_socket1` を幅約50に再設計(U59解消後)。折り返し半径を平型の厚み基準(≥ 6x厚)で cable_check に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ケーブルを「平型リボン」(ribbon() 流用, 幅50, 厚2.5)に置換。基板端: プラグを z=Z1+15(=27.95)の上に垂直下向きで嵌合、PSU端: 実ソケット図に合わせ `psu_socket1` を幅約50に再設計(U59解消後)。折り返し半径を平型の厚み基準(≥ 6x厚)で cable_check に追加"
+  },
+  {
+   "id": "MDC-003",
+   "title": "`cable_W3`(12V-2x6)/ `gpu_12v2x6`(L629): 終端 [372,335.2,55] はコネクタ(x372-394, y315.2-324.2, z38-48)の**上方7mm・x縁上**を通過して y335",
+   "description": "`cable_W3`(12V-2x6)/ `gpu_12v2x6`(L629) | 終端 [372,335.2,55] はコネクタ(x372-394, y315.2-324.2, z38-48)の**上方7mm・x縁上**を通過して y335(コネクタ背後)まで抜け、嵌合していない。プラグ本体・センスピン・ラッチが無い。ケーブルは od9mm の単一丸管(実物は幅約20mmのスリーブ/16線) | 12V-2x6: 後方35mm直線は仕様要件(モデルは honor)。コネクタ外形 22x9x10 は想定値(コメント「位置は想定」= UNVERIFIED) | 嵌合軸=カード縁の挿入方向を確定し、終端を (371+11, 319.7, 48) でコネクタ中心に合わせる。プラグ 21x10x(挿入長12)を追加、ケーブルは扁平スリーブ(幅20 x 厚4)断面に変更。コネクタ上方の挿抜クリアランス確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "嵌合軸=カード縁の挿入方向を確定し、終端を (371+11, 319.7, 48) でコネクタ中心に合わせる。プラグ 21x10x(挿入長12)を追加、ケーブルは扁平スリーブ(幅20 x 厚4)断面に変更。コネクタ上方の挿抜クリアランス確認"
+  },
+  {
+   "id": "MDC-004",
+   "title": "`cable_W5`(umbilical) / `ctrl_edp_conn`(L652): ケーブル始点 [226,300,30] は ctrl_edp_conn(x216-236, y347-351, z9.6-13.6)から約47mm",
+   "description": "`cable_W5`(umbilical) / `ctrl_edp_conn`(L652) | ケーブル始点 [226,300,30] は ctrl_edp_conn(x216-236, y347-351, z9.6-13.6)から約47mm離れ、基板上30mmの空中。実際には基板の途中から生えている。さらに layout.json の ctrl_board size は [55,110,15] だが build の `ctrl_pcb` は 55x150(L650)→ **単一源が矛盾**。始点 y=300 は layout 上の基板端(y=315)付近なので、layout側の値(110)で描いた設計図と3Dがずれている可能性 | eDP 30pin コネクタは基板縁のFFC/マイクロ同軸型(実機型番は U51: 未確定) | まず layout.json か build のどちらかを正にして 110/150 を統一。始点を ctrl_edp_conn の挿入口(y=347, z=11.6)に移し、FFC/同軸リボン(幅20x厚0.3)として再描画。基板縁からの引出し方向に「挿抜 + 曲げ半径(FFC は折り曲げ線3mm)」を確保",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "まず layout.json か build のどちらかを正にして 110/150 を統一。始点を ctrl_edp_conn の挿入口(y=347, z=11.6)に移し、FFC/同軸リボン(幅20x厚0.3)として再描画。基板縁からの引出し方向に「挿抜 + 曲げ半径(FFC は折り曲げ線3mm)」を確保"
+  },
+  {
+   "id": "MDC-005",
+   "title": "`cable_W7`(DP) / `ctrl_dp`(L651): 終端 [248,219,28]: ctrl_dp は x226-243, y206-212.5, z9.6-15.6。終端はx方向に5mm外れ、yで6.5mm手前以降、zで",
+   "description": "`cable_W7`(DP) / `ctrl_dp`(L651) | 終端 [248,219,28]: ctrl_dp は x226-243, y206-212.5, z9.6-15.6。終端はx方向に5mm外れ、yで6.5mm手前以降、zで12mm上空。嵌合していない。コネクタは ctrl_dp 前面が基板縁から**1mm内側**(cy+1)で、実際のレセプタクルは縁から突出する | DP/HDMI レセプタクルは基板縁から0.5〜1.5mm張り出す(UNVERIFIED: 型番未確定 U51) | ctrl_hdmi/ctrl_dp の y を cy-1.0(突出)に変更。W7 の末端を DPプラグ(幅約16.1x厚約4.8, UNVERIFIED)の挿入軸 -y 方向へ、終端 = (234.5, 206-1, 12.6)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ctrl_hdmi/ctrl_dp の y を cy-1.0(突出)に変更。W7 の末端を DPプラグ(幅約16.1x厚約4.8, UNVERIFIED)の挿入軸 -y 方向へ、終端 = (234.5, 206-1, 12.6)"
+  },
+  {
+   "id": "MDC-006",
+   "title": "`cable_W4`(ctrl 12V): 終端 [197,213,20] は ctrl_pcb(x198-253, z8-9.6)の**外側1mm・基板面上10mm**で浮いている。DC入力コネクタ自体が ctrl 側にモデル化されていな",
+   "description": "`cable_W4`(ctrl 12V) | 終端 [197,213,20] は ctrl_pcb(x198-253, z8-9.6)の**外側1mm・基板面上10mm**で浮いている。DC入力コネクタ自体が ctrl 側にモデル化されていない(L650-654 に電源コネクタ無し)。コメント「SATA電源 or 2pin」で型が未決 | 型未決 = UNVERIFIED | ctrl 基板に DC 入力コネクタ(例 2ピン 2.54mm または JST-VH, 要決定)を追加し、W4 終端を挿入口へ。型決定まで台帳に UNVERIFIED のまま",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ctrl 基板に DC 入力コネクタ(例 2ピン 2.54mm または JST-VH, 要決定)を追加し、W4 終端を挿入口へ。型決定まで台帳に UNVERIFIED のまま"
+  },
+  {
+   "id": "MDC-007",
+   "title": "`cable_W6`(AC) / `ac_inlet_*`(L657-658) / `psu_body`: AC ケーブル始点 [36,36,16] は inlet 本体(y8-34)の2mm外側(y36)で、ソケット(受口)や端子(ファス",
+   "description": "`cable_W6`(AC) / `ac_inlet_*`(L657-658) / `psu_body` | AC ケーブル始点 [36,36,16] は inlet 本体(y8-34)の2mm外側(y36)で、ソケット(受口)や端子(ファストン)に接続していない。**PSU 側に C14 レセプタクル/スイッチが無い**(終端 [132,320,22] は psu_body の天面 y=318 の2mm外の空中)。内部にIEC C13コネクタ両端もない | C13/C14 は IEC 60320。内部延長600mm級は市販品要確認(U40)。長さ: 456mm(ref 600mm) | PSU 背面(y=318 側)に C14 開口(約 27x19.5 のD形シェル; IEC 60320 C14 公称・要図面確認)を追加。W6 の両端に C13 プラグ(約 28x20x35)を付けて挿抜空間(奥行方向 +40mm)を cable_check へ",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "PSU 背面(y=318 側)に C14 開口(約 27x19.5 のD形シェル; IEC 60320 C14 公称・要図面確認)を追加。W6 の両端に C13 プラグ(約 28x20x35)を付けて挿抜空間(奥行方向 +40mm)を cable_check へ"
+  },
+  {
+   "id": "MDC-008",
+   "title": "`fan_rad0/1_frame`・`_rotor`(make_fan L268-293, L580): **羽根枚数11 → 実物は7枚**。羽根は平板に傾斜を付けただけでP12 Pro特有の湾曲形状・固定リングが無い。ハブ(0.7*d",
+   "description": "`fan_rad0/1_frame`・`_rotor`(make_fan L268-293, L580) | **羽根枚数11 → 実物は7枚**。羽根は平板に傾斜を付けただけでP12 Pro特有の湾曲形状・固定リングが無い。ハブ(0.7*depth)はフレームと**結合するステーター支柱が無い**(中空カット後のフレーム内にハブが浮く)。ファン厚 28mm が公式 25mm と不一致(下記 MDC-009) | 7枚: https://www.hwcooling.net/en/arctic-p12-pro-key-to-noiselessness-is-in-7-blades-review/ 、固定リングあり、先端クリアランス0.8mm(同) | L580 の `n` を 11→7。`make_fan` に支柱3〜4本(幅3x厚さ=depth*0.4 の box)を追加しハブ〜枠を結合、ブレード外周にリング(内径=先端径+0.8, 肉厚1mm, 高さ=depth*0.35)。ブレードは qb 輪郭をスイープ(前縁を回転方向へ前進)に変更。ハブ高さ=depth*0.9",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "L580 の `n` を 11→7。`make_fan` に支柱3〜4本(幅3x厚さ=depth*0.4 の box)を追加しハブ〜枠を結合、ブレード外周にリング(内径=先端径+0.8, 肉厚1mm, 高さ=depth*0.35)。ブレードは qb 輪郭をスイープ(前縁を回転方向へ前進)に変更。ハブ高さ=depth*0.9"
+  },
+  {
+   "id": "MDC-009",
+   "title": "`fan_rad*`(depth=28, L580) / layout `radiator` size z=66 / bom-final.md(63): ファン厚28mmで総厚 38+28=66。**公式シートはファン厚 25mm と読める",
+   "description": "`fan_rad*`(depth=28, L580) / layout `radiator` size z=66 / bom-final.md(63) | ファン厚28mmで総厚 38+28=66。**公式シートはファン厚 25mm と読める寸法ラベル(25)があり、bom-final.md は 277x120x63 と記載**。layout は 66。3か所で値が割れている。どれが正かは未確認 | ARCTIC spec sheet(上表): 寸法ラベル 25/66/68.5 等。ラベルの割付は UNVERIFIED。小売も「63mm clearance」(https://www.scan.co.uk/...) | 公式2D図面(U58)で P12 Pro 厚と 66mm の意味を確認。確認前は depth=25 に変更して全高63とし、66の根拠が出たら差分3mmの部位(ハブ突出/ゴム等)を明示。layout.json・bom・build を単一源に統一",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "公式2D図面(U58)で P12 Pro 厚と 66mm の意味を確認。確認前は depth=25 に変更して全高63とし、66の根拠が出たら差分3mmの部位(ハブ突出/ゴム等)を明示。layout.json・bom・build を単一源に統一"
+  },
+  {
+   "id": "MDC-010",
+   "title": "`fan_rad*`(周辺) / `cable_*` に無し: **ファン/ポンプ/VRMファンの配線が一切無い**。公式は3x4ピン分岐+AIOコネクタ(ポンプ/VRM)あり。ファンコネクタ(4ピン)・ケーブル・ファン枠のケーブル出口が欠",
+   "description": "`fan_rad*`(周辺) / `cable_*` に無し | **ファン/ポンプ/VRMファンの配線が一切無い**。公式は3x4ピン分岐+AIOコネクタ(ポンプ/VRM)あり。ファンコネクタ(4ピン)・ケーブル・ファン枠のケーブル出口が欠落 | ARCTIC spec sheet: Split Connector 3x4-Pin Fan Plug、All In One Connector 4-Pin。ファン 0.33A、ポンプ 0.35A | cables.json に F1(ファン0)・F2(ファン1)・P1(ポンプ)・V1(VRM)の細径(od2.5〜3.5)ケーブルとプラグ(4ピン 2.54mm系)を追加。取り回しは ラジエーター側面〜ポンプ〜基板 FAN ヘッダ。ファン枠切欠き(幅4)も追加し、ブレードとの接触を cable_check に追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "cables.json に F1(ファン0)・F2(ファン1)・P1(ポンプ)・V1(VRM)の細径(od2.5〜3.5)ケーブルとプラグ(4ピン 2.54mm系)を追加。取り回しは ラジエーター側面〜ポンプ〜基板 FAN ヘッダ。ファン枠切欠き(幅4)も追加し、ブレードとの接触を cable_check に追加"
+  },
+  {
+   "id": "MDC-011",
+   "title": "`cable_H1`/`H2` 終端 / `rad_tank_a`: ホース終端 [471,56.4,73],[495,56.4,73] はタンク上面(zl=23+38=61)から12mm上空で**ポートに接続していない**。ラジエーターモ",
+   "description": "`cable_H1`/`H2` 終端 / `rad_tank_a` | ホース終端 [471,56.4,73],[495,56.4,73] はタンク上面(zl=23+38=61)から12mm上空で**ポートに接続していない**。ラジエーターモデルにホース口(ポート)が存在しない。ホース端のカシメ/継手も無い | 公式のホース口位置は未取得(U58) | rad_tank_a に口を追加(スイベル継手 Ø18x15 を z=61〜76 に配置)、終端を (471/495, 56.4, 61+ 継手上端)に変更。ポート位置は ARCTIC 2D図面で確定するまで UNVERIFIED",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "rad_tank_a に口を追加(スイベル継手 Ø18x15 を z=61〜76 に配置)、終端を (471/495, 56.4, 61+ 継手上端)に変更。ポート位置は ARCTIC 2D図面で確定するまで UNVERIFIED"
+  },
+  {
+   "id": "MDC-012",
+   "title": "`cable_H1`/`H2` len_mm / ref_mm: 経路長 H1=383mm、H2=418mm。実ホースは**450mm固定で切れない**(ref_mm=450)。余長 32〜67mm の吸収(ループ)が経路に無く、cable",
+   "description": "`cable_H1`/`H2` len_mm / ref_mm | 経路長 H1=383mm、H2=418mm。実ホースは**450mm固定で切れない**(ref_mm=450)。余長 32〜67mm の吸収(ループ)が経路に無く、cable_check の verdict=OK が長さ不足側のみを見ている疑い(偽PASS懸念) | ARCTIC spec: Tube Length 450 mm | H1/H2 の経路を 450mm(±5)になるまで S字/ループで延長して cables.json を再生成。cable_check に「ref_mm との差 ±5%以内」のゲートを追加。最小曲げ半径 40mm は U45 未確認のまま(外径12.4: 一般にホース最小曲げは外径の3〜4倍=37〜50mm程度だが推測であり確定しない)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "H1/H2 の経路を 450mm(±5)になるまで S字/ループで延長して cables.json を再生成。cable_check に「ref_mm との差 ±5%以内」のゲートを追加。最小曲げ半径 40mm は U45 未確認のまま(外径12.4: 一般にホース最小曲げは外径の3〜4倍=37〜50mm程度だが推測であり確定しない)"
+  },
+  {
+   "id": "MDC-013",
+   "title": "`pump_*`(L560-572, pump.json): ポンプ形状が箱と円柱の集合: `pump_housing_body` 19x46x50 の箱(bevel6)、`pump_elbow` 17x44x16 箱、ホース口は**上面か",
+   "description": "`pump_*`(L560-572, pump.json) | ポンプ形状が箱と円柱の集合: `pump_housing_body` 19x46x50 の箱(bevel6)、`pump_elbow` 17x44x16 箱、ホース口は**上面から垂直**のスタブ(Ø11.1)+スイベルナット Ø20.4(2連、中心間24.7mm、ナット間隙4.3mm)。ケージのリブ `pump_cage_rib*` はコメント「アーチ状」だが実体は 4x4 の直方体12本(アーチではない)。実物のホース出口向き・エルボ形が図面の読取りに依存 | pump.json 自身が「ARCTIC 2D図面を画素実測 ±0.5〜1mm」。公式の3D/出口向きは**未確認**(左右ミラーも U 扱い)。寸法ラベル 91/108.5/68.5 は公式シートの数値と整合 | (1) ARCTIC 2D 図面/製品写真で出口が側面水平か上面垂直かを再確認(UNVERIFIED のまま確定しない)、(2) リブを rbox 曲げ(半径42、立ち上がりで円弧状)に、(3) ハウジングを円柱+フィレットに、(4) 継手に六角部(対辺22)と先端バーブ段差を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "(1) ARCTIC 2D 図面/製品写真で出口が側面水平か上面垂直かを再確認(UNVERIFIED のまま確定しない)、(2) リブを rbox 曲げ(半径42、立ち上がりで円弧状)に、(3) ハウジングを円柱+フィレットに、(4) 継手に六角部(対辺22)と先端バーブ段差を追加"
+  },
+  {
+   "id": "MDC-014",
+   "title": "`pump_cap_top`, `pump_cap_lip`: キャップが単色円柱2段のみ。実物キャップの意匠(鏡面/ヘアライン、リング、段差・斜面)が無い。ロゴは方針で使わないが、ロゴ位置の「凹み/鏡面円」の無地化もしていない。非RGB版",
+   "description": "`pump_cap_top`, `pump_cap_lip` | キャップが単色円柱2段のみ。実物キャップの意匠(鏡面/ヘアライン、リング、段差・斜面)が無い。ロゴは方針で使わないが、ロゴ位置の「凹み/鏡面円」の無地化もしていない。非RGB版(ACFRE00178A)にLEDリング有無は U33 | 非RGB版の公式図なし = UNVERIFIED | cap_top にヘアライン異方性(bump)、リップに 0.5mm 面取り、上面中央に Ø30 の無地鏡面円(ロゴ無し)を追加。LEDリングはA-RGB版のみの可能性があり、非RGBでは作らない(U33 確定まで)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "cap_top にヘアライン異方性(bump)、リップに 0.5mm 面取り、上面中央に Ø30 の無地鏡面円(ロゴ無し)を追加。LEDリングはA-RGB版のみの可能性があり、非RGBでは作らない(U33 確定まで)"
+  },
+  {
+   "id": "MDC-015",
+   "title": "`fan_pump_vrm`(L566): VRMファン径 55mm・7枚。公式/小売は**60mm** VRMファン。pump.json に「径・中心は未確認(U58)」と自注。枚数7も根拠なし",
+   "description": "`fan_pump_vrm`(L566) | VRMファン径 55mm・7枚。公式/小売は**60mm** VRMファン。pump.json に「径・中心は未確認(U58)」と自注。枚数7も根拠なし | VRM Fan 60mm: https://www.scan.co.uk/products/arctic-liquid-freezer-iii-pro-argb-240-aio-hydro-cpu-cooler-black-2x120mm-p12-pro-60mm-vrm-fan-intel (小売1件。公式シートは VRMファン 400-2500rpm のみで径の記載なし = 5件一致未達なので確定扱いしない) | 径 60 を「仮」として試行し、60 のとき `pump_cage_rib`(r=42)と干渉しないか確認。枚数は公式写真で確認するまで UNVERIFIED",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "径 60 を「仮」として試行し、60 のとき `pump_cage_rib`(r=42)と干渉しないか確認。枚数は公式写真で確認するまで UNVERIFIED"
+  },
+  {
+   "id": "MDC-016",
+   "title": "`rad_core`, `rad_tank_a/b`, `rad_duct_*`(L575-578): ラジエーターが 120x277x38 の黒箱+端部 12mm の箱。フィン面(薄いコルゲートフィン、ファンの隙間から見える)、取付ブラケ",
+   "description": "`rad_core`, `rad_tank_a/b`, `rad_duct_*`(L575-578) | ラジエーターが 120x277x38 の黒箱+端部 12mm の箱。フィン面(薄いコルゲートフィン、ファンの隙間から見える)、取付ブラケット、ファン固定ねじ(ファン四隅)が無い。ファン開始オフセット 18.5mm に対し端部タンク 12mm → タンクとフィン領域の境界がファン枠の下に合致しない(タンク実長は未確認) | ARCTIC spec: 277(L)x120(W)x38(H)。タンク長/フィン領域は図面未確認 | `rad_core` を 120x253x38 のフィン領域+20(Lで端部タンク x2、タンク長は 2D 図面で確認)に分割し、フィン面にコルゲート法線マップ(周期1.2mm)を貼る。ファン四隅に 長ねじ(Ø4x35)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`rad_core` を 120x253x38 のフィン領域+20(Lで端部タンク x2、タンク長は 2D 図面で確認)に分割し、フィン面にコルゲート法線マップ(周期1.2mm)を貼る。ファン四隅に 長ねじ(Ø4x35)を追加"
+  },
+  {
+   "id": "MDC-017",
+   "title": "`fan_rad*_frame`(L271): ファン枠が bevel 1.2 の直方体(box)。P12 Pro 枠の角R、取付穴(Ø4.3, 105mm角 = 120mm標準)、枠内側のテーパー・ゴム当てが無い。EXACT ブール(Ø1",
+   "description": "`fan_rad*_frame`(L271) | ファン枠が bevel 1.2 の直方体(box)。P12 Pro 枠の角R、取付穴(Ø4.3, 105mm角 = 120mm標準)、枠内側のテーパー・ゴム当てが無い。EXACT ブール(Ø116.4穴)のみ | 120mm ファン取付穴ピッチ 105mm は業界標準(Noctua/ARCTIC各社公開値。5件一致は未収集のため UNVERIFIED) | 枠の4隅に R=8 のフィレット、取付穴 Ø4.3 を (±52.5, ±52.5) に開口(ブール)。ハブに「ステータ脚3本」を追加(MDC-008と同時)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "枠の4隅に R=8 のフィレット、取付穴 Ø4.3 を (±52.5, ±52.5) に開口(ブール)。ハブに「ステータ脚3本」を追加(MDC-008と同時)"
+  },
+  {
+   "id": "MDC-018",
+   "title": "`ssd_body`, `m2_daughter`(L538,549): SSD(y88〜168.15)に対し `m2_daughter` の範囲は y107〜168 → **SSDの先端が19mmカード外にオーバーハング**。M.2ソケッ",
+   "description": "`ssd_body`, `m2_daughter`(L538,549) | SSD(y88〜168.15)に対し `m2_daughter` の範囲は y107〜168 → **SSDの先端が19mmカード外にオーバーハング**。M.2ソケット(BtoBコネクタ `m2_btob_conn` は y134-138.5 でカード下に隠れる)と SSD の差し込み端が噛み合わず、SSDの差し込み端コネクタ(金色エッジ)・M.2ソケットが無い | 990 PRO HS 最大 80.15x25x8.88(Samsung): https://www.samsung.com/ae/memory-storage/nvme-ssd/nvme-pcie-gen-4-4tb-mz-v9p4t0cw 。M.2 2280 = 80mm、カードは 61mm しか無い(公式p.14のドーターカード枠は mtbi) | ドーターカードの長さをSSD分(80+ソケット≥8=88以上)に再検討するか、SSD位置を y107+ (カード側ソケット端)に揃える。layout.json の ssd.pos と m2_daughter(L538)を同一源に。M.2 ソケット(22x4.5x3.2)と金色エッジ(端子 67 ピン相当, 幅 22 x 長 4.5)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ドーターカードの長さをSSD分(80+ソケット≥8=88以上)に再検討するか、SSD位置を y107+ (カード側ソケット端)に揃える。layout.json の ssd.pos と m2_daughter(L538)を同一源に。M.2 ソケット(22x4.5x3.2)と金色エッジ(端子 67 ピン相当, 幅 22 x 長 4.5)を追加"
+  },
+  {
+   "id": "MDC-019",
+   "title": "`m2_screw`(L552) / `ssd_body`: M.2 固定ねじ Ø3.2x3(中心 z=sd_z+1.5)が `ssd_body`(z=sd_z〜sd_z+8.88, y88〜168.15)の**内部に埋没**(中心 y=1",
+   "description": "`m2_screw`(L552) / `ssd_body` | M.2 固定ねじ Ø3.2x3(中心 z=sd_z+1.5)が `ssd_body`(z=sd_z〜sd_z+8.88, y88〜168.15)の**内部に埋没**(中心 y=166.5, x=203.5 は SSD 体積内)。ねじ頭が見えない。ヒートシンク側に M.2 ノッチ避けの切欠きが無い。座金・スタンドオフ(M.2 standoff)も無し | 990 PRO HS はヒートシンクを外さず装着するためノッチ側のネジ位置は端部の切欠きまたは基板側へ(形状は公式図未確認 = UNVERIFIED) | SSD 先端中央に Ø7 x 5 深の切欠き(ブール)を加え、M2 ねじ頭(Ø3.8, 高さ1.6)+座金+M.2 スタンドオフ(Ø4.5x3)を切欠き内に配置。ねじ頭はトルクス/十字を凹みで作る",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "SSD 先端中央に Ø7 x 5 深の切欠き(ブール)を加え、M2 ねじ頭(Ø3.8, 高さ1.6)+座金+M.2 スタンドオフ(Ø4.5x3)を切欠き内に配置。ねじ頭はトルクス/十字を凹みで作る"
+  },
+  {
+   "id": "MDC-020",
+   "title": "`ssd_slit0-5`, `txt_samsung`: ヒートシンクが単一黒箱+赤い帯6本(厚さ0.08mm)。**赤スリットの実在はこの調査では未確認**(Samsung公式ページはヒートシンク意匠を「futuristic desig",
+   "description": "`ssd_slit0-5`, `txt_samsung` | ヒートシンクが単一黒箱+赤い帯6本(厚さ0.08mm)。**赤スリットの実在はこの調査では未確認**(Samsung公式ページはヒートシンク意匠を「futuristic design」とのみ記し、RGB版は LED 表示付き)。ヒートシンクのフィン溝・成形、ラベル(型番/容量/シリアル/QR)が無く、`SAMSUNG` 文字のみ。帯はヒートシンク上面に 0.08mm 載せただけ(貼り付き) | https://www.samsung.com/ae/memory-storage/nvme-ssd/nvme-pcie-gen-4-4tb-mz-v9p4t0cw (RGB版 MZ-V9P4T0CW。非RGB版 MZ-V9P1T0CW の外観は未確認) | まず公式写真で非RGB版の外観(赤線の有無・刻印位置)を確認し、結果が出るまで赤帯は仮と台帳に明記。溝は凹み(ブール)で表現し、ヒートシンクを 2 部品(アルミ本体+前面プレート)に分割。ラベルは「文字なし無地」or 実刻印(確認後)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "まず公式写真で非RGB版の外観(赤線の有無・刻印位置)を確認し、結果が出るまで赤帯は仮と台帳に明記。溝は凹み(ブール)で表現し、ヒートシンクを 2 部品(アルミ本体+前面プレート)に分割。ラベルは「文字なし無地」or 実刻印(確認後)"
+  },
+  {
+   "id": "MDC-021",
+   "title": "`ctrl_pcb`, `ctrl_*`(L650-654): コントローラ基板は 55x150 の板に箱/円柱を置いただけ(HDMI/DP 筐体・SoC・eDPコネクタ・キャップ・コイル)。型番「未確定 U51」で実物不明。エッジのカット",
+   "description": "`ctrl_pcb`, `ctrl_*`(L650-654) | コントローラ基板は 55x150 の板に箱/円柱を置いただけ(HDMI/DP 筐体・SoC・eDPコネクタ・キャップ・コイル)。型番「未確定 U51」で実物不明。エッジのカット/取付穴(Ø3.2 が基板の角から 4mm)、メッキ端子、シールド缶、フラックス残等が無い。layout.json の size 55x110 と不一致(MDC-004)。ctrl_cap(Ø8x9)3本が `ctrl_edp_conn` 近傍で並ぶが部品密度は実物より著しく少ない | 実機候補(4K eDP 変換基板)が未決 = UNVERIFIED | 候補基板(例: 4K eDP 汎用ドライバボード)を確定してから部品配置を実測図で再現。確定までは「構成要素だけ」の簡略表現であると台帳に明記。取付穴 Ø3.2 を基板に開口(ブール)し、スタンドオフ(MDC-026)と整合",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "候補基板(例: 4K eDP 汎用ドライバボード)を確定してから部品配置を実測図で再現。確定までは「構成要素だけ」の簡略表現であると台帳に明記。取付穴 Ø3.2 を基板に開口(ブール)し、スタンドオフ(MDC-026)と整合"
+  },
+  {
+   "id": "MDC-022",
+   "title": "`ac_inlet_body/flange/socket`(L657-658): C14 インレットが 28x26x20 の箱+36x28 フランジ+22x15 の平たい黒四角。**3本のブレード端子(L, N, E)とD形の凹み(シュラウ",
+   "description": "`ac_inlet_body/flange/socket`(L657-658) | C14 インレットが 28x26x20 の箱+36x28 フランジ+22x15 の平たい黒四角。**3本のブレード端子(L, N, E)とD形の凹み(シュラウド)が無い**。フランジの取付穴/スナップインの爪、背面のファストン端子(6.3mm)、ヒューズ引出し、が無い。ソケット受口は 1mm の平板 | IEC 60320 C14: 3 ブレード端子(約 6.3 x 0.8mm)+ 凹み D 形シェル。寸法は IEC 60320-1 の図による(取得していない = UNVERIFIED) | `ac_inlet_socket` を深さ 12mm の D 形凹み(ブール)に置換、底にブレード 3 枚(6.3x0.8x10)を配置。背面にファストン 3 本(6.3x0.8x8)。フランジに M3 穴 Ø3.2 を 2 つ(間隔 40mm 想定, 要図面)開口",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`ac_inlet_socket` を深さ 12mm の D 形凹み(ブール)に置換、底にブレード 3 枚(6.3x0.8x10)を配置。背面にファストン 3 本(6.3x0.8x8)。フランジに M3 穴 Ø3.2 を 2 つ(間隔 40mm 想定, 要図面)開口"
+  },
+  {
+   "id": "MDC-023",
+   "title": "`cable_W2`(EPS 8) / `eps8`(L537): EPS 8 ピン: 基板ヘッダは 11.8x18.1x11。ケーブルは丸管 od5.6mm、プラグ無し。終端 [66,42,25] はヘッダ(x61.6-73.4, y32",
+   "description": "`cable_W2`(EPS 8) / `eps8`(L537) | EPS 8 ピン: 基板ヘッダは 11.8x18.1x11。ケーブルは丸管 od5.6mm、プラグ無し。終端 [66,42,25] はヘッダ(x61.6-73.4, y32.4-50.5, z12.95-23.95)の上方 z=25 で1mm超え、横入り。実物は 4+4 の角型プラグ 2 つ(分割式)の挿抜空間(上方向 +25mm)が必要 | EPS12V 8 ピン: Mini-Fit Jr 4.2mm ピッチ 2x4(外形は UNVERIFIED) | プラグ(約 17x12x20)を垂直挿入で `eps8` 上に配置し、終端 z=23.95+20。上方クリアランス 35mm を cable_check に追加(ドーム内面 d_inner と比較)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "プラグ(約 17x12x20)を垂直挿入で `eps8` 上に配置し、終端 z=23.95+20。上方クリアランス 35mm を cable_check に追加(ドーム内面 d_inner と比較)"
+  },
+  {
+   "id": "MDC-024",
+   "title": "全 `cable_*` の素材/外径: 全て `rubber` (#0e0f12) の単一マテリアル・円断面。実物の PSU ケーブルはスリーブ編み/フラット(ブラック)で、ワイヤーのリボン分離が見える。ねじれ/ヒートシュリンク/ケーブルコ",
+   "description": "全 `cable_*` の素材/外径 | 全て `rubber` (#0e0f12) の単一マテリアル・円断面。実物の PSU ケーブルはスリーブ編み/フラット(ブラック)で、ワイヤーのリボン分離が見える。ねじれ/ヒートシュリンク/ケーブルコームも無い。`M['yellow']` `M['red']` が定義されているのに使われていない(死んだ定義) | Corsair SF1000 のケーブル仕様は公式未取得(U59) | `CMAT` に `sleeve`(異方性/編み目 bump)を追加し、ATX24/EPS/12V-2x6 はフラット化。ケーブルコーム(PSU出口 2 個)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`CMAT` に `sleeve`(異方性/編み目 bump)を追加し、ATX24/EPS/12V-2x6 はフラット化。ケーブルコーム(PSU出口 2 個)を追加"
+  },
+  {
+   "id": "MDC-025",
+   "title": "`standoff_*`(hardware_v8 L9-24): スタンドオフは 6 角柱(hexr=3.2 = 外接半径、対辺約5.5mm)のみ。ねじ部(雄ねじ)・座面・面取り・ねじ溝が無い。**長さが hardware_list と不一",
+   "description": "`standoff_*`(hardware_v8 L9-24) | スタンドオフは 6 角柱(hexr=3.2 = 外接半径、対辺約5.5mm)のみ。ねじ部(雄ねじ)・座面・面取り・ねじ溝が無い。**長さが hardware_list と不一致**: rad スタンドオフは TZ=5〜rz0=23 の 18mm 長(L21)だが hw() の記載は「PEM TSOA-M3 3.0mm」(L25)。PSU・ctrl・GPU は 3mm で一致。基板用は 6.35mm(5〜11.35)で一致 | PEM TSOA-M3(自社BOM記載)。ラジエーター穴位置の公式値は未取得 U58 | rad のスタンドオフを正しい長さの部品に変更するか(例 18mm のスペーサ)、hw() を修正。TSOA の 6 角下に Ø9 ガイド座面、上端にオスねじ M3x(突出3)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "rad のスタンドオフを正しい長さの部品に変更するか(例 18mm のスペーサ)、hw() を修正。TSOA の 6 角下に Ø9 ガイド座面、上端にオスねじ M3x(突出3)を追加"
+  },
+  {
+   "id": "MDC-026",
+   "title": "`screw_*_head/hex`, `tray_screw*`(hardware_v8 L12,37): ねじ頭は Ø5.6x2.4 の円柱に、**六角の凸ディスク**(r1.3, 高 0.3, rubber)を載せただけ。実物は凹み(",
+   "description": "`screw_*_head/hex`, `tray_screw*`(hardware_v8 L12,37) | ねじ頭は Ø5.6x2.4 の円柱に、**六角の凸ディスク**(r1.3, 高 0.3, rubber)を載せただけ。実物は凹み(六角穴/トルクス T10/十字)。コード上の「M3 T10」(トルクス)と六角形状が不一致。ねじ軸(シャンク)が無く、PSU/rad の `screw_*_under`(z0.5〜2.9)は**絶縁シート(z0〜3)の内部に埋没**(カウンタボアなし) | 仕様書記載は T10(トルクス)。基板用は「M3x6 ナベ」 | 頭部を凹みブール(トルクス T10 の 6 つ星形のポリゴン、対角 3.3mm, 深さ 1.2)に変更、頭は低頭ナベ(Ø5.6x2.0)でドーム形面取り、シャンク Ø3x6 を追加。`screw_*_under` はトレイ下面に沈頭(絶縁シートにΦ6 穴をブール)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "頭部を凹みブール(トルクス T10 の 6 つ星形のポリゴン、対角 3.3mm, 深さ 1.2)に変更、頭は低頭ナベ(Ø5.6x2.0)でドーム形面取り、シャンク Ø3x6 を追加。`screw_*_under` はトレイ下面に沈頭(絶縁シートにΦ6 穴をブール)"
+  },
+  {
+   "id": "MDC-027",
+   "title": "`clip_pad*`, `clip_post*`(hardware_v8 L66-69): クリップは 12x8x0.8 のパッドと 3x6 の柱のみで、ケーブルを抱える**ループ/爪が無い**。配置は経路上60mm間隔・z≦30 のみで",
+   "description": "`clip_pad*`, `clip_post*`(hardware_v8 L66-69) | クリップは 12x8x0.8 のパッドと 3x6 の柱のみで、ケーブルを抱える**ループ/爪が無い**。配置は経路上60mm間隔・z≦30 のみで、他部品(スタンドオフ/ねじ/ホース)との干渉判定が無い(コード上、判定なし)。数量は `nclip` を実行時算出 | POM クリップは通常 U 字バンド(約 12x10x8)。製品未決 | クリップに U 字爪(外径 = ケーブル od+2, 肉厚 1)を追加。配置後に他部品(standoff, screw, pad)との AABB 干渉判定を cable_check へ追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "クリップに U 字爪(外径 = ケーブル od+2, 肉厚 1)を追加。配置後に他部品(standoff, screw, pad)との AABB 干渉判定を cable_check へ追加"
+  },
+  {
+   "id": "MDC-028",
+   "title": "`tray_handle_wire`, `pe_stud_tray`, `pe_braid_*`: 取っ手は cable() で作った φ3 の曲線(線材ハンドル)で、折り曲げの角が細かい折れ線(POLY)になり面取り感が出ない。PE 編組",
+   "description": "`tray_handle_wire`, `pe_stud_tray`, `pe_braid_*` | 取っ手は cable() で作った φ3 の曲線(線材ハンドル)で、折り曲げの角が細かい折れ線(POLY)になり面取り感が出ない。PE 編組は od3.2 の単色緑の管(実物は緑/黄の被覆線+圧着端子 M4 リング)。端末の圧着端子が無い | 接地線は緑/黄(IEC 60446)が標準 | PE 編組は `pe_gy` を緑/黄の縞テクスチャに。端末に M4 リング端子(外径 Ø9, 厚 0.8)と収縮チューブ(長さ 15)を追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "PE 編組は `pe_gy` を緑/黄の縞テクスチャに。端末に M4 リング端子(外径 Ø9, 厚 0.8)と収縮チューブ(長さ 15)を追加"
+  },
+  {
+   "id": "MDC-029",
+   "title": "`psu_socket*`(PSU, 範囲外だが端末の相手): モジュラーソケット 10 個(17x5x11 / 11x5x9)の根拠は小売の記載のみ(U59)。ソケットは**ケーブルとの嵌合を満たす内部形状**(ピン穴・ラッチ窓)が無い黒",
+   "description": "`psu_socket*`(PSU, 範囲外だが端末の相手) | モジュラーソケット 10 個(17x5x11 / 11x5x9)の根拠は小売の記載のみ(U59)。ソケットは**ケーブルとの嵌合を満たす内部形状**(ピン穴・ラッチ窓)が無い黒箱 | 公式図未取得 | 公式マニュアル(Corsair SF1000)取得後に 8 ピン/6+2 等の実ソケット形状へ。取得前は UNVERIFIED のまま",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "公式マニュアル(Corsair SF1000)取得後に 8 ピン/6+2 等の実ソケット形状へ。取得前は UNVERIFIED のまま"
+  },
+  {
+   "id": "MDC-030",
+   "title": "`cable()` のカーブ(L581-585): `bevel_resolution=6` の POLY 曲線で、曲げ部は cablemodel の折れ線をそのまま使う → 曲げ半径が目視で多角形になる(レンダでファセット)。`fill_",
+   "description": "`cable()` のカーブ(L581-585) | `bevel_resolution=6` の POLY 曲線で、曲げ部は cablemodel の折れ線をそのまま使う → 曲げ半径が目視で多角形になる(レンダでファセット)。`fill_mode FULL` + `use_fill_caps` で端が平坦に閉じる | — | `cu.splines.new('NURBS')` か制御点を Catmull-Rom で再サンプリング(1mm 間隔)。端は丸キャップではなくプラグに接続(MDC-001)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`cu.splines.new('NURBS')` か制御点を Catmull-Rom で再サンプリング(1mm 間隔)。端は丸キャップではなくプラグに接続(MDC-001)"
+  },
+  {
+   "id": "MDC-031",
+   "title": "`pump_coldplate_sq`, `pump_screw*`, `pump_spring*`(L560, 569-572): コールドプレートは銅の長方形(40.1x43.6x4)のみ。実物の**マイクロスカイブフィン**は見えない",
+   "description": "`pump_coldplate_sq`, `pump_screw*`, `pump_spring*`(L560, 569-572) | コールドプレートは銅の長方形(40.1x43.6x4)のみ。実物の**マイクロスカイブフィン**は見えないが、取付プレート(クロスバー)・M4 ばね付きねじの頭(皿ばね)の形状が簡略。ばね仕様はコメントで「ARCTIC寸法は UNVERIFIED」 | ARCTIC: Cold Plate = Copper, Micro Skived Fins(公式シート) | ばねを円錐コイル(線径 1.1, 外径 6.6→5)にし、ねじ頭を六角穴付き Ø6x3 に。コールドプレート側面に取付ブラケット(AM5 クロスバー 70x15x2)を追加(寸法未確認 U58)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ばねを円錐コイル(線径 1.1, 外径 6.6→5)にし、ねじ頭を六角穴付き Ø6x3 に。コールドプレート側面に取付ブラケット(AM5 クロスバー 70x15x2)を追加(寸法未確認 U58)"
+  },
+  {
+   "id": "MDC-032",
+   "title": "`ssd_body` の bevel / `txt_samsung`: SSD の bevel 0.5(ヒートシンク角の R)が実物と一致するか未確認。`label()` の `ext=0.08` は文字を 0.08mm だけ立てるため、ヒ",
+   "description": "`ssd_body` の bevel / `txt_samsung` | SSD の bevel 0.5(ヒートシンク角の R)が実物と一致するか未確認。`label()` の `ext=0.08` は文字を 0.08mm だけ立てるため、ヒートシンク面がマットな黒に対し白文字が印刷状(実物はレーザー刻印か印刷か未確認) | UNVERIFIED | 公式写真確認後に刻印/印刷を決め、刻印なら凹み(ブール), 印刷なら現状維持。ヒートシンク上面の端面取りは実物写真から測る",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:02:59Z",
+     "triaged",
+     "R12取込(R12_model_C_cooling_misc.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_C_cooling_misc.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "公式写真確認後に刻印/印刷を決め、刻印なら凹み(ブール), 印刷なら現状維持。ヒートシンク上面の端面取りは実物写真から測る"
+  },
+  {
+   "id": "MDA-001",
+   "title": "`vrm_shroud`, `vrm_trim` (build L499-500): VRMヒートシンクが 98×36×14 の**単一の箱**(角R1.5)。フィン・段差・低背/高背の別・L字延長・穿孔メッシュ・ネジが全く無い。高さ14は",
+   "description": "`vrm_shroud`, `vrm_trim` (build L499-500) | VRMヒートシンクが 98×36×14 の**単一の箱**(角R1.5)。フィン・段差・低背/高背の別・L字延長・穿孔メッシュ・ネジが全く無い。高さ14は「ポンプ下端以下に抑えた」逆算値で実物根拠なし(コメントも未確認と自認) | ASUS製品ページ: VRMヒートシンクとL字バックプレートが I/O 上へ延びる、穿孔メッシュ、VRMファン。LANOC: CPU側低背・I/O側フルハイト、中央に小型ファン(単独根拠=UV)。高さ寸法は公式資料に無い=**[UV]** | 3分割: ①低背ブロック(板座標 x8〜106, y44〜60, h=UV仮8) ②フルハイトブロック(y24〜44, h=UV仮14〜) ③L字延長(I/O 上面 y-2〜24 を覆う板 t2)。各ブロック上面に縦フィン(厚1.0/ピッチ2.4/高さ=ブロック高-2、長手は y 方向)、側面に面取り0.5。穿孔は黒メッシュ(円Ø1.6/ピッチ2.8, 千鳥)を boolean かテクスチャで。高さは必ず `x870i_layout.json` に `h_source: UNVERIFIED` で入れ、マニュアル p.14/実写の側面写真で確定するまで確定扱いにしない",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "3分割: ①低背ブロック(板座標 x8〜106, y44〜60, h=UV仮8) ②フルハイトブロック(y24〜44, h=UV仮14〜) ③L字延長(I/O 上面 y-2〜24 を覆う板 t2)。各ブロック上面に縦フィン(厚1.0/ピッチ2.4/高さ=ブロック高-2、長手は y 方向)、側面に面取り0.5。穿孔は黒メッシュ(円Ø1.6/ピッチ2.8, 千鳥)を boolean かテクスチャで。高さは必ず `x870i_layout.json` に `h_source: UNVERIFIED` で入れ、マニュアル p.14/実写の側面写真で確定するまで確定扱いにしない"
+  },
+  {
+   "id": "MDA-002",
+   "title": "`vrm_shroud` × `pump_screw0`, `pump_screw1` (build L569-572): AM5取付穴 54×90 の配置(dx±27, dy±45)で、ねじ位置が板座標 (44.4,44.1) と (98",
+   "description": "`vrm_shroud` × `pump_screw0`, `pump_screw1` (build L569-572) | AM5取付穴 54×90 の配置(dx±27, dy±45)で、ねじ位置が板座標 (44.4,44.1) と (98.4,44.1)。これは shroud 範囲 x8〜106,y24〜60 の**内部**で、Ø6.4円柱が高さ14の箱を貫通(めり込み)。実物は取付穴周りにキープアウト/切欠きがあるはず | AM5 ヒートシンク穴は角が 54×90mm の矩形(Wikipedia Socket AM5)。穴位置が VRM 上に来るなら実物のヒートシンクは穴を避けた切欠きを持つ(**形状は[UV]**) | shroud に各穴を中心とする Ø12 の切欠き(ねじ頭 Ø6.4 + 工具余裕)を boolean で開ける。もしくは穴の向き(54×90 の長辺方向)が実機と逆でないかをマニュアル p.14 で確認(ポンプ側コメントは「長辺はホース出口と直交」とあり、基板側の向きの根拠は無い)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "shroud に各穴を中心とする Ø12 の切欠き(ねじ頭 Ø6.4 + 工具余裕)を boolean で開ける。もしくは穴の向き(54×90 の長辺方向)が実機と逆でないかをマニュアル p.14 で確認(ポンプ側コメントは「長辺はホース出口と直交」とあり、基板側の向きの根拠は無い)"
+  },
+  {
+   "id": "MDA-003",
+   "title": "`vrm_shroud` × `socket` (L499, L531): socket 60×60 は板座標 y59.1〜119.1。shroud は y24〜60 のため y59.1〜60 で 0.9mm 重なる(x41.4〜101.4",
+   "description": "`vrm_shroud` × `socket` (L499, L531) | socket 60×60 は板座標 y59.1〜119.1。shroud は y24〜60 のため y59.1〜60 で 0.9mm 重なる(x41.4〜101.4 の幅で shroud 高さ14 > socket 高さ4 → 埋め込み)。さらに socket 60×60 の寸法自体に根拠なし | WikiChip「67×106」(意味不明=UV)。AM5 ソケット実寸は未確認=**[UV]** | socket の実寸を確定するまで暫定: shroud の y 上限を 58 に下げる、または socket 外形を確定値に。socket 側は MDA-020 で作り直す",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "socket の実寸を確定するまで暫定: shroud の y 上限を 58 に下げる、または socket 外形を確定値に。socket 側は MDA-020 で作り直す"
+  },
+  {
+   "id": "MDA-004",
+   "title": "`choke3`〜`choke7`, `cap2`〜`cap5` (build L504-505): チョーク (x14+9.6i, y62, 7×7×4.5) の i=3〜7(x42.8〜88.2)と、キャップ Ø6.4×9 (x22+9",
+   "description": "`choke3`〜`choke7`, `cap2`〜`cap5` (build L504-505) | チョーク (x14+9.6i, y62, 7×7×4.5) の i=3〜7(x42.8〜88.2)と、キャップ Ø6.4×9 (x22+9.6i, y74) の i=2〜5 が、**socket 60×60×4 の内部**(x41.4〜101.4, y59.1〜119.1)に入っている。socketの箱にめり込んで、ソケット上に電解コンデンサが立つ状態 | ソケット直上に部品は存在しない(キープアウト)。個数・配置は公式写真未確認=**[UV]** | choke/cap の配置は i=0〜2 などソケット外(x<41.4 − 余裕3 → x<38)に限定。VRM が CPU の「左」にある(LANOC)ため、実際は x<38 側へ詰める。個数は `x870i_layout.json` に `vrm_phases`(UV)として持ち、MOSFET/チョーク/MLCC の別を持たせる(下記 MDA-006 と同様に実写根拠で確定)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "choke/cap の配置は i=0〜2 などソケット外(x<41.4 − 余裕3 → x<38)に限定。VRM が CPU の「左」にある(LANOC)ため、実際は x<38 側へ詰める。個数は `x870i_layout.json` に `vrm_phases`(UV)として持ち、MOSFET/チョーク/MLCC の別を持たせる(下記 MDA-006 と同様に実写根拠で確定)"
+  },
+  {
+   "id": "MDA-005",
+   "title": "`board_hdr_vrm_hs_fan` × `vrm_shroud`: VRMファンヘッダ (x1.6〜11.1, y23〜26.5, h4) が shroud (x8〜106, y24〜60) と x8〜11.1, y24〜26.5",
+   "description": "`board_hdr_vrm_hs_fan` × `vrm_shroud` | VRMファンヘッダ (x1.6〜11.1, y23〜26.5, h4) が shroud (x8〜106, y24〜60) と x8〜11.1, y24〜26.5 で重なる(shroud h14 > header h4 → ヘッダが埋没) | LANOC: VRMファンコネクタは 8pin の隣(シールド外) | shroud の x 始点を 12.5 以上へ、またはヘッダ周辺に切欠き",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "shroud の x 始点を 12.5 以上へ、またはヘッダ周辺に切欠き"
+  },
+  {
+   "id": "MDA-006",
+   "title": "`txt_rog`, `txt_ftwd`, `vrm_fan_ring` (build L501-502): ラベルとリングが Z1+22〜22.5 で、shroud 上面 Z1+14 の**8mm上に浮遊**。リング Ø24 は中心 x",
+   "description": "`txt_rog`, `txt_ftwd`, `vrm_fan_ring` (build L501-502) | ラベルとリングが Z1+22〜22.5 で、shroud 上面 Z1+14 の**8mm上に浮遊**。リング Ø24 は中心 x96 → x84〜108 で shroud 端 x106 を 2mm はみ出す。ファン羽根・枠・ハブは無く黒いリングだけ。ロゴ「ROG」は公式意匠で本プロジェクトの「ロゴ無し」方針(PRINCIPLES A-1)とも緊張 | ASUS製品ページ: VRMファンあり(寸法は公式に無い=UV)。LANOC: ヒートシンク中央に小型ファン | ラベル z を shroud 実上面に合わせる(Z1+14.0+0.05)。リングを廃止し、`make_fan()` 流の小型ファン(枠30×30×7 [UV], ハブ Ø8, 羽根7枚)を shroud 中央の凹み(深さ7)に落とす。「ROG」文字は**ロゴ方針の判断が必要**(台帳登録: 商標のオマージュ対象外にするか、刻印を無地にするか)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ラベル z を shroud 実上面に合わせる(Z1+14.0+0.05)。リングを廃止し、`make_fan()` 流の小型ファン(枠30×30×7 [UV], ハブ Ø8, 羽根7枚)を shroud 中央の凹み(深さ7)に落とす。「ROG」文字は**ロゴ方針の判断が必要**(台帳登録: 商標のオマージュ対象外にするか、刻印を無地にするか)"
+  },
+  {
+   "id": "MDA-007",
+   "title": "`eps8` × `screw_board0`/`standoff_board0` (hardware L13-14, build L537): ITX 穴 (10.2,6.4) の M3 ねじ頭 (Ø5.6) が、`eps8` (x1.6",
+   "description": "`eps8` × `screw_board0`/`standoff_board0` (hardware L13-14, build L537) | ITX 穴 (10.2,6.4) の M3 ねじ頭 (Ø5.6) が、`eps8` (x1.6〜13.4, y2.4〜20.5, h11) の**箱の内側**に入る。実物は取付穴の上にコネクタは置けない | ITX 規格穴 (10.16, 6.35)(規格値 U17 として既存)。EPS は左上隅の金属ProCool IIシールド下(LANOC)。配置図 ±2mm 読み取り値=**[UV]** | 配置図 p.14 の読み取りを再確認(x/y 軸の向きの取り違えが疑われる)。確定まで eps8 を ±0 で動かさず、台帳に「EPS8 が ITX穴と干渉=配置読取誤りの疑い」を登録。暫定: eps8 を x≥13.4 側へ詰めて穴周り Ø8 を空ける",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "配置図 p.14 の読み取りを再確認(x/y 軸の向きの取り違えが疑われる)。確定まで eps8 を ±0 で動かさず、台帳に「EPS8 が ITX穴と干渉=配置読取誤りの疑い」を登録。暫定: eps8 を x≥13.4 側へ詰めて穴周り Ø8 を空ける"
+  },
+  {
+   "id": "MDA-008",
+   "title": "`io_shield` (build L481-482): 111×26×30 の**中実の鋼の箱**。そこに `board_m2_wifi_module` (x113.6〜121.5,y0.4〜32.3) が y0.4〜24 で埋没(同じ",
+   "description": "`io_shield` (build L481-482) | 111×26×30 の**中実の鋼の箱**。そこに `board_m2_wifi_module` (x113.6〜121.5,y0.4〜32.3) が y0.4〜24 で埋没(同じ体積に二重存在)。I/O 全体が1つの銀塊で、プリインストールの黒シールド・穿孔・ROG意匠・L字ヒートシンク(MDA-001)が無い | LANOC: プリインストールシールドは黒+白凡例、I/Oカバーはステンレス+ROG(色の矛盾はあり、シールド色は **[UV]**)。ASUS製品ページ: I/Oシールドに穿孔メッシュ | 中実箱を廃止し、薄板の外殻(t1.0, 内部は空洞)にする。m2_wifi は外殻内に収まる形で配置。前面板(y=-2)に各ポート開口を boolean で開けて、その奥にポート本体(MDA-009〜)を置く。色は黒(#101114)と白凡例を暫定、確定は[UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "中実箱を廃止し、薄板の外殻(t1.0, 内部は空洞)にする。m2_wifi は外殻内に収まる形で配置。前面板(y=-2)に各ポート開口を boolean で開けて、その奥にポート本体(MDA-009〜)を置く。色は黒(#101114)と白凡例を暫定、確定は[UV]"
+  },
+  {
+   "id": "MDA-009",
+   "title": "`io_*_shell`, `io_*_hole` (build L483-496): 全ポートが「薄板 t1.4 + 色違いの箱」だけ。穴が無く奥行0、舌片・接点・金属シェルのダボ/ばねが無い。`_hole` は solid で shel",
+   "description": "`io_*_shell`, `io_*_hole` (build L483-496) | 全ポートが「薄板 t1.4 + 色違いの箱」だけ。穴が無く奥行0、舌片・接点・金属シェルのダボ/ばねが無い。`_hole` は solid で shell より前に 0.1mm はみ出し(y-3.5 vs shell -3.4)、見た目は塗り板。実物と見分けがつかない品質の最大の阻害要因 | USB-A レセプタクル開口 12.5×5.12mm 奥行8.88(Wikipedia USB hardware 表)。Type-C 開口 8.34×2.56 奥行6.2。HDMI Type-A 開口 約13.9×4.45(プラグ寸法) | `port()` を再実装: 外殻箱 → boolean で**開口 W×H×奥行**を切り抜き(USB-A 12.5×5.12×8.88、Type-C 8.34×2.56×6.2、HDMI 14.0×4.6×10[UV]、RJ45 15.0×12.0×16[UV]) → 開口内に舌片(USB-A: 厚2.0×幅10.0×奥行7, 下側 or 上側は下記 MDA-010)+接点(金/銅色 0.5×1.0 ×4)。現行 hole は w-3×h-3 でUSB-Aが 11.5×4 と開口12.5×5.12 より**小さく**、Type-C は 6×0.6 のスリットで形状が別物",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`port()` を再実装: 外殻箱 → boolean で**開口 W×H×奥行**を切り抜き(USB-A 12.5×5.12×8.88、Type-C 8.34×2.56×6.2、HDMI 14.0×4.6×10[UV]、RJ45 15.0×12.0×16[UV]) → 開口内に舌片(USB-A: 厚2.0×幅10.0×奥行7, 下側 or 上側は下記 MDA-010)+接点(金/銅色 0.5×1.0 ×4)。現行 hole は w-3×h-3 でUSB-Aが 11.5×4 と開口12.5×5.12 より**小さく**、Type-C は 6×0.6 のスリットで形状が別物"
+  },
+  {
+   "id": "MDA-010",
+   "title": "`io_a10g_*`, `io_usb2_*` (build L491-496): USB舌片色: 10G 赤・USB2 黒の割当は LANOC(単独)と一致するが、**開口全面が赤い箱**で、実物は黒筐体の中に赤い(または青)舌片が見え",
+   "description": "`io_a10g_*`, `io_usb2_*` (build L491-496) | USB舌片色: 10G 赤・USB2 黒の割当は LANOC(単独)と一致するが、**開口全面が赤い箱**で、実物は黒筐体の中に赤い(または青)舌片が見える。USB-A の舌片位置(上段/下段)も未考慮 | LANOC: 赤 Type-A 10G×4, 黒 USB2 Type-A×3(単独根拠=[UV]、5件未満)。ASUS公式はポート色を記載せず | 外殻は金属色、舌片のみ赤(#c8202b)/黒。USB-A 10G(USB3系)の舌片は9ピン、USB2 は4ピン(接点数を変える)。色は複数レビュー写真で5件以上確認するまで [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "外殻は金属色、舌片のみ赤(#c8202b)/黒。USB-A 10G(USB3系)の舌片は9ピン、USB2 は4ピン(接点数を変える)。色は複数レビュー写真で5件以上確認するまで [UV]"
+  },
+  {
+   "id": "MDA-011",
+   "title": "`io_hdmi` (build L492): z 中心 2.8 h6.5 → 下端が Z1−0.45 で PCB に0.45mm食い込む。幅15は HDMI プラグ 13.9 に対し外殻としては妥当だが、HDMI の台形(下辺が狭いD字)",
+   "description": "`io_hdmi` (build L492) | z 中心 2.8 h6.5 → 下端が Z1−0.45 で PCB に0.45mm食い込む。幅15は HDMI プラグ 13.9 に対し外殻としては妥当だが、HDMI の台形(下辺が狭いD字)・19ピン接点が無い | HDMI Type A: 13.9×4.45 / 19pin(Wikipedia HDMI) | 下端を z≥0 に(zc を 3.25 以上)。開口を D 字台形(上辺 14.0、下辺 12.0, 高さ4.6 [UV])で切り、内部に19ピン接点列(上下2段)を付ける",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "下端を z≥0 に(zc を 3.25 以上)。開口を D 字台形(上辺 14.0、下辺 12.0, 高さ4.6 [UV])で切り、内部に19ピン接点列(上下2段)を付ける"
+  },
+  {
+   "id": "MDA-012",
+   "title": "`io_usb4_c1`, `io_usb4_c2`, `io_usbc_10g`: 外殻 9×3.6 は妥当(Type-C 開口 8.34×2.56 に対し)だが、穴 6×0.6 のスリット・中央舌片(厚0.7, 幅6.7, 奥行は開口の",
+   "description": "`io_usb4_c1`, `io_usb4_c2`, `io_usbc_10g` | 外殻 9×3.6 は妥当(Type-C 開口 8.34×2.56 に対し)だが、穴 6×0.6 のスリット・中央舌片(厚0.7, 幅6.7, 奥行は開口の半分)・24ピン接点・角の丸み(長円形)が無い。USB4 と USB-C 10G の見分け(USB4 は雷/USB4 凡例=シールド側の印刷) | Type-C 開口 8.34×2.56(Wikipedia) | 開口を長円形(R1.28)で切り、中央に厚0.7の舌片。シールド前面板に凡例テクスチャ(白、USB4/10G の別。凡例の位置・文字は [UV])",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "開口を長円形(R1.28)で切り、中央に厚0.7の舌片。シールド前面板に凡例テクスチャ(白、USB4/10G の別。凡例の位置・文字は [UV])"
+  },
+  {
+   "id": "MDA-013",
+   "title": "`io_rj45`: 外殻 16×13.5 の金属箱+同形状の金属色穴。8P8C の開口形状(上側に爪溝)・8本の金色接点・LEDなし。RJ45 ジャックの LED 窓も無し",
+   "description": "`io_rj45` | 外殻 16×13.5 の金属箱+同形状の金属色穴。8P8C の開口形状(上側に爪溝)・8本の金色接点・LEDなし。RJ45 ジャックの LED 窓も無し | RJ45 は 8P8C。寸法は公式資料なし [UV] | 開口 15.0×12.0 の段付き(爪溝 6×2)、奥壁に8本の接点列(ピッチ1.02 [UV])。LED は2.5GbE のため**LED窓の有無が [UV]**(確認するまで作らない)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "開口 15.0×12.0 の段付き(爪溝 6×2)、奥壁に8本の接点列(ピッチ1.02 [UV])。LED は2.5GbE のため**LED窓の有無が [UV]**(確認するまで作らない)"
+  },
+  {
+   "id": "MDA-014",
+   "title": "`io_btn_clr`, `io_btn_fb`: ボタンが穴と同様の板。実物は凡例付きの小さな丸/角ボタンがベントの奥(LANOC:「ベントの下にBIOS FlashBack/Clear CMOS」)",
+   "description": "`io_btn_clr`, `io_btn_fb` | ボタンが穴と同様の板。実物は凡例付きの小さな丸/角ボタンがベントの奥(LANOC:「ベントの下にBIOS FlashBack/Clear CMOS」) | ASUS spec: ボタン×2。形状は [UV] | ベントスリット(穿孔)の奥に Ø3.0×高さ1.2 の黒いボタン。凡例は「BIOS」「CLR」等ではなく**実際の印字が未確認のため無地**にする",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ベントスリット(穿孔)の奥に Ø3.0×高さ1.2 の黒いボタン。凡例は「BIOS」「CLR」等ではなく**実際の印字が未確認のため無地**にする"
+  },
+  {
+   "id": "MDA-015",
+   "title": "`io_sma0`, `io_sma1` (build L497): 単なる金の円柱 Ø6.4×5。SMA の六角ナット・ねじ山・誘電体・中心ピン無し。z 6.9 と 28.4 の2個、x=117.5 は同一(縦積み: ASUS が Q-A",
+   "description": "`io_sma0`, `io_sma1` (build L497) | 単なる金の円柱 Ø6.4×5。SMA の六角ナット・ねじ山・誘電体・中心ピン無し。z 6.9 と 28.4 の2個、x=117.5 は同一(縦積み: ASUS が Q-Antenna 方式を使うのでスナップ式の可能性があり、**ASUS製品ページは「Q-Antenna は snap-in」と記載** → SMA 形状自体が実物と異なる可能性) | ASUS製品ページ: 「The Q-Antenna attaches by snapping into place」(要約。写真未確認)。コネクタ種別 [UV] | 種別を確定するまで SMA を断定しない([UV])。暫定: 六角ナット(対辺6.5/高さ2)+ねじ円柱 Ø6.35×4+中心ピン Ø1.3×3 の逆SMA形(穴側)と台帳登録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "種別を確定するまで SMA を断定しない([UV])。暫定: 六角ナット(対辺6.5/高さ2)+ねじ円柱 Ø6.35×4+中心ピン Ø1.3×3 の逆SMA形(穴側)と台帳登録"
+  },
+  {
+   "id": "MDA-016",
+   "title": "`socket` (build L531): AM5ソケットが 60×60×4 の**暗い単色の箱**。ロードプレート(鋼板、中央開口、レバー)、LGAパッド/ランド、角のアライメント、保持枠、固定ねじ(4)が無い。サイズの根拠なし",
+   "description": "`socket` (build L531) | AM5ソケットが 60×60×4 の**暗い単色の箱**。ロードプレート(鋼板、中央開口、レバー)、LGAパッド/ランド、角のアライメント、保持枠、固定ねじ(4)が無い。サイズの根拠なし | AM5 は LGA1718(1718ランド, 44×41グリッド)。ソケット実寸は [UV]。ロードプレート+レバーの存在は一般的な LGA 構造(AMD 公式機械図面は未取得) | ① 保持枠(鋼, 板厚1.0, 外形 UV仮 56×50)② ロードプレート(厚0.8, CPU 窓 36×36)③ レバー(Ø2.5 線材, 全長 UV仮 55, 基板上面から Z+5 の位置、ヒンジ側 y 一端)と掛け金④ 内部に1718ランドの格子(金メッキ小円 0.4)をインスタンス化(GPUインスタンシング可)。サイズ・レバー側は実測まで [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "① 保持枠(鋼, 板厚1.0, 外形 UV仮 56×50)② ロードプレート(厚0.8, CPU 窓 36×36)③ レバー(Ø2.5 線材, 全長 UV仮 55, 基板上面から Z+5 の位置、ヒンジ側 y 一端)と掛け金④ 内部に1718ランドの格子(金メッキ小円 0.4)をインスタンス化(GPUインスタンシング可)。サイズ・レバー側は実測まで [UV]"
+  },
+  {
+   "id": "MDA-017",
+   "title": "`cpu_ihs` (build L532): IHS 上面が **Z1+6.6**。ソケット装着時 PCB 上面から蓋上面は 7.98±0.60 → 最小 7.38 を 0.78mm下回り**仕様範囲外**。さらに 40×40 の単純箱(",
+   "description": "`cpu_ihs` (build L532) | IHS 上面が **Z1+6.6**。ソケット装着時 PCB 上面から蓋上面は 7.98±0.60 → 最小 7.38 を 0.78mm下回り**仕様範囲外**。さらに 40×40 の単純箱(基板と蓋が一体)。ポンプのコールドプレート底面は cl[2]=19.55 = Z1+6.6 で一致させているため、IHS を直すと全 AIO の接触面が連動して動く | 蓋上面高さ 7.98±0.60mm(Wikipedia Socket AM5 / AMD 引用)=二次情報、AMD公式機械図面は未取得。パッケージ基板 40×40 は確認(同上) | IHS 上面を **Z1+7.98**(公差中央)へ。`layout.json` の cooler z を +1.38mm(19.55→20.93)、pump.json の base/cage/cap/fan の z も連動(= cooler pos の z 変更で追従するか確認)。ラジエータ側ホース長・干渉検査(tools/cable_check.py)を再実行すること。AMD 公式図面を取得するまで **[UV]**",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "IHS 上面を **Z1+7.98**(公差中央)へ。`layout.json` の cooler z を +1.38mm(19.55→20.93)、pump.json の base/cage/cap/fan の z も連動(= cooler pos の z 変更で追従するか確認)。ラジエータ側ホース長・干渉検査(tools/cable_check.py)を再実行すること。AMD 公式図面を取得するまで **[UV]**"
+  },
+  {
+   "id": "MDA-018",
+   "title": "`cpu_ihs`, `txt_ihs_amd`, `txt_ihs_ryzen`: Ryzen 7000/9000 の蓋は箱形ではなく、外周に基板上の SMD コンデンサを避ける切欠き(いわゆる「オクトパス」形)と角のラグを持つ。基板(緑",
+   "description": "`cpu_ihs`, `txt_ihs_amd`, `txt_ihs_ryzen` | Ryzen 7000/9000 の蓋は箱形ではなく、外周に基板上の SMD コンデンサを避ける切欠き(いわゆる「オクトパス」形)と角のラグを持つ。基板(緑/黒)・基板上の SMD・蓋の段差が無い。刻印は「AMD」「RYZEN」2行のみ確認済みとコメントにあるが、型番(9950X3D)行・ロゴの有無は [UV] | 40×40 は基板寸法。蓋の外形は AMD 公式写真で確認が必要=**[UV]**(広く報じられているが、5件以上の突合は未実施) | 基板 40×40×1.0(色: 暗緑/黒) + SMD(0201/0402 の MLCC 約 UV個)+蓋(切欠き8個, 面取り0.3)。公式写真で輪郭を取るまで切欠き寸法は仮置きとして台帳登録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "基板 40×40×1.0(色: 暗緑/黒) + SMD(0201/0402 の MLCC 約 UV個)+蓋(切欠き8個, 面取り0.3)。公式写真で輪郭を取るまで切欠き寸法は仮置きとして台帳登録"
+  },
+  {
+   "id": "MDA-019",
+   "title": "`am5_backplate` (hardware L79) × `pump_screw*`: バックプレート 70×70×3 はソケット中心 ±35。ポンプの取付ねじは dy=±45(54×90 パターン)で、**y 方向の2点はバックプ",
+   "description": "`am5_backplate` (hardware L79) × `pump_screw*` | バックプレート 70×70×3 はソケット中心 ±35。ポンプの取付ねじは dy=±45(54×90 パターン)で、**y 方向の2点はバックプレートの外**(10mm外れ)。ねじがバックプレートに掛からない | AM5 の穴は 54×90 矩形。バックプレートは穴全点をカバー | バックプレートを 62×98×3(54×90 + 各穴余裕 4mm)に。あるいは ASUS 実物は基板に統合されたバックプレート(AMD 規定の AM5 保持プレート)があり、その形状は [UV]。形状: 外周角R3、4穴(Ø5.5、ねじ M4 のナット座 Ø8×1)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "バックプレートを 62×98×3(54×90 + 各穴余裕 4mm)に。あるいは ASUS 実物は基板に統合されたバックプレート(AMD 規定の AM5 保持プレート)があり、その形状は [UV]。形状: 外周角R3、4穴(Ø5.5、ねじ M4 のナット座 Ø8×1)"
+  },
+  {
+   "id": "MDA-020",
+   "title": "`board_pcb` (build L476-477): PCB が 170×170×1.6 の**無印の箱**。テクスチャは `pcb_tex()` の**乱数配線+金色ドット**で実物の基板(黒ソルダーマスク・白シルク・ROG柄)では",
+   "description": "`board_pcb` (build L476-477) | PCB が 170×170×1.6 の**無印の箱**。テクスチャは `pcb_tex()` の**乱数配線+金色ドット**で実物の基板(黒ソルダーマスク・白シルク・ROG柄)ではない。ITX取付穴(4)・角の切欠き・めっきスルーホールも無い | 寸法は ASUS spec(17×17cm)。シルク/ロゴ位置は [UV](layout.json の unverified に既記載) | ① 取付穴 Ø3.96 を ITX 位置 (10.16,6.35)(165.1,6.35)(10.16,163.83)(165.1,163.83) に boolean ② ランド周りに金メッキリング Ø7.5 ③ テクスチャは乱数線をやめ、黒ベタ+低コントラストの層模様+シルク(部品名は layout の `name` で生成し、位置は部品の隣)。ロゴは入れない",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "① 取付穴 Ø3.96 を ITX 位置 (10.16,6.35)(165.1,6.35)(10.16,163.83)(165.1,163.83) に boolean ② ランド周りに金メッキリング Ø7.5 ③ テクスチャは乱数線をやめ、黒ベタ+低コントラストの層模様+シルク(部品名は layout の `name` で生成し、位置は部品の隣)。ロゴは入れない"
+  },
+  {
+   "id": "MDA-021",
+   "title": "`board_smd` (build L506-520): 900個の 1.6×0.8×0.5 箱を乱数配置。向きは 90° の2通りのみ、実物の整列格子・個数密度と一致する保証なし(コメントで自認)。avoid 領域外の取付穴付近(165",
+   "description": "`board_smd` (build L506-520) | 900個の 1.6×0.8×0.5 箱を乱数配置。向きは 90° の2通りのみ、実物の整列格子・個数密度と一致する保証なし(コメントで自認)。avoid 領域外の取付穴付近(165.1,163.8)等にも散布され、ねじ頭下に置かれうる | 個数は公式に無い=**[UV]** | 密度を領域別に(VRM 周りは高密度で整列、DIMM 周りは並行列)。取付穴周り Ø8 を avoid に追加。乱数ではなく座標リスト(JSON)にして再現性とレビュー可能性を確保",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "密度を領域別に(VRM 周りは高密度で整列、DIMM 周りは並行列)。取付穴周り Ø8 を avoid に追加。乱数ではなく座標リスト(JSON)にして再現性とレビュー可能性を確保"
+  },
+  {
+   "id": "MDA-022",
+   "title": "`dimm0_body`, `dimm1_body`, `dimm_slot0/1` (build L541-546): DIMM が 133.35×6.6×36 の**単一の箱**(+ヒートスプレッダ色)で、下端 Z1+8 =スロット上面",
+   "description": "`dimm0_body`, `dimm1_body`, `dimm_slot0/1` (build L541-546) | DIMM が 133.35×6.6×36 の**単一の箱**(+ヒートスプレッダ色)で、下端 Z1+8 =スロット上面に載るだけ(挿入量0)。PCB・金端子・キー切欠き・IC・スプレッダの分割・ラッチ・スロットのキー・スロット内の接点が無い | JEDEC DDR5 288ピンUDIMM(長さ133.35は一般に知られるが、図面未取得=**[UV]**)。ASUS spec: 2DIMM、ECC/non-ECC UDIMM | ① DIMM の PCB 部(長133.35, 高31.25 [UV], 厚1.2 [UV])+金端子 ② スロットへの挿入量: スロット溝深さ(UV仮6)だけ DIMM 下端を沈め(Z1+8-6)、PCB 下辺はスロット内に隠れる ③ スロット側のキー突起(位置は pin144 と145 の間付近、非対称 [UV])④ ヒートスプレッダ: PCB の両面に厚2.4のアルミ板(外形はPCBより上へ+4, 角R2, 上辺に面取り)+上部ライトバー(発光無しの黒)。ブランドロゴは入れない(PRINCIPLES A-1)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "① DIMM の PCB 部(長133.35, 高31.25 [UV], 厚1.2 [UV])+金端子 ② スロットへの挿入量: スロット溝深さ(UV仮6)だけ DIMM 下端を沈め(Z1+8-6)、PCB 下辺はスロット内に隠れる ③ スロット側のキー突起(位置は pin144 と145 の間付近、非対称 [UV])④ ヒートスプレッダ: PCB の両面に厚2.4のアルミ板(外形はPCBより上へ+4, 角R2, 上辺に面取り)+上部ライトバー(発光無しの黒)。ブランドロゴは入れない(PRINCIPLES A-1)"
+  },
+  {
+   "id": "MDA-023",
+   "title": "`dimm0_sticker`, `dimm1_sticker` (build L546): ステッカー(60×0.2×10)の位置: i=0 は y=y1−0.6(=145.1〜145.3)で DIMM 本体(138.8〜145.4)の*",
+   "description": "`dimm0_sticker`, `dimm1_sticker` (build L546) | ステッカー(60×0.2×10)の位置: i=0 は y=y1−0.6(=145.1〜145.3)で DIMM 本体(138.8〜145.4)の**内部**に完全に埋没し不可視。i=1 は y=y0+0.1(147.8〜148.0)で本体外側に 0.2 浮くが向きが内側(2枚の間)。どちらも外側から見えない | — | ステッカー面を各DIMMの外向き面(i=0: y=138.8−0.05、i=1: y=154.6+0.05)に。内容は無地(未確認)のまま",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ステッカー面を各DIMMの外向き面(i=0: y=138.8−0.05、i=1: y=154.6+0.05)に。内容は無地(未確認)のまま"
+  },
+  {
+   "id": "MDA-024",
+   "title": "`dimm_slot0/1`: スロット 143.9×7.2×8 の単純な箱。ラッチ(片側固定/片側ラッチなど ITX では片側ラッチのみの機種あり)・キー溝・端の面取り無し。DIMM との隙間 3.2mm(本体間 2.6mm)の実物値は ",
+   "description": "`dimm_slot0/1` | スロット 143.9×7.2×8 の単純な箱。ラッチ(片側固定/片側ラッチなど ITX では片側ラッチのみの機種あり)・キー溝・端の面取り無し。DIMM との隙間 3.2mm(本体間 2.6mm)の実物値は [UV] | LANOC: DIMMラッチ形状の記載なし=[UV] | 片端に可動ラッチ(幅6×高さ12×厚3, 解除時回転角は別途)を追加。端部のラッチ位置は写真確認まで [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "片端に可動ラッチ(幅6×高さ12×厚3, 解除時回転角は別途)を追加。端部のラッチ位置は写真確認まで [UV]"
+  },
+  {
+   "id": "MDA-025",
+   "title": "`pcie_x16`, `pcie_gold` (build L536): スロット 8.6×89×11 の黒箱。**幅8.6** は PCIe 実スロットより狭い疑い(接点溝+筐体壁で通常 11mm 超 [UV])。`pcie_gold`",
+   "description": "`pcie_x16`, `pcie_gold` (build L536) | スロット 8.6×89×11 の黒箱。**幅8.6** は PCIe 実スロットより狭い疑い(接点溝+筐体壁で通常 11mm 超 [UV])。`pcie_gold` は箱**上面に貼った**金帯 (x160.7〜162.7, z+11〜11.4)で溝・接点でない。SafeSlot の金属シールド・Q-Release Slim ラッチ・補強ピンが無い | ASUS製品ページ: SafeSlot + Q-Release Slim。スロット幅実測 [UV](配置図の塗りつぶし抽出=外形読取り) | スロット幅を 11.5 [UV仮] にし(中心 x161.7 維持)、上面中央に溝 (幅1.8×深さ9×長さ89-7)、溝内に両面接点 164本(片側82×2, ピッチ1.0)。両側に金属シールド板 t0.8×h11.5 を巻く。ラッチは片端 Q-Release Slim(幅12×厚3×高さ6)。gold 帯は廃止",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "スロット幅を 11.5 [UV仮] にし(中心 x161.7 維持)、上面中央に溝 (幅1.8×深さ9×長さ89-7)、溝内に両面接点 164本(片側82×2, ピッチ1.0)。両側に金属シールド板 t0.8×h11.5 を巻く。ラッチは片端 Q-Release Slim(幅12×厚3×高さ6)。gold 帯は廃止"
+  },
+  {
+   "id": "MDA-026",
+   "title": "`riser_plug` (build L599) × `pcie_x16`: プラグ y 範囲は**内部座標 ry0=67〜156 = 板座標 37〜126**。スロット板座標 43〜132。**6mm ずれ**(プラグが手前に6mmはみ",
+   "description": "`riser_plug` (build L599) × `pcie_x16` | プラグ y 範囲は**内部座標 ry0=67〜156 = 板座標 37〜126**。スロット板座標 43〜132。**6mm ずれ**(プラグが手前に6mmはみ出し、奥6mmは空き)。さらにプラグ下端=スロット上面で挿入量0(嵌合していない)。`pcie_gold`(z11〜11.4)がプラグ (z11〜23) に埋没 | LINKUP AVA5 のライザー側ブレード長・挿入深さは [UV](layout.json 'riser' pos 由来) | ry0 を `by+43` に合わせる(`lp('riser')[1]` を `by+43` とし layout.json を更新)。プラグのブレード部を Z1+11−6(挿入量6)まで沈めて嵌合状態にし、スロットの溝に差し込み、プラグ上部のハウジングをスロット上面から立ち上げる。引き抜きに必要な上方クリアランス(最低 30mm)を確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ry0 を `by+43` に合わせる(`lp('riser')[1]` を `by+43` とし layout.json を更新)。プラグのブレード部を Z1+11−6(挿入量6)まで沈めて嵌合状態にし、スロットの溝に差し込み、プラグ上部のハウジングをスロット上面から立ち上げる。引き抜きに必要な上方クリアランス(最低 30mm)を確認"
+  },
+  {
+   "id": "MDA-027",
+   "title": "`atx24` (build L537): 50.1×10×15 の白い箱。ピン穴(2×12)・ラッチ用ランプ・極性(pin1 側の面取り/キー形状: 各極に台形キー)・ProCool II ピン(金/ニッケル)・LED 無し。色(白)の根",
+   "description": "`atx24` (build L537) | 50.1×10×15 の白い箱。ピン穴(2×12)・ラッチ用ランプ・極性(pin1 側の面取り/キー形状: 各極に台形キー)・ProCool II ピン(金/ニッケル)・LED 無し。色(白)の根拠なし | LANOC: 「24pin は ProCool II ピンでシールド無し、ステータスLEDあり」。2×12 のピッチ 4.2mm(Molex Mini-Fit)は一般仕様 [UV]。コネクタ色は [UV] | 本体を黒(#14151a)に(根拠: 一般的な ATX、ただし **[UV]**)、上面に 24 個の穴 (4.2 ピッチ, 台形 3.7×4.2)、片側にラッチ段(厚1.5)、LED(Ø1.5, 発光)。挿抜は電源側ケーブル端子+ラッチを押す指のクリアランス(+Z 25mm)を確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "本体を黒(#14151a)に(根拠: 一般的な ATX、ただし **[UV]**)、上面に 24 個の穴 (4.2 ピッチ, 台形 3.7×4.2)、片側にラッチ段(厚1.5)、LED(Ø1.5, 発光)。挿抜は電源側ケーブル端子+ラッチを押す指のクリアランス(+Z 25mm)を確認"
+  },
+  {
+   "id": "MDA-028",
+   "title": "`eps8`: 11.8×18.1×11 の黒い箱。金属 ProCool II シールドで囲われた 2×4 の穴・ステータスLED・ラッチ段が無い。本体色は黒で LANOC 記載(金属シールド)と合う",
+   "description": "`eps8` | 11.8×18.1×11 の黒い箱。金属 ProCool II シールドで囲われた 2×4 の穴・ステータスLED・ラッチ段が無い。本体色は黒で LANOC 記載(金属シールド)と合う | LANOC: 「8pin は左上隅、金属ProCool IIシールド下、ステータスLED」 | 外周に t0.6 の金属カバー(銀)、上面に 8 穴 (4.2 ピッチ)、片側ラッチ段、LED。MDA-007 の配置修正と同時に",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "外周に t0.6 の金属カバー(銀)、上面に 8 穴 (4.2 ピッチ)、片側ラッチ段、LED。MDA-007 の配置修正と同時に"
+  },
+  {
+   "id": "MDA-029",
+   "title": "`board_hdr_*` ピン (build L526-528): ヘッダのピンが**上面に載せた 0.6×(幅×0.5)×0.3 の薄い金板**で、実物の「黒ハウジング+内部に 0.64 角ピンが 2.54 ピッチで立つ」形状ではない。",
+   "description": "`board_hdr_*` ピン (build L526-528) | ヘッダのピンが**上面に載せた 0.6×(幅×0.5)×0.3 の薄い金板**で、実物の「黒ハウジング+内部に 0.64 角ピンが 2.54 ピッチで立つ」形状ではない。4pin ファンヘッダのキー(ランプ)・外壁・ピン穴無し | 2.54mm ピッチ 4ピンファンヘッダは長さ約 10.2mm(layout の 6.0×10.7 は整合)。ハウジング寸法 [UV] | ヘッダを `ハウジング(外壁t0.7, 高 h)` の箱の**上面を空洞化**し、中に 0.64×0.64×(h−1) の金ピンを 2.54 ピッチで n本。片側の壁にキー突起(1.0×0.5)。ピン数は layout の name から(4/3/2)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ヘッダを `ハウジング(外壁t0.7, 高 h)` の箱の**上面を空洞化**し、中に 0.64×0.64×(h−1) の金ピンを 2.54 ピッチで n本。片側の壁にキー突起(1.0×0.5)。ピン数は layout の name から(4/3/2)"
+  },
+  {
+   "id": "MDA-030",
+   "title": "`board_hdr_right1/2/3`, `board_hdr_f_panel`, `board_conn_u10g_c10`: 4個の「右縁ヘッダ」は用途が図から断定できない(layout 自認)。ASUS spec では**基板上",
+   "description": "`board_hdr_right1/2/3`, `board_hdr_f_panel`, `board_conn_u10g_c10` | 4個の「右縁ヘッダ」は用途が図から断定できない(layout 自認)。ASUS spec では**基板上に F_PANEL は無く FPSカード側**、基板上のヘッダは USB10G Type-C×1・USB5Gbps 19ピン×1・FPSカード用 Type-C×2・POWER_BTN・T_SENSOR 等。x130.6〜152.7 の 22.1mm 長・6.3mm 幅は USB 5Gbps 19ピン(2×10, 2.54ピッチ=約 25.4×5.1)に近い | ASUS spec: 2 x USB Type-C connectors for ROG FPS Card / 1 x USB 10Gbps connector (Type-C) / 1 x USB 5Gbps header。LANOC: 「10G 前面 USB-C ヘッダは右上、FPS Card コネクタの隣」。配置図の項目対応は [UV] | `hdr_f_panel` の名称は誤りの疑い。USB5G 19pin(2×10, キー欠きピン11)と FPSカード用 Type-C(Type-C レセプタクル形状 8.9×3.3×h)を別 `kind`(`typec_rcpt`)で作る。名称と対応づけはマニュアル p.14 の再読取りまで [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`hdr_f_panel` の名称は誤りの疑い。USB5G 19pin(2×10, キー欠きピン11)と FPSカード用 Type-C(Type-C レセプタクル形状 8.9×3.3×h)を別 `kind`(`typec_rcpt`)で作る。名称と対応づけはマニュアル p.14 の再読取りまで [UV]"
+  },
+  {
+   "id": "MDA-031",
+   "title": "`board_hdr_aio_pump`, `hdr_cpu_fan`, `hdr_cha_fan`: 3個の4pinヘッダが連続(y78.1→88.8→99.7→110.5)で隙間0。実物は各ハウジングに外壁があり隣接。ASUS spec",
+   "description": "`board_hdr_aio_pump`, `hdr_cpu_fan`, `hdr_cha_fan` | 3個の4pinヘッダが連続(y78.1→88.8→99.7→110.5)で隙間0。実物は各ハウジングに外壁があり隣接。ASUS spec の個数(CPU1, AIOポンプ1, シャーシ1)とは一致。LANOCの「ゴム保護」(ヘッダ周囲のラバー)は未再現 | ASUS spec: 4pin CPUファン×1 / AIOポンプ×1 / シャーシ×1。LANOC: ゴム保護付き | ハウジング間に 0.3mm の溝。ゴム保護は [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ハウジング間に 0.3mm の溝。ゴム保護は [UV]"
+  },
+  {
+   "id": "MDA-032",
+   "title": "`board_hdr_chipset_fan`, `hdr_batt_con`: 9.2×3.7 の 4pin は 2.54 ピッチなら 10.2 要るため、ピッチは 1.25〜1.5 のミニヘッダ疑い [UV]。電池コネクタ 9×3.9 ",
+   "description": "`board_hdr_chipset_fan`, `hdr_batt_con` | 9.2×3.7 の 4pin は 2.54 ピッチなら 10.2 要るため、ピッチは 1.25〜1.5 のミニヘッダ疑い [UV]。電池コネクタ 9×3.9 と同寸。いずれも ASUS spec に記載なし | spec に載らない=[UV] | ピッチ 1.25 の JST-GH 類似形(白、外壁)で暫定。種別は台帳で [UV] 登録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ピッチ 1.25 の JST-GH 類似形(白、外壁)で暫定。種別は台帳で [UV] 登録"
+  },
+  {
+   "id": "MDA-033",
+   "title": "`m2_daughter`, `ssd_body` (build L538, L548-549): ドーターカード 25×61 (板座標 y77〜138) に対して SSD 25×80.15 (y58〜138.15) が**下側 19mm ",
+   "description": "`m2_daughter`, `ssd_body` (build L538, L548-549) | ドーターカード 25×61 (板座標 y77〜138) に対して SSD 25×80.15 (y58〜138.15) が**下側 19mm 宙に浮く**(支持なし。固定ネジ `m2_screw` は上端 y136.5 にあり下端はどこにも拘束されない)。また SSD 下端 Z1+9.6 と chipset_sink 上面 Z1+9 の隙間 0.6mm のみ(y58〜66 で重なる) | LANOC: ライザーPCB×2 の間に3枚のヒートシンク(フィン付/L字/薄型)。モデルは1枚のカードのみ=構成が別物 | ドーターカードを SSD 長 80.15 に合わせて 25×83(板座標 y58〜141 でなく、**実機のカード長を [UV]**)。実物構成(3層スタック: チップセットフィン→M.2_2 ヒートシンク(L字)→M.2_1 ヒートシンク)を再現し、SSD は M.2_1/M.2_2 のどちらかを明示。`ssd` の前提(Samsung 990 PRO の SSD ヒートシンク付)は、実機ではボード付属ヒートシンクとの併用可否が [UV](台帳登録)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ドーターカードを SSD 長 80.15 に合わせて 25×83(板座標 y58〜141 でなく、**実機のカード長を [UV]**)。実物構成(3層スタック: チップセットフィン→M.2_2 ヒートシンク(L字)→M.2_1 ヒートシンク)を再現し、SSD は M.2_1/M.2_2 のどちらかを明示。`ssd` の前提(Samsung 990 PRO の SSD ヒートシンク付)は、実機ではボード付属ヒートシンクとの併用可否が [UV](台帳登録)"
+  },
+  {
+   "id": "MDA-034",
+   "title": "`m2_screw` (build L552): Ø3.2×3 の円柱を `sd_z+1.5`(中心)に置くため全体が ssd_body (sd_z〜+8.88) の**内部に埋没**し不可視。M.2 は実機が Q-Latch(工具レス)で",
+   "description": "`m2_screw` (build L552) | Ø3.2×3 の円柱を `sd_z+1.5`(中心)に置くため全体が ssd_body (sd_z〜+8.88) の**内部に埋没**し不可視。M.2 は実機が Q-Latch(工具レス)で、ネジ止め前提が実機と異なる可能性 | ASUS製品ページ: M.2 は tool-free Q-Latch | ネジをやめ、Q-Latch(回転式ラッチ: 外径Ø9×高3 + ツメ)を SSD 末端の切欠きに。SSD 上面より上に出る形状で",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ネジをやめ、Q-Latch(回転式ラッチ: 外径Ø9×高3 + ツメ)を SSD 末端の切欠きに。SSD 上面より上に出る形状で"
+  },
+  {
+   "id": "MDA-035",
+   "title": "`m2_btob_conn`, `board_m2_pt2_conn`, `m2_card_post0/1`: BTOB コネクタ (x134〜155,y104〜108.5,h8) と `m2_pt2_conn` (x134.1〜149.1",
+   "description": "`m2_btob_conn`, `board_m2_pt2_conn`, `m2_card_post0/1` | BTOB コネクタ (x134〜155,y104〜108.5,h8) と `m2_pt2_conn` (x134.1〜149.1,y118.5〜122.5,h4) が両方あり、カードの下に2個のコネクタが並ぶが、役割とカード位置が「前任の推測」(U56)。コネクタは単純な黒箱で、BTOB 特有の 2列の接点溝(0.4〜0.5 ピッチ)・位置決めピンが無い。ポスト2本は Ø5.2×8 のアルミ円柱でスタンドオフのねじ山・六角が無い | layout.json の daughter_cards と unverified に記載の通り高さ [UV] | BTOB: 外形 21×4.5×h(UV)+両サイドに位置決めピン Ø1.0。ポストに六角(対辺5.0)+内ねじ Ø2.0。位置は p.14 で再確認",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "BTOB: 外形 21×4.5×h(UV)+両サイドに位置決めピン Ø1.0。ポストに六角(対辺5.0)+内ねじ Ø2.0。位置は p.14 で再確認"
+  },
+  {
+   "id": "MDA-036",
+   "title": "`chipset_sink` (build L535): 21×19×9 の黒い箱 1個。X870 の**単一チップセット(確認: ≥5メディア一致)**とは整合するが、実物は「フィン付ヒートシンク+ファン」(LANOC/ASUS) で、M",
+   "description": "`chipset_sink` (build L535) | 21×19×9 の黒い箱 1個。X870 の**単一チップセット(確認: ≥5メディア一致)**とは整合するが、実物は「フィン付ヒートシンク+ファン」(LANOC/ASUS) で、M.2 スタックの最下段として他のヒートシンクに重ねられる構造。ファンヘッダ位置 (x126.5〜135.7,y2.9〜6.6) がチップセットから 40mm 以上離れている点も整合が未確認 | ASUS製品ページ: 内蔵ファンで冷却。LANOC: 下段はフィン付 | フィン付ブロック(フィン厚1.0, ピッチ2.0, 高さ UV仮7, 全高9)に変更し、フィン上に M.2_2 のL字ヒートシンクを重ねる(MDA-033)。ファン位置は [UV]",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "フィン付ブロック(フィン厚1.0, ピッチ2.0, 高さ UV仮7, 全高9)に変更し、フィン上に M.2_2 のL字ヒートシンクを重ねる(MDA-033)。ファン位置は [UV]"
+  },
+  {
+   "id": "MDA-037",
+   "title": "`board_misc_clip_screw`, `board_m2_wifi_module`: 「図の円形部品」を 14.4×10.5×4 の銀の箱で表現(正体 [UV])。Wi-Fi モジュールは 7.9×31.9×3 の黒い細板で、M",
+   "description": "`board_misc_clip_screw`, `board_m2_wifi_module` | 「図の円形部品」を 14.4×10.5×4 の銀の箱で表現(正体 [UV])。Wi-Fi モジュールは 7.9×31.9×3 の黒い細板で、M.2 2230 の実寸(幅22)と合わない | ASUS spec: Wi-Fi 7 モジュール(M.2 カード)。形状は [UV] | 正体確認までは「UNVERIFIED 部品」として透明扱い or 非表示。Wi-Fi は 22×30×2.7 [UV: M.2 2230] とアンテナ 2 本(U.FL)、シールドカバーを追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "正体確認までは「UNVERIFIED 部品」として透明扱い or 非表示。Wi-Fi は 22×30×2.7 [UV: M.2 2230] とアンテナ 2 本(U.FL)、シールドカバーを追加"
+  },
+  {
+   "id": "MDA-038",
+   "title": "`standoff_board0..3`, `screw_board*_head` (hardware L9-14): スタンドオフは六角 Ø6.4(hexr=3.2)の**6角柱セグメント数6**。ねじ頭は円柱 Ø5.6×2.4 +小六角",
+   "description": "`standoff_board0..3`, `screw_board*_head` (hardware L9-14) | スタンドオフは六角 Ø6.4(hexr=3.2)の**6角柱セグメント数6**。ねじ頭は円柱 Ø5.6×2.4 +小六角。実際の六角ソケット(十字/トルクス)形・ワッシャ・ねじ山が無い。基板が PCB 穴を持たない(MDA-020)ため、頭が基板上面に載っているだけ | ITX 取付穴(規格値)。ねじ形状は M3×6 ナベ(JIS)の一般仕様 | ねじ頭をなべ(R)断面、十字穴をマスクで。穴を PCB に開け、ねじ軸 Ø3 を貫通",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "ねじ頭をなべ(R)断面、十字穴をマスクで。穴を PCB に開け、ねじ軸 Ø3 を貫通"
+  },
+  {
+   "id": "MDA-039",
+   "title": "基板全般(欠落): 次の要素がモデルに存在しない: 電源ステータスLED(8pin/24pin近傍)、Q-LED、CMOS電池、RGBヘッダ(ADD_GEN2 は `board_hdr_add_gen2_*` として2個あり)、ヒートシンク",
+   "description": "基板全般(欠落) | 次の要素がモデルに存在しない: 電源ステータスLED(8pin/24pin近傍)、Q-LED、CMOS電池、RGBヘッダ(ADD_GEN2 は `board_hdr_add_gen2_*` として2個あり)、ヒートシンク固定ねじ、PCB のシルク/部品名、バーコードシール、ROG FPS Card の接続ケーブル | ASUS spec / LANOC | 優先度低。LED は emit 材質で作る(確認済みはステータスLEDの存在のみ)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "優先度低。LED は emit 材質で作る(確認済みはステータスLEDの存在のみ)"
+  },
+  {
+   "id": "MDA-040",
+   "title": "`ASM` グルーピング (build L666-676): `riser_plug` は `riser` 接頭辞で `ASM_gpu` に入る(基板に差さるのに GPU と一緒に分解移動)。`screw_board*` は `screw_",
+   "description": "`ASM` グルーピング (build L666-676) | `riser_plug` は `riser` 接頭辞で `ASM_gpu` に入る(基板に差さるのに GPU と一緒に分解移動)。`screw_board*` は `screw_` で `ASM_tray` に入る。`cap*` 接頭辞は `ASM_board` に入るが、`choke`/`cap` の接頭辞が他のオブジェクト名(例: `cap` で始まる別物)と衝突しうる | — | `riser_plug` を `ASM_board` 側へ。接頭辞を `board_` に統一してリネーム(choke→board_choke…)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": "QUAL-06",
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T13:04:47Z",
+     "triaged",
+     "R12取込(R12_model_A_board.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R12_model_A_board.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "`riser_plug` を `ASM_board` 側へ。接頭辞を `board_` に統一してリネーム(choke→board_choke…)"
   }
  ]
 }

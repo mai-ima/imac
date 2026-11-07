@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、566物体、交差対 746。
-- 接触のみ(深さ<0.15mm): 341 / 意図した一体・嵌合(ALLOW): 97 / **要対処: 308**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、569物体、交差対 749。
+- 接触のみ(深さ<0.15mm): 344 / 意図した一体・嵌合(ALLOW): 100 / **要対処: 305**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -10,17 +10,14 @@
 - ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形): 2対
 - ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03): 3対
 - 側板のストリップとボスは一体品を別基本形で表現: 2対
+- プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される): 3対
 - ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 60対
 - モジュラーソケットは筐体前面の開口に嵌合: 10対
 
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
-| stand_neck_shroud | stand_neck_base | 18 | [124.0, 66.278, 8.0] | 8.00 |
-| stand_skirt | stand_swivel_stator | 391 | [190.0, 190.0, 6.0] | 6.00 |
-| stand_neck_shroud | stand_arm0 | 10 | [6.0, 65.278, 38.0] | 6.00 |
-| stand_neck_shroud | stand_neck_tie | 10 | [112.0, 6.0, 20.0] | 6.00 |
-| stand_neck_shroud | stand_arm1 | 10 | [6.0, 65.278, 38.0] | 6.00 |
+| fan_rad0_frame | rad_port_RAD_PORT_B | 21 | [13.0, 12.0, 11.0] | 11.00 |
 | cover_filter | latch_cam5 | 40 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam2 | 38 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam4 | 38 | [8.0, 8.0, 5.799] | 5.80 |
@@ -96,3 +93,7 @@
 | gasket | latch_cam0 | 20 | [8.0, 2.6, 6.8] | 2.60 |
 | gasket | latch_cam5 | 20 | [8.0, 2.6, 6.8] | 2.60 |
 | gasket | latch_cam1 | 18 | [8.0, 2.6, 6.8] | 2.60 |
+| gasket | latch_cam2 | 18 | [8.0, 2.6, 6.8] | 2.60 |
+| gasket | latch_cam3 | 18 | [8.0, 2.6, 6.8] | 2.60 |
+| gasket | latch_cam4 | 18 | [8.0, 2.6, 6.8] | 2.60 |
+| board_hdr_vrm_hs_fan | vrm_shroud | 24 | [3.1, 4.0, 2.5] | 2.50 |

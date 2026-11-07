@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T13:01Z",
- "objects": 566,
- "pairs_total": 746,
- "touch_only": 341,
+ "generated": "2026-11-07T13:04Z",
+ "objects": 569,
+ "pairs_total": 749,
+ "touch_only": 344,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
@@ -10,59 +10,20 @@
   "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
   "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
   "側板のストリップとボスは一体品を別基本形で表現": 2,
+  "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 60,
   "モジュラーソケットは筐体前面の開口に嵌合": 10
  },
- "remaining": 308,
+ "remaining": 305,
  "remaining_pairs": [
   {
-   "a": "stand_neck_shroud",
-   "b": "stand_neck_base",
-   "tri_pairs": 18,
+   "a": "fan_rad0_frame",
+   "b": "rad_port_RAD_PORT_B",
+   "tri_pairs": 21,
    "aabb_overlap_mm": [
-    124.0,
-    66.278,
-    8.0
-   ]
-  },
-  {
-   "a": "stand_skirt",
-   "b": "stand_swivel_stator",
-   "tri_pairs": 391,
-   "aabb_overlap_mm": [
-    190.0,
-    190.0,
-    6.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "stand_arm0",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    6.0,
-    65.278,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "stand_neck_tie",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    112.0,
-    6.0,
-    20.0
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "stand_arm1",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    6.0,
-    65.278,
-    38.0
+    13.0,
+    12.0,
+    11.0
    ]
   },
   {
@@ -893,6 +854,16 @@
     2.5,
     8.0,
     8.0
+   ]
+  },
+  {
+   "a": "fan_rad0_blade0",
+   "b": "rad_port_RAD_PORT_B",
+   "tri_pairs": 10,
+   "aabb_overlap_mm": [
+    13.0,
+    2.459,
+    6.298
    ]
   },
   {

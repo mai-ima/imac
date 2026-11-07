@@ -163,6 +163,15 @@
    "file": "cables/cables.v011__2026-11-07_bba640c.json"
   },
   {
+   "src": "model/cables.json",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "17954ec",
+   "sha256": "c2e32962a1f4bdb4db383617a8e35a9974ce2a9c388119574a6f05053feaea36",
+   "file": "cables/cables.v012__2026-11-07_17954ec.json"
+  },
+  {
    "src": "model/custom_parts.json",
    "version": 1,
    "gen": "current",
@@ -532,6 +541,15 @@
    "file": "hardware_list/hardware_list.v013__2026-11-06_36dff8c.json"
   },
   {
+   "src": "model/hardware_list.json",
+   "version": 14,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "e4371bc011ca037eb8c9c83e4c84245b9fdac7028208ffc0519111ce08a530f8",
+   "file": "hardware_list/hardware_list.v014__2026-11-07_3089847.json"
+  },
+  {
    "src": "model/interference_report.json",
    "version": 1,
    "gen": "current",
@@ -539,6 +557,15 @@
    "commit": "44044f0",
    "sha256": "6e14ca565dde801b448ea13ef077f45236ec988b840d6455a7bc803bdc4dbc1b",
    "file": "interference_report/interference_report.v001__2026-11-07_44044f0.json"
+  },
+  {
+   "src": "model/interference_report.json",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "d60442d",
+   "sha256": "b99a6a7b3c170e8c67c97a82d21b1af29d5382c022d477f5cb302a901fc15f34",
+   "file": "interference_report/interference_report.v002__2026-11-07_d60442d.json"
   },
   {
    "src": "model/layout.json",
@@ -665,6 +692,15 @@
    "commit": "17954ec",
    "sha256": "c56880fffc00645d1740876287137027676ae813c060d2e2564cb0565462b66e",
    "file": "layout/layout.v014__2026-11-07_17954ec.json"
+  },
+  {
+   "src": "model/layout.json",
+   "version": 15,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "5601a7c",
+   "sha256": "ad46e1818e313cd6c37bdc5b380940983315951717a70267eafe0e88553835b1",
+   "file": "layout/layout.v015__2026-11-07_5601a7c.json"
   },
   {
    "src": "model/parts.json",
