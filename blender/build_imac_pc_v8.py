@@ -494,7 +494,15 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     for v in me.vertices: v.co = V(X0 + v.co.x, Y0 + v.co.y, Z0 - v.co.z)
     return link(ob)
 sx_, sy_ = BL['socket_center']
-smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)])
+smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)] + [(bx + _c['x'][0], by + _c['y'][0], _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]) for _c in BL.get('components', [])])
+# ---- 基板上の追加部品(model/x870i_layout.json components: マニュアルp.14の読み取り。高さは典型値=UNVERIFIED) ----
+for _c in BL.get('components', []):
+    _w, _d = _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]
+    _nm = 'board_' + _c['id']
+    ibox(_nm, _w, _d, _c['h'], bx + _c['x'][0], by + _c['y'][0], Z1, M.get(_c['color'], M['dark']), .3)
+    if _c['kind'] == 'header':      # ピン(金色)を上面に見せる
+        _n = max(2, int(max(_w, _d) / 2.54)); _lx = _w >= _d
+        for _k in range(_n): ibox(f'{_nm}_pin{_k}', 0.6 if _lx else _w * .5, _d * .5 if _lx else 0.6, 0.3, bx + _c['x'][0] + (( _k + .5) * _w / _n - .3 if _lx else _w * .25), by + _c['y'][0] + (_d * .25 if _lx else (_k + .5) * _d / _n - .3), Z1 + _c['h'], M['gold'])
 # AM5ソケット + Ryzen 9 9950X3D (IHS刻印: 'AMD' 'RYZEN' の2行のみ確認済)
 sx_, sy_ = BL['socket_center']
 ibox('socket', 60, 60, 4, bx + sx_ - 30, by + sy_ - 30, Z1, principled('socket', '#2a2c31', 0, .5))

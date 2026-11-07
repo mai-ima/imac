@@ -99,5 +99,350 @@
   "I/O各ブロック内のポート並び",
   "シルク/ロゴ位置"
  ],
- "io_layout_note": "公式マニュアルp.26(外側から見た図)の読み取り。列A: USB10G赤×2/HDMI、列B: ボタン2/USB10G赤/USB4-C、列C: USB2×2、列D: USB2/USB4-C、列E: RJ45/USB10G赤/USB-C 10G、SMA×2縦積み。上下位置は±2mm程度の読み取り誤差"
+ "io_layout_note": "公式マニュアルp.26(外側から見た図)の読み取り。列A: USB10G赤×2/HDMI、列B: ボタン2/USB10G赤/USB4-C、列C: USB2×2、列D: USB2/USB4-C、列E: RJ45/USB10G赤/USB-C 10G、SMA×2縦積み。上下位置は±2mm程度の読み取り誤差",
+ "components": [
+  {
+   "id": "hdr_cpu_fan",
+   "name": "CPU_FAN (4pin PWM)",
+   "x": [
+    0.2,
+    6.2
+   ],
+   "y": [
+    78.1,
+    88.8
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_aio_pump",
+   "name": "AIO_PUMP (4pin)",
+   "x": [
+    0.2,
+    6.2
+   ],
+   "y": [
+    88.8,
+    99.7
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_cha_fan",
+   "name": "CHA_FAN (4pin PWM)",
+   "x": [
+    0.2,
+    6.2
+   ],
+   "y": [
+    99.7,
+    110.5
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_add_gen2_1",
+   "name": "ADD_GEN2_1 (3pin)",
+   "x": [
+    1.6,
+    4.3
+   ],
+   "y": [
+    112.0,
+    120.0
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_add_gen2_2",
+   "name": "ADD_GEN2_2 (3pin)",
+   "x": [
+    1.6,
+    4.3
+   ],
+   "y": [
+    123.0,
+    131.0
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_vrm_hs_fan",
+   "name": "VRM_HS_FAN (4pin)",
+   "x": [
+    1.6,
+    11.1
+   ],
+   "y": [
+    23.0,
+    26.5
+   ],
+   "h": 4,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_chipset_fan",
+   "name": "CHIPSET_FAN (4pin)",
+   "x": [
+    126.5,
+    135.7
+   ],
+   "y": [
+    2.9,
+    6.6
+   ],
+   "h": 4,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_batt_con",
+   "name": "BATT_CON (2pin)",
+   "x": [
+    138.0,
+    147.0
+   ],
+   "y": [
+    2.9,
+    6.8
+   ],
+   "h": 4,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "conn_u2_card_down",
+   "name": "U2_CARD_DOWN コネクタ",
+   "x": [
+    126.6,
+    136.1
+   ],
+   "y": [
+    19.7,
+    25.2
+   ],
+   "h": 5,
+   "kind": "connector",
+   "pos_source": "塗りつぶし抽出(±0.5mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "dark"
+  },
+  {
+   "id": "conn_u10g_c10",
+   "name": "U10G_C10 フロントUSB-Cヘッダ",
+   "x": [
+    67.0,
+    79.0
+   ],
+   "y": [
+    162.0,
+    169.2
+   ],
+   "h": 9,
+   "kind": "connector",
+   "pos_source": "塗りつぶし抽出+読み取り",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "USB 10Gbps Type-C フロントパネル用ヘッダ(形状は典型値)",
+   "color": "dark"
+  },
+  {
+   "id": "hdr_right1",
+   "name": "右縁ヘッダ1(拡大図: USB/F_PANEL/SATA系のいずれか)",
+   "x": [
+    80.9,
+    93.5
+   ],
+   "y": [
+    160.6,
+    169.7
+   ],
+   "h": 8.5,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "拡大図の項目(USB_1415/USB_16_AIO/F_PANEL/SATA 6G_1,2/SATA_F_CON/CPU_OV/LED1,2/PANEL_F_CON/ALTERATION_MODE)との対応は図から断定できない=UNVERIFIED",
+   "color": "white"
+  },
+  {
+   "id": "hdr_right2",
+   "name": "右縁ヘッダ2(同上)",
+   "x": [
+    97.0,
+    110.4
+   ],
+   "y": [
+    160.6,
+    170.0
+   ],
+   "h": 8.5,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "同上",
+   "color": "white"
+  },
+  {
+   "id": "hdr_right3",
+   "name": "右縁ヘッダ3(同上)",
+   "x": [
+    113.2,
+    127.8
+   ],
+   "y": [
+    160.6,
+    170.0
+   ],
+   "h": 8.5,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "同上",
+   "color": "white"
+  },
+  {
+   "id": "hdr_f_panel",
+   "name": "右縁 2x10ヘッダ(図の項目11)",
+   "x": [
+    130.6,
+    152.7
+   ],
+   "y": [
+    163.3,
+    169.6
+   ],
+   "h": 8.5,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "項目番号11。名称は図から断定できない=UNVERIFIED",
+   "color": "white"
+  },
+  {
+   "id": "hdr_power_btn",
+   "name": "POWER_BTN (2pin)",
+   "x": [
+    149.0,
+    153.4
+   ],
+   "y": [
+    155.4,
+    158.4
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "hdr_t_sensor",
+   "name": "T_SENSOR1 (2pin)",
+   "x": [
+    149.0,
+    153.4
+   ],
+   "y": [
+    158.8,
+    161.8
+   ],
+   "h": 6,
+   "kind": "header",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "",
+   "color": "white"
+  },
+  {
+   "id": "misc_clip_screw",
+   "name": "無印の金具+ネジ(図の円形部品)",
+   "x": [
+    136.3,
+    150.7
+   ],
+   "y": [
+    12.0,
+    22.5
+   ],
+   "h": 4,
+   "kind": "bracket",
+   "pos_source": "マニュアルp.14 配置図の読み取り(±2mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "ラベル無し。正体はUNVERIFIED(固定金具かCMOS電池ホルダか)",
+   "color": "alu"
+  },
+  {
+   "id": "m2_wifi_module",
+   "name": "M.2(WIFI) モジュール",
+   "x": [
+    113.6,
+    121.5
+   ],
+   "y": [
+    0.4,
+    32.3
+   ],
+   "h": 3,
+   "kind": "module",
+   "pos_source": "塗りつぶし抽出(±0.5mm)",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "Wi-Fi 7 カード。I/Oシールド下。高さは典型値",
+   "color": "pcb_black"
+  },
+  {
+   "id": "m2_pt2_conn",
+   "name": "M.2_PT2 コネクタ(M.2_2用ドーターカード)",
+   "x": [
+    134.1,
+    149.1
+   ],
+   "y": [
+    118.5,
+    122.5
+   ],
+   "h": 4,
+   "kind": "connector",
+   "pos_source": "塗りつぶし抽出(線幅のみ)+読み取り",
+   "h_source": "典型値(UNVERIFIED)",
+   "note": "ドーターカード側の位置は未確認(U56)",
+   "color": "dark"
+  }
+ ],
+ "components_doc": "v11: 基板上の個別部品(コネクタ/ヘッダ/モジュール)の位置。主要部品(ソケット/DIMM/PCIe/チップセット/ATX/EPS/M.2/VRM)は従来キーを正とし、ここは追加分。高さはメーカー資料に無く典型値=UNVERIFIED。"
 }

@@ -115,3 +115,4 @@
 | spec.json | v029 | current | 2026-11-07 | 3089847 | spec/spec.v029__2026-11-07_3089847.json |
 | x870i_layout.json | v001 | current | 2026-11-03 | fd22dea | x870i_layout/x870i_layout.v001__2026-11-03_fd22dea.json |
 | x870i_layout.json | v002 | current | 2026-11-06 | 85af1a8 | x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json |
+| x870i_layout.json | v003 | current | 2026-11-06 | 28dc82b | x870i_layout/x870i_layout.v003__2026-11-06_28dc82b.json |

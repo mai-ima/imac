@@ -1016,6 +1016,15 @@
    "commit": "85af1a8",
    "sha256": "721f6da8e9b208db0ff863bc0d2f27e8575a0b60015a44e70e209fc3836ee1e5",
    "file": "x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json"
+  },
+  {
+   "src": "model/x870i_layout.json",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "28dc82b",
+   "sha256": "3dc92de541fee5dee01b5608d3d4817256fc807bfccd95cba500307c15070063",
+   "file": "x870i_layout/x870i_layout.v003__2026-11-06_28dc82b.json"
   }
  ]
 }
