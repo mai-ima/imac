@@ -2958,16 +2958,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07 07:04",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 07:09",
+     "in_progress",
+     "コミット済みpyc(tracked)を git rm --cached + .gitignore。GLB履歴のLFS化は未"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
+   "evidence": [
+    "コミット済みpyc(tracked)を git rm --cached + .gitignore。GLB履歴のLFS化は未"
+   ],
    "verification": "",
    "decision": "",
    "blocker_reason": "",
