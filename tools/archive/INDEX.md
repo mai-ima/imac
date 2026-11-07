@@ -172,3 +172,4 @@
 | thermal_calc.py | v005 | current | 2026-11-06 | 2bb8cf1 | thermal_calc/thermal_calc.v005__2026-11-06_2bb8cf1.py |
 | thermal_calc.py | v006 | current | 2026-11-07 | bba640c | thermal_calc/thermal_calc.v006__2026-11-07_bba640c.py |
 | thermal_calc.py | v007 | current | 2026-11-07 | 17954ec | thermal_calc/thermal_calc.v007__2026-11-07_17954ec.py |
+| thermal_calc.py | v008 | current | 2026-11-07 | 5601a7c | thermal_calc/thermal_calc.v008__2026-11-07_5601a7c.py |

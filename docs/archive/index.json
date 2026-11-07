@@ -928,6 +928,15 @@
    "file": "thermal-analysis/thermal-analysis.v008__2026-11-07_17954ec.md"
   },
   {
+   "src": "docs/thermal-analysis.md",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "5601a7c",
+   "sha256": "1cc787ccf9e0067938b8ceedda0a9b0273da12383d3ce81e9fdc17decaca8b8a",
+   "file": "thermal-analysis/thermal-analysis.v009__2026-11-07_5601a7c.md"
+  },
+  {
    "src": "docs/tilt-swivel-design.md",
    "version": 1,
    "gen": "current",
