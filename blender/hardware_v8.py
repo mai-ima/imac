@@ -60,9 +60,9 @@ def _pocket(nm, x0, y0, z0, w, h, d):
     c_ = box(nm, w, h, d, x0, y0, z0, None, body=False); c_.hide_render = True; BODY_OBJS.append(c_); return c_
 _pk = []
 for k_, xx_ in enumerate((-250, -150, -50, 50, 150, 250)):
-    _pk.append(_pocket(f'pocket_latch{k_}', xx_ - 10.0, bot_y + 2.0, dz(8.0), 20, 11, 9.0))      # ラッチ(Ø8×7)+ストライク(18×6)
-    _pk.append(_pocket(f'pocket_hook{k_}', xx_ - 9.0, top_y - 11.0, dz(8.0), 18, 11, 9.0))      # フック(14×7)+ストライク(16×8)
-for k_, (mx_, my_) in enumerate(mag_pos): _pk.append(_pocket(f'pocket_mag{k_}', mx_ - 5.5, my_ - 5.5, dz(6.0), 11, 11, 7.0))      # 磁石Ø8+ディスクØ9
+    _pk.append(_pocket(f'pocket_latch{k_}', xx_ - 10.0, bot_y + 2.0, dz(16.0), 20, 11, 24.0))      # ラッチ(Ø8×7)+ストライク(18×6)
+    _pk.append(_pocket(f'pocket_hook{k_}', xx_ - 9.0, top_y - 11.0, dz(16.0), 18, 11, 24.0))      # フック(14×7)+ストライク(16×8)
+for k_, (mx_, my_) in enumerate(mag_pos): _pk.append(_pocket(f'pocket_mag{k_}', mx_ - 5.5, my_ - 5.5, dz(16.0), 11, 11, 24.0))      # 磁石Ø8+ディスクØ9
 for _tn in ('gasket', 'cover_filter'):
     _to = bpy.data.objects.get(_tn)
     if _to is None: continue

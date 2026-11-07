@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 609。
-- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 162**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 568。
+- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 121**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -41,29 +41,17 @@
 | hinge_axle | hinge_friction0_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | hinge_axle | hinge_friction1_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | cover_back | ac_inlet_flange | 53 | [36.0, 28.0, 3.0] | 3.00 |
-| cover_filter | ac_inlet_flange | 38 | [36.0, 28.0, 3.0] | 3.00 |
 | hinge_bolt_head0 | hinge_bolt0 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head1 | hinge_bolt1 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head2 | hinge_bolt2 | 32 | [6.0, 3.0, 6.0] | 3.00 |
 | hinge_bolt_head3 | hinge_bolt3 | 32 | [6.0, 3.0, 6.0] | 3.00 |
+| cover_filter | ac_inlet_flange | 26 | [36.0, 28.0, 3.0] | 3.00 |
 | slab | hinge_backing_plate | 24 | [140.0, 3.0, 22.0] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
 | ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
 | am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
 | gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
 | gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
-| cover_filter | magnet0 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| cover_filter | magnet3 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| cover_filter | magnet1 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| cover_filter | magnet4 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| cover_filter | magnet2 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| cover_filter | magnet5 | 5 | [8.0, 3.0, 6.799] | 3.00 |
-| magnet6 | cover_filter | 4 | [6.799, 3.0, 8.0] | 3.00 |
-| magnet7 | cover_filter | 4 | [6.799, 3.0, 8.0] | 3.00 |
-| magnet8 | cover_filter | 4 | [6.799, 3.0, 8.0] | 3.00 |
-| cover_filter | magnet9 | 4 | [6.799, 3.0, 8.0] | 3.00 |
-| cover_filter | magnet10 | 4 | [6.799, 3.0, 8.0] | 3.00 |
-| cover_filter | magnet11 | 4 | [6.799, 3.0, 8.0] | 3.00 |
 | spring_seat_bot0 | cam_guide_rod0_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
 | spring_seat_bot0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
 | spring_seat_bot1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
@@ -98,3 +86,15 @@
 | cover_back | hook_tab5 | 8 | [14.0, 1.5, 7.0] | 1.50 |
 | cover_back | hook_tab1 | 4 | [14.0, 1.5, 7.0] | 1.50 |
 | cover_back | hook_tab2 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab3 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| cover_back | hook_tab4 | 4 | [14.0, 1.5, 7.0] | 1.50 |
+| vrm_shroud | vrm_trim | 20 | [98.0, 5.0, 1.2] | 1.20 |
+| board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
+| cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
+| cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| hinge_axle | hinge_eclip0 | 96 | [1.0, 12.0, 12.0] | 1.00 |
+| hinge_axle | hinge_eclip1 | 96 | [1.0, 12.0, 12.0] | 1.00 |
+| hang_bushing0b | hang_pin0_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing2b | hang_pin2_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing1b | hang_pin1_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |

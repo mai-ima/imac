@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-07T18:01Z",
+ "generated": "2026-11-07T19:02Z",
  "objects": 648,
- "pairs_total": 609,
+ "pairs_total": 568,
  "touch_only": 358,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -15,7 +15,7 @@
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "モジュラーソケットは筐体前面の開口に嵌合": 4
  },
- "remaining": 162,
+ "remaining": 121,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -248,16 +248,6 @@
    ]
   },
   {
-   "a": "cover_filter",
-   "b": "ac_inlet_flange",
-   "tri_pairs": 38,
-   "aabb_overlap_mm": [
-    36.0,
-    28.0,
-    3.0
-   ]
-  },
-  {
    "a": "hinge_bolt_head0",
    "b": "hinge_bolt0",
    "tri_pairs": 32,
@@ -295,6 +285,16 @@
     6.0,
     3.0,
     6.0
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "ac_inlet_flange",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    36.0,
+    28.0,
+    3.0
    ]
   },
   {
@@ -355,126 +355,6 @@
     4.0,
     3.0,
     4.0
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet0",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet3",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet1",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet4",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet2",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet5",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    8.0,
-    3.0,
-    6.799
-   ]
-  },
-  {
-   "a": "magnet6",
-   "b": "cover_filter",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
-   ]
-  },
-  {
-   "a": "magnet7",
-   "b": "cover_filter",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
-   ]
-  },
-  {
-   "a": "magnet8",
-   "b": "cover_filter",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet9",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet10",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "magnet11",
-   "tri_pairs": 4,
-   "aabb_overlap_mm": [
-    6.799,
-    3.0,
-    8.0
    ]
   },
   {
@@ -1168,156 +1048,6 @@
    ]
   },
   {
-   "a": "board_smd",
-   "b": "socket",
-   "tri_pairs": 78,
-   "aabb_overlap_mm": [
-    60.0,
-    0.5,
-    60.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "choke0",
-   "tri_pairs": 50,
-   "aabb_overlap_mm": [
-    7.0,
-    0.5,
-    7.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "choke1",
-   "tri_pairs": 46,
-   "aabb_overlap_mm": [
-    7.0,
-    0.5,
-    7.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_f_panel",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    22.1,
-    0.5,
-    5.481
-   ]
-  },
-  {
-   "a": "board_hdr_aio_pump",
-   "b": "board_smd",
-   "tri_pairs": 31,
-   "aabb_overlap_mm": [
-    4.904,
-    0.5,
-    10.9
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "dimm_slot0",
-   "tri_pairs": 30,
-   "aabb_overlap_mm": [
-    143.9,
-    0.5,
-    7.2
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "screw_board2_head",
-   "tri_pairs": 30,
-   "aabb_overlap_mm": [
-    5.6,
-    0.5,
-    5.6
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "pump_screw2",
-   "tri_pairs": 30,
-   "aabb_overlap_mm": [
-    4.0,
-    0.5,
-    4.0
-   ]
-  },
-  {
-   "a": "board_hdr_cpu_fan",
-   "b": "board_smd",
-   "tri_pairs": 29,
-   "aabb_overlap_mm": [
-    4.904,
-    0.5,
-    10.7
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "choke2",
-   "tri_pairs": 29,
-   "aabb_overlap_mm": [
-    7.0,
-    0.5,
-    7.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_conn_u10g_c10",
-   "tri_pairs": 28,
-   "aabb_overlap_mm": [
-    12.0,
-    0.5,
-    6.781
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_right2",
-   "tri_pairs": 28,
-   "aabb_overlap_mm": [
-    13.4,
-    0.5,
-    8.181
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "cap1",
-   "tri_pairs": 27,
-   "aabb_overlap_mm": [
-    6.4,
-    0.5,
-    6.4
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "screw_board3_head",
-   "tri_pairs": 27,
-   "aabb_overlap_mm": [
-    5.6,
-    0.5,
-    5.6
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_misc_clip_screw",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    14.4,
-    0.5,
-    10.5
-   ]
-  },
-  {
    "a": "hinge_friction0_cap",
    "b": "hinge_friction0",
    "tri_pairs": 24,
@@ -1338,66 +1068,6 @@
    ]
   },
   {
-   "a": "board_smd",
-   "b": "cap2",
-   "tri_pairs": 23,
-   "aabb_overlap_mm": [
-    6.4,
-    0.5,
-    6.4
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "choke3",
-   "tri_pairs": 23,
-   "aabb_overlap_mm": [
-    7.0,
-    0.5,
-    7.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_t_sensor",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    4.4,
-    0.5,
-    3.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "vrm_shroud",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    98.0,
-    0.5,
-    36.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_chipset_fan",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    9.2,
-    0.5,
-    3.7
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "screw_board1_head",
-   "tri_pairs": 17,
-   "aabb_overlap_mm": [
-    5.6,
-    0.5,
-    5.6
-   ]
-  },
-  {
    "a": "fan_pump_vrm_frame",
    "b": "pump_housing_body",
    "tri_pairs": 12,
@@ -1405,86 +1075,6 @@
     0.5,
     12.0,
     46.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_batt_con",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    9.0,
-    0.5,
-    3.9
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "m2_card_post0",
-   "tri_pairs": 9,
-   "aabb_overlap_mm": [
-    4.503,
-    0.5,
-    5.2
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_vrm_hs_fan",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    9.5,
-    0.5,
-    3.5
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_hdr_right3",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    14.6,
-    0.5,
-    8.181
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_m2_wifi_module",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    7.9,
-    0.5,
-    30.873
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "board_conn_u2_card_down",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    9.5,
-    0.5,
-    5.5
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "chipset_sink",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    21.0,
-    0.5,
-    19.0
-   ]
-  },
-  {
-   "a": "board_smd",
-   "b": "pump_screw3",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    4.0,
-    0.5,
-    4.0
    ]
   },
   {

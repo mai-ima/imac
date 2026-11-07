@@ -602,7 +602,7 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     for _ in range(n * 3):
         if k >= n: break
         x, y = x0 + rr_.random() * w, y0 + rr_.random() * h
-        if any(a_[0] < x < a_[0] + a_[2] and a_[1] < y < a_[1] + a_[3] for a_ in avoid): continue
+        if any(a_[0] - 2.5 < x < a_[0] + a_[2] + 2.5 and a_[1] - 2.5 < y < a_[1] + a_[3] + 2.5 for a_ in avoid): continue      # チップ寸法ぶん(最大1.6mm)+余裕で避ける
         r_ = bmesh.ops.create_cube(bmm, size=1.0); vs = r_['verts']
         sx, sy = (1.6, .8) if rr_.random() < .5 else (.8, 1.6)
         bmesh.ops.scale(bmm, vec=(sx, sy, .5), verts=vs); bmesh.ops.translate(bmm, vec=(x, y, zl + .25), verts=vs); k += 1
@@ -610,7 +610,7 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     for v in me.vertices: v.co = V(X0 + v.co.x, Y0 + v.co.y, Z0 - v.co.z)
     return link(ob)
 sx_, sy_ = BL['socket_center']
-smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)] + [(bx + _c['x'][0], by + _c['y'][0], _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]) for _c in BL.get('components', [])])
+smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)] + [(bx + _c['x'][0], by + _c['y'][0], _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]) for _c in BL.get('components', [])] + [(bx + _hx - 4, by + _hy - 4, 8, 8) for _hx, _hy in ((10.2, 6.4), (165.1, 6.4), (10.2, 163.8), (165.1, 163.8))] + [(bx + 10, by + 62, 32, 7), (bx + 9.8, by + 70.8, 26.4, 6.4)] + [(lp('cooler')[0] + 45.5 + _dx - 4, lp('cooler')[1] + ls('cooler')[1] / 2 + _dy - 4, 8, 8) for _dx, _dy in ((-27, -45), (27, -45), (-27, 45), (27, 45))])
 # ---- 基板上の追加部品(model/x870i_layout.json components: マニュアルp.14の読み取り。高さは典型値=UNVERIFIED) ----
 for _c in BL.get('components', []):
     _w, _d = _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]
