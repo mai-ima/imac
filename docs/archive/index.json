@@ -298,6 +298,15 @@
    "file": "bom-final/bom-final.v004__2026-11-06_80d7407.md"
   },
   {
+   "src": "docs/bom-final.md",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "853f219",
+   "sha256": "8ed337a3ade021602683ea3a5d2759004850c1f2e63514803b993c3906607cfc",
+   "file": "bom-final/bom-final.v005__2026-11-06_853f219.md"
+  },
+  {
    "src": "docs/bom-verified.md",
    "version": 1,
    "gen": "current",

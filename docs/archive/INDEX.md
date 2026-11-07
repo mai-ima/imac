@@ -35,6 +35,7 @@
 | bom-final.md | v002 | current | 2026-11-05 | 3c794e1 | bom-final/bom-final.v002__2026-11-05_3c794e1.md |
 | bom-final.md | v003 | current | 2026-11-05 | 71b7afb | bom-final/bom-final.v003__2026-11-05_71b7afb.md |
 | bom-final.md | v004 | current | 2026-11-06 | 80d7407 | bom-final/bom-final.v004__2026-11-06_80d7407.md |
+| bom-final.md | v005 | current | 2026-11-06 | 853f219 | bom-final/bom-final.v005__2026-11-06_853f219.md |
 | bom-verified.md | v001 | current | 2026-11-03 | 165c355 | bom-verified/bom-verified.v001__2026-11-03_165c355.md |
 | bom-verified.md | v002 | current | 2026-11-06 | 3c794e1 | bom-verified/bom-verified.v002__2026-11-06_3c794e1.md |
 | build-guide.md | v001 | current | 2026-11-05 | 27ca8ce | build-guide/build-guide.v001__2026-11-05_27ca8ce.md |

@@ -19,6 +19,15 @@
    "file": "README/README.v002__2026-11-06_a77badc.md"
   },
   {
+   "src": "docs/spec/cost-estimate.md",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "fc36218",
+   "sha256": "e886f54062cc59695c6820c5b6336225fb4a40f8a0a85be9c931bf70ded094ac",
+   "file": "cost-estimate/cost-estimate.v001__2026-11-06_fc36218.md"
+  },
+  {
    "src": "docs/spec/custom-parts.md",
    "version": 1,
    "gen": "current",
