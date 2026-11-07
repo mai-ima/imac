@@ -8,3 +8,4 @@
 - 台帳: `audit_control/tasks.json`(唯一の正規タスク台帳)。発見・着手・完了ごとに更新。`done` は証拠+検証が必要。軽微な問題も必ず登録。
 - 図面: `/tmp/bl/.venv/bin/python tools/gen_*.py`(cadquery)。SVG確認は Playwright(node)。
 - 偽PASS禁止。実機/専門試験が必要な事項は UNVERIFIED/BLOCKED のまま。
+- 時刻はユーザー向けには日本時間(JST=UTC+9)で表記する。ScheduleWakeup/サーバー表示はUTC。
