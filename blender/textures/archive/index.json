@@ -10,6 +10,15 @@
    "file": "dome_perf/dome_perf.v001__2026-11-05_71b7afb.png"
   },
   {
+   "src": "blender/textures/dome_perf.png",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "a50f58a",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "file": "dome_perf/dome_perf.v002__2026-11-07_a50f58a.png"
+  },
+  {
    "src": "blender/textures/wallpaper_blue.png",
    "version": 1,
    "gen": "current",

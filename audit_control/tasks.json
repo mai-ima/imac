@@ -16871,6 +16871,903 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "R12報告回収→tools/import_r12.py(取込)→P0/P1から修正→描画→再監査"
+  },
+  {
+   "id": "EST-001",
+   "title": "RFQに ロット3段階(1/10/100)・図番ごとの表面処理/公差/検査/納期/納品/梱包/秘密保持/見積回答様式が無い(数量「試作1台+3台・10台の目安」のみ)",
+   "description": "RFQに ロット3段階(1/10/100)・図番ごとの表面処理/公差/検査/納期/納品/梱包/秘密保持/見積回答様式が無い(数量「試作1台+3台・10台の目安」のみ)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/00_見積依頼書.md, tools/gen_handoff.py"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(RFQ全面再構成、共通条件§3、部品別(a)仕様(b)工法・検査・回答欄、回答様式CSV/xlsx)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-002",
+   "title": "旧構成(SF750/RTX5060Ti)の価格を足した「約35.1万円」が現行BOMの根拠に見えた。出典URL・調査日・確度が欄として無い。手書き",
+   "description": "旧構成(SF750/RTX5060Ti)の価格を足した「約35.1万円」が現行BOMの根拠に見えた。出典URL・調査日・確度が欄として無い。手書き",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/spec/cost-estimate.md"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(tools/gen_estimate.py で生成。単価2点のみ=REFERENCE、総額は算出不能と明記、旧価格は別表)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-003",
+   "title": "現行モデルで増えた特注部品(吸気ダクト・首振りスカート・ネックカラー・ネック外皮)がBOM/RFQに無い。parts.json rad_duct は「CP-25予定」のまま未登録",
+   "description": "現行モデルで増えた特注部品(吸気ダクト・首振りスカート・ネックカラー・ネック外皮)がBOM/RFQに無い。parts.json rad_duct は「CP-25予定」のまま未登録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/00_見積依頼書.md"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(model/custom_parts.json に CP-25〜28 を登録。CP-25=ダクト(CANDIDATE)/26=スカート/27=カラー/28=ネック外皮。板厚t2.0・固定方法は仮置きと明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-004",
+   "title": "DFM文のカム板が「SUS304 t6」で、現行(SUS440C HRC58 t10, spec.hinge.balance_cam)と食い違い(docs/spec/hardware-list.md にも同旧値)",
+   "description": "DFM文のカム板が「SUS304 t6」で、現行(SUS440C HRC58 t10, spec.hinge.balance_cam)と食い違い(docs/spec/hardware-list.md にも同旧値)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_handoff.py(RFQ§5)"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(RFQ文をspecから生成。hardware-list.mdはgen_hardware_list再実行。hardware_list.json自体はblender生成のため未再生成)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-005",
+   "title": "ctrl基板の外形が55x150x15で parts.json(55x110x15)と不一致(生成物が古い)。数量・型番・価格確度列が無い。radiatorがcoolerと同一製品なのに別行(二重計上の恐れ)",
+   "description": "ctrl基板の外形が55x150x15で parts.json(55x110x15)と不一致(生成物が古い)。数量・型番・価格確度列が無い。radiatorがcoolerと同一製品なのに別行(二重計上の恐れ)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/bom-final.md, tools/gen_package.py"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(gen_estimate.py に移管、radiator数量0明記、gen_packageはbom-final出力を停止)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-006",
+   "title": "BOM図が `if y>232: break` で特注部品を黙って切り捨て(CP-24付近)。数量が全て「1」固定",
+   "description": "BOM図が `if y>232: break` で特注部品を黙って切り捨て(CP-24付近)。数量が全て「1」固定",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "drawings/15_bom_sheet.svg, tools/gen_package.py"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(行間詰め、切り捨てはassert、数量はprocurement由来。当該図のみ再生成)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-007",
+   "title": "主要仕様がJSON文字列の300字切り(途中で壊れる)。型番/数量/単価/出典URL/調査日/確度の列が無い",
+   "description": "主要仕様がJSON文字列の300字切り(途中で壊れる)。型番/数量/単価/出典URL/調査日/確度の列が無い",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/01_BOM_purchased.csv"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(列追加、境界で省略)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-008",
+   "title": "PSU SF1000の出典URLが SF750 のページ(寸法のみ同一想定)",
+   "description": "PSU SF1000の出典URLが SF750 のページ(寸法のみ同一想定)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/parts.json psu"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "blocked",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "blocked",
+     "R11取込(R11_estimate.md): 未修正(parts.jsonは調査領域。procurementとcost-estimateに「SF1000の出典ではない」と明記。UNVERIFIED U47)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "未修正(parts.jsonは調査領域。procurementとcost-estimateに「SF1000の出典ではない」と明記。UNVERIFIED U47)",
+   "defer_reason": "",
+   "next_action": "未修正(parts.jsonは調査領域。procurementとcost-estimateに「SF1000の出典ではない」と明記。UNVERIFIED U47)"
+  },
+  {
+   "id": "EST-009",
+   "title": "基板価格71,478円はモノタロウ参考値でURL未記録",
+   "description": "基板価格71,478円はモノタロウ参考値でURL未記録",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/procurement.json board"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(REFERENCE扱いに格下げ。再確認要)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(REFERENCE扱いに格下げ。再確認要)"
+  },
+  {
+   "id": "EST-010",
+   "title": "108,380円は gaming-st.com 2026-10-25 でURL未記録、調査日2週間前",
+   "description": "108,380円は gaming-st.com 2026-10-25 でURL未記録、調査日2週間前",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/procurement.json cpu"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(REFERENCE)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(REFERENCE)"
+  },
+  {
+   "id": "EST-011",
+   "title": "GPU/PSU/冷却/SSD/RAM/ライザー/パネル/ctrl基板/AC口/カメラの国内価格が全て未取得",
+   "description": "GPU/PSU/冷却/SSD/RAM/ライザー/パネル/ctrl基板/AC口/カメラの国内価格が全て未取得",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/procurement.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(推測で埋めず null。未取得10点を明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(推測で埋めず null。未取得10点を明記)"
+  },
+  {
+   "id": "EST-012",
+   "title": "型番未確定で発注不可: ctrl_board, ram, ac_inlet, camera_audio, gpu(U46), riser(直線/右角未決)",
+   "description": "型番未確定で発注不可: ctrl_board, ram, ac_inlet, camera_audio, gpu(U46), riser(直線/右角未決)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/procurement.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): 未修正(発注可否列で明示。選定は設計側)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "未修正(発注可否列で明示。選定は設計側)"
+  },
+  {
+   "id": "EST-013",
+   "title": "iMac M6の249,800円/289,800円は一次再確認なし",
+   "description": "iMac M6の249,800円/289,800円は一次再確認なし",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/spec/cost-estimate.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(出典Gizmodo報道と明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(出典Gizmodo報道と明記)"
+  },
+  {
+   "id": "EST-014",
+   "title": "ケーブルクリップ数量: CP-16=24、hardware_list(描画)=7、cables.json経路から再計算(端点除き約20、z≦30で16)と三者不一致",
+   "description": "ケーブルクリップ数量: CP-16=24、hardware_list(描画)=7、cables.json経路から再計算(端点除き約20、z≦30で16)と三者不一致",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json CP-16"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): 未修正(設計判断待ち。check_estimateのKNOWN-OPEN、RFQに暫定と明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "未修正(設計判断待ち。check_estimateのKNOWN-OPEN、RFQに暫定と明記)"
+  },
+  {
+   "id": "EST-015",
+   "title": "CP番号なしの特注/加工品6系統(線材ハンドル、ストライク板、SPCC裏当て板、蛇腹ブーツ、ヒンジ軸Ø12 SUS303、ゴムストッパ/ロータタブ)がBOM/RFQの見積対象外",
+   "description": "CP番号なしの特注/加工品6系統(線材ハンドル、ストライク板、SPCC裏当て板、蛇腹ブーツ、ヒンジ軸Ø12 SUS303、ゴムストッパ/ロータタブ)がBOM/RFQの見積対象外",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/hardware_list.json"
+   ],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): 一部修正(RFQ§5に列挙し依頼元判断とした。CP登録は未実施=設計判断)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "一部修正(RFQ§5に列挙し依頼元判断とした。CP登録は未実施=設計判断)"
+  },
+  {
+   "id": "EST-016",
+   "title": "CP-08/09/16/17/18 の公差・表面処理が「-」",
+   "description": "CP-08/09/16/17/18 の公差・表面処理が「-」",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(「規格品のメーカー規格公差」「なし(規格品の標準仕上げ)」へ)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-017",
+   "title": "実穴パーフォレーション(貫通)の明記・穴数・開口率が無い",
+   "description": "実穴パーフォレーション(貫通)の明記・穴数・開口率が無い",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json CP-07"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(約11,300穴・開口率約33%・ウェブ1.6mm。平面投影の概算=UNVERIFIED。blender実装のØ2.4/ピッチ4.0とcheckで照合)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-018",
+   "title": "高さ415.3mm・色数・STEP一覧・CP範囲がハードコード",
+   "description": "高さ415.3mm・色数・STEP一覧・CP範囲がハードコード",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_handoff.py"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(spec/ファイル一覧/CP配列から生成)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-019",
+   "title": "カム板・ダイスプリング・外皮・ドーム等のSTEP未作成が一部のみ記載、CP-23のSTEPは尾部レバーのみ",
+   "description": "カム板・ダイスプリング・外皮・ドーム等のSTEP未作成が一部のみ記載、CP-23のSTEPは尾部レバーのみ",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/00_見積依頼書.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(同梱資料表に明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-020",
+   "title": "部品図CP-01〜CP-24等の旧記述",
+   "description": "部品図CP-01〜CP-24等の旧記述",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/README.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-021",
+   "title": "NDA雛形・提出先・期日・納期の根拠が無い",
+   "description": "NDA雛形・提出先・期日・納期の根拠が無い",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/00_見積依頼書.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(NDA雛形未作成、納期希望は未協議の仮置きと明記)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(NDA雛形未作成、納期希望は未協議の仮置きと明記)"
+  },
+  {
+   "id": "EST-022",
+   "title": "gen_packageを再実行するとリポジトリ現物と差異(W3長さ341 vs 313、W6文言等)=生成物が手修正されたか生成器が古い",
+   "description": "gen_packageを再実行するとリポジトリ現物と差異(W3長さ341 vs 313、W6文言等)=生成物が手修正されたか生成器が古い",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/gen_package.py出力(12_wiring_diagram, 11a, docs/wiring.md)"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): 未修正(範囲外。両者の正を確認要。gen_packageは全体再実行せず15_bom_sheetのみ採用)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "未修正(範囲外。両者の正を確認要。gen_packageは全体再実行せず15_bom_sheetのみ採用)"
+  },
+  {
+   "id": "EST-023",
+   "title": "model/hardware_list.json と不一致(旧カム板仕様)",
+   "description": "model/hardware_list.json と不一致(旧カム板仕様)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/spec/hardware-list.md"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(再生成)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-024",
+   "title": "BOM・見積・model・docs の機械照合が無かった",
+   "description": "BOM・見積・model・docs の機械照合が無かった",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "tools/check_estimate.py(新規), tools/run_gates.sh"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(ID/数量/ロット個数/材質/価格出典/金額混入/小物↔CP/spec寸法を照合し run_gates に追加。KNOWN-OPENは exit 2)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-025",
+   "title": "外皮の板厚・材質・固定方法・質量は仮置き(spec未登録、カラー長11.0はblender内定数)",
+   "description": "外皮の板厚・材質・固定方法・質量は仮置き(spec未登録、カラー長11.0はblender内定数)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "model/custom_parts.json CP-26〜28"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): UNVERIFIED(各CPの open に明記。spec.json への登録は未実施)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "UNVERIFIED(各CPの open に明記。spec.json への登録は未実施)"
+  },
+  {
+   "id": "EST-026",
+   "title": "旧PDFの生成手順が文書化されていない",
+   "description": "旧PDFの生成手順が文書化されていない",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "handoff/00_見積依頼書.pdf"
+   ],
+   "severity": "P3",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "in_review",
+     "R11取込(R11_estimate.md): 修正済み(Playwrightで html→A3横PDF。手順は本報告のみ。handoff_build.shには未追加)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R11_estimate.md"
+   ],
+   "verification": [
+    "再監査で確認(超厳格)"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "EST-027",
+   "title": "台帳(tasks.json)への登録は禁止指示のため未実施",
+   "description": "台帳(tasks.json)への登録は禁止指示のため未実施",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "台帳"
+   ],
+   "severity": "P2",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T12:59:51Z",
+     "triaged",
+     "R11取込(R11_estimate.md): 未修正(親が EST-001〜027 を登録)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": "未修正(親が EST-001〜027 を登録)"
   }
  ]
 }

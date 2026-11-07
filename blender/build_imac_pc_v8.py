@@ -426,12 +426,22 @@ for _k, (_zz0, _zz1) in enumerate((NK['back_cover_z'], NK['front_cover_z'])):   
     box(f'stand_neck_cover{_k}', 120, NK['cover_top'] - SY_SIDE, _zz1 - _zz0, -60, SY_SIDE, ZC + _zz0, M['stand'], bevel=.6)
 SH = S['stand']['shroud']      # 思想適合(P2/P4): 首振り軸受・ネック機構を同色の外皮で隠す(機構は内部に残す)
 _sl = SY_NECK - SH['skirt_gap_mm'] + DROP      # 足に固定の円筒スカート(軸受ステータ〜ロータ側面を隠す)
-cyl('stand_skirt', SH['skirt_r_mm'], _sl, 'y', 0, -DROP + _sl / 2, ZC, M['stand'], 96, bevel=3.0, body=False)
+def hollow(ob, thick=2.0):
+    """外皮を肉厚 thick[mm] の薄肉殻にする(内向きSOLIDIFY)。中身が詰まった塊として内部機構と交差しないようにする。"""
+    m = ob.modifiers.new('wall', 'SOLIDIFY'); m.thickness = thick; m.offset = -1; m.use_even_offset = True
+    ob.modifiers.move(len(ob.modifiers) - 1, 0); return ob
+def tube(name, r, length, cx, cy, cz, mat, seg=96):      # 両端開口の円管(軸=設計y)。肉厚はhollow()で付ける
+    me = bpy.data.meshes.new(name); bm = bmesh.new(); bmesh.ops.create_cone(bm, cap_ends=False, segments=max(seg, int(round(seg * POLY))), radius1=r, radius2=r, depth=length); bm.to_mesh(me); bm.free()
+    ob = bpy.data.objects.new(name, me); ob.location = V(cx, cy, cz); me.materials.append(mat)
+    for p_ in me.polygons: p_.use_smooth = True
+    return link(ob, False)
+hollow(tube('stand_skirt', SH['skirt_r_mm'], _sl, 0, -DROP + _sl / 2, ZC, M['stand']))
 _cl = 11.0      # ネックと一緒に回る円筒カラー(ロータ上面・PE編組の取り回しを隠す。スカートとの隙間0.5mm)
-cyl('stand_neck_collar', SH['skirt_r_mm'], _cl, 'y', 0, SY_NECK + _cl / 2, ZC, M['stand'], 96, bevel=3.0, body=False)
+hollow(tube('stand_neck_collar', SH['skirt_r_mm'], _cl, 0, SY_NECK + _cl / 2, ZC, M['stand']))
 _m = SH['neck_margin_mm']
-box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
-for _n in ('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_foot'): bpy.data.objects[_n].modifiers['bevel'].segments = max(6, int(round(6 * POLY)))      # 大きな面取りは滑らかな曲面に
+_sh = box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
+_bm = bmesh.new(); _bm.from_mesh(_sh.data); bmesh.ops.delete(_bm, geom=[f_ for f_ in _bm.faces if f_.normal.z < -0.9], context='FACES_ONLY'); _bm.to_mesh(_sh.data); _bm.free(); hollow(_sh)      # 下面を開いた薄肉箱(首振りに合わせて回転)
+for _n in ('stand_neck_shroud', 'stand_foot'): bpy.data.objects[_n].modifiers['bevel'].segments = max(6, int(round(6 * POLY)))      # 大きな面取りは滑らかな曲面に
 ARM_OBJ = bpy.data.objects['stand_arm0']; BODY_OBJS.remove(ARM_OBJ); [BODY_OBJS.remove(bpy.data.objects[n_]) for n_ in ('stand_arm1', 'stand_arm_strip0', 'stand_arm_strip1', 'stand_arm_boss0', 'stand_arm_boss1') if bpy.data.objects[n_] in BODY_OBJS]
 
 # ---- テキスト(刻印/印字): 背面から読める向き。(x,y)=内部座標、zl=スラブ背面からの高さ、rot=度(面内) ----

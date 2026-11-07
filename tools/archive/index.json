@@ -1090,6 +1090,15 @@
    "file": "guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh"
   },
   {
+   "src": "tools/import_r11.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "df8ec56",
+   "sha256": "3945020a3faceecb9ddef1fb5aac6b56beb4b7ad9db6544a3644feeddb425433",
+   "file": "import_r11/import_r11.v001__2026-11-07_df8ec56.py"
+  },
+  {
    "src": "tools/joint_calc.py",
    "version": 1,
    "gen": "current",

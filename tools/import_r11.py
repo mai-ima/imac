@@ -10,7 +10,7 @@ for f in sorted(glob.glob(f'{R}/audit_control/reports/R11_*.md')):
         i, sev, file_, prob, act = m.group(1), m.group(2), m.group(3).strip(), m.group(4).strip(), m.group(5).strip()
         st = 'in_review' if act.startswith('修正済') else 'blocked' if ('BLOCKED' in act or 'UNVERIFIED' in act and '未' in act[:6]) else 'triaged'
         d = {k: (([] if isinstance(v, list) else '' if isinstance(v, str) else v) if k in ('evidence', 'verification', 'history', 'file_paths', 'requirement_ids', 'dependencies', 'acceptance_criteria') else v) for k, v in base.items()}
-        d.update(id=i, title=prob[:120], description=prob, severity=sev, status=st, history=[[now, st, f'R11取込({os.path.basename(f)}): {act[:160]}']], file_paths=[file_], evidence=[f'audit_control/reports/{os.path.basename(f)}'] if st == 'in_review' else [], next_action='' if st == 'in_review' else act[:200])
+        d.update(id=i, title=prob[:120], description=prob, severity=sev, status=st, history=[[now, st, f'R11取込({os.path.basename(f)}): {act[:160]}']], file_paths=[file_], evidence=[f'audit_control/reports/{os.path.basename(f)}'] if st == 'in_review' else [], next_action='' if st == 'in_review' else act[:200], blocker_reason=act[:200] if st == 'blocked' else '')
         if st == 'in_review': d['verification'] = ['再監査で確認(超厳格)']
         T['tasks'].append(d); have.add(i); n += 1
 json.dump(T, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1); print('imported', n)
