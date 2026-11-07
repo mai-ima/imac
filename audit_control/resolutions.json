@@ -844,5 +844,11 @@
   "evidence": "残差を実カム接触から算出(ピッチ曲線式と独立)",
   "verification": "python3 tools/balance_calc.py / motion_check / gen_mech_sections",
   "decision": "FIXED(要再監査)"
+ },
+ "R10E-026": {
+  "status": "in_review",
+  "evidence": "W3終端35mm直線(40.8mm)確保+cable_checkに直線長検査",
+  "verification": "python3 tools/cable_check.py",
+  "decision": "FIXED"
  }
 }

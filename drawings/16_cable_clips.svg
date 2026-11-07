@@ -20,10 +20,11 @@
 <circle cx="53.0" cy="173.8" r="1.1" fill="#06c"/>
 <circle cx="60.4" cy="191.5" r="1.1" fill="#06c"/>
 <text x="70.6" y="109.4" font-size="3.4" fill="#06c">W2</text>
-<polyline fill="none" stroke="#1a7f37" stroke-width=".7" points="103.6,111.4 107.3,114.2 128.9,114.2 145.0,100.4 168.0,82.0 201.1,64.9 201.1,56.6"/>
+<polyline fill="none" stroke="#1a7f37" stroke-width=".7" points="103.6,111.4 107.3,114.2 128.9,114.2 145.0,100.4 168.0,82.0 201.1,85.6 201.1,56.6"/>
 <circle cx="103.6" cy="111.4" r="1.1" fill="#1a7f37"/>
 <circle cx="166.4" cy="83.3" r="1.1" fill="#1a7f37"/>
-<circle cx="192.5" cy="69.3" r="1.1" fill="#1a7f37"/>
+<circle cx="194.9" cy="84.9" r="1.1" fill="#1a7f37"/>
+<circle cx="201.1" cy="58.0" r="1.1" fill="#1a7f37"/>
 <circle cx="201.1" cy="56.6" r="1.1" fill="#1a7f37"/>
 <text x="105.6" y="109.4" font-size="3.4" fill="#1a7f37">W3</text>
 <polyline fill="none" stroke="#a50" stroke-width=".7" points="113.7,111.4 116.5,114.2 118.8,114.2 120.6,112.8"/>

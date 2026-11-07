@@ -13670,16 +13670,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07 10:58",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 11:04",
+     "in_progress",
+     "thermal_calc の出力に『ダクト未設計・熱は合格宣言しない』を明記。ダクト実設計は THERM-DUCT"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
+   "evidence": [
+    "thermal_calc の出力に『ダクト未設計・熱は合格宣言しない』を明記。ダクト実設計は THERM-DUCT"
+   ],
    "verification": "",
    "decision": "",
    "blocker_reason": "",
@@ -14445,18 +14452,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 10:58",
      "triaged",
      "import"
+    ],
+    [
+     "2026-11-07 11:03",
+     "in_review",
+     "cablemodel: W3終端の35mm直線区間を確保(40.8mm)、cable_check に端子後方直線長チェックを追加"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "cablemodel: W3終端の35mm直線区間を確保(40.8mm)、cable_check に端子後方直線長チェックを追加"
+   ],
+   "verification": "cable_check 総合: 問題なし",
+   "decision": "FIXED(終端方向はGPU実機でUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -15291,6 +15305,38 @@
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
+   "evidence": [],
+   "verification": "",
+   "decision": "",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "THERM-DUCT",
+   "title": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "description": "ラジエーター吸気分離ダクト/仕切り(外気直吸気の成立)の設計・モデル化・layout/Blender/図面/熱計算反映(R10E-001 P0)",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [
+    "docs/thermal-analysis.md",
+    "model/layout.json"
+   ],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "discovered",
+   "history": [
+    [
+     "2026-11-07 11:04",
+     "discovered",
+     ""
+    ]
+   ],
+   "acceptance_criteria": "",
    "evidence": [],
    "verification": "",
    "decision": "",

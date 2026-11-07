@@ -71,3 +71,4 @@
 | wiring-spec.md | v006 | current | 2026-11-06 | 853f219 | wiring-spec/wiring-spec.v006__2026-11-06_853f219.md |
 | wiring-spec.md | v007 | current | 2026-11-06 | 88f99b7 | wiring-spec/wiring-spec.v007__2026-11-06_88f99b7.md |
 | wiring-spec.md | v008 | current | 2026-11-06 | cf90ba1 | wiring-spec/wiring-spec.v008__2026-11-06_cf90ba1.md |
+| wiring-spec.md | v009 | current | 2026-11-06 | f2e5a87 | wiring-spec/wiring-spec.v009__2026-11-06_f2e5a87.md |

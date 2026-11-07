@@ -154,6 +154,15 @@
    "file": "cable_check/cable_check.v005__2026-11-06_88f99b7.py"
   },
   {
+   "src": "tools/cable_check.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "36dff8c",
+   "sha256": "bc306cc5e06cd6e2075ad13aabf0303c96cffa0cbc9dc13f5f8614a01382cf80",
+   "file": "cable_check/cable_check.v006__2026-11-06_36dff8c.py"
+  },
+  {
    "src": "tools/cablemodel.py",
    "version": 1,
    "gen": "current",
@@ -206,6 +215,15 @@
    "commit": "88f99b7",
    "sha256": "046d1cba1fa0079df077bd1e4193dcd73c8c0cfe265926100fc3b17dc2308f85",
    "file": "cablemodel/cablemodel.v006__2026-11-06_88f99b7.py"
+  },
+  {
+   "src": "tools/cablemodel.py",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "bca486fe43ff930a8803016d5643a73ac9a1f6615b9d63bf1ef2a311a4093cf2",
+   "file": "cablemodel/cablemodel.v007__2026-11-06_cf90ba1.py"
   },
   {
    "src": "tools/cadviews.py",
@@ -1475,6 +1493,15 @@
    "commit": "9ff6031",
    "sha256": "08e9b60dcf5d1ab9680c2d85ea5ca66d94f03d8b2ac67fbb3943db0747281a1b",
    "file": "thermal_calc/thermal_calc.v004__2026-11-06_9ff6031.py"
+  },
+  {
+   "src": "tools/thermal_calc.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "2bb8cf1",
+   "sha256": "654ef6c504645267bd6e81bb7188692aa72e56511f3359eb6ab0a46024726fb4",
+   "file": "thermal_calc/thermal_calc.v005__2026-11-06_2bb8cf1.py"
   }
  ]
 }

@@ -19,12 +19,14 @@
 | cable_check.py | v003 | current | 2026-11-06 | 514e2e0 | cable_check/cable_check.v003__2026-11-06_514e2e0.py |
 | cable_check.py | v004 | current | 2026-11-06 | 853f219 | cable_check/cable_check.v004__2026-11-06_853f219.py |
 | cable_check.py | v005 | current | 2026-11-06 | 88f99b7 | cable_check/cable_check.v005__2026-11-06_88f99b7.py |
+| cable_check.py | v006 | current | 2026-11-06 | 36dff8c | cable_check/cable_check.v006__2026-11-06_36dff8c.py |
 | cablemodel.py | v001 | current | 2026-11-06 | fc36218 | cablemodel/cablemodel.v001__2026-11-06_fc36218.py |
 | cablemodel.py | v002 | current | 2026-11-06 | cca8bc2 | cablemodel/cablemodel.v002__2026-11-06_cca8bc2.py |
 | cablemodel.py | v003 | current | 2026-11-06 | 514e2e0 | cablemodel/cablemodel.v003__2026-11-06_514e2e0.py |
 | cablemodel.py | v004 | current | 2026-11-06 | d97f07e | cablemodel/cablemodel.v004__2026-11-06_d97f07e.py |
 | cablemodel.py | v005 | current | 2026-11-06 | 853f219 | cablemodel/cablemodel.v005__2026-11-06_853f219.py |
 | cablemodel.py | v006 | current | 2026-11-06 | 88f99b7 | cablemodel/cablemodel.v006__2026-11-06_88f99b7.py |
+| cablemodel.py | v007 | current | 2026-11-06 | cf90ba1 | cablemodel/cablemodel.v007__2026-11-06_cf90ba1.py |
 | cadviews.py | v001 | current | 2026-11-06 | 88f99b7 | cadviews/cadviews.v001__2026-11-06_88f99b7.py |
 | consistency_check.py | v001 | current | 2026-11-06 | 877835f | consistency_check/consistency_check.v001__2026-11-06_877835f.py |
 | consistency_check.py | v002 | current | 2026-11-06 | cf90ba1 | consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py |
@@ -166,3 +168,4 @@
 | thermal_calc.py | v002 | current | 2026-11-05 | 15a1bce | thermal_calc/thermal_calc.v002__2026-11-05_15a1bce.py |
 | thermal_calc.py | v003 | current | 2026-11-05 | 71b7afb | thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py |
 | thermal_calc.py | v004 | current | 2026-11-06 | 9ff6031 | thermal_calc/thermal_calc.v004__2026-11-06_9ff6031.py |
+| thermal_calc.py | v005 | current | 2026-11-06 | 2bb8cf1 | thermal_calc/thermal_calc.v005__2026-11-06_2bb8cf1.py |

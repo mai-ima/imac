@@ -15,7 +15,7 @@ CAB = [
  dict(id='W2', name='CPU EPS 8ピン(短尺)', kind='cable', od=5.6, awg=16, mbr=12, frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', conn='EPS 4+4', ref_mm=0, mat='rubber',
       pts=[(px + 14, py - 2, 38), (px + 14, py - 18, 40), (50, py - 18, 42), (50, 60, 30), (66, 42, 25)]),
  dict(id='W3', name='GPU 12V-2x6(16AWG)', kind='cable', od=9.0, awg=16, mbr=20, frm='PSU modular(12V-2x6)', to='GPU 12V-2x6', conn='12V-2x6: コネクタ後方35mm直線', ref_mm=400, mat='rubber',
-      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 110, gy + 270, 66), (gx + 110, gy + 288, gz + 42)]),
+      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 110, gy + 225, gz + 47), (gx + 110, gy + 288, gz + 47)]),
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
       pts=[(px + 112, py - 2, 30), (px + 118, py - 8, 28), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
  dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', kind='cable', od=6.0, awg=0, mbr=16, frm='ctrl_board eDP', to='パネル背面コネクタ', conn='eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み)', ref_mm=380, mat='umb',

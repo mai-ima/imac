@@ -59,5 +59,22 @@ for i, a in enumerate(CM.CAB):
     for b in CM.CAB[i + 1:]:
         da, db = dense(a['path']), dense(b['path']); need = (a['od'] + b['od']) / 2 + 0.5; md = min(math.dist(p, q) for p in da[7:-7] for q in db[7:-7]) if len(da) > 14 and len(db) > 14 else 99
         if md < need: print('[NG ] 近接', a['id'], b['id'], f'最小間隔 {md:.1f}mm < 必要 {need:.1f}mm'); bad += 1
+# 端子後方の直線長(コネクタ仕様): W3(12V-2x6)は端子から35mm直線(R10E-026)
+STRAIGHT = {'W3': ('end', 35.0)}
+def straight_len(path, end):
+    pts = path[::-1] if end == 'end' else path; L = 0.0; v0 = None
+    for i in range(len(pts) - 1):
+        d = [pts[i + 1][k] - pts[i][k] for k in range(3)]; n = math.sqrt(sum(x * x for x in d))
+        if n < 1e-9: continue
+        u = [x / n for x in d]
+        if v0 is None: v0 = u
+        if sum(u[k] * v0[k] for k in range(3)) < math.cos(math.radians(3)): break
+        L += n
+    return L
+for c_ in CM.CAB:
+    if c_['id'] in STRAIGHT:
+        e_, need_ = STRAIGHT[c_['id']]; got_ = straight_len(c_['path'], e_)
+        print(f"[{'OK ' if got_ >= need_ else 'NG '}] {c_['id']} 端子後方の直線長 {got_:.1f}mm / 必要 {need_:g}mm")
+        if got_ < need_: bad += 1
 print('総合:', '問題なし' if not bad else f'{bad}件の問題')
 sys.exit(1 if bad else 0)
