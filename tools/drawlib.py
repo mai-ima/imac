@@ -51,7 +51,7 @@ def frame(title, num, scale='1:1', material='-', finish='-', rev='D', sheet='1/1
           txt(rx + 2, ry + 24, 'D', 2.0), txt(rx + 10, ry + 24, 'v9: 首振り/チルト拡大', 2.0), txt(rx + 42, ry + 24, DATE, 2.0)]
     if note: o.append(txt(22, by - 2, note[:150], 2.4))
     o.append(txt(22, 18.5, '注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。', 2.3, fill='#444'))
-    return o
+    return ['<g data-frame="1">'] + o + ['</g>']      # 図枠・表題欄は data-frame で識別(tools/drawing_lint.js が本体の文字と区別する)
 def dim_h(x1, x2, y, label, off=6):
     """ISO 129: 補助線は寸法から1〜2mm離し3mm突出、矢印は塗り(閉)、寸法値は線の上。"""
     return [ln(x1, y + 1, x1, y + off + 2, .18), ln(x2, y + 1, x2, y + off + 2, .18), ln(x1, y + off, x2, y + off, .25), f'<path d="M{x1},{y+off} l3,-1 v2 z M{x2},{y+off} l-3,-1 v2 z" fill="#000"/>', txt((x1 + x2) / 2, y + off - 1, label, 2.8, 'middle')]

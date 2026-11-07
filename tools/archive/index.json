@@ -307,6 +307,15 @@
    "file": "drawlib/drawlib.v003__2026-11-06_302823c.py"
   },
   {
+   "src": "tools/drawlib.py",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "300696c",
+   "sha256": "4a55a9c79ddb8771d37425fd4e5079b258f73e8da73db46155a18871a9bd7a5e",
+   "file": "drawlib/drawlib.v004__2026-11-07_300696c.py"
+  },
+  {
    "src": "tools/fit_tolerance.py",
    "version": 1,
    "gen": "current",
@@ -566,6 +575,15 @@
    "commit": "877835f",
    "sha256": "2a8264a7d2b1c5790532d6d1644208eda169eb7c8a85884170890017b3a4e3ff",
    "file": "gen_handoff/gen_handoff.v003__2026-11-06_877835f.py"
+  },
+  {
+   "src": "tools/gen_layout_drawings.py",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "300696c",
+   "sha256": "7a529dd429253713b9dd1481c6bd55124fb915191e02ea93962a6a7535eb7baf",
+   "file": "gen_layout_drawings/gen_layout_drawings.v001__2026-11-07_300696c.py"
   },
   {
    "src": "tools/gen_mech_sections.py",

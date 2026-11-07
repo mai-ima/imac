@@ -97,7 +97,7 @@ def board_shapes(X, Y, sc, detail=True, label=None):
     return o
 
 def gen_09():
-    sc = 1.1; ox, oy = 26, 38; B = 170
+    sc = 1.1; ox, oy = 34, 38; B = 170
     X = lambda x: ox + x * sc; Y = lambda y: oy + (B - y) * sc
     b = head('基板 部品配置図(ROG STRIX X870-I)', 'PKG-09', '1.1 : 1(拡大)', note='座標: 基板左下原点, x右/y上, I/O辺=下。位置の出典: ASUS マニュアルp.14 配置図の読み取り(±2mm)。高さは典型値=UNVERIFIED')
     b += board_shapes(X, Y, sc)
@@ -117,7 +117,7 @@ def gen_09():
     save('09_board_layout.svg', b)
 
 def gen_10():
-    sc = 0.46; ox, oy = 28, 40
+    sc = 0.46; ox, oy = 36, 40
     X = lambda x: ox + x * sc; Y = lambda y: oy + (IH - y) * sc
     b = head('部品配置図(トレイ平面)', 'PKG-10', f'1:{1/sc:.2f} (≈0.46倍)', note='座標: トレイ内寸(ドーム内側)の左下原点。z=トレイ面からの高さ。ドーム内面の許容zは縁からの距離で変化(smoothstep)')
     b.append(rect(ox, oy, IW * sc, IH * sc, '#f7f8fa', '#000', .5, 1, 50 * sc))
@@ -173,7 +173,7 @@ def gen_10():
               T(tx + 7, 50 + n * 12.5 + 4.2, f'[{x:.1f}, {y:.1f}, {z:.1f}]  {w_:.0f}x{h_:.0f}x{d_:.0f}  頂{z+d_:.1f}  許容{lim:.0f}  {"OK" if ok else "要確認"}', 2.2, 'start', '#222' if ok else '#c0392b')]
     b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5, '黒太線=AIOホース(H1/H2) / 赤細線=電源・信号ケーブル(経路は cables.json, 平面投影)', 2.3))
     b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5 + 5, f'ドーム内面の許容z = {D["edge_inner_depth"]} + {DEPTH-D["edge_inner_depth"]:.0f}×smoothstep(d/{D["run"]}) (d=縁までの最短距離)。最大{DEPTH}。', 2.3))
-    b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5 + 10, 'ファン羽根枚数・GPU/PSUの内部形状は平面の概形(UNVERIFIED)。寸法は model/layout.json が正。', 2.3, 'start', '#900'))
+    b.append(T(tx, 50 + (len(L['items']) + 1) * 12.5 + 10, 'ファン羽根・GPU/PSU内部は概形(UNVERIFIED)。寸法正=layout.json', 2.3, 'start', '#900'))
     save('10_placement_dimensioned.svg', b)
 
 if __name__ == '__main__':
