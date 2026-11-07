@@ -134,6 +134,7 @@
 | 15_bom_sheet.svg | v009 | current | 2026-11-06 | d97f07e | 15_bom_sheet/15_bom_sheet.v009__2026-11-06_d97f07e.svg |
 | 15_bom_sheet.svg | v010 | current | 2026-11-06 | 853f219 | 15_bom_sheet/15_bom_sheet.v010__2026-11-06_853f219.svg |
 | 15_bom_sheet.svg | v011 | current | 2026-11-06 | 88f99b7 | 15_bom_sheet/15_bom_sheet.v011__2026-11-06_88f99b7.svg |
+| 15_bom_sheet.svg | v012 | current | 2026-11-07 | fc73c3b | 15_bom_sheet/15_bom_sheet.v012__2026-11-07_fc73c3b.svg |
 | 16_cable_clips.svg | v001 | current | 2026-11-05 | b97eaae | 16_cable_clips/16_cable_clips.v001__2026-11-05_b97eaae.svg |
 | 16_cable_clips.svg | v002 | current | 2026-11-05 | fcba5fe | 16_cable_clips/16_cable_clips.v002__2026-11-05_fcba5fe.svg |
 | 16_cable_clips.svg | v003 | current | 2026-11-05 | 71b7afb | 16_cable_clips/16_cable_clips.v003__2026-11-05_71b7afb.svg |
@@ -144,6 +145,7 @@
 | 16_cable_clips.svg | v008 | current | 2026-11-06 | 88f99b7 | 16_cable_clips/16_cable_clips.v008__2026-11-06_88f99b7.svg |
 | 16_cable_clips.svg | v009 | current | 2026-11-06 | 93238a3 | 16_cable_clips/16_cable_clips.v009__2026-11-06_93238a3.svg |
 | 16_cable_clips.svg | v010 | current | 2026-11-07 | bba640c | 16_cable_clips/16_cable_clips.v010__2026-11-07_bba640c.svg |
+| 16_cable_clips.svg | v011 | current | 2026-11-07 | 17954ec | 16_cable_clips/16_cable_clips.v011__2026-11-07_17954ec.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |
 | outlines.dxf | v003 | current | 2026-11-05 | fcba5fe | outlines/outlines.v003__2026-11-05_fcba5fe.dxf |

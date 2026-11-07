@@ -10,7 +10,6 @@
 <rect x="117.9" y="133.4" width="11.5" height="36.9" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="123.6" y="151.9" font-size="3" text-anchor="middle" fill="#555">ssd</text>
 <rect x="62.1" y="125.7" width="61.3" height="7.5" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="92.8" y="129.5" font-size="3" text-anchor="middle" fill="#555">ram</text>
 <rect x="40.1" y="195.2" width="12.9" height="12.0" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="46.6" y="201.1" font-size="3" text-anchor="middle" fill="#555">ac_inlet</text>
-<rect x="224.6" y="70.0" width="55.2" height="104.9" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="252.2" y="122.5" font-size="3" text-anchor="middle" fill="#555">rad_duct</text>
 <polyline fill="none" stroke="#c0392b" stroke-width=".7" points="77.4,111.4 77.4,116.0 77.8,121.6"/>
 <circle cx="77.4" cy="111.4" r="1.1" fill="#c0392b"/>
 <circle cx="77.8" cy="121.6" r="1.1" fill="#c0392b"/>

@@ -28,6 +28,15 @@
    "file": "cost-estimate/cost-estimate.v001__2026-11-06_fc36218.md"
   },
   {
+   "src": "docs/spec/cost-estimate.md",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "51490df",
+   "sha256": "39d1c28779df35dd98199131b070a51cc97811651a9dd0378fbc46dfca45ba7b",
+   "file": "cost-estimate/cost-estimate.v002__2026-11-07_51490df.md"
+  },
+  {
    "src": "docs/spec/custom-parts.md",
    "version": 1,
    "gen": "current",
@@ -206,6 +215,15 @@
    "commit": "01950c5",
    "sha256": "00ed5f0a10db8942e8ff019f774ef2c7d01dddb3fdbdac085f2da31a849d8e6e",
    "file": "custom-parts/custom-parts.v020__2026-11-07_01950c5.md"
+  },
+  {
+   "src": "docs/spec/custom-parts.md",
+   "version": 21,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "ce05e9c03c7c857d70eb34833ca1d00b7b950cdec8f116294aa5388fbf64680d",
+   "file": "custom-parts/custom-parts.v021__2026-11-07_3089847.md"
   },
   {
    "src": "docs/spec/design-philosophy.md",

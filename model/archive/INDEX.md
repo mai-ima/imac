@@ -85,6 +85,7 @@
 | parts.json | v011 | current | 2026-11-06 | 85af1a8 | parts/parts.v011__2026-11-06_85af1a8.json |
 | parts.json | v012 | current | 2026-11-07 | 64a1afa | parts/parts.v012__2026-11-07_64a1afa.json |
 | parts.json | v013 | current | 2026-11-07 | 17954ec | parts/parts.v013__2026-11-07_17954ec.json |
+| procurement.json | v001 | current | 2026-11-07 | 9a67913 | procurement/procurement.v001__2026-11-07_9a67913.json |
 | spec.json | v001 | gen-001 | 2026-11-03 | 44f2d2a | gen-001/spec/spec.v001__2026-11-03_44f2d2a.json |
 | spec.json | v002 | gen-001 | 2026-11-03 | 165c355 | gen-001/spec/spec.v002__2026-11-03_165c355.json |
 | spec.json | v003 | current | 2026-11-03 | fd22dea | spec/spec.v003__2026-11-03_fd22dea.json |

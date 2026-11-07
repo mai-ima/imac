@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<g data-frame="1">
 <rect width="100%" height="100%" fill="#fff"/>
 <rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
 <rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
@@ -103,6 +104,7 @@
 <text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+</g>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-07 背面ドーム(カバー)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 2.0 / 質量 1.5kg / 公差 外形±0.3, 縁面の平面度0.3(ガスケット面)</text>
@@ -117,20 +119,22 @@
 <text x="156" y="53.000000000000014" font-size="2.6">公差: 外形±0.3, 縁面の平面度0.3(ガスケット面)</text>
 <text x="156" y="58.20000000000002" font-size="2.6">要素: 縁の内奥行6mm→内面最大162mm(smoothstep, run 64mm)、外面最大総厚=スラブ2</text>
 <text x="156" y="62.40000000000002" font-size="2.6">5+ドーム深さ165=190(spec.dome.total_t。ポンプ垂直出口ホース用に拡大)</text>
-<text x="156" y="67.60000000000002" font-size="2.6">要素: 全面均一パーフォレーション Ø2.4×ピッチ4.0 千鳥(縁から36mm内側)</text>
-<text x="156" y="72.80000000000003" font-size="2.6">要素: 上辺フック×6 / 下辺ラッチ穴×6(下面向き凹み) / 位置決めピン穴Ø4×2 / 磁石ポケット×12</text>
-<text x="156" y="78.00000000000003" font-size="2.6">要素: EMIガスケット溝(幅3.0×深さ1.5, 周長約1947mm)。溝のある縁フランジのみ局所t4.0に増</text>
-<text x="156" y="82.20000000000003" font-size="2.6">肉(残肉2.5mm)</text>
-<text x="156" y="87.40000000000003" font-size="2.6">要素: 下辺傾斜面の開口: I/Oスロット120×22 / GPU出力スロット142×20 / ACインレット3</text>
-<text x="156" y="91.60000000000004" font-size="2.6">2×26 / 電源ボタン</text>
-<text x="156" y="96.80000000000004" font-size="2.6">要素: RF窓: 上辺の浅い位置に平板(60×30)を取付(傾斜面を避ける)</text>
-<text x="156" y="102.00000000000004" font-size="2.6">要素: 内側に黒メッシュフィルタ(ドーム内面追従の殻, 磁石保持)</text>
-<text x="156" y="107.20000000000005" font-size="2.6">要素: 磁石ポケット×12(Ø8.1×深さ3.1)は局所ボス(t4.2)の裏側に設け、残肉1.1mm。薄板t2.</text>
-<text x="156" y="111.40000000000005" font-size="2.6">0には直接彫らない</text>
-<text x="156" y="116.60000000000005" font-size="2.6">要素: 側辺フック(左右辺の掛け爪)×4(各40N): ガスケット反力を左右辺で受ける(spec.dome_se</text>
-<text x="156" y="120.80000000000005" font-size="2.6">al)。位置・爪形状は未設計=UNVERIFIED(GA-06)</text>
-<text x="156" y="126.00000000000006" font-size="2.6">接合: CP-03背板(ラッチ+ピン+磁石)</text>
-<text x="156" y="131.20000000000005" font-size="2.6">接合: CP-08ガスケット</text>
-<text x="156" y="136.40000000000003" font-size="2.6">接合: CP-12 RF窓</text>
-<text x="156" y="141.60000000000002" font-size="2.6">接合: CP-13フィルタドロワー</text>
+<text x="156" y="67.60000000000002" font-size="2.6">要素: 全面均一パーフォレーション Ø2.4×ピッチ4.0 千鳥(縁から36mm内側)。実穴(貫通)。穴数 約1</text>
+<text x="156" y="71.80000000000003" font-size="2.6">1,300(平面投影の概算: 87行×約130個の近似, 曲面成形後に変わる=UNVERIFIED)、穿孔域の開</text>
+<text x="156" y="76.00000000000003" font-size="2.6">口率 約33%(π·1.2²/(4×3.464))。穴間ウェブ幅1.6mm(板厚2.0mmの0.8倍。穿孔加工の</text>
+<text x="156" y="80.20000000000003" font-size="2.6">可否はDFM確認事項)。強度・剛性・EMIへの影響は未評価</text>
+<text x="156" y="85.40000000000003" font-size="2.6">要素: 上辺フック×6 / 下辺ラッチ穴×6(下面向き凹み) / 位置決めピン穴Ø4×2 / 磁石ポケット×12</text>
+<text x="156" y="90.60000000000004" font-size="2.6">要素: EMIガスケット溝(幅3.0×深さ1.5, 周長約1947mm)。溝のある縁フランジのみ局所t4.0に増</text>
+<text x="156" y="94.80000000000004" font-size="2.6">肉(残肉2.5mm)</text>
+<text x="156" y="100.00000000000004" font-size="2.6">要素: 下辺傾斜面の開口: I/Oスロット120×22 / GPU出力スロット142×20 / ACインレット3</text>
+<text x="156" y="104.20000000000005" font-size="2.6">2×26 / 電源ボタン</text>
+<text x="156" y="109.40000000000005" font-size="2.6">要素: RF窓: 上辺の浅い位置に平板(60×30)を取付(傾斜面を避ける)</text>
+<text x="156" y="114.60000000000005" font-size="2.6">要素: 内側に黒メッシュフィルタ(ドーム内面追従の殻, 磁石保持)</text>
+<text x="156" y="119.80000000000005" font-size="2.6">要素: 磁石ポケット×12(Ø8.1×深さ3.1)は局所ボス(t4.2)の裏側に設け、残肉1.1mm。薄板t2.</text>
+<text x="156" y="124.00000000000006" font-size="2.6">0には直接彫らない</text>
+<text x="156" y="129.20000000000005" font-size="2.6">要素: 側辺フック(左右辺の掛け爪)×4(各40N): ガスケット反力を左右辺で受ける(spec.dome_se</text>
+<text x="156" y="133.40000000000003" font-size="2.6">al)。位置・爪形状は未設計=UNVERIFIED(GA-06)</text>
+<text x="156" y="138.60000000000002" font-size="2.6">接合: CP-03背板(ラッチ+ピン+磁石)</text>
+<text x="156" y="143.8" font-size="2.6">接合: CP-08ガスケット</text>
+<text x="156" y="149.0" font-size="2.6">接合: CP-12 RF窓</text>
 </g></svg>

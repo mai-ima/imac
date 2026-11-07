@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """設計図一式(基板配置・寸法入り配置図・断面・配線図・エアフロー・分解組立・BOM)を model/*.json から生成する。
-出力: drawings/09〜15_*.svg, model/cables.json, docs/wiring.md, docs/bom-final.md
+出力: drawings/09〜15_*.svg, model/cables.json, docs/wiring.md(docs/bom-final.md は tools/gen_estimate.py へ移管)
 実行: python3 tools/gen_package.py   (既存の出力は archive 自動保存の対象: git commit 時)"""
 import json, os, math
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT = f'{R}/drawings'
@@ -173,9 +173,10 @@ for n, s in enumerate(steps): b.append(T(20, 198 + n * 7, s, 3.2))
 save('14_exploded_assembly.svg', b)
 
 # ================= 15 BOM =================
+PRC = json.load(open(f'{R}/model/procurement.json'))
 rows = []
 for k in ('panel', 'ctrl_board', 'board', 'cpu', 'cooler', 'radiator', 'gpu', 'riser', 'psu', 'ac_inlet', 'ssd', 'ram', 'camera_audio'):
-    p = P[k]; rows.append((k, p['name'], p['maker'], 'x'.join(f'{v:g}' for v in p['dims']), p['status'], (p.get('sources') or [''])[0]))
+    p = P[k]; rows.append((k, p['name'], p['maker'], 'x'.join(f'{v:g}' for v in p['dims']), p['status'], (p.get('sources') or [''])[0], PRC['purchased'][k]['qty']))
 CPJ = json.load(open(f'{R}/model/custom_parts.json'))['parts']
 b = head('部品表(BOM) 市販品+特注部品', 'PKG-15', note='status: official=公式確認 / retail=小売一致 / assumed=未確認。数量は設計値', scale='NTS')
 cols = (('ID/No', 10), ('名称', 28), ('メーカー/材質', 150), ('外形mm', 210), ('数量', 250), ('状態/図番', 262))
@@ -183,11 +184,11 @@ for h_, x_ in cols: b.append(T(x_, 24, h_, 3.0, 'start', '#000', 'font-weight="b
 b.append(line(8, 26, 400, 26, '#000', .35))
 y = 31
 for r in rows:
-    b += [T(10, y, r[0], 2.6), T(28, y, r[1][:46], 2.4), T(150, y, r[2][:24], 2.4), T(210, y, r[3], 2.4), T(250, y, '1', 2.6), T(262, y, r[4], 2.4, 'start', '#c0392b' if r[4] == 'assumed' else '#000')]; y += 6
+    b += [T(10, y, r[0], 2.6), T(28, y, r[1][:46], 2.4), T(150, y, r[2][:24], 2.4), T(210, y, r[3], 2.4), T(250, y, str(r[6]), 2.6), T(262, y, r[4], 2.4, 'start', '#c0392b' if r[4] == 'assumed' else '#000')]; y += 4.6
 b.append(line(8, y - 3, 400, y - 3, '#000', .2)); y += 3
 for c_ in CPJ:
-    b += [T(10, y, c_['id'], 2.6), T(28, y, c_['name'][:46], 2.4), T(150, y, c_['material'][:34], 2.2), T(210, y, 'x'.join(f'{v:g}' for v in c_['size'] if v) or '-', 2.4), T(250, y, str(c_['qty']), 2.6), T(262, y, f"drawings/parts/{c_['id']}.svg", 2.2)]; y += 5.2
-    if y > 232: break
+    b += [T(10, y, c_['id'], 2.6), T(28, y, c_['name'][:46], 2.4), T(150, y, c_['material'][:34], 2.2), T(210, y, 'x'.join(f'{v:g}' for v in c_['size'] if v) or '-', 2.4), T(250, y, str(c_['qty']), 2.6), T(262, y, f"drawings/parts/{c_['id']}.svg", 2.2)]; y += 4.6
+    assert y <= 262, f'BOM図が枠に収まらない(行切り捨て禁止): {c_["id"]}'
 save('15_bom_sheet.svg', b)
 
 # ================= docs =================
@@ -195,6 +196,5 @@ w = ['# 配線表(自動生成: tools/gen_package.py)', '', '長さは経路折�
 for c in CAB: w.append(f"| {c['id']} | {c['name']} | {c['frm']} → {c['to']} | {c['awg'] or '-'} | {c['conn']} | {c['len_mm']} | {c['ref_mm'] or '-'} | {c['verdict']} |")
 w += ['', '## 配線ルール', '- 電源線は番号タグ+色。最小曲げ半径: 24p/EPS/PCIe は線外径の6倍以上(約30mm)。', '- ホース(ARCTIC, 450mm, OD12.4): 最小曲げ半径は公式未確認(U)。クリップで固定し90°折れを避ける。', '- アンビリカルはトレイ上端のコネクタ。取り外し時は保護キャップ。', '- ファンはPWM 4pinを基板FAN_HDRへ(ファンハブ使用時はハブ→基板CPU_FAN)。']
 open(f'{R}/docs/wiring.md', 'w').write('\n'.join(w) + '\n')
-bm = ['# 部品表 BOM(自動生成: tools/gen_package.py / 元データ model/parts.json)', '', '| ID | 名称 | メーカー | 外形mm | 状態 | 主な根拠 |', '|---|---|---|---|---|---|'] + [f'| {r[0]} | {r[1]} | {r[2]} | {r[3]} | {r[4]} | {r[5]} |' for r in rows]
-open(f'{R}/docs/bom-final.md', 'w').write('\n'.join(bm) + '\n')
+# docs/bom-final.md は tools/gen_estimate.py が生成する(型番/数量/価格確度を含む。EST-005)
 print('docs written')

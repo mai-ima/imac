@@ -117,214 +117,238 @@
 <text x="210.0" y="31.0" font-size="2.4" text-anchor="start" fill="#222" >609.4x355.6x13.3</text>
 <text x="250.0" y="31.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
 <text x="262.0" y="31.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
-<text x="10.0" y="37.0" font-size="2.6" text-anchor="start" fill="#222" >ctrl_board</text>
-<text x="28.0" y="37.0" font-size="2.4" text-anchor="start" fill="#222" >4K eDPコントローラ基板(型番未確定)</text>
-<text x="150.0" y="37.0" font-size="2.4" text-anchor="start" fill="#222" >未定</text>
-<text x="210.0" y="37.0" font-size="2.4" text-anchor="start" fill="#222" >55x150x15</text>
-<text x="250.0" y="37.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="37.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="43.0" font-size="2.6" text-anchor="start" fill="#222" >board</text>
-<text x="28.0" y="43.0" font-size="2.4" text-anchor="start" fill="#222" >ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-IT</text>
-<text x="150.0" y="43.0" font-size="2.4" text-anchor="start" fill="#222" >ASUS</text>
-<text x="210.0" y="43.0" font-size="2.4" text-anchor="start" fill="#222" >170x170x1.6</text>
-<text x="250.0" y="43.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="43.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
-<text x="10.0" y="49.0" font-size="2.6" text-anchor="start" fill="#222" >cpu</text>
-<text x="28.0" y="49.0" font-size="2.4" text-anchor="start" fill="#222" >AMD Ryzen 9 9950X3D</text>
-<text x="150.0" y="49.0" font-size="2.4" text-anchor="start" fill="#222" >AMD</text>
-<text x="210.0" y="49.0" font-size="2.4" text-anchor="start" fill="#222" >40x40x5</text>
-<text x="250.0" y="49.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="49.0" font-size="2.4" text-anchor="start" fill="#000" >retail</text>
-<text x="10.0" y="55.0" font-size="2.6" text-anchor="start" fill="#222" >cooler</text>
-<text x="28.0" y="55.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A</text>
-<text x="150.0" y="55.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC</text>
-<text x="210.0" y="55.0" font-size="2.4" text-anchor="start" fill="#222" >108.47x91x68.5</text>
-<text x="250.0" y="55.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="55.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
-<text x="10.0" y="61.0" font-size="2.6" text-anchor="start" fill="#222" >radiator</text>
-<text x="28.0" y="61.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12</text>
-<text x="150.0" y="61.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC</text>
-<text x="210.0" y="61.0" font-size="2.4" text-anchor="start" fill="#222" >277x120x63</text>
-<text x="250.0" y="61.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="61.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
-<text x="10.0" y="67.0" font-size="2.6" text-anchor="start" fill="#222" >gpu</text>
-<text x="28.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >RTX 5070 Ti 16GB 小型2スロット(寸法基準: PNY RTX 5070 Ti</text>
-<text x="150.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >PNY(寸法基準)</text>
-<text x="210.0" y="67.0" font-size="2.4" text-anchor="start" fill="#222" >290x150x40</text>
-<text x="250.0" y="67.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="67.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="73.0" font-size="2.6" text-anchor="start" fill="#222" >riser</text>
-<text x="28.0" y="73.0" font-size="2.4" text-anchor="start" fill="#222" >LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確認)</text>
-<text x="150.0" y="73.0" font-size="2.4" text-anchor="start" fill="#222" >LINKUP</text>
-<text x="210.0" y="73.0" font-size="2.4" text-anchor="start" fill="#222" >200x89x6</text>
-<text x="250.0" y="73.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="73.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="79.0" font-size="2.6" text-anchor="start" fill="#222" >psu</text>
-<text x="28.0" y="79.0" font-size="2.4" text-anchor="start" fill="#222" >Corsair SF1000 (SFX 1000W 80+ Platinum, ATX 3.</text>
-<text x="150.0" y="79.0" font-size="2.4" text-anchor="start" fill="#222" >Corsair</text>
-<text x="210.0" y="79.0" font-size="2.4" text-anchor="start" fill="#222" >125x100x63.5</text>
-<text x="250.0" y="79.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="79.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="85.0" font-size="2.6" text-anchor="start" fill="#222" >ac_inlet</text>
-<text x="28.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >IEC C14 AC インレット(内部延長C13ケーブルでPSUへ) 型番未選定</text>
-<text x="150.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >Schurter/Qualtek等</text>
-<text x="210.0" y="85.0" font-size="2.4" text-anchor="start" fill="#222" >28x26x20</text>
-<text x="250.0" y="85.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="85.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="91.0" font-size="2.6" text-anchor="start" fill="#222" >ssd</text>
-<text x="28.0" y="91.0" font-size="2.4" text-anchor="start" fill="#222" >Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW</text>
-<text x="150.0" y="91.0" font-size="2.4" text-anchor="start" fill="#222" >Samsung</text>
-<text x="210.0" y="91.0" font-size="2.4" text-anchor="start" fill="#222" >80.15x25x8.88</text>
-<text x="250.0" y="91.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="91.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
-<text x="10.0" y="97.0" font-size="2.6" text-anchor="start" fill="#222" >ram</text>
-<text x="28.0" y="97.0" font-size="2.4" text-anchor="start" fill="#222" >DDR5-6000 CL30 EXPO 32GB (2x16GB) 大手品(型番未定)</text>
-<text x="150.0" y="97.0" font-size="2.4" text-anchor="start" fill="#222" >Corsair/G.Skill/Kingston</text>
-<text x="210.0" y="97.0" font-size="2.4" text-anchor="start" fill="#222" >133.35x8x44</text>
-<text x="250.0" y="97.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="97.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<text x="10.0" y="103.0" font-size="2.6" text-anchor="start" fill="#222" >camera_audio</text>
-<text x="28.0" y="103.0" font-size="2.4" text-anchor="start" fill="#222" >Webカメラ/マイク/スピーカー</text>
-<text x="150.0" y="103.0" font-size="2.4" text-anchor="start" fill="#222" >未選定</text>
-<text x="210.0" y="103.0" font-size="2.4" text-anchor="start" fill="#222" >0x0x0</text>
+<text x="10.0" y="35.6" font-size="2.6" text-anchor="start" fill="#222" >ctrl_board</text>
+<text x="28.0" y="35.6" font-size="2.4" text-anchor="start" fill="#222" >4K eDPコントローラ基板(型番未確定)</text>
+<text x="150.0" y="35.6" font-size="2.4" text-anchor="start" fill="#222" >未定</text>
+<text x="210.0" y="35.6" font-size="2.4" text-anchor="start" fill="#222" >55x110x15</text>
+<text x="250.0" y="35.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="35.6" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="40.2" font-size="2.6" text-anchor="start" fill="#222" >board</text>
+<text x="28.0" y="40.2" font-size="2.4" text-anchor="start" fill="#222" >ASUS ROG STRIX X870-I GAMING WIFI (AM5 Mini-IT</text>
+<text x="150.0" y="40.2" font-size="2.4" text-anchor="start" fill="#222" >ASUS</text>
+<text x="210.0" y="40.2" font-size="2.4" text-anchor="start" fill="#222" >170x170x1.6</text>
+<text x="250.0" y="40.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="40.2" font-size="2.4" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="44.8" font-size="2.6" text-anchor="start" fill="#222" >cpu</text>
+<text x="28.0" y="44.8" font-size="2.4" text-anchor="start" fill="#222" >AMD Ryzen 9 9950X3D</text>
+<text x="150.0" y="44.8" font-size="2.4" text-anchor="start" fill="#222" >AMD</text>
+<text x="210.0" y="44.8" font-size="2.4" text-anchor="start" fill="#222" >40x40x5</text>
+<text x="250.0" y="44.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="44.8" font-size="2.4" text-anchor="start" fill="#000" >retail</text>
+<text x="10.0" y="49.4" font-size="2.6" text-anchor="start" fill="#222" >cooler</text>
+<text x="28.0" y="49.4" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 (ACFRE00178A</text>
+<text x="150.0" y="49.4" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC</text>
+<text x="210.0" y="49.4" font-size="2.4" text-anchor="start" fill="#222" >108.47x91x68.5</text>
+<text x="250.0" y="49.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="49.4" font-size="2.4" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="54.0" font-size="2.6" text-anchor="start" fill="#222" >radiator</text>
+<text x="28.0" y="54.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC Liquid Freezer III Pro 240 ラジエーター + P12</text>
+<text x="150.0" y="54.0" font-size="2.4" text-anchor="start" fill="#222" >ARCTIC</text>
+<text x="210.0" y="54.0" font-size="2.4" text-anchor="start" fill="#222" >277x120x63</text>
+<text x="250.0" y="54.0" font-size="2.6" text-anchor="start" fill="#222" >0</text>
+<text x="262.0" y="54.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="58.6" font-size="2.6" text-anchor="start" fill="#222" >gpu</text>
+<text x="28.0" y="58.6" font-size="2.4" text-anchor="start" fill="#222" >RTX 5070 Ti 16GB 小型2スロット(寸法基準: PNY RTX 5070 Ti</text>
+<text x="150.0" y="58.6" font-size="2.4" text-anchor="start" fill="#222" >PNY(寸法基準)</text>
+<text x="210.0" y="58.6" font-size="2.4" text-anchor="start" fill="#222" >290x150x40</text>
+<text x="250.0" y="58.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="58.6" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="63.2" font-size="2.6" text-anchor="start" fill="#222" >riser</text>
+<text x="28.0" y="63.2" font-size="2.4" text-anchor="start" fill="#222" >LINKUP AVA5 PCIe 5.0 x16 ライザー(型番要確認)</text>
+<text x="150.0" y="63.2" font-size="2.4" text-anchor="start" fill="#222" >LINKUP</text>
+<text x="210.0" y="63.2" font-size="2.4" text-anchor="start" fill="#222" >200x89x6</text>
+<text x="250.0" y="63.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="63.2" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="67.8" font-size="2.6" text-anchor="start" fill="#222" >psu</text>
+<text x="28.0" y="67.8" font-size="2.4" text-anchor="start" fill="#222" >Corsair SF1000 (SFX 1000W 80+ Platinum, ATX 3.</text>
+<text x="150.0" y="67.8" font-size="2.4" text-anchor="start" fill="#222" >Corsair</text>
+<text x="210.0" y="67.8" font-size="2.4" text-anchor="start" fill="#222" >125x100x63.5</text>
+<text x="250.0" y="67.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="67.8" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="72.4" font-size="2.6" text-anchor="start" fill="#222" >ac_inlet</text>
+<text x="28.0" y="72.4" font-size="2.4" text-anchor="start" fill="#222" >IEC C14 AC インレット(内部延長C13ケーブルでPSUへ) 型番未選定</text>
+<text x="150.0" y="72.4" font-size="2.4" text-anchor="start" fill="#222" >Schurter/Qualtek等</text>
+<text x="210.0" y="72.4" font-size="2.4" text-anchor="start" fill="#222" >28x26x20</text>
+<text x="250.0" y="72.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="72.4" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="77.0" font-size="2.6" text-anchor="start" fill="#222" >ssd</text>
+<text x="28.0" y="77.0" font-size="2.4" text-anchor="start" fill="#222" >Samsung 990 PRO with Heatsink 1TB (MZ-V9P1T0CW</text>
+<text x="150.0" y="77.0" font-size="2.4" text-anchor="start" fill="#222" >Samsung</text>
+<text x="210.0" y="77.0" font-size="2.4" text-anchor="start" fill="#222" >80.15x25x8.88</text>
+<text x="250.0" y="77.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="77.0" font-size="2.4" text-anchor="start" fill="#000" >official</text>
+<text x="10.0" y="81.6" font-size="2.6" text-anchor="start" fill="#222" >ram</text>
+<text x="28.0" y="81.6" font-size="2.4" text-anchor="start" fill="#222" >DDR5-6000 CL30 EXPO 32GB (2x16GB) 大手品(型番未定)</text>
+<text x="150.0" y="81.6" font-size="2.4" text-anchor="start" fill="#222" >Corsair/G.Skill/Kingston</text>
+<text x="210.0" y="81.6" font-size="2.4" text-anchor="start" fill="#222" >133.35x8x44</text>
+<text x="250.0" y="81.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="81.6" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<text x="10.0" y="86.2" font-size="2.6" text-anchor="start" fill="#222" >camera_audio</text>
+<text x="28.0" y="86.2" font-size="2.4" text-anchor="start" fill="#222" >Webカメラ/マイク/スピーカー</text>
+<text x="150.0" y="86.2" font-size="2.4" text-anchor="start" fill="#222" >未選定</text>
+<text x="210.0" y="86.2" font-size="2.4" text-anchor="start" fill="#222" >0x0x0</text>
+<text x="250.0" y="86.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="86.2" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
+<line x1="8.00" y1="87.80" x2="400.00" y2="87.80" stroke="#000" stroke-width="0.2"  />
+<text x="10.0" y="93.8" font-size="2.6" text-anchor="start" fill="#222" >CP-01</text>
+<text x="28.0" y="93.8" font-size="2.4" text-anchor="start" fill="#222" >前面ガラス</text>
+<text x="150.0" y="93.8" font-size="2.2" text-anchor="start" fill="#222" >化学強化ガラス(アルミノシリケート)</text>
+<text x="210.0" y="93.8" font-size="2.4" text-anchor="start" fill="#222" >619.4x414.7</text>
+<text x="250.0" y="93.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="93.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-01.svg</text>
+<text x="10.0" y="98.4" font-size="2.6" text-anchor="start" fill="#222" >CP-02</text>
+<text x="28.0" y="98.4" font-size="2.4" text-anchor="start" fill="#222" >スラブ枠(背板の曲げ縁・ガラス受け)</text>
+<text x="150.0" y="98.4" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 t2.0(背板CP-03と一体の曲げ縁) または</text>
+<text x="210.0" y="98.4" font-size="2.4" text-anchor="start" fill="#222" >620x415.3x25</text>
+<text x="250.0" y="98.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="98.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-02.svg</text>
+<text x="10.0" y="103.0" font-size="2.6" text-anchor="start" fill="#222" >CP-03</text>
+<text x="28.0" y="103.0" font-size="2.4" text-anchor="start" fill="#222" >背板(バックプレート)</text>
+<text x="150.0" y="103.0" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="103.0" font-size="2.4" text-anchor="start" fill="#222" >620x415.3</text>
 <text x="250.0" y="103.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="103.0" font-size="2.4" text-anchor="start" fill="#c0392b" >assumed</text>
-<line x1="8.00" y1="106.00" x2="400.00" y2="106.00" stroke="#000" stroke-width="0.2"  />
-<text x="10.0" y="112.0" font-size="2.6" text-anchor="start" fill="#222" >CP-01</text>
-<text x="28.0" y="112.0" font-size="2.4" text-anchor="start" fill="#222" >前面ガラス</text>
-<text x="150.0" y="112.0" font-size="2.2" text-anchor="start" fill="#222" >化学強化ガラス(アルミノシリケート)</text>
-<text x="210.0" y="112.0" font-size="2.4" text-anchor="start" fill="#222" >619.4x414.7</text>
-<text x="250.0" y="112.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="112.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-01.svg</text>
-<text x="10.0" y="117.2" font-size="2.6" text-anchor="start" fill="#222" >CP-02</text>
-<text x="28.0" y="117.2" font-size="2.4" text-anchor="start" fill="#222" >スラブ枠(背板の曲げ縁・ガラス受け)</text>
-<text x="150.0" y="117.2" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 t2.0(背板CP-03と一体の曲げ縁) または</text>
-<text x="210.0" y="117.2" font-size="2.4" text-anchor="start" fill="#222" >620x415.3x25</text>
-<text x="250.0" y="117.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="117.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-02.svg</text>
-<text x="10.0" y="122.4" font-size="2.6" text-anchor="start" fill="#222" >CP-03</text>
-<text x="28.0" y="122.4" font-size="2.4" text-anchor="start" fill="#222" >背板(バックプレート)</text>
-<text x="150.0" y="122.4" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="122.4" font-size="2.4" text-anchor="start" fill="#222" >620x415.3</text>
-<text x="250.0" y="122.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="122.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-03.svg</text>
-<text x="10.0" y="127.6" font-size="2.6" text-anchor="start" fill="#222" >CP-04</text>
-<text x="28.0" y="127.6" font-size="2.4" text-anchor="start" fill="#222" >キーホール吊りピン(肩ねじ)</text>
-<text x="150.0" y="127.6" font-size="2.2" text-anchor="start" fill="#222" >SUS304 肩ねじ(Misumi/McMaster相当) M4ねじ</text>
-<text x="210.0" y="127.6" font-size="2.4" text-anchor="start" fill="#222" >5</text>
-<text x="250.0" y="127.6" font-size="2.6" text-anchor="start" fill="#222" >4</text>
-<text x="262.0" y="127.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-04.svg</text>
-<text x="10.0" y="132.8" font-size="2.6" text-anchor="start" fill="#222" >CP-05</text>
-<text x="28.0" y="132.8" font-size="2.4" text-anchor="start" fill="#222" >キーホール補強ブッシュ</text>
-<text x="150.0" y="132.8" font-size="2.2" text-anchor="start" fill="#222" >SUS304 t1.0 プレート(16×28 長丸)</text>
-<text x="210.0" y="132.8" font-size="2.4" text-anchor="start" fill="#222" >16x28</text>
-<text x="250.0" y="132.8" font-size="2.6" text-anchor="start" fill="#222" >4</text>
-<text x="262.0" y="132.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-05.svg</text>
-<text x="10.0" y="138.0" font-size="2.6" text-anchor="start" fill="#222" >CP-06</text>
-<text x="28.0" y="138.0" font-size="2.4" text-anchor="start" fill="#222" >サービストレイ</text>
-<text x="150.0" y="138.0" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="138.0" font-size="2.4" text-anchor="start" fill="#222" >570x351.3</text>
-<text x="250.0" y="138.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="138.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-06.svg</text>
-<text x="10.0" y="143.2" font-size="2.6" text-anchor="start" fill="#222" >CP-07</text>
-<text x="28.0" y="143.2" font-size="2.4" text-anchor="start" fill="#222" >背面ドーム(カバー)</text>
-<text x="150.0" y="143.2" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 または A5052-O絞り</text>
-<text x="210.0" y="143.2" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x165</text>
-<text x="250.0" y="143.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="143.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-07.svg</text>
-<text x="10.0" y="148.4" font-size="2.6" text-anchor="start" fill="#222" >CP-08</text>
-<text x="28.0" y="148.4" font-size="2.4" text-anchor="start" fill="#222" >EMIガスケット</text>
-<text x="150.0" y="148.4" font-size="2.2" text-anchor="start" fill="#222" >導電ファブリックオーバーフォーム(候補: Parker SOFT-S</text>
-<text x="210.0" y="148.4" font-size="2.4" text-anchor="start" fill="#222" >1947x3</text>
-<text x="250.0" y="148.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="148.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-08.svg</text>
-<text x="10.0" y="153.6" font-size="2.6" text-anchor="start" fill="#222" >CP-09</text>
-<text x="28.0" y="153.6" font-size="2.4" text-anchor="start" fill="#222" >ドームラッチ(下面・隠し)+上辺フック</text>
-<text x="150.0" y="153.6" font-size="2.2" text-anchor="start" fill="#222" >SUS303 カム+樹脂ノブ または 規格品(Southco/Mis</text>
-<text x="210.0" y="153.6" font-size="2.4" text-anchor="start" fill="#222" >-</text>
-<text x="250.0" y="153.6" font-size="2.6" text-anchor="start" fill="#222" >6</text>
-<text x="262.0" y="153.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-09.svg</text>
-<text x="10.0" y="158.8" font-size="2.6" text-anchor="start" fill="#222" >CP-10</text>
-<text x="28.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >スタンド足(ballast内蔵)</text>
-<text x="150.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5(足本体)+SPCC鋼板ballast+A5052底</text>
-<text x="210.0" y="158.8" font-size="2.4" text-anchor="start" fill="#222" >360x310x12</text>
-<text x="250.0" y="158.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="158.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-10.svg</text>
-<text x="10.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >CP-11</text>
-<text x="28.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >チルト機構(ヒンジ+カウンターバランス)</text>
-<text x="150.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持3.0N</text>
-<text x="210.0" y="164.0" font-size="2.4" text-anchor="start" fill="#222" >-</text>
-<text x="250.0" y="164.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="164.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-11.svg</text>
-<text x="10.0" y="169.2" font-size="2.6" text-anchor="start" fill="#222" >CP-12</text>
-<text x="28.0" y="169.2" font-size="2.4" text-anchor="start" fill="#222" >RF窓(格子裏の樹脂板)</text>
-<text x="150.0" y="169.2" font-size="2.2" text-anchor="start" fill="#222" >PC樹脂(UL94 V-0, 非導電, 厚2.0)</text>
-<text x="210.0" y="169.2" font-size="2.4" text-anchor="start" fill="#222" >60x30</text>
-<text x="250.0" y="169.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="169.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-12.svg</text>
-<text x="10.0" y="174.4" font-size="2.6" text-anchor="start" fill="#222" >CP-13</text>
-<text x="28.0" y="174.4" font-size="2.4" text-anchor="start" fill="#222" >黒メッシュフィルタ(ドーム内面追従の殻)</text>
-<text x="150.0" y="174.4" font-size="2.2" text-anchor="start" fill="#222" >A5052 t1.0 枠+SUSメッシュ(#100)</text>
-<text x="210.0" y="174.4" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x0.8</text>
-<text x="250.0" y="174.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="174.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-13.svg</text>
-<text x="10.0" y="179.6" font-size="2.6" text-anchor="start" fill="#222" >CP-14</text>
-<text x="28.0" y="179.6" font-size="2.4" text-anchor="start" fill="#222" >GPU低背ステー(下端支持, z5〜14)</text>
-<text x="150.0" y="179.6" font-size="2.2" text-anchor="start" fill="#222" >A5052 t2.0 板金+POM当て(3mm)</text>
-<text x="210.0" y="179.6" font-size="2.4" text-anchor="start" fill="#222" >150x10x9</text>
-<text x="250.0" y="179.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="179.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-14.svg</text>
-<text x="10.0" y="184.8" font-size="2.6" text-anchor="start" fill="#222" >CP-16</text>
-<text x="28.0" y="184.8" font-size="2.4" text-anchor="start" fill="#222" >ケーブルクリップ/コーム</text>
-<text x="150.0" y="184.8" font-size="2.2" text-anchor="start" fill="#222" >POM/ナイロン(UL94 V-2以上)</text>
-<text x="210.0" y="184.8" font-size="2.4" text-anchor="start" fill="#222" >-</text>
-<text x="250.0" y="184.8" font-size="2.6" text-anchor="start" fill="#222" >24</text>
-<text x="262.0" y="184.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-16.svg</text>
-<text x="10.0" y="190.0" font-size="2.6" text-anchor="start" fill="#222" >CP-17</text>
-<text x="28.0" y="190.0" font-size="2.4" text-anchor="start" fill="#222" >アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100</text>
-<text x="150.0" y="190.0" font-size="2.2" text-anchor="start" fill="#222" >市販ケーブル+ロックコネクタ(型番U19)</text>
-<text x="210.0" y="190.0" font-size="2.4" text-anchor="start" fill="#222" >380</text>
-<text x="250.0" y="190.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="190.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-17.svg</text>
-<text x="10.0" y="195.2" font-size="2.6" text-anchor="start" fill="#222" >CP-18</text>
-<text x="28.0" y="195.2" font-size="2.4" text-anchor="start" fill="#222" >保護接地(PE)系統</text>
-<text x="150.0" y="195.2" font-size="2.2" text-anchor="start" fill="#222" >AWG16 緑/黄ケーブル+M4リング端子+歯付座金+編組ストラップ</text>
-<text x="210.0" y="195.2" font-size="2.4" text-anchor="start" fill="#222" >-</text>
-<text x="250.0" y="195.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="195.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-18.svg</text>
-<text x="10.0" y="200.4" font-size="2.6" text-anchor="start" fill="#222" >CP-19</text>
-<text x="28.0" y="200.4" font-size="2.4" text-anchor="start" fill="#222" >断熱シート/断熱スペーサ(トレイ-背板, パネル熱遮断)</text>
-<text x="150.0" y="200.4" font-size="2.2" text-anchor="start" fill="#222" >断熱シート t3 (エアロゲル/フェノールフォーム, k≤0.04W</text>
-<text x="210.0" y="200.4" font-size="2.4" text-anchor="start" fill="#222" >566x347.3</text>
-<text x="250.0" y="200.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="200.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-19.svg</text>
-<text x="10.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >CP-20</text>
-<text x="28.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >首振りステータ板</text>
-<text x="150.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="205.6" font-size="2.4" text-anchor="start" fill="#222" >190x190</text>
-<text x="250.0" y="205.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="205.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-20.svg</text>
-<text x="10.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >CP-21</text>
-<text x="28.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板</text>
-<text x="150.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
-<text x="210.0" y="210.8" font-size="2.4" text-anchor="start" fill="#222" >152x152</text>
-<text x="250.0" y="210.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="210.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-21.svg</text>
-<text x="10.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >CP-22</text>
-<text x="28.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >ネック(基台+側板+タイプレート+前後カバー)</text>
-<text x="150.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5</text>
-<text x="210.0" y="216.0" font-size="2.4" text-anchor="start" fill="#222" >124x81</text>
-<text x="250.0" y="216.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="216.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-22.svg</text>
-<text x="10.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >CP-23</text>
-<text x="28.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(カム板+ローラ従動子+ダイスプリング2本+ストッパ用尾部レバー)</text>
-<text x="150.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >カム板 SUS304 t6 / ローラ Ø12×8 焼入れ+ニードル</text>
-<text x="210.0" y="221.2" font-size="2.4" text-anchor="start" fill="#222" >60x14</text>
-<text x="250.0" y="221.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="221.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-23.svg</text>
-<text x="10.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >CP-24</text>
-<text x="28.0" y="226.4" font-size="2.4" text-anchor="start" fill="#222" >ACコード引張逃がしクランプ(インレット背面)</text>
-<text x="150.0" y="226.4" font-size="2.2" text-anchor="start" fill="#222" >PA66-GF30(難燃UL94 V-0)+SUSばね</text>
-<text x="210.0" y="226.4" font-size="2.4" text-anchor="start" fill="#222" >40x28</text>
-<text x="250.0" y="226.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
-<text x="262.0" y="226.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-24.svg</text></g></svg>
+<text x="262.0" y="103.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-03.svg</text>
+<text x="10.0" y="107.6" font-size="2.6" text-anchor="start" fill="#222" >CP-04</text>
+<text x="28.0" y="107.6" font-size="2.4" text-anchor="start" fill="#222" >キーホール吊りピン(肩ねじ)</text>
+<text x="150.0" y="107.6" font-size="2.2" text-anchor="start" fill="#222" >SUS304 肩ねじ(Misumi/McMaster相当) M4ねじ</text>
+<text x="210.0" y="107.6" font-size="2.4" text-anchor="start" fill="#222" >5</text>
+<text x="250.0" y="107.6" font-size="2.6" text-anchor="start" fill="#222" >4</text>
+<text x="262.0" y="107.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-04.svg</text>
+<text x="10.0" y="112.2" font-size="2.6" text-anchor="start" fill="#222" >CP-05</text>
+<text x="28.0" y="112.2" font-size="2.4" text-anchor="start" fill="#222" >キーホール補強ブッシュ</text>
+<text x="150.0" y="112.2" font-size="2.2" text-anchor="start" fill="#222" >SUS304 t1.0 プレート(16×28 長丸)</text>
+<text x="210.0" y="112.2" font-size="2.4" text-anchor="start" fill="#222" >16x28</text>
+<text x="250.0" y="112.2" font-size="2.6" text-anchor="start" fill="#222" >4</text>
+<text x="262.0" y="112.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-05.svg</text>
+<text x="10.0" y="116.8" font-size="2.6" text-anchor="start" fill="#222" >CP-06</text>
+<text x="28.0" y="116.8" font-size="2.4" text-anchor="start" fill="#222" >サービストレイ</text>
+<text x="150.0" y="116.8" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="116.8" font-size="2.4" text-anchor="start" fill="#222" >570x351.3</text>
+<text x="250.0" y="116.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="116.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-06.svg</text>
+<text x="10.0" y="121.4" font-size="2.6" text-anchor="start" fill="#222" >CP-07</text>
+<text x="28.0" y="121.4" font-size="2.4" text-anchor="start" fill="#222" >背面ドーム(カバー)</text>
+<text x="150.0" y="121.4" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 または A5052-O絞り</text>
+<text x="210.0" y="121.4" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x165</text>
+<text x="250.0" y="121.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="121.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-07.svg</text>
+<text x="10.0" y="126.0" font-size="2.6" text-anchor="start" fill="#222" >CP-08</text>
+<text x="28.0" y="126.0" font-size="2.4" text-anchor="start" fill="#222" >EMIガスケット</text>
+<text x="150.0" y="126.0" font-size="2.2" text-anchor="start" fill="#222" >導電ファブリックオーバーフォーム(候補: Parker SOFT-S</text>
+<text x="210.0" y="126.0" font-size="2.4" text-anchor="start" fill="#222" >1947x3</text>
+<text x="250.0" y="126.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="126.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-08.svg</text>
+<text x="10.0" y="130.6" font-size="2.6" text-anchor="start" fill="#222" >CP-09</text>
+<text x="28.0" y="130.6" font-size="2.4" text-anchor="start" fill="#222" >ドームラッチ(下面・隠し)+上辺フック</text>
+<text x="150.0" y="130.6" font-size="2.2" text-anchor="start" fill="#222" >SUS303 カム+樹脂ノブ または 規格品(Southco/Mis</text>
+<text x="210.0" y="130.6" font-size="2.4" text-anchor="start" fill="#222" >-</text>
+<text x="250.0" y="130.6" font-size="2.6" text-anchor="start" fill="#222" >6</text>
+<text x="262.0" y="130.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-09.svg</text>
+<text x="10.0" y="135.2" font-size="2.6" text-anchor="start" fill="#222" >CP-10</text>
+<text x="28.0" y="135.2" font-size="2.4" text-anchor="start" fill="#222" >スタンド足(ballast内蔵)</text>
+<text x="150.0" y="135.2" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5(足本体)+SPCC鋼板ballast+A5052底</text>
+<text x="210.0" y="135.2" font-size="2.4" text-anchor="start" fill="#222" >360x310x12</text>
+<text x="250.0" y="135.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="135.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-10.svg</text>
+<text x="10.0" y="139.8" font-size="2.6" text-anchor="start" fill="#222" >CP-11</text>
+<text x="28.0" y="139.8" font-size="2.4" text-anchor="start" fill="#222" >チルト機構(ヒンジ+カウンターバランス)</text>
+<text x="150.0" y="139.8" font-size="2.2" text-anchor="start" fill="#222" >対称摩擦ヒンジ(Reell PHL/PHC級)×2(合計保持3.0N</text>
+<text x="210.0" y="139.8" font-size="2.4" text-anchor="start" fill="#222" >-</text>
+<text x="250.0" y="139.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="139.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-11.svg</text>
+<text x="10.0" y="144.4" font-size="2.6" text-anchor="start" fill="#222" >CP-12</text>
+<text x="28.0" y="144.4" font-size="2.4" text-anchor="start" fill="#222" >RF窓(格子裏の樹脂板)</text>
+<text x="150.0" y="144.4" font-size="2.2" text-anchor="start" fill="#222" >PC樹脂(UL94 V-0, 非導電, 厚2.0)</text>
+<text x="210.0" y="144.4" font-size="2.4" text-anchor="start" fill="#222" >60x30</text>
+<text x="250.0" y="144.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="144.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-12.svg</text>
+<text x="10.0" y="149.0" font-size="2.6" text-anchor="start" fill="#222" >CP-13</text>
+<text x="28.0" y="149.0" font-size="2.4" text-anchor="start" fill="#222" >黒メッシュフィルタ(ドーム内面追従の殻)</text>
+<text x="150.0" y="149.0" font-size="2.2" text-anchor="start" fill="#222" >A5052 t1.0 枠+SUSメッシュ(#100)</text>
+<text x="210.0" y="149.0" font-size="2.4" text-anchor="start" fill="#222" >596x377.3x0.8</text>
+<text x="250.0" y="149.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="149.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-13.svg</text>
+<text x="10.0" y="153.6" font-size="2.6" text-anchor="start" fill="#222" >CP-14</text>
+<text x="28.0" y="153.6" font-size="2.4" text-anchor="start" fill="#222" >GPU低背ステー(下端支持, z5〜14)</text>
+<text x="150.0" y="153.6" font-size="2.2" text-anchor="start" fill="#222" >A5052 t2.0 板金+POM当て(3mm)</text>
+<text x="210.0" y="153.6" font-size="2.4" text-anchor="start" fill="#222" >150x10x9</text>
+<text x="250.0" y="153.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="153.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-14.svg</text>
+<text x="10.0" y="158.2" font-size="2.6" text-anchor="start" fill="#222" >CP-16</text>
+<text x="28.0" y="158.2" font-size="2.4" text-anchor="start" fill="#222" >ケーブルクリップ/コーム</text>
+<text x="150.0" y="158.2" font-size="2.2" text-anchor="start" fill="#222" >POM/ナイロン(UL94 V-2以上)</text>
+<text x="210.0" y="158.2" font-size="2.4" text-anchor="start" fill="#222" >-</text>
+<text x="250.0" y="158.2" font-size="2.6" text-anchor="start" fill="#222" >24</text>
+<text x="262.0" y="158.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-16.svg</text>
+<text x="10.0" y="162.8" font-size="2.6" text-anchor="start" fill="#222" >CP-17</text>
+<text x="28.0" y="162.8" font-size="2.4" text-anchor="start" fill="#222" >アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100</text>
+<text x="150.0" y="162.8" font-size="2.2" text-anchor="start" fill="#222" >市販ケーブル+ロックコネクタ(型番U19)</text>
+<text x="210.0" y="162.8" font-size="2.4" text-anchor="start" fill="#222" >380</text>
+<text x="250.0" y="162.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="162.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-17.svg</text>
+<text x="10.0" y="167.4" font-size="2.6" text-anchor="start" fill="#222" >CP-18</text>
+<text x="28.0" y="167.4" font-size="2.4" text-anchor="start" fill="#222" >保護接地(PE)系統</text>
+<text x="150.0" y="167.4" font-size="2.2" text-anchor="start" fill="#222" >AWG16 緑/黄ケーブル+M4リング端子+歯付座金+編組ストラップ</text>
+<text x="210.0" y="167.4" font-size="2.4" text-anchor="start" fill="#222" >-</text>
+<text x="250.0" y="167.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="167.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-18.svg</text>
+<text x="10.0" y="172.0" font-size="2.6" text-anchor="start" fill="#222" >CP-19</text>
+<text x="28.0" y="172.0" font-size="2.4" text-anchor="start" fill="#222" >断熱シート/断熱スペーサ(トレイ-背板, パネル熱遮断)</text>
+<text x="150.0" y="172.0" font-size="2.2" text-anchor="start" fill="#222" >断熱シート t3 (エアロゲル/フェノールフォーム, k≤0.04W</text>
+<text x="210.0" y="172.0" font-size="2.4" text-anchor="start" fill="#222" >566x347.3</text>
+<text x="250.0" y="172.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="172.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-19.svg</text>
+<text x="10.0" y="176.6" font-size="2.6" text-anchor="start" fill="#222" >CP-20</text>
+<text x="28.0" y="176.6" font-size="2.4" text-anchor="start" fill="#222" >首振りステータ板</text>
+<text x="150.0" y="176.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="176.6" font-size="2.4" text-anchor="start" fill="#222" >190x190</text>
+<text x="250.0" y="176.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="176.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-20.svg</text>
+<text x="10.0" y="181.2" font-size="2.6" text-anchor="start" fill="#222" >CP-21</text>
+<text x="28.0" y="181.2" font-size="2.4" text-anchor="start" fill="#222" >首振りロータ板</text>
+<text x="150.0" y="181.2" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32</text>
+<text x="210.0" y="181.2" font-size="2.4" text-anchor="start" fill="#222" >152x152</text>
+<text x="250.0" y="181.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="181.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-21.svg</text>
+<text x="10.0" y="185.8" font-size="2.6" text-anchor="start" fill="#222" >CP-22</text>
+<text x="28.0" y="185.8" font-size="2.4" text-anchor="start" fill="#222" >ネック(基台+側板+タイプレート+前後カバー)</text>
+<text x="150.0" y="185.8" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5</text>
+<text x="210.0" y="185.8" font-size="2.4" text-anchor="start" fill="#222" >124x81</text>
+<text x="250.0" y="185.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="185.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-22.svg</text>
+<text x="10.0" y="190.4" font-size="2.6" text-anchor="start" fill="#222" >CP-23</text>
+<text x="28.0" y="190.4" font-size="2.4" text-anchor="start" fill="#222" >チルトバランサ(カム板+ローラ従動子+ダイスプリング2本+ストッパ用尾部レバー)</text>
+<text x="150.0" y="190.4" font-size="2.2" text-anchor="start" fill="#222" >カム板 SUS440C HRC58 t10 / ローラ SUJ2 Ø</text>
+<text x="210.0" y="190.4" font-size="2.4" text-anchor="start" fill="#222" >44x14</text>
+<text x="250.0" y="190.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="190.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-23.svg</text>
+<text x="10.0" y="195.0" font-size="2.6" text-anchor="start" fill="#222" >CP-24</text>
+<text x="28.0" y="195.0" font-size="2.4" text-anchor="start" fill="#222" >ACコード引張逃がしクランプ(インレット背面)</text>
+<text x="150.0" y="195.0" font-size="2.2" text-anchor="start" fill="#222" >PA66-GF30(難燃UL94 V-0)+SUSばね</text>
+<text x="210.0" y="195.0" font-size="2.4" text-anchor="start" fill="#222" >40x28</text>
+<text x="250.0" y="195.0" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="195.0" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-24.svg</text>
+<text x="10.0" y="199.6" font-size="2.6" text-anchor="start" fill="#222" >CP-25</text>
+<text x="28.0" y="199.6" font-size="2.4" text-anchor="start" fill="#222" >ラジエーター吸気ダクト(外気のみをファンへ導く四方壁)</text>
+<text x="150.0" y="199.6" font-size="2.2" text-anchor="start" fill="#222" >A5052-H32 t1.0(材質は仮置き。parts.json r</text>
+<text x="210.0" y="199.6" font-size="2.4" text-anchor="start" fill="#222" >228x120x43</text>
+<text x="250.0" y="199.6" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="199.6" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-25.svg</text>
+<text x="10.0" y="204.2" font-size="2.6" text-anchor="start" fill="#222" >CP-26</text>
+<text x="28.0" y="204.2" font-size="2.4" text-anchor="start" fill="#222" >首振りスカート(足固定の円筒外皮, 軸受を隠す)</text>
+<text x="150.0" y="204.2" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5 または A5052-H32 t2.0(板厚・材質は</text>
+<text x="210.0" y="204.2" font-size="2.4" text-anchor="start" fill="#222" >194x194x32.5</text>
+<text x="250.0" y="204.2" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="204.2" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-26.svg</text>
+<text x="10.0" y="208.8" font-size="2.6" text-anchor="start" fill="#222" >CP-27</text>
+<text x="28.0" y="208.8" font-size="2.4" text-anchor="start" fill="#222" >ネックカラー(ネックと一緒に回る円筒カラー, ロータ上面を隠す)</text>
+<text x="150.0" y="208.8" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5 または A5052-H32 t2.0(仮置き。同色</text>
+<text x="210.0" y="208.8" font-size="2.4" text-anchor="start" fill="#222" >194x194x11</text>
+<text x="250.0" y="208.8" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="208.8" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-27.svg</text>
+<text x="10.0" y="213.4" font-size="2.6" text-anchor="start" fill="#222" >CP-28</text>
+<text x="28.0" y="213.4" font-size="2.4" text-anchor="start" fill="#222" >ネック外皮(ネック機構を覆う角丸の外皮)</text>
+<text x="150.0" y="213.4" font-size="2.2" text-anchor="start" fill="#222" >A6063-T5 または A5052-H32 t2.0(仮置き。同色</text>
+<text x="210.0" y="213.4" font-size="2.4" text-anchor="start" fill="#222" >127x67.2x38</text>
+<text x="250.0" y="213.4" font-size="2.6" text-anchor="start" fill="#222" >1</text>
+<text x="262.0" y="213.4" font-size="2.2" text-anchor="start" fill="#222" >drawings/parts/CP-28.svg</text></g></svg>

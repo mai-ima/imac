@@ -370,6 +370,15 @@
    "file": "build-guide/build-guide.v005__2026-11-07_93238a3.md"
   },
   {
+   "src": "docs/build-guide.md",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9a67913",
+   "sha256": "e1462c86a8d55990ca217c2f53eb4fd1fc268bf430276cd910637291acc79a14",
+   "file": "build-guide/build-guide.v006__2026-11-07_9a67913.md"
+  },
+  {
    "src": "docs/design-package-index.md",
    "version": 1,
    "gen": "current",
@@ -827,6 +836,15 @@
    "commit": "88ef5e5",
    "sha256": "72dbb2a1b1a3b9bc667b30e87163e09e8e419d68c7c1c096f6f9edc8a9617f38",
    "file": "service-manual/service-manual.v003__2026-11-07_88ef5e5.md"
+  },
+  {
+   "src": "docs/service-manual.md",
+   "version": 4,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9a67913",
+   "sha256": "eaacdcaf23849fe3dc151e921045f49aa3cdf2481effaeeef3772af50ffb9666",
+   "file": "service-manual/service-manual.v004__2026-11-07_9a67913.md"
   },
   {
    "src": "docs/service-mechanisms.md",

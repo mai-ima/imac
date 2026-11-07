@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<g data-frame="1">
 <rect width="100%" height="100%" fill="#fff"/>
 <rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
 <rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
@@ -57,7 +58,7 @@
 <line x1="370" y1="257" x2="370" y2="287" stroke="#000" stroke-width="0.25"/>
 <line x1="330" y1="278" x2="410" y2="278" stroke="#000" stroke-width="0.25"/>
 <text x="232.00" y="247.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">題名 / Title</text>
-<text x="232.00" y="254.00" font-size="4.6" text-anchor="start" font-weight="bold" fill="#000">アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
+<text x="232.00" y="254.00" font-size="2.04" text-anchor="start" font-weight="bold" fill="#000">アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
 <text x="232.00" y="261.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">所有者 / Owner</text>
 <text x="232.00" y="266.50" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">iMac-style PC project (design values, unapproved)</text>
 <text x="232.00" y="273.00" font-size="1.9" text-anchor="start" font-weight="normal" fill="#555">材質 / Material</text>
@@ -103,6 +104,7 @@
 <text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 未選定(U19)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+</g>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-17 アンビリカルハーネス(eDP/12V/USB, 全長380mm=経路約270+整備余長100)</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 - / 質量 0.05kg / 公差 -</text>

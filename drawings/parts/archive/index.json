@@ -55,6 +55,15 @@
    "file": "CP-01/CP-01.v006__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-01.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "d74f8f511426ed868cf233c2a3f784e638aa0d64bc45f2aae10bc2409c886170",
+   "file": "CP-01/CP-01.v007__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-02.svg",
    "version": 1,
    "gen": "current",
@@ -98,6 +107,15 @@
    "commit": "514e2e0",
    "sha256": "57b1fd1d39deb122fe3425e18123d921854194bc1b9d90622a5f48bf5a6aea9a",
    "file": "CP-02/CP-02.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/parts/CP-02.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "5dae7cef676706b639cc692accb6b1757fceca2e6b63de32fada3e69d28d3640",
+   "file": "CP-02/CP-02.v006__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/CP-03.svg",
@@ -152,6 +170,15 @@
    "commit": "302823c",
    "sha256": "1596211a4d90ab50750314b86d66e7f9ad997c18dfe768c0941744d9b4423ccb",
    "file": "CP-03/CP-03.v006__2026-11-06_302823c.svg"
+  },
+  {
+   "src": "drawings/parts/CP-03.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "7a9bbadecf2687d7f28642b2fcdad9e0c27efeabe8182a149466e2531c03e6f9",
+   "file": "CP-03/CP-03.v007__2026-11-06_e7a16e1.svg"
   },
   {
    "src": "drawings/parts/CP-04.svg",
@@ -217,6 +244,15 @@
    "file": "CP-04/CP-04.v007__2026-11-06_93238a3.svg"
   },
   {
+   "src": "drawings/parts/CP-04.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "dc77b54fd40ebe09f3dd3a348d054a5655d0f38779e8a042221bf091a13d5d18",
+   "file": "CP-04/CP-04.v008__2026-11-06_f2e5a87.svg"
+  },
+  {
    "src": "drawings/parts/CP-05.svg",
    "version": 1,
    "gen": "current",
@@ -278,6 +314,15 @@
    "commit": "93238a3",
    "sha256": "1790c2329ac795070c1e4d48bc296ebd6a998eb7c1744ed9924925cb53353a79",
    "file": "CP-05/CP-05.v007__2026-11-06_93238a3.svg"
+  },
+  {
+   "src": "drawings/parts/CP-05.svg",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "f2e5a87",
+   "sha256": "71f72ad31e6b70355844c0e4fffb7eccf09a80691685707b20805c17f74a9205",
+   "file": "CP-05/CP-05.v008__2026-11-06_f2e5a87.svg"
   },
   {
    "src": "drawings/parts/CP-06.svg",
@@ -379,6 +424,15 @@
    "file": "CP-06/CP-06.v011__2026-11-07_64a1afa.svg"
   },
   {
+   "src": "drawings/parts/CP-06.svg",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "17954ec",
+   "sha256": "f391515db185ba2c6dd10addcaedb9e9f94f86830a19b8ffc3a638345926de0b",
+   "file": "CP-06/CP-06.v012__2026-11-07_17954ec.svg"
+  },
+  {
    "src": "drawings/parts/CP-07.svg",
    "version": 1,
    "gen": "current",
@@ -460,6 +514,15 @@
    "file": "CP-07/CP-07.v009__2026-11-06_e7a16e1.svg"
   },
   {
+   "src": "drawings/parts/CP-07.svg",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "01950c5",
+   "sha256": "07bbe0620d9807a5874c634176a098c08f3c4f8a650fc3717fc750f3eeb4e973",
+   "file": "CP-07/CP-07.v010__2026-11-07_01950c5.svg"
+  },
+  {
    "src": "drawings/parts/CP-08.svg",
    "version": 1,
    "gen": "current",
@@ -514,6 +577,15 @@
    "file": "CP-08/CP-08.v006__2026-11-06_02c4c72.svg"
   },
   {
+   "src": "drawings/parts/CP-08.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "64a1afa",
+   "sha256": "64df9e58f176195f18d3e74f2c21b116213308122218fcdabc7ec0078019ec99",
+   "file": "CP-08/CP-08.v007__2026-11-07_64a1afa.svg"
+  },
+  {
    "src": "drawings/parts/CP-09.svg",
    "version": 1,
    "gen": "current",
@@ -557,6 +629,15 @@
    "commit": "514e2e0",
    "sha256": "4d6325df4b0cfb16d1f5c56b6c1ce95554eb5a7a9bcf75761dd17440dbafed5f",
    "file": "CP-09/CP-09.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/parts/CP-09.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "dafee35616cabbf60a5d79b1ad5fe9675ebb7dc723b06ff4190aa41f81426072",
+   "file": "CP-09/CP-09.v006__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/CP-10.svg",
@@ -611,6 +692,15 @@
    "commit": "302823c",
    "sha256": "6ed83c583d7b0841b368124b9e217df7956f1e472f27512bdf70fd02c2244481",
    "file": "CP-10/CP-10.v006__2026-11-06_302823c.svg"
+  },
+  {
+   "src": "drawings/parts/CP-10.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "ef5ecbc",
+   "sha256": "95b60617251456bcb1955f8bb1f4404ce3dd0e53ed2f7ac249ee5aa4853452cc",
+   "file": "CP-10/CP-10.v007__2026-11-06_ef5ecbc.svg"
   },
   {
    "src": "drawings/parts/CP-11.svg",
@@ -703,6 +793,15 @@
    "file": "CP-11/CP-11.v010__2026-11-06_36dff8c.svg"
   },
   {
+   "src": "drawings/parts/CP-11.svg",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "15af08b",
+   "sha256": "4f546b94fd7629a74d3853fa79cca9d9a1afffde7b10dc48b918bb727c4f4ed8",
+   "file": "CP-11/CP-11.v011__2026-11-07_15af08b.svg"
+  },
+  {
    "src": "drawings/parts/CP-12.svg",
    "version": 1,
    "gen": "current",
@@ -746,6 +845,15 @@
    "commit": "514e2e0",
    "sha256": "ebefe4151b78dc455fa21d54d9d059a0a177b2e052fcb7708bf209708f3fab70",
    "file": "CP-12/CP-12.v005__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/parts/CP-12.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "ffc10f7cca636eb9e2c9373217db82082a09afd56de585878bfcbf20c4ef4f25",
+   "file": "CP-12/CP-12.v006__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/CP-13.svg",
@@ -802,6 +910,15 @@
    "file": "CP-13/CP-13.v006__2026-11-06_302823c.svg"
   },
   {
+   "src": "drawings/parts/CP-13.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "cf90ba1",
+   "sha256": "14c45dfbc81f68a3fdcf42d4bab9952d8ebc618ce3d0e817a79b8a2be9e43450",
+   "file": "CP-13/CP-13.v007__2026-11-06_cf90ba1.svg"
+  },
+  {
    "src": "drawings/parts/CP-14.svg",
    "version": 1,
    "gen": "current",
@@ -838,6 +955,15 @@
    "file": "CP-14/CP-14.v004__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-14.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "0f215fe5d63a566fd728b204a7a9766f54aba312867fb9393ce25d566776d904",
+   "file": "CP-14/CP-14.v005__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-16.svg",
    "version": 1,
    "gen": "current",
@@ -872,6 +998,15 @@
    "commit": "514e2e0",
    "sha256": "f73ff0ce2faff31019e7fefa5825a552b3c7779c8639b2176fa8083f422a2a5c",
    "file": "CP-16/CP-16.v004__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/parts/CP-16.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "549e604bc01627543ff09187af711eb7dc632da6731ddabc9f5ecbc5957604cf",
+   "file": "CP-16/CP-16.v005__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/CP-17.svg",
@@ -919,6 +1054,15 @@
    "file": "CP-17/CP-17.v005__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-17.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "adafa1c8b32bc339c6ea319a4ec2b05182f6ba154127de9dc5a5b2790acd138e",
+   "file": "CP-17/CP-17.v006__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-18.svg",
    "version": 1,
    "gen": "current",
@@ -955,6 +1099,15 @@
    "file": "CP-18/CP-18.v004__2026-11-06_514e2e0.svg"
   },
   {
+   "src": "drawings/parts/CP-18.svg",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "32ab2ce22ed96c0af8d689b19bf81d2b7bb0ce4ff3d216d23d33506edc9cc43f",
+   "file": "CP-18/CP-18.v005__2026-11-06_302823c.svg"
+  },
+  {
    "src": "drawings/parts/CP-19.svg",
    "version": 1,
    "gen": "current",
@@ -971,6 +1124,15 @@
    "commit": "514e2e0",
    "sha256": "0201edd60c5c4d4cb093d348428c9a44bcb3ea37a4b1fe3fa1bbba4dbf9c287c",
    "file": "CP-19/CP-19.v002__2026-11-06_514e2e0.svg"
+  },
+  {
+   "src": "drawings/parts/CP-19.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "6cab1a37a3e16fea5f84d412be5db6731c871be47972fede20aa769dfca81be9",
+   "file": "CP-19/CP-19.v003__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/CP-20.svg",
@@ -991,6 +1153,15 @@
    "file": "CP-20/CP-20.v002__2026-11-06_432b08c.svg"
   },
   {
+   "src": "drawings/parts/CP-20.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "476bd97f5d0a4de1c835c15b17921d5912195a29742b7d90cff48f26c65f014c",
+   "file": "CP-20/CP-20.v003__2026-11-06_e7a16e1.svg"
+  },
+  {
    "src": "drawings/parts/CP-21.svg",
    "version": 1,
    "gen": "current",
@@ -1009,6 +1180,15 @@
    "file": "CP-21/CP-21.v002__2026-11-06_432b08c.svg"
   },
   {
+   "src": "drawings/parts/CP-21.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "be7d27bd5089da9bef413acde7b5c87ed1972c0d2ad0273dc2a74e424a9568fe",
+   "file": "CP-21/CP-21.v003__2026-11-06_e7a16e1.svg"
+  },
+  {
    "src": "drawings/parts/CP-22.svg",
    "version": 1,
    "gen": "current",
@@ -1025,6 +1205,15 @@
    "commit": "432b08c",
    "sha256": "5f67d2dfda896be859e19cd11fff10a8c015c658b7cd7fe3d1db787c116c2620",
    "file": "CP-22/CP-22.v002__2026-11-06_432b08c.svg"
+  },
+  {
+   "src": "drawings/parts/CP-22.svg",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "e7a16e1",
+   "sha256": "ff9d19527a643b4b68f5f9ffd4f1387f9c001067731f18d11a3ed08e7f93e4a1",
+   "file": "CP-22/CP-22.v003__2026-11-06_e7a16e1.svg"
   },
   {
    "src": "drawings/parts/CP-23.svg",
@@ -1070,6 +1259,24 @@
    "commit": "36dff8c",
    "sha256": "02bae027aec26f2f429a1af4f335ccd0dec47758ae5f2c6c0c202d13b5ce62b3",
    "file": "CP-23/CP-23.v005__2026-11-06_36dff8c.svg"
+  },
+  {
+   "src": "drawings/parts/CP-23.svg",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "a7bfc3e3bff85f82316c0574d8fa10ba018acf03001df12ff63b1a37f5332b35",
+   "file": "CP-23/CP-23.v006__2026-11-07_3089847.svg"
+  },
+  {
+   "src": "drawings/parts/CP-24.svg",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "bf11b95c40dfabb38108900dba5e3c906adc4b76a5137eb63adaf9e73d45ec8b",
+   "file": "CP-24/CP-24.v001__2026-11-06_302823c.svg"
   },
   {
    "src": "drawings/parts/README.md",

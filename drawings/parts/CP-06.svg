@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" font-family="Helvetica,Arial,sans-serif"><defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 z" fill="#06c"/></marker></defs>
+<g data-frame="1">
 <rect width="100%" height="100%" fill="#fff"/>
 <rect x="1" y="1" width="418" height="295" fill="none" stroke="#000" stroke-width=".18"/>
 <rect x="20" y="10" width="390" height="277" fill="none" stroke="#000" stroke-width=".7"/>
@@ -103,6 +104,7 @@
 <text x="172.00" y="273.00" font-size="2.0" text-anchor="start" font-weight="normal" fill="#000">2026-11-06</text>
 <text x="22.00" y="241.00" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">状態: 設計(試作要)</text>
 <text x="22.00" y="18.50" font-size="2.3" text-anchor="start" font-weight="normal" fill="#444">注: 寸法は設計値(未承認)。製造前に最終BOMで再生成・公差協議。一般公差 ISO 2768-mK, 面取り/バリ処理は注記なき限り C0.2。</text>
+</g>
 <g transform="translate(22,18) scale(1.2)">
 <text x="2" y="8" font-size="5" font-weight="bold">CP-06 サービストレイ</text>
 <text x="2" y="14" font-size="3">数量 1 / 板厚 2.0 / 質量 1.06kg / 公差 外形±0.2, 取付穴±0.1(基板/PSU/GPU)</text>
@@ -119,7 +121,6 @@
 <rect x="57.6" y="71.8" width="5.7" height="18.3" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="60.4" y="80.9" font-size="2.6" text-anchor="middle" fill="#666">ssd</text>
 <rect x="29.9" y="68.0" width="30.4" height="3.7" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="45.1" y="69.8" font-size="2.6" text-anchor="middle" fill="#666">ram</text>
 <rect x="19.0" y="102.4" width="6.4" height="5.9" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="22.2" y="105.3" font-size="2.6" text-anchor="middle" fill="#666">ac_inlet</text>
-<rect x="110.5" y="40.3" width="27.4" height="52.0" fill="none" stroke="#999" stroke-width=".25" stroke-dasharray="2,1"/><text x="124.2" y="66.3" font-size="2.6" text-anchor="middle" fill="#666">rad_duct</text>
 <circle cx="23.1" cy="94.2" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="140.4" cy="96.4" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>
 <circle cx="23.1" cy="41.2" r="1.0" fill="none" stroke="#c0392b" stroke-width=".4"/>

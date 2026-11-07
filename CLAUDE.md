@@ -16,3 +16,5 @@
 - **部品の干渉・埋め込み・コネクタ嵌合・端子挿抜空間・ケーブル端末まで細部を意識**して設計・配置・図面・3Dを作る(台帳 INTF-01)。包絡箱だけで合格にしない。
 - **U(未確認)項目は後ほど必ず調査**(台帳 UNV-01)。確認できるまで確定扱いにしない。ユーザーから与えられた指示・タスクは台帳に登録し、圧縮・再開後も忘れない。
 - 図面は `node tools/drawing_lint.js drawings/*.svg`(文字重なり/題名欄侵入/図枠外)を通す。配置図09/10は `tools/gen_layout_drawings.py` が正。
+- **commit/push は回数を減らす**(まとまった作業単位ごとに1回。WIP・途中経過の細かいコミットはしない)。新規ファイルを追加したら**コミット前に** `python3 tools/audit_control_init.py` を実行して file_coverage に登録する(未登録だと CI の validate_state が FAIL する)。
+- **再発防止(CI失敗の事前検出)**: 作業環境では最初に `bash tools/install_hooks.sh`(tools/githooks の pre-commit/pre-push を有効化)。pre-commit が file_coverage 自動登録・旧値検査(stale_check)・台帳検査(validate_state)を、pre-push が CI と同じ run_gates+unittest を実行し、FAIL なら止める。サブエージェント成果物も同じ検査を通る。

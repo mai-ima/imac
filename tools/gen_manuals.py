@@ -59,7 +59,7 @@ V = {
     'keyhole_up': '12', 'kh_slot': f"{fits['keyhole_slot_w']:g}", 'pin_d': f"{fits['pin_shoulder_d']:g}",
     'tray_w': f"{CP['CP-06']['size'][0]:g}", 'tray_h': f"{CP['CP-06']['size'][1]:g}",
     'n_keyholes': f"{len(LAY['keyholes'])}",
-    'ground_ohm': '0.1',
+    'ground_ohm': '0.1', 'sw_op': f"{sw['holding_torque_Nm'] / 0.31:.1f}",
 }
 
 def cp_table():
@@ -144,7 +144,7 @@ SERVICE = r'''
 | バランサ | カム板+ローラ+ダイスプリング2本(k=<<k>>N/mm、0°合計<<F0>>N) | spec.hinge.balance_cam / balance.json |
 | 摩擦ヒンジ保持 | 合計<<fric>>N·m ±<<fric_tol>>% | spec.hinge |
 | 首振り保持 | <<sw_hold>>N·m | spec.swivel |
-| 操作力目標(画面上端) | ≦<<op_N>>N(チルト)。首振りは約5N(U53 未試験) | spec.hinge.op_target_N |
+| 操作力目標(画面上端) | ≦<<op_N>>N(チルト)。首振りは約<<sw_op>>N(画面端0.31m。計算値、U53 未試験) | spec.hinge.op_target_N |
 | ドーム総厚 | <<dome_t>>mm | spec.dome |
 | EMIガスケット | 線荷重<<seal_line>>N/mm、周長<<seal_per>>mm、圧縮<<seal_comp>>% → 公称<<seal_nom>>N・最大<<seal_max>>N | spec.dome_seal |
 | ドームラッチ | 下辺<<latch_n>>点、各<<latch_hold>>N | spec.dome_seal |
@@ -421,7 +421,7 @@ SERVICE = r'''
 5. ロータ板・内輪を取り出す。
 6. 摩擦リングと波ばねの摩耗を点検する(PTFE/ゴム系。交換基準は UNVERIFIED=U52)。
 7. 組立: 逆順。M5ボルトの締付トルク・予圧は軸受カタログ値(UNVERIFIED=U50)に従う。
-8. 首振り保持トルク <<sw_hold>>N·m(ばねばかりで約5N@画面端)を確認する(U52/U53 未試験)。
+8. 首振り保持トルク <<sw_hold>>N·m(画面端0.31mで約<<sw_op>>N。計算値)を確認する(U52/U53 未試験)。
 
 **復旧チェックリスト**
 - [ ] ±<<swivel>>°でゴムストッパに当たって止まる、任意角度で保持
@@ -735,7 +735,7 @@ T10/T6 Torx、5mm六角、5.5mmソケット、トルクドライバ(0.3〜2N·m)
 | T3 | 騒音 | 1m、負荷時 | ≤38dBA | PRINCIPLES A5(目標。測定法 UNVERIFIED) |
 | T4 | 外装表面温度 | 触れる外装 | ≤48℃ | IEC 62368-1 の金属接触の目安=**要確認(UNVERIFIED)** |
 | T5 | チルト保持/操作力 | ばねばかり(上端) | 任意角度で保持、上端の操作力≦<<op_N>>N | spec.hinge。未試験(U25) |
-| T6 | 首振り | 保持トルク<<sw_hold>>N·m、操作力約5N@画面端 | ±<<swivel>>°で止まり任意位置保持 | U52/U53 未試験 |
+| T6 | 首振り | 保持トルク<<sw_hold>>N·m、操作力約<<sw_op>>N@画面端(計算値) | ±<<swivel>>°で止まり任意位置保持 | U52/U53 未試験 |
 | T7 | ストッパ | -15°/+40°、±<<swivel>>° | ゴムパッドで衝撃なく停止 | mechanisms/03 |
 | T8 | ドーム閉合 | ラッチ<<latch_n>>点施錠後のすき間 | 全周均一(目標0.5±0.1mm、段差≦0.1mm) | PRINCIPLES A3。実測 UNVERIFIED |
 | T9 | 接地導通 | AC PE端子〜接触可能な全金属部 | ≦<<ground_ohm>>Ω | grounding-spec。有資格者の10A級・絶縁抵抗は U41 |

@@ -43,6 +43,7 @@
 | build-guide.md | v003 | current | 2026-11-05 | 15a1bce | build-guide/build-guide.v003__2026-11-05_15a1bce.md |
 | build-guide.md | v004 | current | 2026-11-05 | 4925658 | build-guide/build-guide.v004__2026-11-05_4925658.md |
 | build-guide.md | v005 | current | 2026-11-07 | 93238a3 | build-guide/build-guide.v005__2026-11-07_93238a3.md |
+| build-guide.md | v006 | current | 2026-11-07 | 9a67913 | build-guide/build-guide.v006__2026-11-07_9a67913.md |
 | design-package-index.md | v001 | current | 2026-11-06 | 27ca8ce | design-package-index/design-package-index.v001__2026-11-06_27ca8ce.md |
 | design-v6.md | v001 | current | 2026-11-03 | 1bfcbfb | design-v6/design-v6.v001__2026-11-03_1bfcbfb.md |
 | design-v6.md | v002 | current | 2026-11-06 | fcba5fe | design-v6/design-v6.v002__2026-11-06_fcba5fe.md |
@@ -94,6 +95,7 @@
 | service-manual.md | v001 | current | 2026-11-03 | 307c9ea | service-manual/service-manual.v001__2026-11-03_307c9ea.md |
 | service-manual.md | v002 | current | 2026-11-05 | fcba5fe | service-manual/service-manual.v002__2026-11-05_fcba5fe.md |
 | service-manual.md | v003 | current | 2026-11-07 | 88ef5e5 | service-manual/service-manual.v003__2026-11-07_88ef5e5.md |
+| service-manual.md | v004 | current | 2026-11-07 | 9a67913 | service-manual/service-manual.v004__2026-11-07_9a67913.md |
 | service-mechanisms.md | v001 | current | 2026-11-03 | 307c9ea | service-mechanisms/service-mechanisms.v001__2026-11-03_307c9ea.md |
 | service-mechanisms.md | v002 | current | 2026-11-05 | 434b29d | service-mechanisms/service-mechanisms.v002__2026-11-05_434b29d.md |
 | service-mechanisms.md | v003 | current | 2026-11-05 | fcba5fe | service-mechanisms/service-mechanisms.v003__2026-11-05_fcba5fe.md |

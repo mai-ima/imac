@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# push前に CI と同じゲートを実行し、FAIL(rc=1)なら push を止める(UNVERIFIED rc=2 は許容=CIと同じ)。
+cd "$(git rev-parse --show-toplevel)"
+bash tools/run_gates.sh >/tmp/.gates_out.txt 2>&1; rc=$?
+if [ "$rc" = "1" ]; then echo '[pre-push] run_gates FAIL。push を中止しました:'; grep -B3 '^exit=1' /tmp/.gates_out.txt | head -20 | cut -c1-240; exit 1; fi
+python3 -m unittest discover -s tests >/tmp/.ut_out.txt 2>&1 || { echo '[pre-push] unittest FAIL'; tail -15 /tmp/.ut_out.txt; exit 1; }
+exit 0

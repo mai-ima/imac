@@ -66,8 +66,10 @@
 | gen_handoff.py | v001 | current | 2026-11-06 | ef5ecbc | gen_handoff/gen_handoff.v001__2026-11-06_ef5ecbc.py |
 | gen_handoff.py | v002 | current | 2026-11-06 | ce41db1 | gen_handoff/gen_handoff.v002__2026-11-06_ce41db1.py |
 | gen_handoff.py | v003 | current | 2026-11-06 | 877835f | gen_handoff/gen_handoff.v003__2026-11-06_877835f.py |
+| gen_handoff.py | v004 | current | 2026-11-07 | fc73c3b | gen_handoff/gen_handoff.v004__2026-11-07_fc73c3b.py |
 | gen_layout_drawings.py | v001 | current | 2026-11-07 | 300696c | gen_layout_drawings/gen_layout_drawings.v001__2026-11-07_300696c.py |
 | gen_layout_drawings.py | v002 | current | 2026-11-07 | b99d02c | gen_layout_drawings/gen_layout_drawings.v002__2026-11-07_b99d02c.py |
+| gen_manuals.py | v001 | current | 2026-11-07 | 9a67913 | gen_manuals/gen_manuals.v001__2026-11-07_9a67913.py |
 | gen_mech_sections.py | v001 | current | 2026-11-06 | cf90ba1 | gen_mech_sections/gen_mech_sections.v001__2026-11-06_cf90ba1.py |
 | gen_mech_sections.py | v002 | current | 2026-11-06 | 4050ed9 | gen_mech_sections/gen_mech_sections.v002__2026-11-06_4050ed9.py |
 | gen_mech_sections.py | v003 | current | 2026-11-06 | 93238a3 | gen_mech_sections/gen_mech_sections.v003__2026-11-06_93238a3.py |
@@ -104,6 +106,7 @@
 | gen_package.py | v006 | current | 2026-11-06 | 9ff6031 | gen_package/gen_package.v006__2026-11-06_9ff6031.py |
 | gen_package.py | v007 | current | 2026-11-06 | 514e2e0 | gen_package/gen_package.v007__2026-11-06_514e2e0.py |
 | gen_package.py | v008 | current | 2026-11-06 | 93238a3 | gen_package/gen_package.v008__2026-11-06_93238a3.py |
+| gen_package.py | v009 | current | 2026-11-07 | 300696c | gen_package/gen_package.v009__2026-11-07_300696c.py |
 | gen_project_summary.py | v001 | current | 2026-11-06 | ce41db1 | gen_project_summary/gen_project_summary.v001__2026-11-06_ce41db1.py |
 | gen_project_summary.py | v002 | current | 2026-11-06 | 4050ed9 | gen_project_summary/gen_project_summary.v002__2026-11-06_4050ed9.py |
 | gen_service_drawings.py | v001 | current | 2026-11-03 | 307c9ea | gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py |

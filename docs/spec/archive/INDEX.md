@@ -5,6 +5,7 @@
 | README.md | v001 | current | 2026-11-05 | b97eaae | README/README.v001__2026-11-05_b97eaae.md |
 | README.md | v002 | current | 2026-11-06 | a77badc | README/README.v002__2026-11-06_a77badc.md |
 | cost-estimate.md | v001 | current | 2026-11-06 | fc36218 | cost-estimate/cost-estimate.v001__2026-11-06_fc36218.md |
+| cost-estimate.md | v002 | current | 2026-11-07 | 51490df | cost-estimate/cost-estimate.v002__2026-11-07_51490df.md |
 | custom-parts.md | v001 | current | 2026-11-05 | b97eaae | custom-parts/custom-parts.v001__2026-11-05_b97eaae.md |
 | custom-parts.md | v002 | current | 2026-11-05 | 3c794e1 | custom-parts/custom-parts.v002__2026-11-05_3c794e1.md |
 | custom-parts.md | v003 | current | 2026-11-05 | fcba5fe | custom-parts/custom-parts.v003__2026-11-05_fcba5fe.md |
@@ -25,6 +26,7 @@
 | custom-parts.md | v018 | current | 2026-11-07 | 64a1afa | custom-parts/custom-parts.v018__2026-11-07_64a1afa.md |
 | custom-parts.md | v019 | current | 2026-11-07 | 15af08b | custom-parts/custom-parts.v019__2026-11-07_15af08b.md |
 | custom-parts.md | v020 | current | 2026-11-07 | 01950c5 | custom-parts/custom-parts.v020__2026-11-07_01950c5.md |
+| custom-parts.md | v021 | current | 2026-11-07 | 3089847 | custom-parts/custom-parts.v021__2026-11-07_3089847.md |
 | design-philosophy.md | v001 | current | 2026-11-05 | 3c794e1 | design-philosophy/design-philosophy.v001__2026-11-05_3c794e1.md |
 | design-philosophy.md | v002 | current | 2026-11-05 | 184ad21 | design-philosophy/design-philosophy.v002__2026-11-05_184ad21.md |
 | design-philosophy.md | v003 | current | 2026-11-06 | 432b08c | design-philosophy/design-philosophy.v003__2026-11-06_432b08c.md |

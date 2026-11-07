@@ -748,6 +748,15 @@
    "file": "parts/parts.v013__2026-11-07_17954ec.json"
   },
   {
+   "src": "model/procurement.json",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "9a67913",
+   "sha256": "8ee026b351a8edea6c84f71e46ffafb3aba2905b31fc3878d6e259c479dc3fd5",
+   "file": "procurement/procurement.v001__2026-11-07_9a67913.json"
+  },
+  {
    "src": "model/spec.json",
    "version": 1,
    "gen": "gen-001",
