@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T14:45Z",
+ "generated": "2026-11-07T14:47Z",
  "objects": 642,
- "pairs_total": 624,
- "touch_only": 320,
+ "pairs_total": 595,
+ "touch_only": 319,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
@@ -15,7 +15,7 @@
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "モジュラーソケットは筐体前面の開口に嵌合": 4
  },
- "remaining": 215,
+ "remaining": 187,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -708,16 +708,6 @@
    ]
   },
   {
-   "a": "hinge_boot0f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 30,
-   "aabb_overlap_mm": [
-    112.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
    "a": "hinge_block_base",
    "b": "hinge_cheek_l",
    "tri_pairs": 29,
@@ -735,36 +725,6 @@
     6.0,
     2.0,
     22.0
-   ]
-  },
-  {
-   "a": "hinge_boot2f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot4f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot6f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    2.0,
-    2.6
    ]
   },
   {
@@ -795,66 +755,6 @@
     4.0,
     2.0,
     38.0
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "hinge_boot0f",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "hinge_boot2f",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "hinge_boot4f",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot0f",
-   "b": "stand_arm1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot2f",
-   "b": "stand_arm1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot4f",
-   "b": "stand_arm1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    2.0,
-    3.06
    ]
   },
   {
@@ -1168,106 +1068,6 @@
    ]
   },
   {
-   "a": "stand_arm0",
-   "b": "hinge_boot0b",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "hinge_boot2b",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "hinge_boot4b",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot0b",
-   "b": "stand_neck_tie",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot0b",
-   "b": "stand_arm1",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot2b",
-   "b": "stand_neck_tie",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot2b",
-   "b": "stand_arm1",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot4b",
-   "b": "stand_neck_tie",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot4b",
-   "b": "stand_arm1",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    6.0,
-    1.061,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot6b",
-   "b": "stand_neck_tie",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    112.0,
-    1.061,
-    1.6
-   ]
-  },
-  {
    "a": "hinge_axle",
    "b": "hinge_eclip0",
    "tri_pairs": 96,
@@ -1348,36 +1148,6 @@
    ]
   },
   {
-   "a": "hinge_boot1f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot3f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot5f",
-   "b": "stand_neck_tab",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
    "a": "hang_bushing1b",
    "b": "hang_pin1_shoulder",
    "tri_pairs": 24,
@@ -1395,46 +1165,6 @@
     6.0,
     1.0,
     6.0
-   ]
-  },
-  {
-   "a": "hinge_boot1f",
-   "b": "stand_arm0",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot1f",
-   "b": "stand_arm1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot3f",
-   "b": "stand_arm0",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.06
-   ]
-  },
-  {
-   "a": "hinge_boot3f",
-   "b": "stand_arm1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.06
    ]
   },
   {
@@ -1465,26 +1195,6 @@
     4.0,
     1.0,
     3.273
-   ]
-  },
-  {
-   "a": "hinge_boot5f",
-   "b": "stand_arm0",
-   "tri_pairs": 14,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    1.0
-   ]
-  },
-  {
-   "a": "hinge_boot5f",
-   "b": "stand_arm1",
-   "tri_pairs": 14,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    1.0
    ]
   },
   {
@@ -1645,6 +1355,16 @@
     8.0,
     0.7,
     5.0
+   ]
+  },
+  {
+   "a": "stand_neck_shroud",
+   "b": "stand_swivel_bolt4",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    5.0,
+    2.5,
+    0.6
    ]
   },
   {

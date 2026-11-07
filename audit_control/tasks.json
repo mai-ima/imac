@@ -21613,19 +21613,27 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:16:19Z",
      "triaged",
      "R12取込(R12_model_D_custom.md)"
+    ],
+    [
+     "2026-11-07T14:47:18Z",
+     "in_review",
+     "ブーツ位置を専用に再設計"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_D_custom.md"
+    "audit_control/reports/R12_model_D_custom.md",
+    "ブーツをネック外皮の外・前後カバーの外側へ移設(外皮余白4.5→9mm=CP-28寸法更新)。干渉検査 216→187"
    ],
-   "verification": [],
+   "verification": [
+    "実形状干渉検査(14:47 JST相当)"
+   ],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",

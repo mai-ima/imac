@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、642物体、交差対 624。
-- 接触のみ(深さ<0.15mm): 320 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 215**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、642物体、交差対 595。
+- 接触のみ(深さ<0.15mm): 319 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 187**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -87,14 +87,14 @@
 | hinge_block_base | hinge_bolt1 | 32 | [6.0, 2.0, 6.0] | 2.00 |
 | hinge_block_base | hinge_bolt2 | 32 | [6.0, 2.0, 6.0] | 2.00 |
 | hinge_block_base | hinge_bolt3 | 32 | [6.0, 2.0, 6.0] | 2.00 |
-| hinge_boot0f | stand_neck_tab | 30 | [112.0, 2.0, 3.06] | 2.00 |
 | hinge_block_base | hinge_cheek_l | 29 | [6.0, 2.0, 22.0] | 2.00 |
 | hinge_block_base | hinge_cheek_r | 26 | [6.0, 2.0, 22.0] | 2.00 |
-| hinge_boot2f | stand_neck_tab | 24 | [112.0, 2.0, 3.06] | 2.00 |
-| hinge_boot4f | stand_neck_tab | 24 | [112.0, 2.0, 3.06] | 2.00 |
-| hinge_boot6f | stand_neck_tab | 24 | [112.0, 2.0, 2.6] | 2.00 |
 | stand_neck_cover0 | stand_neck_tie | 24 | [112.0, 2.0, 20.0] | 2.00 |
 | stand_arm0 | stand_neck_cover0 | 22 | [4.0, 2.0, 38.0] | 2.00 |
 | stand_neck_cover0 | stand_arm1 | 22 | [4.0, 2.0, 38.0] | 2.00 |
-| stand_arm0 | hinge_boot0f | 20 | [6.0, 2.0, 3.06] | 2.00 |
-| stand_arm0 | hinge_boot2f | 20 | [6.0, 2.0, 3.06] | 2.00 |
+| cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
+| gpu_cradle_wall_l | gpu_cradle_base | 18 | [2.0, 3.0, 10.0] | 2.00 |
+| gpu_cradle_base | gpu_cradle_wall_r | 16 | [2.0, 3.0, 10.0] | 2.00 |
+| cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
+| board_pcb | pump_screw0 | 32 | [4.0, 1.6, 4.0] | 1.60 |
+| board_pcb | pump_screw2 | 32 | [4.0, 1.6, 4.0] | 1.60 |

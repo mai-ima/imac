@@ -140,7 +140,7 @@ for k, sx_ in enumerate((-1, 1)):    # チルト端ストッパ: 尾部レバー
 BTc = S['neck']['boot']; SYS_ = -DROP + S['swivel']['stack_h'] + S['neck']['base_t']
 for k_ in range(BTc['convolutions']):      # ゴム蛇腹ブーツ(簡略表示: 角形の山谷リング。実機は伸縮10〜48mm+せん断±10mm)
     yb = S['neck']['cover_top'] + k_ * (0 - S['neck']['cover_top']) / BTc['convolutions']; grow = 3.0 if k_ % 2 else 0.0
-    for nm_, (bx_, bz0_, bw_, bd_) in (('f', (-62 - grow, ZC + S['neck']['front_cover_z'][1] - 4 + grow, 124 + 2 * grow, 2.0)), ('b', (-62 - grow, ZC + S['neck']['back_cover_z'][0] - 2 - grow, 124 + 2 * grow, 2.0))):
+    for nm_, (bx_, bz0_, bw_, bd_) in (('f', (-67 - grow, ZC + S['neck']['front_cover_z'][1] + 0.5 + grow, 134 + 2 * grow, 2.0)), ('b', (-67 - grow, ZC + S['neck']['side_z'][0] - 3.0 - grow, 134 + 2 * grow, 2.0))):      # 側板(外側x=62)の外へ(外皮の余白を9mmに拡大して収める)
         hb(f'hinge_boot{k_}{nm_}', bw_, (0 - S['neck']['cover_top']) / BTc['convolutions'] * 0.9, bd_, bx_, yb, bz0_, M['rubber'], bev=.3)
 hw('ヒンジ', f"ゴム蛇腹ブーツ(シリコーン UL94 V-0, 山{S['neck']['boot']['convolutions']}, 伸縮{S['neck']['boot']['length_range_mm'][0]}〜{S['neck']['boot']['length_range_mm'][1]}mm)", 1, '指挟み防護(U53)。3Dは簡略表示')
 hb('stand_neck_tab', S['neck']['tab_x'][1] - S['neck']['tab_x'][0], S['neck']['tab_y_top'] - S['neck']['cover_top'], S['neck']['front_cover_z'][1] - S['neck']['front_cover_z'][0], S['neck']['tab_x'][0], S['neck']['cover_top'], ZC + S['neck']['front_cover_z'][0], M['stand'], bev=.5)      # 前カバーの立ち上がり(全幅, 側板間で両端支持: +40°ストッパ受け)

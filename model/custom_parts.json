@@ -946,15 +946,15 @@
    "material": "A6063-T5 または A5052-H32 t2.0(仮置き。同色アルマイト)",
    "t": 2.0,
    "size": [
-    133.0,
-    73.2,
+    142.0,
+    82.2,
     38.0
    ],
    "process": "板金曲げ+溶接(角丸R9)またはCNC。アルマイトII",
    "tolerance": "ISO 2768-m",
    "finish": "アルマイトII(スタンド共通色)",
    "features": [
-    "外形 幅133 × 奥行(z)73.2 × 高さ38 (spec.neck の base_half_x/前後カバーz/cover_top と shroud.neck_margin_mm=4.5 から算出)",
+    "外形 幅142 × 奥行(z)82.2 × 高さ38 (spec.neck の base_half_x/前後カバーz/cover_top と shroud.neck_margin_mm=9.0 から算出)",
     "縁R9",
     "ネックと一緒に回る。ネック機構(CP-22)とバランサ(CP-23)を外から隠す",
     "チルト可動域での指挟み・ヒンジとの干渉確認は未実施(U53)"
