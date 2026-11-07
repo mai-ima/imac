@@ -298,6 +298,15 @@
    "file": "cablemodel/cablemodel.v010__2026-11-07_c1704cf.py"
   },
   {
+   "src": "tools/cablemodel.py",
+   "version": 11,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "48f7baa",
+   "sha256": "9b0b56d32e0dac9727df4b93db789e688f4a5661db85d17de1dd681a0fb02d13",
+   "file": "cablemodel/cablemodel.v011__2026-11-07_48f7baa.py"
+  },
+  {
    "src": "tools/cadviews.py",
    "version": 1,
    "gen": "current",

@@ -13,13 +13,13 @@ Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤
 # 実ホースは450mm固定(ARCTIC公式)だが、最短経路はH1≈382/H2≈417mm。余長(H1≈68/H2≈33mm)を曲げ半径40mm(仮置きU45)と天井(許容z155〜162, ホース上端≈149)の制約内で置けないことを検証済み(横ふくらみ: 最小半径≈12mm<40mm)。台帳 MDC-HOSE。
 CAB = [
  dict(id='W1', name='ATX 24ピン(短尺カスタム長)', kind='cable', od=9.6, awg=18, mbr=12, frm='PSU modular(24p)', to='基板 ATX24', conn='24p (20+4)', ref_mm=0, mat='rubber',
-      pts=[(px + 33, py - 2, 38), (px + 33, py - 12, 41), (bx + 13.4 + 25.05, by + 159 + 5, Z1 + 15 + 9)]),
+      pts=[(px + 28, py - 2, 38), (px + 28, py - 12, 41), (bx + 13.4 + 25.05, by + 159 + 5, Z1 + 15 + 9)]),
  dict(id='W2', name='CPU EPS 8ピン(短尺)', kind='cable', od=5.6, awg=16, mbr=12, frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', conn='EPS 4+4', ref_mm=0, mat='rubber',
-      pts=[(px + 14, py - 2, 38), (px + 14, py - 18, 40), (50, py - 18, 44), (50, 60, 40), (bx + 1.6 + 5.9, by + 2.4 + 9.05, Z1 + 11 + 9)]),
+      pts=[(px + 69, py - 2, 38), (px + 69, py - 18, 40), (50, py - 18, 44), (50, 60, 40), (bx + 1.6 + 5.9, by + 2.4 + 9.05, Z1 + 11 + 9)]),
  dict(id='W3', name='GPU 12V-2x6(16AWG)', kind='cable', od=9.0, awg=16, mbr=20, frm='PSU modular(12V-2x6)', to='GPU 12V-2x6', conn='12V-2x6: コネクタ後方35mm直線', ref_mm=400, mat='rubber',
-      pts=[(px + 90, py - 2, 38), (px + 98, py - 8, 40), (215, py - 8, 44), (250, 240, 62), (300, 280, 70), (gx + 121, gy + 205, gz + 40 + 12 + 6), (gx + 121, gy + 268, gz + 40 + 12 + 6)]),
+      pts=[(px + 96, py - 2, 38), (px + 96, py - 12, 40), (px + 116, py - 28, 42), (225, py - 28, 44), (250, 240, 62), (300, 280, 70), (gx + 121, gy + 205, gz + 40 + 12 + 6), (gx + 121, gy + 268, gz + 40 + 12 + 6)]),
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
-      pts=[(px + 112, py - 2, 30), (px + 118, py - 8, 28), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
+      pts=[(px + 50, py - 2, 24), (px + 54, py - 8, 26), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
  dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', kind='cable', od=6.0, awg=0, mbr=16, frm='ctrl_board eDP', to='パネル背面コネクタ', conn='eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み)', ref_mm=380, mat='umb',
       pts=[(cx + 28, cy + 95, cz + 22), (cx + 28, cy + 105, cz + 26), (cx + 5, 340, 21), (150, 347, 16), (40, 349, 13), (14, 349, 10)]),
  dict(id='W6', name='AC電源(C14インレット→PSU C13)', kind='cable', od=7.2, awg=16, mbr=14, frm='C14インレット', to='SF1000 AC入力', conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, mat='rubber',

@@ -505,8 +505,8 @@ _cl = 11.0      # ネックと一緒に回る円筒カラー(ロータ上面・P
 hollow(tube('stand_neck_collar', SH['skirt_r_mm'], _cl, 0, SY_NECK + _cl / 2, ZC, M['stand']))
 # SHAPE-06: ネックカラー上面の環状天板(肉厚2mm)。ばね座(y=HY-s)より下に置き、薄肉化で開いた上面を閉じる。ネック外皮の開口部は残す(機構が通る)
 _cap_y = SY_NECK + _cl - 4.2
-_cap = cyl('stand_neck_collar_cap', SH['skirt_r_mm'], 2.0, 'y', 0, _cap_y + 1.0, ZC, M['stand'], 96, bevel=1.0, body=False)
-_hole = box('stand_neck_collar_cap_hole', 2 * (NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), 6.0, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * (SH['neck_margin_mm'] - 2.0), -(NK['base_half_x'] + SH['neck_margin_mm'] - 2.0), _cap_y - 2.0, ZC + NK['back_cover_z'][0] - (SH['neck_margin_mm'] - 2.0), None, body=False); _hole.hide_render = True
+_cap = cyl('stand_neck_collar_cap', SH['skirt_r_mm'] - 2.2, 2.0, 'y', 0, _cap_y + 1.0, ZC, M['stand'], 96, bevel=1.0, body=False)
+_hole = box('stand_neck_collar_cap_hole', 2 * (NK['base_half_x'] + SH['neck_margin_mm'] + 0.5), 8.0, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * (SH['neck_margin_mm'] + 0.5), -(NK['base_half_x'] + SH['neck_margin_mm'] + 0.5), _cap_y - 3.0, ZC + NK['back_cover_z'][0] - (SH['neck_margin_mm'] + 0.5), None, body=False)      # 外皮の外形+0.5mmの開口(外皮が貫通する); _hole.hide_render = True
 _mb = _cap.modifiers.new('hole', 'BOOLEAN'); _mb.object = _hole; _mb.operation = 'DIFFERENCE'; _mb.solver = 'EXACT'
 _m = SH['neck_margin_mm']
 _sh = box('stand_neck_shroud', 2 * (NK['base_half_x'] + _m), NK['cover_top'] - SY_NECK, (NK['front_cover_z'][1] - NK['back_cover_z'][0]) + 2 * _m, -(NK['base_half_x'] + _m), SY_NECK, ZC + NK['back_cover_z'][0] - _m, M['stand'], bevel=SH['edge_r_mm'], body=False)
@@ -569,7 +569,7 @@ def port(name, xc, zc, w, h, inner=None):
     for tgt in (fl, _ios):
         m_ = tgt.modifiers.new(name, 'BOOLEAN'); m_.object = ct; m_.operation = 'DIFFERENCE'; m_.solver = 'EXACT'
     if w >= 9:       # 舌片(コネクタ内の基板): Type-Cは薄い板、Type-A/RJ45/HDMIは空洞の中央に1枚
-        ibox(name + '_tongue', w - 7, 9.0, 1.0 if h < 5 else 1.4, bx + xc - (w - 7) / 2, by - 1.0, Z1 + zc - 0.5, inner or M['dark'], .1)
+        ibox(name + '_tongue', w - 8, 9.0, 1.0 if h < 5 else 1.4, bx + xc - (w - 8) / 2, by - 1.0, Z1 + zc - 0.5, inner or M['dark'], .1)
 mid = lambda k: (IOX[k][0] + IOX[k][1]) / 2
 # リアI/O配置: ASUS公式マニュアル p.26 の図(外側から見た並び)を読み取り。左→右:
 #  列A(x15〜34): USB 10G赤(Type-A)×2 縦積み / HDMI    列B(x40〜55): ボタン(CLR_CMOS/BIOS FlashBack) / USB 10G赤 / USB4 40G Type-C
@@ -742,10 +742,10 @@ for k in range(6):
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.75))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((88, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
 ibox('psu_label', 28, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
-# モジュラーソケット10個(レビュー/小売の記載。公式図は未取得 U59): 2段×5列(上段5=大, 下段5=小)の想定配置
-for i in range(5):
-    ibox(f'psu_socket{i}', 17, 5, 11, px_ + 6 + i * 23, py_ - 4, pz_ + 36, M['rubber'], .4); ibox(f'psu_socket{i + 5}', 11, 5, 9, px_ + 9 + i * 23, py_ - 4, pz_ + 20, M['rubber'], .4)
-
+# モジュラーソケット(MDB-023/MDC-001): 個数・配置はCorsair公式図が未取得(U59)で確認できない。従来の「2段×5列の10個」は根拠が無く、ATX24(幅約50mm)や12V-2x6(幅約22mm)のプラグが入らない寸法だった。
+# ケーブルがつながる4口だけを、プラグ(ATX24 50x10 / EPS 25x18 / 12V-2x6 22x10 / SATA電源 17x6: 各規格の外形)が入る最小寸法で置く。他のソケットは未モデル(UNVERIFIED)。
+for _i, (_cx, _w, _h, _zc) in enumerate(((28, 52.0, 11.0, 30.0), (69, 26.0, 19.0, 30.0), (96, 24.0, 11.0, 30.0), (50, 19.0, 7.0, 16.0))):      # (PSU内x, 幅, 高さ(z方向), 中心z)
+    ibox(f'psu_socket{_i}', _w, 6, _h, px_ + _cx - _w / 2, py_ - 4, pz_ + _zc - _h / 2, M['rubber'], .4)
 # ===== パネル用コントローラ基板(4K eDP, 150x55 横置き。型番未確定) =====
 cx_, cy_, cz_ = lp('ctrl_board')
 cp = os.path.join(TEXDIR, 'pcb_ctrl.png'); pcb_tex(cp, 55, 150, 41, '#16222b', '#2a3d4c', '4K eDP ctrl')

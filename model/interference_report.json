@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T14:41Z",
- "objects": 654,
- "pairs_total": 732,
- "touch_only": 338,
+ "generated": "2026-11-07T14:43Z",
+ "objects": 651,
+ "pairs_total": 738,
+ "touch_only": 339,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
@@ -13,9 +13,9 @@
   "側板のストリップとボスは一体品を別基本形で表現": 2,
   "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
-  "モジュラーソケットは筐体前面の開口に嵌合": 10
+  "モジュラーソケットは筐体前面の開口に嵌合": 4
  },
- "remaining": 299,
+ "remaining": 310,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -35,6 +35,16 @@
     28.0,
     20.0,
     26.0
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_neck_shroud",
+   "tri_pairs": 112,
+   "aabb_overlap_mm": [
+    133.0,
+    73.217,
+    8.0
    ]
   },
   {
@@ -195,6 +205,16 @@
     5.89,
     4.724,
     12.0
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_neck_base",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    124.0,
+    66.278,
+    4.2
    ]
   },
   {
@@ -405,6 +425,36 @@
     6.4,
     3.98,
     6.4
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_arm0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    6.0,
+    65.278,
+    3.8
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_neck_cover1",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    120.0,
+    6.0,
+    3.8
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_arm1",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    6.0,
+    65.278,
+    3.8
    ]
   },
   {
@@ -908,26 +958,6 @@
    ]
   },
   {
-   "a": "stand_neck_collar",
-   "b": "stand_neck_collar_cap",
-   "tri_pairs": 196,
-   "aabb_overlap_mm": [
-    198.0,
-    198.0,
-    2.0
-   ]
-  },
-  {
-   "a": "stand_neck_collar_cap",
-   "b": "stand_neck_shroud",
-   "tri_pairs": 66,
-   "aabb_overlap_mm": [
-    133.0,
-    73.217,
-    2.0
-   ]
-  },
-  {
    "a": "hinge_block_base",
    "b": "hinge_bolt0",
    "tri_pairs": 32,
@@ -1148,6 +1178,16 @@
    ]
   },
   {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "stand_neck_cover0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    120.0,
+    2.0,
+    3.8
+   ]
+  },
+  {
    "a": "cover_filter",
    "b": "rf_window_plate",
    "tri_pairs": 4,
@@ -1155,6 +1195,16 @@
     60.0,
     2.0,
     30.0
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap",
+   "b": "stand_neck_collar_cap_hole",
+   "tri_pairs": 2,
+   "aabb_overlap_mm": [
+    134.0,
+    74.217,
+    2.0
    ]
   },
   {
@@ -1902,7 +1952,7 @@
    "b": "io_usb4_c1_tongue",
    "tri_pairs": 24,
    "aabb_overlap_mm": [
-    2.0,
+    1.0,
     1.0,
     9.0
    ]
@@ -1912,7 +1962,7 @@
    "b": "io_usb4_c2_tongue",
    "tri_pairs": 24,
    "aabb_overlap_mm": [
-    2.0,
+    1.0,
     1.0,
     9.0
    ]
@@ -1922,7 +1972,7 @@
    "b": "io_usbc_10g_tongue",
    "tri_pairs": 24,
    "aabb_overlap_mm": [
-    2.0,
+    1.0,
     1.0,
     9.0
    ]
@@ -2335,6 +2385,66 @@
     60.0,
     4.0,
     0.9
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "cam_guide_rod0_-1",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    0.83
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "cam_guide_rod0_1",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    0.83
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "cam_guide_rod1_-1",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    0.83
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "cam_guide_rod1_1",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    8.0,
+    8.0,
+    0.83
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "spring_seat_bot0",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    22.0,
+    38.0,
+    0.83
+   ]
+  },
+  {
+   "a": "stand_neck_collar_cap_hole",
+   "b": "spring_seat_bot1",
+   "tri_pairs": 12,
+   "aabb_overlap_mm": [
+    22.0,
+    38.0,
+    0.83
    ]
   },
   {

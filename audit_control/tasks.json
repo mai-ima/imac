@@ -17925,12 +17925,17 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "blocked",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:42:24Z",
+     "blocked",
+     "検討: 36mmの間隔に対し200mm、上方向に折り畳み余地約137mm。構造未確認のため実装せず保留"
     ]
    ],
    "acceptance_criteria": "",
@@ -17939,9 +17944,9 @@
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
-   "blocker_reason": "",
+   "blocker_reason": "LINKUP AVA5 の実物構造(1枚の広幅リボンか多本束か)・幅・厚み・最小曲げ半径が未確認(UNVERIFIED)。スロット-GPUエッジ間は水平36mmで、実長200mmとの差≈164mmは折り畳み(上方向へ最大約137mm余地)が必要だが、構造不明のまま折り畳み経路を作ると仮説で決定することになる。",
    "defer_reason": "",
-   "next_action": "200mm相当の経路(スロット→上昇→ループ→GPUエッジ)を作る。幅を実測しUNVERIFIEDを解消するまで、経路長=200mmを満たす制約をtools側に追加。長さ検査(ribbon実長=200±2)をゲート化"
+   "next_action": "LINKUP公式/実機写真でAVA5の構造・幅・曲げ半径を調査(UNV-01)。判明後に折り畳み経路を設計し、長さ検査(200±2)をゲート化。現行の44mmリボンは「実物長と不一致」を明記して維持。"
   },
   {
    "id": "MDB-003",
@@ -18080,17 +18085,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "GPU PCBを約170mmへ・ヒートシンクをベース+フィン52枚+露出ヒートパイプへ"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "GPU PCBを約170mmへ・ヒートシンクをベース+フィン52枚+露出ヒートパイプへ"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18111,17 +18122,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "同上"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "同上"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18494,12 +18511,18 @@
      "2026-11-07T14:35:00Z",
      "in_review",
      "PSUをファン開口つきの殻へ(描画 scratchpad/r/psu.png)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "PSU開口+ファン収容空間"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
     "audit_control/reports/R12_model_B_gpu_psu.md",
-    "PSUをファン開口つきの殻へ(描画 scratchpad/r/psu.png)"
+    "PSUをファン開口つきの殻へ(描画 scratchpad/r/psu.png)",
+    "PSU開口+ファン収容空間"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18594,17 +18617,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_B_gpu_psu.md)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "PSUソケットを、プラグが入る最小寸法の4口(W1 52/W2 26/W3 24/W4 19)へ。個数・配置はU59のため他は未モデル"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_B_gpu_psu.md"
+    "audit_control/reports/R12_model_B_gpu_psu.md",
+    "PSUソケットを、プラグが入る最小寸法の4口(W1 52/W2 26/W3 24/W4 19)へ。個数・配置はU59のため他は未モデル"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -18904,17 +18933,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_C_cooling_misc.md)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "PSU側ソケット幅をプラグ寸法へ整合。ケーブル端のプラグ(基板側/GPU側)は追加済み。PSU側プラグ本体は未モデル"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_C_cooling_misc.md"
+    "audit_control/reports/R12_model_C_cooling_misc.md",
+    "PSU側ソケット幅をプラグ寸法へ整合。ケーブル端のプラグ(基板側/GPU側)は追加済み。PSU側プラグ本体は未モデル"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -19028,17 +19063,23 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07T13:02:59Z",
      "triaged",
      "R12取込(R12_model_C_cooling_misc.md)"
+    ],
+    [
+     "2026-11-07T14:43:22Z",
+     "in_review",
+     "ファンのステーター支柱を追加(3本, 典型値UNVERIFIED)"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "audit_control/reports/R12_model_C_cooling_misc.md"
+    "audit_control/reports/R12_model_C_cooling_misc.md",
+    "ファンのステーター支柱を追加(3本, 典型値UNVERIFIED)"
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
@@ -20900,12 +20941,17 @@
    "impact": "",
    "dependencies": [],
    "parent_id": "QUAL-06",
-   "status": "triaged",
+   "status": "blocked",
    "history": [
     [
      "2026-11-07T13:04:47Z",
      "triaged",
      "R12取込(R12_model_A_board.md)"
+    ],
+    [
+     "2026-11-07T14:42:08Z",
+     "blocked",
+     "検討の結果、公式未確認のため保留(仮説で決めない)"
     ]
    ],
    "acceptance_criteria": "",
@@ -20914,9 +20960,9 @@
    ],
    "verification": [],
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
-   "blocker_reason": "",
+   "blocker_reason": "M.2ドーターカードの実寸(長さ)が公式で未確認(U56)。公式specはM.2_1を2280(80mm)と記載する一方、manual p.14の点線枠は約59〜61mm。どちらが正しいか未確認のため、SSD位置もカード長も確定させない(仮説: 点線枠の読み取りがカードの一部だった)。",
    "defer_reason": "",
-   "next_action": "ドーターカードを SSD 長 80.15 に合わせて 25×83(板座標 y58〜141 でなく、**実機のカード長を [UV]**)。実物構成(3層スタック: チップセットフィン→M.2_2 ヒートシンク(L字)→M.2_1 ヒートシンク)を再現し、SSD は M.2_1/M.2_2 のどちらかを明示。`ssd` の前提(Samsung 990 PRO の SSD ヒートシンク付)は、実機ではボード付属ヒートシンクとの併用可否が [UV](台帳登録)"
+   "next_action": "ASUS公式のM.2ドーターカード(M.2_1 GEN5)の寸法・向きを調査(U56)→カード長を決定。"
   },
   {
    "id": "MDA-034",

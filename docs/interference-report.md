@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、654物体、交差対 732。
-- 接触のみ(深さ<0.15mm): 338 / 意図した一体・嵌合(ALLOW): 95 / **要対処: 299**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、651物体、交差対 738。
+- 接触のみ(深さ<0.15mm): 339 / 意図した一体・嵌合(ALLOW): 89 / **要対処: 310**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -13,13 +13,14 @@
 - 側板のストリップとボスは一体品を別基本形で表現: 2対
 - プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される): 3対
 - ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 52対
-- モジュラーソケットは筐体前面の開口に嵌合: 10対
+- モジュラーソケットは筐体前面の開口に嵌合: 4対
 
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
 | cover_filter | ac_inlet_body | 62 | [28.0, 20.0, 26.0] | 20.00 |
 | cover_back | ac_inlet_body | 33 | [28.0, 20.0, 26.0] | 20.00 |
+| stand_neck_collar_cap_hole | stand_neck_shroud | 112 | [133.0, 73.217, 8.0] | 8.00 |
 | cover_filter | latch_cam0 | 46 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam5 | 46 | [8.0, 8.0, 5.799] | 5.80 |
 | cover_filter | latch_cam1 | 44 | [8.0, 8.0, 5.799] | 5.80 |
@@ -36,6 +37,7 @@
 | riser3 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | riser4 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| stand_neck_collar_cap_hole | stand_neck_base | 12 | [124.0, 66.278, 4.2] | 4.20 |
 | cam_carrier0 | cam_guide_rod0_-1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
 | cam_carrier0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
 | cam_carrier1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 4.0] | 4.00 |
@@ -57,6 +59,9 @@
 | pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | cpu_ihs | cap4 | 40 | [6.4, 3.98, 6.4] | 3.98 |
 | cpu_ihs | cap5 | 40 | [6.4, 3.98, 6.4] | 3.98 |
+| stand_neck_collar_cap_hole | stand_arm0 | 12 | [6.0, 65.278, 3.8] | 3.80 |
+| stand_neck_collar_cap_hole | stand_neck_cover1 | 12 | [120.0, 6.0, 3.8] | 3.80 |
+| stand_neck_collar_cap_hole | stand_arm1 | 12 | [6.0, 65.278, 3.8] | 3.80 |
 | gasket | cover_filter | 355 | [589.599, 3.0, 370.899] | 3.00 |
 | hinge_axle | hinge_friction0_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
 | hinge_axle | hinge_friction1_cap | 96 | [3.0, 12.0, 12.0] | 3.00 |
@@ -93,8 +98,3 @@
 | spring_seat_bot0 | cam_guide_rod0_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
 | spring_seat_bot1 | cam_guide_rod1_-1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
 | spring_seat_bot1 | cam_guide_rod1_1 | 56 | [8.0, 8.0, 2.7] | 2.70 |
-| cap3 | cpu_ihs | 30 | [2.6, 3.98, 6.4] | 2.60 |
-| gasket | latch_cam0 | 20 | [8.0, 2.6, 6.8] | 2.60 |
-| gasket | latch_cam5 | 20 | [8.0, 2.6, 6.8] | 2.60 |
-| gasket | latch_cam1 | 18 | [8.0, 2.6, 6.8] | 2.60 |
-| gasket | latch_cam2 | 18 | [8.0, 2.6, 6.8] | 2.60 |
