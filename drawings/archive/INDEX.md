@@ -65,6 +65,7 @@
 | 09_board_layout.svg | v004 | current | 2026-11-06 | 514e2e0 | 09_board_layout/09_board_layout.v004__2026-11-06_514e2e0.svg |
 | 09_board_layout.svg | v005 | current | 2026-11-06 | 302823c | 09_board_layout/09_board_layout.v005__2026-11-06_302823c.svg |
 | 09_board_layout.svg | v006 | current | 2026-11-06 | 853f219 | 09_board_layout/09_board_layout.v006__2026-11-06_853f219.svg |
+| 09_board_layout.svg | v007 | current | 2026-11-06 | 88f99b7 | 09_board_layout/09_board_layout.v007__2026-11-06_88f99b7.svg |
 | 10_placement_dimensioned.svg | v001 | current | 2026-11-05 | 27ca8ce | 10_placement_dimensioned/10_placement_dimensioned.v001__2026-11-05_27ca8ce.svg |
 | 10_placement_dimensioned.svg | v002 | current | 2026-11-05 | 2f8c0ac | 10_placement_dimensioned/10_placement_dimensioned.v002__2026-11-05_2f8c0ac.svg |
 | 10_placement_dimensioned.svg | v003 | current | 2026-11-05 | fcba5fe | 10_placement_dimensioned/10_placement_dimensioned.v003__2026-11-05_fcba5fe.svg |
@@ -73,6 +74,7 @@
 | 10_placement_dimensioned.svg | v006 | current | 2026-11-06 | 514e2e0 | 10_placement_dimensioned/10_placement_dimensioned.v006__2026-11-06_514e2e0.svg |
 | 10_placement_dimensioned.svg | v007 | current | 2026-11-06 | 302823c | 10_placement_dimensioned/10_placement_dimensioned.v007__2026-11-06_302823c.svg |
 | 10_placement_dimensioned.svg | v008 | current | 2026-11-06 | 853f219 | 10_placement_dimensioned/10_placement_dimensioned.v008__2026-11-06_853f219.svg |
+| 10_placement_dimensioned.svg | v009 | current | 2026-11-06 | 88f99b7 | 10_placement_dimensioned/10_placement_dimensioned.v009__2026-11-06_88f99b7.svg |
 | 11a_section_AA.svg | v001 | current | 2026-11-05 | 27ca8ce | 11a_section_AA/11a_section_AA.v001__2026-11-05_27ca8ce.svg |
 | 11a_section_AA.svg | v002 | current | 2026-11-05 | 2f8c0ac | 11a_section_AA/11a_section_AA.v002__2026-11-05_2f8c0ac.svg |
 | 11a_section_AA.svg | v003 | current | 2026-11-05 | fcba5fe | 11a_section_AA/11a_section_AA.v003__2026-11-05_fcba5fe.svg |

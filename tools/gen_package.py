@@ -52,7 +52,7 @@ tx = 24 + B * sc + 22
 b.append(T(tx, 40, '番号', 3.6, 'start', '#000', 'font-weight="bold"')); b.append(T(tx + 12, 40, '部位(位置[x,y]・大きさ)', 3.6, 'start', '#000', 'font-weight="bold"'))
 for n, (lab, x, y, w, h, c) in enumerate(feats, 1): b.append(T(tx, 40 + n * 6.2, str(n), 3)); b.append(T(tx + 12, 40 + n * 6.2, f'{lab} [{x:.1f},{y:.1f}] {w:.1f}x{h:.1f}', 2.5))
 b.append(T(tx, 40 + (len(feats) + 2) * 6.2, '※ 出典: ASUSマニュアルp.14のlayout図を実測(2024年版,U16)。', 2.5, 'start', '#900'))
-save('09_board_layout.svg', b)
+pass      # 09は tools/gen_layout_drawings.py へ移行(実形状版)
 
 # ================= 10 寸法入り配置図(トレイ平面) =================
 sc = 0.46; ox, oy = 30, 44
@@ -82,7 +82,7 @@ for n, it in enumerate(L['items']):
     b.append(T(tx, 54 + n * 11, it['id'], 2.7, 'start', '#000', 'font-weight="bold"'))
     b.append(T(tx, 54 + n * 11 + 4.5, f'[{x:.1f},{y:.1f},{z:.1f}] [{w:.1f},{h:.1f},{d:.1f}] 頂{z+d:.1f} 許容{lim:.0f}(縁{max(dm,0):.0f}) {"OK" if ok else "要確認"}', 2.3, 'start', '#000' if ok else '#c0392b'))
 b.append(T(ox, oy + IH * sc + 32, f'ドーム内面: 許容z={D["edge_inner_depth"]}+{DEPTH-D["edge_inner_depth"]:.0f}×smoothstep(d/{D["run"]}) (d=角丸矩形の縁までの最短距離)、最大{DEPTH}。', 2.8))
-save('10_placement_dimensioned.svg', b)
+pass      # 10は tools/gen_layout_drawings.py へ移行(実形状版)
 
 # ================= 11 断面図(A-A: y=122 ソケット中心を通るx-z断面 / B-B: x=350 GPUを通る y-z断面) =================
 def section(title, num, axis, cut, nm):

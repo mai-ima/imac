@@ -298,6 +298,15 @@
    "file": "drawlib/drawlib.v002__2026-11-06_514e2e0.py"
   },
   {
+   "src": "tools/drawlib.py",
+   "version": 3,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "302823c",
+   "sha256": "8d1ee3eaf8515742d6bf6943a1b6a01590a2a52ffa312203b5758a7c443f991a",
+   "file": "drawlib/drawlib.v003__2026-11-06_302823c.py"
+  },
+  {
    "src": "tools/fit_tolerance.py",
    "version": 1,
    "gen": "current",
@@ -872,6 +881,15 @@
    "commit": "514e2e0",
    "sha256": "74957817dcce84b2706feb8e6d09d8b471b2106a7c4ce8e22e6b36875b1012fe",
    "file": "gen_package/gen_package.v007__2026-11-06_514e2e0.py"
+  },
+  {
+   "src": "tools/gen_package.py",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "93238a3",
+   "sha256": "e8bf3a46c8d6eda6b375a26c2eb4dcf3869fcec3a9c267fa3f08dba3849b8fee",
+   "file": "gen_package/gen_package.v008__2026-11-06_93238a3.py"
   },
   {
    "src": "tools/gen_project_summary.py",

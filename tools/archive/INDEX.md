@@ -35,6 +35,7 @@
 | consistency_check.py | v004 | current | 2026-11-06 | 93238a3 | consistency_check/consistency_check.v004__2026-11-06_93238a3.py |
 | drawlib.py | v001 | current | 2026-11-06 | 80d7407 | drawlib/drawlib.v001__2026-11-06_80d7407.py |
 | drawlib.py | v002 | current | 2026-11-06 | 514e2e0 | drawlib/drawlib.v002__2026-11-06_514e2e0.py |
+| drawlib.py | v003 | current | 2026-11-06 | 302823c | drawlib/drawlib.v003__2026-11-06_302823c.py |
 | fit_tolerance.py | v001 | current | 2026-11-06 | 02c4c72 | fit_tolerance/fit_tolerance.v001__2026-11-06_02c4c72.py |
 | fit_tolerance.py | v002 | current | 2026-11-06 | 28dc82b | fit_tolerance/fit_tolerance.v002__2026-11-06_28dc82b.py |
 | fit_tolerance.py | v003 | current | 2026-11-06 | 88f99b7 | fit_tolerance/fit_tolerance.v003__2026-11-06_88f99b7.py |
@@ -99,6 +100,7 @@
 | gen_package.py | v005 | current | 2026-11-06 | 80d7407 | gen_package/gen_package.v005__2026-11-06_80d7407.py |
 | gen_package.py | v006 | current | 2026-11-06 | 9ff6031 | gen_package/gen_package.v006__2026-11-06_9ff6031.py |
 | gen_package.py | v007 | current | 2026-11-06 | 514e2e0 | gen_package/gen_package.v007__2026-11-06_514e2e0.py |
+| gen_package.py | v008 | current | 2026-11-06 | 93238a3 | gen_package/gen_package.v008__2026-11-06_93238a3.py |
 | gen_project_summary.py | v001 | current | 2026-11-06 | ce41db1 | gen_project_summary/gen_project_summary.v001__2026-11-06_ce41db1.py |
 | gen_project_summary.py | v002 | current | 2026-11-06 | 4050ed9 | gen_project_summary/gen_project_summary.v002__2026-11-06_4050ed9.py |
 | gen_service_drawings.py | v001 | current | 2026-11-03 | 307c9ea | gen_service_drawings/gen_service_drawings.v001__2026-11-03_307c9ea.py |

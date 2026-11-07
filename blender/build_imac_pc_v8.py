@@ -696,7 +696,7 @@ if A.explode > 0:
     shift_group(['slab', 'front_glass', 'display', 'chin_print', 'camera', 'mic', 'power_button'], -300 * e)      # 前面(ディスプレイ)は前方へ
 if A.open_stand:
     for ob in COLL.objects:
-        if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover')): ob.hide_render = True
+        if ob.name.startswith(('stand_skirt', 'stand_neck_collar', 'stand_neck_shroud', 'stand_neck_cover', 'hinge_cover', 'hinge_boot')): ob.hide_render = True
 if A.cut and A.explode == 0:
     for ob in COLL.objects:
         if ob.name.startswith(('cover_back', 'cover_filter', 'gasket')): ob.hide_render = True

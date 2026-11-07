@@ -568,6 +568,15 @@
    "file": "09_board_layout/09_board_layout.v006__2026-11-06_853f219.svg"
   },
   {
+   "src": "drawings/09_board_layout.svg",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "9d53127b5f6a97094060b0e1e89d1f24fcc700b08db5139581461f7a0a252329",
+   "file": "09_board_layout/09_board_layout.v007__2026-11-06_88f99b7.svg"
+  },
+  {
    "src": "drawings/10_placement_dimensioned.svg",
    "version": 1,
    "gen": "current",
@@ -638,6 +647,15 @@
    "commit": "853f219",
    "sha256": "141d0c521e3cd215a8f30a1f82eb2bff8601aee77d6948dd703f03c72088f82e",
    "file": "10_placement_dimensioned/10_placement_dimensioned.v008__2026-11-06_853f219.svg"
+  },
+  {
+   "src": "drawings/10_placement_dimensioned.svg",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-06",
+   "commit": "88f99b7",
+   "sha256": "8f2874e92868747709c1f9cfb7510e8468f584f39fb79f238f396491fb0dc356",
+   "file": "10_placement_dimensioned/10_placement_dimensioned.v009__2026-11-06_88f99b7.svg"
   },
   {
    "src": "drawings/11a_section_AA.svg",

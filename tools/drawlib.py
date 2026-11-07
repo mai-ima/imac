@@ -31,7 +31,8 @@ def frame(title, num, scale='1:1', material='-', finish='-', rev='D', sheet='1/1
     bx, by, bw, bh = W - 10 - 180, H - 10 - 44, 180, 44
     o.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="#fff" stroke="#000" stroke-width=".5"/>')
     o += [ln(bx, by + 14, bx + bw, by + 14, .25), ln(bx, by + 26, bx + bw, by + 26, .25), ln(bx + 100, by + 14, bx + 100, by + bh, .25), ln(bx + 140, by + 14, bx + 140, by + bh, .25), ln(bx + 100, by + 35, bx + bw, by + 35, .25)]
-    o += [txt(bx + 2, by + 4, '題名 / Title', 1.9, fill='#555'), txt(bx + 2, by + 11, title, 4.6, w='bold'),
+    o += [txt(bx + 2, by + 4, '題名 / Title', 1.9, fill='#555'), txt(bx + 2, by + 11, title, min(4.6, round(96.0 / max(len(str(title)), 1), 2)), w='bold'),      # 題名欄(幅96mm)に収まる文字サイズ(全角想定)
+         
           txt(bx + 2, by + 18, '所有者 / Owner', 1.9, fill='#555'), txt(bx + 2, by + 23.5, OWNER, 2.6),
           txt(bx + 2, by + 30, '材質 / Material', 1.9, fill='#555'), txt(bx + 2, by + 34, str(material)[:60], 2.3), txt(bx + 2, by + 38.5, '表面処理 / Finish', 1.9, fill='#555'), txt(bx + 2, by + 42, str(finish)[:60], 2.3),
           txt(bx + 102, by + 18, '図面番号 / Drawing No.', 1.9, fill='#555'), txt(bx + 102, by + 24, f'IMAC-PC-{num}', 4.0, w='bold'),

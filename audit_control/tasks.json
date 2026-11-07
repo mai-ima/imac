@@ -15539,6 +15539,180 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "QUAL-01",
+   "title": "マニュアル類の品質改修(公式マニュアル体裁: 番号手順/工具/トルク/警告/図番参照)",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "in_progress",
+     "サブエージェントに委任(R11_manuals.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "QUAL-02",
+   "title": "見積書・BOM・RFQの実務水準化(3段階ロット/検査/回答様式/出典/確度)とBOM-見積-model照合",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "in_progress",
+     "サブエージェントに委任(R11_estimate.md)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "QUAL-03",
+   "title": "配置図/基板配置図(drawings 09/10)を具体的な形状(部品実形状・基板上部品)で再作成、文字重なり・旧記述を解消",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "in_progress",
+     "低品質を描画で確認: 矩形のみ、題名欄と縮尺の重なり、5070Ti等の旧改訂履歴"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "QUAL-04",
+   "title": "全図面(drawings 01-16)の品質棚卸し: 矩形/重なり/旧記述/寸法不足を洗い出し公式マニュアル体裁へ改修",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "triaged",
+     "QUAL-03の後に着手"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "QUAL-05",
+   "title": "部品/全体3Dモデルの実形状化(GPU/PSU/ラジエーター/ポンプ等の箱形を実形状へ)とばね類のコイル化",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_progress",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "in_progress",
+     "ダイスプリング/ポンプばねをコイル化済み。他は未着手"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "MODEL-HOLE-01",
+   "title": "背面ドームの穿孔を透過テクスチャから実穴へ(boolean既定化、GLBはgzip+base64で配信)",
+   "description": "",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "in_review",
+   "history": [
+    [
+     "2026-11-07T11:36:39Z",
+     "in_review",
+     "実穴GLB 27.7MB→gzip+b64 7.9MB を生成・push。ビューアの実機読み込み検証は未了"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [],
+   "verification": "",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }
