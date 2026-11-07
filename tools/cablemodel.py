@@ -7,6 +7,7 @@ L = {i['id']: i for i in json.load(open(f'{R}/model/layout.json'))['items']}
 bx, by, bz = L['board']['pos']; gx, gy, gz = L['gpu']['pos']; px, py, pz = L['psu']['pos']; cx, cy, cz = L['ctrl_board']['pos']
 rx, ry, rz = L['radiator']['pos']; cl = L['cooler']['pos']; cs = L['cooler']['size']; ax, ay, az = L['ac_inlet']['pos']
 PJ = json.load(open(f'{R}/model/pump.json')); SX, SYA, SYB, STIP = PJ['stub_x'], PJ['stub_y'][0], PJ['stub_y'][1], PJ['stub']['z'][1]
+HZ2 = 124.0      # H2は H1(HZ)の13mm下を通し、平面で交差しても干渉しない
 HZ = 143.0      # ホース水平部の中心高さ(曲げ半径40mm仮置き+出口スタブ先端z81)
 Z1 = bz + 1.6; pcx, pcy = cl[0] + 45.5, cl[1] + cs[1] / 2      # ポンプ円盤中心(筐体は+x側)
 CAB = [
@@ -25,9 +26,9 @@ CAB = [
  dict(id='W7', name='内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加)', kind='cable', od=4.5, awg=30, mbr=16, frm='GPU DP出力(ブラケット側)', to='ctrl_board 映像入力(DP/HDMI, 型番未確定 U51)', conn='DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4)', ref_mm=450, mat='rubber',
       pts=[(gx + 12, gy - 34, 17), (gx - 14, gy - 34, 17), (gx - 14, gy + 14, 27), (gx - 14, cy - 18, 27), (gx - 14, cy + 14, 28)]),
  dict(id='H1', name='AIOホース(ポンプ出口A→ラジエーター口A, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口A(上面スタブ)', to='ラジエーター口A', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
-      pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (330, pcy + SYA, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
+      pts=[(pcx + SX, pcy + SYA, cl[2] + STIP), (pcx + SX, pcy + SYA, HZ), (300, pcy + SYA, HZ), (390, ry + 9, HZ), (rx + 60 - 12, ry + 9, HZ), (rx + 60 - 12, ry + 9, rz + 50)]),
  dict(id='H2', name='AIOホース(ポンプ出口B→ラジエーター口B, 上面垂直出口)', kind='hose', od=12.4, awg=0, mbr=40, frm='ポンプ出口B(上面スタブ)', to='ラジエーター口B', conn='ARCTIC 450mm/ID6.0(最小曲げ半径は未確認 U45: 40mm仮置き)', ref_mm=450, mat='hose',
-      pts=[(pcx + SX, pcy + SYB, cl[2] + STIP), (pcx + SX, pcy + SYB, HZ), (rx + 60 + 12, pcy + SYB, HZ), (rx + 60 + 12, ry + 9, 100), (rx + 60 + 12, ry + 9, rz + 50)]),
+      pts=[(pcx + SX, pcy + SYB, cl[2] + STIP), (pcx + SX, pcy + SYB, HZ), (340, pcy + SYB, HZ), (405, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9 + 14, HZ), (rx + 60 + 12, ry + 9, rz + 50)]),
 ]
 def _unit(v): n = math.sqrt(sum(x * x for x in v)); return tuple(x / n for x in v)
 def fillet(pts, r):

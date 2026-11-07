@@ -43,6 +43,7 @@
 | CP-06.svg | v008 | current | 2026-11-06 | 853f219 | CP-06/CP-06.v008__2026-11-06_853f219.svg |
 | CP-06.svg | v009 | current | 2026-11-06 | 93238a3 | CP-06/CP-06.v009__2026-11-06_93238a3.svg |
 | CP-06.svg | v010 | current | 2026-11-06 | f2e5a87 | CP-06/CP-06.v010__2026-11-06_f2e5a87.svg |
+| CP-06.svg | v011 | current | 2026-11-07 | 64a1afa | CP-06/CP-06.v011__2026-11-07_64a1afa.svg |
 | CP-07.svg | v001 | current | 2026-11-05 | b97eaae | CP-07/CP-07.v001__2026-11-05_b97eaae.svg |
 | CP-07.svg | v002 | current | 2026-11-05 | 3c794e1 | CP-07/CP-07.v002__2026-11-05_3c794e1.svg |
 | CP-07.svg | v003 | current | 2026-11-05 | fcba5fe | CP-07/CP-07.v003__2026-11-05_fcba5fe.svg |

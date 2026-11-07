@@ -12657,14 +12657,20 @@
      "2026-11-07 10:55",
      "done",
      "create_trigger(毎時55分,persist_session)とsend_laterを作成、CLAUDE.mdに運用規則追記"
+    ],
+    [
+     "2026-11-07 11:12",
+     "in_progress",
+     "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察"
     ]
    ],
    "acceptance_criteria": "",
    "evidence": [
-    "trigger情報: persistent_session_id=本セッション(確認済み)。発火は未検証"
+    "trigger情報: persistent_session_id=本セッション(確認済み)。発火は未検証",
+    "検証: send_later(耐久トリガー)は 2026-11-07 20:11:53 JST に発火し本セッションへ到達した(ReadNotifications で確認)。毎時55分(20:55)とScheduleWakeup(20:22頃)は未観察"
    ],
-   "verification": "",
-   "decision": "REPLACE",
+   "verification": "ReadNotifications 受信ログ",
+   "decision": "耐久トリガーは本セッションに届くと確認(1/3)。ScheduleWakeupの到達は次回観察",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": "11:11 UTC(20:11 JST)の単発と毎時55分の発火が同一セッションに届くか確認→届けば仮説を支持する間接証拠。ScheduleWakeupも併用して差を観察"
@@ -13670,7 +13676,7 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "in_progress",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 10:58",
@@ -13681,14 +13687,19 @@
      "2026-11-07 11:04",
      "in_progress",
      "thermal_calc の出力に『ダクト未設計・熱は合格宣言しない』を明記。ダクト実設計は THERM-DUCT"
+    ],
+    [
+     "2026-11-07 11:14",
+     "in_review",
+     "resolution"
     ]
    ],
    "acceptance_criteria": "再検証→修正→テスト→台帳更新",
    "evidence": [
-    "thermal_calc の出力に『ダクト未設計・熱は合格宣言しない』を明記。ダクト実設計は THERM-DUCT"
+    "ダクトを提案としてモデル化(効果未検証)。熱の合格は宣言しない旨を文書化"
    ],
-   "verification": "",
-   "decision": "",
+   "verification": "fitcheck/cable_check",
+   "decision": "PARTIAL",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
@@ -15328,18 +15339,25 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "discovered",
+   "status": "in_review",
    "history": [
     [
      "2026-11-07 11:04",
      "discovered",
      ""
+    ],
+    [
+     "2026-11-07 11:14",
+     "in_review",
+     "layout.json rad_duct(120×228×42, 提案)+parts.json(PROPOSED)+Blender表示、ホース2本を duct の外側(y<78)へ再経路。fitcheck/cable_check OK。熱効果・気密・ファン位置は未検証"
     ]
    ],
    "acceptance_criteria": "",
-   "evidence": [],
-   "verification": "",
-   "decision": "",
+   "evidence": [
+    "layout.json rad_duct(120×228×42, 提案)+parts.json(PROPOSED)+Blender表示、ホース2本を duct の外側(y<78)へ再経路。fitcheck/cable_check OK。熱効果・気密・ファン位置は未検証"
+   ],
+   "verification": "fitcheck, cable_check, Blender build",
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""

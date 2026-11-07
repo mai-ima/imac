@@ -19,6 +19,7 @@
 | cables.json | v008 | current | 2026-11-06 | 853f219 | cables/cables.v008__2026-11-06_853f219.json |
 | cables.json | v009 | current | 2026-11-06 | 88f99b7 | cables/cables.v009__2026-11-06_88f99b7.json |
 | cables.json | v010 | current | 2026-11-06 | cf90ba1 | cables/cables.v010__2026-11-06_cf90ba1.json |
+| cables.json | v011 | current | 2026-11-07 | bba640c | cables/cables.v011__2026-11-07_bba640c.json |
 | custom_parts.json | v001 | current | 2026-11-05 | b97eaae | custom_parts/custom_parts.v001__2026-11-05_b97eaae.json |
 | custom_parts.json | v002 | current | 2026-11-05 | 3c794e1 | custom_parts/custom_parts.v002__2026-11-05_3c794e1.json |
 | custom_parts.json | v003 | current | 2026-11-05 | fcba5fe | custom_parts/custom_parts.v003__2026-11-05_fcba5fe.json |
@@ -68,6 +69,7 @@
 | layout.json | v010 | current | 2026-11-06 | cca8bc2 | layout/layout.v010__2026-11-06_cca8bc2.json |
 | layout.json | v011 | current | 2026-11-06 | 514e2e0 | layout/layout.v011__2026-11-06_514e2e0.json |
 | layout.json | v012 | current | 2026-11-06 | 85af1a8 | layout/layout.v012__2026-11-06_85af1a8.json |
+| layout.json | v013 | current | 2026-11-06 | 853f219 | layout/layout.v013__2026-11-06_853f219.json |
 | parts.json | v001 | gen-001 | 2026-11-03 | 165c355 | gen-001/parts/parts.v001__2026-11-03_165c355.json |
 | parts.json | v002 | gen-001 | 2026-11-03 | fd22dea | gen-001/parts/parts.v002__2026-11-03_fd22dea.json |
 | parts.json | v003 | current | 2026-11-03 | fdfd200 | parts/parts.v003__2026-11-03_fdfd200.json |
@@ -79,6 +81,7 @@
 | parts.json | v009 | current | 2026-11-06 | fc36218 | parts/parts.v009__2026-11-06_fc36218.json |
 | parts.json | v010 | current | 2026-11-06 | 514e2e0 | parts/parts.v010__2026-11-06_514e2e0.json |
 | parts.json | v011 | current | 2026-11-06 | 85af1a8 | parts/parts.v011__2026-11-06_85af1a8.json |
+| parts.json | v012 | current | 2026-11-07 | 64a1afa | parts/parts.v012__2026-11-07_64a1afa.json |
 | spec.json | v001 | gen-001 | 2026-11-03 | 44f2d2a | gen-001/spec/spec.v001__2026-11-03_44f2d2a.json |
 | spec.json | v002 | gen-001 | 2026-11-03 | 165c355 | gen-001/spec/spec.v002__2026-11-03_165c355.json |
 | spec.json | v003 | current | 2026-11-03 | fd22dea | spec/spec.v003__2026-11-03_fd22dea.json |

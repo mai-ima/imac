@@ -284,5 +284,23 @@
   "status_note": "下辺中央右に固定、保護接地(PE)をM4リング端子でトレイ接地スタッドへ。型番U40",
   "facts": {},
   "sources": []
+ },
+ "rad_duct": {
+  "id": "rad_duct",
+  "name": "ラジエーター吸気ダクト(特注板金 t1.0, 四方壁)",
+  "maker": "特注(CP-25予定)",
+  "dims": [
+   228,
+   120,
+   43
+  ],
+  "status": "PROPOSED",
+  "facts": {
+   "purpose": "外気のみをラジエーターファンへ導く(R10E-001)",
+   "assumption": "ファン位置 y66〜306 / z61〜86 は仮定(UNVERIFIED)",
+   "seal": "上端はドーム内面へEMI/導電ガスケットで密着(未設計)"
+  },
+  "sources": [],
+  "status_note": "PROPOSED: 設計提案。熱効果(再循環低減)は未検証"
  }
 }

@@ -9,6 +9,7 @@
 | PROJECT-SUMMARY.md | v005 | current | 2026-11-06 | 93238a3 | PROJECT-SUMMARY/PROJECT-SUMMARY.v005__2026-11-06_93238a3.md |
 | PROJECT-SUMMARY.md | v006 | current | 2026-11-06 | e7a16e1 | PROJECT-SUMMARY/PROJECT-SUMMARY.v006__2026-11-06_e7a16e1.md |
 | PROJECT-SUMMARY.md | v007 | current | 2026-11-06 | 36dff8c | PROJECT-SUMMARY/PROJECT-SUMMARY.v007__2026-11-06_36dff8c.md |
+| PROJECT-SUMMARY.md | v008 | current | 2026-11-07 | 3089847 | PROJECT-SUMMARY/PROJECT-SUMMARY.v008__2026-11-07_3089847.md |
 | README.md | v001 | current | 2026-11-06 | d97f07e | README/README.v001__2026-11-06_d97f07e.md |
 | README.md | v002 | current | 2026-11-06 | 02c4c72 | README/README.v002__2026-11-06_02c4c72.md |
 | README.md | v003 | current | 2026-11-06 | ce41db1 | README/README.v003__2026-11-06_ce41db1.md |
@@ -102,6 +103,7 @@
 | thermal-analysis.md | v004 | current | 2026-11-06 | 9ff6031 | thermal-analysis/thermal-analysis.v004__2026-11-06_9ff6031.md |
 | thermal-analysis.md | v005 | current | 2026-11-06 | 2bb8cf1 | thermal-analysis/thermal-analysis.v005__2026-11-06_2bb8cf1.md |
 | thermal-analysis.md | v006 | current | 2026-11-06 | e7a16e1 | thermal-analysis/thermal-analysis.v006__2026-11-06_e7a16e1.md |
+| thermal-analysis.md | v007 | current | 2026-11-07 | bba640c | thermal-analysis/thermal-analysis.v007__2026-11-07_bba640c.md |
 | tilt-swivel-design.md | v001 | current | 2026-11-06 | 7ed5c4c | tilt-swivel-design/tilt-swivel-design.v001__2026-11-06_7ed5c4c.md |
 | tilt-swivel-design.md | v002 | current | 2026-11-06 | 4482281 | tilt-swivel-design/tilt-swivel-design.v002__2026-11-06_4482281.md |
 | tilt-swivel-design.md | v003 | current | 2026-11-06 | bfa86c4 | tilt-swivel-design/tilt-swivel-design.v003__2026-11-06_bfa86c4.md |

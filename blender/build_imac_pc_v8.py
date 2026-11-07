@@ -534,6 +534,8 @@ for k_, (dx_, dy_) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))):  
 # ラジエーター(277x120x38) + P12 Pro x2
 rx_, ry_, rz_ = lp('radiator')
 ibox('rad_core', 120, 277, 38, rx_, ry_, rz_, M['rad_black'], .8)
+dx_, dy_, dz_ = lp('rad_duct'); DW_, DL_, DH_ = LAY['rad_duct']['size']           # R10E-001: 吸気分離ダクト(板金t1.0 四方壁)。上端はドーム内面へ(ガスケット未設計)
+for nm_, (bx, by, bw, bl) in {'a': (dx_, dy_, 1.0, DL_), 'b': (dx_ + DW_ - 1.0, dy_, 1.0, DL_), 'c': (dx_, dy_, DW_, 1.0), 'd': (dx_, dy_ + DL_ - 1.0, DW_, 1.0)}.items(): ibox('rad_duct_' + nm_, bw, bl, DH_, bx, by, dz_, M['alublack'], .3)
 ibox('rad_tank_a', 120, 12, 38, rx_, ry_ - 0, rz_, M['alublack'], 1.5); ibox('rad_tank_b', 120, 12, 38, rx_, ry_ + 265, rz_, M['alublack'], 1.5)
 for k in range(2):
     make_fan(f'fan_rad{k}', 120, 28, 11, principled('p12_frame', '#101114', 0, .45), principled('p12_blade', '#1b1c20', 0, .45), principled('p12_hub', '#101114', .2, .4), rx_ + 60, ry_ + 18.5 + 60 + k * 120, rz_ + 38, hub_k=.2375, open_k=.485)      # P12 Pro: ハブØ57(公式2D図面の概算)、開口は枠幅の約97%

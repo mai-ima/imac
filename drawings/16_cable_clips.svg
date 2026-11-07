@@ -10,6 +10,7 @@
 <rect x="117.9" y="133.4" width="11.5" height="36.9" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="123.6" y="151.9" font-size="3" text-anchor="middle" fill="#555">ssd</text>
 <rect x="62.1" y="125.7" width="61.3" height="7.5" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="92.8" y="129.5" font-size="3" text-anchor="middle" fill="#555">ram</text>
 <rect x="40.1" y="195.2" width="12.9" height="12.0" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="46.6" y="201.1" font-size="3" text-anchor="middle" fill="#555">ac_inlet</text>
+<rect x="224.6" y="70.0" width="55.2" height="104.9" fill="#dde3ea" stroke="#888" stroke-width=".2"/><text x="252.2" y="122.5" font-size="3" text-anchor="middle" fill="#555">rad_duct</text>
 <polyline fill="none" stroke="#c0392b" stroke-width=".7" points="77.4,111.4 77.4,116.0 77.8,121.6"/>
 <circle cx="77.4" cy="111.4" r="1.1" fill="#c0392b"/>
 <circle cx="77.8" cy="121.6" r="1.1" fill="#c0392b"/>
@@ -49,23 +50,21 @@
 <circle cx="144.1" cy="127.4" r="1.1" fill="#555"/>
 <circle cx="144.1" cy="110.1" r="1.1" fill="#555"/>
 <text x="158.0" y="202.7" font-size="3.4" fill="#555">W7</text>
-<polyline fill="none" stroke="#b0b" stroke-width=".7" points="115.6,158.3 115.6,158.3 181.8,158.3 246.7,184.9 246.7,184.9"/>
+<polyline fill="none" stroke="#b0b" stroke-width=".7" points="115.6,158.3 115.6,158.3 168.0,158.3 209.4,184.9 246.7,184.9 246.7,184.9"/>
 <circle cx="115.6" cy="158.4" r="1.1" fill="#b0b"/>
 <circle cx="143.2" cy="158.4" r="1.1" fill="#b0b"/>
-<circle cx="170.8" cy="158.4" r="1.1" fill="#b0b"/>
-<circle cx="207.3" cy="168.8" r="1.1" fill="#b0b"/>
-<circle cx="232.9" cy="179.2" r="1.1" fill="#b0b"/>
+<circle cx="191.2" cy="173.2" r="1.1" fill="#b0b"/>
+<circle cx="237.0" cy="184.9" r="1.1" fill="#b0b"/>
 <circle cx="246.7" cy="184.9" r="1.1" fill="#b0b"/>
 <circle cx="246.7" cy="184.9" r="1.1" fill="#b0b"/>
 <text x="117.6" y="156.3" font-size="3.4" fill="#b0b">H1</text>
-<polyline fill="none" stroke="#e67e22" stroke-width=".7" points="115.6,147.0 115.6,147.0 257.7,147.0 257.7,184.9 257.7,184.9"/>
+<polyline fill="none" stroke="#e67e22" stroke-width=".7" points="115.6,147.0 115.6,147.0 186.4,147.0 216.3,178.4 257.7,178.4 257.7,184.9"/>
 <circle cx="115.6" cy="146.9" r="1.1" fill="#e67e22"/>
 <circle cx="143.2" cy="146.9" r="1.1" fill="#e67e22"/>
 <circle cx="170.8" cy="146.9" r="1.1" fill="#e67e22"/>
-<circle cx="198.4" cy="146.9" r="1.1" fill="#e67e22"/>
-<circle cx="226.0" cy="146.9" r="1.1" fill="#e67e22"/>
-<circle cx="253.6" cy="146.9" r="1.1" fill="#e67e22"/>
-<circle cx="257.7" cy="171.4" r="1.1" fill="#e67e22"/>
+<circle cx="205.4" cy="167.0" r="1.1" fill="#e67e22"/>
+<circle cx="243.9" cy="178.4" r="1.1" fill="#e67e22"/>
+<circle cx="257.7" cy="183.8" r="1.1" fill="#e67e22"/>
 <circle cx="257.7" cy="184.9" r="1.1" fill="#e67e22"/>
 <text x="117.6" y="145.0" font-size="3.4" fill="#e67e22">H2</text>
 <rect x="250" y="267" width="166" height="26" fill="none" stroke="#000" stroke-width=".4"/><text x="254" y="276" font-size="5">ケーブル経路とクリップ位置</text><text x="254" y="283" font-size="3.2">図番 PKG-16 / 単位 mm / 設計値(未承認) / docs/spec/wiring-spec.md</text></svg>

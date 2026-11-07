@@ -8,13 +8,13 @@
 - バランサ: カム式(ρ0=22mm、ばね0°675N/本・最大992N)、摩擦保持3.0N·m±8%、操作力目標≦20N
 - 未確認事項(U台帳): 60件(docs/unverified-tracker.md)
 
-## 2. ファイル構成(git追跡 1280件 = 現行 326 + 履歴archive 954)
+## 2. ファイル構成(git追跡 1314件 = 現行 328 + 履歴archive 986)
 
 | ディレクトリ | 現行件数 | 役割 |
 |---|---|---|
 | (root) | 2 |  |
 | .github | 1 |  |
-| audit_control | 11 |  |
+| audit_control | 13 |  |
 | audit_output | 5 | 監査台帳・指摘一覧 |
 | blender | 22 | 3Dモデル生成(build_imac_pc_v8.py/hardware_v8.py) |
 | cad | 1 | OpenSCAD |
@@ -98,7 +98,7 @@
 
 - `INDEX.md` — 文書索引(今読むべき正本)
 - `PRINCIPLES.md` — 基本思想・制作思想(不変条件) — 各周で必ず確認する
-- `PROJECT-SUMMARY.md` — プロジェクト要約(自動生成 2026-11-06)
+- `PROJECT-SUMMARY.md` — プロジェクト要約(自動生成 2026-11-07)
 - `README.md` — docs/ 索引(現行: v9)
 - `anatomy.md` — iMac 24インチ 部位と配置
 - `audit-criteria.md` — 監査基準 (厳格版)

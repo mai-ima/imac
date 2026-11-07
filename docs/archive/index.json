@@ -64,6 +64,15 @@
    "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v007__2026-11-06_36dff8c.md"
   },
   {
+   "src": "docs/PROJECT-SUMMARY.md",
+   "version": 8,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "11b858d416ea3da1ba2c42de27c43427ae82b01cdb69cc5c9c13237c75ccb877",
+   "file": "PROJECT-SUMMARY/PROJECT-SUMMARY.v008__2026-11-07_3089847.md"
+  },
+  {
    "src": "docs/README.md",
    "version": 1,
    "gen": "current",
@@ -899,6 +908,15 @@
    "commit": "e7a16e1",
    "sha256": "957a72e23635187e31775ea6adcc3d05040cd31bf13e88d8bab81d4343658885",
    "file": "thermal-analysis/thermal-analysis.v006__2026-11-06_e7a16e1.md"
+  },
+  {
+   "src": "docs/thermal-analysis.md",
+   "version": 7,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "bba640c",
+   "sha256": "1bba799d54a23892182c67a316abebae460b23555d4b3bf0a108e2d726a6f46a",
+   "file": "thermal-analysis/thermal-analysis.v007__2026-11-07_bba640c.md"
   },
   {
    "src": "docs/tilt-swivel-design.md",

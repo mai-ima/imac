@@ -1153,6 +1153,15 @@
    "file": "16_cable_clips/16_cable_clips.v009__2026-11-06_93238a3.svg"
   },
   {
+   "src": "drawings/16_cable_clips.svg",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "bba640c",
+   "sha256": "4b480469ef904f6246ba53a081325d9f329a6ed1e5b27f41a350d4d7eb242ccb",
+   "file": "16_cable_clips/16_cable_clips.v010__2026-11-07_bba640c.svg"
+  },
+  {
    "src": "drawings/outlines.dxf",
    "version": 1,
    "gen": "current",

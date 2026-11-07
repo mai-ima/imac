@@ -850,5 +850,11 @@
   "evidence": "W3終端35mm直線(40.8mm)確保+cable_checkに直線長検査",
   "verification": "python3 tools/cable_check.py",
   "decision": "FIXED"
+ },
+ "R10E-001": {
+  "status": "in_review",
+  "evidence": "ダクトを提案としてモデル化(効果未検証)。熱の合格は宣言しない旨を文書化",
+  "verification": "fitcheck/cable_check",
+  "decision": "PARTIAL"
  }
 }

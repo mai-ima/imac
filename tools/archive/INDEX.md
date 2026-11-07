@@ -27,6 +27,7 @@
 | cablemodel.py | v005 | current | 2026-11-06 | 853f219 | cablemodel/cablemodel.v005__2026-11-06_853f219.py |
 | cablemodel.py | v006 | current | 2026-11-06 | 88f99b7 | cablemodel/cablemodel.v006__2026-11-06_88f99b7.py |
 | cablemodel.py | v007 | current | 2026-11-06 | cf90ba1 | cablemodel/cablemodel.v007__2026-11-06_cf90ba1.py |
+| cablemodel.py | v008 | current | 2026-11-07 | bba640c | cablemodel/cablemodel.v008__2026-11-07_bba640c.py |
 | cadviews.py | v001 | current | 2026-11-06 | 88f99b7 | cadviews/cadviews.v001__2026-11-06_88f99b7.py |
 | consistency_check.py | v001 | current | 2026-11-06 | 877835f | consistency_check/consistency_check.v001__2026-11-06_877835f.py |
 | consistency_check.py | v002 | current | 2026-11-06 | cf90ba1 | consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py |
@@ -169,3 +170,4 @@
 | thermal_calc.py | v003 | current | 2026-11-05 | 71b7afb | thermal_calc/thermal_calc.v003__2026-11-05_71b7afb.py |
 | thermal_calc.py | v004 | current | 2026-11-06 | 9ff6031 | thermal_calc/thermal_calc.v004__2026-11-06_9ff6031.py |
 | thermal_calc.py | v005 | current | 2026-11-06 | 2bb8cf1 | thermal_calc/thermal_calc.v005__2026-11-06_2bb8cf1.py |
+| thermal_calc.py | v006 | current | 2026-11-07 | bba640c | thermal_calc/thermal_calc.v006__2026-11-07_bba640c.py |

@@ -130,6 +130,7 @@
 | 16_cable_clips.svg | v007 | current | 2026-11-06 | 853f219 | 16_cable_clips/16_cable_clips.v007__2026-11-06_853f219.svg |
 | 16_cable_clips.svg | v008 | current | 2026-11-06 | 88f99b7 | 16_cable_clips/16_cable_clips.v008__2026-11-06_88f99b7.svg |
 | 16_cable_clips.svg | v009 | current | 2026-11-06 | 93238a3 | 16_cable_clips/16_cable_clips.v009__2026-11-06_93238a3.svg |
+| 16_cable_clips.svg | v010 | current | 2026-11-07 | bba640c | 16_cable_clips/16_cable_clips.v010__2026-11-07_bba640c.svg |
 | outlines.dxf | v001 | current | 2026-11-03 | fd22dea | outlines/outlines.v001__2026-11-03_fd22dea.dxf |
 | outlines.dxf | v002 | current | 2026-11-05 | b97eaae | outlines/outlines.v002__2026-11-05_b97eaae.dxf |
 | outlines.dxf | v003 | current | 2026-11-05 | fcba5fe | outlines/outlines.v003__2026-11-05_fcba5fe.dxf |
