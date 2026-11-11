@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 548。
-- 接触のみ(深さ<0.15mm): 358 / 意図した一体・嵌合(ALLOW): 131 / **要対処: 59**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 546。
+- 接触のみ(深さ<0.15mm): 363 / 意図した一体・嵌合(ALLOW): 131 / **要対処: 52**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -40,8 +40,6 @@
 | riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | cover_filter | dowel_pin0 | 36 | [4.0, 8.0, 4.0] | 4.00 |
 | cover_filter | dowel_pin1 | 28 | [4.0, 8.0, 4.0] | 4.00 |
-| stand_arm0 | stand_neck_cover1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
-| stand_neck_cover1 | stand_arm1 | 27 | [4.0, 6.0, 38.0] | 4.00 |
 | slab | hinge_doubler | 13 | [144.0, 4.0, 22.0] | 4.00 |
 | pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
@@ -60,9 +58,6 @@
 | hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
-| stand_neck_cover0 | stand_neck_tie | 24 | [112.0, 2.0, 20.0] | 2.00 |
-| stand_arm0 | stand_neck_cover0 | 22 | [4.0, 2.0, 38.0] | 2.00 |
-| stand_neck_cover0 | stand_arm1 | 22 | [4.0, 2.0, 38.0] | 2.00 |
 | cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
 | board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
@@ -81,13 +76,11 @@
 | cable_plug_F3_vrm | vrm_fin0 | 18 | [1.1, 4.0, 1.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
 | vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
-| choke3 | socket | 25 | [0.8, 4.0, 7.0] | 0.80 |
-| stand_neck_shroud | stand_swivel_bolt4 | 24 | [5.0, 2.5, 0.6] | 0.60 |
+| stand_neck_shroud | stand_swivel_bolt4 | 19 | [5.0, 5.0, 0.6] | 0.60 |
 | fan_pump_vrm_frame | pump_housing_body | 12 | [0.5, 12.0, 46.0] | 0.50 |
 | eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
-| psu_label | psu_grille_spokes | 24 | [12.0, 0.3, 70.0] | 0.30 |
-| psu_label | psu_grille_ring4 | 22 | [6.0, 0.3, 70.0] | 0.30 |
 | vrm_trim | board_hdr_vrm_hs_fan_pin2 | 8 | [0.6, 0.3, 1.2] | 0.30 |
+| psu_label | psu_grille_spokes | 8 | [4.0, 0.3, 70.0] | 0.30 |
 | vrm_shroud | board_hdr_vrm_hs_fan_pin2 | 6 | [0.6, 0.3, 1.625] | 0.30 |
 | cover_back | hinge_bolt_head1 | 3 | [9.007, 3.0, 0.169] | 0.17 |
 | cover_back | hinge_bolt_head3 | 3 | [9.007, 3.0, 0.169] | 0.17 |

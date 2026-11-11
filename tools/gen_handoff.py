@@ -35,8 +35,8 @@ side = cq.Workplane('YZ').polyline(prof).close().extrude(t_side)           # 断
 side = side.union(cq.Workplane('YZ').workplane(offset=0).center(0, HYv).circle(nk['boss_r']).extrude(t_side)).faces('>X').workplane(centerOption='CenterOfMass').center(0, 0).hole(10.0, t_side)
 save('CP-22b_neck_side_plate_x2', side)
 save('CP-22c_neck_tie_plate', cq.Workplane('XY').box(2 * sx0, nk['tie_y'][1] - nk['tie_y'][0], nk['tie_z'][1] - nk['tie_z'][0]))
-ch = nk['cover_top'] - SYS; save('CP-22d_neck_front_cover_t6', cq.Workplane('XY').box(120, ch, nk['front_cover_z'][1] - nk['front_cover_z'][0]))
-save('CP-22e_neck_back_cover_t2', cq.Workplane('XY').box(120, ch, nk['back_cover_z'][1] - nk['back_cover_z'][0]))
+ch = nk['cover_top'] - SYS; save('CP-22d_neck_front_cover_t6', cq.Workplane('XY').box(2 * nk['side_x'][0], ch, nk['front_cover_z'][1] - nk['front_cover_z'][0]))
+save('CP-22e_neck_back_cover_t2', cq.Workplane('XY').box(2 * nk['side_x'][0], ch, nk['back_cover_z'][1] - nk['back_cover_z'][0]))
 lev = cq.Workplane('XY').box(nk['lever_t'], nk['lever_len'] + 12, nk['lever_w']).edges('|X').fillet(2); lev = lev.faces('>X').workplane().center(0, 0).pushPoints([(nk['lever_len'] / 2 - 6 + 6 - BAL['e'] + 0, 0)]).hole(6.0) if False else lev
 lev = lev.faces('>X').workplane().pushPoints([(-(nk['lever_len'] / 2 + 6) + 6, 0)]).hole(10.0).faces('>X').workplane().pushPoints([(-(nk['lever_len'] / 2 + 6) + 6 + BAL['e'], 0)]).hole(6.0)
 save('CP-23_tail_lever_x2', lev)

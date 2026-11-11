@@ -658,6 +658,15 @@
    "file": "gen_handoff/gen_handoff.v004__2026-11-07_fc73c3b.py"
   },
   {
+   "src": "tools/gen_handoff.py",
+   "version": 5,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "df8ec56",
+   "sha256": "8fc2fdfcb07656cfd8efdef573aef4e952e403f5deb7fde44babb88caf75cf2f",
+   "file": "gen_handoff/gen_handoff.v005__2026-11-07_df8ec56.py"
+  },
+  {
    "src": "tools/gen_layout_drawings.py",
    "version": 1,
    "gen": "current",
@@ -1421,6 +1430,15 @@
    "commit": "36dff8c",
    "sha256": "d47fbacf10c9a356b0d1e0dbfd956760624488ec665f14227098e599cf92dfa5",
    "file": "motion_check/motion_check.v009__2026-11-06_36dff8c.py"
+  },
+  {
+   "src": "tools/motion_check.py",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "3089847",
+   "sha256": "d76214e08dd6d232548fcb69f02bcc4776635ef3f246c602d9a232c6070cbfb7",
+   "file": "motion_check/motion_check.v010__2026-11-07_3089847.py"
   },
   {
    "src": "tools/run_gates.sh",

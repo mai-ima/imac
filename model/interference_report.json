@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-07T20:56Z",
+ "generated": "2026-11-11T09:59Z",
  "objects": 648,
- "pairs_total": 548,
- "touch_only": 358,
+ "pairs_total": 546,
+ "touch_only": 363,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -29,7 +29,7 @@
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 59,
+ "remaining": 52,
  "remaining_pairs": [
   {
    "a": "riser0",
@@ -109,26 +109,6 @@
     4.0,
     8.0,
     4.0
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "stand_neck_cover1",
-   "tri_pairs": 27,
-   "aabb_overlap_mm": [
-    4.0,
-    6.0,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_cover1",
-   "b": "stand_arm1",
-   "tri_pairs": 27,
-   "aabb_overlap_mm": [
-    4.0,
-    6.0,
-    38.0
    ]
   },
   {
@@ -312,36 +292,6 @@
    ]
   },
   {
-   "a": "stand_neck_cover0",
-   "b": "stand_neck_tie",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    112.0,
-    2.0,
-    20.0
-   ]
-  },
-  {
-   "a": "stand_arm0",
-   "b": "stand_neck_cover0",
-   "tri_pairs": 22,
-   "aabb_overlap_mm": [
-    4.0,
-    2.0,
-    38.0
-   ]
-  },
-  {
-   "a": "stand_neck_cover0",
-   "b": "stand_arm1",
-   "tri_pairs": 22,
-   "aabb_overlap_mm": [
-    4.0,
-    2.0,
-    38.0
-   ]
-  },
-  {
    "a": "cable_plug_F3_vrm",
    "b": "vrm_shroud",
    "tri_pairs": 19,
@@ -522,22 +472,12 @@
    ]
   },
   {
-   "a": "choke3",
-   "b": "socket",
-   "tri_pairs": 25,
-   "aabb_overlap_mm": [
-    0.8,
-    4.0,
-    7.0
-   ]
-  },
-  {
    "a": "stand_neck_shroud",
    "b": "stand_swivel_bolt4",
-   "tri_pairs": 24,
+   "tri_pairs": 19,
    "aabb_overlap_mm": [
     5.0,
-    2.5,
+    5.0,
     0.6
    ]
   },
@@ -562,26 +502,6 @@
    ]
   },
   {
-   "a": "psu_label",
-   "b": "psu_grille_spokes",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    12.0,
-    0.3,
-    70.0
-   ]
-  },
-  {
-   "a": "psu_label",
-   "b": "psu_grille_ring4",
-   "tri_pairs": 22,
-   "aabb_overlap_mm": [
-    6.0,
-    0.3,
-    70.0
-   ]
-  },
-  {
    "a": "vrm_trim",
    "b": "board_hdr_vrm_hs_fan_pin2",
    "tri_pairs": 8,
@@ -589,6 +509,16 @@
     0.6,
     0.3,
     1.2
+   ]
+  },
+  {
+   "a": "psu_label",
+   "b": "psu_grille_spokes",
+   "tri_pairs": 8,
+   "aabb_overlap_mm": [
+    4.0,
+    0.3,
+    70.0
    ]
   },
   {

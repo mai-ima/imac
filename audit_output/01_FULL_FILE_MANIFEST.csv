@@ -159,7 +159,7 @@ blender/archive/render_all/render_all.v003__2026-11-06_09ad133.sh,ARCHIVE(旧版
 blender/audit_renders.sh,SOURCE(手書きソース),1008,688ba72b76095338252472256d9d390e75fbef9fdfccce737584793b7266d63d,binary_or_text_not_parsed,NO
 blender/build_imac_pc.py,SOURCE(手書きソース),39517,a16fa8c00583a04d1e4ee69d3e8d9e9d1cc30b3290eea0b12c6ee514b22c87c9,syntax_ok,NO
 blender/build_imac_pc_v6.py,SOURCE(手書きソース),49140,432e10b999bd3e28e0e9363df9170ca3e7d8654f63f533e192a6e0314fc8d848,syntax_ok,NO
-blender/build_imac_pc_v8.py,SOURCE(手書きソース),91336,cd91d5243790bcc023f3dddcaa12a4642b46ac70a11c25a4fa4ce889bbd04103,syntax_ok,NO
+blender/build_imac_pc_v8.py,SOURCE(手書きソース),91367,d2f23467781720381bcabc6d8306d4542734cf53c35b46131be11d797ce3d6dd,syntax_ok,NO
 blender/hardware_v8.py,SOURCE(手書きソース),25843,bd30235e5f7a93a6832b1749180782250c0f7231ad980020e7e83a4f080e50da,syntax_ok,NO
 blender/imac_pc.blend,GENERATED(生成物),407816,7c330117b929af59eb23e940030502eb01ad441aff1b460985e4a9e433c35b21,binary_or_text_not_parsed,NO
 blender/render_all.sh,SOURCE(手書きソース),1462,61de011d09bbf6c6170921c838ad5710a8772b0edef244b87e62fa5e062cbbdb,binary_or_text_not_parsed,NO
@@ -373,7 +373,7 @@ docs/design.md,DOC,2066,150782e5298095fefd1191b640bb4e13e510440adb0e3314898a6886
 docs/failure-analysis.md,DOC,12615,381069a5e2e83235517e072497bb7d3361025b603307719c5ad1ac18b9a6ac80,binary_or_text_not_parsed,NO
 docs/fitcheck-report.txt,DOC,3617,2902fbf68fa976510b48c5975ed556ce59c93c7488f78bd540113b4188de6e95,binary_or_text_not_parsed,NO
 docs/hinge-design.md,DOC,285,77daa2e9e2bc9cb9f7b589fbb944fc0e1a46b68a725d61e85f53a9405dee1500,binary_or_text_not_parsed,NO
-docs/interference-report.md,DOC,6537,891b8d017c23e818392a03b3f01d944f60683b0ae4efc58aacd98ba90879834c,binary_or_text_not_parsed,NO
+docs/interference-report.md,DOC,6421,08ec0e7bc4b420c4d22651060206e431f7083261a50c2f6c89f28f278a01b67e,binary_or_text_not_parsed,NO
 docs/joint-analysis.md,DOC,7831,468676f54af13dcb4d3602b6243bfd4e0757e64deb6107e31ac7887e8f182b47,binary_or_text_not_parsed,NO
 docs/logo-catalog.md,DOC,5563,0ccffcdee5a7b2dd58a01b065bf45d0daad1c08ce6ef6c0c64420ae588411a3b,binary_or_text_not_parsed,NO
 docs/mechanisms/01_tilt_balancer.md,DOC,9636,0d71495f31ffb0c2e9ca7b8dcaa49e8f3ea22a4385e0038d4510962037f71d38,binary_or_text_not_parsed,NO
@@ -1152,7 +1152,7 @@ model/balance.json,CANON(正規データ),5113,f4da20232af41423201568eeb0a0895f6
 model/cables.json,CANON(正規データ),18222,e5d99bedcf8265e9cdbb3594ab4c18d22095fbec98a365d825a396c915b9ed4e,syntax_ok,NO
 model/custom_parts.json,CANON(正規データ),47269,b450353735c8f02c6a5a55437e250d5f340ca7b23d280af8f5d1946603190e7c,syntax_ok,NO
 model/hardware_list.json,CANON(正規データ),5308,e4371bc011ca037eb8c9c83e4c84245b9fdac7028208ffc0519111ce08a530f8,syntax_ok,NO
-model/interference_report.json,CANON(正規データ),10522,a9e2eea208732180e069abc1b0ef2fd5c342736fef971437564ffbc9011bfe6b,syntax_ok,NO
+model/interference_report.json,CANON(正規データ),10266,7f7701e8dbf20468661fdd902d165d05e0c1b490d6b7170eb5b1649ca57bdda6,syntax_ok,NO
 model/layout.json,CANON(正規データ),2643,b78717f8c8b5780ef35b8345e4daeb661ac64f545c4c4bde3902a85e404c368f,syntax_ok,NO
 model/layout_dome.json,CANON(正規データ),634,3055e9bc9cf98b635c7c66766ad819243bcb69d17116bb6c8c81136f88df603f,syntax_ok,NO
 model/layout_v4_archive.json,CANON(正規データ),1363,8e8ea4a868cbe14397e9ef221d1973b556b63162b3a57afb969fb8fff1c035ca,syntax_ok,NO
@@ -1161,7 +1161,7 @@ model/parts_v4_archive.json,CANON(正規データ),6215,34768c2d948cfefc7f1714d4
 model/pe_braids.json,CANON(正規データ),356,d5fc53ae851cb3a5c22095c66e15c2868fec0e4fcc7a4607f7f073cfc8eae60b,syntax_ok,NO
 model/procurement.json,CANON(正規データ),10433,20953f15940bb1fcd0829d420919544d861c4c76db2dcf774de928bfd16d3616,syntax_ok,NO
 model/pump.json,CANON(正規データ),1265,881b925abbbe1bab01011620e1fce97ec9b0e171212095750b75c52471ac652b,syntax_ok,NO
-model/spec.json,CANON(正規データ),9864,502104852317049591db26d19758ba952c2fc851b78ebc6f23280ea472bd0b26,syntax_ok,NO
+model/spec.json,CANON(正規データ),9892,5a418741a4989519bedbe6e37d18f76b336430ca43c3e137b847866c4e619e90,syntax_ok,NO
 model/x870i_layout.json,CANON(正規データ),8836,e75e99b609f52f4ef45e38aa94f9f96b9ca8438427bac95f0b5f512b5213a0b5,syntax_ok,NO
 render/archive/INDEX.md,ARCHIVE(旧版),1961,2602f31258c943dcf02d796daf3bb885309bc3e753e742fa68ab0b9dcf24797a,binary_or_text_not_parsed,NO
 render/archive/back/back.v001__2026-11-05_e1ff88f.png,ARCHIVE(旧版),17901,eff31a041894024a274ef35244ac1bf4ed4a10a099618ed629e44d8b81e16bf3,binary_or_text_not_parsed,NO
@@ -1438,7 +1438,7 @@ tools/gen_cad_drawings.py,TOOL(生成/検証),11231,2ee128c50d538eb1f577bc50b7ae
 tools/gen_drawing.py,TOOL(生成/検証),4417,aca5c896a419ef79bf7bede26acf6b744ceb86cb5d484fc63eadf78ff9955929,syntax_ok,NO
 tools/gen_estimate.py,TOOL(生成/検証),6750,716ed6f6e6cbabead319ac7cdb4dcb6b92b1f1bb49c7b99e7bd321d80eb02b39,syntax_ok,NO
 tools/gen_fmea.py,TOOL(生成/検証),10809,0215a6d050727cec2d43f962fc6be95f55471a71d3d686ef26d592275326ce9b,syntax_ok,NO
-tools/gen_handoff.py,TOOL(生成/検証),20690,8fc2fdfcb07656cfd8efdef573aef4e952e403f5deb7fde44babb88caf75cf2f,syntax_ok,NO
+tools/gen_handoff.py,TOOL(生成/検証),20722,5d7813996ccf9e86433377342581176becddde3d226305547cb0ee117356efb3,syntax_ok,NO
 tools/gen_hardware_list.py,TOOL(生成/検証),1090,1e03df7167c57e0b8daaa7ed054727ada41ccbd13b112d8cc0e6bf9e946e0402,syntax_ok,NO
 tools/gen_layout_drawings.py,TOOL(生成/検証),20331,5a273690a696017eb675793799bdf6cbc86ffadd2a33c152d4644229576373fb,syntax_ok,NO
 tools/gen_manuals.py,TOOL(生成/検証),56791,1791ac4b44aaf29bc79dd73ba21ad4c3ce88854a4a5a62b285e7887a9344d611,syntax_ok,NO
@@ -1461,7 +1461,7 @@ tools/joint_calc.py,TOOL(生成/検証),8980,857bcb9a42e347cd21d978a146bd3cbc7bf
 tools/layout_search.py,TOOL(生成/検証),4385,cc3884a1003e2b67cdcd316ae26f4863a258801c1174e9bd33a9dea3041c6786,syntax_ok,NO
 tools/ledger_import.py,TOOL(生成/検証),2698,ccca20c848a68ec2bd79db5b3853f22a5a27bac00d72ae8de798bf78b9ebf827,syntax_ok,NO
 tools/massmodel.py,TOOL(生成/検証),3544,dd729900a79368dd5efbf99c9ed69374aa9b0c27f0412731954caf2cbf662480,syntax_ok,NO
-tools/motion_check.py,TOOL(生成/検証),13359,d76214e08dd6d232548fcb69f02bcc4776635ef3f246c602d9a232c6070cbfb7,syntax_ok,NO
+tools/motion_check.py,TOOL(生成/検証),13411,7384bcb14aeccb30d57095190ed541a1d76b44420d913954b1bde4019b7302f8,syntax_ok,NO
 tools/neckgeom.py,TOOL(生成/検証),2069,1d2417f85189f467c7015fe312d8cfdd4997564a1857c316d7002de632d2f574,syntax_ok,NO
 tools/power_budget.py,TOOL(生成/検証),2551,ab6d2ecc7efe48c9d90bfb3258d6351f5be90c2e4eb1d297229d62e9726c61b9,syntax_ok,NO
 tools/pre-commit.hook,TOOL(生成/検証),126,339ab8b38ccd3dbbeeb65f893fab168ffb352df056aa1a7a7a5a4bba3a8b7a36,binary_or_text_not_parsed,NO

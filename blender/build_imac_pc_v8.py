@@ -489,7 +489,7 @@ for _k, _sx in enumerate((-NK['side_x'][1], NK['side_x'][0])):      # ネック�
 box('stand_neck_tie', 2 * NK['side_x'][0], NK['tie_y'][1] - NK['tie_y'][0], NK['tie_z'][1] - NK['tie_z'][0], -NK['side_x'][0], NK['tie_y'][0], ZC + NK['tie_z'][0], M['stand'], bevel=.8)      # 側板をつなぐタイプレート t6(-15°ストッパの受け)
 for _k, (_zz0, _zz1) in enumerate((NK['back_cover_z'], NK['front_cover_z'])):      # 前後カバー(前は t6 の構造板: +40°ストッパの受け。後ろは指の進入防止の t2)
     _zc0, _zc1 = (ZC + _zz0, ZC + _zz1) if _zz1 > _zz0 else (ZC + _zz1, ZC + _zz0)
-    box(f'stand_neck_cover{_k}', 120, NK['cover_top'] - SY_SIDE, _zz1 - _zz0, -60, SY_SIDE, ZC + _zz0, M['stand'], bevel=.6)
+    box(f'stand_neck_cover{_k}', 2 * NK['side_x'][0], NK['cover_top'] - SY_SIDE, _zz1 - _zz0, -NK['side_x'][0], SY_SIDE, ZC + _zz0, M['stand'], bevel=.6)
 SH = S['stand']['shroud']      # 思想適合(P2/P4): 首振り軸受・ネック機構を同色の外皮で隠す(機構は内部に残す)
 _sl = SY_NECK - SH['skirt_gap_mm'] + DROP      # 足に固定の円筒スカート(軸受ステータ〜ロータ側面を隠す)
 def hollow(ob, thick=2.0):
@@ -595,7 +595,7 @@ ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])      # �
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)
-for i in range(4): ibox(f'choke{i}', 7, 7, 4.5, bx + 10 + i * 8.4, by + 62, Z1, M['cap'], .5)      # チョーク4個(個数・位置は公式に無い=UNVERIFIED。CPUソケット(x41〜101)の外=x10〜40へ配置)
+for i in range(4): ibox(f'choke{i}', 7, 7, 4.5, bx + 10 + i * 7.6, by + 62, Z1, M['cap'], .5)      # チョーク4個(個数・位置は公式に無い=UNVERIFIED。CPUソケット(x41〜101)の外=x10〜40へ配置)
 for i in range(3): icyl(f'cap{i}', 3.2, 9, 'z', bx + 13 + i * 10.0, by + 74, Z1 + 4.5, M['cap'], 20)      # コンデンサ3個(同上)
 def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     """基板上の小型チップ部品(抵抗/MLCC)の雲: 実物同様の密度で散布(個数は典型値, 実物と一致する保証はない)。"""
@@ -611,7 +611,7 @@ def smd_cloud(name, n, x0, y0, w, h, zl, seed, avoid, mat=None):
     for v in me.vertices: v.co = V(X0 + v.co.x, Y0 + v.co.y, Z0 - v.co.z)
     return link(ob)
 sx_, sy_ = BL['socket_center']
-smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)] + [(bx + _c['x'][0], by + _c['y'][0], _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]) for _c in BL.get('components', [])] + [(bx + _hx - 4, by + _hy - 4, 8, 8) for _hx, _hy in ((10.2, 6.4), (165.1, 6.4), (10.2, 163.8), (165.1, 163.8))] + [(bx + 10, by + 62, 32, 7), (bx + 9.8, by + 70.8, 26.4, 6.4)] + [(lp('cooler')[0] + 45.5 + _dx - 4, lp('cooler')[1] + ls('cooler')[1] / 2 + _dy - 4, 8, 8) for _dx, _dy in ((-27, -45), (27, -45), (-27, 45), (27, 45))])
+smd_cloud('board_smd', 900, bx + 2, by + 2, 166, 166, Z1, 11, [(bx + 8, by + 24, 98, 36), (bx + sx_ - 30, by + sy_ - 30, 60, 60), (bx + 4, by + 138, 160, 20), (bx + 13, by + 158, 52, 12), (bx + 156, by + 42, 12, 92), (bx + 129, by + 46, 22, 20), (bx + 128, by + 78, 28, 62), (bx + 0, by - 2, 125, 26)] + [(bx + _c['x'][0], by + _c['y'][0], _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]) for _c in BL.get('components', [])] + [(bx + _hx - 4, by + _hy - 4, 8, 8) for _hx, _hy in ((10.2, 6.4), (165.1, 6.4), (10.2, 163.8), (165.1, 163.8))] + [(bx + 10, by + 62, 29.8, 7), (bx + 9.8, by + 70.8, 26.4, 6.4)] + [(lp('cooler')[0] + 45.5 + _dx - 4, lp('cooler')[1] + ls('cooler')[1] / 2 + _dy - 4, 8, 8) for _dx, _dy in ((-27, -45), (27, -45), (-27, 45), (27, 45))])
 # ---- 基板上の追加部品(model/x870i_layout.json components: マニュアルp.14の読み取り。高さは典型値=UNVERIFIED) ----
 for _c in BL.get('components', []):
     _w, _d = _c['x'][1] - _c['x'][0], _c['y'][1] - _c['y'][0]
@@ -746,7 +746,7 @@ _bm = bmesh.new()
 for k in range(6):
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.75))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((88, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
-ibox('psu_label', 28, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
+ibox('psu_label', 20, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
 # モジュラーソケット(MDB-023/MDC-001): 個数・配置はCorsair公式図が未取得(U59)で確認できない。従来の「2段×5列の10個」は根拠が無く、ATX24(幅約50mm)や12V-2x6(幅約22mm)のプラグが入らない寸法だった。
 # ケーブルがつながる4口だけを、プラグ(ATX24 50x10 / EPS 25x18 / 12V-2x6 22x10 / SATA電源 17x6: 各規格の外形)が入る最小寸法で置く。他のソケットは未モデル(UNVERIFIED)。
 for _i, (_cx, _w, _h, _zc) in enumerate(((28, 52.0, 11.0, 30.0), (69, 26.0, 19.0, 30.0), (96, 24.0, 11.0, 30.0), (50, 19.0, 7.0, 16.0))):      # (PSU内x, 幅, 高さ(z方向), 中心z)

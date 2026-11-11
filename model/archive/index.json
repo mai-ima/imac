@@ -703,6 +703,15 @@
    "file": "interference_report/interference_report.v012__2026-11-07_196f514.json"
   },
   {
+   "src": "model/interference_report.json",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "61c5169",
+   "sha256": "a9e2eea208732180e069abc1b0ef2fd5c342736fef971437564ffbc9011bfe6b",
+   "file": "interference_report/interference_report.v013__2026-11-07_61c5169.json"
+  },
+  {
    "src": "model/layout.json",
    "version": 1,
    "gen": "gen-001",
@@ -1259,6 +1268,15 @@
    "commit": "10001ec",
    "sha256": "a6291d3d59f3003e8eba60b0fead17ade03deaaea31657143b9c3c7179513bdf",
    "file": "spec/spec.v032__2026-11-07_10001ec.json"
+  },
+  {
+   "src": "model/spec.json",
+   "version": 33,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "ee5f6f2",
+   "sha256": "502104852317049591db26d19758ba952c2fc851b78ebc6f23280ea472bd0b26",
+   "file": "spec/spec.v033__2026-11-07_ee5f6f2.json"
   },
   {
    "src": "model/x870i_layout.json",
