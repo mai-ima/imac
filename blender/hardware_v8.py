@@ -103,6 +103,8 @@ for _k, (_dx, _dy) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))): t
 hb('hinge_block_base', 150, 22, 2, -75, 0, -SLAB - 2, M['stand']); hb('hinge_cheek_l', 6, 22, 34, -75, 0, -SLAB - 34, M['stand']); hb('hinge_cheek_r', 6, 22, 34, 69, 0, -SLAB - 34, M['stand'])
 hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 36, M['stand'])
 hb('hinge_backing_plate', 140, 22, 3, -70, 0, -SLAB + 2, M['sus']); hb('hinge_doubler', 144, 22, 4, -72, 0, -SLAB + 5, M['alu'])     # 背板の前(チン空洞側): 裏当て鋼板140幅+補強板144幅(ボルト±62を覆う)
+_hp = box('slab_hinge_pocket', 145, 23.3, 7.4, -72.5, -1.0, -SLAB + 1.8, None, body=False); _hp.hide_render = True; BODY_OBJS.append(_hp)      # チン側の凹み: 裏当て鋼板+補強板(合計z-SLAB+2〜+9)が入るポケット(背板外壁2mmを残す)
+_m = bpy.data.objects['slab'].modifiers.new('hinge_pocket', 'BOOLEAN'); _m.object = _hp; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 for k, (bxx, byy) in enumerate(((-62, 5), (-62, 17), (62, 5), (62, 17))):
     cyl(f'hinge_bolt{k}', 3.0, 14, 'z', bxx, byy, -SLAB - 2, M['sus'], 16); cyl(f'hinge_bolt_head{k}', 5.2, 3, 'z', bxx, byy, -SLAB - 3.5, M['sus'], 6)
     thru_hole(('hinge_block_base', 'hinge_backing_plate', 'hinge_doubler', 'slab'), f'hinge_bolt{k}', bxx, byy, -SLAB - 2, 'z', 6.6, 16)      # M6貫通ボルトのクリアランス穴Ø6.6(ブロック底板/裏当て/補強板/背板)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通

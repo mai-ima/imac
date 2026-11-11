@@ -585,13 +585,14 @@ port('io_usb2_3', 83.5, 11.6, 14.5, 7, usb2_in); port('io_usb4_c2', 83.5, 2.7, 9
 port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 14.5, 7, usb_red); port('io_usbc_10g', 101.5, 3.0, 9, 3.6)
 for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
-_vs = ibox('vrm_shroud', 98, 36, 5, bx + 8, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
+_vs = ibox('vrm_shroud', 93, 36, 5, bx + 13, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
 _pcx, _pcy = lp('cooler')[0] + 45.5, lp('cooler')[1] + ls('cooler')[1] / 2      # ポンプ円盤中心(後段の pcx/pcy と同じ式)
 for _k in range(21):
     _fx = bx + 10 + _k * 4.55
+    if _fx < bx + 13.6: continue      # ヘッダ(VRM_HS_FAN x1.6〜11.1)+プラグを避けて、シュラウド(x13〜)の上にだけフィンを置く
     if any(abs((_fx + 0.6) - (_pcx + _dx)) < 6.0 and (by + 25.5) - 6.0 < (_pcy + _dy) < (by + 25.5 + 33) + 6.0 for (_dx, _dy) in ((-27, -45), (27, -45), (-27, 45), (27, 45))): continue      # フィン(x幅1.2, y範囲 by+25.5〜+58.5)がねじ(Ø9逃げ+ばね)に当たるものだけ除く      # ねじ逃げ(Ø9+ばね)の位置にはフィンを立てない
     ibox(f'vrm_fin{_k}', 1.2, 33, 9, _fx, by + 25.5, Z1 + 5, M['shroud'], .2)      # フィン21枚(厚1.2×高9, ピッチ4.55): 高さ14=ベース5+フィン9。形状・枚数は公式に無い=UNVERIFIED      # 高さ・形状は公式資料に無い(未確認の仮置き)。ポンプのケージ下端(z≈27.5)以下に抑えた
-ibox('vrm_trim', 98, 1.2, 14.1, bx + 8, by + 24, Z1, M['silver_trim'])      # 前縁トリム
+ibox('vrm_trim', 93, 1.2, 14.1, bx + 13, by + 24, Z1, M['silver_trim'])      # 前縁トリム
 label('ROG', 9, bx + 28, by + 44, Z1 + 22, M['print_w'], name='txt_rog', ext=0.08); label('FOR THOSE WHO DARE', 2.6, bx + 52, by + 30, Z1 + 22, M['silver_trim'], name='txt_ftwd', ext=0.08)
 icyl('vrm_fan_ring', 12, 1.0, 'z', bx + 96, by + 42, Z1 + 22.5, M['alublack'], 32)
 # チョーク・コンデンサ・MOSFET(CPUソケット周り): 公式写真の一般配置(個数は未確認)

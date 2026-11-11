@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、652物体、交差対 558。
-- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 143 / **要対処: 44**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、651物体、交差対 548。
+- 接触のみ(深さ<0.15mm): 370 / 意図した一体・嵌合(ALLOW): 143 / **要対処: 35**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -41,39 +41,30 @@
 | riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | cover_filter | dowel_pin0 | 36 | [4.0, 8.0, 4.0] | 4.00 |
 | cover_filter | dowel_pin1 | 28 | [4.0, 8.0, 4.0] | 4.00 |
-| slab | hinge_doubler | 13 | [144.0, 4.0, 22.0] | 4.00 |
 | pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
 | gasket | cover_filter | 567 | [589.599, 3.0, 370.899] | 3.00 |
-| slab | hinge_backing_plate | 24 | [140.0, 3.0, 22.0] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
 | ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
 | cover_back | ac_inlet_flange | 12 | [36.0, 28.0, 3.0] | 3.00 |
 | am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
 | gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
 | gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
-| board_hdr_vrm_hs_fan | vrm_shroud | 26 | [3.1, 4.0, 2.5] | 2.50 |
 | stand_arm_boss0 | hinge_friction0_cap | 24 | [2.5, 16.0, 16.0] | 2.50 |
 | hinge_friction1_cap | stand_arm_boss1 | 24 | [2.5, 16.0, 16.0] | 2.50 |
 | stand_arm_strip0 | hinge_friction0_cap | 19 | [2.5, 8.0, 8.0] | 2.50 |
 | hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
-| cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
-| board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
-| cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
 | cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
 | cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
 | vrm_fan_ring | pump_screw_head1 | 32 | [7.0, 1.0, 7.0] | 1.00 |
-| cable_plug_F3_vrm | vrm_fin0 | 18 | [1.1, 4.0, 1.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
 | vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
 | stand_neck_shroud | stand_swivel_bolt4 | 19 | [5.0, 5.0, 0.6] | 0.60 |
 | fan_pump_vrm_frame | pump_housing_body | 12 | [0.5, 12.0, 46.0] | 0.50 |
 | eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
-| vrm_trim | board_hdr_vrm_hs_fan_pin2 | 8 | [0.6, 0.3, 1.2] | 0.30 |
 | psu_label | psu_grille_spokes | 8 | [4.0, 0.3, 70.0] | 0.30 |
-| vrm_shroud | board_hdr_vrm_hs_fan_pin2 | 6 | [0.6, 0.3, 1.625] | 0.30 |
 | cover_back | hinge_bolt_head1 | 3 | [9.007, 3.0, 0.169] | 0.17 |
 | cover_back | hinge_bolt_head3 | 3 | [9.007, 3.0, 0.169] | 0.17 |
