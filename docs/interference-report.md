@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 538。
-- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 149 / **要対処: 18**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 534。
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 149 / **要対処: 14**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -36,11 +36,8 @@
 |---|---|---|---|---|
 | gasket | cover_filter | 579 | [589.599, 3.0, 370.899] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
-| ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
 | cover_back | ac_inlet_flange | 12 | [36.0, 28.0, 3.0] | 3.00 |
-| am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
-| am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
 | cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
 | cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
@@ -49,6 +46,5 @@
 | vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
 | fan_pump_vrm_frame | pump_housing_body | 12 | [0.5, 12.0, 46.0] | 0.50 |
 | eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
-| psu_label | psu_grille_spokes | 8 | [4.0, 0.3, 70.0] | 0.30 |
 | cover_back | hinge_bolt_head1 | 3 | [9.007, 3.0, 0.169] | 0.17 |
 | cover_back | hinge_bolt_head3 | 3 | [9.007, 3.0, 0.169] | 0.17 |

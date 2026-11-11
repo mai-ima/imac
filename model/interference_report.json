@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-11T17:56Z",
+ "generated": "2026-11-11T19:56Z",
  "objects": 648,
- "pairs_total": 538,
+ "pairs_total": 534,
  "touch_only": 371,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -31,7 +31,7 @@
   "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 18,
+ "remaining": 14,
  "remaining_pairs": [
   {
    "a": "gasket",
@@ -54,16 +54,6 @@
    ]
   },
   {
-   "a": "ssd_body",
-   "b": "m2_screw",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    3.2,
-    3.0,
-    3.2
-   ]
-  },
-  {
    "a": "cover_back",
    "b": "ac_inlet_flange",
    "tri_pairs": 12,
@@ -74,16 +64,6 @@
    ]
   },
   {
-   "a": "am5_backplate",
-   "b": "standoff_board0",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    5.543,
-    3.0,
-    6.4
-   ]
-  },
-  {
    "a": "eps8",
    "b": "screw_board0_head",
    "tri_pairs": 16,
@@ -91,16 +71,6 @@
     5.6,
     2.4,
     5.6
-   ]
-  },
-  {
-   "a": "am5_backplate",
-   "b": "power_button",
-   "tri_pairs": 19,
-   "aabb_overlap_mm": [
-    6.0,
-    2.35,
-    2.35
    ]
   },
   {
@@ -181,16 +151,6 @@
     0.4,
     11.0,
     18.1
-   ]
-  },
-  {
-   "a": "psu_label",
-   "b": "psu_grille_spokes",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    4.0,
-    0.3,
-    70.0
    ]
   },
   {

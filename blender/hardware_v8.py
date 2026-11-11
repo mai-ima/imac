@@ -90,7 +90,7 @@ cyl('power_button', 3.0, 4, 'y', X0 + bx + 40, DOME_Y0 + 18, dz(12), M['alu'], 2
 rf_zl = d_inner(30) - 8          # 平板をドーム内面(上辺から30mmの最も浅い所)より下に置く(傾斜に突き出さない)
 ibox('rf_window_plate', 60, 30, 2, IW_ / 2 - 30, IH_ - 60, rf_zl, principled('pc_rf', '#202226', 0, .5)); hw('無線', 'RF窓 PC樹脂t2.0(格子裏, Wi-Fi 7アンテナ×2)', 1, 'CP-12 / U31: 平板をドーム上辺の浅い位置に取付(形状要検討)')
 for k, xx in enumerate((IW_ / 2 - 20, IW_ / 2 + 20)): ibox(f'antenna{k}', 30, 1.5, 1.5, xx - 15, IH_ - 45, rf_zl - 2, M['rubber'], .2)
-ibox('am5_backplate', 70, 70, 3, bx + sx_ - 35, by + sy_ - 35, bz - 3, M['alublack'], .8); hw('冷却', 'AM5バックプレート+ばね付きM4×4(ポンプ固定)', 1, 'ARCTIC付属')
+ibox('am5_backplate', 70, 70, 3, bx + BL['socket_center'][0] - 35, by + BL['socket_center'][1] - 35, bz - 3, M['alublack'], .8); hw('冷却', 'AM5バックプレート+ばね付きM4×4(ポンプ固定)', 1, 'ARCTIC付属')
 # ---------- ヒンジ機構(全部品): ヒンジブロック/摩擦ヒンジ/ばね/カム/ストッパ/軸/Eクリップ/貫通ボルト+裏当て ----------
 hb = lambda name, w, h, d, x, y, z, mat, body=True, bev=.6: box(name, w, h, d, x, y, z, mat, bevel=bev, body=body)
 def thru_hole(target_names, tag, cx, cy, cz, axis, dia, length):
@@ -100,6 +100,7 @@ def thru_hole(target_names, tag, cx, cy, cz, axis, dia, length):
         _to = bpy.data.objects.get(_tn)
         if _to is None: continue
         _m = _to.modifiers.new(f'{tag}_{_tn}', 'BOOLEAN'); _m.object = c_; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
+thru_hole(['ssd_body'], 'm2_screw_notch', X0 + sd[0] + 12.5, Y0 + sd[1] + 78.5, Z0 - (sd_z + 1.5), 'z', 3.6, 8.0)      # M.2規格の固定ねじ用U字切欠き(基板端のノッチ)
 for _k, (_dx, _dy) in enumerate(((-27, -45), (27, -45), (-27, 45), (27, 45))): thru_hole(['board_pcb', 'am5_backplate'], f'pumpscrew{_k}', X0 + pcx + _dx, Y0 + pcy + _dy, Z0 - bz, 'z', 4.6, 12)      # ポンプ固定ねじ(M4)の貫通穴(基板・バックプレート)
 hb('hinge_block_base', 150, 22, 2, -75, 0, -SLAB - 2, M['stand']); hb('hinge_cheek_l', 6, 22, 34, -75, 0, -SLAB - 34, M['stand']); hb('hinge_cheek_r', 6, 22, 34, 69, 0, -SLAB - 34, M['stand'])
 hb('hinge_cover', 138, 22, 2, -69, 0, -SLAB - 36, M['stand'])
