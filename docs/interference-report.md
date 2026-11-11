@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
 - 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 538。
-- 接触のみ(深さ<0.15mm): 367 / 意図した一体・嵌合(ALLOW): 143 / **要対処: 28**
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 149 / **要対処: 18**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -28,26 +28,17 @@
 - モジュラーソケットは筐体前面の開口に嵌合: 4対
 - 掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載): 6対
 - 1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm): 6対
+- フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004): 6対
 - ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合: 7対
 
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
-| riser0 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
-| riser1 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
-| riser2 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
-| riser3 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
-| riser4 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
-| riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
 | gasket | cover_filter | 579 | [589.599, 3.0, 370.899] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
 | ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
 | cover_back | ac_inlet_flange | 12 | [36.0, 28.0, 3.0] | 3.00 |
 | am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
-| stand_arm_boss0 | hinge_friction0_cap | 24 | [2.5, 16.0, 16.0] | 2.50 |
-| hinge_friction1_cap | stand_arm_boss1 | 24 | [2.5, 16.0, 16.0] | 2.50 |
-| stand_arm_strip0 | hinge_friction0_cap | 19 | [2.5, 8.0, 8.0] | 2.50 |
-| hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |

@@ -749,7 +749,7 @@ _bm = bmesh.new()
 for k in range(6):
     bmesh.ops.create_cube(_bm, size=1.0, matrix=Matrix.Translation(V(X0 + px_ + 62, Y0 + py_ + 50, Z0 - (pz_ + 63.75))) @ Matrix.Rotation(math.radians(k * 30), 4, 'Y') @ Matrix.Diagonal((88, .5, .5, 1)))
 _me = bpy.data.meshes.new('psu_grille_spokes'); _bm.to_mesh(_me); _bm.free(); _me.materials.append(wire); link(bpy.data.objects.new('psu_grille_spokes', _me))
-ibox('psu_label', 20, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
+ibox('psu_label', 16, 70, .3, px_ + 2, py_ + 14, pz_ + 63.5, M['sf_label'])     # 仕様ラベル: グリル(x16〜108)の外=左端の帯へ移動(内容は未確認のため無地)
 # モジュラーソケット(MDB-023/MDC-001): 個数・配置はCorsair公式図が未取得(U59)で確認できない。従来の「2段×5列の10個」は根拠が無く、ATX24(幅約50mm)や12V-2x6(幅約22mm)のプラグが入らない寸法だった。
 # ケーブルがつながる4口だけを、プラグ(ATX24 50x10 / EPS 25x18 / 12V-2x6 22x10 / SATA電源 17x6: 各規格の外形)が入る最小寸法で置く。他のソケットは未モデル(UNVERIFIED)。
 for _i, (_cx, _w, _h, _zc) in enumerate(((28, 52.0, 11.0, 30.0), (69, 26.0, 19.0, 30.0), (96, 24.0, 11.0, 30.0), (50, 19.0, 7.0, 16.0))):      # (PSU内x, 幅, 高さ(z方向), 中心z)

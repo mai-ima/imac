@@ -111,7 +111,7 @@ for k, (bxx, byy) in enumerate(((-62, 5), (-62, 17), (62, 5), (62, 17))):
     thru_hole(('hinge_block_base', 'hinge_backing_plate', 'hinge_doubler', 'slab'), f'hinge_bolt{k}', bxx, byy, -SLAB - 2, 'z', 6.6, 16)      # M6貫通ボルトのクリアランス穴Ø6.6(ブロック底板/裏当て/補強板/背板)     # 底板(z-27〜-25)から背板・裏当て・補強板を貫通
 hw('ヒンジ', 'M6貫通ボルト(ヒンジブロック→背板, 裏当て鋼板)', 4, '6N·m+ネジロック'); hw('ヒンジ', 'SPCC裏当て板 t3 140×22 / A5052補強板 t4 144×22', 2, 'U29')
 cyl('hinge_axle', 6.0, 132, 'x', 0, HY, ZC, M['steel'], 48, body=False)
-for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (12 if xx > 0 else -12), HY, ZC, M['steel'], 24)
+for k, xx in enumerate((-45, 45)): cyl(f'hinge_friction{k}', 11, 22, 'x', xx, HY, ZC, M['alublack'], 32); cyl(f'hinge_friction{k}_cap', 8, 3, 'x', xx + (9.5 if xx > 0 else -9.5), HY, ZC, M['steel'], 24)
 hw('ヒンジ', '摩擦ヒンジ(Reell PHL/PHC級, 対称トルク)', 2, '寿命50,000回 / U27')
 # ---- チルト・バランサ(R9T-001で再設計): ヒンジブロック底面のカム板(x=±14) + ローラ従動子 + 案内ロッド付き圧縮ダイスプリング2本。tools/balance_calc.py / model/balance.json ----
 BAL = json.load(open(os.path.join(ROOT, 'model', 'balance.json'))); BCm = S['hinge']['balance_cam']

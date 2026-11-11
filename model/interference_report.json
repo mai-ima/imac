@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-11T16:56Z",
+ "generated": "2026-11-11T17:56Z",
  "objects": 648,
  "pairs_total": 538,
- "touch_only": 367,
+ "touch_only": 371,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -28,70 +28,11 @@
   "モジュラーソケットは筐体前面の開口に嵌合": 4,
   "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)": 6,
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
+  "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 28,
+ "remaining": 18,
  "remaining_pairs": [
-  {
-   "a": "riser0",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
-  {
-   "a": "riser1",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
-  {
-   "a": "riser2",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
-  {
-   "a": "riser3",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
-  {
-   "a": "riser4",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
-  {
-   "a": "riser5",
-   "b": "riser_gpu_conn",
-   "tri_pairs": 6,
-   "aabb_overlap_mm": [
-    5.89,
-    4.724,
-    12.0
-   ]
-  },
   {
    "a": "gasket",
    "b": "cover_filter",
@@ -140,46 +81,6 @@
     5.543,
     3.0,
     6.4
-   ]
-  },
-  {
-   "a": "stand_arm_boss0",
-   "b": "hinge_friction0_cap",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    2.5,
-    16.0,
-    16.0
-   ]
-  },
-  {
-   "a": "hinge_friction1_cap",
-   "b": "stand_arm_boss1",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    2.5,
-    16.0,
-    16.0
-   ]
-  },
-  {
-   "a": "stand_arm_strip0",
-   "b": "hinge_friction0_cap",
-   "tri_pairs": 19,
-   "aabb_overlap_mm": [
-    2.5,
-    8.0,
-    8.0
-   ]
-  },
-  {
-   "a": "hinge_friction1_cap",
-   "b": "stand_arm_strip1",
-   "tri_pairs": 19,
-   "aabb_overlap_mm": [
-    2.5,
-    8.0,
-    8.0
    ]
   },
   {
