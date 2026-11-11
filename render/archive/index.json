@@ -10,6 +10,15 @@
    "file": "back/back.v001__2026-11-05_e1ff88f.png"
   },
   {
+   "src": "render/blender_test.png",
+   "version": 1,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "5ba6032",
+   "sha256": "6ce61cbe267fc2ebebab52efb1467af38e638e001f2ad501914840ab69e9f1fd",
+   "file": "blender_test/blender_test.v001__2026-11-07_5ba6032.png"
+  },
+  {
    "src": "render/blueprint.png",
    "version": 1,
    "gen": "current",
