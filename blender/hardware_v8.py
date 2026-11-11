@@ -63,6 +63,7 @@ for k_, xx_ in enumerate((-250, -150, -50, 50, 150, 250)):
     _pk.append(_pocket(f'pocket_latch{k_}', xx_ - 10.0, bot_y + 2.0, dz(16.0), 20, 11, 24.0))      # ラッチ(Ø8×7)+ストライク(18×6)
     _pk.append(_pocket(f'pocket_hook{k_}', xx_ - 9.0, top_y - 11.0, dz(16.0), 18, 11, 24.0))      # フック(14×7)+ストライク(16×8)
 for k_, (mx_, my_) in enumerate(mag_pos): _pk.append(_pocket(f'pocket_mag{k_}', mx_ - 5.5, my_ - 5.5, dz(16.0), 11, 11, 24.0))      # 磁石Ø8+ディスクØ9
+for k_, (dxp_, dyp_) in enumerate(((-180, top_y - 6), (140, top_y - 6))): _pk.append(_pocket(f'pocket_dowel{k_}', dxp_ - 3.0, dyp_ - 3.0, dz(16.0), 6, 6, 24.0))      # 位置決めピンØ4の通り穴
 for _tn in ('gasket', 'cover_filter'):
     _to = bpy.data.objects.get(_tn)
     if _to is None: continue
@@ -175,6 +176,7 @@ cyl('stand_swivel_friction_ring', 35, 1.5, 'y', SX, SY0 + 6.75, SZ, M['rubber'],
 for k in range(6):
     ang = math.radians(k * 60 + 30); bx_, bz_ = SX + SWV['pcd_inner'] / 2 * math.cos(ang), SZ + SWV['pcd_inner'] / 2 * math.sin(ang)
     cyl(f'stand_swivel_bolt{k}', 2.5, 0.6, 'y', bx_, SY0 + 25.3, bz_, M['sus'], 12)                                    # 内輪側 M5×6本(PCD70)の頭
+    thru_hole(['stand_neck_shroud'], f'swivel_bolt{k}_cb', bx_, SY0 + 25.3, bz_, 'y', 6.4, 4.0)      # 外皮のボルト頭逃げ(Ø6.4)
     _cb = cyl(f'stand_swivel_cbore{k}_hole', 3.0, 1.2, 'y', bx_, SY0 + 25.6, bz_, None, 16, body=False); _cb.hide_render = True; BODY_OBJS.append(_cb)      # ネック基台の座ぐり(頭Ø5+逃げ, 深さ0.6)
     for _tn in ('stand_neck_base', 'stand_neck_collar'):
         _to = bpy.data.objects.get(_tn)

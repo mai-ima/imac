@@ -655,7 +655,9 @@ def pcyl(name, d, zr, mat, cx=0.0, cy=0.0, seg=64): icyl(name, d / 2, zr[1] - zr
 cp_ = PJ['coldplate']; pbox('pump_coldplate_sq', cp_['x'], cp_['y'], cp_['z'], M['copper'], .5)                  # 銅コールドプレート(約40.1×43.6, 中心は円盤中心から+2mm)
 pbox('pump_base_block', (-PJ['base']['size'][0] / 2, PJ['base']['size'][0] / 2), (-PJ['base']['size'][1] / 2, PJ['base']['size'][1] / 2), PJ['base']['z'], pump_mat, 1.0)
 for k_ in range(PJ['cage']['ribs']):      # VRMファンを囲むアーチ状リブの開放ケージ
-    an_ = math.radians(k_ * 360 / PJ['cage']['ribs']); pbox(f'pump_cage_rib{k_}', (PJ['cage']['r'] * math.cos(an_) - 2, PJ['cage']['r'] * math.cos(an_) + 2), (PJ['cage']['r'] * math.sin(an_) - 2, PJ['cage']['r'] * math.sin(an_) + 2), PJ['cage']['z'], pump_mat, .8)
+    an_ = math.radians(k_ * 360 / PJ['cage']['ribs'])
+    if PJ['housing_body']['x'][0] - 2 <= PJ['cage']['r'] * math.cos(an_) <= PJ['housing_body']['x'][1] + 2 and PJ['housing_body']['y'][0] - 2 <= PJ['cage']['r'] * math.sin(an_) <= PJ['housing_body']['y'][1] + 2: continue      # 筐体本体(+x側張り出し)の内側にあるリブは筐体が兼ねる
+    pbox(f'pump_cage_rib{k_}', (PJ['cage']['r'] * math.cos(an_) - 2, PJ['cage']['r'] * math.cos(an_) + 2), (PJ['cage']['r'] * math.sin(an_) - 2, PJ['cage']['r'] * math.sin(an_) + 2), PJ['cage']['z'], pump_mat, .8)
 pcyl('pump_cap_lip', PJ['cap_lip']['d'], PJ['cap_lip']['z'], pump_mat, seg=96); pcyl('pump_cap_top', PJ['cap_top']['d'], PJ['cap_top']['z'], M['alublack'], seg=96)      # キャップ2段(リップ+トッププレート)
 pbox('pump_housing_body', PJ['housing_body']['x'], PJ['housing_body']['y'], PJ['housing_body']['z'], pump_mat, 6.0); pbox('pump_elbow', PJ['elbow']['x'], PJ['elbow']['y'], PJ['elbow']['z'], pump_mat, 5.0)      # 筐体本体+エルボ状出口
 make_fan('fan_pump_vrm', PJ['vrm_fan']['d'], PJ['vrm_fan']['z'][1] - PJ['vrm_fan']['z'][0], 7, M['dark'], principled('vrm_blade', '#1b1c20', 0, .45), principled('vrm_hub', '#101114', .2, .4), pcx, pcy, cl[2] + PJ['vrm_fan']['z'][0])      # VRMファン(径・中心は未確認 U58)

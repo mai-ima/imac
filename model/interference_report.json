@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-11T15:57Z",
- "objects": 651,
- "pairs_total": 548,
- "touch_only": 370,
+ "generated": "2026-11-11T16:56Z",
+ "objects": 648,
+ "pairs_total": 538,
+ "touch_only": 367,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -30,7 +30,7 @@
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 35,
+ "remaining": 28,
  "remaining_pairs": [
   {
    "a": "riser0",
@@ -93,49 +93,9 @@
    ]
   },
   {
-   "a": "cover_filter",
-   "b": "dowel_pin0",
-   "tri_pairs": 36,
-   "aabb_overlap_mm": [
-    4.0,
-    8.0,
-    4.0
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "dowel_pin1",
-   "tri_pairs": 28,
-   "aabb_overlap_mm": [
-    4.0,
-    8.0,
-    4.0
-   ]
-  },
-  {
-   "a": "pump_housing_body",
-   "b": "pump_cage_rib1",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    4.0,
-    34.8,
-    4.0
-   ]
-  },
-  {
-   "a": "pump_housing_body",
-   "b": "pump_cage_rib11",
-   "tri_pairs": 8,
-   "aabb_overlap_mm": [
-    4.0,
-    34.8,
-    4.0
-   ]
-  },
-  {
    "a": "gasket",
    "b": "cover_filter",
-   "tri_pairs": 567,
+   "tri_pairs": 579,
    "aabb_overlap_mm": [
     589.599,
     3.0,
@@ -180,26 +140,6 @@
     5.543,
     3.0,
     6.4
-   ]
-  },
-  {
-   "a": "gasket",
-   "b": "dowel_pin0",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    4.0,
-    3.0,
-    4.0
-   ]
-  },
-  {
-   "a": "gasket",
-   "b": "dowel_pin1",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    4.0,
-    3.0,
-    4.0
    ]
   },
   {
@@ -320,16 +260,6 @@
     60.0,
     4.0,
     0.9
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "stand_swivel_bolt4",
-   "tri_pairs": 19,
-   "aabb_overlap_mm": [
-    5.0,
-    5.0,
-    0.6
    ]
   },
   {
