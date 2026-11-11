@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-11T09:59Z",
- "objects": 648,
- "pairs_total": 546,
- "touch_only": 363,
+ "generated": "2026-11-11T14:57Z",
+ "objects": 652,
+ "pairs_total": 558,
+ "touch_only": 371,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -10,6 +10,7 @@
   "摩擦リングは軸受座面に圧着する嵌合部品": 1,
   "ローラはピンに回転嵌合(ボア未モデル=INTF-03)": 2,
   "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)": 3,
+  "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現": 12,
   "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
   "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
   "ボルト頭と軸は一体品(別基本形で表現)": 4,
@@ -29,7 +30,7 @@
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 52,
+ "remaining": 44,
  "remaining_pairs": [
   {
    "a": "riser0",
@@ -352,46 +353,6 @@
    ]
   },
   {
-   "a": "hang_bushing0b",
-   "b": "hang_pin0_shoulder",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hang_bushing2b",
-   "b": "hang_pin2_shoulder",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hang_bushing1b",
-   "b": "hang_pin1_shoulder",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
-   ]
-  },
-  {
-   "a": "hang_bushing3b",
-   "b": "hang_pin3_shoulder",
-   "tri_pairs": 48,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    6.0
-   ]
-  },
-  {
    "a": "vrm_fan_ring",
    "b": "pump_screw_head1",
    "tri_pairs": 32,
@@ -399,46 +360,6 @@
     7.0,
     1.0,
     7.0
-   ]
-  },
-  {
-   "a": "hang_bushing0c",
-   "b": "hang_pin0_shoulder",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.0
-   ]
-  },
-  {
-   "a": "hang_bushing2c",
-   "b": "hang_pin2_shoulder",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.0
-   ]
-  },
-  {
-   "a": "hang_bushing1c",
-   "b": "hang_pin1_shoulder",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.0
-   ]
-  },
-  {
-   "a": "hang_bushing3c",
-   "b": "hang_pin3_shoulder",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    6.0,
-    1.0,
-    3.0
    ]
   },
   {

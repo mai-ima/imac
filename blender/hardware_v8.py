@@ -31,7 +31,7 @@ for k, (kx, ky) in enumerate(KH):
     icyl(f'hang_pin{k}_hexsocket', 1.6, .4, 'z', kx, pyk, TZ + 1.0 + 3.1, M['rubber'], 6)
     # ブッシュは長丸(16×28): ピンが掛かる溝の上端(ky+12)までを支圧補強する(K-bush: 従来のØ16円板はピン位置に届かなかった)
     for nm_, b_ in (('a', icyl(f'hang_bushing{k}a', 8, 1.0, 'z', kx, ky, TZ + .5, M['sus'], 48)), ('b', icyl(f'hang_bushing{k}b', 8, 1.0, 'z', kx, ky + 12, TZ + .5, M['sus'], 48)), ('c', ibox(f'hang_bushing{k}c', 16, 12, 1.0, kx - 8, ky, TZ, M['sus']))):
-        mb = b_.modifiers.new('hole', 'BOOLEAN'); mb.object = kh_cut; mb.operation = 'DIFFERENCE'; mb.solver = 'EXACT'
+        mb = b_.modifiers.new('hole', 'BOOLEAN'); mb.object = kh_cut; mb.operation = 'DIFFERENCE'; mb.solver = 'EXACT'; mb.use_self = True
 hw('吊り機構', 'SUS肩ねじ M4・肩径Ø6×6・頭Ø10×3(CP-04)', 4, '品番 U29'); hw('吊り機構', 'SUSブッシュ t1.0 16×28長丸(CP-05)', 4, '支圧補強')
 for k, sx_ in enumerate((-60, 60)):
     icyl(f'tray_screw{k}', 3.2, 3.0, 'z', IW_ / 2 + sx_, 14, TZ + 1.5, M['alublack'], 24); icyl(f'tray_screw{k}_hex', 1.6, .3, 'z', IW_ / 2 + sx_, 14, TZ + 3.1, M['rubber'], 6)
@@ -77,7 +77,7 @@ for c_ in CABJ:
     pts = c_['path']; acc = 0.0
     for a_, b_ in zip(pts, pts[1:]):
         acc += math.dist(a_, b_)
-        if acc >= 60 and b_[2] <= 30:
+        if acc >= 60 and b_[2] <= 30 and not any(abs(b_[0] - kx_) < 16 and abs(b_[1] - ky_ - 6) < 14 for kx_, ky_ in KH):      # 吊りピンのブッシュ(16x28)上には置かない
             acc = 0.0; nclip += 1
             ibox(f'clip_pad{nclip}', 12, 8, .8, b_[0] - 6, b_[1] - 4, TZ, M['pom'], .2); ibox(f'clip_post{nclip}', 3, 6, max(1, b_[2] - TZ - 1), b_[0] - 1.5, b_[1] - 3, TZ + .8, M['pom'], .3)
 hw('配線', 'ケーブルクリップ(POM, 粘着/PEM)', nclip, 'トレイ上 z≤30の区間のみ(他は部品へ結束)')

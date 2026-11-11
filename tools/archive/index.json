@@ -1225,6 +1225,15 @@
    "file": "interference_report/interference_report.v005__2026-11-07_196f514.py"
   },
   {
+   "src": "tools/interference_report.py",
+   "version": 6,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "61c5169",
+   "sha256": "c4acf1927cb1983c15e74a1cbf12d9e61aaa8a5522d70270e534a469064f6619",
+   "file": "interference_report/interference_report.v006__2026-11-07_61c5169.py"
+  },
+  {
    "src": "tools/joint_calc.py",
    "version": 1,
    "gen": "current",

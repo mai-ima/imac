@@ -31,6 +31,7 @@ ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^hinge_block_base$', r'^hinge_cheek_[lr]$', 'ヒンジブロック台座と頬板は溶接一体の板金品'),
  (r'^io_shield$', r'^io_.*_tongue$', '舌片はI/Oシールドの一部(切起こし)'),
  (r'^cover_back$', r'^hook_tab\d$', '掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)'),
+ (r'^hang_bushing\d[abc]$', r'^hang_bushing\d[abc]$', '吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現'),
  (r'^clip_pad\d+$', r'^clip_post\d+$', 'クリップのパッドとポストは一体品'),
 ]
 def depth(p): return min(p['aabb_overlap_mm'])

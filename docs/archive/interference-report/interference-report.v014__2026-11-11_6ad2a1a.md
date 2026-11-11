@@ -1,0 +1,86 @@
+# 実形状 干渉・埋め込み検査(INTF-01)
+
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 546。
+- 接触のみ(深さ<0.15mm): 363 / 意図した一体・嵌合(ALLOW): 131 / **要対処: 52**
+
+## ALLOW(理由つき)
+- グリルのリングとスポークは一体品: 10対
+- ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03): 4対
+- 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される: 8対
+- 摩擦リングは軸受座面に圧着する嵌合部品: 1対
+- ローラはピンに回転嵌合(ボア未モデル=INTF-03): 2対
+- ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留): 3対
+- ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形): 2対
+- ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03): 3対
+- ボルト頭と軸は一体品(別基本形で表現): 4対
+- 側板のストリップとボスは一体品を別基本形で表現: 2対
+- ヒンジブロック台座と頬板は溶接一体の板金品: 2対
+- プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される): 3対
+- 舌片はI/Oシールドの一部(切起こし): 3対
+- 摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入): 2対
+- GPUシュラウドと加飾トリムは一体の外装部品: 1対
+- VRMシュラウドとトリムは一体の外装部品(別基本形で表現): 1対
+- ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 52対
+- GPUクレードルの底板と側壁は一体の板金折り曲げ品: 2対
+- ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現): 2対
+- ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル): 1対
+- モジュラーソケットは筐体前面の開口に嵌合: 4対
+- 掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載): 6対
+- 1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm): 6対
+- ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合: 7対
+
+## 要対処(深さ順・上位80)
+| 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
+|---|---|---|---|---|
+| riser0 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser1 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser2 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser3 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser4 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| riser5 | riser_gpu_conn | 6 | [5.89, 4.724, 12.0] | 4.72 |
+| cover_filter | dowel_pin0 | 36 | [4.0, 8.0, 4.0] | 4.00 |
+| cover_filter | dowel_pin1 | 28 | [4.0, 8.0, 4.0] | 4.00 |
+| slab | hinge_doubler | 13 | [144.0, 4.0, 22.0] | 4.00 |
+| pump_housing_body | pump_cage_rib1 | 8 | [4.0, 34.8, 4.0] | 4.00 |
+| pump_housing_body | pump_cage_rib11 | 8 | [4.0, 34.8, 4.0] | 4.00 |
+| gasket | cover_filter | 567 | [589.599, 3.0, 370.899] | 3.00 |
+| slab | hinge_backing_plate | 24 | [140.0, 3.0, 22.0] | 3.00 |
+| io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
+| ssd_body | m2_screw | 16 | [3.2, 3.0, 3.2] | 3.00 |
+| cover_back | ac_inlet_flange | 12 | [36.0, 28.0, 3.0] | 3.00 |
+| am5_backplate | standoff_board0 | 12 | [5.543, 3.0, 6.4] | 3.00 |
+| gasket | dowel_pin0 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| gasket | dowel_pin1 | 10 | [4.0, 3.0, 4.0] | 3.00 |
+| board_hdr_vrm_hs_fan | vrm_shroud | 26 | [3.1, 4.0, 2.5] | 2.50 |
+| stand_arm_boss0 | hinge_friction0_cap | 24 | [2.5, 16.0, 16.0] | 2.50 |
+| hinge_friction1_cap | stand_arm_boss1 | 24 | [2.5, 16.0, 16.0] | 2.50 |
+| stand_arm_strip0 | hinge_friction0_cap | 19 | [2.5, 8.0, 8.0] | 2.50 |
+| hinge_friction1_cap | stand_arm_strip1 | 19 | [2.5, 8.0, 8.0] | 2.50 |
+| eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
+| am5_backplate | power_button | 19 | [6.0, 2.35, 2.35] | 2.35 |
+| cable_plug_F3_vrm | vrm_shroud | 19 | [3.1, 2.0, 2.5] | 2.00 |
+| cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
+| board_hdr_vrm_hs_fan | vrm_trim | 16 | [3.1, 4.0, 1.2] | 1.20 |
+| cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
+| cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
+| hang_bushing0b | hang_pin0_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing2b | hang_pin2_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing1b | hang_pin1_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| hang_bushing3b | hang_pin3_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
+| vrm_fan_ring | pump_screw_head1 | 32 | [7.0, 1.0, 7.0] | 1.00 |
+| hang_bushing0c | hang_pin0_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
+| hang_bushing2c | hang_pin2_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
+| hang_bushing1c | hang_pin1_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
+| hang_bushing3c | hang_pin3_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
+| cable_plug_F3_vrm | vrm_fin0 | 18 | [1.1, 4.0, 1.0] | 1.00 |
+| vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
+| vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
+| stand_neck_shroud | stand_swivel_bolt4 | 19 | [5.0, 5.0, 0.6] | 0.60 |
+| fan_pump_vrm_frame | pump_housing_body | 12 | [0.5, 12.0, 46.0] | 0.50 |
+| eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
+| vrm_trim | board_hdr_vrm_hs_fan_pin2 | 8 | [0.6, 0.3, 1.2] | 0.30 |
+| psu_label | psu_grille_spokes | 8 | [4.0, 0.3, 70.0] | 0.30 |
+| vrm_shroud | board_hdr_vrm_hs_fan_pin2 | 6 | [0.6, 0.3, 1.625] | 0.30 |
+| cover_back | hinge_bolt_head1 | 3 | [9.007, 3.0, 0.169] | 0.17 |
+| cover_back | hinge_bolt_head3 | 3 | [9.007, 3.0, 0.169] | 0.17 |

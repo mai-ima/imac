@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 546。
-- 接触のみ(深さ<0.15mm): 363 / 意図した一体・嵌合(ALLOW): 131 / **要対処: 52**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、652物体、交差対 558。
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 143 / **要対処: 44**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -10,6 +10,7 @@
 - 摩擦リングは軸受座面に圧着する嵌合部品: 1対
 - ローラはピンに回転嵌合(ボア未モデル=INTF-03): 2対
 - ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留): 3対
+- 吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現: 12対
 - ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形): 2対
 - ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03): 3対
 - ボルト頭と軸は一体品(別基本形で表現): 4対
@@ -64,15 +65,7 @@
 | cable_plug_F3_vrm | vrm_trim | 16 | [3.1, 6.0, 1.2] | 1.20 |
 | cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
 | cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
-| hang_bushing0b | hang_pin0_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
-| hang_bushing2b | hang_pin2_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
-| hang_bushing1b | hang_pin1_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
-| hang_bushing3b | hang_pin3_shoulder | 48 | [6.0, 1.0, 6.0] | 1.00 |
 | vrm_fan_ring | pump_screw_head1 | 32 | [7.0, 1.0, 7.0] | 1.00 |
-| hang_bushing0c | hang_pin0_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
-| hang_bushing2c | hang_pin2_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
-| hang_bushing1c | hang_pin1_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
-| hang_bushing3c | hang_pin3_shoulder | 26 | [6.0, 1.0, 3.0] | 1.00 |
 | cable_plug_F3_vrm | vrm_fin0 | 18 | [1.1, 4.0, 1.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
 | vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
