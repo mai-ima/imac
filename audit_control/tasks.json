@@ -15755,21 +15755,30 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_progress",
    "history": [
     [
      "2026-11-07T11:41:07Z",
      "triaged",
      "ユーザー指示(2026-11-07 20:5x JST)。現行fitcheckは包絡箱ベースのため実形状での干渉は未検査"
+    ],
+    [
+     "2026-11-11T20:56:01Z",
+     "in_progress",
+     "実メッシュBVH検査を実装(blender --check-interference → tools/interference_report.py)。要対処377→14件。バグ発見: hardware側sx_上書きでAM5バックプレートがソケット外、キーホール切欠きの自己交差(use_self)、ネックカバーとタイプレート/側板の寸法衝突(spec back_cover_z修正)。残14件=Wi-Fiモジュール×I/Oシールド(奥行未確認)、EPS8×基板ねじ/I/Oシールド(p.14読取±2mm)、ガスケット×フィルタ(重ね設計)、RF窓、VRMファンリング×ポンプ、フック爪ストライク、ヒンジボルト頭0.17mm、AC流入口フランジ"
     ]
    ],
    "acceptance_criteria": "",
-   "evidence": [],
+   "evidence": [
+    "docs/interference-report.md",
+    "model/interference_report.json",
+    "コミット 5ba6032..e36f9fe"
+   ],
    "verification": "",
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
-   "next_action": "blender側にBVH交差検査(--check-interference)を実装→tools/fitcheck.pyと統合→違反を台帳化して修正"
+   "next_action": "残14件の解消(位置データ確認が必要な項目はUNVERIFIEDのまま理由を明記)→ゲート化(interference_report要対処0でrc0)"
   },
   {
    "id": "AUD-STRICT",
@@ -17842,6 +17851,11 @@
      "2026-11-07T13:02:00Z",
      "triaged",
      "実メッシュ干渉検査(INTF-01)の結果から登録"
+    ],
+    [
+     "2026-11-11T20:56:01Z",
+     "triaged",
+     "一部実施: ばね案内ロッド孔(キャリア/座)、ポンプねじ貫通孔、GPUブラケットのポート開口、ACフランジ座ぐり、ヒンジ裏当て凹み、M.2ねじ切欠きを実形状化。ヒンジ軸ボア等は未(ALLOW)"
     ]
    ],
    "acceptance_criteria": "",
