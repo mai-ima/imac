@@ -1,7 +1,8 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
 - 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 528。
-- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 150 / **要対処: 7**
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 150(うち**負債ALLOW(未解決の許容)=25**) / **要対処: 7**
+- 注意: ケーブル(曲線)・非表示物・完全内包は検出できない(audit_control/reports/R13_interference_allow.md)。
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -31,6 +32,59 @@
 - 1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm): 6対
 - フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004): 6対
 - ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合: 7対
+
+## 負債ALLOW(未解決のまま許容している対。合格ではない)
+| 物体A | 物体B | 深さ(近似mm) | 理由 |
+|---|---|---|---|
+| hinge_axle | hinge_friction0 | 12.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | hinge_friction1 | 12.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | stand_arm_boss0 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | stand_arm_boss1 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| cam_roller_pin0 | cam_roller0 | 6.0 | ローラはピンに回転嵌合(ボア未モデル=INTF-03) |
+| cam_roller_pin1 | cam_roller1 | 6.0 | ローラはピンに回転嵌合(ボア未モデル=INTF-03) |
+| hinge_axle | stand_arm_strip0 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | stand_arm_strip1 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | hinge_tail_lever1 | 5.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| hinge_axle | hinge_tail_lever0 | 5.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される |
+| riser0 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| riser1 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| riser2 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| riser3 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| riser4 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| riser5 | riser_gpu_conn | 4.724 | フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004) |
+| hinge_axle | hinge_friction0_cap | 3.0 | ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03) |
+| hinge_axle | hinge_friction1_cap | 3.0 | ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03) |
+| hinge_axle | hinge_eclip0 | 1.0 | ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03) |
+| hinge_axle | hinge_eclip1 | 1.0 | ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03) |
+| board_hdr_aio_pump | cable_plug_F1_aio | 1.0 | ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留) |
+| board_hdr_cha_fan | cable_plug_F2_cha | 1.0 | ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留) |
+| board_hdr_vrm_hs_fan | cable_plug_F3_vrm | 1.0 | ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留) |
+| pe_nut_tray | pe_stud_tray | 1.0 | ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル) |
+| fan_pump_vrm_frame | pump_housing_body | 0.5 | 【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUN |
+
+## ALLOW 深さ上位20(深い貫入を許容していないか確認用)
+| 物体A | 物体B | 深さ(近似mm) | 理由 |
+|---|---|---|---|
+| hinge_axle | hinge_friction0 | 12.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| hinge_axle | hinge_friction1 | 12.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| fan_rad0_hub | fan_rad0_blade5 | 10.054 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad1_hub | fan_rad1_blade4 | 10.054 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad1_hub | fan_rad1_blade6 | 10.054 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad0_blade3 | fan_rad0_hub | 10.054 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad0_blade1 | fan_rad0_hub | 9.513 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| pump_cap_lip | pump_housing_body | 9.2 | ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形) |
+| fan_rad1_blade1 | fan_rad1_hub | 8.681 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad1_blade2 | fan_rad1_hub | 8.145 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| fan_rad0_hub | fan_rad0_blade0 | 7.343 | ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形) |
+| hinge_axle | stand_arm_boss0 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| hinge_axle | stand_arm_boss1 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| cam_roller_pin0 | cam_roller0 | 6.0 | ローラはピンに回転嵌合(ボア未モデル=INTF-03) |
+| cam_roller_pin1 | cam_roller1 | 6.0 | ローラはピンに回転嵌合(ボア未モデル=INTF-03) |
+| hinge_axle | stand_arm_strip0 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| hinge_axle | stand_arm_strip1 | 6.0 | 【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出され |
+| stand_swivel_stator | stand_swivel_stop_r | 6.0 | ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03) |
+| stand_swivel_stator | stand_swivel_stop_l | 6.0 | ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03) |
+| stand_arm_strip0 | stand_arm_boss0 | 6.0 | 側板のストリップとボスは一体品を別基本形で表現 |
 
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |

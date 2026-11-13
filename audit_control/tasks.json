@@ -22711,6 +22711,165 @@
    "blocker_reason": "ポンプ(ARCTIC)・ファン(P12 Pro)の電源コネクタ位置と付属ケーブル長が未確認(UNVERIFIED)。確認できれば経路を再設計。レイアウト上ラジエーターが基板の対角にあることも制約。",
    "defer_reason": "",
    "next_action": "ARCTIC公式のポンプ/ファンのコネクタ位置・分岐ケーブル長(U33系)を調査→経路を再設計。必要なら延長ケーブルの導入・ヘッダ変更(基板上の別ヘッダ)を検討。"
+  },
+  {
+   "id": "R13-01",
+   "title": "干渉検査: ALLOWに深さ上限が無く深い貫入を許容できる/ALLOW対が記録されない → allowed_pairs(深さ・理由)をJSON/MDに出力、負債ALLOW(未モデル/保留/未確認)を別集計して合格にしない",
+   "description": "干渉検査: ALLOWに深さ上限が無く深い貫入を許容できる/ALLOW対が記録されない → allowed_pairs(深さ・理由)をJSON/MDに出力、負債ALLOW(未モデル/保留/未確認)を別集計して合格にしない",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "done",
+   "history": [
+    [
+     "2026-11-13T23:06:41Z",
+     "done",
+     "R13監査(audit_control/reports/R13_interference_allow.md)の指摘。tools/interference_report.py: allowed_pairs/allowed_debt を出力し --gate を run_gates.sh に接続(要対処または負債>0でrc2)。深さ上限(ALLOW上位20表示)は表示のみで、規則ごとの深さ上限は未実装→R13-05"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md",
+    "tools/interference_report.py",
+    "tools/run_gates.sh"
+   ],
+   "verification": [
+    "python3 tools/interference_report.py --gate → 要対処7/負債25でrc2(UNVERIFIED)を確認"
+   ],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R13-02",
+   "title": "干渉検査はケーブル等の曲線オブジェクト14個・文字5個を type!=MESH で除外 → INTF-01のケーブル端末/曲げ/ブーツ干渉が未検査。曲線をメッシュ化して検査対象に含める",
+   "description": "干渉検査はケーブル等の曲線オブジェクト14個・文字5個を type!=MESH で除外 → INTF-01のケーブル端末/曲げ/ブーツ干渉が未検査。曲線をメッシュ化して検査対象に含める",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P0",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-13T23:06:41Z",
+     "triaged",
+     "R13監査(audit_control/reports/R13_interference_allow.md)の指摘"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R13-03",
+   "title": "ALLOW理由が実形状と矛盾: PSUグリルのリングは中実円板積層(穴なし)/I/O空洞が規格開口(Type-C 8.34x2.56, Type-A 12.5x5.12)より小さく舌片(t1.0)が空洞(t0.6)より厚い/hook_tabはアルミ別部品でドーム一体でない",
+   "description": "ALLOW理由が実形状と矛盾: PSUグリルのリングは中実円板積層(穴なし)/I/O空洞が規格開口(Type-C 8.34x2.56, Type-A 12.5x5.12)より小さく舌片(t1.0)が空洞(t0.6)より厚い/hook_tabはアルミ別部品でドーム一体でない",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-13T23:06:41Z",
+     "triaged",
+     "R13監査(audit_control/reports/R13_interference_allow.md)の指摘"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R13-04",
+   "title": "負債ALLOW 25対(ヒンジ軸ボア・ローラピン・ZIF差込口・コネクタ嵌合深さ=実嵌合9〜10mmに対し2mm等)を実形状化、またはUNVERIFIEDとして台帳化",
+   "description": "負債ALLOW 25対(ヒンジ軸ボア・ローラピン・ZIF差込口・コネクタ嵌合深さ=実嵌合9〜10mmに対し2mm等)を実形状化、またはUNVERIFIEDとして台帳化",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-13T23:06:41Z",
+     "triaged",
+     "R13監査(audit_control/reports/R13_interference_allow.md)の指摘"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
+  },
+  {
+   "id": "R13-05",
+   "title": "ALLOW規則ごとの深さ上限(例: ポンプ筐体×キャップ9.2mm、ヒンジ軸×摩擦板22mmは上限超過として別判定)/touch閾値0.15mmの根拠明記/厚0.15mm未満部品の埋没見逃し対策/geometryモード(通気孔)・非表示ファン枠3個・姿勢違いの検査追加",
+   "description": "ALLOW規則ごとの深さ上限(例: ポンプ筐体×キャップ9.2mm、ヒンジ軸×摩擦板22mmは上限超過として別判定)/touch閾値0.15mmの根拠明記/厚0.15mm未満部品の埋没見逃し対策/geometryモード(通気孔)・非表示ファン枠3個・姿勢違いの検査追加",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "triaged",
+   "history": [
+    [
+     "2026-11-13T23:06:41Z",
+     "triaged",
+     "R13監査(audit_control/reports/R13_interference_allow.md)の指摘"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "",
+   "defer_reason": "",
+   "next_action": ""
   }
  ]
 }

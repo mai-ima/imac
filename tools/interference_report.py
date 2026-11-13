@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """実形状干渉検査の結果(blender --check-interference が出す JSON)を分類し、model/interference_report.json と docs/interference-report.md を生成する(INTF-01)。
 使い方: /tmp/bl/.venv/bin/python blender/build_imac_pc_v8.py --vent-mode texture --check-interference /tmp/intf.json && python3 tools/interference_report.py /tmp/intf.json
-分類: (1) 接触のみ(AABB重なりの最小値<0.15mm)=埋め込みでない (2) 意図した一体/嵌合(ALLOW、理由必須) (3) 要対処(残り)。残りが0でなければ run_gates は UNVERIFIED(rc2)。"""
+分類: (1) 接触のみ(AABB重なりの最小値<0.15mm)=埋め込みでない (2) 意図した一体/嵌合(ALLOW、理由必須) (3) 要対処(残り)。残り(要対処)または『負債ALLOW』(理由に未モデル/保留/未確認を含む=未解決の許容)が0でなければ `--gate` は rc2(UNVERIFIED。合格ではない)。run_gates.sh から `--gate` を呼ぶ。"""
 import json, re, sys, os, collections, datetime
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^fan_.*_blade\d+$', r'^fan_.*_hub$', 'ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)'),
- (r'^board_hdr_.*[a-z0-9]$', r'^board_hdr_.*_pin\d+$', 'ヘッダのピンは筐体へ挿入されている(筐体上面から突出)'),
  (r'^psu_grille_ring\d+$', r'^psu_grille_(ring\d+|spokes)$', 'グリルのリングとスポークは一体品'),
- (r'^ssd_body$', r'^ssd_slit\d+$', 'スリット印刷(厚み0.08mmの面)'),
  (r'^psu_body$', r'^psu_socket\d+$', 'モジュラーソケットは筐体前面の開口に嵌合'),
  (r'^pump_(cap_lip|cap_top|housing_body|elbow|swivel_\d|fitting_\d)$', r'^pump_(cap_lip|cap_top|housing_body|elbow|swivel_\d|fitting_\d)$', 'ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)'),
  (r'^hinge_axle$', r'^(hinge_friction\d|stand_arm_boss\d|stand_arm_strip\d|hinge_tail_lever\d)$', '【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される'),
@@ -34,23 +32,39 @@ ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^hang_bushing\d[abc]$', r'^hang_bushing\d[abc]$', '吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現'),
  (r'^riser\d$', r'^riser_gpu_conn$', 'フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)'),
  (r'^fan_pump_vrm_frame$', r'^pump_housing_body$', '【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58)'),
- (r'^clip_pad\d+$', r'^clip_post\d+$', 'クリップのパッドとポストは一体品'),
 ]
 def depth(p): return min(p['aabb_overlap_mm'])
+DEBT_WORDS = ('未モデル', '要モデル化', '保留', '未確認', 'UNVERIFIED', '未解決')
+def is_debt(why): return any(w in why for w in DEBT_WORDS)
+def classify(p):
+    return next((w for a, b, w in ALLOW if (re.search(a, p['a']) and re.search(b, p['b'])) or (re.search(a, p['b']) and re.search(b, p['a']))), None)
 def main(src):
-    d = json.load(open(src)); touch = 0; allowed = collections.Counter(); rest = []
+    d = json.load(open(src)); touch = 0; allowed = collections.Counter(); rest = []; apairs = []
     for p in d['pairs']:
         if depth(p) < 0.15: touch += 1; continue
-        why = next((w for a, b, w in ALLOW if (re.search(a, p['a']) and re.search(b, p['b'])) or (re.search(a, p['b']) and re.search(b, p['a']))), None)
-        if why: allowed[why] += 1
+        why = classify(p)
+        if why: allowed[why] += 1; apairs.append({'a': p['a'], 'b': p['b'], 'depth_mm': round(depth(p), 3), 'aabb': p['aabb_overlap_mm'], 'tri_pairs': p['tri_pairs'], 'reason': why, 'debt': is_debt(why)})
         else: rest.append(p)
-    rest.sort(key=lambda p: -depth(p))
-    out = {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'objects': d['objects'], 'pairs_total': len(d['pairs']), 'touch_only': touch, 'allowed': dict(allowed), 'remaining': len(rest), 'remaining_pairs': rest[:400],
-           'note': '深さ=2物体のAABB重なりの最小軸(近似)。三角形交差のある対のみ。実際の貫入量ではなく上限の目安。'}
+    rest.sort(key=lambda p: -depth(p)); apairs.sort(key=lambda q: -q['depth_mm'])
+    debt = [q for q in apairs if q['debt']]
+    out = {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'objects': d['objects'], 'pairs_total': len(d['pairs']), 'touch_only': touch, 'allowed': dict(allowed), 'allowed_pairs': apairs, 'allowed_debt': len(debt), 'remaining': len(rest), 'remaining_pairs': rest[:400],
+           'note': '深さ=2物体のAABB重なりの最小軸(近似)。三角形交差のある対のみ。実際の貫入量ではなく上限の目安。allowed_debt=許容理由に未モデル/保留/未確認を含む対(=未解決。合格ではない)。ケーブル等の曲線オブジェクト・非表示物は検査対象外(R13参照)。'}
     json.dump(out, open(f'{R}/model/interference_report.json', 'w'), ensure_ascii=False, indent=1)
-    L = ['# 実形状 干渉・埋め込み検査(INTF-01)', '', f'- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、{d["objects"]}物体、交差対 {len(d["pairs"])}。', f'- 接触のみ(深さ<0.15mm): {touch} / 意図した一体・嵌合(ALLOW): {sum(allowed.values())} / **要対処: {len(rest)}**', '', '## ALLOW(理由つき)']
+    L = ['# 実形状 干渉・埋め込み検査(INTF-01)', '', f'- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、{d["objects"]}物体、交差対 {len(d["pairs"])}。', f'- 接触のみ(深さ<0.15mm): {touch} / 意図した一体・嵌合(ALLOW): {sum(allowed.values())}(うち**負債ALLOW(未解決の許容)={len(debt)}**) / **要対処: {len(rest)}**', '- 注意: ケーブル(曲線)・非表示物・完全内包は検出できない(audit_control/reports/R13_interference_allow.md)。', '', '## ALLOW(理由つき)']
     L += [f'- {w}: {n}対' for w, n in allowed.items()]
+    L += ['', '## 負債ALLOW(未解決のまま許容している対。合格ではない)', '| 物体A | 物体B | 深さ(近似mm) | 理由 |', '|---|---|---|---|']
+    L += [f'| {q["a"]} | {q["b"]} | {q["depth_mm"]} | {q["reason"][:80]} |' for q in debt]
+    L += ['', '## ALLOW 深さ上位20(深い貫入を許容していないか確認用)', '| 物体A | 物体B | 深さ(近似mm) | 理由 |', '|---|---|---|---|']
+    L += [f'| {q["a"]} | {q["b"]} | {q["depth_mm"]} | {q["reason"][:60]} |' for q in apairs[:20]]
     L += ['', '## 要対処(深さ順・上位80)', '| 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |', '|---|---|---|---|---|']
     L += [f'| {p["a"]} | {p["b"]} | {p["tri_pairs"]} | {p["aabb_overlap_mm"]} | {depth(p):.2f} |' for p in rest[:80]]
-    open(f'{R}/docs/interference-report.md', 'w', encoding='utf-8').write('\n'.join(L) + '\n'); print('remaining', len(rest), 'touch', touch, 'allowed', sum(allowed.values()))
-if __name__ == '__main__': main(sys.argv[1])
+    open(f'{R}/docs/interference-report.md', 'w', encoding='utf-8').write('\n'.join(L) + '\n'); print('remaining', len(rest), 'debt_allow', len(debt), 'touch', touch, 'allowed', sum(allowed.values()))
+def gate():
+    """保存済みJSONから判定: 要対処>0 または 負債ALLOW>0 なら rc2(UNVERIFIED。合格ではない)。JSONが無ければ rc1。"""
+    f = f'{R}/model/interference_report.json'
+    if not os.path.exists(f): print('interference_report.json なし'); return 1
+    j = json.load(open(f)); n = j['remaining'] + j.get('allowed_debt', 0)
+    print(f"干渉: 要対処={j['remaining']} 負債ALLOW={j.get('allowed_debt', 'n/a')} (生成 {j['generated']})"); return 2 if n > 0 else 0
+if __name__ == '__main__':
+    if sys.argv[1] == '--gate': sys.exit(gate())
+    main(sys.argv[1])

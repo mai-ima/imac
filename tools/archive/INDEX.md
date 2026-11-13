@@ -141,6 +141,7 @@
 | interference_report.py | v006 | current | 2026-11-07 | 61c5169 | interference_report/interference_report.v006__2026-11-07_61c5169.py |
 | interference_report.py | v007 | current | 2026-11-11 | 7a60983 | interference_report/interference_report.v007__2026-11-11_7a60983.py |
 | interference_report.py | v008 | current | 2026-11-11 | b51296b | interference_report/interference_report.v008__2026-11-11_b51296b.py |
+| interference_report.py | v009 | current | 2026-11-13 | 39a5856 | interference_report/interference_report.v009__2026-11-13_39a5856.py |
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |
 | joint_calc.py | v002 | current | 2026-11-05 | fcba5fe | joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py |
 | joint_calc.py | v003 | current | 2026-11-06 | 4482281 | joint_calc/joint_calc.v003__2026-11-06_4482281.py |
@@ -174,6 +175,7 @@
 | run_gates.sh | v007 | current | 2026-11-06 | 877835f | run_gates/run_gates.v007__2026-11-06_877835f.sh |
 | run_gates.sh | v008 | current | 2026-11-06 | 36dff8c | run_gates/run_gates.v008__2026-11-06_36dff8c.sh |
 | run_gates.sh | v009 | current | 2026-11-07 | 64a1afa | run_gates/run_gates.v009__2026-11-07_64a1afa.sh |
+| run_gates.sh | v010 | current | 2026-11-07 | a50f58a | run_gates/run_gates.v010__2026-11-07_a50f58a.sh |
 | stability.py | v001 | current | 2026-11-03 | 1bfcbfb | stability/stability.v001__2026-11-03_1bfcbfb.py |
 | stability.py | v002 | current | 2026-11-05 | fcba5fe | stability/stability.v002__2026-11-05_fcba5fe.py |
 | stability.py | v003 | current | 2026-11-06 | 9ff6031 | stability/stability.v003__2026-11-06_9ff6031.py |

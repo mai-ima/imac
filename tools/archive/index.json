@@ -1252,6 +1252,15 @@
    "file": "interference_report/interference_report.v008__2026-11-11_b51296b.py"
   },
   {
+   "src": "tools/interference_report.py",
+   "version": 9,
+   "gen": "current",
+   "date": "2026-11-13",
+   "commit": "39a5856",
+   "sha256": "976dbf148e774cd1ba623fe4daca2c19b59e8e2a86bf06da467cecc060d0066a",
+   "file": "interference_report/interference_report.v009__2026-11-13_39a5856.py"
+  },
+  {
    "src": "tools/joint_calc.py",
    "version": 1,
    "gen": "current",
@@ -1547,6 +1556,15 @@
    "commit": "64a1afa",
    "sha256": "7df797ebee6014927b30af7cfa8e4cdbb1c89002eafff1d55c32fad3cbb617da",
    "file": "run_gates/run_gates.v009__2026-11-07_64a1afa.sh"
+  },
+  {
+   "src": "tools/run_gates.sh",
+   "version": 10,
+   "gen": "current",
+   "date": "2026-11-07",
+   "commit": "a50f58a",
+   "sha256": "1e5debb0b5d5d0a8333dcd017ba05c263692a0e6afb1e7a32d9cc3676675ae63",
+   "file": "run_gates/run_gates.v010__2026-11-07_a50f58a.sh"
   },
   {
    "src": "tools/stability.py",
