@@ -56,6 +56,7 @@
 | build_imac_pc_v8.py | v044 | current | 2026-11-11 | 17bf6e8 | build_imac_pc_v8/build_imac_pc_v8.v044__2026-11-11_17bf6e8.py |
 | build_imac_pc_v8.py | v045 | current | 2026-11-11 | 0bb8396 | build_imac_pc_v8/build_imac_pc_v8.v045__2026-11-11_0bb8396.py |
 | build_imac_pc_v8.py | v046 | current | 2026-11-11 | b51296b | build_imac_pc_v8/build_imac_pc_v8.v046__2026-11-11_b51296b.py |
+| build_imac_pc_v8.py | v047 | current | 2026-11-13 | 39a5856 | build_imac_pc_v8/build_imac_pc_v8.v047__2026-11-13_39a5856.py |
 | hardware_v8.py | v001 | current | 2026-11-06 | 09ad133 | hardware_v8/hardware_v8.v001__2026-11-06_09ad133.py |
 | hardware_v8.py | v002 | current | 2026-11-06 | 9ff6031 | hardware_v8/hardware_v8.v002__2026-11-06_9ff6031.py |
 | hardware_v8.py | v003 | current | 2026-11-06 | 514e2e0 | hardware_v8/hardware_v8.v003__2026-11-06_514e2e0.py |

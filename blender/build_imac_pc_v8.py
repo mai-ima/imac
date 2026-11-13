@@ -856,7 +856,7 @@ if A.check_interference:
     from mathutils.bvhtree import BVHTree
     dg = bpy.context.evaluated_depsgraph_get(); recs = []
     for ob in COLL.objects:
-        if ob.type != 'MESH' or ob.hide_render or ob.name.startswith(('floor', 'target')) or ob.name.endswith(('_hole', '_cutter', '_cavity', '_notch', '_opening')) or '_cutter' in ob.name: continue      # ブーリアン用カッターは形状ではないので検査しない
+        if ob.type not in ('MESH', 'CURVE') or ob.hide_render or ob.name.startswith(('floor', 'target')) or ob.name.endswith(('_hole', '_cutter', '_cavity', '_notch', '_opening')) or '_cutter' in ob.name: continue      # ブーリアン用カッターは形状ではないので検査しない
         ev = ob.evaluated_get(dg); me_ = ev.to_mesh(); me_.transform(ob.matrix_world)
         vs = [v.co.copy() for v in me_.vertices]; ps = [tuple(p.vertices) for p in me_.polygons]
         if len(vs) < 3 or not ps: ev.to_mesh_clear(); continue

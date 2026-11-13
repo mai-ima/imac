@@ -15766,6 +15766,11 @@
      "2026-11-11T20:56:01Z",
      "in_progress",
      "実メッシュBVH検査を実装(blender --check-interference → tools/interference_report.py)。要対処377→14件。バグ発見: hardware側sx_上書きでAM5バックプレートがソケット外、キーホール切欠きの自己交差(use_self)、ネックカバーとタイプレート/側板の寸法衝突(spec back_cover_z修正)。残14件=Wi-Fiモジュール×I/Oシールド(奥行未確認)、EPS8×基板ねじ/I/Oシールド(p.14読取±2mm)、ガスケット×フィルタ(重ね設計)、RF窓、VRMファンリング×ポンプ、フック爪ストライク、ヒンジボルト頭0.17mm、AC流入口フランジ"
+    ],
+    [
+     "2026-11-13T23:56:18Z",
+     "in_progress",
+     "曲線オブジェクトも検査対象に追加し要対処が増加(ケーブル系42対)。偽の減少を避けるため件数は増えたまま記録"
     ]
    ],
    "acceptance_criteria": "",
@@ -22760,12 +22765,17 @@
    "impact": "",
    "dependencies": [],
    "parent_id": null,
-   "status": "triaged",
+   "status": "in_review",
    "history": [
     [
      "2026-11-13T23:06:41Z",
      "triaged",
      "R13監査(audit_control/reports/R13_interference_allow.md)の指摘"
+    ],
+    [
+     "2026-11-13T23:56:18Z",
+     "in_review",
+     "blender --check-interference が曲線(CURVE)も検査するよう変更(objects 648→662)。ケーブル/PE編組関連の新規干渉 42対が顕在化(例: ケーブルW5/W7/H1がcover_filterを貫通、PE編組がスタンド外皮/スカート/カラーを貫通=SHAPE-02、ケーブル×クリップ柱、プラグ×ヘッダ)。ALLOWせず要対処として計上"
     ]
    ],
    "acceptance_criteria": "",
@@ -22776,7 +22786,7 @@
    "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
    "blocker_reason": "",
    "defer_reason": "",
-   "next_action": ""
+   "next_action": "ケーブル経路(cablemodel.py)をドーム内に収める/PE編組を外皮内へ/クリップ柱をケーブルの下へ。修正後に再検査"
   },
   {
    "id": "R13-03",

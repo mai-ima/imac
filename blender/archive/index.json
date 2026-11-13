@@ -487,6 +487,15 @@
    "file": "build_imac_pc_v8/build_imac_pc_v8.v046__2026-11-11_b51296b.py"
   },
   {
+   "src": "blender/build_imac_pc_v8.py",
+   "version": 47,
+   "gen": "current",
+   "date": "2026-11-13",
+   "commit": "39a5856",
+   "sha256": "fcef67e76b8e7ad1b52a8d6c787035e0f1c21f9d0e1bfeee583a6b855f579402",
+   "file": "build_imac_pc_v8/build_imac_pc_v8.v047__2026-11-13_39a5856.py"
+  },
+  {
    "src": "blender/hardware_v8.py",
    "version": 1,
    "gen": "current",
