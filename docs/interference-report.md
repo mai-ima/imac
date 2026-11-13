@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 534。
-- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 149 / **要対処: 14**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、648物体、交差対 528。
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 150 / **要対処: 7**
 
 ## ALLOW(理由つき)
 - グリルのリングとスポークは一体品: 10対
@@ -26,6 +26,7 @@
 - ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現): 2対
 - ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル): 1対
 - モジュラーソケットは筐体前面の開口に嵌合: 4対
+- 【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58): 1対
 - 掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載): 6対
 - 1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm): 6対
 - フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004): 6対
@@ -34,17 +35,10 @@
 ## 要対処(深さ順・上位80)
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
-| gasket | cover_filter | 579 | [589.599, 3.0, 370.899] | 3.00 |
+| gasket | cover_filter | 571 | [589.599, 3.0, 370.899] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
-| cover_back | ac_inlet_flange | 12 | [36.0, 28.0, 3.0] | 3.00 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | cover_filter | rf_window_plate | 4 | [60.0, 2.0, 30.0] | 2.00 |
-| cover_back | hook_strike0 | 5 | [16.0, 1.2, 8.0] | 1.20 |
-| cover_back | hook_strike5 | 5 | [16.0, 1.2, 8.0] | 1.20 |
 | vrm_fan_ring | pump_screw_head1 | 32 | [7.0, 1.0, 7.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
-| vrm_shroud | socket | 10 | [60.0, 4.0, 0.9] | 0.90 |
-| fan_pump_vrm_frame | pump_housing_body | 12 | [0.5, 12.0, 46.0] | 0.50 |
 | eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
-| cover_back | hinge_bolt_head1 | 3 | [9.007, 3.0, 0.169] | 0.17 |
-| cover_back | hinge_bolt_head3 | 3 | [9.007, 3.0, 0.169] | 0.17 |

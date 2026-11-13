@@ -457,7 +457,7 @@ _io_cols = [(15.0, 34.0, -0.5, 27.0), (40.0, 55.0, 1.0, 22.0), (58.5, 73.5, 5.0,
 c_io = port_tunnels('cover_io_cutter', [(bx + x0_ - _mg, bx + x1_ + _mg, bz + 1.6 + z0_ - _mg, bz + 1.6 + z1_ + _mg) for (x0_, x1_, z0_, z1_) in _io_cols], WIN['io_y0'] - 2, by - 1.0)
 c_ac = port_tunnels('cover_ac_cutter', [(ax_ - 2, ax_ + 30, az_ - 2, az_ + 22)], WIN['io_y0'] - 2, ay_ + 30)      # C13プラグ(30x22)の挿抜
 c_gpu = port_tunnels('cover_gpu_cutter', [(gx + 20 + k * 28 - _mg, gx + 20 + k * 28 + w_ + _mg, gz + 7 - _mg, gz + 13.5 + _mg) for k, w_ in enumerate((15, 16, 16, 16))], WIN['gpu_y0'] - 2, gy - 1.0)      # HDMI+DP×3: 1ポートずつ
-c_acf = port_tunnels('cover_acflange_cutter', [(ax_ - 4.5, ax_ + 32.5, az_ - 4.5, az_ + 24.5)], ay_ - 6.0, ay_ + 3.0, r=3.0)      # ACインレットのフランジ(36x28 t3)の座ぐり(ポケット)
+c_acf = port_tunnels('cover_acflange_cutter', [(ax_ - 6.0, ax_ + 34.0, az_ - 6.0, az_ + 26.0)], ay_ - 8.0, ay_ + 4.0, r=3.0)      # ACインレットのフランジ(36x28 t3)の座ぐり(ポケット)
 mods_ = [('io', c_io), ('gpu', c_gpu), ('ac', c_ac), ('acf', c_acf)] + ([('vents', vc)] if A.vent_mode == 'boolean' else [])
 for nm, c in mods_:
     for tgt in ((dome,) if nm == 'vents' else (dome, dome_filter)):
@@ -585,7 +585,7 @@ port('io_usb2_3', 83.5, 11.6, 14.5, 7, usb2_in); port('io_usb4_c2', 83.5, 2.7, 9
 port('io_rj45', 101.5, 23, 16, 13.5, M['alu']); port('io_a10g_4', 101.5, 11.9, 14.5, 7, usb_red); port('io_usbc_10g', 101.5, 3.0, 9, 3.6)
 for k, zz in enumerate((6.9, 28.4)): icyl(f'io_sma{k}', 3.2, 5, 'y', bx + 117.5, by - 5, Z1 + zz, M['gold'], 20)
 # VRMヒートシンク(ファン付)・I/Oカバー: 高さは公式資料で未確認(仮置き、docs/unverified-tracker.md)
-_vs = ibox('vrm_shroud', 93, 36, 5, bx + 13, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
+_vs = ibox('vrm_shroud', 93, 34.8, 5, bx + 13, by + 24, Z1, M['shroud'], 1.5)      # ベース板(厚5)
 _pcx, _pcy = lp('cooler')[0] + 45.5, lp('cooler')[1] + ls('cooler')[1] / 2      # ポンプ円盤中心(後段の pcx/pcy と同じ式)
 for _k in range(21):
     _fx = bx + 10 + _k * 4.55

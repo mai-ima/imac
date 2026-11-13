@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-11T19:56Z",
+ "generated": "2026-11-13T08:55Z",
  "objects": 648,
- "pairs_total": 534,
+ "pairs_total": 528,
  "touch_only": 371,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -26,17 +26,18 @@
   "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)": 2,
   "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)": 1,
   "モジュラーソケットは筐体前面の開口に嵌合": 4,
+  "【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58)": 1,
   "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)": 6,
   "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
   "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)": 6,
   "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
  },
- "remaining": 14,
+ "remaining": 7,
  "remaining_pairs": [
   {
    "a": "gasket",
    "b": "cover_filter",
-   "tri_pairs": 579,
+   "tri_pairs": 571,
    "aabb_overlap_mm": [
     589.599,
     3.0,
@@ -51,16 +52,6 @@
     7.9,
     3.0,
     23.6
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "ac_inlet_flange",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    36.0,
-    28.0,
-    3.0
    ]
   },
   {
@@ -84,26 +75,6 @@
    ]
   },
   {
-   "a": "cover_back",
-   "b": "hook_strike0",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    16.0,
-    1.2,
-    8.0
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hook_strike5",
-   "tri_pairs": 5,
-   "aabb_overlap_mm": [
-    16.0,
-    1.2,
-    8.0
-   ]
-  },
-  {
    "a": "vrm_fan_ring",
    "b": "pump_screw_head1",
    "tri_pairs": 32,
@@ -124,26 +95,6 @@
    ]
   },
   {
-   "a": "vrm_shroud",
-   "b": "socket",
-   "tri_pairs": 10,
-   "aabb_overlap_mm": [
-    60.0,
-    4.0,
-    0.9
-   ]
-  },
-  {
-   "a": "fan_pump_vrm_frame",
-   "b": "pump_housing_body",
-   "tri_pairs": 12,
-   "aabb_overlap_mm": [
-    0.5,
-    12.0,
-    46.0
-   ]
-  },
-  {
    "a": "eps8",
    "b": "io_shield",
    "tri_pairs": 16,
@@ -151,26 +102,6 @@
     0.4,
     11.0,
     18.1
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hinge_bolt_head1",
-   "tri_pairs": 3,
-   "aabb_overlap_mm": [
-    9.007,
-    3.0,
-    0.169
-   ]
-  },
-  {
-   "a": "cover_back",
-   "b": "hinge_bolt_head3",
-   "tri_pairs": 3,
-   "aabb_overlap_mm": [
-    9.007,
-    3.0,
-    0.169
    ]
   }
  ],

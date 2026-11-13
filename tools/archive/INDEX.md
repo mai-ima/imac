@@ -140,6 +140,7 @@
 | interference_report.py | v005 | current | 2026-11-07 | 196f514 | interference_report/interference_report.v005__2026-11-07_196f514.py |
 | interference_report.py | v006 | current | 2026-11-07 | 61c5169 | interference_report/interference_report.v006__2026-11-07_61c5169.py |
 | interference_report.py | v007 | current | 2026-11-11 | 7a60983 | interference_report/interference_report.v007__2026-11-11_7a60983.py |
+| interference_report.py | v008 | current | 2026-11-11 | b51296b | interference_report/interference_report.v008__2026-11-11_b51296b.py |
 | joint_calc.py | v001 | current | 2026-11-05 | 017b7d9 | joint_calc/joint_calc.v001__2026-11-05_017b7d9.py |
 | joint_calc.py | v002 | current | 2026-11-05 | fcba5fe | joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py |
 | joint_calc.py | v003 | current | 2026-11-06 | 4482281 | joint_calc/joint_calc.v003__2026-11-06_4482281.py |
