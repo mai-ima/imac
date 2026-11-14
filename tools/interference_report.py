@@ -31,6 +31,8 @@ ALLOW = [  # (名前正規表現a, 名前正規表現b, 理由)
  (r'^cover_back$', r'^hook_tab\d$', '掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)'),
  (r'^hang_bushing\d[abc]$', r'^hang_bushing\d[abc]$', '吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現'),
  (r'^pe_braid_swivel$', r'^pe_lug_(rotor|foot)$', 'PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)'),
+ (r'^pe_braid_tray_[ab]$', r'^pe_(nut|stud)_tray$', '編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)'),
+ (r'^pe_braid_tray_a$', r'^pe_braid_tray_b$', '2本の編組は同一端子(スタッド)から分岐する=始端が重なる'),
  (r'^riser\d$', r'^riser_gpu_conn$', 'フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)'),
  (r'^fan_pump_vrm_frame$', r'^pump_housing_body$', '【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58)'),
 ]

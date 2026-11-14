@@ -210,5 +210,7 @@ for _nm_, _hy_ in (('pe_lug_rotor', SY0 + 18.4), ('pe_lug_foot', SY0 + 0.6)):   
     cyl(_nm_, 4.0, 1.2, 'y', SX + _R * math.cos(_q_), _hy_, SZ + _R * math.sin(_q_), M['sus'], 16)
 for _tn in ('stand_swivel_stator', 'stand_swivel_bearing', 'stand_swivel_bearing_inner', 'stand_swivel_friction_ring'):      # 軸受ID60の中空(Ø56)を軸方向に貫通させる(PE編組の通り道)
     thru_hole([_tn], f'swivel_bore_{_tn}', SX, SY0 + 7.0, SZ, 'y', 56.0, 24.0)
-cable('pe_braid_hinge', [din(-45, 12, -27 - 12), din(-48, 4, -27 - 8), din(-52, -6, -27 - 14), din(-50, -8, -27 - 26), din(-47, 0, -27 - 34), din(-45, 8, -27 - 40)], 1.8, M['pe_gy'])      # 頭部ヒンジブロック→ネック側: ストッパ(x±20〜32)の掃引域を避けx=-45〜-52のループ
+cable('pe_braid_hinge', [din(-67.5, 12, -27 - 12), din(-67.5, 4, -27 - 8), din(-67.5, -6, -27 - 14), din(-67.5, -8, -27 - 26), din(-67.5, 0, -27 - 34), din(-67.5, 8, -27 - 40)], 1.4, M['pe_gy'])      # 頭部ヒンジブロック→ネック側: ストッパ(x±20〜32)の掃引域を避けx=-45〜-52のループ
+_cs = box('hinge_cover_slot_cutter', 5.0, 24, 6.0, -70.0, -1.0, -SLAB - 38.0, None, body=False); _cs.hide_render = True; BODY_OBJS.append(_cs)      # ヒンジカバー端のPE編組通し切欠き(幅5)
+_m = bpy.data.objects['hinge_cover'].modifiers.new('braid_slot', 'BOOLEAN'); _m.object = _cs; _m.operation = 'DIFFERENCE'; _m.solver = 'EXACT'
 json.dump(HW, open(os.path.join(ROOT, 'model', 'hardware_list.json'), 'w'), ensure_ascii=False, indent=1)

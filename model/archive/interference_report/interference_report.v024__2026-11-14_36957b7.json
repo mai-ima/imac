@@ -1,0 +1,2389 @@
+{
+ "generated": "2026-11-14T00:11Z",
+ "objects": 664,
+ "pairs_total": 562,
+ "touch_only": 373,
+ "allowed": {
+  "グリルのリングとスポークは一体品": 10,
+  "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
+  "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される": 8,
+  "摩擦リングは軸受座面に圧着する嵌合部品": 1,
+  "ローラはピンに回転嵌合(ボア未モデル=INTF-03)": 2,
+  "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)": 3,
+  "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現": 12,
+  "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
+  "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
+  "ボルト頭と軸は一体品(別基本形で表現)": 4,
+  "側板のストリップとボスは一体品を別基本形で表現": 2,
+  "ヒンジブロック台座と頬板は溶接一体の板金品": 2,
+  "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
+  "舌片はI/Oシールドの一部(切起こし)": 3,
+  "摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入)": 2,
+  "GPUシュラウドと加飾トリムは一体の外装部品": 1,
+  "VRMシュラウドとトリムは一体の外装部品(別基本形で表現)": 1,
+  "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
+  "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)": 2,
+  "GPUクレードルの底板と側壁は一体の板金折り曲げ品": 2,
+  "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)": 2,
+  "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)": 1,
+  "モジュラーソケットは筐体前面の開口に嵌合": 4,
+  "【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58)": 1,
+  "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)": 6,
+  "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)": 6,
+  "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)": 6,
+  "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合": 7
+ },
+ "allowed_pairs": [
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction0",
+   "depth_mm": 12.0,
+   "aabb": [
+    22.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction1",
+   "depth_mm": 12.0,
+   "aabb": [
+    22.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "fan_rad0_hub",
+   "b": "fan_rad0_blade5",
+   "depth_mm": 10.054,
+   "aabb": [
+    11.796,
+    10.054,
+    19.757
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_hub",
+   "b": "fan_rad1_blade4",
+   "depth_mm": 10.054,
+   "aabb": [
+    18.941,
+    10.054,
+    12.625
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_hub",
+   "b": "fan_rad1_blade6",
+   "depth_mm": 10.054,
+   "aabb": [
+    17.9,
+    10.054,
+    13.433
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_blade3",
+   "b": "fan_rad0_hub",
+   "depth_mm": 10.054,
+   "aabb": [
+    14.278,
+    10.054,
+    17.086
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_blade1",
+   "b": "fan_rad0_hub",
+   "depth_mm": 9.513,
+   "aabb": [
+    22.948,
+    10.054,
+    9.513
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "pump_cap_lip",
+   "b": "pump_housing_body",
+   "depth_mm": 9.2,
+   "aabb": [
+    18.5,
+    9.2,
+    46.0
+   ],
+   "tri_pairs": 35,
+   "reason": "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_blade1",
+   "b": "fan_rad1_hub",
+   "depth_mm": 8.681,
+   "aabb": [
+    8.681,
+    10.054,
+    23.705
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_blade2",
+   "b": "fan_rad1_hub",
+   "depth_mm": 8.145,
+   "aabb": [
+    8.145,
+    10.054,
+    24.927
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_hub",
+   "b": "fan_rad0_blade0",
+   "depth_mm": 7.343,
+   "aabb": [
+    23.643,
+    10.054,
+    7.343
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "hinge_axle",
+   "b": "stand_arm_boss0",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "stand_arm_boss1",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "cam_roller_pin0",
+   "b": "cam_roller0",
+   "depth_mm": 6.0,
+   "aabb": [
+    12.0,
+    6.0,
+    6.0
+   ],
+   "tri_pairs": 48,
+   "reason": "ローラはピンに回転嵌合(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "cam_roller_pin1",
+   "b": "cam_roller1",
+   "depth_mm": 6.0,
+   "aabb": [
+    12.0,
+    6.0,
+    6.0
+   ],
+   "tri_pairs": 48,
+   "reason": "ローラはピンに回転嵌合(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "stand_arm_strip0",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    8.0,
+    6.0
+   ],
+   "tri_pairs": 34,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "stand_arm_strip1",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    8.0,
+    6.0
+   ],
+   "tri_pairs": 34,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_stop_r",
+   "depth_mm": 6.0,
+   "aabb": [
+    10.0,
+    10.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)",
+   "debt": false
+  },
+  {
+   "a": "stand_swivel_stator",
+   "b": "stand_swivel_stop_l",
+   "depth_mm": 6.0,
+   "aabb": [
+    10.0,
+    10.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)",
+   "debt": false
+  },
+  {
+   "a": "stand_arm_strip0",
+   "b": "stand_arm_boss0",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    8.0,
+    11.0
+   ],
+   "tri_pairs": 32,
+   "reason": "側板のストリップとボスは一体品を別基本形で表現",
+   "debt": false
+  },
+  {
+   "a": "stand_arm_strip1",
+   "b": "stand_arm_boss1",
+   "depth_mm": 6.0,
+   "aabb": [
+    6.0,
+    8.0,
+    11.0
+   ],
+   "tri_pairs": 32,
+   "reason": "側板のストリップとボスは一体品を別基本形で表現",
+   "debt": false
+  },
+  {
+   "a": "stand_swivel_rotor",
+   "b": "stand_swivel_stop_tab",
+   "depth_mm": 6.0,
+   "aabb": [
+    10.0,
+    8.0,
+    6.0
+   ],
+   "tri_pairs": 24,
+   "reason": "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_hub",
+   "b": "fan_rad0_blade6",
+   "depth_mm": 5.699,
+   "aabb": [
+    5.699,
+    10.054,
+    23.579
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_blade0",
+   "b": "fan_psu_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    5.834,
+    5.6,
+    16.548
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_hub",
+   "b": "fan_psu_blade5",
+   "depth_mm": 5.6,
+   "aabb": [
+    10.576,
+    5.6,
+    10.788
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_hub",
+   "b": "fan_psu_blade3",
+   "depth_mm": 5.6,
+   "aabb": [
+    8.169,
+    5.6,
+    13.298
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_blade7",
+   "b": "fan_psu_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    13.61,
+    5.6,
+    8.062
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_blade1",
+   "b": "fan_psu_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    16.146,
+    5.6,
+    5.831
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_blade0",
+   "b": "fan_gpu0_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    12.518,
+    5.6,
+    13.063
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade7",
+   "depth_mm": 5.6,
+   "aabb": [
+    11.062,
+    5.6,
+    14.702
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_blade2",
+   "b": "fan_gpu0_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    6.209,
+    5.6,
+    20.982
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_blade1",
+   "b": "fan_gpu1_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    6.617,
+    5.6,
+    20.415
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_blade10",
+   "b": "fan_gpu1_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    12.006,
+    5.6,
+    13.609
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_blade3",
+   "b": "fan_gpu0_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    15.732,
+    5.6,
+    9.962
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_blade2",
+   "b": "fan_gpu1_hub",
+   "depth_mm": 5.6,
+   "aabb": [
+    16.304,
+    5.6,
+    9.491
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade4",
+   "depth_mm": 5.6,
+   "aabb": [
+    17.524,
+    5.6,
+    8.716
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade5",
+   "depth_mm": 5.6,
+   "aabb": [
+    7.208,
+    5.6,
+    19.093
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade5",
+   "depth_mm": 5.6,
+   "aabb": [
+    18.085,
+    5.6,
+    8.252
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade8",
+   "depth_mm": 5.6,
+   "aabb": [
+    10.552,
+    5.6,
+    15.244
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade6",
+   "depth_mm": 5.6,
+   "aabb": [
+    7.629,
+    5.6,
+    18.507
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade9",
+   "depth_mm": 5.565,
+   "aabb": [
+    21.33,
+    5.6,
+    5.565
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade8",
+   "depth_mm": 5.204,
+   "aabb": [
+    21.054,
+    5.6,
+    5.204
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_tail_lever1",
+   "depth_mm": 5.0,
+   "aabb": [
+    5.0,
+    12.0,
+    6.0
+   ],
+   "tri_pairs": 60,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_tail_lever0",
+   "depth_mm": 5.0,
+   "aabb": [
+    5.0,
+    12.0,
+    6.0
+   ],
+   "tri_pairs": 58,
+   "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "fan_pump_vrm_blade2",
+   "b": "fan_pump_vrm_hub",
+   "depth_mm": 4.987,
+   "aabb": [
+    6.298,
+    4.987,
+    6.482
+   ],
+   "tri_pairs": 16,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_hub",
+   "b": "fan_rad1_blade3",
+   "depth_mm": 4.921,
+   "aabb": [
+    21.685,
+    10.054,
+    4.921
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade9",
+   "depth_mm": 4.81,
+   "aabb": [
+    21.877,
+    5.6,
+    4.81
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "riser0",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "riser1",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "riser2",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "riser3",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "riser4",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "riser5",
+   "b": "riser_gpu_conn",
+   "depth_mm": 4.724,
+   "aabb": [
+    5.89,
+    4.724,
+    12.0
+   ],
+   "tri_pairs": 6,
+   "reason": "フレックスライザーの端末はGPU側コネクタ(ZIF)の口へ挿入される(嵌合。ZIFの差込口は未モデル=MDB-004)",
+   "debt": true
+  },
+  {
+   "a": "fan_rad1_hub",
+   "b": "fan_rad1_blade0",
+   "depth_mm": 4.686,
+   "aabb": [
+    22.572,
+    10.054,
+    4.686
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_hub",
+   "b": "fan_pump_vrm_blade0",
+   "depth_mm": 4.561,
+   "aabb": [
+    4.561,
+    4.987,
+    8.471
+   ],
+   "tri_pairs": 16,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade10",
+   "depth_mm": 4.465,
+   "aabb": [
+    21.403,
+    5.6,
+    4.465
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_blade4",
+   "b": "fan_pump_vrm_hub",
+   "depth_mm": 4.333,
+   "aabb": [
+    8.602,
+    4.987,
+    4.333
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_hub",
+   "b": "fan_psu_blade2",
+   "depth_mm": 3.958,
+   "aabb": [
+    18.218,
+    5.6,
+    3.958
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_blade2",
+   "b": "fan_rad0_hub",
+   "depth_mm": 3.951,
+   "aabb": [
+    3.951,
+    10.054,
+    21.204
+   ],
+   "tri_pairs": 12,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_blade8",
+   "b": "fan_psu_hub",
+   "depth_mm": 3.846,
+   "aabb": [
+    3.846,
+    5.6,
+    17.046
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_blade1",
+   "b": "fan_gpu0_hub",
+   "depth_mm": 3.813,
+   "aabb": [
+    3.813,
+    5.6,
+    19.686
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_blade0",
+   "b": "fan_gpu1_hub",
+   "depth_mm": 3.52,
+   "aabb": [
+    3.52,
+    5.6,
+    19.497
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade6",
+   "depth_mm": 3.329,
+   "aabb": [
+    3.329,
+    5.6,
+    20.055
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade7",
+   "depth_mm": 3.054,
+   "aabb": [
+    3.054,
+    5.6,
+    19.772
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad0_hub",
+   "b": "fan_rad0_blade4",
+   "depth_mm": 3.027,
+   "aabb": [
+    21.221,
+    10.054,
+    3.027
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction0_cap",
+   "depth_mm": 3.0,
+   "aabb": [
+    3.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_friction1_cap",
+   "depth_mm": 3.0,
+   "aabb": [
+    3.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "hinge_bolt_head0",
+   "b": "hinge_bolt0",
+   "depth_mm": 3.0,
+   "aabb": [
+    6.0,
+    3.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ボルト頭と軸は一体品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "hinge_bolt_head1",
+   "b": "hinge_bolt1",
+   "depth_mm": 3.0,
+   "aabb": [
+    6.0,
+    3.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ボルト頭と軸は一体品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "hinge_bolt_head2",
+   "b": "hinge_bolt2",
+   "depth_mm": 3.0,
+   "aabb": [
+    6.0,
+    3.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ボルト頭と軸は一体品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "hinge_bolt_head3",
+   "b": "hinge_bolt3",
+   "depth_mm": 3.0,
+   "aabb": [
+    6.0,
+    3.0,
+    6.0
+   ],
+   "tri_pairs": 32,
+   "reason": "ボルト頭と軸は一体品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "hinge_friction0",
+   "b": "hinge_friction0_cap",
+   "depth_mm": 3.0,
+   "aabb": [
+    3.0,
+    16.0,
+    16.0
+   ],
+   "tri_pairs": 24,
+   "reason": "摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入)",
+   "debt": false
+  },
+  {
+   "a": "hinge_friction1",
+   "b": "hinge_friction1_cap",
+   "depth_mm": 3.0,
+   "aabb": [
+    3.0,
+    16.0,
+    16.0
+   ],
+   "tri_pairs": 24,
+   "reason": "摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_hub",
+   "b": "fan_pump_vrm_blade5",
+   "depth_mm": 2.934,
+   "aabb": [
+    10.743,
+    4.987,
+    2.934
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_hub",
+   "b": "fan_pump_vrm_blade6",
+   "depth_mm": 2.674,
+   "aabb": [
+    2.674,
+    4.987,
+    10.527
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_hub",
+   "b": "fan_psu_blade4",
+   "depth_mm": 2.492,
+   "aabb": [
+    2.492,
+    5.6,
+    16.48
+   ],
+   "tri_pairs": 19,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_rad1_hub",
+   "b": "fan_rad1_blade5",
+   "depth_mm": 2.419,
+   "aabb": [
+    2.419,
+    10.054,
+    20.95
+   ],
+   "tri_pairs": 14,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu0_hub",
+   "b": "fan_gpu0_blade4",
+   "depth_mm": 2.409,
+   "aabb": [
+    19.174,
+    5.6,
+    2.409
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_psu_hub",
+   "b": "fan_psu_blade6",
+   "depth_mm": 2.274,
+   "aabb": [
+    16.012,
+    5.6,
+    2.274
+   ],
+   "tri_pairs": 20,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "fan_gpu1_hub",
+   "b": "fan_gpu1_blade3",
+   "depth_mm": 2.207,
+   "aabb": [
+    19.202,
+    5.6,
+    2.207
+   ],
+   "tri_pairs": 18,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_cheek_l",
+   "depth_mm": 2.0,
+   "aabb": [
+    6.0,
+    2.0,
+    22.0
+   ],
+   "tri_pairs": 31,
+   "reason": "ヒンジブロック台座と頬板は溶接一体の板金品",
+   "debt": false
+  },
+  {
+   "a": "gpu_12v2x6",
+   "b": "cable_plug_W3_gpu",
+   "depth_mm": 2.0,
+   "aabb": [
+    21.0,
+    2.0,
+    9.0
+   ],
+   "tri_pairs": 28,
+   "reason": "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)",
+   "debt": false
+  },
+  {
+   "a": "hinge_block_base",
+   "b": "hinge_cheek_r",
+   "depth_mm": 2.0,
+   "aabb": [
+    6.0,
+    2.0,
+    22.0
+   ],
+   "tri_pairs": 27,
+   "reason": "ヒンジブロック台座と頬板は溶接一体の板金品",
+   "debt": false
+  },
+  {
+   "a": "atx24",
+   "b": "cable_plug_W1_board",
+   "depth_mm": 2.0,
+   "aabb": [
+    49.5,
+    2.0,
+    9.4
+   ],
+   "tri_pairs": 20,
+   "reason": "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)",
+   "debt": false
+  },
+  {
+   "a": "gpu_cradle_wall_l",
+   "b": "gpu_cradle_base",
+   "depth_mm": 2.0,
+   "aabb": [
+    2.0,
+    3.0,
+    10.0
+   ],
+   "tri_pairs": 18,
+   "reason": "GPUクレードルの底板と側壁は一体の板金折り曲げ品",
+   "debt": false
+  },
+  {
+   "a": "gpu_cradle_base",
+   "b": "gpu_cradle_wall_r",
+   "depth_mm": 2.0,
+   "aabb": [
+    2.0,
+    3.0,
+    10.0
+   ],
+   "tri_pairs": 16,
+   "reason": "GPUクレードルの底板と側壁は一体の板金折り曲げ品",
+   "debt": false
+  },
+  {
+   "a": "psu_body",
+   "b": "psu_socket0",
+   "depth_mm": 2.0,
+   "aabb": [
+    52.0,
+    11.0,
+    2.0
+   ],
+   "tri_pairs": 12,
+   "reason": "モジュラーソケットは筐体前面の開口に嵌合",
+   "debt": false
+  },
+  {
+   "a": "psu_body",
+   "b": "psu_socket3",
+   "depth_mm": 2.0,
+   "aabb": [
+    19.0,
+    7.0,
+    2.0
+   ],
+   "tri_pairs": 12,
+   "reason": "モジュラーソケットは筐体前面の開口に嵌合",
+   "debt": false
+  },
+  {
+   "a": "psu_body",
+   "b": "psu_socket1",
+   "depth_mm": 2.0,
+   "aabb": [
+    26.0,
+    19.0,
+    2.0
+   ],
+   "tri_pairs": 12,
+   "reason": "モジュラーソケットは筐体前面の開口に嵌合",
+   "debt": false
+  },
+  {
+   "a": "psu_body",
+   "b": "psu_socket2",
+   "depth_mm": 2.0,
+   "aabb": [
+    24.0,
+    11.0,
+    2.0
+   ],
+   "tri_pairs": 12,
+   "reason": "モジュラーソケットは筐体前面の開口に嵌合",
+   "debt": false
+  },
+  {
+   "a": "eps8",
+   "b": "cable_plug_W2_board",
+   "depth_mm": 2.0,
+   "aabb": [
+    11.2,
+    2.0,
+    17.5
+   ],
+   "tri_pairs": 8,
+   "reason": "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_blade3",
+   "b": "fan_pump_vrm_hub",
+   "depth_mm": 1.683,
+   "aabb": [
+    1.683,
+    4.987,
+    10.031
+   ],
+   "tri_pairs": 16,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "gpu_shroud_body",
+   "b": "gpu_trim",
+   "depth_mm": 1.6,
+   "aabb": [
+    150.0,
+    13.0,
+    1.6
+   ],
+   "tri_pairs": 22,
+   "reason": "GPUシュラウドと加飾トリムは一体の外装部品",
+   "debt": false
+  },
+  {
+   "a": "stand_swivel_bearing",
+   "b": "stand_swivel_friction_ring",
+   "depth_mm": 1.5,
+   "aabb": [
+    70.0,
+    70.0,
+    1.5
+   ],
+   "tri_pairs": 52,
+   "reason": "摩擦リングは軸受座面に圧着する嵌合部品",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab0",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 8,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab5",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 8,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab1",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 4,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab2",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 4,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab3",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 4,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "cover_back",
+   "b": "hook_tab4",
+   "depth_mm": 1.5,
+   "aabb": [
+    14.0,
+    1.5,
+    7.0
+   ],
+   "tri_pairs": 4,
+   "reason": "掛け爪はドーム(cover_back)と一体成形の突起(別基本形で表現。台帳MODEL記載)",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_hub",
+   "b": "fan_pump_vrm_blade1",
+   "depth_mm": 1.403,
+   "aabb": [
+    9.576,
+    4.987,
+    1.403
+   ],
+   "tri_pairs": 16,
+   "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "vrm_shroud",
+   "b": "vrm_trim",
+   "depth_mm": 1.2,
+   "aabb": [
+    93.0,
+    5.0,
+    1.2
+   ],
+   "tri_pairs": 20,
+   "reason": "VRMシュラウドとトリムは一体の外装部品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "pe_braid_swivel",
+   "b": "pe_lug_rotor",
+   "depth_mm": 1.2,
+   "aabb": [
+    5.78,
+    8.0,
+    1.2
+   ],
+   "tri_pairs": 20,
+   "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
+   "debt": false
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_eclip0",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "hinge_axle",
+   "b": "hinge_eclip1",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    12.0,
+    12.0
+   ],
+   "tri_pairs": 96,
+   "reason": "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)",
+   "debt": true
+  },
+  {
+   "a": "board_hdr_aio_pump",
+   "b": "cable_plug_F1_aio",
+   "depth_mm": 1.0,
+   "aabb": [
+    6.0,
+    1.0,
+    10.9
+   ],
+   "tri_pairs": 36,
+   "reason": "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)",
+   "debt": true
+  },
+  {
+   "a": "board_hdr_cha_fan",
+   "b": "cable_plug_F2_cha",
+   "depth_mm": 1.0,
+   "aabb": [
+    6.0,
+    1.0,
+    10.8
+   ],
+   "tri_pairs": 36,
+   "reason": "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)",
+   "debt": true
+  },
+  {
+   "a": "board_hdr_vrm_hs_fan",
+   "b": "cable_plug_F3_vrm",
+   "depth_mm": 1.0,
+   "aabb": [
+    9.5,
+    1.0,
+    3.5
+   ],
+   "tri_pairs": 36,
+   "reason": "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)",
+   "debt": true
+  },
+  {
+   "a": "hang_bushing0a",
+   "b": "hang_bushing0c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 35,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing2a",
+   "b": "hang_bushing2c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 35,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing1a",
+   "b": "hang_bushing1c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 35,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing3a",
+   "b": "hang_bushing3c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 35,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing0b",
+   "b": "hang_bushing0c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 33,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing2b",
+   "b": "hang_bushing2c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 33,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing1b",
+   "b": "hang_bushing1c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 33,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing3b",
+   "b": "hang_bushing3c",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    7.347
+   ],
+   "tri_pairs": 33,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing0a",
+   "b": "hang_bushing0b",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    2.695
+   ],
+   "tri_pairs": 26,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing2a",
+   "b": "hang_bushing2b",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    2.695
+   ],
+   "tri_pairs": 26,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing1a",
+   "b": "hang_bushing1b",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    2.695
+   ],
+   "tri_pairs": 26,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "hang_bushing3a",
+   "b": "hang_bushing3b",
+   "depth_mm": 1.0,
+   "aabb": [
+    16.0,
+    1.0,
+    2.695
+   ],
+   "tri_pairs": 26,
+   "reason": "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現",
+   "debt": false
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usb4_c1_tongue",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    1.0,
+    9.0
+   ],
+   "tri_pairs": 24,
+   "reason": "舌片はI/Oシールドの一部(切起こし)",
+   "debt": false
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usb4_c2_tongue",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    1.0,
+    9.0
+   ],
+   "tri_pairs": 24,
+   "reason": "舌片はI/Oシールドの一部(切起こし)",
+   "debt": false
+  },
+  {
+   "a": "io_shield",
+   "b": "io_usbc_10g_tongue",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    1.0,
+    9.0
+   ],
+   "tri_pairs": 24,
+   "reason": "舌片はI/Oシールドの一部(切起こし)",
+   "debt": false
+  },
+  {
+   "a": "ac_inlet_flange",
+   "b": "ac_inlet_body",
+   "depth_mm": 1.0,
+   "aabb": [
+    28.0,
+    20.0,
+    1.0
+   ],
+   "tri_pairs": 12,
+   "reason": "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "pe_nut_tray",
+   "b": "pe_stud_tray",
+   "depth_mm": 1.0,
+   "aabb": [
+    4.0,
+    1.0,
+    4.0
+   ],
+   "tri_pairs": 12,
+   "reason": "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)",
+   "debt": true
+  },
+  {
+   "a": "pump_cap_lip",
+   "b": "pump_swivel_0",
+   "depth_mm": 1.0,
+   "aabb": [
+    1.0,
+    7.2,
+    20.4
+   ],
+   "tri_pairs": 8,
+   "reason": "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike0",
+   "b": "latch_cam0",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike1",
+   "b": "latch_cam1",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike2",
+   "b": "latch_cam2",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike3",
+   "b": "latch_cam3",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike4",
+   "b": "latch_cam4",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "latch_strike5",
+   "b": "latch_cam5",
+   "depth_mm": 0.7,
+   "aabb": [
+    8.0,
+    0.7,
+    5.0
+   ],
+   "tri_pairs": 7,
+   "reason": "1/4回転ラッチのカムはストライク板へ圧着(クランプ接触0.7mm)",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring4",
+   "b": "psu_grille_ring3",
+   "depth_mm": 0.5,
+   "aabb": [
+    57.0,
+    0.5,
+    57.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring4",
+   "b": "psu_grille_ring2",
+   "depth_mm": 0.5,
+   "aabb": [
+    38.0,
+    0.5,
+    38.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring4",
+   "b": "psu_grille_ring1",
+   "depth_mm": 0.5,
+   "aabb": [
+    19.0,
+    0.5,
+    19.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring3",
+   "b": "psu_grille_ring2",
+   "depth_mm": 0.5,
+   "aabb": [
+    38.0,
+    0.5,
+    38.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring3",
+   "b": "psu_grille_ring1",
+   "depth_mm": 0.5,
+   "aabb": [
+    19.0,
+    0.5,
+    19.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_ring2",
+   "b": "psu_grille_ring1",
+   "depth_mm": 0.5,
+   "aabb": [
+    19.0,
+    0.5,
+    19.0
+   ],
+   "tri_pairs": 96,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_spokes",
+   "b": "psu_grille_ring4",
+   "depth_mm": 0.5,
+   "aabb": [
+    76.0,
+    0.5,
+    76.0
+   ],
+   "tri_pairs": 72,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_spokes",
+   "b": "psu_grille_ring3",
+   "depth_mm": 0.5,
+   "aabb": [
+    57.0,
+    0.5,
+    57.0
+   ],
+   "tri_pairs": 72,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_spokes",
+   "b": "psu_grille_ring2",
+   "depth_mm": 0.5,
+   "aabb": [
+    38.0,
+    0.5,
+    38.0
+   ],
+   "tri_pairs": 72,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "psu_grille_spokes",
+   "b": "psu_grille_ring1",
+   "depth_mm": 0.5,
+   "aabb": [
+    19.0,
+    0.5,
+    19.0
+   ],
+   "tri_pairs": 72,
+   "reason": "グリルのリングとスポークは一体品",
+   "debt": false
+  },
+  {
+   "a": "fan_pump_vrm_frame",
+   "b": "pump_housing_body",
+   "depth_mm": 0.5,
+   "aabb": [
+    0.5,
+    12.0,
+    46.0
+   ],
+   "tri_pairs": 12,
+   "reason": "【公差内の重なり0.5mm】VRMファン径Ø55は未確認(U58)、筐体位置はARCTIC図面の画素実測(±0.5〜1mm)。実測公差以内のため寸法確定までUNVERIFIEDとして保留(台帳 MDC/U58)",
+   "debt": true
+  },
+  {
+   "a": "ac_inlet_flange",
+   "b": "ac_inlet_socket",
+   "depth_mm": 0.5,
+   "aabb": [
+    22.0,
+    15.0,
+    0.5
+   ],
+   "tri_pairs": 4,
+   "reason": "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "pcie_gold",
+   "depth_mm": 0.4,
+   "aabb": [
+    2.0,
+    0.4,
+    60.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "pe_braid_swivel",
+   "b": "pe_lug_foot",
+   "depth_mm": 0.391,
+   "aabb": [
+    8.0,
+    5.78,
+    0.391
+   ],
+   "tri_pairs": 8,
+   "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser0",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser1",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser2",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser3",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser4",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  },
+  {
+   "a": "riser_plug",
+   "b": "riser5",
+   "depth_mm": 0.161,
+   "aabb": [
+    0.161,
+    10.819,
+    12.0
+   ],
+   "tri_pairs": 4,
+   "reason": "ライザーのプラグ部はケーブル基板と一体、金端子はPCIeスロットへ挿入される嵌合",
+   "debt": false
+  }
+ ],
+ "allowed_debt": 25,
+ "remaining": 37,
+ "remaining_pairs": [
+  {
+   "a": "cover_filter",
+   "b": "cable_H1",
+   "tri_pairs": 50,
+   "aabb_overlap_mm": [
+    297.3,
+    76.2,
+    70.05
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "cable_W7",
+   "tri_pairs": 36,
+   "aabb_overlap_mm": [
+    28.21,
+    15.459,
+    208.119
+   ]
+  },
+  {
+   "a": "riser0",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "riser1",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "riser2",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "riser3",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "riser4",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "riser5",
+   "b": "cable_W7",
+   "tri_pairs": 14,
+   "aabb_overlap_mm": [
+    14.601,
+    15.459,
+    12.0
+   ]
+  },
+  {
+   "a": "cable_H1",
+   "b": "pump_fitting_0",
+   "tri_pairs": 34,
+   "aabb_overlap_mm": [
+    11.1,
+    14.3,
+    11.1
+   ]
+  },
+  {
+   "a": "cable_H2",
+   "b": "pump_fitting_1",
+   "tri_pairs": 34,
+   "aabb_overlap_mm": [
+    11.1,
+    14.3,
+    11.1
+   ]
+  },
+  {
+   "a": "hinge_friction0",
+   "b": "pe_braid_hinge",
+   "tri_pairs": 24,
+   "aabb_overlap_mm": [
+    10.525,
+    22.0,
+    13.954
+   ]
+  },
+  {
+   "a": "cable_W2",
+   "b": "cable_W1",
+   "tri_pairs": 42,
+   "aabb_overlap_mm": [
+    10.047,
+    12.817,
+    23.883
+   ]
+  },
+  {
+   "a": "hinge_axle",
+   "b": "pe_braid_hinge",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    10.525,
+    12.0,
+    8.954
+   ]
+  },
+  {
+   "a": "psu_socket2",
+   "b": "cable_W3",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    16.5,
+    9.91,
+    6.0
+   ]
+  },
+  {
+   "a": "cable_plug_W1_board",
+   "b": "cable_W1",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    10.047,
+    5.547,
+    6.235
+   ]
+  },
+  {
+   "a": "cable_W2",
+   "b": "cable_plug_W2_board",
+   "tri_pairs": 31,
+   "aabb_overlap_mm": [
+    11.2,
+    3.679,
+    10.723
+   ]
+  },
+  {
+   "a": "psu_socket0",
+   "b": "cable_W1",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    10.047,
+    11.0,
+    3.38
+   ]
+  },
+  {
+   "a": "psu_socket3",
+   "b": "cable_W4",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    11.336,
+    7.0,
+    3.312
+   ]
+  },
+  {
+   "a": "gasket",
+   "b": "cover_filter",
+   "tri_pairs": 571,
+   "aabb_overlap_mm": [
+    589.599,
+    3.0,
+    370.899
+   ]
+  },
+  {
+   "a": "cable_W5",
+   "b": "clip_post5",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    3.0,
+    7.159,
+    6.0
+   ]
+  },
+  {
+   "a": "io_shield",
+   "b": "board_m2_wifi_module",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    7.9,
+    3.0,
+    23.6
+   ]
+  },
+  {
+   "a": "pe_braid_tray_a",
+   "b": "pe_stud_tray",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    3.537,
+    6.402,
+    2.506
+   ]
+  },
+  {
+   "a": "pe_braid_tray_b",
+   "b": "pe_stud_tray",
+   "tri_pairs": 18,
+   "aabb_overlap_mm": [
+    3.537,
+    6.402,
+    2.506
+   ]
+  },
+  {
+   "a": "tray_handle_post0",
+   "b": "tray_handle_wire",
+   "tri_pairs": 29,
+   "aabb_overlap_mm": [
+    4.5,
+    2.5,
+    3.0
+   ]
+  },
+  {
+   "a": "tray_handle_wire",
+   "b": "tray_handle_post1",
+   "tri_pairs": 20,
+   "aabb_overlap_mm": [
+    4.5,
+    2.5,
+    3.0
+   ]
+  },
+  {
+   "a": "eps8",
+   "b": "screw_board0_head",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    5.6,
+    2.4,
+    5.6
+   ]
+  },
+  {
+   "a": "cable_W2",
+   "b": "psu_socket1",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    15.8,
+    16.29,
+    2.347
+   ]
+  },
+  {
+   "a": "pe_braid_tray_a",
+   "b": "pe_nut_tray",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    4.569,
+    2.0,
+    4.006
+   ]
+  },
+  {
+   "a": "pe_braid_tray_b",
+   "b": "pe_nut_tray",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    4.569,
+    2.0,
+    4.006
+   ]
+  },
+  {
+   "a": "hinge_cover",
+   "b": "pe_braid_hinge",
+   "tri_pairs": 26,
+   "aabb_overlap_mm": [
+    10.525,
+    2.0,
+    12.954
+   ]
+  },
+  {
+   "a": "cover_filter",
+   "b": "rf_window_plate",
+   "tri_pairs": 4,
+   "aabb_overlap_mm": [
+    60.0,
+    2.0,
+    30.0
+   ]
+  },
+  {
+   "a": "cable_H2",
+   "b": "rad_port_RAD_PORT_B",
+   "tri_pairs": 11,
+   "aabb_overlap_mm": [
+    12.584,
+    1.194,
+    12.466
+   ]
+  },
+  {
+   "a": "pe_braid_tray_a",
+   "b": "pe_braid_tray_b",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    14.992,
+    11.962,
+    1.012
+   ]
+  },
+  {
+   "a": "vrm_fan_ring",
+   "b": "pump_screw_head1",
+   "tri_pairs": 32,
+   "aabb_overlap_mm": [
+    7.0,
+    1.0,
+    7.0
+   ]
+  },
+  {
+   "a": "vrm_fan_ring",
+   "b": "pump_cage_rib10",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    4.0,
+    1.0,
+    3.273
+   ]
+  },
+  {
+   "a": "eps8",
+   "b": "io_shield",
+   "tri_pairs": 16,
+   "aabb_overlap_mm": [
+    0.4,
+    11.0,
+    18.1
+   ]
+  },
+  {
+   "a": "stand_swivel_rotor",
+   "b": "pe_braid_swivel",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    41.421,
+    41.424,
+    0.191
+   ]
+  }
+ ],
+ "note": "深さ=2物体のAABB重なりの最小軸(近似)。三角形交差のある対のみ。実際の貫入量ではなく上限の目安。allowed_debt=許容理由に未モデル/保留/未確認を含む対(=未解決。合格ではない)。ケーブル等の曲線オブジェクト・非表示物は検査対象外(R13参照)。"
+}

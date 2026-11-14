@@ -811,6 +811,15 @@
    "file": "interference-report/interference-report.v023__2026-11-14_781c3bf.md"
   },
   {
+   "src": "docs/interference-report.md",
+   "version": 24,
+   "gen": "current",
+   "date": "2026-11-14",
+   "commit": "36957b7",
+   "sha256": "4e919f6bfe86e353b19102a9b29f4d696329e0143f04f565d832e283f96c962a",
+   "file": "interference-report/interference-report.v024__2026-11-14_36957b7.md"
+  },
+  {
    "src": "docs/joint-analysis.md",
    "version": 1,
    "gen": "current",

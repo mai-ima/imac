@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-14T00:11Z",
+ "generated": "2026-11-14T00:58Z",
  "objects": 664,
- "pairs_total": 562,
+ "pairs_total": 559,
  "touch_only": 373,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -17,6 +17,7 @@
   "側板のストリップとボスは一体品を別基本形で表現": 2,
   "ヒンジブロック台座と頬板は溶接一体の板金品": 2,
   "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
+  "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)": 4,
   "舌片はI/Oシールドの一部(切起こし)": 3,
   "摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入)": 2,
   "GPUシュラウドと加飾トリムは一体の外装部品": 1,
@@ -24,6 +25,7 @@
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)": 2,
   "GPUクレードルの底板と側壁は一体の板金折り曲げ品": 2,
+  "2本の編組は同一端子(スタッド)から分岐する=始端が重なる": 1,
   "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)": 2,
   "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)": 1,
   "モジュラーソケットは筐体前面の開口に嵌合": 4,
@@ -1010,6 +1012,32 @@
    "debt": false
   },
   {
+   "a": "pe_braid_tray_a",
+   "b": "pe_stud_tray",
+   "depth_mm": 2.506,
+   "aabb": [
+    3.537,
+    6.402,
+    2.506
+   ],
+   "tri_pairs": 18,
+   "reason": "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)",
+   "debt": true
+  },
+  {
+   "a": "pe_braid_tray_b",
+   "b": "pe_stud_tray",
+   "depth_mm": 2.506,
+   "aabb": [
+    3.537,
+    6.402,
+    2.506
+   ],
+   "tri_pairs": 18,
+   "reason": "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)",
+   "debt": true
+  },
+  {
    "a": "fan_psu_hub",
    "b": "fan_psu_blade4",
    "depth_mm": 2.492,
@@ -1112,6 +1140,32 @@
    "tri_pairs": 27,
    "reason": "ヒンジブロック台座と頬板は溶接一体の板金品",
    "debt": false
+  },
+  {
+   "a": "pe_braid_tray_a",
+   "b": "pe_nut_tray",
+   "depth_mm": 2.0,
+   "aabb": [
+    4.569,
+    2.0,
+    4.006
+   ],
+   "tri_pairs": 26,
+   "reason": "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)",
+   "debt": true
+  },
+  {
+   "a": "pe_braid_tray_b",
+   "b": "pe_nut_tray",
+   "depth_mm": 2.0,
+   "aabb": [
+    4.569,
+    2.0,
+    4.006
+   ],
+   "tri_pairs": 26,
+   "reason": "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)",
+   "debt": true
   },
   {
    "a": "atx24",
@@ -1371,6 +1425,19 @@
    ],
    "tri_pairs": 20,
    "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
+   "debt": false
+  },
+  {
+   "a": "pe_braid_tray_a",
+   "b": "pe_braid_tray_b",
+   "depth_mm": 1.012,
+   "aabb": [
+    14.992,
+    11.962,
+    1.012
+   ],
+   "tri_pairs": 16,
+   "reason": "2本の編組は同一端子(スタッド)から分岐する=始端が重なる",
    "debt": false
   },
   {
@@ -2011,8 +2078,8 @@
    "debt": false
   }
  ],
- "allowed_debt": 25,
- "remaining": 37,
+ "allowed_debt": 29,
+ "remaining": 29,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -2115,16 +2182,6 @@
    ]
   },
   {
-   "a": "hinge_friction0",
-   "b": "pe_braid_hinge",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    10.525,
-    22.0,
-    13.954
-   ]
-  },
-  {
    "a": "cable_W2",
    "b": "cable_W1",
    "tri_pairs": 42,
@@ -2132,16 +2189,6 @@
     10.047,
     12.817,
     23.883
-   ]
-  },
-  {
-   "a": "hinge_axle",
-   "b": "pe_braid_hinge",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    10.525,
-    12.0,
-    8.954
    ]
   },
   {
@@ -2225,26 +2272,6 @@
    ]
   },
   {
-   "a": "pe_braid_tray_a",
-   "b": "pe_stud_tray",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    3.537,
-    6.402,
-    2.506
-   ]
-  },
-  {
-   "a": "pe_braid_tray_b",
-   "b": "pe_stud_tray",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    3.537,
-    6.402,
-    2.506
-   ]
-  },
-  {
    "a": "tray_handle_post0",
    "b": "tray_handle_wire",
    "tri_pairs": 29,
@@ -2285,36 +2312,6 @@
    ]
   },
   {
-   "a": "pe_braid_tray_a",
-   "b": "pe_nut_tray",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    4.569,
-    2.0,
-    4.006
-   ]
-  },
-  {
-   "a": "pe_braid_tray_b",
-   "b": "pe_nut_tray",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    4.569,
-    2.0,
-    4.006
-   ]
-  },
-  {
-   "a": "hinge_cover",
-   "b": "pe_braid_hinge",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    10.525,
-    2.0,
-    12.954
-   ]
-  },
-  {
    "a": "cover_filter",
    "b": "rf_window_plate",
    "tri_pairs": 4,
@@ -2332,16 +2329,6 @@
     12.584,
     1.194,
     12.466
-   ]
-  },
-  {
-   "a": "pe_braid_tray_a",
-   "b": "pe_braid_tray_b",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    14.992,
-    11.962,
-    1.012
    ]
   },
   {
