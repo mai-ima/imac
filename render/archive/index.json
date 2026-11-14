@@ -19,6 +19,15 @@
    "file": "blender_test/blender_test.v001__2026-11-07_5ba6032.png"
   },
   {
+   "src": "render/blender_test.png",
+   "version": 2,
+   "gen": "current",
+   "date": "2026-11-11",
+   "commit": "2566006",
+   "sha256": "fa973022e8398bed3295f63ec3e8877a4090724d6b4dc0575d146cc96fc0660f",
+   "file": "blender_test/blender_test.v002__2026-11-11_2566006.png"
+  },
+  {
    "src": "render/blueprint.png",
    "version": 1,
    "gen": "current",
