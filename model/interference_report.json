@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-14T00:09Z",
- "objects": 662,
- "pairs_total": 564,
- "touch_only": 371,
+ "generated": "2026-11-14T00:11Z",
+ "objects": 664,
+ "pairs_total": 562,
+ "touch_only": 373,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -22,6 +22,7 @@
   "GPUシュラウドと加飾トリムは一体の外装部品": 1,
   "VRMシュラウドとトリムは一体の外装部品(別基本形で表現)": 1,
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
+  "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)": 2,
   "GPUクレードルの底板と側壁は一体の板金折り曲げ品": 2,
   "ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現)": 2,
   "ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル)": 1,
@@ -1251,7 +1252,7 @@
     70.0,
     1.5
    ],
-   "tri_pairs": 48,
+   "tri_pairs": 52,
    "reason": "摩擦リングは軸受座面に圧着する嵌合部品",
    "debt": false
   },
@@ -1357,6 +1358,19 @@
    ],
    "tri_pairs": 20,
    "reason": "VRMシュラウドとトリムは一体の外装部品(別基本形で表現)",
+   "debt": false
+  },
+  {
+   "a": "pe_braid_swivel",
+   "b": "pe_lug_rotor",
+   "depth_mm": 1.2,
+   "aabb": [
+    5.78,
+    8.0,
+    1.2
+   ],
+   "tri_pairs": 20,
+   "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
    "debt": false
   },
   {
@@ -1906,6 +1920,19 @@
    "debt": false
   },
   {
+   "a": "pe_braid_swivel",
+   "b": "pe_lug_foot",
+   "depth_mm": 0.391,
+   "aabb": [
+    8.0,
+    5.78,
+    0.391
+   ],
+   "tri_pairs": 8,
+   "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
+   "debt": false
+  },
+  {
    "a": "riser_plug",
    "b": "riser0",
    "depth_mm": 0.161,
@@ -1985,7 +2012,7 @@
   }
  ],
  "allowed_debt": 25,
- "remaining": 43,
+ "remaining": 37,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -1995,16 +2022,6 @@
     297.3,
     76.2,
     70.05
-   ]
-  },
-  {
-   "a": "stand_skirt",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 38,
-   "aabb_overlap_mm": [
-    40.212,
-    92.15,
-    24.5
    ]
   },
   {
@@ -2098,26 +2115,6 @@
    ]
   },
   {
-   "a": "stand_neck_collar",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 36,
-   "aabb_overlap_mm": [
-    40.212,
-    92.15,
-    10.8
-   ]
-  },
-  {
-   "a": "stand_neck_shroud",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 32,
-   "aabb_overlap_mm": [
-    14.424,
-    31.211,
-    10.8
-   ]
-  },
-  {
    "a": "hinge_friction0",
    "b": "pe_braid_hinge",
    "tri_pairs": 24,
@@ -2148,16 +2145,6 @@
    ]
   },
   {
-   "a": "stand_swivel_stator",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 35,
-   "aabb_overlap_mm": [
-    38.424,
-    88.15,
-    6.0
-   ]
-  },
-  {
    "a": "psu_socket2",
    "b": "cable_W3",
    "tri_pairs": 16,
@@ -2175,16 +2162,6 @@
     10.047,
     5.547,
     6.235
-   ]
-  },
-  {
-   "a": "stand_neck_base",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    5.424,
-    21.211,
-    8.0
    ]
   },
   {
@@ -2248,16 +2225,6 @@
    ]
   },
   {
-   "a": "stand_foot",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 14,
-   "aabb_overlap_mm": [
-    40.212,
-    99.698,
-    2.724
-   ]
-  },
-  {
    "a": "pe_braid_tray_a",
    "b": "pe_stud_tray",
    "tri_pairs": 18,
@@ -2315,16 +2282,6 @@
     15.8,
     16.29,
     2.347
-   ]
-  },
-  {
-   "a": "stand_neck_collar_cap",
-   "b": "pe_braid_swivel",
-   "tri_pairs": 46,
-   "aabb_overlap_mm": [
-    40.212,
-    89.95,
-    2.0
    ]
   },
   {
@@ -2415,6 +2372,16 @@
     0.4,
     11.0,
     18.1
+   ]
+  },
+  {
+   "a": "stand_swivel_rotor",
+   "b": "pe_braid_swivel",
+   "tri_pairs": 6,
+   "aabb_overlap_mm": [
+    41.421,
+    41.424,
+    0.191
    ]
   }
  ],

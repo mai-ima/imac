@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、662物体、交差対 564。
-- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 150(うち**負債ALLOW(未解決の許容)=25**) / **要対処: 43**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、664物体、交差対 562。
+- 接触のみ(深さ<0.15mm): 373 / 意図した一体・嵌合(ALLOW): 152(うち**負債ALLOW(未解決の許容)=25**) / **要対処: 37**
 - 注意: ケーブル(曲線)・非表示物・完全内包は検出できない(audit_control/reports/R13_interference_allow.md)。
 
 ## ALLOW(理由つき)
@@ -23,6 +23,7 @@
 - GPUシュラウドと加飾トリムは一体の外装部品: 1対
 - VRMシュラウドとトリムは一体の外装部品(別基本形で表現): 1対
 - ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形): 52対
+- PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る): 2対
 - GPUクレードルの底板と側壁は一体の板金折り曲げ品: 2対
 - ACインレットのフランジ・本体・ソケットは一体の部品(別基本形で表現): 2対
 - ナットはスタッドにねじ込み(ねじ嵌合, ねじ山は未モデル): 1対
@@ -90,7 +91,6 @@
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
 | cover_filter | cable_H1 | 50 | [297.3, 76.2, 70.05] | 70.05 |
-| stand_skirt | pe_braid_swivel | 38 | [40.212, 92.15, 24.5] | 24.50 |
 | cover_filter | cable_W7 | 36 | [28.21, 15.459, 208.119] | 15.46 |
 | riser0 | cable_W7 | 14 | [14.601, 15.459, 12.0] | 12.00 |
 | riser1 | cable_W7 | 14 | [14.601, 15.459, 12.0] | 12.00 |
@@ -100,29 +100,23 @@
 | riser5 | cable_W7 | 14 | [14.601, 15.459, 12.0] | 12.00 |
 | cable_H1 | pump_fitting_0 | 34 | [11.1, 14.3, 11.1] | 11.10 |
 | cable_H2 | pump_fitting_1 | 34 | [11.1, 14.3, 11.1] | 11.10 |
-| stand_neck_collar | pe_braid_swivel | 36 | [40.212, 92.15, 10.8] | 10.80 |
-| stand_neck_shroud | pe_braid_swivel | 32 | [14.424, 31.211, 10.8] | 10.80 |
 | hinge_friction0 | pe_braid_hinge | 24 | [10.525, 22.0, 13.954] | 10.53 |
 | cable_W2 | cable_W1 | 42 | [10.047, 12.817, 23.883] | 10.05 |
 | hinge_axle | pe_braid_hinge | 32 | [10.525, 12.0, 8.954] | 8.95 |
-| stand_swivel_stator | pe_braid_swivel | 35 | [38.424, 88.15, 6.0] | 6.00 |
 | psu_socket2 | cable_W3 | 16 | [16.5, 9.91, 6.0] | 6.00 |
 | cable_plug_W1_board | cable_W1 | 18 | [10.047, 5.547, 6.235] | 5.55 |
-| stand_neck_base | pe_braid_swivel | 16 | [5.424, 21.211, 8.0] | 5.42 |
 | cable_W2 | cable_plug_W2_board | 31 | [11.2, 3.679, 10.723] | 3.68 |
 | psu_socket0 | cable_W1 | 20 | [10.047, 11.0, 3.38] | 3.38 |
 | psu_socket3 | cable_W4 | 18 | [11.336, 7.0, 3.312] | 3.31 |
 | gasket | cover_filter | 571 | [589.599, 3.0, 370.899] | 3.00 |
 | cable_W5 | clip_post5 | 20 | [3.0, 7.159, 6.0] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
-| stand_foot | pe_braid_swivel | 14 | [40.212, 99.698, 2.724] | 2.72 |
 | pe_braid_tray_a | pe_stud_tray | 18 | [3.537, 6.402, 2.506] | 2.51 |
 | pe_braid_tray_b | pe_stud_tray | 18 | [3.537, 6.402, 2.506] | 2.51 |
 | tray_handle_post0 | tray_handle_wire | 29 | [4.5, 2.5, 3.0] | 2.50 |
 | tray_handle_wire | tray_handle_post1 | 20 | [4.5, 2.5, 3.0] | 2.50 |
 | eps8 | screw_board0_head | 16 | [5.6, 2.4, 5.6] | 2.40 |
 | cable_W2 | psu_socket1 | 16 | [15.8, 16.29, 2.347] | 2.35 |
-| stand_neck_collar_cap | pe_braid_swivel | 46 | [40.212, 89.95, 2.0] | 2.00 |
 | pe_braid_tray_a | pe_nut_tray | 26 | [4.569, 2.0, 4.006] | 2.00 |
 | pe_braid_tray_b | pe_nut_tray | 26 | [4.569, 2.0, 4.006] | 2.00 |
 | hinge_cover | pe_braid_hinge | 26 | [10.525, 2.0, 12.954] | 2.00 |
@@ -132,3 +126,4 @@
 | vrm_fan_ring | pump_screw_head1 | 32 | [7.0, 1.0, 7.0] | 1.00 |
 | vrm_fan_ring | pump_cage_rib10 | 16 | [4.0, 1.0, 3.273] | 1.00 |
 | eps8 | io_shield | 16 | [0.4, 11.0, 18.1] | 0.40 |
+| stand_swivel_rotor | pe_braid_swivel | 6 | [41.421, 41.424, 0.191] | 0.19 |

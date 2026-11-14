@@ -202,6 +202,13 @@ hw('首振り', 'M5ボルト 内輪PCD70×6 / 外輪PCD90×6(型番カタログ�
 hw('接地', 'スイベル跨ぎ編組(ネック→足, 余長でねじれ±60°を許容)', 1, 'CP-18')
 din = lambda x, y, z: (x - X0, y - Y0, Z0 - z)      # 設計座標→内部座標
 PEJ = json.load(open(os.path.join(ROOT, 'model', 'pe_braids.json')))
-cable('pe_braid_swivel', [din(58, SY0 + 27, SZ - 8), din(75, SY0 + 34, SZ - 30), din(95, SY0 + 22, SZ - 70), din(85, SY0 + 14, SZ - 105), din(60, SY0 + 10, SZ - 100), din(60, SY0 + 5, SZ - 75), din(70, SY0 - 1, SZ - 55)], 1.8, M['pe_gy'])      # ネック(回転側)→足(固定側): ループで ±60° に追従(長さ model/pe_braids.json)
+_R = 19.0; _n = 26      # 首振り軸受の中空部(ID60)を通るPE編組: ロータ下面(neck側)→足の上面(固定側)へ 1.25巻のコイル状サービスループ(±60°のねじれをコイルの巻き締め/巻き戻しで吸収。長さ≈170mm=model/pe_braids.json)
+_pts = [din(SX + _R * math.cos(2 * math.pi * 1.25 * q_ / _n), SY0 + 17.4 - 14.8 * q_ / _n, SZ + _R * math.sin(2 * math.pi * 1.25 * q_ / _n)) for q_ in range(_n + 1)]
+cable('pe_braid_swivel', _pts, 1.8, M['pe_gy'])
+for _nm_, _hy_ in (('pe_lug_rotor', SY0 + 18.4), ('pe_lug_foot', SY0 + 0.6)):      # 圧着端子(M4リング)
+    _q_ = 0.0 if 'rotor' in _nm_ else 2 * math.pi * 1.25
+    cyl(_nm_, 4.0, 1.2, 'y', SX + _R * math.cos(_q_), _hy_, SZ + _R * math.sin(_q_), M['sus'], 16)
+for _tn in ('stand_swivel_stator', 'stand_swivel_bearing', 'stand_swivel_bearing_inner', 'stand_swivel_friction_ring'):      # 軸受ID60の中空(Ø56)を軸方向に貫通させる(PE編組の通り道)
+    thru_hole([_tn], f'swivel_bore_{_tn}', SX, SY0 + 7.0, SZ, 'y', 56.0, 24.0)
 cable('pe_braid_hinge', [din(-45, 12, -27 - 12), din(-48, 4, -27 - 8), din(-52, -6, -27 - 14), din(-50, -8, -27 - 26), din(-47, 0, -27 - 34), din(-45, 8, -27 - 40)], 1.8, M['pe_gy'])      # 頭部ヒンジブロック→ネック側: ストッパ(x±20〜32)の掃引域を避けx=-45〜-52のループ
 json.dump(HW, open(os.path.join(ROOT, 'model', 'hardware_list.json'), 'w'), ensure_ascii=False, indent=1)
