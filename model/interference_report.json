@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-14T00:58Z",
+ "generated": "2026-11-14T00:59Z",
  "objects": 664,
- "pairs_total": 559,
+ "pairs_total": 558,
  "touch_only": 373,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
@@ -12,15 +12,19 @@
   "ヘッダのプラグは筐体へ1mm嵌合する設計値(基板側のみモデル。ケーブル本体は MDC-FANCABLE で保留)": 3,
   "吊りピンのブッシュ(16x28長丸)は3基本形(円2+矩形)を重ねて1枚の板として表現": 12,
   "ポンプ筐体・キャップ・エルボ・ホース口は一体成形品を複数の基本形で表現(ARCTIC公式の外形)": 2,
+  "ホース端は口金(スタブ)に差し込まれてクランプされる(嵌合長はU45/ホース仕様未確認=UNVERIFIED。クランプ形状は未モデル)": 3,
+  "ケーブルの端は自身のプラグ(同一ケーブル組立)に入る一体品": 2,
   "ストッパ爪は板にねじ止めされた一体の突起(座面は板内へ埋め込み表現=INTF-03)": 3,
   "ボルト頭と軸は一体品(別基本形で表現)": 4,
   "側板のストリップとボスは一体品を別基本形で表現": 2,
   "ヒンジブロック台座と頬板は溶接一体の板金品": 2,
+  "線材ハンドルの端は支柱にかしめて固定される(かしめ部は未モデル)": 2,
   "プラグと受口の嵌合(嵌入量2mmの設計値。実物は受口内へ挿入される)": 3,
   "編組の端子(リング)をスタッドに通してナットで締結=編組端がナット/スタッド位置に重なる(端子ラグは未モデルで編組端で代表)": 4,
   "舌片はI/Oシールドの一部(切起こし)": 3,
   "摩擦板とそのキャップは一体の組立品(キャップは摩擦板へ圧入)": 2,
   "GPUシュラウドと加飾トリムは一体の外装部品": 1,
+  "PSU側のケーブル端はモジュラーソケットへ挿入される(PSU側プラグ形状は未モデル=MDC)": 4,
   "VRMシュラウドとトリムは一体の外装部品(別基本形で表現)": 1,
   "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)": 52,
   "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)": 2,
@@ -60,6 +64,32 @@
    ],
    "tri_pairs": 96,
    "reason": "【要モデル化=台帳INTF-03】ヒンジ軸Ø12が各部品のボアを貫通する嵌合。ボア(穴)を未モデルのため重なって検出される",
+   "debt": true
+  },
+  {
+   "a": "cable_H1",
+   "b": "pump_fitting_0",
+   "depth_mm": 11.1,
+   "aabb": [
+    11.1,
+    14.3,
+    11.1
+   ],
+   "tri_pairs": 34,
+   "reason": "ホース端は口金(スタブ)に差し込まれてクランプされる(嵌合長はU45/ホース仕様未確認=UNVERIFIED。クランプ形状は未モデル)",
+   "debt": true
+  },
+  {
+   "a": "cable_H2",
+   "b": "pump_fitting_1",
+   "depth_mm": 11.1,
+   "aabb": [
+    11.1,
+    14.3,
+    11.1
+   ],
+   "tri_pairs": 34,
+   "reason": "ホース端は口金(スタブ)に差し込まれてクランプされる(嵌合長はU45/ホース仕様未確認=UNVERIFIED。クランプ形状は未モデル)",
    "debt": true
   },
   {
@@ -323,6 +353,19 @@
    "debt": false
   },
   {
+   "a": "psu_socket2",
+   "b": "cable_W3",
+   "depth_mm": 6.0,
+   "aabb": [
+    16.5,
+    9.91,
+    6.0
+   ],
+   "tri_pairs": 16,
+   "reason": "PSU側のケーブル端はモジュラーソケットへ挿入される(PSU側プラグ形状は未モデル=MDC)",
+   "debt": true
+  },
+  {
    "a": "fan_rad0_hub",
    "b": "fan_rad0_blade6",
    "depth_mm": 5.699,
@@ -567,6 +610,19 @@
    ],
    "tri_pairs": 18,
    "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
+   "debt": false
+  },
+  {
+   "a": "cable_plug_W1_board",
+   "b": "cable_W1",
+   "depth_mm": 5.547,
+   "aabb": [
+    10.047,
+    5.547,
+    6.235
+   ],
+   "tri_pairs": 18,
+   "reason": "ケーブルの端は自身のプラグ(同一ケーブル組立)に入る一体品",
    "debt": false
   },
   {
@@ -830,6 +886,19 @@
    "debt": false
   },
   {
+   "a": "cable_W2",
+   "b": "cable_plug_W2_board",
+   "depth_mm": 3.69,
+   "aabb": [
+    11.2,
+    3.69,
+    10.745
+   ],
+   "tri_pairs": 33,
+   "reason": "ケーブルの端は自身のプラグ(同一ケーブル組立)に入る一体品",
+   "debt": false
+  },
+  {
    "a": "fan_gpu1_blade0",
    "b": "fan_gpu1_hub",
    "depth_mm": 3.52,
@@ -843,6 +912,19 @@
    "debt": false
   },
   {
+   "a": "psu_socket0",
+   "b": "cable_W1",
+   "depth_mm": 3.38,
+   "aabb": [
+    10.047,
+    11.0,
+    3.38
+   ],
+   "tri_pairs": 20,
+   "reason": "PSU側のケーブル端はモジュラーソケットへ挿入される(PSU側プラグ形状は未モデル=MDC)",
+   "debt": true
+  },
+  {
    "a": "fan_gpu1_hub",
    "b": "fan_gpu1_blade6",
    "depth_mm": 3.329,
@@ -854,6 +936,19 @@
    "tri_pairs": 18,
    "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
    "debt": false
+  },
+  {
+   "a": "psu_socket3",
+   "b": "cable_W4",
+   "depth_mm": 3.312,
+   "aabb": [
+    11.336,
+    7.0,
+    3.312
+   ],
+   "tri_pairs": 18,
+   "reason": "PSU側のケーブル端はモジュラーソケットへ挿入される(PSU側プラグ形状は未モデル=MDC)",
+   "debt": true
   },
   {
    "a": "fan_gpu0_hub",
@@ -1038,6 +1133,32 @@
    "debt": true
   },
   {
+   "a": "tray_handle_post0",
+   "b": "tray_handle_wire",
+   "depth_mm": 2.5,
+   "aabb": [
+    4.5,
+    2.5,
+    3.0
+   ],
+   "tri_pairs": 29,
+   "reason": "線材ハンドルの端は支柱にかしめて固定される(かしめ部は未モデル)",
+   "debt": true
+  },
+  {
+   "a": "tray_handle_wire",
+   "b": "tray_handle_post1",
+   "depth_mm": 2.5,
+   "aabb": [
+    4.5,
+    2.5,
+    3.0
+   ],
+   "tri_pairs": 20,
+   "reason": "線材ハンドルの端は支柱にかしめて固定される(かしめ部は未モデル)",
+   "debt": true
+  },
+  {
    "a": "fan_psu_hub",
    "b": "fan_psu_blade4",
    "depth_mm": 2.492,
@@ -1075,6 +1196,19 @@
    "tri_pairs": 18,
    "reason": "ファンの羽根とハブは一体品として別メッシュで描いている(実物も一体成形)",
    "debt": false
+  },
+  {
+   "a": "cable_W2",
+   "b": "psu_socket1",
+   "depth_mm": 2.347,
+   "aabb": [
+    15.8,
+    17.24,
+    2.347
+   ],
+   "tri_pairs": 16,
+   "reason": "PSU側のケーブル端はモジュラーソケットへ挿入される(PSU側プラグ形状は未モデル=MDC)",
+   "debt": true
   },
   {
    "a": "fan_psu_hub",
@@ -1426,6 +1560,19 @@
    "tri_pairs": 20,
    "reason": "PE編組の端は圧着端子(M4リング)にかしめて一体(端子内へ編組端が入る)",
    "debt": false
+  },
+  {
+   "a": "cable_H2",
+   "b": "rad_port_RAD_PORT_B",
+   "depth_mm": 1.194,
+   "aabb": [
+    12.584,
+    1.194,
+    12.466
+   ],
+   "tri_pairs": 11,
+   "reason": "ホース端は口金(スタブ)に差し込まれてクランプされる(嵌合長はU45/ホース仕様未確認=UNVERIFIED。クランプ形状は未モデル)",
+   "debt": true
   },
   {
    "a": "pe_braid_tray_a",
@@ -2078,8 +2225,8 @@
    "debt": false
   }
  ],
- "allowed_debt": 29,
- "remaining": 29,
+ "allowed_debt": 38,
+ "remaining": 17,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -2162,86 +2309,6 @@
    ]
   },
   {
-   "a": "cable_H1",
-   "b": "pump_fitting_0",
-   "tri_pairs": 34,
-   "aabb_overlap_mm": [
-    11.1,
-    14.3,
-    11.1
-   ]
-  },
-  {
-   "a": "cable_H2",
-   "b": "pump_fitting_1",
-   "tri_pairs": 34,
-   "aabb_overlap_mm": [
-    11.1,
-    14.3,
-    11.1
-   ]
-  },
-  {
-   "a": "cable_W2",
-   "b": "cable_W1",
-   "tri_pairs": 42,
-   "aabb_overlap_mm": [
-    10.047,
-    12.817,
-    23.883
-   ]
-  },
-  {
-   "a": "psu_socket2",
-   "b": "cable_W3",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    16.5,
-    9.91,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_plug_W1_board",
-   "b": "cable_W1",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    10.047,
-    5.547,
-    6.235
-   ]
-  },
-  {
-   "a": "cable_W2",
-   "b": "cable_plug_W2_board",
-   "tri_pairs": 31,
-   "aabb_overlap_mm": [
-    11.2,
-    3.679,
-    10.723
-   ]
-  },
-  {
-   "a": "psu_socket0",
-   "b": "cable_W1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    10.047,
-    11.0,
-    3.38
-   ]
-  },
-  {
-   "a": "psu_socket3",
-   "b": "cable_W4",
-   "tri_pairs": 18,
-   "aabb_overlap_mm": [
-    11.336,
-    7.0,
-    3.312
-   ]
-  },
-  {
    "a": "gasket",
    "b": "cover_filter",
    "tri_pairs": 571,
@@ -2272,26 +2339,6 @@
    ]
   },
   {
-   "a": "tray_handle_post0",
-   "b": "tray_handle_wire",
-   "tri_pairs": 29,
-   "aabb_overlap_mm": [
-    4.5,
-    2.5,
-    3.0
-   ]
-  },
-  {
-   "a": "tray_handle_wire",
-   "b": "tray_handle_post1",
-   "tri_pairs": 20,
-   "aabb_overlap_mm": [
-    4.5,
-    2.5,
-    3.0
-   ]
-  },
-  {
    "a": "eps8",
    "b": "screw_board0_head",
    "tri_pairs": 16,
@@ -2302,16 +2349,6 @@
    ]
   },
   {
-   "a": "cable_W2",
-   "b": "psu_socket1",
-   "tri_pairs": 16,
-   "aabb_overlap_mm": [
-    15.8,
-    16.29,
-    2.347
-   ]
-  },
-  {
    "a": "cover_filter",
    "b": "rf_window_plate",
    "tri_pairs": 4,
@@ -2319,16 +2356,6 @@
     60.0,
     2.0,
     30.0
-   ]
-  },
-  {
-   "a": "cable_H2",
-   "b": "rad_port_RAD_PORT_B",
-   "tri_pairs": 11,
-   "aabb_overlap_mm": [
-    12.584,
-    1.194,
-    12.466
    ]
   },
   {

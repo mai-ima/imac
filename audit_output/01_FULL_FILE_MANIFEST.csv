@@ -80,7 +80,7 @@ audit_output/00_README_JA.md,OTHER,1438,30fc7ac5be093460e78a3770c02e61189f09d539
 audit_output/03_FINDINGS_REGISTER.md,OTHER,3938,0a3ccfa9c5dad189ea81dc02e280a8e8508635464ff5756cf601a3ebe807efe7,binary_or_text_not_parsed,NO
 audit_output/12_TEST_RESULTS.txt,OTHER,3457,1a62d57d0297af8a3a4bb5a726900dd41b5854a53f96caf0e65cbf53b39034c7,binary_or_text_not_parsed,NO
 audit_output/14_ARCHITECTURE_DECISIONS.md,OTHER,930,e62e77e83def347a97e6b6ea9e2bfb36a27470346b513a1f55aac1d0a80d7d0d,binary_or_text_not_parsed,NO
-blender/archive/INDEX.md,ARCHIVE(旧版),11140,066abbd0000825904569c915d6e7f40aebde7cda5dde98e2ace4e4d9e2657bed,binary_or_text_not_parsed,NO
+blender/archive/INDEX.md,ARCHIVE(旧版),11253,f016e23865236d5935cb2948ea1b77ffe87de4d9e8949e5cc5b8a0dd188b52bd,binary_or_text_not_parsed,NO
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v001__2026-11-05_7f1eac8.py,ARCHIVE(旧版),44453,5d8c03c6bf5c38abd210c01e3c745732cccea0e1e3aa21b5e2080204ab507880,syntax_ok,NO
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v002__2026-11-05_5564531.py,ARCHIVE(旧版),45024,b759f58627cbf0a8263ff543b93026baf6a2b1aefb7baf254a69846c857e3b8c,syntax_ok,NO
 blender/archive/build_imac_pc_v6/build_imac_pc_v6.v003__2026-11-05_2f8c0ac.py,ARCHIVE(旧版),44946,141471ef4c61f1b666570dfd4b751440793504f18107deb091e096059cb83be9,syntax_ok,NO
@@ -167,8 +167,9 @@ blender/archive/hardware_v8/hardware_v8.v027__2026-11-11_b51296b.py,ARCHIVE(旧�
 blender/archive/hardware_v8/hardware_v8.v028__2026-11-11_e36f9fe.py,ARCHIVE(旧版),26972,208a39aa537fdf939756acd51a428cfb71a60d9642aee62dd3765a461eeff7b4,syntax_ok,NO
 blender/archive/hardware_v8/hardware_v8.v029__2026-11-13_39a5856.py,ARCHIVE(旧版),27438,a1e14ca962ebc7ce6e90e58b49d94526d9e18eafad7c5091326ffa451d4f102a,syntax_ok,NO
 blender/archive/hardware_v8/hardware_v8.v030__2026-11-14_781c3bf.py,ARCHIVE(旧版),27462,fb2495983e76132e457afcee7fae80491b3409c7b844682661d60c35ca628ecd,syntax_ok,NO
+blender/archive/hardware_v8/hardware_v8.v031__2026-11-14_36957b7.py,ARCHIVE(旧版),28166,52f73e5a3ad079a68513dc0be4e3e9edb07855bbb6173b21204260ea2fdf26c7,syntax_ok,NO
 blender/archive/imac_pc/imac_pc.v001__2026-11-05_165c355.blend,ARCHIVE(旧版),407816,7c330117b929af59eb23e940030502eb01ad441aff1b460985e4a9e433c35b21,binary_or_text_not_parsed,NO
-blender/archive/index.json,ARCHIVE(旧版),25924,c37fe350f67d4571d515f039f95a624e1820d86506d46ff8883f611035e2e767,syntax_ok,NO
+blender/archive/index.json,ARCHIVE(旧版),26203,c3e4bc083e8cb739c3814f2a59e4a37ad838283b3c7c41948bdb5091d40d812c,syntax_ok,NO
 blender/archive/render_all/render_all.v001__2026-11-03_165c355.sh,ARCHIVE(旧版),1344,0f1ac5747c20205fa7c5cea0af3313a87a5c0b0bf31abfa0bda9e6bd7652a45b,binary_or_text_not_parsed,NO
 blender/archive/render_all/render_all.v002__2026-11-05_7f1eac8.sh,ARCHIVE(旧版),1347,cdaaa6c2dcb0a9e0c2bb691c6a596faa06bde9261fe86e49762db012bc15fefd,binary_or_text_not_parsed,NO
 blender/archive/render_all/render_all.v003__2026-11-06_09ad133.sh,ARCHIVE(旧版),1347,d63aee2f6f6000ef51db9ba30d54cdf020a057e6fdeb8a54191947259d9f33fe,binary_or_text_not_parsed,NO
@@ -222,7 +223,7 @@ docs/PROJECT-SUMMARY.md,DOC,14628,787e4ebafa107324887d9fb68230c03d775d660ed351df
 docs/README.md,DOC,4044,33546bf4ba4e91543f4870b84c5a8ffe90530f9eab78ff5fffac6cc168adfb42,binary_or_text_not_parsed,NO
 docs/anatomy.md,DOC,3776,4dc36f6dff4b19fd4de99a1317610c7e066b4d3b6aa171f95d7cdd0d076a337e,binary_or_text_not_parsed,NO
 docs/architecture/REPOSITORY_STRUCTURE.md,DOC,1400,56fa5880dec4a0371e812280c30eb5be8ca5a021802c7e6904d731227a1e8896,binary_or_text_not_parsed,NO
-docs/archive/INDEX.md,ARCHIVE(旧版),19827,d91450ea664cb6b466c5049ce3e69d7b368fdf04f78a99fb84200742c9f12978,binary_or_text_not_parsed,NO
+docs/archive/INDEX.md,ARCHIVE(旧版),19964,f317e62e60614509289cf2dba9ba1c7f9d8ebc993d66c9e851e0960dd0903302,binary_or_text_not_parsed,NO
 docs/archive/INDEX/INDEX.v001__2026-11-07_64a1afa.md,ARCHIVE(旧版),579,f15b172c7af96c9a3d24fe55b0af374463f42f087fafd3b744b36a00c112b442,binary_or_text_not_parsed,NO
 docs/archive/PROJECT-SUMMARY/PROJECT-SUMMARY.v001__2026-11-06_ce41db1.md,ARCHIVE(旧版),12881,eb1c9d79e603b0a0ffd29059e9c45846dd57e3e49c8a522c374eab7bc9291304,binary_or_text_not_parsed,NO
 docs/archive/PROJECT-SUMMARY/PROJECT-SUMMARY.v002__2026-11-06_877835f.md,ARCHIVE(旧版),13225,8a96bfbb36371b2f79b1706d32e0c323c7d56ae12a462656579e48a7f1803a81,binary_or_text_not_parsed,NO
@@ -291,7 +292,7 @@ docs/archive/hinge-design/hinge-design.v002__2026-11-05_fcba5fe.md,ARCHIVE(旧�
 docs/archive/hinge-design/hinge-design.v003__2026-11-06_9ff6031.md,ARCHIVE(旧版),3479,dbb9237decc991c38268694c9941a12fd731a779303e241b0ef266262044a80b,binary_or_text_not_parsed,NO
 docs/archive/hinge-design/hinge-design.v004__2026-11-06_7ed5c4c.md,ARCHIVE(旧版),3847,7dd8e8cc3d35cf47a9b8eddeb53d0e40ed1b5b1993346ddeef8520de8e8d362d,binary_or_text_not_parsed,NO
 docs/archive/hinge-design/hinge-design.v005__2026-11-06_4482281.md,ARCHIVE(旧版),4019,de96e88bcf42bd551c417f34018a4a17b1f1add5d243dfc9d4d7312c900ac50d,binary_or_text_not_parsed,NO
-docs/archive/index.json,ARCHIVE(旧版),46132,e61019a484c05c2f21abc284eaf75c04c0e0ac750b5ba567e83cdf9dc6b3e7d5,syntax_ok,NO
+docs/archive/index.json,ARCHIVE(旧版),46432,b1330da2b6aeeb3a53c2709b1fc4521bc38ce87473eb3b2cd9f8ae2e1cff191b,syntax_ok,NO
 docs/archive/interference-report/interference-report.v001__2026-11-07_44044f0.md,ARCHIVE(旧版),5802,6f651174051e342b68307039b9597dc41d81ad371c9526702e358700297f885c,binary_or_text_not_parsed,NO
 docs/archive/interference-report/interference-report.v002__2026-11-07_d60442d.md,ARCHIVE(旧版),6134,0fbedb24fa99d0f0d78f1070add9235c687c11b0e9996cd08f24370c40ac7b82,binary_or_text_not_parsed,NO
 docs/archive/interference-report/interference-report.v003__2026-11-07_c1704cf.md,ARCHIVE(旧版),6183,b5720ead38264d6e5ab4d09740bfb29a1b046e2221f45570a1b0a7eb942e3704,binary_or_text_not_parsed,NO
@@ -315,6 +316,7 @@ docs/archive/interference-report/interference-report.v020__2026-11-13_39a5856.md
 docs/archive/interference-report/interference-report.v021__2026-11-13_d62410b.md,ARCHIVE(旧版),11554,7c97d2969790c18a986447c785920750c9ef18a0f3dbc52e7eeb2784805304d1,binary_or_text_not_parsed,NO
 docs/archive/interference-report/interference-report.v022__2026-11-13_c0e4f6a.md,ARCHIVE(旧版),14469,bef693126270c4794295fb026f7c6cf8ec4579864ae19652070c584803272856,binary_or_text_not_parsed,NO
 docs/archive/interference-report/interference-report.v023__2026-11-14_781c3bf.md,ARCHIVE(旧版),13992,570088a5a2c232c47a8e29de736fd6741cbff59f1c8464580e47b96a36e0c72a,binary_or_text_not_parsed,NO
+docs/archive/interference-report/interference-report.v024__2026-11-14_36957b7.md,ARCHIVE(旧版),13648,4e919f6bfe86e353b19102a9b29f4d696329e0143f04f565d832e283f96c962a,binary_or_text_not_parsed,NO
 docs/archive/joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md,ARCHIVE(旧版),7322,9f527793ad26e47262899facbcf862dbe378de978961da3505620a1f7fd716ce,binary_or_text_not_parsed,NO
 docs/archive/joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md,ARCHIVE(旧版),7509,8ccd04b3bb70a88cd49266fa3de2b72b0b9dde13dbf4a6d0b2101d8b67aa8c44,binary_or_text_not_parsed,NO
 docs/archive/joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md,ARCHIVE(旧版),7509,c8d6b436174ba6f9356976a2e2835152f4cd82e6f45285d56a52e23ed65f4ad8,binary_or_text_not_parsed,NO
@@ -400,7 +402,7 @@ docs/design.md,DOC,2066,150782e5298095fefd1191b640bb4e13e510440adb0e3314898a6886
 docs/failure-analysis.md,DOC,12615,381069a5e2e83235517e072497bb7d3361025b603307719c5ad1ac18b9a6ac80,binary_or_text_not_parsed,NO
 docs/fitcheck-report.txt,DOC,3617,2902fbf68fa976510b48c5975ed556ce59c93c7488f78bd540113b4188de6e95,binary_or_text_not_parsed,NO
 docs/hinge-design.md,DOC,285,77daa2e9e2bc9cb9f7b589fbb944fc0e1a46b68a725d61e85f53a9405dee1500,binary_or_text_not_parsed,NO
-docs/interference-report.md,DOC,14227,ce2f6e10b62e289ba2f6e15f25c45c618c391d204b64f374661afeca736a4553,binary_or_text_not_parsed,NO
+docs/interference-report.md,DOC,15514,d9d8a0ef69daca35bbf239f323816cf4fe8da3c4336279197d24dcdb203a5cd1,binary_or_text_not_parsed,NO
 docs/joint-analysis.md,DOC,7831,468676f54af13dcb4d3602b6243bfd4e0757e64deb6107e31ac7887e8f182b47,binary_or_text_not_parsed,NO
 docs/logo-catalog.md,DOC,5563,0ccffcdee5a7b2dd58a01b065bf45d0daad1c08ce6ef6c0c64420ae588411a3b,binary_or_text_not_parsed,NO
 docs/mechanisms/01_tilt_balancer.md,DOC,9636,0d71495f31ffb0c2e9ca7b8dcaa49e8f3ea22a4385e0038d4510962037f71d38,binary_or_text_not_parsed,NO
@@ -1029,7 +1031,7 @@ handoff/04_DXF/hole-table.md,OTHER,2142,adc6261d57f5b58132b52ee00b85a2a42baf17fa
 handoff/04_DXF/outlines.dxf,OTHER,1454836,ff1ec4b69627687a6eaa203bdd8f365f2b09c4b8ea11aa20010943207e2e32a1,binary_or_text_not_parsed,NO
 handoff/README.md,OTHER,1625,da0e590763c1952f9e31e2ebafe5956c84171c723ffc994942ecbceba0ba63fc,binary_or_text_not_parsed,NO
 handoff/SHA256SUMS.txt,OTHER,7653,744f18cf9437454333d2a6023154a3e445ee3b068c319780418f672a32cf7f1b,binary_or_text_not_parsed,NO
-model/archive/INDEX.md,ARCHIVE(旧版),17702,548916eb19bba745b59835997b36033010da7859a9cff702c7cfb26401508ffe,binary_or_text_not_parsed,NO
+model/archive/INDEX.md,ARCHIVE(旧版),17843,f08ab9d82320f34fe312f6c31489476ad1f0afb79c2737ee8326d0ca1bf782f3,binary_or_text_not_parsed,NO
 model/archive/balance/balance.v001__2026-11-06_7ed5c4c.json,ARCHIVE(旧版),168,ed120ad49af998841cedae51d68ec40a8e2763d633ac25faea5a535839eff42f,syntax_ok,NO
 model/archive/balance/balance.v002__2026-11-06_4482281.json,ARCHIVE(旧版),272,ac6693c19811884c5fffeebbe245a37282c77f220acda1bfd0eba0240a3a4b76,syntax_ok,NO
 model/archive/balance/balance.v003__2026-11-06_02c4c72.json,ARCHIVE(旧版),274,a2044a0ea4a84ace8debcc2d4d8c60f96ac56fe482b74de554c8a70eca058d8a,syntax_ok,NO
@@ -1102,7 +1104,7 @@ model/archive/hardware_list/hardware_list.v012__2026-11-06_e7a16e1.json,ARCHIVE(
 model/archive/hardware_list/hardware_list.v013__2026-11-06_36dff8c.json,ARCHIVE(旧版),5292,3d189824b0aee75e5e9c32c064bdfb4959524863022b28a75e61d7bf99755936,syntax_ok,NO
 model/archive/hardware_list/hardware_list.v014__2026-11-07_3089847.json,ARCHIVE(旧版),5308,e4371bc011ca037eb8c9c83e4c84245b9fdac7028208ffc0519111ce08a530f8,syntax_ok,NO
 model/archive/hardware_list/hardware_list.v015__2026-11-07_c1704cf.json,ARCHIVE(旧版),5308,dddd3d53565aa9d0104ab027f645aee4539e98943d278a16ffe73d93f847f66e,syntax_ok,NO
-model/archive/index.json,ARCHIVE(旧版),43084,b33e66874d3b837376512e1c6dc71f0df2041859691fa17423f0bd6e0f313f7a,syntax_ok,NO
+model/archive/index.json,ARCHIVE(旧版),43389,8013c012ec6242c8c48efe68f64e42675a66033c17d11a343aaa7334911200e5,syntax_ok,NO
 model/archive/interference_report/interference_report.v001__2026-11-07_44044f0.json,ARCHIVE(旧版),46410,6e14ca565dde801b448ea13ef077f45236ec988b840d6455a7bc803bdc4dbc1b,syntax_ok,NO
 model/archive/interference_report/interference_report.v002__2026-11-07_d60442d.json,ARCHIVE(旧版),42025,b99a6a7b3c170e8c67c97a82d21b1af29d5382c022d477f5cb302a901fc15f34,syntax_ok,NO
 model/archive/interference_report/interference_report.v003__2026-11-07_c1704cf.json,ARCHIVE(旧版),41709,5c26c21d4f0eaba853c55743627792a688a237282d2c8f6981b82645332502ab,syntax_ok,NO
@@ -1126,6 +1128,7 @@ model/archive/interference_report/interference_report.v020__2026-11-13_39a5856.j
 model/archive/interference_report/interference_report.v021__2026-11-13_d62410b.json,ARCHIVE(旧版),46182,736f1353260e2c1e744dada95a6f60e5fc3081bba7260cd4f4f614a6d76deb98,syntax_ok,NO
 model/archive/interference_report/interference_report.v022__2026-11-13_c0e4f6a.json,ARCHIVE(旧版),52161,85ce472520b2c1fcbf5ee861bce5012f785f1bef35832b4401c8eb9a56ae5894,syntax_ok,NO
 model/archive/interference_report/interference_report.v023__2026-11-14_781c3bf.json,ARCHIVE(旧版),51125,7e0bc5f81bbdbb5eaa2c53863fed3f63eb4d6a0a3f22ae3169a0504ce9965ffd,syntax_ok,NO
+model/archive/interference_report/interference_report.v024__2026-11-14_36957b7.json,ARCHIVE(旧版),50916,76e010cd81d470375a6e294c0f85a83dfb2f86ccaeff320f40110f369f480e1c,syntax_ok,NO
 model/archive/layout/layout.v002__2026-11-03_fc47286.json,ARCHIVE(旧版),1363,8e8ea4a868cbe14397e9ef221d1973b556b63162b3a57afb969fb8fff1c035ca,syntax_ok,NO
 model/archive/layout/layout.v003__2026-11-03_fd22dea.json,ARCHIVE(旧版),1379,728b6765f3366bcfb8efd15474eeeece0b55a2f60cda3136e32980484a846e79,syntax_ok,NO
 model/archive/layout/layout.v004__2026-11-03_2cd7df3.json,ARCHIVE(旧版),1498,580ae5b34deb9ba15d08a47190048c2748fc2800e7b09677d4e43bba8d5decac,syntax_ok,NO
@@ -1189,10 +1192,10 @@ model/archive/x870i_layout/x870i_layout.v002__2026-11-06_85af1a8.json,ARCHIVE(�
 model/archive/x870i_layout/x870i_layout.v003__2026-11-06_28dc82b.json,ARCHIVE(旧版),1888,3dc92de541fee5dee01b5608d3d4817256fc807bfccd95cba500307c15070063,syntax_ok,NO
 model/b650iax_layout.json,CANON(正規データ),2197,7a092faed1b45f3d82f21ff106a4f7dbc4b3ac3b0ce85918fb7c57c83ebccc6a,syntax_ok,NO
 model/balance.json,CANON(正規データ),5113,f4da20232af41423201568eeb0a0895f690d90c1f10423c202cafd10be11f0b0,syntax_ok,NO
-model/cables.json,CANON(正規データ),17941,369e528a8d48ae804698a8b8629c06dbd3b637e022c97ee77cce70c81f0d812c,syntax_ok,NO
+model/cables.json,CANON(正規データ),18511,8688fa7ddb3b4ae614f855216135c63d0b192f4deccb915b821f48de100e54a3,syntax_ok,NO
 model/custom_parts.json,CANON(正規データ),47269,b450353735c8f02c6a5a55437e250d5f340ca7b23d280af8f5d1946603190e7c,syntax_ok,NO
 model/hardware_list.json,CANON(正規データ),5308,e4371bc011ca037eb8c9c83e4c84245b9fdac7028208ffc0519111ce08a530f8,syntax_ok,NO
-model/interference_report.json,CANON(正規データ),51763,31fc5228cd8c9bfe47eb3cebec1a160d7968a4c66372ad0d038a0df735c25a47,syntax_ok,NO
+model/interference_report.json,CANON(正規データ),53899,4e9f6f125c74b9721bdd7a2c9a344f490fcf7e28a07e96bc8c22b75e6cadb37f,syntax_ok,NO
 model/layout.json,CANON(正規データ),2643,b78717f8c8b5780ef35b8345e4daeb661ac64f545c4c4bde3902a85e404c368f,syntax_ok,NO
 model/layout_dome.json,CANON(正規データ),634,3055e9bc9cf98b635c7c66766ad819243bcb69d17116bb6c8c81136f88df603f,syntax_ok,NO
 model/layout_v4_archive.json,CANON(正規データ),1363,8e8ea4a868cbe14397e9ef221d1973b556b63162b3a57afb969fb8fff1c035ca,syntax_ok,NO
@@ -1263,7 +1266,7 @@ render/side.png,GENERATED(生成物),14117,d07bde1480c5360b2b21a6feb4598930d4181
 tests/test_board.py,OTHER,1783,3446511f7087e0175dd138c2d5072a77d6391cbc2a2ad22667f6a06b10d4c6dd,syntax_ok,NO
 tests/test_invariants.py,OTHER,3545,22b18d2c5f8b18125212b101dd80ff7c2638f525bd9bcdf32533f7d2685827e6,syntax_ok,NO
 tools/archive.py,TOOL(生成/検証),6020,9a7ae5fa18efe5f2b90b704b7fc906fc49dd5f3a53afadf5e3001899e00e43ae,syntax_ok,NO
-tools/archive/INDEX.md,ARCHIVE(旧版),23870,0213f5ebbf123a2f7685ac6641f04b70923943a646e5e1eb0739018beeb246a5,binary_or_text_not_parsed,NO
+tools/archive/INDEX.md,ARCHIVE(旧版),24007,f1b8158336baf33e7ff3731d6c6874e2c5e296cca8bf65a2d80b5160cb251e3b,binary_or_text_not_parsed,NO
 tools/archive/audit_control_init/audit_control_init.v001__2026-11-06_cf90ba1.py,ARCHIVE(旧版),9444,493b0f5e619dd67995b0a4bab53f295909ce222580015743d451feff5489c9cc,syntax_ok,NO
 tools/archive/audit_control_init/audit_control_init.v002__2026-11-06_f2e5a87.py,ARCHIVE(旧版),9613,c2fa8316555844ff4bcef8798ae5e728b6fbb8be880e0ede2b2d501f27b10eca,syntax_ok,NO
 tools/archive/audit_control_init/audit_control_init.v003__2026-11-07_19cbc6b.py,ARCHIVE(旧版),9834,169f578eb61e15afe4b9653b11d81aab77e61eb18ea47f72aa547c4ec6e77447,syntax_ok,NO
@@ -1396,7 +1399,7 @@ tools/archive/gen_specs/gen_specs.v007__2026-11-06_93238a3.py,ARCHIVE(旧版),12
 tools/archive/gen_specs/gen_specs.v008__2026-11-06_36dff8c.py,ARCHIVE(旧版),12741,397c298c04e0de484ad6115f22006bbe6370bf5369b3c2ca98b708dd46d24ecd,syntax_ok,NO
 tools/archive/guard_no_delete/guard_no_delete.v001__2026-11-03_e1ff88f.sh,ARCHIVE(旧版),797,d0e7f19dc3a7ef056543f96587917dc94f7b90fdf0ef749297a9c68d8cb6c5bd,binary_or_text_not_parsed,NO
 tools/archive/import_r11/import_r11.v001__2026-11-07_df8ec56.py,ARCHIVE(旧版),1829,3945020a3faceecb9ddef1fb5aac6b56beb4b7ad9db6544a3644feeddb425433,syntax_ok,NO
-tools/archive/index.json,ARCHIVE(旧版),56851,1cf56f355bd22c62337fdcef2828346d5183ae02f9bf29d6c3de9af1eae7f784,syntax_ok,NO
+tools/archive/index.json,ARCHIVE(旧版),57152,5902461d9a43012a204ed0ef1c6e1a9cdf593e6f0382c27c0614dfd656ad43f0,syntax_ok,NO
 tools/archive/interference_report/interference_report.v001__2026-11-07_44044f0.py,ARCHIVE(旧版),3397,3962c32d3015d7d08a72d3aa68322121f4e284b5bd7612e5e5e60e4ece060942,syntax_ok,NO
 tools/archive/interference_report/interference_report.v002__2026-11-07_d60442d.py,ARCHIVE(旧版),4345,58cac9227d7fcfab99e124d759d1f7d148742e95353018749ba97e79e6f1a47d,syntax_ok,NO
 tools/archive/interference_report/interference_report.v003__2026-11-07_c1704cf.py,ARCHIVE(旧版),4491,07a5fcb1aeb08f91f0a574286db17e0e496fcfb1473c09e338f7197dc53df6a0,syntax_ok,NO
@@ -1407,6 +1410,7 @@ tools/archive/interference_report/interference_report.v007__2026-11-11_7a60983.p
 tools/archive/interference_report/interference_report.v008__2026-11-11_b51296b.py,ARCHIVE(旧版),6875,6c2d202a88c661612677907b35e9761af6069a8858ced00869a3659d3319010a,syntax_ok,NO
 tools/archive/interference_report/interference_report.v009__2026-11-13_39a5856.py,ARCHIVE(旧版),7146,976dbf148e774cd1ba623fe4daca2c19b59e8e2a86bf06da467cecc060d0066a,syntax_ok,NO
 tools/archive/interference_report/interference_report.v010__2026-11-13_d62410b.py,ARCHIVE(旧版),9018,1149f58c8902173ea1ca022738eb5ccc3a466d79a552d0f16ea66c44c29d0682,syntax_ok,NO
+tools/archive/interference_report/interference_report.v011__2026-11-14_36957b7.py,ARCHIVE(旧版),9168,464832cee31114c254ef5c458369d683861a0b227f226eff63f01d296e8a99ea,syntax_ok,NO
 tools/archive/joint_calc/joint_calc.v001__2026-11-05_017b7d9.py,ARCHIVE(旧版),9467,5e27335e3b5c366dbf740d075fdd67453695ec5b288b1a57a07aa51b8a5641a6,syntax_ok,NO
 tools/archive/joint_calc/joint_calc.v002__2026-11-05_fcba5fe.py,ARCHIVE(旧版),8825,3e9c9492daeb0713d53a5859e6ec003a9698af3964bb0911ef64c5eadcfe9fd5,syntax_ok,NO
 tools/archive/joint_calc/joint_calc.v003__2026-11-06_4482281.py,ARCHIVE(旧版),8918,09f4e9e4e5d6ec39acbd3c8e1fc91f85246993086e1765aea465eddeb139914f,syntax_ok,NO
@@ -1472,7 +1476,7 @@ tools/audit_control_init.py,TOOL(生成/検証),9931,63415b2477ba6fe6a4e0d61fcb4
 tools/audit_manifest.py,TOOL(生成/検証),3207,ac7bff070429d4f000238b38c9fb5ca58e12401fade50f8f8c9573739bef541a,syntax_ok,NO
 tools/balance_calc.py,TOOL(生成/検証),10994,6909c33119de67076f8b777e7bcb911e8f4587e064ebca021991e85f104df332,syntax_ok,NO
 tools/cable_check.py,TOOL(生成/検証),5852,6d98a922dcafa0b97361f5e2c3c1346905fece5fc39e8db3c3dd0cb2e9ced123,syntax_ok,NO
-tools/cablemodel.py,TOOL(生成/検証),9106,413faeab29b9b09cb25d2e6cb9f5c7d49377dab70266c2fb52f525b0f455b3e2,syntax_ok,NO
+tools/cablemodel.py,TOOL(生成/検証),9154,b1c00c86a886adcb5213ede5734fcc8a2145f97681064849f67387e21fb86197,syntax_ok,NO
 tools/cadviews.py,TOOL(生成/検証),5697,489f9a327069095f0df4849b31ba61811842a570eea8d301546a1dfb8b050fcf,syntax_ok,NO
 tools/check_estimate.py,TOOL(生成/検証),10202,3af2c4c5987861bbd4b6230493fa3921887ac40bda8ddb6a25efbb9bbd766fd3,syntax_ok,NO
 tools/check_sources.py,TOOL(生成/検証),2497,72cfa723810b85d7458bb10ff87969f56a2d148d5e7a0d5570f385ebdc0ba687,syntax_ok,NO
@@ -1506,7 +1510,7 @@ tools/handoff_build.sh,TOOL(生成/検証),809,35e3ffb954470a82639f879cd42494b17
 tools/import_r11.py,TOOL(生成/検証),1882,854d0ff9a83a892906f2d62100ea8e899f88c844d8414c93230d1c4a8c02bd21,syntax_ok,NO
 tools/import_r12.py,TOOL(生成/検証),1650,999cec39c3450a85642d4acc1b282a4132069a60ab284572f10ee8bb94c827ef,syntax_ok,NO
 tools/install_hooks.sh,TOOL(生成/検証),295,ef03fb7c06bf68eea043340c227402f1f205d4ee9be1ba91bd220664a69ce7b4,binary_or_text_not_parsed,NO
-tools/interference_report.py,TOOL(生成/検証),9529,d3c2d823ae307f76edf7585d06877bb11f1997130f2b1f3f1b5c2a08c9d1d042,syntax_ok,NO
+tools/interference_report.py,TOOL(生成/検証),10194,0a9a2840b30260e6315bc452837703dc9125907201b65dc3285211e7c3c5aa45,syntax_ok,NO
 tools/joint_calc.py,TOOL(生成/検証),8980,857bcb9a42e347cd21d978a146bd3cbc7bf545f5c11e4a6fb84d704a08b0fe23,syntax_ok,NO
 tools/layout_search.py,TOOL(生成/検証),4385,cc3884a1003e2b67cdcd316ae26f4863a258801c1174e9bd33a9dea3041c6786,syntax_ok,NO
 tools/ledger_import.py,TOOL(生成/検証),2698,ccca20c848a68ec2bd79db5b3853f22a5a27bac00d72ae8de798bf78b9ebf827,syntax_ok,NO

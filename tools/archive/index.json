@@ -316,6 +316,15 @@
    "file": "cablemodel/cablemodel.v012__2026-11-07_b5f5bb3.py"
   },
   {
+   "src": "tools/cablemodel.py",
+   "version": 13,
+   "gen": "current",
+   "date": "2026-11-14",
+   "commit": "781c3bf",
+   "sha256": "413faeab29b9b09cb25d2e6cb9f5c7d49377dab70266c2fb52f525b0f455b3e2",
+   "file": "cablemodel/cablemodel.v013__2026-11-14_781c3bf.py"
+  },
+  {
    "src": "tools/cadviews.py",
    "version": 1,
    "gen": "current",
@@ -1286,6 +1295,15 @@
    "commit": "36957b7",
    "sha256": "464832cee31114c254ef5c458369d683861a0b227f226eff63f01d296e8a99ea",
    "file": "interference_report/interference_report.v011__2026-11-14_36957b7.py"
+  },
+  {
+   "src": "tools/interference_report.py",
+   "version": 12,
+   "gen": "current",
+   "date": "2026-11-14",
+   "commit": "34455ab",
+   "sha256": "d3c2d823ae307f76edf7585d06877bb11f1997130f2b1f3f1b5c2a08c9d1d042",
+   "file": "interference_report/interference_report.v012__2026-11-14_34455ab.py"
   },
   {
    "src": "tools/joint_calc.py",

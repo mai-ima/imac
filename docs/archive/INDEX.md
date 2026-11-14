@@ -93,6 +93,7 @@
 | interference-report.md | v022 | current | 2026-11-13 | c0e4f6a | interference-report/interference-report.v022__2026-11-13_c0e4f6a.md |
 | interference-report.md | v023 | current | 2026-11-14 | 781c3bf | interference-report/interference-report.v023__2026-11-14_781c3bf.md |
 | interference-report.md | v024 | current | 2026-11-14 | 36957b7 | interference-report/interference-report.v024__2026-11-14_36957b7.md |
+| interference-report.md | v025 | current | 2026-11-14 | 34455ab | interference-report/interference-report.v025__2026-11-14_34455ab.md |
 | joint-analysis.md | v001 | current | 2026-11-05 | 017b7d9 | joint-analysis/joint-analysis.v001__2026-11-05_017b7d9.md |
 | joint-analysis.md | v002 | current | 2026-11-05 | fcba5fe | joint-analysis/joint-analysis.v002__2026-11-05_fcba5fe.md |
 | joint-analysis.md | v003 | current | 2026-11-05 | 71b7afb | joint-analysis/joint-analysis.v003__2026-11-05_71b7afb.md |

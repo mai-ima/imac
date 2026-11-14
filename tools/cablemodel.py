@@ -15,7 +15,7 @@ CAB = [
  dict(id='W1', name='ATX 24ピン(短尺カスタム長)', kind='cable', od=9.6, awg=18, mbr=12, frm='PSU modular(24p)', to='基板 ATX24', conn='24p (20+4)', ref_mm=0, mat='rubber',
       pts=[(px + 28, py - 2, 38), (px + 28, py - 12, 41), (bx + 13.4 + 25.05, by + 159 + 5, Z1 + 15 + 9)]),
  dict(id='W2', name='CPU EPS 8ピン(短尺)', kind='cable', od=5.6, awg=16, mbr=12, frm='PSU modular(EPS)', to='基板 CPU_12V(8p)', conn='EPS 4+4', ref_mm=0, mat='rubber',
-      pts=[(px + 69, py - 2, 38), (px + 69, py - 18, 40), (50, py - 18, 44), (50, 60, 40), (bx + 1.6 + 5.9, by + 2.4 + 9.05, Z1 + 11 + 9)]),
+      pts=[(px + 69, py - 2, 38), (px + 69, py - 18, 40), (px + 40, py - 18, 52), (px + 10, py - 18, 52), (50, py - 18, 46), (50, 60, 40), (bx + 1.6 + 5.9, by + 2.4 + 9.05, Z1 + 11 + 9)]),
  dict(id='W3', name='GPU 12V-2x6(16AWG)', kind='cable', od=9.0, awg=16, mbr=20, frm='PSU modular(12V-2x6)', to='GPU 12V-2x6', conn='12V-2x6: コネクタ後方35mm直線', ref_mm=400, mat='rubber',
       pts=[(px + 96, py - 2, 38), (px + 96, py - 12, 40), (px + 116, py - 28, 42), (225, py - 28, 44), (250, 240, 62), (300, 280, 70), (gx + 121, gy + 205, gz + 40 + 12 + 6), (gx + 121, gy + 268, gz + 40 + 12 + 6)]),
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
