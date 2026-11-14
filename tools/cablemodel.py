@@ -21,7 +21,7 @@ CAB = [
  dict(id='W4', name='コントローラ基板 12V(短尺)', kind='cable', od=4.4, awg=20, mbr=6, frm='PSU modular(SATA/周辺)', to='ctrl_board DC入力', conn='SATA電源 or 2pin', ref_mm=0, mat='rubber',
       pts=[(px + 50, py - 2, 24), (px + 54, py - 8, 26), (cx - 5, cy + 5, 23), (cx - 1, cy + 8, 20)]),
  dict(id='W5', name='アンビリカル(eDP 30p/12V/USB)', kind='cable', od=6.0, awg=0, mbr=16, frm='ctrl_board eDP', to='パネル背面コネクタ', conn='eDP 30p + 12V + USB2 (全長380mm=整備余長100mm込み=整備余長込み)', ref_mm=380, mat='umb',
-      pts=[(cx + 28, cy + 95, cz + 22), (cx + 28, cy + 105, cz + 26), (cx + 5, 340, 21), (150, 347, 16), (40, 349, 13), (14, 349, 10)]),
+      pts=[(cx + 28, cy + 95, cz + 22), (cx + 28, cy + 105, cz + 26), (cx + 5, 340, 21), (150, 347, 16), (40, 349, 13)]),
  dict(id='W6', name='AC電源(C14インレット→PSU C13)', kind='cable', od=7.2, awg=16, mbr=14, frm='C14インレット', to='SF1000 AC入力', conn='C13(内部延長600mm級: 市販品要確認 U40)', ref_mm=600, mat='rubber',
       pts=[(ax + 14, ay + 28, az + 8), (36, 62, 22), (36, 300, 24), (56, 336, 22), (100, 348, 22), (125, 340, 22), (px + 62, py + 102, pz + 14)]),
  dict(id='W7', name='内部映像ケーブル(GPU DisplayPort → コントローラ基板 入力, K10追加)', kind='cable', od=4.5, awg=30, mbr=16, frm='GPU DP出力(ブラケット側)', to='ctrl_board 映像入力(DP/HDMI, 型番未確定 U51)', conn='DP→(DP/HDMI)短尺 300〜400mm 市販 or 特注(HBR3/DP1.4)', ref_mm=450, mat='rubber',

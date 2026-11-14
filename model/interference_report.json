@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-13T23:56Z",
+ "generated": "2026-11-14T00:09Z",
  "objects": 662,
- "pairs_total": 573,
- "touch_only": 372,
+ "pairs_total": 564,
+ "touch_only": 371,
  "allowed": {
   "グリルのリングとスポークは一体品": 10,
   "ヒンジ軸がEリング/キャップのボアを貫通(ボア未モデル=INTF-03)": 4,
@@ -1985,7 +1985,7 @@
   }
  ],
  "allowed_debt": 25,
- "remaining": 51,
+ "remaining": 43,
  "remaining_pairs": [
   {
    "a": "cover_filter",
@@ -1995,16 +1995,6 @@
     297.3,
     76.2,
     70.05
-   ]
-  },
-  {
-   "a": "cover_filter",
-   "b": "cable_W5",
-   "tri_pairs": 55,
-   "aabb_overlap_mm": [
-    215.339,
-    28.482,
-    53.078
    ]
   },
   {
@@ -2239,81 +2229,11 @@
   },
   {
    "a": "cable_W5",
-   "b": "clip_post3",
-   "tri_pairs": 42,
-   "aabb_overlap_mm": [
-    3.0,
-    5.76,
-    5.969
-   ]
-  },
-  {
-   "a": "cable_W5",
-   "b": "clip_post2",
-   "tri_pairs": 42,
-   "aabb_overlap_mm": [
-    3.0,
-    8.84,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_W4",
-   "b": "clip_post1",
-   "tri_pairs": 34,
-   "aabb_overlap_mm": [
-    3.0,
-    4.794,
-    5.179
-   ]
-  },
-  {
-   "a": "cable_W7",
-   "b": "clip_post7",
-   "tri_pairs": 30,
-   "aabb_overlap_mm": [
-    3.0,
-    12.05,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_W7",
-   "b": "clip_post6",
-   "tri_pairs": 28,
-   "aabb_overlap_mm": [
-    3.0,
-    11.71,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_W6",
-   "b": "clip_post4",
-   "tri_pairs": 26,
-   "aabb_overlap_mm": [
-    3.0,
-    9.598,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_W6",
-   "b": "clip_post5",
-   "tri_pairs": 24,
-   "aabb_overlap_mm": [
-    3.0,
-    9.308,
-    6.0
-   ]
-  },
-  {
-   "a": "cable_W5",
    "b": "clip_post5",
    "tri_pairs": 20,
    "aabb_overlap_mm": [
     3.0,
-    14.74,
+    7.159,
     6.0
    ]
   },

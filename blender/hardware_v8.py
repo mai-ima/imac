@@ -83,7 +83,7 @@ for c_ in CABJ:
         acc += math.dist(a_, b_)
         if acc >= 60 and b_[2] <= 30 and not any(abs(b_[0] - kx_) < 16 and abs(b_[1] - ky_ - 6) < 14 for kx_, ky_ in KH):      # 吊りピンのブッシュ(16x28)上には置かない
             acc = 0.0; nclip += 1
-            ibox(f'clip_pad{nclip}', 12, 8, .8, b_[0] - 6, b_[1] - 4, TZ, M['pom'], .2); ibox(f'clip_post{nclip}', 3, 6, max(1, b_[2] - TZ - 1), b_[0] - 1.5, b_[1] - 3, TZ + .8, M['pom'], .3)
+            ibox(f'clip_pad{nclip}', 12, 8, .8, b_[0] - 6, b_[1] - 4, TZ, M['pom'], .2); ibox(f'clip_post{nclip}', 3, 6, max(1, b_[2] - TZ - c_.get('od', 6) / 2 - 2.0), b_[0] - 1.5, b_[1] - 3, TZ + .8, M['pom'], .3)
 hw('配線', 'ケーブルクリップ(POM, 粘着/PEM)', nclip, 'トレイ上 z≤30の区間のみ(他は部品へ結束)')
 # ---------- GPUクレードル・電源ボタン・RF窓・AM5バックプレート ----------
 ibox('gpu_cradle_base', GW, 10, 3, gx, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_l', 4, 10, 9, gx - 2, gy - 14, TZ, M['alublack'], .6); ibox('gpu_cradle_wall_r', 4, 10, 9, gx + GW - 2, gy - 14, TZ, M['alublack'], .6)

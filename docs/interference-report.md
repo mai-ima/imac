@@ -1,7 +1,7 @@
 # 実形状 干渉・埋め込み検査(INTF-01)
 
-- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、662物体、交差対 573。
-- 接触のみ(深さ<0.15mm): 372 / 意図した一体・嵌合(ALLOW): 150(うち**負債ALLOW(未解決の許容)=25**) / **要対処: 51**
+- 検査: Blender 評価済みメッシュのBVH交差(`blender/build_imac_pc_v8.py --check-interference`)、662物体、交差対 564。
+- 接触のみ(深さ<0.15mm): 371 / 意図した一体・嵌合(ALLOW): 150(うち**負債ALLOW(未解決の許容)=25**) / **要対処: 43**
 - 注意: ケーブル(曲線)・非表示物・完全内包は検出できない(audit_control/reports/R13_interference_allow.md)。
 
 ## ALLOW(理由つき)
@@ -90,7 +90,6 @@
 | 物体A | 物体B | 三角形交差 | AABB重なり[x,y,z] mm | 深さ(近似) |
 |---|---|---|---|---|
 | cover_filter | cable_H1 | 50 | [297.3, 76.2, 70.05] | 70.05 |
-| cover_filter | cable_W5 | 55 | [215.339, 28.482, 53.078] | 28.48 |
 | stand_skirt | pe_braid_swivel | 38 | [40.212, 92.15, 24.5] | 24.50 |
 | cover_filter | cable_W7 | 36 | [28.21, 15.459, 208.119] | 15.46 |
 | riser0 | cable_W7 | 14 | [14.601, 15.459, 12.0] | 12.00 |
@@ -114,14 +113,7 @@
 | psu_socket0 | cable_W1 | 20 | [10.047, 11.0, 3.38] | 3.38 |
 | psu_socket3 | cable_W4 | 18 | [11.336, 7.0, 3.312] | 3.31 |
 | gasket | cover_filter | 571 | [589.599, 3.0, 370.899] | 3.00 |
-| cable_W5 | clip_post3 | 42 | [3.0, 5.76, 5.969] | 3.00 |
-| cable_W5 | clip_post2 | 42 | [3.0, 8.84, 6.0] | 3.00 |
-| cable_W4 | clip_post1 | 34 | [3.0, 4.794, 5.179] | 3.00 |
-| cable_W7 | clip_post7 | 30 | [3.0, 12.05, 6.0] | 3.00 |
-| cable_W7 | clip_post6 | 28 | [3.0, 11.71, 6.0] | 3.00 |
-| cable_W6 | clip_post4 | 26 | [3.0, 9.598, 6.0] | 3.00 |
-| cable_W6 | clip_post5 | 24 | [3.0, 9.308, 6.0] | 3.00 |
-| cable_W5 | clip_post5 | 20 | [3.0, 14.74, 6.0] | 3.00 |
+| cable_W5 | clip_post5 | 20 | [3.0, 7.159, 6.0] | 3.00 |
 | io_shield | board_m2_wifi_module | 16 | [7.9, 3.0, 23.6] | 3.00 |
 | stand_foot | pe_braid_swivel | 14 | [40.212, 99.698, 2.724] | 2.72 |
 | pe_braid_tray_a | pe_stud_tray | 18 | [3.537, 6.402, 2.506] | 2.51 |

@@ -36,6 +36,7 @@
 | cablemodel.py | v009 | current | 2026-11-07 | 17954ec | cablemodel/cablemodel.v009__2026-11-07_17954ec.py |
 | cablemodel.py | v010 | current | 2026-11-07 | c1704cf | cablemodel/cablemodel.v010__2026-11-07_c1704cf.py |
 | cablemodel.py | v011 | current | 2026-11-07 | 48f7baa | cablemodel/cablemodel.v011__2026-11-07_48f7baa.py |
+| cablemodel.py | v012 | current | 2026-11-07 | b5f5bb3 | cablemodel/cablemodel.v012__2026-11-07_b5f5bb3.py |
 | cadviews.py | v001 | current | 2026-11-06 | 88f99b7 | cadviews/cadviews.v001__2026-11-06_88f99b7.py |
 | consistency_check.py | v001 | current | 2026-11-06 | 877835f | consistency_check/consistency_check.v001__2026-11-06_877835f.py |
 | consistency_check.py | v002 | current | 2026-11-06 | cf90ba1 | consistency_check/consistency_check.v002__2026-11-06_cf90ba1.py |

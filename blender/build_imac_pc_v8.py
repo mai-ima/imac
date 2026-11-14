@@ -854,14 +854,14 @@ if A.debug_keyhole:
 # ---------------- 実形状の干渉検査(INTF-01): 評価済みメッシュ(モディファイア適用後)のBVH交差 ----------------
 if A.check_interference:
     from mathutils.bvhtree import BVHTree
-    dg = bpy.context.evaluated_depsgraph_get(); recs = []
+    dg = bpy.context.evaluated_depsgraph_get(); recs = []; GEO_ = {}
     for ob in COLL.objects:
         if ob.type not in ('MESH', 'CURVE') or ob.hide_render or ob.name.startswith(('floor', 'target')) or ob.name.endswith(('_hole', '_cutter', '_cavity', '_notch', '_opening')) or '_cutter' in ob.name: continue      # ブーリアン用カッターは形状ではないので検査しない
         ev = ob.evaluated_get(dg); me_ = ev.to_mesh(); me_.transform(ob.matrix_world)
         vs = [v.co.copy() for v in me_.vertices]; ps = [tuple(p.vertices) for p in me_.polygons]
         if len(vs) < 3 or not ps: ev.to_mesh_clear(); continue
         xs = [v.x for v in vs]; ys = [v.y for v in vs]; zs = [v.z for v in vs]
-        recs.append((ob.name, (min(xs), min(ys), min(zs), max(xs), max(ys), max(zs)), BVHTree.FromPolygons(vs, ps, epsilon=1e-4))); ev.to_mesh_clear()
+        recs.append((ob.name, (min(xs), min(ys), min(zs), max(xs), max(ys), max(zs)), BVHTree.FromPolygons(vs, ps, epsilon=1e-4))); ev.to_mesh_clear(); GEO_[ob.name] = (vs, ps)
     recs.sort(key=lambda r: r[1][0]); out = []; n_ = len(recs)
     for i in range(n_):
         ni, bi, ti = recs[i]
@@ -870,6 +870,9 @@ if A.check_interference:
             if bj[0] > bi[3]: break
             if bj[1] > bi[4] or bi[1] > bj[4] or bj[2] > bi[5] or bi[2] > bj[5]: continue
             ov = ti.overlap(tj)
+            if ov and os.environ.get('INTFDBG') and (ni.startswith('cable_') or nj.startswith('cable_') or ni.startswith(('hose', 'pe_braid')) or nj.startswith(('hose', 'pe_braid'))) and min(round(min(bi[3], bj[3]) - max(bi[0], bj[0]), 3), round(min(bi[4], bj[4]) - max(bi[1], bj[1]), 3), round(min(bi[5], bj[5]) - max(bi[2], bj[2]), 3)) >= .15:
+                _vi, _pi = GEO_[ni]; _cs = [sum((_vi[k_] for k_ in _pi[a_]), Vector()) / len(_pi[a_]) for (a_, b_) in ov[:400]]
+                _c0 = sum(_cs, Vector()) / len(_cs); print('INTFDBG', ni, nj, len(ov), 'centroid design (x,y,z)=', round(_c0.x, 1), round(_c0.z, 1), round(-_c0.y, 1), 'zrange', round(min(c_.y for c_ in _cs), 1), round(max(c_.y for c_ in _cs), 1))
             if ov: out.append({'a': ni, 'b': nj, 'tri_pairs': len(ov), 'aabb_overlap_mm': [round(min(bi[3], bj[3]) - max(bi[0], bj[0]), 3), round(min(bi[4], bj[4]) - max(bi[1], bj[1]), 3), round(min(bi[5], bj[5]) - max(bi[2], bj[2]), 3)]})
     json.dump({'objects': n_, 'pairs': sorted(out, key=lambda r: -r['tri_pairs'])}, open(A.check_interference, 'w'), ensure_ascii=False, indent=1)
     print('INTERFERENCE objects', n_, 'overlapping pairs', len(out)); sys.exit(0)

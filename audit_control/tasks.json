@@ -22776,6 +22776,11 @@
      "2026-11-13T23:56:18Z",
      "in_review",
      "blender --check-interference が曲線(CURVE)も検査するよう変更(objects 648→662)。ケーブル/PE編組関連の新規干渉 42対が顕在化(例: ケーブルW5/W7/H1がcover_filterを貫通、PE編組がスタンド外皮/スカート/カラーを貫通=SHAPE-02、ケーブル×クリップ柱、プラグ×ヘッダ)。ALLOWせず要対処として計上"
+    ],
+    [
+     "2026-11-14T00:09:14Z",
+     "in_review",
+     "W5の角部干渉・W5/W6近接・クリップ柱×ケーブルを修正(要対処51→43)。残: W7/H1(=R13-06)、PE編組×スタンド外皮(SHAPE-02)、ケーブルW1〜W4×PSUソケット/プラグ"
     ]
    ],
    "acceptance_criteria": "",
@@ -22880,6 +22885,37 @@
    "blocker_reason": "",
    "defer_reason": "",
    "next_action": ""
+  },
+  {
+   "id": "R13-06",
+   "title": "W7(GPU DP映像ケーブル)とH1ホースがドーム下縁/斜面の浅い内面(フィルタ込み)と干渉: W7は下縁のGPU出力プラグ空間を越えるz17が必要だが、y13での許容zは約13以下(計算値, 仮説)。GPUを上へ≥8mm移すかプラグ空間/フィルタオフセットの見直しが必要",
+   "description": "干渉検査はケーブル等の曲線オブジェクト14個・文字5個を type!=MESH で除外 → INTF-01のケーブル端末/曲げ/ブーツ干渉が未検査。曲線をメッシュ化して検査対象に含める",
+   "type": "fix",
+   "origin": "self",
+   "requirement_ids": [],
+   "file_paths": [],
+   "severity": "P1",
+   "size": "S",
+   "impact": "",
+   "dependencies": [],
+   "parent_id": null,
+   "status": "blocked",
+   "history": [
+    [
+     "2026-11-14T00:09:14Z",
+     "blocked",
+     "W5は終端を角部から内側へ(14,349→40,349)、クリップ柱をケーブル下へで解消。W7/H1は構造的に未解決(要設計判断)"
+    ]
+   ],
+   "acceptance_criteria": "",
+   "evidence": [
+    "audit_control/reports/R13_interference_allow.md"
+   ],
+   "verification": [],
+   "decision": "PARTIAL(設計提案。効果はUNVERIFIED)",
+   "blocker_reason": "GPU配置(gy)・出力プラグ空間・フィルタ6mmオフセットの設計判断が必要。実機プラグ寸法(DP/HDMI)は未確認(U)",
+   "defer_reason": "",
+   "next_action": "GPU位置+Δy案(fitcheck/配置図/massmodel同時更新)を検討"
   }
  ]
 }
